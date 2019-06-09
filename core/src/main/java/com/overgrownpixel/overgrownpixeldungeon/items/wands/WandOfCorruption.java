@@ -66,7 +66,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MagesStaff;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Callback;

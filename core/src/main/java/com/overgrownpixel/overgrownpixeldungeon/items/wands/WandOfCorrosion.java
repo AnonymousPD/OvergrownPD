@@ -35,7 +35,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.particles.CorrosionParti
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MagesStaff;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Callback;
 import com.watabou.utils.ColorMath;

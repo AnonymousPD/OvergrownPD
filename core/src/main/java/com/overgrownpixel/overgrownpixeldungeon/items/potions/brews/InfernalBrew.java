@@ -28,7 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Inferno;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.AlchemicalCatalyst;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfLiquidFlame;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.audio.Sample;
 
 public class InfernalBrew extends Brew {

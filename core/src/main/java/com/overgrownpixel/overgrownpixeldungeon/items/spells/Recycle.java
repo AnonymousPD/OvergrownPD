@@ -36,7 +36,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.exotic.ExoticScrol
 import com.overgrownpixel.overgrownpixeldungeon.items.stones.Runestone;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndBag;
 

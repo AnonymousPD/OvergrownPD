@@ -36,7 +36,7 @@ import com.overgrownpixel.overgrownpixeldungeon.levels.rooms.special.SpecialRoom
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.CellSelector;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.HeroSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.hero.HeroSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.noosa.audio.Sample;

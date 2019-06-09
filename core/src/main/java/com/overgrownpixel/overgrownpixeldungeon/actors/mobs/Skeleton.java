@@ -29,7 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MeleeWeapon;
 import com.overgrownpixel.overgrownpixeldungeon.levels.features.Chasm;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.SkeletonSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.SkeletonSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.PathFinder;

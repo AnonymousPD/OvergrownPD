@@ -31,7 +31,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Lightning;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.EnergyParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.SparkParticle;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.PathFinder;

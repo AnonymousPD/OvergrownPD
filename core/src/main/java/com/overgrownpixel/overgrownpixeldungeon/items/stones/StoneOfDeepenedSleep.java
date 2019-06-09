@@ -29,7 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MagicalSleep;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.PathFinder;
 

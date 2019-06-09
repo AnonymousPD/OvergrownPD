@@ -30,7 +30,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Ooze;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Splash;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfToxicGas;
 import com.overgrownpixel.overgrownpixeldungeon.items.quest.GooBlob;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.PathFinder;

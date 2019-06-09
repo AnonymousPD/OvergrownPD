@@ -32,7 +32,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Bee;
 import com.overgrownpixel.overgrownpixeldungeon.items.Honeypot;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfHealing;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.audio.Sample;
 
 public class ElixirOfHoneyedHealing extends Elixir {

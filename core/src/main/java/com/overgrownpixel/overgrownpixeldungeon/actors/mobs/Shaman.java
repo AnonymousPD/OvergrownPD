@@ -28,7 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.Generator;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ShamanSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.ShamanSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.noosa.Camera;
 import com.watabou.utils.Callback;

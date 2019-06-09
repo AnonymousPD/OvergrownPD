@@ -36,7 +36,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 
 public class Dreamfoil extends Plant {

@@ -37,7 +37,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.levels.features.Chasm;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.PrismaticSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.hero.PrismaticSprite;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;

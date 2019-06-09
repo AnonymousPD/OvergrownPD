@@ -28,7 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Cripple;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Poison;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.BanditSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.BanditSprite;
 import com.watabou.utils.Random;
 
 public class Bandit extends Thief {

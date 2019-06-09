@@ -31,8 +31,8 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.particles.FlameParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.SnowParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor.Glyph;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite.Glowing;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite.Glowing;
 import com.watabou.utils.Random;
 
 public class AntiEntropy extends Glyph {

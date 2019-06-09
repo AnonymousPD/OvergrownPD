@@ -28,8 +28,8 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.particles.EarthParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor.Glyph;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Earthroot;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite.Glowing;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite.Glowing;
 import com.watabou.noosa.Camera;
 import com.watabou.utils.Random;
 

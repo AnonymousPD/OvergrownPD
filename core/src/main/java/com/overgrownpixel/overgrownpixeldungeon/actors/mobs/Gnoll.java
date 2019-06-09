@@ -23,7 +23,7 @@ package com.overgrownpixel.overgrownpixeldungeon.actors.mobs;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.items.Gold;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.GnollSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.GnollSprite;
 import com.watabou.utils.Random;
 
 public class Gnoll extends Mob {

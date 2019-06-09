@@ -25,7 +25,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfTeleportation;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.watabou.utils.Random;
 
 public class Displacement extends Armor.Glyph {

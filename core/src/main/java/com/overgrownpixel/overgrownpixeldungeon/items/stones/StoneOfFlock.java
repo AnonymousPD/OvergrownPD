@@ -28,7 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.npcs.Sheep;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;

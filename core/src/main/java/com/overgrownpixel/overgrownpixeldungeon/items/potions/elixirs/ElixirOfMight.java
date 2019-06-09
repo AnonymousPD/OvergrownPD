@@ -29,7 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.potions.AlchemicalCatalyst
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfStrength;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.utils.Bundle;

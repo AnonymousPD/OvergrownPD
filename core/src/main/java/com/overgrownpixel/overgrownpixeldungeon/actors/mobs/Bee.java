@@ -28,7 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Amok;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Corruption;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Poison;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.BeeSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.BeeSprite;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 

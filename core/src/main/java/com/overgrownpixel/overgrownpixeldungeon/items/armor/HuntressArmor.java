@@ -26,7 +26,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.Shuriken;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.MissileSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.utils.Callback;

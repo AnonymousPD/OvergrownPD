@@ -25,7 +25,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Healing;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfHealing;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class HealingDart extends TippedDart {
 	

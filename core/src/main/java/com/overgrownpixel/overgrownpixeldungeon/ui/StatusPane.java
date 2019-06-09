@@ -28,7 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.HeroSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.hero.HeroSprite;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndGame;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndHero;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndJournal;

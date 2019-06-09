@@ -30,7 +30,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.MysteryMeat;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfHealing;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ScorpioSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.ScorpioSprite;
 import com.watabou.utils.Random;
 
 public class Scorpio extends Mob {

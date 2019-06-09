@@ -35,7 +35,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfRetribution;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.exotic.ScrollOfPsionicBlast;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.MimicSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.MimicSprite;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.PathFinder;

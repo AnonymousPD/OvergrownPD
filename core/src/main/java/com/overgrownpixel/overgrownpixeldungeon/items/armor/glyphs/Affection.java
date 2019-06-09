@@ -27,8 +27,8 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Charm;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor.Glyph;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite.Glowing;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite.Glowing;
 import com.watabou.utils.Random;
 
 public class Affection extends Glyph {

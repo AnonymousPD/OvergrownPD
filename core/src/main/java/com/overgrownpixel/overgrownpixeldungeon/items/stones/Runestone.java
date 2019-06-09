@@ -23,7 +23,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.stones;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public abstract class Runestone extends Item {
 	

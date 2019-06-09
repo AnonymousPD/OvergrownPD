@@ -38,7 +38,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.quest.GooBlob;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.GooSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.GooSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BossHealthBar;
 import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;

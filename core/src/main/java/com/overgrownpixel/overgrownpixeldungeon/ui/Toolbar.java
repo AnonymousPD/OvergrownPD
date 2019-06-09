@@ -28,7 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.CellSelector;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.DungeonTerrainTilemap;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndBag;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndJournal;

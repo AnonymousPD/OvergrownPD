@@ -29,7 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfHealing;
 import com.overgrownpixel.overgrownpixeldungeon.items.quest.GooBlob;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
 import com.watabou.noosa.Image;
 import com.watabou.utils.Bundle;

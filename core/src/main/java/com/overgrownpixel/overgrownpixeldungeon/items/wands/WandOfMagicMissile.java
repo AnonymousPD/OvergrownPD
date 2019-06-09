@@ -29,7 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Recharging;
 import com.overgrownpixel.overgrownpixeldungeon.effects.SpellSprite;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MagesStaff;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class WandOfMagicMissile extends DamageWand {
 

@@ -34,7 +34,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.food.Blandfruit;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.Food;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndBag;
 import com.watabou.noosa.audio.Sample;

@@ -28,7 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.ui.RedButton;
 import com.overgrownpixel.overgrownpixeldungeon.ui.RenderedTextMultiline;
 import com.overgrownpixel.overgrownpixeldungeon.ui.Window;

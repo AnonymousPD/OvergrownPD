@@ -25,7 +25,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.RatKingSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.npcs.RatKingSprite;
 
 public class RatKing extends NPC {
 

@@ -30,7 +30,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfRecharging
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.exotic.ScrollOfMysticalEnergy;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.CursedWand;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.utils.Callback;
 
 public class WildEnergy extends TargetedSpell {

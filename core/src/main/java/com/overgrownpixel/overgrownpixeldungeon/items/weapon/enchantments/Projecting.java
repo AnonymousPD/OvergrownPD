@@ -23,7 +23,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 
 public class Projecting extends Weapon.Enchantment {
 

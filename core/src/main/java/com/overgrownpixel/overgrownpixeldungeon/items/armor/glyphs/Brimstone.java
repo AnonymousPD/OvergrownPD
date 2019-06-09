@@ -26,7 +26,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Burning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ShieldBuff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.watabou.utils.Bundle;
 
 public class Brimstone extends Armor.Glyph {

@@ -52,7 +52,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Shocki
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Unstable;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Vampiric;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.utils.Bundlable;
 import com.watabou.utils.Bundle;

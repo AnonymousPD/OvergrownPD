@@ -26,7 +26,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfEarthenArmor;
 import com.overgrownpixel.overgrownpixeldungeon.items.quest.GooBlob;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class ElixirOfArcaneArmor extends Elixir {
 	

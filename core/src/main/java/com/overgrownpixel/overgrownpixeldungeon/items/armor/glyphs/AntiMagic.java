@@ -31,7 +31,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Yog;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
 import com.overgrownpixel.overgrownpixeldungeon.levels.traps.DisintegrationTrap;
 import com.overgrownpixel.overgrownpixeldungeon.levels.traps.GrimTrap;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.watabou.utils.Random;
 
 import java.util.HashSet;

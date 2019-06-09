@@ -110,7 +110,7 @@ import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.InterlevelScene;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.SurfaceScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.HeroSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.hero.HeroSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.AttackIndicator;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
 import com.overgrownpixel.overgrownpixeldungeon.ui.QuickSlotButton;

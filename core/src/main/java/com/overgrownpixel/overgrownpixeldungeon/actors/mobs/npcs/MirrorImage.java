@@ -32,7 +32,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Invisibility;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.MirrorSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.MirrorSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;

@@ -30,7 +30,7 @@ import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.InterlevelScene;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.StartScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.HeroSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.hero.HeroSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.ActionIndicator;
 import com.overgrownpixel.overgrownpixeldungeon.ui.RedButton;
 import com.overgrownpixel.overgrownpixeldungeon.ui.Window;

@@ -34,7 +34,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.GnollTricksterSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.GnollTricksterSprite;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 

@@ -55,8 +55,8 @@ import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.exotic.ExoticScrol
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.ui.IconButton;
 import com.overgrownpixel.overgrownpixeldungeon.ui.RedButton;
 import com.overgrownpixel.overgrownpixeldungeon.ui.RenderedTextMultiline;

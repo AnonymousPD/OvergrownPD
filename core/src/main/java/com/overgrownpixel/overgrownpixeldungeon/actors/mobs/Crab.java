@@ -23,7 +23,7 @@ package com.overgrownpixel.overgrownpixeldungeon.actors.mobs;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.MysteryMeat;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.CrabSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.CrabSprite;
 import com.watabou.utils.Random;
 
 public class Crab extends Mob {

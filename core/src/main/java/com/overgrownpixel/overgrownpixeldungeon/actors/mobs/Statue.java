@@ -30,7 +30,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Grim;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MeleeWeapon;
 import com.overgrownpixel.overgrownpixeldungeon.journal.Notes;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.StatueSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.StatueSprite;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 

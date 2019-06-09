@@ -28,7 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Ooze;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.npcs.Ghost;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.FetidRatSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.FetidRatSprite;
 import com.watabou.utils.Random;
 
 public class FetidRat extends Rat {

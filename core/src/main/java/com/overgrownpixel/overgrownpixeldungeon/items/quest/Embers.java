@@ -22,8 +22,8 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.quest;
 
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class Embers extends Item {
 

@@ -31,7 +31,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.food.MysteryMeat;
 import com.overgrownpixel.overgrownpixeldungeon.levels.RegularLevel;
 import com.overgrownpixel.overgrownpixeldungeon.levels.rooms.Room;
 import com.overgrownpixel.overgrownpixeldungeon.levels.rooms.special.PoolRoom;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.PiranhaSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.PiranhaSprite;
 import com.watabou.utils.Random;
 
 public class Piranha extends Mob {

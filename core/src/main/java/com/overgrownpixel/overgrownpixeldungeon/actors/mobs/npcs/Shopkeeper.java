@@ -29,7 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.Heap;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ShopkeeperSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.npcs.ShopkeeperSprite;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndBag;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndTradeItem;
 

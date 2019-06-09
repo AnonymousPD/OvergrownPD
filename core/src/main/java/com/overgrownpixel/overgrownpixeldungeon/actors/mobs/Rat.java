@@ -22,7 +22,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.actors.mobs;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.RatSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.RatSprite;
 import com.watabou.utils.Random;
 
 public class Rat extends Mob {

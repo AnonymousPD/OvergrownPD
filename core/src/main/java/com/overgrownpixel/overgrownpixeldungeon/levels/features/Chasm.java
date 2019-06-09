@@ -38,7 +38,7 @@ import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Swiftthistle;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.InterlevelScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.MobSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.MobSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndOptions;
 import com.watabou.noosa.Camera;

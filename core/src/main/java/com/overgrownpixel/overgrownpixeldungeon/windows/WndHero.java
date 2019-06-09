@@ -29,7 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.HeroSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.hero.HeroSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
 import com.overgrownpixel.overgrownpixeldungeon.ui.ScrollPane;
 import com.overgrownpixel.overgrownpixeldungeon.ui.Window;

@@ -24,7 +24,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.bags;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.stones.Runestone;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class VelvetPouch extends Bag {
 

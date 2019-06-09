@@ -28,7 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Burning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Chill;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Frost;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfLiquidFlame;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ElementalSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.ElementalSprite;
 import com.watabou.utils.Random;
 
 public class Elemental extends Mob {

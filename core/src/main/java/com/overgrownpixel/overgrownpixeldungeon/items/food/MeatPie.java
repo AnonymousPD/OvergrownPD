@@ -26,7 +26,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.WellFed;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 import java.util.ArrayList;
 

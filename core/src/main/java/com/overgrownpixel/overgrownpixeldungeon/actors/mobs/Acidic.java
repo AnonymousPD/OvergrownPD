@@ -24,7 +24,7 @@ package com.overgrownpixel.overgrownpixeldungeon.actors.mobs;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.AcidicSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.AcidicSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.utils.Random;
 

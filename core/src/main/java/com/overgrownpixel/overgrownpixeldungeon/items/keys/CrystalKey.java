@@ -21,7 +21,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.keys;
 
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class CrystalKey extends Key {
 	

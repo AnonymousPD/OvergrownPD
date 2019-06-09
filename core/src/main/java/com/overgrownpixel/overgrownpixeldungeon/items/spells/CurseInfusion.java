@@ -33,7 +33,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.SpiritBow;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MagesStaff;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MeleeWeapon;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndBag;
 import com.watabou.noosa.audio.Sample;
 

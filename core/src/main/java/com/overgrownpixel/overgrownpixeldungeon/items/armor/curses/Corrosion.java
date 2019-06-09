@@ -27,7 +27,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Ooze;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Splash;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;
 

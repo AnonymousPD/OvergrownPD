@@ -35,6 +35,9 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.ThrowingKn
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.ThrowingSpear;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.Trident;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.Dart;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.ScorpioSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.TenguSprite;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.DungeonTilemap;
 import com.watabou.noosa.Visual;
 import com.watabou.noosa.tweeners.PosTweener;

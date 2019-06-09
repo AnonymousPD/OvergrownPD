@@ -27,7 +27,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Lightning;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.SparkParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;

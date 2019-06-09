@@ -49,8 +49,8 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.MissileWea
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant.Seed;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.ui.Icons;
 import com.overgrownpixel.overgrownpixeldungeon.ui.ItemSlot;
 import com.overgrownpixel.overgrownpixeldungeon.ui.QuickSlotButton;

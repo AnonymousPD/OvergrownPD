@@ -22,7 +22,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.stones;
 
 import com.overgrownpixel.overgrownpixeldungeon.items.bombs.Bomb;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class StoneOfBlast extends Runestone {
 	

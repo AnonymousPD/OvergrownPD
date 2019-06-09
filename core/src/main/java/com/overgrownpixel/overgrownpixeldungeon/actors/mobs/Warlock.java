@@ -32,7 +32,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Grim;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.WarlockSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.WarlockSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.utils.Callback;
 import com.watabou.utils.Random;

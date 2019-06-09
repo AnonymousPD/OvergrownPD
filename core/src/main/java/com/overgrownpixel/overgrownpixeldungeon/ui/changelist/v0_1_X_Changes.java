@@ -23,8 +23,8 @@ package com.overgrownpixel.overgrownpixeldungeon.ui.changelist;
 
 import com.overgrownpixel.overgrownpixeldungeon.items.Ankh;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.Blandfruit;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.ui.Icons;
 import com.overgrownpixel.overgrownpixeldungeon.ui.Window;
 

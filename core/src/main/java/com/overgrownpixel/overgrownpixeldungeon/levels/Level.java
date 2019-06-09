@@ -67,7 +67,7 @@ import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Swiftthistle;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.CustomTilemap;
 import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;

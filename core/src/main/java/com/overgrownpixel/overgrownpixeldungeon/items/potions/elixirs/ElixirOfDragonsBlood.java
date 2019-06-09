@@ -28,7 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.FlameParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.AlchemicalCatalyst;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfDragonsBreath;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.audio.Sample;
 
 public class ElixirOfDragonsBlood extends Elixir {

@@ -30,7 +30,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Belongings;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.HeroSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.hero.HeroSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BadgesList;
 import com.overgrownpixel.overgrownpixeldungeon.ui.Icons;
 import com.overgrownpixel.overgrownpixeldungeon.ui.ItemSlot;

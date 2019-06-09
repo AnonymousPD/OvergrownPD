@@ -23,7 +23,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.journal;
 
 import com.overgrownpixel.overgrownpixeldungeon.journal.Document;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class AlchemyPage extends DocumentPage {
 	

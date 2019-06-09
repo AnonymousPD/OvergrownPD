@@ -23,7 +23,7 @@ package com.overgrownpixel.overgrownpixeldungeon.effects;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.watabou.noosa.Game;
 
 public class Enchanting extends ItemSprite {

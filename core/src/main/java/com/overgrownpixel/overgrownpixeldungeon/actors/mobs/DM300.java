@@ -42,7 +42,7 @@ import com.overgrownpixel.overgrownpixeldungeon.levels.Level;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.DM300Sprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.DM300Sprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BossHealthBar;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.noosa.Camera;

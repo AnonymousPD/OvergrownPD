@@ -34,7 +34,7 @@ import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.CellSelector;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.DungeonTilemap;
 import com.overgrownpixel.overgrownpixeldungeon.ui.QuickSlotButton;
 import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;

@@ -40,7 +40,7 @@ import com.overgrownpixel.overgrownpixeldungeon.levels.traps.GrippingTrap;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.TenguSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.TenguSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BossHealthBar;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;

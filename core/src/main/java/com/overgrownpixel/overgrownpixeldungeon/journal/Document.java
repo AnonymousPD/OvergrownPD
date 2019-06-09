@@ -22,7 +22,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.journal;
 
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.DeviceCompat;
 

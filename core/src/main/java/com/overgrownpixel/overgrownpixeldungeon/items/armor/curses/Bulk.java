@@ -23,7 +23,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.armor.curses;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 
 public class Bulk extends Armor.Glyph {
 	

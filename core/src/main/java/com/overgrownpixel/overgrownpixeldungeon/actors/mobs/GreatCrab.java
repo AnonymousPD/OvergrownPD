@@ -28,7 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.food.MysteryMeat;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.Wand;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.GreatCrabSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.GreatCrabSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 
 public class GreatCrab extends Crab {

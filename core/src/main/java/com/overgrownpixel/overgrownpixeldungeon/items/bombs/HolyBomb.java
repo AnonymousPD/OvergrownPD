@@ -29,7 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Blindness;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Flare;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.ShadowParticle;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.DungeonTilemap;
 import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
 import com.watabou.noosa.audio.Sample;

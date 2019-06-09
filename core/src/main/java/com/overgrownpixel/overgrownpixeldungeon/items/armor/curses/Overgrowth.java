@@ -31,7 +31,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
 import com.overgrownpixel.overgrownpixeldungeon.plants.BlandfruitBush;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Starflower;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.watabou.utils.Random;
 
 public class Overgrowth extends Armor.Glyph {

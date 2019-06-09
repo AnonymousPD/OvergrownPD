@@ -26,7 +26,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Terror;
 import com.overgrownpixel.overgrownpixeldungeon.items.Gold;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.BruteSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.BruteSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;

@@ -34,7 +34,7 @@ import com.overgrownpixel.overgrownpixeldungeon.journal.Notes;
 import com.overgrownpixel.overgrownpixeldungeon.levels.CityLevel;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ImpSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.npcs.ImpSprite;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndImp;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndQuest;
 import com.watabou.utils.Bundle;

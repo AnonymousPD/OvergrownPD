@@ -24,7 +24,7 @@ package com.overgrownpixel.overgrownpixeldungeon.actors.mobs;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Paralysis;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.SeniorSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.SeniorSprite;
 import com.watabou.utils.Random;
 
 public class Senior extends Monk {

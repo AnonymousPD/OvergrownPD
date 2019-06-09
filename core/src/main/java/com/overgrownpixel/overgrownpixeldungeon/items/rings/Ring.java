@@ -31,7 +31,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.ItemStatusHandler;
 import com.overgrownpixel.overgrownpixeldungeon.items.KindofMisc;
 import com.overgrownpixel.overgrownpixeldungeon.journal.Catalog;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;

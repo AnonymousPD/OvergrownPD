@@ -34,7 +34,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfHealing;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.GuardSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.GuardSprite;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Callback;
 import com.watabou.utils.Random;

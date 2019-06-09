@@ -27,7 +27,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.ElmoParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.Heap;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ImpSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.npcs.ImpSprite;
 
 public class ImpShopkeeper extends Shopkeeper {
 

@@ -29,7 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.GooWarn;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.ElmoParticle;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;

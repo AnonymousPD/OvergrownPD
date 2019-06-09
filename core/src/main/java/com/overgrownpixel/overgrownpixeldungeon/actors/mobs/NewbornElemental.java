@@ -26,7 +26,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Chill;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Frost;
 import com.overgrownpixel.overgrownpixeldungeon.items.quest.Embers;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.NewbornElementalSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.NewbornElementalSprite;
 
 public class NewbornElemental extends Elemental {
 

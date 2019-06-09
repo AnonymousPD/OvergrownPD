@@ -32,7 +32,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.MasterThievesArmband;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.ItemSlot;
 import com.overgrownpixel.overgrownpixeldungeon.ui.RedButton;
 import com.overgrownpixel.overgrownpixeldungeon.ui.RenderedTextMultiline;

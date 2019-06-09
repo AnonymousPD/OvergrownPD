@@ -23,7 +23,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class Shuriken extends MissileWeapon {
 

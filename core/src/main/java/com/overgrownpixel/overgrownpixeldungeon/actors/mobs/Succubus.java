@@ -34,7 +34,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfLullaby;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfTeleportation;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.SuccubusSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.SuccubusSprite;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;

@@ -23,7 +23,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 
 public class Swiftness extends Armor.Glyph {
 

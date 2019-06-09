@@ -28,8 +28,8 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Longsword;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.RunicBlade;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.ChangesScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.ui.Icons;
 import com.overgrownpixel.overgrownpixeldungeon.ui.Window;
 

@@ -24,7 +24,7 @@ package com.overgrownpixel.overgrownpixeldungeon.actors.mobs;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Bleeding;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.AlbinoSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.AlbinoSprite;
 import com.watabou.utils.Random;
 
 public class Albino extends Rat {

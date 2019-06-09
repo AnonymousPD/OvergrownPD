@@ -25,7 +25,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.bombs.Bomb;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.Wand;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.MissileWeapon;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class MagicalHolster extends Bag {
 

@@ -22,7 +22,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.quest;
 
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 //this one's still hanging around to support quests from old saves
 //I may reuse it at some point.

@@ -21,7 +21,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.actors.mobs;
 
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ShieldedSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.ShieldedSprite;
 import com.watabou.utils.Random;
 
 public class Shielded extends Brute {

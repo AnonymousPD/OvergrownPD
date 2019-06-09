@@ -22,7 +22,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.food;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class SmallRation extends Food {
 

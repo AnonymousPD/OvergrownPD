@@ -35,8 +35,8 @@ import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.AlchemistsToolki
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.Dart;
 import com.overgrownpixel.overgrownpixeldungeon.journal.Journal;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.ui.ExitButton;
 import com.overgrownpixel.overgrownpixeldungeon.ui.IconButton;
 import com.overgrownpixel.overgrownpixeldungeon.ui.Icons;

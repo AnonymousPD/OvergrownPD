@@ -47,7 +47,7 @@ import com.overgrownpixel.overgrownpixeldungeon.journal.Notes;
 import com.overgrownpixel.overgrownpixeldungeon.levels.SewerLevel;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.GhostSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.GhostSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndQuest;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndSadGhost;

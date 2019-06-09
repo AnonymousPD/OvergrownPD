@@ -35,7 +35,7 @@ import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.CellSelector;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.MissileSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.QuickSlotButton;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;

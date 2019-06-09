@@ -29,7 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Level;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;
 

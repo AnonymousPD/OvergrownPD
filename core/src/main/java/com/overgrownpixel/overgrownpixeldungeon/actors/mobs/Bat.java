@@ -26,7 +26,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfHealing;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.BatSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.BatSprite;
 import com.watabou.utils.Random;
 
 public class Bat extends Mob {

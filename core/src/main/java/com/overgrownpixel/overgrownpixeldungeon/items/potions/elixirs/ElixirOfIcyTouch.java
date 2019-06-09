@@ -27,7 +27,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.SnowParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.AlchemicalCatalyst;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfSnapFreeze;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class ElixirOfIcyTouch extends Elixir {
 	

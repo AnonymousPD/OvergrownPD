@@ -28,7 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Electricity;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.AlchemicalCatalyst;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfParalyticGas;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.PathFinder;

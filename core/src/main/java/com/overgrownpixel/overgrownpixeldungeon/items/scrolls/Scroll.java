@@ -47,8 +47,8 @@ import com.overgrownpixel.overgrownpixeldungeon.items.stones.StoneOfIntuition;
 import com.overgrownpixel.overgrownpixeldungeon.items.stones.StoneOfShock;
 import com.overgrownpixel.overgrownpixeldungeon.journal.Catalog;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.HeroSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.hero.HeroSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.utils.Bundle;
 

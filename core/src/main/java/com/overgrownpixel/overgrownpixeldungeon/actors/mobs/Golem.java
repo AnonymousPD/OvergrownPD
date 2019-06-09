@@ -26,7 +26,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Amok;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Sleep;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Terror;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.npcs.Imp;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.GolemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.GolemSprite;
 import com.watabou.utils.Random;
 
 public class Golem extends Mob {

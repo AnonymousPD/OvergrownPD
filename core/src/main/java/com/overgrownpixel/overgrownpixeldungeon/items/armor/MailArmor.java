@@ -21,7 +21,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.armor;
 
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class MailArmor extends Armor {
 

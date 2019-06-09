@@ -39,7 +39,7 @@ import com.overgrownpixel.overgrownpixeldungeon.levels.rooms.Room;
 import com.overgrownpixel.overgrownpixeldungeon.levels.rooms.standard.BlacksmithRoom;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.BlacksmithSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.npcs.BlacksmithSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndBlacksmith;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndQuest;

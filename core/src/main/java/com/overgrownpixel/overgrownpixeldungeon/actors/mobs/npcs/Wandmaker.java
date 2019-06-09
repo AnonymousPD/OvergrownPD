@@ -39,7 +39,7 @@ import com.overgrownpixel.overgrownpixeldungeon.levels.rooms.standard.RitualSite
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Rotberry;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.WandmakerSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.npcs.WandmakerSprite;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndQuest;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndWandmaker;
 import com.watabou.utils.Bundle;

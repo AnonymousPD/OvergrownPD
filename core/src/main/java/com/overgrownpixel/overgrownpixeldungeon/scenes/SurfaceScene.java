@@ -26,7 +26,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Badges;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroClass;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.RatSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.RatSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.Archs;
 import com.overgrownpixel.overgrownpixeldungeon.ui.RedButton;
 import com.watabou.gltextures.SmartTexture;

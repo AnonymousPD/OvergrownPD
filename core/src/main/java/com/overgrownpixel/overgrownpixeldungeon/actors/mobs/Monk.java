@@ -32,7 +32,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.food.Food;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Gauntlet;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Gloves;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.MonkSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.MonkSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;

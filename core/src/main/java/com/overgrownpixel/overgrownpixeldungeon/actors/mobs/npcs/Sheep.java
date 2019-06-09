@@ -25,7 +25,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.SheepSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.npcs.SheepSprite;
 import com.watabou.utils.Random;
 
 public class Sheep extends NPC {

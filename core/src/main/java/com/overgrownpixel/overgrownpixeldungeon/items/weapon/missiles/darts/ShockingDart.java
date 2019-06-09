@@ -24,7 +24,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Lightning;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.utils.PointF;
 import com.watabou.utils.Random;
 

@@ -26,7 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.actors.blobs;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.effects.BlobEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.GooSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.GooSprite;
 
 public class GooWarn extends Blob {
 

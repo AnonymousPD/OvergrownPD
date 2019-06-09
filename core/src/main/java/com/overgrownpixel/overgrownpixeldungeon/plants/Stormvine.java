@@ -27,7 +27,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Levitation;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Vertigo;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class Stormvine extends Plant {
 

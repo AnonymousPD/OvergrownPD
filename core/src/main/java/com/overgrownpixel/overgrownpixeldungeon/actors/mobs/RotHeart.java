@@ -33,7 +33,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Terror;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Vertigo;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Rotberry;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.RotHeartSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.RotHeartSprite;
 import com.watabou.utils.Random;
 
 public class RotHeart extends Mob {

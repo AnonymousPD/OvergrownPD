@@ -34,7 +34,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.Honeypot;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ThiefSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.ThiefSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;

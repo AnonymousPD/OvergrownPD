@@ -25,7 +25,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.Scroll;
 import com.overgrownpixel.overgrownpixeldungeon.items.spells.BeaconOfReturning;
 import com.overgrownpixel.overgrownpixeldungeon.items.spells.Spell;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class ScrollHolder extends Bag {
 

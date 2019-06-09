@@ -28,7 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Terror;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.ShadowParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Grim;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.WraithSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.WraithSprite;
 import com.watabou.noosa.tweeners.AlphaTweener;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.PathFinder;

@@ -23,7 +23,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Piranha;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class FishingSpear extends MissileWeapon {
 	

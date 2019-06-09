@@ -34,7 +34,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfHealing;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
 import com.overgrownpixel.overgrownpixeldungeon.levels.features.Door;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.SwarmSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.SwarmSprite;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 

@@ -39,7 +39,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfTransmutat
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.exotic.ExoticScroll;
 import com.overgrownpixel.overgrownpixeldungeon.items.stones.Runestone;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.utils.Random;
 
 import java.util.ArrayList;

@@ -23,7 +23,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.bags;
 
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.Potion;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class PotionBandolier extends Bag {
 

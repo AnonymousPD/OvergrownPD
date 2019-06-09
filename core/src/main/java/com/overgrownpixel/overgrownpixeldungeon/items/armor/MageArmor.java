@@ -29,7 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Burning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Roots;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.ElmoParticle;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.audio.Sample;
 
 public class MageArmor extends ClassArmor {

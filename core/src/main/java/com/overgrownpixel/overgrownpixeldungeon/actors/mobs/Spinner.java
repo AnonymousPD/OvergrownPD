@@ -29,7 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Poison;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Terror;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.MysteryMeat;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.SpinnerSprite;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.SpinnerSprite;
 import com.watabou.utils.Random;
 
 public class Spinner extends Mob {
