@@ -27,6 +27,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.particles.FlameParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.LeafParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.RainbowParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.ShadowParticle;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.WindParticle;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.DungeonTilemap;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Group;
@@ -58,6 +59,7 @@ public class MagicMissile extends Emitter {
 	public static final int BEACON          = 6;
 	public static final int SHADOW          = 7;
 	public static final int RAINBOW         = 8;
+    public static final int WIND            = 9;
 
 	public static final int FIRE_CONE       = 100;
 	public static final int FOLIAGE_CONE    = 101;
@@ -105,8 +107,11 @@ public class MagicMissile extends Emitter {
 				pour( WhiteParticle.FACTORY, 0.01f );
 				break;
 			case FROST:
-				pour( MagicParticle.FACTORY, 0.01f );
-				break;
+                pour( MagicParticle.FACTORY, 0.01f );
+                break;
+            case WIND:
+                pour( WindParticle.FACTORY, 0.01f );
+                break;
 			case FIRE:
 				size( 4 );
 				pour( FlameParticle.FACTORY, 0.01f );

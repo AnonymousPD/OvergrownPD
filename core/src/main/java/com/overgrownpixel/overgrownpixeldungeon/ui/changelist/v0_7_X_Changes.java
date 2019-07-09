@@ -36,7 +36,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfTeleportat
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfTerror;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfRegrowth;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfTransfusion;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Gauntlet;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.Gauntlet;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.Shuriken;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.Tomahawk;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.Dart;

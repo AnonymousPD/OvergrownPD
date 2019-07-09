@@ -36,7 +36,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.RainbowParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.ShadowParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfMagicMapping;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MagesStaff;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.staffs.MagesStaff;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;

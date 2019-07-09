@@ -26,7 +26,14 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MagicImmune;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Crossbow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.bows.GoldenBow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.bows.SmallBow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.Crossbow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.GoldenCrossbow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.IronCrossbow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.SmallCrossbow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.WoodenCrossbow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.harpoons.Harpoon;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
@@ -71,7 +78,10 @@ public class Dart extends MissileWeapon {
 		if (bow != null){
 			return  4 +                 //4 base
 					bow.level() + lvl;  //+1 per level or bow level
-		} else {
+		} else if(goldencrossbow != null){
+            return  3 +                 //3 base
+                    bow.level() + lvl;  //+1 per level or bow level
+        } else {
 			return  1 +     //1 base, down from 2
 					lvl;    //scaling unchanged
 		}
@@ -82,19 +92,100 @@ public class Dart extends MissileWeapon {
 		if (bow != null){
 			return  12 +                    //12 base
 					3*bow.level() + 2*lvl;  //+3 per bow level, +2 per level (default scaling +2)
-		} else {
+		} else if(goldencrossbow != null){
+            return  14 +                    //14 base
+                    3*bow.level() + 2*lvl;  //+3 per bow level, +2 per level (default scaling +2)
+        } else if(ironcrossbow != null){
+            return  13 +                    //13 base
+                    3*bow.level() + 2*lvl;  //+3 per bow level, +2 per level (default scaling +2)
+        } else if(smallcrossbow != null){
+            return  10 +                    //10 base
+                    3*bow.level() + 2*lvl;  //+3 per bow level, +2 per level (default scaling +2)
+        } else if(woodencrossbow != null){
+            return  11 +                    //11 base
+                    3*bow.level() + 2*lvl;  //+3 per bow level, +2 per level (default scaling +2)
+        } else if(goldenbow != null){
+            return  8 +                     //8 base
+                    3*bow.level() + 2*lvl;  //+3 per bow level, +2 per level (default scaling +2)
+        } else if(smallbow != null){
+            return  6 +                     //6 base
+                    3*bow.level() + 2*lvl;  //+3 per bow level, +2 per level (default scaling +2)
+        } else {
 			return  2 +     //2 base, down from 5
 					2*lvl;  //scaling unchanged
 		}
 	}
 	
 	private static Crossbow bow;
+    private static GoldenCrossbow goldencrossbow;
+    private static IronCrossbow ironcrossbow;
+    private static SmallCrossbow smallcrossbow;
+    private static WoodenCrossbow woodencrossbow;
+    private static GoldenBow goldenbow;
+    private static SmallBow smallbow;
 	
 	private void updateCrossbow(){
 		if (Dungeon.hero.belongings.weapon instanceof Crossbow){
 			bow = (Crossbow) Dungeon.hero.belongings.weapon;
-		} else {
+			goldencrossbow = null;
+			ironcrossbow = null;
+			smallcrossbow = null;
+            woodencrossbow = null;
+            goldenbow = null;
+            smallbow = null;
+		} else if(Dungeon.hero.belongings.weapon instanceof GoldenCrossbow){
+		    goldencrossbow = (GoldenCrossbow) Dungeon.hero.belongings.weapon;
+		    bow = null;
+		    ironcrossbow = null;
+		    smallcrossbow = null;
+            woodencrossbow = null;
+            goldenbow = null;
+            smallbow = null;
+        } else if(Dungeon.hero.belongings.weapon instanceof IronCrossbow){
+            ironcrossbow = (IronCrossbow) Dungeon.hero.belongings.weapon;
+            bow = null;
+            goldencrossbow = null;
+            smallcrossbow = null;
+            woodencrossbow = null;
+            goldenbow = null;
+            smallbow = null;
+        } else if(Dungeon.hero.belongings.weapon instanceof SmallBow){
+            smallcrossbow = (SmallCrossbow) Dungeon.hero.belongings.weapon;
+            bow = null;
+            goldencrossbow = null;
+            ironcrossbow = null;
+            woodencrossbow = null;
+            goldenbow = null;
+            smallbow = null;
+        } else if(Dungeon.hero.belongings.weapon instanceof WoodenCrossbow){
+            woodencrossbow = (WoodenCrossbow) Dungeon.hero.belongings.weapon;
+            bow = null;
+            goldencrossbow = null;
+            ironcrossbow = null;
+            smallcrossbow = null;
+            goldenbow = null;
+            smallbow = null;
+        } else if(Dungeon.hero.belongings.weapon instanceof GoldenBow){
+            goldenbow = (GoldenBow) Dungeon.hero.belongings.weapon;
+            woodencrossbow = null;
+            bow = null;
+            goldencrossbow = null;
+            ironcrossbow = null;
+            smallcrossbow = null;
+            smallbow = null;
+        } else if(Dungeon.hero.belongings.weapon instanceof SmallBow){
+            smallbow = (SmallBow) Dungeon.hero.belongings.weapon;
+            goldenbow = null;
+            woodencrossbow = null;
+            bow = null;
+            goldencrossbow = null;
+            ironcrossbow = null;
+            smallcrossbow = null;
+        } else {
 			bow = null;
+			goldencrossbow = null;
+			ironcrossbow = null;
+			smallcrossbow = null;
 		}
 	}
 	
@@ -102,7 +193,11 @@ public class Dart extends MissileWeapon {
 	public boolean hasEnchant(Class<? extends Enchantment> type, Char owner) {
 		if (bow != null && bow.hasEnchant(type, owner)){
 			return true;
-		} else {
+		} else if(goldencrossbow != null && goldencrossbow.hasEnchant(type, owner)){
+            return true;
+        } else if(ironcrossbow != null && ironcrossbow.hasEnchant(type, owner)){
+            return true;
+        } else {
 			return super.hasEnchant(type, owner);
 		}
 	}
@@ -114,6 +209,11 @@ public class Dart extends MissileWeapon {
 			damage = bow.enchantment.proc(this, attacker, defender, damage);
 			level(0);
 		}
+        if (goldencrossbow != null && goldencrossbow.enchantment != null && attacker.buff(MagicImmune.class) == null){
+            level(goldencrossbow.level());
+            damage = goldencrossbow.enchantment.proc(this, attacker, defender, damage);
+            level(0);
+        }
 		return super.proc(attacker, defender, damage);
 	}
 	

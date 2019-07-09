@@ -31,7 +31,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FlavourBuff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Frost;
 import com.overgrownpixel.overgrownpixeldungeon.effects.MagicMissile;
 import com.overgrownpixel.overgrownpixeldungeon.items.Heap;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MagesStaff;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.staffs.MagesStaff;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.audio.Sample;

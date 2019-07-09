@@ -110,34 +110,102 @@ import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfMagicMissile;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfPrismaticLight;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfRegrowth;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfTransfusion;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.AssassinsBlade;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.BattleAxe;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Crossbow;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Dagger;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Dirk;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Flail;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Gauntlet;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Glaive;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Gloves;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Greataxe;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Greatshield;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Greatsword;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.HandAxe;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Longsword;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Mace;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MagesStaff;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.HookedWaraxe;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.TwoSidedWaraxe;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.Waraxe;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.AssassinsBlade;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.BattleAxe;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.bows.GoldenBow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.bows.SmallBow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.canes.CaneBlade;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.canes.CaneSaw;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.canes.StuddedCane;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.chains.KnifeChain;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.chains.Kusarigama;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.chains.ManrikiKusari;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.chains.Nunchaku;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.BarbedStaff;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.Club;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.ClubSword;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.Jutte;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.Kanabo;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.SpikedClub;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.SpikedStoneClub;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.Crossbow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.GoldenCrossbow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.IronCrossbow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.SmallCrossbow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.WoodenCrossbow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.curvedblades.Khopesh;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.curvedblades.PirateSabre;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.curvedblades.Sabre;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.fans.GunsenFan;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.fencing.DualFencingBlades;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.fencing.Rapier;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.ClawGlove;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.Knuckleduster;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.TekkoKagi;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.Yawara;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.grates.CheeseGrater;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.halberds.Halberd;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.halberds.TripleHookedHalberd;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.hammers.Otsuchi;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.hammers.SteelWarhammer;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.harpoons.Harpoon;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.knifes.ClawKnife;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.knifes.Dagger;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.knifes.Dirk;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.flails.Flail;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.Gauntlet;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.knifes.HornKnife;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.knifes.ManjiSai;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.longswords.AdornedLongsword;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.longswords.DoubleLongsword;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.longswords.SteelLongsword;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.mobweapons.gooweapons.GooWeapon;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.mobweapons.ratweapons.RatFangDagger;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.scythes.Scythe;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.scythes.ScytheWheel;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.scythes.SpikedScythe;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.shields.CrusaderKiteshield;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.shields.KiteShield;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.shields.ParagonShield;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.shields.Scyld;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.shields.SwordShield;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.spears.BambooSpear;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.spears.BroadSpear;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.spears.Glaive;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.Gloves;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.Greataxe;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.shields.Greatshield;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.spears.Lance;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.spears.Naginata;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.spears.PendulumSpear;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.spears.RoundedSpear;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.spears.Sasumata;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.swords.Greatsword;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.HandAxe;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.longswords.Longsword;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.Mace;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.staffs.MagesStaff;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MeleeWeapon;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Quarterstaff;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.RoundShield;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.RunicBlade;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Sai;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Scimitar;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Shortsword;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Spear;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Sword;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.WarHammer;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Whip;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.WornShortsword;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.Quarterstaff;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.shields.RoundShield;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.RunicBlade;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.knifes.Sai;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.curvedblades.Scimitar;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.shortswords.Shortsword;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.spears.Spear;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.swords.Katana;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.swords.Sword;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.hammers.WarHammer;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.swords.SwordWheel;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.tridents.TridentSpear;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.whips.ChainWhip;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.whips.NailWhip;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.whips.Whip;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.shortswords.WornShortsword;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.whips.WhipSword;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.HeavyBoomerang;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.Bolas;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.FishingSpear;
@@ -322,18 +390,44 @@ public class Generator {
 					WornShortsword.class,
 					Gloves.class,
 					Dagger.class,
-					MagesStaff.class
+					MagesStaff.class,
+                    StuddedCane.class,
+                    CheeseGrater.class,
+                    Otsuchi.class,
+                    Rapier.class,
+                    ClawKnife.class,
+                    HornKnife.class,
+                    Knuckleduster.class,
+                    Yawara.class,
+                    SmallBow.class,
+                    Club.class,
+                    RatFangDagger.class,
 			};
-			WEP_T1.probs = new float[]{ 1, 1, 1, 0 };
+			WEP_T1.probs = new float[]{ 0, 0, 0, 0, 3, 1, 2, 1, 2, 2, 1, 1, 1, 1, 0, };
 			
 			WEP_T2.classes = new Class<?>[]{
 					Shortsword.class,
 					HandAxe.class,
 					Spear.class,
 					Quarterstaff.class,
-					Dirk.class
+					Dirk.class,
+                    CaneSaw.class,
+                    Nunchaku.class,
+                    NailWhip.class,
+                    ChainWhip.class,
+                    Scyld.class,
+                    DualFencingBlades.class,
+                    Scythe.class,
+                    ClawGlove.class,
+                    WoodenCrossbow.class,
+                    Khopesh.class,
+                    HookedWaraxe.class,
+                    Jutte.class,
+                    SpikedStoneClub.class,
+                    Naginata.class,
+                    Sasumata.class,
 			};
-			WEP_T2.probs = new float[]{ 6, 5, 5, 4, 4 };
+			WEP_T2.probs = new float[]{ 6, 5, 5, 4, 4, 3, 3, 1, 1, 1, 1, 2, 1, 1, 2, 2, 1, 1, 2, 1 };
 			
 			WEP_T3.classes = new Class<?>[]{
 					Sword.class,
@@ -341,9 +435,24 @@ public class Generator {
 					Scimitar.class,
 					RoundShield.class,
 					Sai.class,
-					Whip.class
+					Whip.class,
+                    CaneBlade.class,
+                    KnifeChain.class,
+                    WhipSword.class,
+                    KiteShield.class,
+                    Halberd.class,
+                    ManjiSai.class,
+                    TekkoKagi.class,
+                    Harpoon.class,
+                    SmallCrossbow.class,
+                    Sabre.class,
+                    TwoSidedWaraxe.class,
+                    BarbedStaff.class,
+                    Kanabo.class,
+                    GooWeapon.class,
+                    PendulumSpear.class,
 			};
-			WEP_T3.probs = new float[]{ 6, 5, 5, 4, 4, 4 };
+			WEP_T3.probs = new float[]{ 6, 5, 5, 4, 4, 4, 3, 3, 2, 2, 2, 2, 1, 1, 1, 1, 3, 3, 1, 0, 1 };
 			
 			WEP_T4.classes = new Class<?>[]{
 					Longsword.class,
@@ -351,9 +460,24 @@ public class Generator {
 					Flail.class,
 					RunicBlade.class,
 					AssassinsBlade.class,
-					Crossbow.class
+					Crossbow.class,
+                    Kusarigama.class,
+                    TridentSpear.class,
+                    Katana.class,
+                    ParagonShield.class,
+                    CrusaderKiteshield.class,
+                    SteelWarhammer.class,
+                    ScytheWheel.class,
+                    IronCrossbow.class,
+                    AdornedLongsword.class,
+                    DoubleLongsword.class,
+                    PirateSabre.class,
+                    ClubSword.class,
+                    SpikedClub.class,
+                    BambooSpear.class,
+                    Lance.class,
 			};
-			WEP_T4.probs = new float[]{ 6, 5, 5, 4, 4, 4 };
+			WEP_T4.probs = new float[]{ 6, 5, 5, 4, 4, 4, 3, 2, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1 };
 			
 			WEP_T5.classes = new Class<?>[]{
 					Greatsword.class,
@@ -361,9 +485,21 @@ public class Generator {
 					Glaive.class,
 					Greataxe.class,
 					Greatshield.class,
-					Gauntlet.class
+					Gauntlet.class,
+                    ManrikiKusari.class,
+                    GunsenFan.class,
+                    SwordWheel.class,
+                    SwordShield.class,
+                    TripleHookedHalberd.class,
+                    SpikedScythe.class,
+                    GoldenBow.class,
+                    GoldenCrossbow.class,
+                    SteelLongsword.class,
+                    Waraxe.class,
+                    BroadSpear.class,
+                    RoundedSpear.class,
 			};
-			WEP_T5.probs = new float[]{ 6, 5, 5, 4, 4, 4 };
+			WEP_T5.probs = new float[]{ 6, 5, 5, 4, 4, 4, 3, 1, 1, 1, 2, 2, 1, 1, 1, 3, 1, 1 };
 			
 			//see Generator.randomArmor
 			ARMOR.classes = new Class<?>[]{
@@ -452,9 +588,9 @@ public class Generator {
 	}
 
 	private static final float[][] floorSetTierProbs = new float[][] {
-			{0, 70, 20,  8,  2},
-			{0, 25, 50, 20,  5},
-			{0, 10, 40, 40, 10},
+			{10, 60, 20,  8,  2},
+			{5, 20, 50, 20,  5},
+			{3, 7, 40, 40, 10},
 			{0,  5, 20, 50, 25},
 			{0,  2,  8, 20, 70}
 	};

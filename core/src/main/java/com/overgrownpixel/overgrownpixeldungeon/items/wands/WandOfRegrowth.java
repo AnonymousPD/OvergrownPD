@@ -31,7 +31,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.MagicMissile;
 import com.overgrownpixel.overgrownpixeldungeon.items.Dewdrop;
 import com.overgrownpixel.overgrownpixeldungeon.items.Generator;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Blooming;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MagesStaff;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.staffs.MagesStaff;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Level;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;

@@ -27,7 +27,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Recharging;
 import com.overgrownpixel.overgrownpixeldungeon.effects.SpellSprite;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MagesStaff;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.staffs.MagesStaff;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 

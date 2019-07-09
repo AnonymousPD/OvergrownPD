@@ -27,6 +27,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.Gloves;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.WelcomeScene;
 import com.watabou.noosa.Game;
@@ -71,7 +72,7 @@ public class OvergrownPixelDungeon extends Game {
 				"com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.Boomerang" );
 		
 		com.watabou.utils.Bundle.addAlias(
-				com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Gloves.class,
+				Gloves.class,
 				"com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Knuckles" );
 		
 		//v0.7.2

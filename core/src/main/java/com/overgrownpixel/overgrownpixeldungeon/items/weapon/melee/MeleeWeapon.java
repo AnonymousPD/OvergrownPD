@@ -25,8 +25,35 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.HookedWaraxe;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.AssassinsBlade;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.chains.KnifeChain;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.chains.Kusarigama;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.chains.ManrikiKusari;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.chains.Nunchaku;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.BarbedStaff;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.SpikedClub;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.SpikedStoneClub;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.fans.GunsenFan;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.ClawGlove;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.TekkoKagi;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.Yawara;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.grates.CheeseGrater;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.harpoons.Harpoon;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.knifes.ClawKnife;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.knifes.Dagger;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.knifes.Dirk;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.knifes.HornKnife;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.scythes.SpikedScythe;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.spears.Sasumata;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.whips.ChainWhip;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.whips.NailWhip;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.Bolas;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.watabou.utils.Random;
+
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class MeleeWeapon extends Weapon {
 	
@@ -83,8 +110,47 @@ public class MeleeWeapon extends Weapon {
 			}
 		}
 
-		String statsInfo = statsInfo();
-		if (!statsInfo.equals("")) info += "\n\n" + statsInfo;
+		if(ACC != 1f && levelKnown) info += "\n" + getAccPercent(ACC);
+        if(DLY != 1f && levelKnown) info += "\n" + getDlyPercent(DLY);
+        if(RCH != 1 && levelKnown) info += "\n" + Messages.get(this, "reach_info", RCH);
+        if(defenseFactor(curUser) != 0) info += "\n" + Messages.get(this, "defense_info", defenseFactor(curUser));
+
+        if(this instanceof AssassinsBlade ||
+                this instanceof Dagger ||
+                this instanceof Dirk ||
+                this instanceof Yawara){
+            info += "\n" + Messages.get(this, "suprise_attack_info");
+        }
+        if(this instanceof CheeseGrater ||
+                this instanceof BarbedStaff ||
+                this instanceof ClawGlove ||
+                this instanceof ClawKnife ||
+                this instanceof GunsenFan ||
+                this instanceof HookedWaraxe ||
+                this instanceof KnifeChain ||
+                this instanceof Kusarigama ||
+                this instanceof NailWhip ||
+                this instanceof SpikedClub ||
+                this instanceof SpikedScythe ||
+                this instanceof SpikedStoneClub ||
+                this instanceof TekkoKagi){
+            info += "\n" + Messages.get(this, "bleeding_proc_info");
+        }
+        if(this instanceof ChainWhip ||
+                this instanceof HornKnife ||
+                this instanceof Kusarigama ||
+                this instanceof ManrikiKusari ||
+                this instanceof Nunchaku ||
+                this instanceof Sasumata){
+            info += "\n" + Messages.get(this, "cripple_proc_info");
+        }
+        if(this instanceof Harpoon){
+            info += "\n" + Messages.get(this, "pulling_proc_info");
+        }
+        if(this instanceof GunsenFan){
+            info += "\n" + Messages.get(this, "pushing_proc_info");
+        }
+
 
 		switch (augment) {
 			case SPEED:
@@ -111,10 +177,32 @@ public class MeleeWeapon extends Weapon {
 		
 		return info;
 	}
-	
-	public String statsInfo(){
-		return Messages.get(this, "stats_desc");
-	}
+
+	public String getAccPercent(float f){
+	    NumberFormat format = NumberFormat.getPercentInstance(Locale.US);
+	    if(f > 1f){
+	        float newf = f-1f;
+	        String percentage = format.format(newf);
+	       return Messages.get(MeleeWeapon.class, "more_acc_info", percentage);
+        } else {
+	        float newf = 1f-f;
+            String percentage = format.format(newf);
+            return Messages.get(MeleeWeapon.class, "less_acc_info", percentage);
+        }
+    }
+
+    public String getDlyPercent(float f){
+        NumberFormat format = NumberFormat.getPercentInstance(Locale.US);
+        if(f > 1f){
+            float newf = f-1f;
+            String percentage = format.format(newf);
+            return  Messages.get(MeleeWeapon.class, "slower_dly_info", percentage);
+        } else {
+            float newf = 1f-f;
+            String percentage = format.format(newf);
+            return Messages.get(MeleeWeapon.class, "faster_dly_info", percentage);
+        }
+    }
 	
 	@Override
 	public int price() {

@@ -42,7 +42,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.armor.PlateArmor;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.ScaleArmor;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MeleeWeapon;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Shortsword;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.shortswords.Shortsword;
 import com.overgrownpixel.overgrownpixeldungeon.journal.Notes;
 import com.overgrownpixel.overgrownpixeldungeon.levels.SewerLevel;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;

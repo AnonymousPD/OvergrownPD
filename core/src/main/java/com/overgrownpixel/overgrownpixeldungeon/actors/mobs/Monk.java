@@ -29,8 +29,17 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.npcs.Imp;
 import com.overgrownpixel.overgrownpixeldungeon.items.KindOfWeapon;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.Food;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Gauntlet;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Gloves;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gemweapons.gloves.EmeraldGauntlet;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gemweapons.gloves.IceKnuckleduster;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gemweapons.gloves.IoliteGauntlet;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gemweapons.gloves.IoliteGlove;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gemweapons.gloves.RubyGlove;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.ClawGlove;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.Gauntlet;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.Gloves;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.Knuckleduster;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.TekkoKagi;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.Yawara;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.MonkSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
@@ -95,6 +104,15 @@ public class Monk extends Mob {
 			if (weapon != null
 					&& !(weapon instanceof Gloves)
 					&& !(weapon instanceof Gauntlet)
+                    && !(weapon instanceof ClawGlove)
+                    && !(weapon instanceof Knuckleduster)
+                    && !(weapon instanceof TekkoKagi)
+                    && !(weapon instanceof Yawara)
+                    && !(weapon instanceof IceKnuckleduster)
+                    && !(weapon instanceof RubyGlove)
+                    && !(weapon instanceof IoliteGlove)
+                    && !(weapon instanceof IoliteGauntlet)
+                    && !(weapon instanceof EmeraldGauntlet)
 					&& !weapon.cursed) {
 				if (hitsToDisarm == 0) hitsToDisarm = Random.NormalIntRange(4, 8);
 

@@ -23,9 +23,9 @@ package com.overgrownpixel.overgrownpixeldungeon.ui.changelist;
 
 import com.overgrownpixel.overgrownpixeldungeon.items.Stylus;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.PlateArmor;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Glaive;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Longsword;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.RunicBlade;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.spears.Glaive;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.longswords.Longsword;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.RunicBlade;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.ChangesScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;

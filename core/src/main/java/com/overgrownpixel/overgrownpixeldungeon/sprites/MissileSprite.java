@@ -24,7 +24,8 @@ package com.overgrownpixel.overgrownpixeldungeon.sprites;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.SpiritBow;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Crossbow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.Crossbow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.harpoons.Harpoon;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.Bolas;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.FishingSpear;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.HeavyBoomerang;
@@ -142,8 +143,9 @@ public class MissileSprite extends ItemSprite implements Tweener.Listener {
 		float speed = SPEED;
 		if (item instanceof Dart && Dungeon.hero.belongings.weapon instanceof Crossbow){
 			speed *= 3f;
-			
-		} else if (item instanceof SpiritBow.SpiritArrow
+		} else if(item instanceof Dart && Dungeon.hero.belongings.weapon instanceof Harpoon){
+            speed *= 2.5f;
+        } else if (item instanceof SpiritBow.SpiritArrow
 				|| item instanceof ScorpioSprite.ScorpioShot
 				|| item instanceof TenguSprite.TenguShuriken){
 			speed *= 1.5f;

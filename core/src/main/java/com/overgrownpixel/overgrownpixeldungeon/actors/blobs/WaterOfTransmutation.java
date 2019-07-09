@@ -37,7 +37,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.Scroll;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfUpgrade;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.Wand;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MagesStaff;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.staffs.MagesStaff;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MeleeWeapon;
 import com.overgrownpixel.overgrownpixeldungeon.journal.Catalog;
 import com.overgrownpixel.overgrownpixeldungeon.journal.Notes.Landmark;

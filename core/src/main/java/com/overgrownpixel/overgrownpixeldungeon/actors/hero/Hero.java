@@ -96,7 +96,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfUpgrade;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.SpiritBow;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Blocking;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Flail;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.flails.Flail;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.overgrownpixel.overgrownpixeldungeon.journal.Notes;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Level;
@@ -1065,6 +1065,10 @@ public class Hero extends Char {
 	public int visibleEnemies() {
 		return visibleEnemies.size();
 	}
+
+    public ArrayList<Mob> visibleEnemiesList() {
+        return visibleEnemies;
+    }
 	
 	public Mob visibleEnemy( int index ) {
 		return visibleEnemies.get(index % visibleEnemies.size());

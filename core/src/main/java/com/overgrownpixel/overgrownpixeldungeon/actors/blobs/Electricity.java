@@ -32,7 +32,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.particles.SparkParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.Heap;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.Wand;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MagesStaff;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.staffs.MagesStaff;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Languages;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;

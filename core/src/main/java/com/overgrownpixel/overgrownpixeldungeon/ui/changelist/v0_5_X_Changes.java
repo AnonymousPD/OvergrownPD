@@ -22,7 +22,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.ui.changelist;
 
 import com.overgrownpixel.overgrownpixeldungeon.items.Stylus;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.Quarterstaff;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.Quarterstaff;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.ChangesScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
