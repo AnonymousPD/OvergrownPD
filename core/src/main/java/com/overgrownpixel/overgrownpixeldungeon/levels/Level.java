@@ -69,6 +69,8 @@ import com.overgrownpixel.overgrownpixeldungeon.plants.Swiftthistle;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.CustomTilemap;
+import com.overgrownpixel.overgrownpixeldungeon.tiles.shadows.WallShadows;
+import com.overgrownpixel.overgrownpixeldungeon.tiles.wallfauna.WallFauna;
 import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.noosa.Game;
@@ -136,6 +138,8 @@ public abstract class Level implements Bundlable {
 	public HashMap<Class<? extends Blob>,Blob> blobs;
 	public SparseArray<Plant> plants;
 	public SparseArray<Trap> traps;
+    public SparseArray<WallFauna> fauna;
+    public SparseArray<WallShadows> shadows;
 	public HashSet<CustomTilemap> customTiles;
 	public HashSet<CustomTilemap> customWalls;
 	
@@ -157,6 +161,8 @@ public abstract class Level implements Bundlable {
 	private static final String LOCKED      = "locked";
 	private static final String HEAPS		= "heaps";
 	private static final String PLANTS		= "plants";
+    private static final String FAUNA       = "fauna";
+    private static final String SHADOWS     = "shadows";
 	private static final String TRAPS       = "traps";
 	private static final String CUSTOM_TILES= "customTiles";
 	private static final String CUSTOM_WALLS= "customWalls";
@@ -246,6 +252,8 @@ public abstract class Level implements Bundlable {
 			heaps = new SparseArray<>();
 			blobs = new HashMap<>();
 			plants = new SparseArray<>();
+            fauna = new SparseArray<>();
+            shadows = new SparseArray<>();
 			traps = new SparseArray<>();
 			customTiles = new HashSet<>();
 			customWalls = new HashSet<>();
@@ -313,6 +321,8 @@ public abstract class Level implements Bundlable {
 		heaps = new SparseArray<>();
 		blobs = new HashMap<>();
 		plants = new SparseArray<>();
+        fauna = new SparseArray<>();
+        shadows = new SparseArray<>();
 		traps = new SparseArray<>();
 		customTiles = new HashSet<>();
 		customWalls = new HashSet<>();
@@ -339,6 +349,18 @@ public abstract class Level implements Bundlable {
 			Plant plant = (Plant)p;
 			plants.put( plant.pos, plant );
 		}
+
+        collection = bundle.getCollection( FAUNA );
+        for (Bundlable p : collection) {
+            WallFauna faunas = (WallFauna)p;
+            fauna.put( faunas.pos, faunas );
+        }
+
+        collection = bundle.getCollection( SHADOWS );
+        for (Bundlable p : collection) {
+            WallShadows shadow = (WallShadows) p;
+            shadows.put( shadow.pos, shadow );
+        }
 
 		collection = bundle.getCollection( TRAPS );
 		for (Bundlable p : collection) {
@@ -399,6 +421,8 @@ public abstract class Level implements Bundlable {
 		bundle.put( LOCKED, locked );
 		bundle.put( HEAPS, heaps.values() );
 		bundle.put( PLANTS, plants.values() );
+        bundle.put( FAUNA, fauna.values() );
+        bundle.put( SHADOWS, shadows.values() );
 		bundle.put( TRAPS, traps.values() );
 		bundle.put( CUSTOM_TILES, customTiles );
 		bundle.put( CUSTOM_WALLS, customWalls );
@@ -759,6 +783,28 @@ public abstract class Level implements Bundlable {
 		GameScene.updateMap( pos );
 		return trap;
 	}
+
+    public WallFauna setFauna( WallFauna faunas, int pos ){
+        WallFauna existingPlate = fauna.get(pos);
+        if (existingPlate != null){
+            fauna.remove( pos );
+        }
+        faunas.set( pos );
+        fauna.put( pos, faunas );
+        GameScene.updateMap( pos );
+        return faunas;
+    }
+
+    public WallShadows setShadows( WallShadows shadow , int pos ){
+        WallShadows existingPlate = shadows.get(pos);
+        if (existingPlate != null){
+            shadows.remove( pos );
+        }
+        shadow.set( pos );
+        shadows.put( pos, shadow );
+        GameScene.updateMap( pos );
+        return shadow;
+    }
 
 	public void disarmTrap( int pos ) {
 		set(pos, Terrain.INACTIVE_TRAP);

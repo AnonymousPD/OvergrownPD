@@ -621,7 +621,7 @@ public class ItemSpriteSheet {
 	public static final int BLINDING_DART   = TIPPED_DARTS+11;
 	static {
 		for (int i = TIPPED_DARTS; i < TIPPED_DARTS+16; i++)
-			assignItemRect(i, 15, 15);
+			assignItemRect(i, 16, 16);
 	}
 	
 	private static final int ARMOR          =                               xy(1, 19);  //16 slots

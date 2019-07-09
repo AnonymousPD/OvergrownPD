@@ -323,6 +323,36 @@ public abstract class Room extends Rect implements Graph.Node, Bundlable {
 		}
 		return points;
 	}
+
+    public boolean canPlaceFauna(Point p){
+        return inside(p);
+    }
+
+    public final ArrayList<Point> faunaPlaceablePoints(){
+        ArrayList<Point> points = new ArrayList<>();
+        for (int i = left; i <= right; i++) {
+            for (int j = top; j <= bottom; j++) {
+                Point p = new Point(i, j);
+                if (canPlaceFauna(p)) points.add(p);
+            }
+        }
+        return points;
+    }
+
+    public boolean canPlaceShadows(Point p){
+        return inside(p);
+    }
+
+    public final ArrayList<Point> shadowsPlaceableShadows(){
+        ArrayList<Point> points = new ArrayList<>();
+        for (int i = left; i <= right; i++) {
+            for (int j = top; j <= bottom; j++) {
+                Point p = new Point(i, j);
+                if (canPlaceShadows(p)) points.add(p);
+            }
+        }
+        return points;
+    }
 	
 	// **** Graph.Node interface ****
 

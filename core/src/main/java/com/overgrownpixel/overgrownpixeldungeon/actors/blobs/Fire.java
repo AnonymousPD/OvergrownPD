@@ -32,6 +32,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.Heap;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
+import com.watabou.utils.PathFinder;
 
 public class Fire extends Blob {
 
@@ -111,6 +112,16 @@ public class Fire extends Blob {
 		if (plant != null){
 			plant.wither();
 		}
+
+        if(Dungeon.level.fauna.get(pos) != null){
+            Dungeon.level.fauna.get(pos).wither();
+        }
+
+        for(int i : PathFinder.NEIGHBOURS8){
+            if(Dungeon.level.fauna.get(pos+i) != null){
+                Dungeon.level.fauna.get(pos+i).wither();
+            }
+        }
 	}
 	
 	@Override

@@ -130,7 +130,7 @@ public class v0_4_X_Changes {
 				"Class Balance Changes:\n" +
 				"_-_ Mage's Staff melee damage increased\n" +
 				"_-_ Mage's Staff can now preserve one upgrade\n" +
-				"_-_ Cloak of Shadows buffed at lower levels\n" +
+				"_-_ Cloak of WallShadows buffed at lower levels\n" +
 				"_-_ Some Battlemage effects changed\n" +
 				"\n" +
 				"Wand Balance Changes:\n" +

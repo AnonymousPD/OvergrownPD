@@ -110,7 +110,7 @@ public class v0_2_X_Changes {
 				"_-_ Dried Rose\n\n" +
 				"_-_ Artifacts are now unique over each run\n" +
 				"_-_ Artifacts can now be cursed!\n" +
-				"_-_ Cloak of Shadows is now exclusive to the rogue\n" +
+				"_-_ Cloak of WallShadows is now exclusive to the rogue\n" +
 				"_-_ Smaller Balance Changes and QOL improvements to almost every artifact"));
 		
 		changes.addButton( new ChangeButton(new ItemSprite(ItemSpriteSheet.POTION_CRIMSON, null), "Balance Changes",
@@ -208,7 +208,7 @@ public class v0_2_X_Changes {
 				"Added artifacts to the game!\n\n" +
 				"Artifacts are unique items which offer new gameplay opportunities and grow stronger through unique means.\n\n" +
 				"Removed 7 Rings... And Replaced them with 7 Artifacts!\n" +
-				"_-_ Ring of Shadows becomes Cloak of Shadows\n" +
+				"_-_ Ring of WallShadows becomes Cloak of WallShadows\n" +
 				"_-_ Ring of Satiety becomes Horn of Plenty\n" +
 				"_-_ Ring of Mending becomes Chalice of Blood\n" +
 				"_-_ Ring of Thorns becomes Cape of Thorns\n" +

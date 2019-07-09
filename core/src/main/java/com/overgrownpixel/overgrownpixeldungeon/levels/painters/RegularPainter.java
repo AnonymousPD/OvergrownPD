@@ -29,6 +29,8 @@ import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
 import com.overgrownpixel.overgrownpixeldungeon.levels.rooms.Room;
 import com.overgrownpixel.overgrownpixeldungeon.levels.rooms.standard.EmptyRoom;
 import com.overgrownpixel.overgrownpixeldungeon.levels.traps.Trap;
+import com.overgrownpixel.overgrownpixeldungeon.tiles.shadows.Shadows;
+import com.overgrownpixel.overgrownpixeldungeon.tiles.wallfauna.Vines;
 import com.watabou.utils.Graph;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Point;
@@ -67,6 +69,20 @@ public abstract class RegularPainter extends Painter {
 		trapChances = chances;
 		return this;
 	}
+
+    private int faunaFill = 0;
+
+    public RegularPainter setFauna(int fill){
+        faunaFill = fill;
+        return this;
+    }
+
+    private int shadowsFill = 0;
+
+    public RegularPainter setShadows(int fill){
+        shadowsFill = fill;
+        return this;
+    }
 	
 	@Override
 	public boolean paint(Level level, ArrayList<Room> rooms) {
@@ -127,6 +143,14 @@ public abstract class RegularPainter extends Painter {
 		if (nTraps > 0){
 			paintTraps( level, rooms );
 		}
+
+        if (faunaFill > 0){
+            paintFauna( level, rooms );
+        }
+
+        if (shadowsFill > 0){
+            paintShadows( level, rooms );
+        }
 		
 		decorate( level, rooms );
 		
@@ -366,5 +390,133 @@ public abstract class RegularPainter extends Painter {
 			}
 		}
 	}
+
+    protected void paintFauna( Level l, ArrayList<Room> rooms ) {
+        //a list of all possible fauna cells
+        ArrayList<Integer> faunaCells = new ArrayList<>();
+
+        //this is used when basing the fauna generation on rooms
+        if (!rooms.isEmpty()){
+            for (Room r : rooms){
+                for (Point p : r.faunaPlaceablePoints()){
+                    int i = l.pointToCell(p);
+                    if(Random.Float() <= 0.33f){
+                        if (l.map[i] == Terrain.WALL || l.map[i] == Terrain.WALL_DECO){
+                            if(l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY ||
+                                    l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY_SP ||
+                                    l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY_DECO ||
+                                    l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY_WELL){
+                                faunaCells.add(i);
+                                for(int n : PathFinder.NEIGHBOURS8){
+                                    if(faunaCells.contains(i+n)){
+                                        faunaCells.remove((Object)i);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
+            //this is used for depths that do not use rooms
+            for (int i = 0; i < l.length(); i ++) {
+                if(Random.Float() <= 0.33f){
+                    if (l.map[i] == Terrain.WALL || l.map[i] == Terrain.WALL_DECO){
+                        if(l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY ||
+                                l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY_SP ||
+                                l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY_DECO ||
+                                l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY_WELL){
+                            faunaCells.add(i);
+                            if(Random.Float() > 0.33f){
+                                for(int n : PathFinder.NEIGHBOURS8){
+                                    if(faunaCells.contains(i+n)){
+                                        faunaCells.remove((Object)i);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        if(!faunaCells.isEmpty()){
+            for(int i = faunaFill; i > 0; i--){
+                if(!faunaCells.isEmpty()){
+                    int p = Random.element(faunaCells);
+                    if(l.map[p] == Terrain.WALL || l.map[p] == Terrain.WALL_DECO){
+                        Vines vines = new Vines();
+                        vines.pos = p;
+                        l.fauna.put(p, vines);
+                        faunaCells.remove((Object)p);
+                    }
+                }
+            }
+        }
+    }
+
+    protected void paintShadows( Level l, ArrayList<Room> rooms ) {
+        //a list of all possible fauna cells
+        ArrayList<Integer> shadowCells = new ArrayList<>();
+
+        //this is used when basing the fauna generation on rooms
+        if (!rooms.isEmpty()){
+            for (Room r : rooms){
+                for (Point p : r.shadowsPlaceableShadows()){
+                    int i = l.pointToCell(p);
+                    if(Random.Float() <= 0.33f){
+                        if (l.map[i] == Terrain.WALL || l.map[i] == Terrain.WALL_DECO){
+                            if(l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY ||
+                                    l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY_SP ||
+                                    l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY_DECO ||
+                                    l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY_WELL){
+                                shadowCells.add(i);
+                                for(int n : PathFinder.NEIGHBOURS8){
+                                    if(shadowCells.contains(i+n)){
+                                        shadowCells.remove((Object)i);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
+            //this is used for depths that do not use rooms
+            for (int i = 0; i < l.length(); i ++) {
+                if(Random.Float() <= 0.33f){
+                    if (l.map[i] == Terrain.WALL || l.map[i] == Terrain.WALL_DECO){
+                        if(l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY ||
+                                l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY_SP ||
+                                l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY_DECO ||
+                                l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY_WELL){
+                            shadowCells.add(i);
+                            if(Random.Float() > 0.33f){
+                                for(int n : PathFinder.NEIGHBOURS8){
+                                    if(shadowCells.contains(i+n)){
+                                        shadowCells.remove((Object)i);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        if(!shadowCells.isEmpty()){
+            for(int i = shadowsFill; i > 0; i--){
+                if(!shadowCells.isEmpty()){
+                    int p = Random.element(shadowCells);
+                    if(l.map[p] == Terrain.WALL || l.map[p] == Terrain.WALL_DECO){
+                        Shadows shadows = new Shadows();
+                        shadows.pos = p;
+                        l.shadows.put(p, shadows);
+                        shadowCells.remove((Object)p);
+                    }
+                }
+            }
+        }
+    }
 	
 }

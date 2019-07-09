@@ -26,6 +26,8 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
 import com.overgrownpixel.overgrownpixeldungeon.levels.traps.Trap;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
+import com.overgrownpixel.overgrownpixeldungeon.tiles.shadows.WallShadows;
+import com.overgrownpixel.overgrownpixeldungeon.tiles.wallfauna.WallFauna;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.tweeners.ScaleTweener;
 import com.watabou.utils.PointF;
@@ -39,12 +41,16 @@ public class TerrainFeaturesTilemap extends DungeonTilemap {
 
 	private SparseArray<Plant> plants;
 	private SparseArray<Trap> traps;
+    private SparseArray<WallFauna> fauna;
+    private SparseArray<WallShadows> shadows;
 
-	public TerrainFeaturesTilemap(SparseArray<Plant> plants, SparseArray<Trap> traps) {
+	public TerrainFeaturesTilemap(SparseArray<Plant> plants, SparseArray<Trap> traps, SparseArray<WallFauna> fauna, SparseArray<WallShadows> shadows) {
 		super(Assets.TERRAIN_FEATURES);
 
 		this.plants = plants;
 		this.traps = traps;
+        this.fauna = fauna;
+        this.shadows = shadows;
 
 		map( Dungeon.level.map, Dungeon.level.width() );
 
@@ -63,6 +69,14 @@ public class TerrainFeaturesTilemap extends DungeonTilemap {
 		if (plants.get(pos) != null){
 			return plants.get(pos).image + 7*16;
 		}
+
+        if (fauna.get(pos) != null){
+            return fauna.get(pos).image + 11*16;
+        }
+
+        if (shadows.get(pos) != null){
+            return shadows.get(pos).image + 15*16;
+        }
 
 		int stage = (Dungeon.depth-1)/5;
 		if (Dungeon.depth == 21) stage--;

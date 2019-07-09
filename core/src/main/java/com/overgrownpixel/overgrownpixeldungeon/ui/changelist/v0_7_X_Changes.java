@@ -325,7 +325,7 @@ public class v0_7_X_Changes {
 		
 		changes.addButton( new ChangeButton(new Image(Assets.SPINNER, 144, 0, 16, 16), Messages.get(ChangesScene.class, "bugfixes"),
 				"Fixed (existed before 0.7.2):\n" +
-				"_-_ Cloak of Shadows very rarely consuming more charges than it should\n" +
+				"_-_ Cloak of WallShadows very rarely consuming more charges than it should\n" +
 				"_-_ Assassin's blink not working on enemies standing on traps\n" +
 				"_-_ Glyph of stone blocking an incorrect amount of damage (too low) in some cases\n" +
 				"_-_ Hourglass not updating charges correctly in some cases\n" +

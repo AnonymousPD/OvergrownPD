@@ -518,7 +518,7 @@ public class v0_6_X_Changes {
 				"These abilities have been _added:_\n" +
 				"_-_ Searches in a wider radius than other heroes\n" +
 				"_-_ Is able to find more secrets in the dungeon\n\n" +
-				"Make sure to check out the Cloak of Shadows and Dagger changes as well."));
+				"Make sure to check out the Cloak of WallShadows and Dagger changes as well."));
 		
 		changes.addButton( new ChangeButton( new Image(Assets.ROGUE, 0, 90, 12, 15), "Rogue Subclasses Rework!",
 				"Both of the rogue's subclasses has been reworked, with an emphasis on more powerful abilities that need more interaction from the player.\n\n" +

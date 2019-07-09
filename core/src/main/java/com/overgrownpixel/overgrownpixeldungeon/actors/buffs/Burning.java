@@ -42,6 +42,7 @@ import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.utils.Bundle;
+import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;
 
 import java.util.ArrayList;
@@ -81,6 +82,12 @@ public class Burning extends Buff implements Hero.Doom {
 	public boolean act() {
 		
 		if (target.isAlive() && !target.isImmune(getClass())) {
+
+            for(int i : PathFinder.NEIGHBOURS8){
+                if(Dungeon.level.fauna.get(target.pos+i) != null){
+                    Dungeon.level.fauna.get(target.pos+i).wither();
+                }
+            }
 			
 			int damage = Random.NormalIntRange( 1, 3 + Dungeon.depth/4 );
 			Buff.detach( target, Chill.class);
