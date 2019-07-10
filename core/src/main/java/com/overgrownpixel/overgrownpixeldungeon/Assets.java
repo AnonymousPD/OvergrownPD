@@ -96,6 +96,8 @@ public class Assets {
 	public static final String ROT_LASH = "mobs/minibosses/rot_lasher.png";
 	public static final String ROT_HEART= "mobs/minibosses/rot_heart.png";
 	public static final String GUARD    = "mobs/guard.png";
+    public static final String PLANTS	= "mobs/livingplants.png";
+    public static final String FLAMEB01	= "mobs/dwarven_flameboi.png";
 
 	public static final String ITEMS	        = "items.png";
 	public static final String TERRAIN_FEATURES	= "tiles/terrain_features.png";
