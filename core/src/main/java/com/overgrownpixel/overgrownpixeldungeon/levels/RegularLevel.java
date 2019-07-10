@@ -309,7 +309,7 @@ public abstract class RegularLevel extends Level {
 			default:
 				type = Heap.Type.HEAP;
 			}
-			int cell = randomDropCell();
+            int cell = randomDropCell();
 			if (map[cell] == Terrain.HIGH_GRASS || map[cell] == Terrain.FURROWED_GRASS) {
 				map[cell] = Terrain.GRASS;
 				losBlocking[cell] = false;
@@ -337,7 +337,7 @@ public abstract class RegularLevel extends Level {
 		}
 
 		for (Item item : itemsToSpawn) {
-			int cell = randomDropCell();
+            int cell = randomDropCell();
 			drop( item, cell ).type = Heap.Type.HEAP;
 			if (map[cell] == Terrain.HIGH_GRASS || map[cell] == Terrain.FURROWED_GRASS) {
 				map[cell] = Terrain.GRASS;
@@ -347,7 +347,7 @@ public abstract class RegularLevel extends Level {
 		
 		Item item = Bones.get();
 		if (item != null) {
-			int cell = randomDropCell();
+            int cell = randomDropCell();
 			if (map[cell] == Terrain.HIGH_GRASS || map[cell] == Terrain.FURROWED_GRASS) {
 				map[cell] = Terrain.GRASS;
 				losBlocking[cell] = false;
@@ -374,7 +374,7 @@ public abstract class RegularLevel extends Level {
 		if (missingPages.size() > 0 && Random.Float() < (Dungeon.depth/(float)(foundPages + 1))){
 			GuidePage p = new GuidePage();
 			p.page(missingPages.get(0));
-			int cell = randomDropCell();
+            int cell = randomDropCell();
 			if (map[cell] == Terrain.HIGH_GRASS || map[cell] == Terrain.FURROWED_GRASS) {
 				map[cell] = Terrain.GRASS;
 				losBlocking[cell] = false;
