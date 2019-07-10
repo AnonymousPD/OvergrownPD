@@ -101,6 +101,66 @@ public class Fadeleaf extends Plant {
 			CellEmitter.get( pos ).start( Speck.factory( Speck.LIGHT ), 0.2f, 3 );
 		}
 	}
+
+    @Override
+    public void activate() {
+
+    }
+
+    @Override
+    public void attackProc(Char enemy, int damage) {
+        if (enemy instanceof Hero) {
+
+            ((Hero)enemy).curAction = null;
+
+            if (((Hero) enemy).subClass == HeroSubClass.WARDEN){
+
+                if (Dungeon.bossLevel()) {
+                    GLog.w( Messages.get(ScrollOfTeleportation.class, "no_tele") );
+                    return;
+
+                }
+
+                Buff buff = Dungeon.hero.buff(TimekeepersHourglass.timeFreeze.class);
+                if (buff != null) buff.detach();
+                buff = Dungeon.hero.buff(Swiftthistle.TimeBubble.class);
+                if (buff != null) buff.detach();
+
+                InterlevelScene.mode = InterlevelScene.Mode.RETURN;
+                InterlevelScene.returnDepth = Math.max(1, (Dungeon.depth - 1));
+                InterlevelScene.returnPos = -2;
+                Game.switchScene( InterlevelScene.class );
+
+            } else {
+                ScrollOfTeleportation.teleportHero((Hero) enemy);
+            }
+
+        } else if (enemy instanceof Mob && !enemy.properties().contains(Char.Property.IMMOVABLE)) {
+
+            int count = 10;
+            int newPos;
+            do {
+                newPos = Dungeon.level.randomRespawnCell();
+                if (count-- <= 0) {
+                    break;
+                }
+            } while (newPos == -1);
+
+            if (newPos != -1 && !Dungeon.bossLevel()) {
+
+                enemy.pos = newPos;
+                if (((Mob) enemy).state == ((Mob) enemy).HUNTING) ((Mob) enemy).state = ((Mob) enemy).WANDERING;
+                enemy.sprite.place( enemy.pos );
+                enemy.sprite.visible = Dungeon.level.heroFOV[enemy.pos];
+
+            }
+
+        }
+
+        if (Dungeon.level.heroFOV[pos]) {
+            CellEmitter.get( pos ).start( Speck.factory( Speck.LIGHT ), 0.2f, 3 );
+        }
+    }
 	
 	public static class Seed extends Plant.Seed {
 		{

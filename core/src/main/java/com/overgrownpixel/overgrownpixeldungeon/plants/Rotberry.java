@@ -48,6 +48,18 @@ public class Rotberry extends Plant {
 		
 		Dungeon.level.drop( new Seed(), pos ).sprite.drop();
 	}
+
+    @Override
+    public void activate() {
+
+    }
+
+    @Override
+    public void attackProc(Char enemy, int damage) {
+        if (enemy instanceof Hero && ((Hero) enemy).subClass == HeroSubClass.WARDEN){
+            Buff.affect(enemy, AdrenalineSurge.class).reset(1, 200f);
+        }
+    }
 	
 	@Override
 	public void wither() {

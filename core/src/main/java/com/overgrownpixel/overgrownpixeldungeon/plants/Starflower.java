@@ -55,6 +55,21 @@ public class Starflower extends Plant {
 		}
 	}
 
+    @Override
+    public void activate() {
+
+    }
+
+    @Override
+    public void attackProc(Char enemy, int damage) {
+        if (enemy != null) {
+            Buff.prolong(enemy, Bless.class, Bless.DURATION);
+            if (enemy instanceof Hero && ((Hero) enemy).subClass == HeroSubClass.WARDEN){
+                Buff.prolong(enemy, Recharging.class, Bless.DURATION);
+            }
+        }
+    }
+
 	public static class Seed extends Plant.Seed{
 
 		{

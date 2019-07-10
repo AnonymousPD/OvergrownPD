@@ -905,7 +905,7 @@ public class ItemSpriteSheet {
         assignItemRect(SEASONCHANGE,    11, 11);
     }
 
-    private static final int SPELLS_ROW2            =                               xy(1, 39);  //16 slots
+    private static final int SPELLS_ROW2            =                               xy(1, 36);  //16 slots
     public static final int PLANT_SUMMON            = SPELLS_ROW2+0;
     public static final int NATURES_LULLABY         = SPELLS_ROW2+1;
     public static final int SPONTANEOUS_COMBUSTION  = SPELLS_ROW2+2;
@@ -919,7 +919,7 @@ public class ItemSpriteSheet {
         assignItemRect(WILD_ENEGRY,               8, 16);
     }
 	
-	private static final int FOOD       =                                   xy(1, 40);  //16 slots
+	private static final int FOOD       =                                   xy(1, 37);  //16 slots
 	public static final int MEAT        = FOOD+0;
 	public static final int STEAK       = FOOD+1;
 	public static final int STEWED      = FOOD+2;
@@ -947,7 +947,7 @@ public class ItemSpriteSheet {
 		assignItemRect(BLAND_CHUNKS,14, 6);
 	}
 
-	private static final int QUEST  =                                       xy(1, 41);  //32 slots
+	private static final int QUEST  =                                       xy(1, 38);  //32 slots
 	public static final int SKULL   = QUEST+0;
 	public static final int DUST    = QUEST+1;
 	public static final int CANDLE  = QUEST+2;
@@ -969,7 +969,7 @@ public class ItemSpriteSheet {
 		assignItemRect(SHARD,    8, 10);
 	}
 
-	private static final int BAGS       =                                   xy(1, 43);  //16 slots
+	private static final int BAGS       =                                   xy(1, 40);  //16 slots
 	public static final int VIAL        = BAGS+0;
 	public static final int POUCH       = BAGS+1;
 	public static final int HOLDER      = BAGS+2;

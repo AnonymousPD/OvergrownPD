@@ -56,6 +56,24 @@ public class Firebloom extends Plant {
 			CellEmitter.get( pos ).burst( FlameParticle.FACTORY, 5 );
 		}
 	}
+
+    @Override
+    public void activate() {
+
+    }
+
+    @Override
+    public void attackProc(Char enemy, int damage) {
+        if (enemy instanceof Hero && ((Hero) enemy).subClass == HeroSubClass.WARDEN){
+            Buff.affect(enemy, FireImbue.class).set(15f);
+        }
+
+        GameScene.add( Blob.seed( pos, 2, Fire.class ) );
+
+        if (Dungeon.level.heroFOV[pos]) {
+            CellEmitter.get( pos ).burst( FlameParticle.FACTORY, 5 );
+        }
+    }
 	
 	public static class Seed extends Plant.Seed {
 		{

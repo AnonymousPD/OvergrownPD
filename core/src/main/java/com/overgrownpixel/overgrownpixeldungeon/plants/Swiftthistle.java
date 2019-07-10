@@ -64,6 +64,21 @@ public class Swiftthistle extends Plant {
 			plantClass = Swiftthistle.class;
 		}
 	}
+
+    @Override
+    public void activate() {
+
+    }
+
+    @Override
+    public void attackProc(Char enemy, int damage) {
+        if (enemy == Dungeon.hero) {
+            Buff.affect(enemy, TimeBubble.class).reset();
+            if (Dungeon.hero.subClass == HeroSubClass.WARDEN){
+                Buff.affect(enemy, Haste.class, 1f);
+            }
+        }
+    }
 	
 	//FIXME lots of copypasta from time freeze here
 	

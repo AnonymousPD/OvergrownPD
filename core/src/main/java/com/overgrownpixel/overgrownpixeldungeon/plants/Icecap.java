@@ -59,6 +59,28 @@ public class Icecap extends Plant {
 			}
 		}
 	}
+
+    @Override
+    public void activate() {
+
+    }
+
+    @Override
+    public void attackProc(Char enemy, int damage) {
+        if (enemy instanceof Hero && ((Hero) enemy).subClass == HeroSubClass.WARDEN){
+            Buff.affect(enemy, FrostImbue.class, 15f);
+        }
+
+        PathFinder.buildDistanceMap( pos, BArray.not( Dungeon.level.losBlocking, null ), 1 );
+
+        Fire fire = (Fire)Dungeon.level.blobs.get( Fire.class );
+
+        for (int i=0; i < PathFinder.distance.length; i++) {
+            if (PathFinder.distance[i] < Integer.MAX_VALUE) {
+                Freezing.affect( i, fire );
+            }
+        }
+    }
 	
 	public static class Seed extends Plant.Seed {
 		{

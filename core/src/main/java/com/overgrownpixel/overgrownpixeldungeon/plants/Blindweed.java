@@ -65,6 +65,32 @@ public class Blindweed extends Plant {
 			CellEmitter.get( pos ).burst( Speck.factory( Speck.LIGHT ), 4 );
 		}
 	}
+
+    @Override
+    public void activate() {
+
+    }
+
+    @Override
+    public void attackProc(Char enemy, int damage) {
+        if (enemy != null) {
+            if (enemy instanceof Hero && ((Hero) enemy).subClass == HeroSubClass.WARDEN){
+                Buff.affect(enemy, Invisibility.class, 10f);
+            } else {
+                int len = Random.Int(5, 10);
+                Buff.prolong(enemy, Blindness.class, len);
+                Buff.prolong(enemy, Cripple.class, len);
+                if (enemy instanceof Mob) {
+                    if (((Mob) enemy).state == ((Mob) enemy).HUNTING) ((Mob) enemy).state = ((Mob) enemy).WANDERING;
+                    ((Mob) enemy).beckon(Dungeon.level.randomDestination());
+                }
+            }
+        }
+
+        if (Dungeon.level.heroFOV[pos]) {
+            CellEmitter.get( pos ).burst( Speck.factory( Speck.LIGHT ), 4 );
+        }
+    }
 	
 	public static class Seed extends Plant.Seed {
 		{

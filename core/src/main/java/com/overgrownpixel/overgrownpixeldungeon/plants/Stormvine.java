@@ -50,6 +50,22 @@ public class Stormvine extends Plant {
 		}
 	}
 
+    @Override
+    public void activate() {
+
+    }
+
+    @Override
+    public void attackProc(Char enemy, int damage) {
+        if (enemy != null) {
+            if (enemy instanceof Hero && ((Hero) enemy).subClass == HeroSubClass.WARDEN){
+                Buff.affect(enemy, Levitation.class, 10f);
+            } else {
+                Buff.affect(enemy, Vertigo.class, Vertigo.DURATION);
+            }
+        }
+    }
+
 	public static class Seed extends Plant.Seed {
 		{
 			image = ItemSpriteSheet.SEED_STORMVINE;

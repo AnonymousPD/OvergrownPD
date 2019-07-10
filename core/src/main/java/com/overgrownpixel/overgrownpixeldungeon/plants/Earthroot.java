@@ -61,6 +61,27 @@ public class Earthroot extends Plant {
 			Camera.main.shake( 1, 0.4f );
 		}
 	}
+
+    @Override
+    public void activate() {
+
+    }
+
+    @Override
+    public void attackProc(Char enemy, int damage) {
+        if (enemy == Dungeon.hero) {
+            if (Dungeon.hero.subClass == HeroSubClass.WARDEN){
+                Buff.affect(enemy, Barkskin.class).set(Dungeon.hero.lvl + 5, 5);
+            } else {
+                Buff.affect(enemy, Armor.class).level(enemy.HT);
+            }
+        }
+
+        if (Dungeon.level.heroFOV[pos]) {
+            CellEmitter.bottom( pos ).start( EarthParticle.FACTORY, 0.05f, 8 );
+            Camera.main.shake( 1, 0.4f );
+        }
+    }
 	
 	public static class Seed extends Plant.Seed {
 		{

@@ -72,6 +72,34 @@ public class Dreamfoil extends Plant {
 		}
 	}
 
+    @Override
+    public void activate() {
+
+    }
+
+    @Override
+    public void attackProc(Char enemy, int damage) {
+        if (enemy != null) {
+            if (enemy instanceof Mob) {
+                Buff.affect(enemy, MagicalSleep.class);
+            } else if (enemy instanceof Hero){
+                GLog.i( Messages.get(this, "refreshed") );
+                Buff.detach( enemy, Poison.class );
+                Buff.detach( enemy, Cripple.class );
+                Buff.detach( enemy, Weakness.class );
+                Buff.detach( enemy, Bleeding.class );
+                Buff.detach( enemy, Drowsy.class );
+                Buff.detach( enemy, Slow.class );
+                Buff.detach( enemy, Vertigo.class);
+
+                if (((Hero) enemy).subClass == HeroSubClass.WARDEN){
+                    Buff.affect(enemy, BlobImmunity.class, 10f);
+                }
+
+            }
+        }
+    }
+
 	public static class Seed extends Plant.Seed {
 		{
 			image = ItemSpriteSheet.SEED_DREAMFOIL;

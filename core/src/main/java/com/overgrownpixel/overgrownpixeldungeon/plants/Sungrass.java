@@ -61,6 +61,26 @@ public class Sungrass extends Plant {
 			CellEmitter.get( pos ).start( ShaftParticle.FACTORY, 0.2f, 3 );
 		}
 	}
+
+    @Override
+    public void activate() {
+
+    }
+
+    @Override
+    public void attackProc(Char enemy, int damage) {
+        if (enemy == Dungeon.hero) {
+            if (Dungeon.hero.subClass == HeroSubClass.WARDEN) {
+                Buff.affect(enemy, Healing.class).setHeal(enemy.HT, 0, 1);
+            } else {
+                Buff.affect(enemy, Health.class).boost(enemy.HT);
+            }
+        }
+
+        if (Dungeon.level.heroFOV[pos]) {
+            CellEmitter.get( pos ).start( ShaftParticle.FACTORY, 0.2f, 3 );
+        }
+    }
 	
 	public static class Seed extends Plant.Seed {
 		{
