@@ -74,6 +74,7 @@ public class SewerLevel extends RegularLevel {
 				.setWater(feeling == Feeling.WATER ? 0.85f : 0.30f, 5)
 				.setGrass(feeling == Feeling.GRASS ? 0.80f : 0.20f, 4)
                 .setFauna(feeling == Feeling.GRASS ? 20 : 30)
+                .setPlants(feeling == Feeling.GRASS ? 30 : 25)
                 .setShadows(30)
 				.setTraps(nTraps(), trapClasses(), trapChances());
 	}

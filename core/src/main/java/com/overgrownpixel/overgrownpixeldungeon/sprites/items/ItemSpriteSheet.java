@@ -856,7 +856,7 @@ public class ItemSpriteSheet {
 	public static final int BREW_SHOCKING   = BREWS+2;
 	public static final int BREW_CAUSTIC    = BREWS+3;
 	
-	private static final int ELIXIRS        =                               xy(9, 33);  //8 slots
+	private static final int ELIXIRS        =                               xy(9, 32);  //8 slots
 	public static final int ELIXIR_HONEY    = ELIXIRS+0;
 	public static final int ELIXIR_AQUA     = ELIXIRS+1;
 	public static final int ELIXIR_MIGHT    = ELIXIRS+2;
@@ -870,38 +870,58 @@ public class ItemSpriteSheet {
 	}
 	
 	                                                                                    //16 free slots
+
+    private static final int SPELLS         =                               xy(1, 35);  //16 slots
+    public static final int PHASE_SHIFT     = SPELLS+0;
+    public static final int AQUA_BLAST      = SPELLS+1;
+    public static final int MAGIC_INFUSE    = SPELLS+2;
+    public static final int MAGIC_PORTER    = SPELLS+3;
+    public static final int RETURN_BEACON   = SPELLS+4;
+    public static final int FEATHER_FALL    = SPELLS+5;
+    public static final int CURSE_INFUSE    = SPELLS+6;
+    public static final int RECLAIM_TRAP    = SPELLS+7;
+    public static final int ALCHEMIZE       = SPELLS+8;
+    public static final int RECYCLE         = SPELLS+9;
+    public static final int ENCHANT_INFUSE  = SPELLS+10;
+    public static final int CRIMSON_EPITHET = SPELLS+11;
+    public static final int FORCEFIELD      = SPELLS+12;
+    public static final int HOLYBLAST       = SPELLS+13;
+    public static final int DOOMCALL        = SPELLS+14;
+    public static final int SEASONCHANGE    = SPELLS+15;
+    static{
+        assignItemRect(PHASE_SHIFT,     12, 11);
+        assignItemRect(AQUA_BLAST,      11, 11);
+        assignItemRect(MAGIC_INFUSE,    10, 15);
+        assignItemRect(MAGIC_PORTER,    12, 11);
+        assignItemRect(RETURN_BEACON,    8, 16);
+        assignItemRect(FEATHER_FALL,    11, 11);
+        assignItemRect(CURSE_INFUSE,    10, 15);
+        assignItemRect(RECLAIM_TRAP,    11, 11);
+        assignItemRect(ALCHEMIZE,       10, 15);
+        assignItemRect(RECYCLE,         10, 15);
+        assignItemRect(ENCHANT_INFUSE,  12, 11);
+        assignItemRect(CRIMSON_EPITHET, 11, 11);
+        assignItemRect(FORCEFIELD,      10, 15);
+        assignItemRect(HOLYBLAST,       12, 11);
+        assignItemRect(DOOMCALL,         8, 16);
+        assignItemRect(SEASONCHANGE,    11, 11);
+    }
+
+    private static final int SPELLS_ROW2            =                               xy(1, 39);  //16 slots
+    public static final int PLANT_SUMMON            = SPELLS_ROW2+0;
+    public static final int NATURES_LULLABY         = SPELLS_ROW2+1;
+    public static final int SPONTANEOUS_COMBUSTION  = SPELLS_ROW2+2;
+    public static final int FORCE_PUSH              = SPELLS_ROW2+3;
+    public static final int WILD_ENEGRY             = SPELLS_ROW2+4;
+    static{
+        assignItemRect(PLANT_SUMMON,            10, 15);
+        assignItemRect(NATURES_LULLABY,         11, 11);
+        assignItemRect(SPONTANEOUS_COMBUSTION,   8, 16);
+        assignItemRect(FORCE_PUSH,               8, 16);
+        assignItemRect(WILD_ENEGRY,               8, 16);
+    }
 	
-	private static final int SPELLS         =                               xy(1, 34);  //16 slots
-	public static final int MAGIC_PORTER    = SPELLS+0;
-	public static final int PHASE_SHIFT     = SPELLS+1;
-	public static final int WILD_ENERGY = SPELLS+2;
-	public static final int RETURN_BEACON   = SPELLS+3;
-	
-	public static final int AQUA_BLAST      = SPELLS+5;
-	public static final int FEATHER_FALL    = SPELLS+6;
-	public static final int RECLAIM_TRAP    = SPELLS+7;
-	
-	public static final int CURSE_INFUSE    = SPELLS+9;
-	public static final int MAGIC_INFUSE    = SPELLS+10;
-	public static final int ALCHEMIZE       = SPELLS+11;
-	public static final int RECYCLE         = SPELLS+12;
-	static{
-		assignItemRect(MAGIC_PORTER,    12, 11);
-		assignItemRect(PHASE_SHIFT,     12, 11);
-		assignItemRect(WILD_ENERGY,      8, 16);
-		assignItemRect(RETURN_BEACON,    8, 16);
-		
-		assignItemRect(AQUA_BLAST,      11, 11);
-		assignItemRect(FEATHER_FALL,    11, 11);
-		assignItemRect(RECLAIM_TRAP,    11, 11);
-		
-		assignItemRect(CURSE_INFUSE,    10, 15);
-		assignItemRect(MAGIC_INFUSE,    10, 15);
-		assignItemRect(ALCHEMIZE,       10, 15);
-		assignItemRect(RECYCLE,         10, 15);
-	}
-	
-	private static final int FOOD       =                                   xy(1, 35);  //16 slots
+	private static final int FOOD       =                                   xy(1, 40);  //16 slots
 	public static final int MEAT        = FOOD+0;
 	public static final int STEAK       = FOOD+1;
 	public static final int STEWED      = FOOD+2;
@@ -929,7 +949,7 @@ public class ItemSpriteSheet {
 		assignItemRect(BLAND_CHUNKS,14, 6);
 	}
 
-	private static final int QUEST  =                                       xy(1, 36);  //32 slots
+	private static final int QUEST  =                                       xy(1, 41);  //32 slots
 	public static final int SKULL   = QUEST+0;
 	public static final int DUST    = QUEST+1;
 	public static final int CANDLE  = QUEST+2;
@@ -951,7 +971,7 @@ public class ItemSpriteSheet {
 		assignItemRect(SHARD,    8, 10);
 	}
 
-	private static final int BAGS       =                                   xy(1, 38);  //16 slots
+	private static final int BAGS       =                                   xy(1, 43);  //16 slots
 	public static final int VIAL        = BAGS+0;
 	public static final int POUCH       = BAGS+1;
 	public static final int HOLDER      = BAGS+2;

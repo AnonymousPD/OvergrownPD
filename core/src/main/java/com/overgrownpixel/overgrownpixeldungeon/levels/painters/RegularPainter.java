@@ -23,12 +23,15 @@ package com.overgrownpixel.overgrownpixeldungeon.levels.painters;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.items.Generator;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Level;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Patch;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
 import com.overgrownpixel.overgrownpixeldungeon.levels.rooms.Room;
 import com.overgrownpixel.overgrownpixeldungeon.levels.rooms.standard.EmptyRoom;
 import com.overgrownpixel.overgrownpixeldungeon.levels.traps.Trap;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Firebloom;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.shadows.Shadows;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.wallfauna.Vines;
 import com.watabou.utils.Graph;
@@ -69,6 +72,13 @@ public abstract class RegularPainter extends Painter {
 		trapChances = chances;
 		return this;
 	}
+
+    private int plantsFill = 0;
+
+    public RegularPainter setPlants(int fill){
+        plantsFill = fill;
+        return this;
+    }
 
     private int faunaFill = 0;
 
@@ -143,6 +153,10 @@ public abstract class RegularPainter extends Painter {
 		if (nTraps > 0){
 			paintTraps( level, rooms );
 		}
+
+        if (plantsFill > 0){
+            paintPlants( level, rooms );
+        }
 
         if (faunaFill > 0){
             paintFauna( level, rooms );
@@ -390,6 +404,149 @@ public abstract class RegularPainter extends Painter {
 			}
 		}
 	}
+
+    protected void paintPlants( Level l, ArrayList<Room> rooms ) {
+
+        //a list of all possible plant cells
+        ArrayList<Integer> plantCells = new ArrayList<>();
+
+        //this is used when basing the plant generation on rooms
+        if (!rooms.isEmpty()){
+            for (Room r : rooms){
+                for (Point p : r.plantsPlaceablePoints()){
+                    if(Random.Float() <= 0.85f){
+                        int i = l.pointToCell(p);
+                        if (l.map[i] == Terrain.GRASS){
+                            //Water plants should only be 50% as common as grass plants
+                            if(l.map[i] == Terrain.WATER && Dungeon.depth < 21){
+                                //if(Random.Int(10) == 1){
+                                plantCells.add(i);
+                                //this snippet of code is supposed to stop plants from spawning next to eachother
+                                for(int n : PathFinder.NEIGHBOURS8){
+                                    if(plantCells.contains(i+n)){
+                                        plantCells.remove((Object)i);
+                                    }
+                                }
+                                //}
+                            } else {
+                                plantCells.add(i);
+                                //this snippet of code is supposed to stop plants from spawning next to eachother
+                                for(int n : PathFinder.NEIGHBOURS8){
+                                    if(plantCells.contains(i+n)){
+                                        plantCells.remove((Object)i);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
+            //this is used for depths that do not use rooms
+            for (int i = 0; i < l.length(); i ++) {
+                if(Random.Float() <= 0.85f){
+                    if (l.map[i] == Terrain.GRASS){
+                        //Water plants should only be 50% as common as grass plants
+                        if(l.map[i] == Terrain.WATER && Dungeon.depth < 21){
+                            if(Random.Int(8) == 1){
+                                plantCells.add(i);
+                                //this snippet of code is supposed to stop plants from spawning next to eachother
+                                for(int n : PathFinder.NEIGHBOURS8){
+                                    if(plantCells.contains(i+n)){
+                                        plantCells.remove((Object)i);
+                                    }
+                                }
+                            }
+                        } else {
+                            plantCells.add(i);
+                            //this snippet of code is supposed to stop plants from spawning next to eachother
+                            for(int n : PathFinder.NEIGHBOURS8){
+                                if(plantCells.contains(i+n)){
+                                    plantCells.remove((Object)i);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        if(!plantCells.isEmpty()){
+            for(int i = plantsFill; i > 0; i--){
+                if(!plantCells.isEmpty()){
+                    int p = Random.element(plantCells);
+                    if (l.heaps.get(p) == null || l.findMob(p) == null) {
+                        Plant plant = new Firebloom();
+                        if(l.map[p] == Terrain.WATER){
+                            try{
+                                plant = ((Plant.Seed) Generator.random(Generator.Category.SEEDWATER)).getPlantClass().newInstance();
+                            } catch (Exception e){
+                                OvergrownPixelDungeon.reportException(e);
+                            }
+                        } else {
+                            plant = getPlantsForDepth(Dungeon.depth);
+                        }
+                        try {
+                            plant.pos = p;
+                            l.plants.put(plant.pos, plant);
+                            plantCells.remove((Object)p);
+                        } catch (Exception e) {
+                            OvergrownPixelDungeon.reportException(e);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    protected Plant getPlantsForDepth(int depth){
+        Plant plant;
+        try{
+            switch (depth){
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                    plant = ((Plant.Seed) Generator.random(Generator.Category.SEEDSEWER)).getPlantClass().newInstance();
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                    plant = ((Plant.Seed) Generator.random(Generator.Category.SEEDPRISON)).getPlantClass().newInstance();
+                    break;
+                case 11:
+                case 12:
+                case 13:
+                case 14:
+                case 15:
+                    plant = ((Plant.Seed) Generator.random(Generator.Category.SEEDCAVES)).getPlantClass().newInstance();
+                    break;
+                case 16:
+                case 17:
+                case 18:
+                case 19:
+                case 20:
+                    plant = ((Plant.Seed) Generator.random(Generator.Category.SEEDCITY)).getPlantClass().newInstance();
+                    break;
+                case 21:
+                case 22:
+                case 23:
+                case 24:
+                case 25:
+                    plant = ((Plant.Seed) Generator.random(Generator.Category.SEEDHELL)).getPlantClass().newInstance();
+                    break;
+                default:
+                    plant = ((Plant.Seed) Generator.random(Generator.Category.SEED)).getPlantClass().newInstance();
+            }
+            return plant;
+        } catch (Exception e){
+            OvergrownPixelDungeon.reportException(e);
+        }
+        return new Firebloom();
+    }
 
     protected void paintFauna( Level l, ArrayList<Room> rooms ) {
         //a list of all possible fauna cells

@@ -80,6 +80,7 @@ public class PrisonLevel extends RegularLevel {
 				.setWater(feeling == Feeling.WATER ? 0.90f : 0.30f, 4)
 				.setGrass(feeling == Feeling.GRASS ? 0.80f : 0.20f, 3)
                 .setFauna(feeling == Feeling.GRASS ? 15 : 25)
+                .setPlants(feeling == Feeling.GRASS ? 25 : 15)
                 .setShadows(30)
 				.setTraps(nTraps(), trapClasses(), trapChances());
 	}

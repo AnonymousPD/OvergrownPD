@@ -47,13 +47,23 @@ import com.overgrownpixel.overgrownpixeldungeon.items.spells.Alchemize;
 import com.overgrownpixel.overgrownpixeldungeon.items.spells.AquaBlast;
 import com.overgrownpixel.overgrownpixeldungeon.items.spells.ArcaneCatalyst;
 import com.overgrownpixel.overgrownpixeldungeon.items.spells.BeaconOfReturning;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.CrimsonEpithet;
 import com.overgrownpixel.overgrownpixeldungeon.items.spells.CurseInfusion;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.DoomCall;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.EnchantmentInfusion;
 import com.overgrownpixel.overgrownpixeldungeon.items.spells.FeatherFall;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.ForcePush;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.Forcefield;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.HolyBlast;
 import com.overgrownpixel.overgrownpixeldungeon.items.spells.MagicalInfusion;
 import com.overgrownpixel.overgrownpixeldungeon.items.spells.MagicalPorter;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.NaturesLullaby;
 import com.overgrownpixel.overgrownpixeldungeon.items.spells.PhaseShift;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.PlantSummon;
 import com.overgrownpixel.overgrownpixeldungeon.items.spells.ReclaimTrap;
 import com.overgrownpixel.overgrownpixeldungeon.items.spells.Recycle;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.SeasonChange;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.SpontaneosCombustion;
 import com.overgrownpixel.overgrownpixeldungeon.items.spells.WildEnergy;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.Wand;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.Dart;
@@ -203,7 +213,17 @@ public abstract class Recipe {
 		new ReclaimTrap.Recipe(),
 		new Recycle.Recipe(),
 		new WildEnergy.Recipe(),
-		new StewedMeat.twoMeat()
+            new EnchantmentInfusion.Recipe(),
+            new CrimsonEpithet.Recipe(),
+            new Forcefield.Recipe(),
+            new HolyBlast.Recipe(),
+            new DoomCall.Recipe(),
+            new SeasonChange.Recipe(),
+            new PlantSummon.Recipe(),
+            new NaturesLullaby.Recipe(),
+            new SpontaneosCombustion.Recipe(),
+            new ForcePush.Recipe(),
+		new StewedMeat.twoMeat(),
 	};
 	
 	private static Recipe[] threeIngredientRecipes = new Recipe[]{

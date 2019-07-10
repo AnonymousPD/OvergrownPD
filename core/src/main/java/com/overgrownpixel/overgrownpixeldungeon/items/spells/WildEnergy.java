@@ -36,7 +36,7 @@ import com.watabou.utils.Callback;
 public class WildEnergy extends TargetedSpell {
 	
 	{
-		image = ItemSpriteSheet.WILD_ENERGY;
+		image = ItemSpriteSheet.WILD_ENEGRY;
 	}
 	
 	//we rely on cursedWand to do fx instead
