@@ -510,7 +510,7 @@ public class Generator {
                     Club.class,
                     RatFangDagger.class,
 			};
-			WEP_T1.probs = new float[]{ 0, 0, 0, 0, 3, 1, 2, 1, 2, 2, 1, 1, 1, 1, 0, };
+			WEP_T1.probs = new float[]{ 0, 0, 0, 0, 3, 2, 3, 2, 3, 3, 2, 3, 2, 2, 0, };
 			
 			WEP_T2.classes = new Class<?>[]{
 					Shortsword.class,
@@ -534,7 +534,7 @@ public class Generator {
                     Naginata.class,
                     Sasumata.class,
 			};
-			WEP_T2.probs = new float[]{ 6, 5, 5, 4, 4, 3, 3, 1, 1, 1, 1, 2, 1, 1, 2, 2, 1, 1, 2, 1 };
+			WEP_T2.probs = new float[]{ 6, 5, 5, 4, 4, 3, 3, 2, 2, 2, 2, 3, 2, 2, 3, 3, 2, 2, 3, 2 };
 			
 			WEP_T3.classes = new Class<?>[]{
 					Sword.class,
@@ -559,7 +559,7 @@ public class Generator {
                     GooWeapon.class,
                     PendulumSpear.class,
 			};
-			WEP_T3.probs = new float[]{ 6, 5, 5, 4, 4, 4, 3, 3, 2, 2, 2, 2, 1, 1, 1, 1, 3, 3, 1, 0, 1 };
+			WEP_T3.probs = new float[]{ 6, 5, 5, 4, 4, 4, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 4, 4, 2, 0, 2 };
 			
 			WEP_T4.classes = new Class<?>[]{
 					Longsword.class,
@@ -584,7 +584,7 @@ public class Generator {
                     BambooSpear.class,
                     Lance.class,
 			};
-			WEP_T4.probs = new float[]{ 6, 5, 5, 4, 4, 4, 3, 2, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1 };
+			WEP_T4.probs = new float[]{ 6, 5, 5, 4, 4, 4, 3, 3, 2, 3, 2, 3, 2, 2, 2, 2, 2, 2, 2 };
 			
 			WEP_T5.classes = new Class<?>[]{
 					Greatsword.class,
@@ -606,7 +606,7 @@ public class Generator {
                     BroadSpear.class,
                     RoundedSpear.class,
 			};
-			WEP_T5.probs = new float[]{ 6, 5, 5, 4, 4, 4, 3, 1, 1, 1, 2, 2, 1, 1, 1, 3, 1, 1 };
+			WEP_T5.probs = new float[]{ 6, 5, 5, 4, 4, 4, 3, 2, 2, 2, 3, 3, 2, 2, 2, 4, 2, 2 };
 			
 			//see Generator.randomArmor
 			ARMOR.classes = new Class<?>[]{
