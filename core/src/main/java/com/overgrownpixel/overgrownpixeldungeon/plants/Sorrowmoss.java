@@ -51,14 +51,14 @@ public class Sorrowmoss extends Plant {
 			Buff.affect( ch, Poison.class ).set( 5 + Math.round(2*Dungeon.depth / 3f) );
 		}
 		
-		if (Dungeon.level.heroFOV[pos]) {
-			CellEmitter.center( pos ).burst( PoisonParticle.SPLASH, 3 );
+		if (Dungeon.level.heroFOV[ch.pos]) {
+			CellEmitter.center( ch.pos ).burst( PoisonParticle.SPLASH, 3 );
 		}
 	}
 
     @Override
     public void activate() {
-
+        spawnLasher(pos);
     }
 
     @Override
@@ -71,8 +71,8 @@ public class Sorrowmoss extends Plant {
             Buff.affect( enemy, Poison.class ).set( 5 + Math.round(2*Dungeon.depth / 3f) );
         }
 
-        if (Dungeon.level.heroFOV[pos]) {
-            CellEmitter.center( pos ).burst( PoisonParticle.SPLASH, 3 );
+        if (Dungeon.level.heroFOV[enemy.pos]) {
+            CellEmitter.center( enemy.pos ).burst( PoisonParticle.SPLASH, 3 );
         }
     }
 	

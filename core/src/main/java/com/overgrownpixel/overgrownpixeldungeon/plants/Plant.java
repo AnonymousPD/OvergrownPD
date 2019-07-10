@@ -123,7 +123,7 @@ public abstract class Plant implements Bundlable {
         }
 	}
 
-    public static void spawnLasher(int pos){
+    public void spawnLasher(int pos){
         //try and spawn a lasher. This is only reserved for when you have no idea what an activate() effect should be.
         if (Actor.findChar(pos) == null && ((Dungeon.level.passable[pos] || Dungeon.level.avoid[pos]) && !Dungeon.level.pit[pos])) {
             Lasher lasher = new Lasher();
@@ -196,6 +196,13 @@ public abstract class Plant implements Bundlable {
 	public abstract void activate( Char ch );
 
     public abstract void activate();
+
+    public void defaultProc(Char enemy, int damage){
+        enemy.damage(damage, this);
+        if (Dungeon.level.heroFOV[enemy.pos]) {
+            CellEmitter.get( enemy.pos ).burst( LeafParticle.GENERAL, 6 );
+        }
+    }
 	
 	public void wither() {
 		Dungeon.level.uproot( pos );

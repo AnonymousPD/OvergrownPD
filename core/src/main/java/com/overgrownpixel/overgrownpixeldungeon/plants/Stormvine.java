@@ -52,7 +52,7 @@ public class Stormvine extends Plant {
 
     @Override
     public void activate() {
-
+        spawnLasher(pos);
     }
 
     @Override

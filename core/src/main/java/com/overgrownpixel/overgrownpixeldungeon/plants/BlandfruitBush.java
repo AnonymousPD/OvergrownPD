@@ -37,17 +37,17 @@ public class BlandfruitBush extends Plant {
 
 	@Override
 	public void activate( Char ch ) {
-		Dungeon.level.drop( new Blandfruit(), pos ).sprite.drop();
+		Dungeon.level.drop( new Blandfruit(), ch.pos ).sprite.drop();
 	}
 
     @Override
     public void activate() {
-
+        Dungeon.level.drop( new Blandfruit(), pos ).sprite.drop();
     }
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        defaultProc(enemy, damage);
     }
 
 	//This seed no longer drops, but has a sprite as it did drop prior to 0.7.0

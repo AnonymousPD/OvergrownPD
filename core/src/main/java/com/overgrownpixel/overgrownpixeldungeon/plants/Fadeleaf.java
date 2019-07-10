@@ -97,14 +97,14 @@ public class Fadeleaf extends Plant {
 
 		}
 		
-		if (Dungeon.level.heroFOV[pos]) {
-			CellEmitter.get( pos ).start( Speck.factory( Speck.LIGHT ), 0.2f, 3 );
+		if (Dungeon.level.heroFOV[ch.pos]) {
+			CellEmitter.get( ch.pos ).start( Speck.factory( Speck.LIGHT ), 0.2f, 3 );
 		}
 	}
 
     @Override
     public void activate() {
-
+        spawnLasher(pos);
     }
 
     @Override
@@ -157,8 +157,8 @@ public class Fadeleaf extends Plant {
 
         }
 
-        if (Dungeon.level.heroFOV[pos]) {
-            CellEmitter.get( pos ).start( Speck.factory( Speck.LIGHT ), 0.2f, 3 );
+        if (Dungeon.level.heroFOV[enemy.pos]) {
+            CellEmitter.get( enemy.pos ).start( Speck.factory( Speck.LIGHT ), 0.2f, 3 );
         }
     }
 	

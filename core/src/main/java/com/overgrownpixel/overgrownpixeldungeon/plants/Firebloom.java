@@ -50,16 +50,20 @@ public class Firebloom extends Plant {
 			Buff.affect(ch, FireImbue.class).set(15f);
 		}
 		
-		GameScene.add( Blob.seed( pos, 2, Fire.class ) );
+		GameScene.add( Blob.seed( ch.pos, 2, Fire.class ) );
 		
-		if (Dungeon.level.heroFOV[pos]) {
-			CellEmitter.get( pos ).burst( FlameParticle.FACTORY, 5 );
+		if (Dungeon.level.heroFOV[ch.pos]) {
+			CellEmitter.get( ch.pos ).burst( FlameParticle.FACTORY, 5 );
 		}
 	}
 
     @Override
     public void activate() {
+        GameScene.add( Blob.seed( pos, 2, Fire.class ) );
 
+        if (Dungeon.level.heroFOV[pos]) {
+            CellEmitter.get( pos ).burst( FlameParticle.FACTORY, 5 );
+        }
     }
 
     @Override
@@ -68,10 +72,10 @@ public class Firebloom extends Plant {
             Buff.affect(enemy, FireImbue.class).set(15f);
         }
 
-        GameScene.add( Blob.seed( pos, 2, Fire.class ) );
+        GameScene.add( Blob.seed( enemy.pos, 2, Fire.class ) );
 
-        if (Dungeon.level.heroFOV[pos]) {
-            CellEmitter.get( pos ).burst( FlameParticle.FACTORY, 5 );
+        if (Dungeon.level.heroFOV[enemy.pos]) {
+            CellEmitter.get( enemy.pos ).burst( FlameParticle.FACTORY, 5 );
         }
     }
 	

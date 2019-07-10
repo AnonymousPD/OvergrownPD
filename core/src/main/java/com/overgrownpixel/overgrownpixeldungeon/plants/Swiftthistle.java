@@ -56,6 +56,16 @@ public class Swiftthistle extends Plant {
 			}
 		}
 	}
+
+    @Override
+    public void activate() {
+        spawnLasher(pos);
+    }
+
+    @Override
+    public void attackProc(Char enemy, int damage) {
+        defaultProc(enemy, damage);
+    }
 	
 	public static class Seed extends Plant.Seed {
 		{
@@ -64,23 +74,6 @@ public class Swiftthistle extends Plant {
 			plantClass = Swiftthistle.class;
 		}
 	}
-
-    @Override
-    public void activate() {
-
-    }
-
-    @Override
-    public void attackProc(Char enemy, int damage) {
-        if (enemy == Dungeon.hero) {
-            Buff.affect(enemy, TimeBubble.class).reset();
-            if (Dungeon.hero.subClass == HeroSubClass.WARDEN){
-                Buff.affect(enemy, Haste.class, 1f);
-            }
-        }
-    }
-	
-	//FIXME lots of copypasta from time freeze here
 	
 	public static class TimeBubble extends Buff {
 		

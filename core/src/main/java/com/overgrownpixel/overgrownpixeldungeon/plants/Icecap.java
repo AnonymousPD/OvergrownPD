@@ -49,7 +49,7 @@ public class Icecap extends Plant {
 			Buff.affect(ch, FrostImbue.class, 15f);
 		}
 		
-		PathFinder.buildDistanceMap( pos, BArray.not( Dungeon.level.losBlocking, null ), 1 );
+		PathFinder.buildDistanceMap( ch.pos, BArray.not( Dungeon.level.losBlocking, null ), 1 );
 		
 		Fire fire = (Fire)Dungeon.level.blobs.get( Fire.class );
 		
@@ -62,7 +62,7 @@ public class Icecap extends Plant {
 
     @Override
     public void activate() {
-
+        spawnLasher(pos);
     }
 
     @Override
@@ -71,7 +71,7 @@ public class Icecap extends Plant {
             Buff.affect(enemy, FrostImbue.class, 15f);
         }
 
-        PathFinder.buildDistanceMap( pos, BArray.not( Dungeon.level.losBlocking, null ), 1 );
+        PathFinder.buildDistanceMap( enemy.pos, BArray.not( Dungeon.level.losBlocking, null ), 1 );
 
         Fire fire = (Fire)Dungeon.level.blobs.get( Fire.class );
 

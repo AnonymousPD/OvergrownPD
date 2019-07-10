@@ -56,15 +56,15 @@ public class Earthroot extends Plant {
 			}
 		}
 		
-		if (Dungeon.level.heroFOV[pos]) {
-			CellEmitter.bottom( pos ).start( EarthParticle.FACTORY, 0.05f, 8 );
+		if (Dungeon.level.heroFOV[ch.pos]) {
+			CellEmitter.bottom( ch.pos ).start( EarthParticle.FACTORY, 0.05f, 8 );
 			Camera.main.shake( 1, 0.4f );
 		}
 	}
 
     @Override
     public void activate() {
-
+        spawnLasher(pos);
     }
 
     @Override
@@ -77,8 +77,8 @@ public class Earthroot extends Plant {
             }
         }
 
-        if (Dungeon.level.heroFOV[pos]) {
-            CellEmitter.bottom( pos ).start( EarthParticle.FACTORY, 0.05f, 8 );
+        if (Dungeon.level.heroFOV[enemy.pos]) {
+            CellEmitter.bottom( enemy.pos ).start( EarthParticle.FACTORY, 0.05f, 8 );
             Camera.main.shake( 1, 0.4f );
         }
     }

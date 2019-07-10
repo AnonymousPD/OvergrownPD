@@ -61,14 +61,14 @@ public class Blindweed extends Plant {
 			}
 		}
 		
-		if (Dungeon.level.heroFOV[pos]) {
-			CellEmitter.get( pos ).burst( Speck.factory( Speck.LIGHT ), 4 );
+		if (Dungeon.level.heroFOV[ch.pos]) {
+			CellEmitter.get( ch.pos ).burst( Speck.factory( Speck.LIGHT ), 4 );
 		}
 	}
 
     @Override
     public void activate() {
-
+        spawnLasher(pos);
     }
 
     @Override
@@ -87,8 +87,8 @@ public class Blindweed extends Plant {
             }
         }
 
-        if (Dungeon.level.heroFOV[pos]) {
-            CellEmitter.get( pos ).burst( Speck.factory( Speck.LIGHT ), 4 );
+        if (Dungeon.level.heroFOV[enemy.pos]) {
+            CellEmitter.get( enemy.pos ).burst( Speck.factory( Speck.LIGHT ), 4 );
         }
     }
 	

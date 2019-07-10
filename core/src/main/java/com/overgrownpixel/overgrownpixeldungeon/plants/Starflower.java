@@ -51,23 +51,18 @@ public class Starflower extends Plant {
 		}
 
 		if (Random.Int(5) == 0){
-			Dungeon.level.drop(new Seed(), pos).sprite.drop();
+			Dungeon.level.drop(new Seed(), ch.pos).sprite.drop();
 		}
 	}
 
     @Override
     public void activate() {
-
+        spawnLasher(pos);
     }
 
     @Override
     public void attackProc(Char enemy, int damage) {
-        if (enemy != null) {
-            Buff.prolong(enemy, Bless.class, Bless.DURATION);
-            if (enemy instanceof Hero && ((Hero) enemy).subClass == HeroSubClass.WARDEN){
-                Buff.prolong(enemy, Recharging.class, Bless.DURATION);
-            }
-        }
+        defaultProc(enemy, damage);
     }
 
 	public static class Seed extends Plant.Seed{
