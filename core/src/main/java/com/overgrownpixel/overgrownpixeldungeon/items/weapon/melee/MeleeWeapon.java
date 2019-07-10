@@ -30,6 +30,8 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.HookedWaraxe;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.AssassinsBlade;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.bows.GoldenBow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.bows.SmallBow;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.chains.KnifeChain;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.chains.Kusarigama;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.chains.ManrikiKusari;
@@ -37,6 +39,11 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.chains.Nuncha
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.BarbedStaff;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.SpikedClub;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.SpikedStoneClub;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.Crossbow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.GoldenCrossbow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.IronCrossbow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.SmallCrossbow;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.WoodenCrossbow;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.fans.GunsenFan;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.ClawGlove;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.TekkoKagi;
@@ -117,40 +124,51 @@ public class MeleeWeapon extends Weapon {
         if(RCH != 1 && levelKnown) info += "\n" + Messages.get(this, "reach_info", RCH);
         if(defenseFactor(curUser) != 0) info += "\n" + Messages.get(this, "defense_info", defenseFactor(curUser));
 
-        if(this instanceof AssassinsBlade ||
-                this instanceof Dagger ||
-                this instanceof Dirk ||
-                this instanceof Yawara){
-            info += "\n" + Messages.get(this, "suprise_attack_info");
-        }
-        if(this instanceof CheeseGrater ||
-                this instanceof BarbedStaff ||
-                this instanceof ClawGlove ||
-                this instanceof ClawKnife ||
-                this instanceof GunsenFan ||
-                this instanceof HookedWaraxe ||
-                this instanceof KnifeChain ||
-                this instanceof Kusarigama ||
-                this instanceof NailWhip ||
-                this instanceof SpikedClub ||
-                this instanceof SpikedScythe ||
-                this instanceof SpikedStoneClub ||
-                this instanceof TekkoKagi){
-            info += "\n" + Messages.get(this, "bleeding_proc_info");
-        }
-        if(this instanceof ChainWhip ||
-                this instanceof HornKnife ||
-                this instanceof Kusarigama ||
-                this instanceof ManrikiKusari ||
-                this instanceof Nunchaku ||
-                this instanceof Sasumata){
-            info += "\n" + Messages.get(this, "cripple_proc_info");
-        }
-        if(this instanceof Harpoon){
-            info += "\n" + Messages.get(this, "pulling_proc_info");
-        }
-        if(this instanceof GunsenFan){
-            info += "\n" + Messages.get(this, "pushing_proc_info");
+        if(levelKnown){
+            if(this instanceof AssassinsBlade ||
+                    this instanceof Dagger ||
+                    this instanceof Dirk ||
+                    this instanceof Yawara){
+                info += "\n" + Messages.get(this, "suprise_attack_info");
+            }
+            if(this instanceof CheeseGrater ||
+                    this instanceof BarbedStaff ||
+                    this instanceof ClawGlove ||
+                    this instanceof ClawKnife ||
+                    this instanceof GunsenFan ||
+                    this instanceof HookedWaraxe ||
+                    this instanceof KnifeChain ||
+                    this instanceof Kusarigama ||
+                    this instanceof NailWhip ||
+                    this instanceof SpikedClub ||
+                    this instanceof SpikedScythe ||
+                    this instanceof SpikedStoneClub ||
+                    this instanceof TekkoKagi){
+                info += "\n" + Messages.get(this, "bleeding_proc_info");
+            }
+            if(this instanceof ChainWhip ||
+                    this instanceof HornKnife ||
+                    this instanceof Kusarigama ||
+                    this instanceof ManrikiKusari ||
+                    this instanceof Nunchaku ||
+                    this instanceof Sasumata){
+                info += "\n" + Messages.get(this, "cripple_proc_info");
+            }
+            if(this instanceof Harpoon){
+                info += "\n" + Messages.get(this, "pulling_proc_info");
+            }
+            if(this instanceof GunsenFan){
+                info += "\n" + Messages.get(this, "pushing_proc_info");
+            }
+            if(this instanceof SmallBow ||
+                    this instanceof GoldenBow ||
+                    this instanceof Crossbow ||
+                    this instanceof GoldenCrossbow ||
+                    this instanceof IronCrossbow ||
+                    this instanceof SmallCrossbow ||
+                    this instanceof WoodenCrossbow){
+                info += "\n" + Messages.get(this, "dart_throwing_info");
+            }
         }
 
 

@@ -39,7 +39,7 @@ import com.watabou.utils.Random;
 public class ForcePush extends Spell {
 	
 	{
-		image = ItemSpriteSheet.SPONTANEOUS_COMBUSTION;
+		image = ItemSpriteSheet.FORCE_PUSH;
 	}
 
     @Override

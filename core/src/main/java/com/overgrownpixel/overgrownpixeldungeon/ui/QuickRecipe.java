@@ -73,6 +73,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.spells.ReclaimTrap;
 import com.overgrownpixel.overgrownpixeldungeon.items.spells.Recycle;
 import com.overgrownpixel.overgrownpixeldungeon.items.spells.SeasonChange;
 import com.overgrownpixel.overgrownpixeldungeon.items.spells.SpontaneosCombustion;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.WildEnergy;
 import com.overgrownpixel.overgrownpixeldungeon.items.stones.Runestone;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
@@ -376,6 +377,7 @@ public class QuickRecipe extends Component {
                 result.add(new QuickRecipe(new DoomCall.Recipe()));
                 result.add(new QuickRecipe(new SpontaneosCombustion.Recipe()));
                 result.add(new QuickRecipe(new ForcePush.Recipe()));
+                result.add(new QuickRecipe(new WildEnergy.Recipe()));
                 result.add(null);
                 result.add(null);
                 result.add(new QuickRecipe(new AquaBlast.Recipe()));
