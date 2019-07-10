@@ -39,7 +39,7 @@ public class DualFencingBlades extends MeleeWeapon {
 
 	@Override
 	public int max(int lvl) {
-        return  4*(tier) +      //8 base
+        return  2*(tier) +      //4 base
                 lvl*(tier);     //+2 per upgrade
 	}
 
