@@ -52,6 +52,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.Gloves
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.knifes.Dagger;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.shortswords.WornShortsword;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.staffs.MagesStaff;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.swords.Katana;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.ThrowingKnife;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.ThrowingStone;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
@@ -112,6 +113,7 @@ public enum HeroClass {
 		
 		new ScrollOfIdentify().identify();
 
+		new Katana().identify().collect();
 	}
 
 	public Badges.Badge masteryBadge() {

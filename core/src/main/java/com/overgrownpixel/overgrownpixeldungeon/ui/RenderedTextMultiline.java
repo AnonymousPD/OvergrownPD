@@ -48,6 +48,8 @@ public class RenderedTextMultiline extends Component {
 	private static final String SPACE = " ";
 	private static final String NEWLINE = "\n";
 	private static final String UNDERSCORE = "_";
+    private static final String POSITIVE = "§";
+    private static final String NEGATIVE = "$";
 
 	private boolean chinese = false;
 
@@ -111,7 +113,13 @@ public class RenderedTextMultiline extends Component {
 				if (str.startsWith(UNDERSCORE) && str.endsWith(UNDERSCORE)){
 					word = new RenderedText(str.substring(1, str.length()-1), size);
 					word.hardlight(0xFFFF44);
-				} else {
+				} else if(str.startsWith(POSITIVE) && str.endsWith(POSITIVE)){
+                    word = new RenderedText(str.substring(1, str.length()-1), size);
+                    word.hardlight(0x00FF00);
+                } else if(str.startsWith(NEGATIVE) && str.endsWith(NEGATIVE)){
+                    word = new RenderedText(str.substring(1, str.length()-1), size);
+                    word.hardlight(0xFF3300);
+                } else {
 					if (str.startsWith(UNDERSCORE)){
 						highlighting = !highlighting;
 						word = new RenderedText(str.substring(1, str.length()), size);
