@@ -42,10 +42,10 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Blazin
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Blocking;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Blooming;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Chilling;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Kinetic;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Corrupting;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Elastic;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Grim;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Kinetic;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Lucky;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Projecting;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Shocking;

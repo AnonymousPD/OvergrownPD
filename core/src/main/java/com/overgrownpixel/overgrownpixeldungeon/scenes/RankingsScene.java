@@ -22,8 +22,8 @@
 package com.overgrownpixel.overgrownpixeldungeon.scenes;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
-import com.overgrownpixel.overgrownpixeldungeon.Rankings;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.Rankings;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Flare;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;

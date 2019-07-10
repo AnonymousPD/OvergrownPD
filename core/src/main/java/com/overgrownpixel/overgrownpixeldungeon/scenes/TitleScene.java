@@ -26,7 +26,6 @@ import com.overgrownpixel.overgrownpixeldungeon.GamesInProgress;
 import com.overgrownpixel.overgrownpixeldungeon.OGPDSettings;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
 import com.overgrownpixel.overgrownpixeldungeon.effects.BannerSprites;
-import com.overgrownpixel.overgrownpixeldungeon.effects.Fireball;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.ui.Archs;
 import com.overgrownpixel.overgrownpixeldungeon.ui.ChangesButton;

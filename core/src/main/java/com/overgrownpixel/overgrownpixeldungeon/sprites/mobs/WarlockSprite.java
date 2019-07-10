@@ -29,7 +29,6 @@ package com.overgrownpixel.overgrownpixeldungeon.sprites.mobs;
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Warlock;
 import com.overgrownpixel.overgrownpixeldungeon.effects.MagicMissile;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.MobSprite;
 import com.watabou.noosa.TextureFilm;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Callback;

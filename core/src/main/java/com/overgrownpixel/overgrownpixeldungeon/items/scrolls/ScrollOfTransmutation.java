@@ -38,8 +38,8 @@ import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.exotic.ExoticScrol
 import com.overgrownpixel.overgrownpixeldungeon.items.stones.Runestone;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.Wand;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.staffs.MagesStaff;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MeleeWeapon;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.staffs.MagesStaff;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.Dart;
 import com.overgrownpixel.overgrownpixeldungeon.journal.Catalog;

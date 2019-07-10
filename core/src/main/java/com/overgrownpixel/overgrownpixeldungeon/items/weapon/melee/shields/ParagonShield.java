@@ -28,7 +28,6 @@ package com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.shields;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MeleeWeapon;
-import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class ParagonShield extends MeleeWeapon {

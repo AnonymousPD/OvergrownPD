@@ -48,7 +48,6 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.scythes.Spike
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.spears.Sasumata;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.whips.ChainWhip;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.whips.NailWhip;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.Bolas;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.watabou.utils.Random;
 

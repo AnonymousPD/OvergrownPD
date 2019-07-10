@@ -29,7 +29,6 @@ package com.overgrownpixel.overgrownpixeldungeon.sprites.mobs;
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.MobSprite;
 import com.watabou.noosa.TextureFilm;
 
 public class UndeadSprite extends MobSprite {

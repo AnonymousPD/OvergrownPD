@@ -23,9 +23,9 @@ package com.overgrownpixel.overgrownpixeldungeon.scenes;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Badges;
-import com.overgrownpixel.overgrownpixeldungeon.Rankings;
 import com.overgrownpixel.overgrownpixeldungeon.OGPDSettings;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.Rankings;
 import com.overgrownpixel.overgrownpixeldungeon.effects.BannerSprites;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Fireball;
 import com.overgrownpixel.overgrownpixeldungeon.journal.Document;

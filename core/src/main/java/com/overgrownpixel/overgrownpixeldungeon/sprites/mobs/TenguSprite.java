@@ -32,7 +32,6 @@ import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.MissileSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.MobSprite;
 import com.watabou.noosa.TextureFilm;
 import com.watabou.utils.Callback;
 

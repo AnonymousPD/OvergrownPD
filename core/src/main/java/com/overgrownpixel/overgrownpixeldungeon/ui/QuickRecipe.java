@@ -70,7 +70,6 @@ import com.overgrownpixel.overgrownpixeldungeon.items.spells.ReclaimTrap;
 import com.overgrownpixel.overgrownpixeldungeon.items.spells.Recycle;
 import com.overgrownpixel.overgrownpixeldungeon.items.spells.SeasonChange;
 import com.overgrownpixel.overgrownpixeldungeon.items.spells.SpontaneosCombustion;
-import com.overgrownpixel.overgrownpixeldungeon.items.spells.WildEnergy;
 import com.overgrownpixel.overgrownpixeldungeon.items.stones.Runestone;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
