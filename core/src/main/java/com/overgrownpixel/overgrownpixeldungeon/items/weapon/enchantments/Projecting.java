@@ -24,13 +24,14 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 
 public class Projecting extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing PURPLE = new ItemSprite.Glowing( 0x8844CC );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.projecting );
 
 	@Override
 	public int proc(Weapon weapon, Char attacker, Char defender, int damage) {
@@ -41,7 +42,7 @@ public class Projecting extends Weapon.Enchantment {
 
 	@Override
 	public ItemSprite.Glowing glowing() {
-		return PURPLE;
+		return COLOR;
 	}
 
 }

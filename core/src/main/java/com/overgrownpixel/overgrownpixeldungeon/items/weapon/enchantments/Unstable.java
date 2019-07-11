@@ -25,14 +25,16 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments;
 
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.watabou.utils.Random;
 
 public class Unstable extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing GREY = new ItemSprite.Glowing( 0x999999 );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.unstable );
 
 	private static Class<?extends Weapon.Enchantment>[] randomEnchants = new Class[]{
 			Blazing.class,
@@ -49,8 +51,15 @@ public class Unstable extends Weapon.Enchantment {
 			Vampiric.class
 	};
 
+    public static boolean justRolledPrecise;
+
 	@Override
 	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {
+
+        if (justRolledPrecise){
+            justRolledPrecise = false;
+            return damage;
+        }
 		
 		int conservedDamage = 0;
 		if (attacker.buff(Kinetic.ConservedDamage.class) != null) {
@@ -69,6 +78,6 @@ public class Unstable extends Weapon.Enchantment {
 
 	@Override
 	public ItemSprite.Glowing glowing() {
-		return GREY;
+		return COLOR;
 	}
 }

@@ -37,6 +37,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.bags.MagicalHolster;
 import com.overgrownpixel.overgrownpixeldungeon.items.rings.RingOfSharpshooting;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Projecting;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Swift;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.utils.Bundle;
@@ -196,6 +197,12 @@ abstract public class MissileWeapon extends Weapon {
 	
 	@Override
 	public float castDelay(Char user, int dst) {
+        if (Actor.findChar( dst ) != null
+                && user.buff(Swift.SwiftAttack.class) != null
+                && user.buff(Swift.SwiftAttack.class).boostsRanged()) {
+            user.buff(Swift.SwiftAttack.class).detach();
+            return 0;
+        }
 		return speedFactor( user );
 	}
 	

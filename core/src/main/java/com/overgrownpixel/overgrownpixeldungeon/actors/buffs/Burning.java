@@ -87,8 +87,8 @@ public class Burning extends Buff implements Hero.Doom {
 		if (target.isAlive() && !target.isImmune(getClass())) {
 
             for(int i : PathFinder.NEIGHBOURS8){
-                if(Dungeon.level.fauna.get(target.pos+i) != null){
-                    Dungeon.level.fauna.get(target.pos+i).wither();
+                if(Dungeon.level.flora.get(target.pos+i) != null){
+                    Dungeon.level.flora.get(target.pos+i).wither();
                 }
             }
 			

@@ -25,6 +25,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments;
 
 import com.overgrownpixel.overgrownpixeldungeon.Badges;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.ShadowParticle;
@@ -35,7 +36,7 @@ import com.watabou.utils.Random;
 
 public class Grim extends Weapon.Enchantment {
 	
-	private static ItemSprite.Glowing BLACK = new ItemSprite.Glowing( 0x000000 );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.grim );
 	
 	@Override
 	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {
@@ -68,7 +69,7 @@ public class Grim extends Weapon.Enchantment {
 	
 	@Override
 	public Glowing glowing() {
-		return BLACK;
+		return COLOR;
 	}
 
 }

@@ -25,6 +25,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.LeafParticle;
@@ -40,7 +41,7 @@ import java.util.ArrayList;
 
 public class Blooming extends Weapon.Enchantment {
 	
-	private static ItemSprite.Glowing DARK_GREEN = new ItemSprite.Glowing( 0x008800 );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.blooming );
 	
 	@Override
 	public int proc(Weapon weapon, Char attacker, Char defender, int damage) {
@@ -89,6 +90,6 @@ public class Blooming extends Weapon.Enchantment {
 	
 	@Override
 	public ItemSprite.Glowing glowing() {
-		return DARK_GREEN;
+		return COLOR;
 	}
 }

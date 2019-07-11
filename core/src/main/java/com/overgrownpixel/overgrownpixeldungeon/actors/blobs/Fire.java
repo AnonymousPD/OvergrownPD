@@ -116,13 +116,13 @@ public class Fire extends Blob {
 			plant.wither();
 		}
 
-        if(Dungeon.level.fauna.get(pos) != null){
-            Dungeon.level.fauna.get(pos).wither();
+        if(Dungeon.level.flora.get(pos) != null){
+            Dungeon.level.flora.get(pos).wither();
         }
 
         for(int i : PathFinder.NEIGHBOURS8){
-            if(Dungeon.level.fauna.get(pos+i) != null){
-                Dungeon.level.fauna.get(pos+i).wither();
+            if(Dungeon.level.flora.get(pos+i) != null){
+                Dungeon.level.flora.get(pos+i).wither();
             }
         }
 	}

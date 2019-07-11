@@ -342,16 +342,16 @@ public abstract class Room extends Rect implements Graph.Node, Bundlable {
         return points;
     }
 
-    public boolean canPlaceFauna(Point p){
+    public boolean canPlaceflora(Point p){
         return inside(p);
     }
 
-    public final ArrayList<Point> faunaPlaceablePoints(){
+    public final ArrayList<Point> floraPlaceablePoints(){
         ArrayList<Point> points = new ArrayList<>();
         for (int i = left; i <= right; i++) {
             for (int j = top; j <= bottom; j++) {
                 Point p = new Point(i, j);
-                if (canPlaceFauna(p)) points.add(p);
+                if (canPlaceflora(p)) points.add(p);
             }
         }
         return points;

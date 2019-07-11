@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
@@ -35,7 +36,7 @@ import com.watabou.utils.Bundle;
 
 public class Kinetic extends Weapon.Enchantment {
 	
-	private static ItemSprite.Glowing YELLOW = new ItemSprite.Glowing( 0xFFFF00 );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.kinetic );
 	
 	@Override
 	public int proc(Weapon weapon, Char attacker, Char defender, int damage) {
@@ -57,7 +58,7 @@ public class Kinetic extends Weapon.Enchantment {
 	
 	@Override
 	public ItemSprite.Glowing glowing() {
-		return YELLOW;
+		return COLOR;
 	}
 	
 	public static class ConservedDamage extends Buff {

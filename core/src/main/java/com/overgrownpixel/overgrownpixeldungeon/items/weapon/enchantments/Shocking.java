@@ -25,6 +25,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Lightning;
@@ -39,7 +40,7 @@ import java.util.ArrayList;
 
 public class Shocking extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing WHITE = new ItemSprite.Glowing( 0xFFFFFF, 0.5f );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.shocking, 0.5f );
 
 	@Override
 	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {
@@ -70,7 +71,7 @@ public class Shocking extends Weapon.Enchantment {
 
 	@Override
 	public ItemSprite.Glowing glowing() {
-		return WHITE;
+		return COLOR;
 	}
 
 	private ArrayList<Char> affected = new ArrayList<>();

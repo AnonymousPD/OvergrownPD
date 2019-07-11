@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FlavourBuff;
@@ -37,7 +38,7 @@ import com.watabou.utils.Random;
 
 public class Blocking extends Weapon.Enchantment {
 	
-	private static ItemSprite.Glowing BLUE = new ItemSprite.Glowing( 0x0000FF );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.blocking );
 	
 	@Override
 	public int proc(Weapon weapon, Char attacker, Char defender, int damage) {
@@ -51,7 +52,7 @@ public class Blocking extends Weapon.Enchantment {
 	
 	@Override
 	public ItemSprite.Glowing glowing() {
-		return BLUE;
+		return COLOR;
 	}
 	
 	public static class BlockBuff extends FlavourBuff {

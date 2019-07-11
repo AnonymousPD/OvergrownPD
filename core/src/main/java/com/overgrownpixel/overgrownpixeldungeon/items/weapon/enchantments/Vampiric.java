@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
@@ -34,7 +35,7 @@ import com.watabou.utils.Random;
 
 public class Vampiric extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing RED = new ItemSprite.Glowing( 0x660022 );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.vampiric );
 	
 	@Override
 	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {
@@ -63,6 +64,6 @@ public class Vampiric extends Weapon.Enchantment {
 	
 	@Override
 	public Glowing glowing() {
-		return RED;
+		return COLOR;
 	}
 }

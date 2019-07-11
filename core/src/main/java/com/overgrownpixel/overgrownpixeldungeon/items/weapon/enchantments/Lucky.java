@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.items.Generator;
@@ -36,7 +37,7 @@ import com.watabou.utils.Random;
 
 public class Lucky extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing GREEN = new ItemSprite.Glowing( 0x00FF00 );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.lucky );
 	
 	@Override
 	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {
@@ -70,7 +71,7 @@ public class Lucky extends Weapon.Enchantment {
 
 	@Override
 	public Glowing glowing() {
-		return GREEN;
+		return COLOR;
 	}
 	
 	//used to keep track of whether a luck proc is incoming. see Mob.die()

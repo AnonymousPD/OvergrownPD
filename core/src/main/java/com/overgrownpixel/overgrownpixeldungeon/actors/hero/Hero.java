@@ -99,6 +99,9 @@ import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfUpgrade;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.SpiritBow;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Blocking;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Precise;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Swift;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Unstable;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.flails.Flail;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.overgrownpixel.overgrownpixeldungeon.journal.Notes;
@@ -323,6 +326,18 @@ public class Hero extends Char {
 	@Override
 	public int attackSkill( Char target ) {
 		KindOfWeapon wep = belongings.weapon;
+
+        if (wep instanceof Weapon
+                && (((Weapon) wep).hasEnchant(Precise.class, this)
+                || (((Weapon) wep).hasEnchant(Unstable.class, this) && Random.Int(11) == 0))){
+            if (Precise.rollToGuaranteeHit((Weapon) wep)){
+                target.sprite.emitter().start( Speck.factory(Speck.LIGHT), 0.05f, 5 );
+                if (((Weapon) wep).hasEnchant(Unstable.class, this)){
+                    Unstable.justRolledPrecise = true;
+                }
+                return Integer.MAX_VALUE;
+            }
+        }
 		
 		float accuracy = 1;
 		accuracy *= RingOfAccuracy.accuracyMultiplier( this );
@@ -455,6 +470,13 @@ public class Hero extends Char {
 	}
 	
 	public float attackDelay() {
+
+	    if (buff(Swift.SwiftAttack.class) != null
+                && buff(Swift.SwiftAttack.class).boostsMelee()) {
+            buff(Swift.SwiftAttack.class).detach();
+            return 0;
+        }
+
 		if (belongings.weapon != null) {
 			
 			return belongings.weapon.speedFactor( this );

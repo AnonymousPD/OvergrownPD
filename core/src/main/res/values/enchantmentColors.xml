@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="abosrbing">#91CA52</color>
+    <integer name="abosrbing">0x91CA52</integer>
+
+    <color name="blazing">#FF4400</color>
+    <integer name="blazing">0xFF4400</integer>
+
+    <color name="blocking">#0000FF</color>
+    <integer name="blocking">0x0000FF</integer>
+
+    <color name="blooming">#008800</color>
+    <integer name="blooming">0x008800</integer>
+
+    <color name="chilling">#00FFFF</color>
+    <integer name="chilling">0x00FFFF</integer>
+
+    <color name="corrupting">#440066</color>
+    <integer name="corrupting">0x440066</integer>
+
+    <color name="dazzling">#E4D473</color>
+    <integer name="dazzling">0xE4D473</integer>
+
+    <color name="disintegrating">#290157</color>
+    <integer name="disintegrating">0x290157</integer>
+
+    <color name="eating">#7E5400</color>
+    <integer name="eating">0x7E5400</integer>
+
+    <color name="elastic">#FF00FF</color>
+    <integer name="elastic">0xFF00FF</integer>
+
+    <color name="eldritch">#F01F66</color>
+    <integer name="eldritch">0xF01F66</integer>
+
+    <color name="explosion">#FF9422</color>
+    <integer name="explosion">0xFF9422</integer>
+
+    <color name="grim">#000000</color>
+    <integer name="grim">0x000000</integer>
+
+    <color name="hitting">#187C5F</color>
+    <integer name="hitting">0x187C5F</integer>
+
+    <color name="kinetic">#FFFF00</color>
+    <integer name="kinetic">0xFFFF00</integer>
+
+    <color name="lucky">#00FF00</color>
+    <integer name="lucky">0x00FF00</integer>
+
+    <color name="precise">#171E50</color>
+    <integer name="precise">0x171E50</integer>
+
+    <color name="projecting">#8844CC</color>
+    <integer name="projecting">0x8844CC</integer>
+
+    <color name="shocking">#FFFFFF</color>
+    <integer name="shocking">0xFFFFFF</integer>
+
+    <color name="stunning">#E47070</color>
+    <integer name="stunning">0xE47070</integer>
+
+    <color name="swift">#4D82B3</color>
+    <integer name="swift">0x4D82B3</integer>
+
+    <color name="teleporting">#4100C9</color>
+    <integer name="teleporting">0x4100C9</integer>
+
+    <color name="unstable">#999999</color>
+    <integer name="unstable">0x999999</integer>
+
+    <color name="vampiric">#660022</color>
+    <integer name="vampiric">0x660022</integer>
+
+    <color name="venomous">#7CE053</color>
+    <integer name="venomous">0x7CE053</integer>
+
+    <color name="vorpal">#AA6666</color>
+    <integer name="vorpal">0xAA6666</integer>
+
+    <color name="whirlwind">#DDFBC2</color>
+    <integer name="whirlwind">0xDDFBC2</integer>
+    
+</resources>

@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Burning;
@@ -35,7 +36,7 @@ import com.watabou.utils.Random;
 
 public class Blazing extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing ORANGE = new ItemSprite.Glowing( 0xFF4400 );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.blazing );
 	
 	@Override
 	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {
@@ -63,6 +64,6 @@ public class Blazing extends Weapon.Enchantment {
 	
 	@Override
 	public Glowing glowing() {
-		return ORANGE;
+		return COLOR;
 	}
 }

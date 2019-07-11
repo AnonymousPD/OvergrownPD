@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments;
 
 import com.overgrownpixel.overgrownpixeldungeon.Badges;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.Statistics;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
@@ -41,8 +42,10 @@ import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.watabou.utils.Random;
 
 public class Corrupting extends Weapon.Enchantment {
+
+
 	
-	private static ItemSprite.Glowing BLACK = new ItemSprite.Glowing( 0x440066 );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.corrupting );
 	
 	@Override
 	public int proc(Weapon weapon, Char attacker, Char defender, int damage) {
@@ -93,6 +96,6 @@ public class Corrupting extends Weapon.Enchantment {
 	
 	@Override
 	public ItemSprite.Glowing glowing() {
-		return BLACK;
+		return COLOR;
 	}
 }

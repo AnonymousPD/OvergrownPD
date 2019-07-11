@@ -36,7 +36,7 @@ import com.overgrownpixel.overgrownpixeldungeon.levels.traps.Trap;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Firebloom;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.shadows.Shadows;
-import com.overgrownpixel.overgrownpixeldungeon.tiles.wallfauna.Vines;
+import com.overgrownpixel.overgrownpixeldungeon.tiles.wallflora.Vines;
 import com.watabou.utils.Graph;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Point;
@@ -83,10 +83,10 @@ public abstract class RegularPainter extends Painter {
         return this;
     }
 
-    private int faunaFill = 0;
+    private int floraFill = 0;
 
-    public RegularPainter setFauna(int fill){
-        faunaFill = fill;
+    public RegularPainter setflora(int fill){
+        floraFill = fill;
         return this;
     }
 
@@ -161,8 +161,8 @@ public abstract class RegularPainter extends Painter {
             paintPlants( level, rooms );
         }
 
-        if (faunaFill > 0){
-            paintFauna( level, rooms );
+        if (floraFill > 0){
+            paintflora( level, rooms );
         }
 
         if (shadowsFill > 0){
@@ -551,14 +551,14 @@ public abstract class RegularPainter extends Painter {
         return new Firebloom();
     }
 
-    protected void paintFauna( Level l, ArrayList<Room> rooms ) {
-        //a list of all possible fauna cells
-        ArrayList<Integer> faunaCells = new ArrayList<>();
+    protected void paintflora( Level l, ArrayList<Room> rooms ) {
+        //a list of all possible flora cells
+        ArrayList<Integer> floraCells = new ArrayList<>();
 
-        //this is used when basing the fauna generation on rooms
+        //this is used when basing the flora generation on rooms
         if (!rooms.isEmpty()){
             for (Room r : rooms){
-                for (Point p : r.faunaPlaceablePoints()){
+                for (Point p : r.floraPlaceablePoints()){
                     int i = l.pointToCell(p);
                     if(Random.Float() <= 0.33f){
                         if (l.map[i] == Terrain.WALL || l.map[i] == Terrain.WALL_DECO){
@@ -566,10 +566,10 @@ public abstract class RegularPainter extends Painter {
                                     l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY_SP ||
                                     l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY_DECO ||
                                     l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY_WELL){
-                                faunaCells.add(i);
+                                floraCells.add(i);
                                 for(int n : PathFinder.NEIGHBOURS8){
-                                    if(faunaCells.contains(i+n)){
-                                        faunaCells.remove((Object)i);
+                                    if(floraCells.contains(i+n)){
+                                        floraCells.remove((Object)i);
                                     }
                                 }
                             }
@@ -586,11 +586,11 @@ public abstract class RegularPainter extends Painter {
                                 l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY_SP ||
                                 l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY_DECO ||
                                 l.map[i+PathFinder.widthUpDown] == Terrain.EMPTY_WELL){
-                            faunaCells.add(i);
+                            floraCells.add(i);
                             if(Random.Float() > 0.33f){
                                 for(int n : PathFinder.NEIGHBOURS8){
-                                    if(faunaCells.contains(i+n)){
-                                        faunaCells.remove((Object)i);
+                                    if(floraCells.contains(i+n)){
+                                        floraCells.remove((Object)i);
                                     }
                                 }
                             }
@@ -600,15 +600,15 @@ public abstract class RegularPainter extends Painter {
             }
         }
 
-        if(!faunaCells.isEmpty()){
-            for(int i = faunaFill; i > 0; i--){
-                if(!faunaCells.isEmpty()){
-                    int p = Random.element(faunaCells);
+        if(!floraCells.isEmpty()){
+            for(int i = floraFill; i > 0; i--){
+                if(!floraCells.isEmpty()){
+                    int p = Random.element(floraCells);
                     if(l.map[p] == Terrain.WALL || l.map[p] == Terrain.WALL_DECO){
                         Vines vines = new Vines();
                         vines.pos = p;
-                        l.fauna.put(p, vines);
-                        faunaCells.remove((Object)p);
+                        l.flora.put(p, vines);
+                        floraCells.remove((Object)p);
                     }
                 }
             }
@@ -616,10 +616,10 @@ public abstract class RegularPainter extends Painter {
     }
 
     protected void paintShadows( Level l, ArrayList<Room> rooms ) {
-        //a list of all possible fauna cells
+        //a list of all possible flora cells
         ArrayList<Integer> shadowCells = new ArrayList<>();
 
-        //this is used when basing the fauna generation on rooms
+        //this is used when basing the flora generation on rooms
         if (!rooms.isEmpty()){
             for (Room r : rooms){
                 for (Point p : r.shadowsPlaceableShadows()){

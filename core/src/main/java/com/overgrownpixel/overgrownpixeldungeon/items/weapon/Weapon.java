@@ -41,19 +41,34 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.curses.Friendly;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.curses.Polarized;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.curses.Sacrificial;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.curses.Wayward;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Absorbing;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Blazing;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Blocking;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Blooming;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Chilling;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Corrupting;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Dazzling;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Disintegrating;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Eating;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Elastic;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Eldritch;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Explosion;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Grim;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Hitting;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Kinetic;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Lucky;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Precise;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Projecting;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Shocking;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Stunning;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Swift;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Teleporting;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Unstable;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Vampiric;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Venomous;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Vorpal;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Whirlwind;
+import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
@@ -65,6 +80,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 abstract public class Weapon extends KindOfWeapon {
+
+    public static final String AC_DISINTEGRATE  = "DISINTEGRATE";
+    public static final String AC_TELEPORT      = "TELEPORT";
 
 	public float    ACC = 1f;	// Accuracy modifier
 	public float	DLY	= 1f;	// Speed modifier
@@ -93,6 +111,9 @@ abstract public class Weapon extends KindOfWeapon {
 	}
 	
 	public Augment augment = Augment.NONE;
+
+    public boolean hasTeleport = false;
+    public boolean hasDisintegrate = false;
 	
 	private static final int USES_TO_ID = 20;
 	private int usesLeftToID = USES_TO_ID;
@@ -100,6 +121,33 @@ abstract public class Weapon extends KindOfWeapon {
 	
 	public Enchantment enchantment;
 	public boolean curseInfusionBonus = false;
+
+    @Override
+    public ArrayList<String> actions(Hero hero ) {
+        ArrayList<String> actions = super.actions( hero );
+
+        if(this.hasEnchant(Disintegrating.class, hero) && this.isEquipped(hero) && isIdentified() && hasDisintegrate){
+            actions.add( AC_DISINTEGRATE );
+        }
+        if(this.hasEnchant(Teleporting.class, hero) && this.isEquipped(hero) && isIdentified() && hasTeleport){
+            actions.add( AC_TELEPORT );
+        }
+        return actions;
+    }
+
+    @Override
+    public void execute( Hero hero, String action ) {
+
+        super.execute( hero, action );
+
+        if (action.equals( AC_DISINTEGRATE )) {
+            new Disintegrating().disintegrate(hero, this);
+        }
+
+        if (action.equals( AC_TELEPORT )) {
+            new Teleporting().teleport(hero, this);
+        }
+    }
 	
 	@Override
 	public int proc( Char attacker, Char defender, int damage ) {
@@ -133,6 +181,8 @@ abstract public class Weapon extends KindOfWeapon {
 	private static final String ENCHANTMENT	    = "enchantment";
 	private static final String CURSE_INFUSION_BONUS = "curse_infusion_bonus";
 	private static final String AUGMENT	        = "augment";
+    private static final String HAS_TELEPORT	= "hasteleport";
+    private static final String HAS_DISINTEGRATE= "hasdisintegrate";
 
 	@Override
 	public void storeInBundle( Bundle bundle ) {
@@ -142,6 +192,8 @@ abstract public class Weapon extends KindOfWeapon {
 		bundle.put( ENCHANTMENT, enchantment );
 		bundle.put( CURSE_INFUSION_BONUS, curseInfusionBonus );
 		bundle.put( AUGMENT, augment );
+        bundle.put( HAS_TELEPORT, hasTeleport );
+        bundle.put( HAS_DISINTEGRATE, hasDisintegrate );
 	}
 	
 	@Override
@@ -151,13 +203,8 @@ abstract public class Weapon extends KindOfWeapon {
 		availableUsesToID = bundle.getInt( AVAILABLE_USES );
 		enchantment = (Enchantment)bundle.get( ENCHANTMENT );
 		curseInfusionBonus = bundle.getBoolean( CURSE_INFUSION_BONUS );
-		
-		//pre-0.7.2 saves
-		if (bundle.contains( "unfamiliarity" )){
-			usesLeftToID = bundle.getInt( "unfamiliarity" );
-			availableUsesToID = USES_TO_ID/2f;
-		}
-		
+        hasTeleport = bundle.getBoolean( HAS_TELEPORT );
+        hasDisintegrate = bundle.getBoolean( HAS_DISINTEGRATE );
 		augment = bundle.getEnum(AUGMENT, Augment.class);
 	}
 	
@@ -308,14 +355,20 @@ abstract public class Weapon extends KindOfWeapon {
 	public static abstract class Enchantment implements Bundlable {
 		
 		private static final Class<?>[] common = new Class<?>[]{
-				Blazing.class, Chilling.class, Kinetic.class, Shocking.class};
+				Blazing.class, Chilling.class, Kinetic.class,
+                Shocking.class, Absorbing.class, Venomous.class};
 		
 		private static final Class<?>[] uncommon = new Class<?>[]{
 				Blocking.class, Blooming.class, Elastic.class,
-				Lucky.class, Projecting.class, Unstable.class};
+				Lucky.class, Projecting.class, Unstable.class,
+                Swift.class, Explosion.class, Hitting.class,
+                Eldritch.class, Dazzling.class, Stunning.class,
+                Eating.class};
 		
 		private static final Class<?>[] rare = new Class<?>[]{
-				Corrupting.class, Grim.class, Vampiric.class};
+				Corrupting.class, Grim.class, Vampiric.class,
+                Whirlwind.class, Vorpal.class, Precise.class,
+                Disintegrating.class, Teleporting.class};
 		
 		private static final float[] typeChances = new float[]{
 				50, //12.5% each
@@ -435,6 +488,8 @@ abstract public class Weapon extends KindOfWeapon {
 				return null;
 			}
 		}
+
+        public void affectTarget(Ballistica shot, Hero curUser) {}
 		
 	}
 }

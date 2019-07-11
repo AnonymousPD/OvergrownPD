@@ -22,7 +22,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.overgrownpixel.overgrownpixeldungeon.tiles.wallfauna;
+package com.overgrownpixel.overgrownpixeldungeon.tiles.wallflora;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
@@ -31,34 +31,34 @@ import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.watabou.utils.Bundlable;
 import com.watabou.utils.Bundle;
 
-public abstract class WallFauna implements Bundlable {
+public abstract class WallFlora implements Bundlable {
 
-	public int image;
-	public int pos;
+    public int image;
+    public int pos;
 
-	public void wither(){
-        Dungeon.level.fauna.remove(pos);
+    public void wither(){
+        Dungeon.level.flora.remove(pos);
         GameScene.updateMap(pos);
 
         if (Dungeon.level.heroFOV[pos]) {
             CellEmitter.get( pos ).burst( LeafParticle.GENERAL, 6 );
         }
-	}
+    }
 
-    public WallFauna set(int pos){
+    public WallFlora set(int pos){
         this.pos = pos;
         return this;
     }
 
-	private static final String POS	= "pos";
+    private static final String POS	= "pos";
 
-	@Override
-	public void restoreFromBundle( Bundle bundle ) {
-		pos = bundle.getInt( POS );
-	}
+    @Override
+    public void restoreFromBundle( Bundle bundle ) {
+        pos = bundle.getInt( POS );
+    }
 
-	@Override
-	public void storeInBundle( Bundle bundle ) {
-		bundle.put( POS, pos );
-	}
+    @Override
+    public void storeInBundle( Bundle bundle ) {
+        bundle.put( POS, pos );
+    }
 }

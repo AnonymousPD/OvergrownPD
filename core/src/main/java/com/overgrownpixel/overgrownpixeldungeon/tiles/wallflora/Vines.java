@@ -22,12 +22,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.overgrownpixel.overgrownpixeldungeon.tiles.wallfauna;
+package com.overgrownpixel.overgrownpixeldungeon.tiles.wallflora;
 
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 
-public class Vines extends WallFauna {
+public class Vines extends WallFlora {
 
     {
         image = Random.Int(0, 63);

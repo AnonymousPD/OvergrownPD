@@ -46,6 +46,8 @@ import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.AntiMagic;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfRetribution;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.exotic.ScrollOfPsionicBlast;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Precise;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Unstable;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MeleeWeapon;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Level;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Languages;
@@ -496,6 +498,18 @@ public class DriedRose extends Artifact {
 
 		@Override
 		public int attackSkill(Char target) {
+
+            if (rose != null && rose.weapon != null
+                    && (rose.weapon.hasEnchant(Precise.class, this)
+                    || rose.weapon.hasEnchant(Unstable.class, this) && Random.Int(11) == 0)){
+                if (Precise.rollToGuaranteeHit(rose.weapon)){
+                    target.sprite.emitter().start( Speck.factory(Speck.LIGHT), 0.05f, 5 );
+                    return Integer.MAX_VALUE;
+                }
+                if (rose.weapon.hasEnchant(Unstable.class, this)){
+                    Unstable.justRolledPrecise = true;
+                }
+            }
 			
 			//same accuracy as the hero.
 			int acc = Dungeon.hero.lvl + 9;

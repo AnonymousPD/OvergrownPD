@@ -87,7 +87,7 @@ public class CityLevel extends RegularLevel {
 				.setWater(feeling == Feeling.WATER ? 0.90f : 0.30f, 4)
 				.setGrass(feeling == Feeling.GRASS ? 0.80f : 0.20f, 3)
                 .setPlants(feeling == Feeling.GRASS ? 15 : 10)
-                .setFauna(feeling == Feeling.GRASS ? 5 : 15)
+                .setflora(feeling == Feeling.GRASS ? 5 : 15)
 				.setTraps(nTraps(), trapClasses(), trapChances());
 	}
 	
