@@ -30,11 +30,12 @@ import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfBlastWave;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.watabou.noosa.Game;
 import com.watabou.utils.Random;
 
 public class Elastic extends Weapon.Enchantment {
 	
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.elastic );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.elastic) );
 	
 	@Override
 	public int proc(Weapon weapon, Char attacker, Char defender, int damage ) {

@@ -27,11 +27,12 @@ import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.watabou.noosa.Game;
 import com.watabou.utils.Random;
 
 public class Precise extends Weapon.Enchantment {
 
-    private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.precise );
+    private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.precise) );
 
     @Override
     public int proc(Weapon weapon, Char attacker, Char defender, int damage) {

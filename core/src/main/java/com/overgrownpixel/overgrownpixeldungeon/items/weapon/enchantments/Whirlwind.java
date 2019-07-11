@@ -30,13 +30,14 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.watabou.noosa.Game;
 import com.watabou.utils.Random;
 
 import java.util.ArrayList;
 
 public class Whirlwind extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.whirlwind );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.whirlwind) );
 
 	@Override
 	public int proc(Weapon weapon, Char attacker, Char defender, int damage) {

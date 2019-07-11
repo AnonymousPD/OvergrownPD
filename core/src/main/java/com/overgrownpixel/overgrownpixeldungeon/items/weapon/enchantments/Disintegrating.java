@@ -44,6 +44,7 @@ import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.QuickSlotButton;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Callback;
 import com.watabou.utils.Random;
@@ -57,7 +58,7 @@ public class Disintegrating extends Weapon.Enchantment {
     protected static Weapon.Enchantment curEnchantment = null;
     protected static Weapon curWeapon = null;
 
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.disintegrating );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.disintegrating) );
 	
 	@Override
 	public int proc(Weapon weapon, Char attacker, Char defender, int damage ) {

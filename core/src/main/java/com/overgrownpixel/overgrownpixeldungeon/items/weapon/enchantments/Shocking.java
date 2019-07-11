@@ -33,6 +33,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.particles.SparkParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
+import com.watabou.noosa.Game;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;
 
@@ -40,7 +41,7 @@ import java.util.ArrayList;
 
 public class Shocking extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.shocking, 0.5f );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.shocking), 0.5f );
 
 	@Override
 	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {

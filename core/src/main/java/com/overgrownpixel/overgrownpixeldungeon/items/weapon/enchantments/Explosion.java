@@ -37,13 +37,14 @@ import com.overgrownpixel.overgrownpixeldungeon.items.bombs.Bomb;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;
 
 public class Explosion extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.explosion );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.explosion) );
 	
 	@Override
 	public int proc(Weapon weapon, Char attacker, Char defender, int damage ) {

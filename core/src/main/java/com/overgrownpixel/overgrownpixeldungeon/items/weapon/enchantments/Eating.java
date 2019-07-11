@@ -32,11 +32,12 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
+import com.watabou.noosa.Game;
 import com.watabou.utils.Random;
 
 public class Eating extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.eating );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.eating) );
 	
 	@Override
 	public int proc(Weapon weapon, Char attacker, Char defender, int damage ) {

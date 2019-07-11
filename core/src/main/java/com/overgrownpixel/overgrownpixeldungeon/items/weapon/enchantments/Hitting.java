@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.watabou.noosa.Game;
 import com.watabou.utils.Bundlable;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
@@ -37,7 +38,7 @@ import java.util.Collection;
 
 public class Hitting extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.hitting );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.hitting) );
 
 	private static ArrayList<Mob> mobs = new ArrayList<Mob>();
 	

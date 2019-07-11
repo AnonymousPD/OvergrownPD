@@ -34,6 +34,7 @@ import com.overgrownpixel.overgrownpixeldungeon.levels.Level;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.watabou.noosa.Game;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;
 
@@ -41,7 +42,7 @@ import java.util.ArrayList;
 
 public class Blooming extends Weapon.Enchantment {
 	
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.blooming );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.blooming) );
 	
 	@Override
 	public int proc(Weapon weapon, Char attacker, Char defender, int damage) {

@@ -31,12 +31,13 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 import com.watabou.utils.Bundle;
 
 public class Kinetic extends Weapon.Enchantment {
 	
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.kinetic );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.kinetic) );
 	
 	@Override
 	public int proc(Weapon weapon, Char attacker, Char defender, int damage) {

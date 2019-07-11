@@ -29,10 +29,11 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.LivingPlant;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MeleeWeapon;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.watabou.noosa.Game;
 
 public class Absorbing extends Weapon.Enchantment {
 
-    private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.abosrbing );
+    private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.absorbing) );
 
     @Override
     public int proc(Weapon weapon, Char attacker, Char defender, int damage) {

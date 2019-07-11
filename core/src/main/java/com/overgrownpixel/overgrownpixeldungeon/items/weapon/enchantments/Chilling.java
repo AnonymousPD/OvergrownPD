@@ -32,11 +32,12 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.Splash;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite.Glowing;
+import com.watabou.noosa.Game;
 import com.watabou.utils.Random;
 
 public class Chilling extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( R.integer.chilling );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.chilling) );
 	
 	@Override
 	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {
