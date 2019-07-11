@@ -32,6 +32,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.FadeleafPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.TimekeepersHourglass;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfTeleportation;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
@@ -39,6 +40,8 @@ import com.overgrownpixel.overgrownpixeldungeon.scenes.InterlevelScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.noosa.Game;
+import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 
 public class Fadeleaf extends Plant {
 	
@@ -168,5 +171,20 @@ public class Fadeleaf extends Plant {
 
 			plantClass = Fadeleaf.class;
 		}
-	}
+
+        @Override
+        public Emitter.Factory getPixelParticle() {
+            return FadeleafPoisonParticle.FACTORY;
+        }
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new FadeleafPoisonParticle();
+        }
+
+        @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            new Fadeleaf().attackProc(defender, damage);
+        }
+    }
 }

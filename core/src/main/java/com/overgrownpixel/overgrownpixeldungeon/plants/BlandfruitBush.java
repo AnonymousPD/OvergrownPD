@@ -26,8 +26,11 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.BlandfruitPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.Blandfruit;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 
 public class BlandfruitBush extends Plant {
 
@@ -58,5 +61,14 @@ public class BlandfruitBush extends Plant {
 			plantClass = BlandfruitBush.class;
 		}
 
-	}
+        @Override
+        public Emitter.Factory getPixelParticle() {
+            return BlandfruitPoisonParticle.FACTORY;
+        }
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new BlandfruitPoisonParticle();
+        }
+    }
 }

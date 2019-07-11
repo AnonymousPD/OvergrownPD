@@ -38,9 +38,12 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Weakness;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.DreamfoilPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
+import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 
 public class Dreamfoil extends Plant {
 
@@ -79,7 +82,11 @@ public class Dreamfoil extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-        defaultProc(enemy, damage);
+	    if(enemy instanceof Hero){
+            defaultProc(enemy, damage);
+        } else {
+	        activate(enemy);
+        }
     }
 
 	public static class Seed extends Plant.Seed {
@@ -88,5 +95,20 @@ public class Dreamfoil extends Plant {
 
 			plantClass = Dreamfoil.class;
 		}
-	}
+
+        @Override
+        public Emitter.Factory getPixelParticle() {
+            return DreamfoilPoisonParticle.FACTORY;
+        }
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new DreamfoilPoisonParticle();
+        }
+
+        @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            new Dreamfoil().activate(defender);
+        }
+    }
 }

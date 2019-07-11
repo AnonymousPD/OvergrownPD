@@ -31,7 +31,10 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Recharging;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.StarflowerPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 import com.watabou.utils.Random;
 
 public class Starflower extends Plant {
@@ -72,10 +75,25 @@ public class Starflower extends Plant {
 
 			plantClass = Starflower.class;
 		}
-		
-		@Override
+
+        @Override
+        public Emitter.Factory getPixelParticle() {
+            return StarflowerPoisonParticle.FACTORY;
+        }
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new StarflowerPoisonParticle();
+        }
+
+        @Override
 		public int price() {
 			return 30 * quantity;
 		}
-	}
+
+        @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            new Starflower().attackProc(defender, damage);
+        }
+    }
 }

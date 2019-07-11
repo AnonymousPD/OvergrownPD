@@ -34,10 +34,13 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.ShaftParticle;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.SungrassPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
 import com.watabou.noosa.Image;
+import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 import com.watabou.utils.Bundle;
 
 public class Sungrass extends Plant {
@@ -80,7 +83,22 @@ public class Sungrass extends Plant {
 
 			bones = true;
 		}
-	}
+
+        @Override
+        public Emitter.Factory getPixelParticle() {
+            return SungrassPoisonParticle.FACTORY;
+        }
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new SungrassPoisonParticle();
+        }
+
+        @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            new Sungrass().attackProc(defender, damage);
+        }
+    }
 	
 	public static class Health extends Buff {
 		

@@ -112,8 +112,6 @@ public enum HeroClass {
 		}
 		
 		new ScrollOfIdentify().identify();
-
-		new Katana().identify().collect();
 	}
 
 	public Badges.Badge masteryBadge() {

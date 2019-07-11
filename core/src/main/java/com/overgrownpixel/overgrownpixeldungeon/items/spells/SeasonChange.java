@@ -28,8 +28,10 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.LeafParticle;
+import com.overgrownpixel.overgrownpixeldungeon.items.food.Blandfruit;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfEarthenArmor;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfMagicMapping;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Firebloom;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
@@ -46,7 +48,7 @@ public class SeasonChange extends Spell {
             if (Dungeon.level.heroFOV[plant.pos]) {
                 CellEmitter.get( plant.pos ).burst( LeafParticle.GENERAL, 6 );
             }
-            Dungeon.level.drop(Plant.getPlant(plant), plant.pos);
+            Dungeon.level.drop(new Plant.PlaceholderPlant().getPlant(plant), plant.pos);
         }
         detach( curUser.belongings.backpack );
         updateQuickslot();

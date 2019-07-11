@@ -32,8 +32,11 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FrostImbue;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.IceCapPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
+import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 import com.watabou.utils.PathFinder;
 
 public class Icecap extends Plant {
@@ -88,5 +91,20 @@ public class Icecap extends Plant {
 
 			plantClass = Icecap.class;
 		}
-	}
+
+        @Override
+        public Emitter.Factory getPixelParticle() {
+            return IceCapPoisonParticle.FACTORY;
+        }
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new IceCapPoisonParticle();
+        }
+
+        @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            new Icecap().attackProc(defender, damage);
+        }
+    }
 }

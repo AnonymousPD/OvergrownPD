@@ -32,7 +32,10 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.LeafParticle;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.RotberryPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 
 public class Rotberry extends Plant {
 
@@ -76,8 +79,23 @@ public class Rotberry extends Plant {
 
 			plantClass = Rotberry.class;
 		}
-		
-		@Override
+
+        @Override
+        public Emitter.Factory getPixelParticle() {
+            return RotberryPoisonParticle.FACTORY;
+        }
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new RotberryPoisonParticle();
+        }
+
+        @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            new Rotberry().attackProc(defender, damage);
+        }
+
+        @Override
 		public int price() {
 			return 30 * quantity;
 		}

@@ -135,6 +135,12 @@ public class LivingPlant extends Mob {
     }
 
     @Override
+    public void damage(int dmg, Object src) {
+        super.damage(dmg, src);
+        sprite.burst(plantClass.getPlant(plantClass).poisonEmitterClass().getColor(), dmg);
+    }
+
+    @Override
 	public int damageRoll() {
 		return Random.NormalIntRange( 1, 4 );
 	}

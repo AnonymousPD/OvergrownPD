@@ -25,8 +25,11 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.items.Item;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.SpiritBow;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.HookedWaraxe;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.AssassinsBlade;
@@ -58,15 +61,35 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.scythes.Spike
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.spears.Sasumata;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.whips.ChainWhip;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.whips.NailWhip;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
+import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
+import com.overgrownpixel.overgrownpixeldungeon.windows.WndBag;
+import com.watabou.noosa.particles.Emitter;
+import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.Locale;
 
 public class MeleeWeapon extends Weapon {
+
+    public static final String AC_POSION		= "POISON";
+
+    protected static final float TIME_TO_POISON	= 1f;
 	
 	public int tier;
+
+    public Plant.Seed seed;
+
+    public int poison_turns = 0;
+
+    {
+        defaultAction = AC_POSION;
+    }
 
 	@Override
 	public int min(int lvl) {
@@ -99,8 +122,70 @@ public class MeleeWeapon extends Weapon {
 		
 		return damage;
 	}
-	
-	@Override
+
+    @Override
+    public ArrayList<String> actions(Hero hero ) {
+        ArrayList<String> actions = super.actions( hero );
+        if(seed == null && isIdentified()){
+            actions.add( AC_POSION );
+        }
+        return actions;
+    }
+
+    @Override
+    public void execute( Hero hero, String action ) {
+
+        super.execute( hero, action );
+
+        if (action.equals( AC_POSION )) {
+            GameScene.selectItem( itemSelector, mode, inventoryTitle );
+        }
+    }
+
+    protected WndBag.Mode mode = WndBag.Mode.SEED;
+
+    protected String inventoryTitle = Messages.get(this, "inv_title");
+
+    protected static WndBag.Listener itemSelector = new WndBag.Listener() {
+        @Override
+        public void onSelect( Item item ) {
+
+            if (item != null) {
+                if(curItem instanceof Weapon && item instanceof Plant.Seed){
+                    try {
+                        ((MeleeWeapon) curItem).seed = (Plant.Seed) item.getClass().newInstance().quantity(1);
+                        ((MeleeWeapon) curItem).setPoisonTurns(5);
+                        item.detach(curUser.belongings.backpack);
+                        curUser.spend( TIME_TO_POISON );
+                        curUser.busy();
+                        (curUser.sprite).operate(curUser.pos);
+                        GLog.i(Messages.get(MeleeWeapon.class, "poisoned", curItem.name(), item.name()));
+                    } catch (Exception e) {
+                        OvergrownPixelDungeon.reportException(e);
+                    }
+                }
+            }
+        }
+    };
+
+    public void setPoisonTurns(int turns){
+        this.poison_turns = turns+this.level();
+    }
+
+    @Override
+    public int proc(Char attacker, Char defender, int damage) {
+        if(this.seed != null && this.poison_turns > 0){
+            this.seed.onProc(attacker, defender, damage);
+            this.poison_turns--;
+            if(this.poison_turns <= 0){
+                this.seed = null;
+                GLog.i(Messages.get(this, "wears_off", this.name()));
+            }
+        }
+        return super.proc(attacker, defender, damage);
+    }
+
+    @Override
 	public String info() {
 
 		String info = desc();
@@ -194,6 +279,8 @@ public class MeleeWeapon extends Weapon {
 		} else if (!isIdentified() && cursedKnown){
 			info += "\n\n" + Messages.get(Weapon.class, "not_cursed");
 		}
+
+		if(levelKnown && this.seed != null) info += "\n\n" + Messages.get(this, "poison_desc", this.seed, this.poison_turns);
 		
 		return info;
 	}
@@ -222,6 +309,35 @@ public class MeleeWeapon extends Weapon {
             String percentage = format.format(newf);
             return Messages.get(MeleeWeapon.class, "faster_dly_info", percentage);
         }
+    }
+
+    @Override
+    public Emitter emitter() {
+        if (this.seed == null) {
+            return null;
+        }
+        Emitter emitter = new Emitter();
+        emitter.pos(12.5f, 3.0f);
+        emitter.fillTarget = false;
+        emitter.pour(seed.getPixelParticle(), 1.0f);
+        return emitter;
+    }
+
+    private static final String SEED		    = "seed";
+    private static final String POISON_TURNS	= "poisonturns";
+
+    @Override
+    public void storeInBundle( Bundle bundle ) {
+        super.storeInBundle( bundle );
+        bundle.put( SEED, seed );
+        bundle.put( POISON_TURNS, poison_turns );
+    }
+
+    @Override
+    public void restoreFromBundle( Bundle bundle ) {
+        super.restoreFromBundle( bundle );
+        seed = (Plant.Seed) bundle.get( SEED );
+        poison_turns = bundle.getInt(POISON_TURNS);
     }
 	
 	@Override

@@ -50,6 +50,8 @@ import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.audio.Sample;
+import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 import com.watabou.utils.Bundlable;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.PathFinder;
@@ -213,7 +215,7 @@ public abstract class Plant implements Bundlable {
 		
 	}
 
-    public static Plant.Seed getPlant(Plant plant){
+    public Plant.Seed getPlant(Plant plant){
         switch (plant.image){
             case 0:
                 return new Rotberry.Seed();
@@ -276,11 +278,35 @@ public abstract class Plant implements Bundlable {
 			stackable = true;
 			defaultAction = AC_THROW;
 		}
+
+        public Emitter.Factory getPixelParticle(){
+            return null;
+        }
+
+		public void onProc(Char attacker, Char defender, int damage){
+            //also poison can not effect inorganic, acidic and fiery actors for obvious reasons
+            if(!defender.properties().contains(Char.Property.INORGANIC)
+                    && !defender.properties().contains(Char.Property.ACIDIC)
+                    && !defender.properties().contains(Char.Property.FIERY)){
+                if (Dungeon.level.heroFOV[defender.pos]) {
+                    defender.sprite.burst(poisonEmitterClass().getColor(), damage);
+                }
+                procEffect(attacker, defender, damage);
+            }
+        }
+
+        public void procEffect(Char attacker, Char defender, int damage){
+
+        }
 		
 		protected Class<? extends Plant> plantClass;
 
         public Class<? extends Plant> getPlantClass() {
             return this.plantClass;
+        }
+
+        public PixelParticle poisonEmitterClass(){
+            return null;
         }
 		
 		@Override
@@ -385,4 +411,17 @@ public abstract class Plant implements Bundlable {
 			}
 		}
 	}
+
+	//Used to gain acces to static methods
+	public static class PlaceholderPlant extends Plant{
+
+        @Override
+        public void attackProc(Char enemy, int damage) {}
+
+        @Override
+        public void activate(Char ch) {}
+
+        @Override
+        public void activate() {}
+    }
 }

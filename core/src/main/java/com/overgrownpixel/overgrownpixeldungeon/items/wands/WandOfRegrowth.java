@@ -31,6 +31,9 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Regrowth;
 import com.overgrownpixel.overgrownpixeldungeon.effects.MagicMissile;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.DewcatcherPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.SeedPodPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.SwiftthistlePoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.Dewdrop;
 import com.overgrownpixel.overgrownpixeldungeon.items.Generator;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Blooming;
@@ -43,6 +46,8 @@ import com.overgrownpixel.overgrownpixeldungeon.plants.Starflower;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.audio.Sample;
+import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Callback;
 import com.watabou.utils.ColorMath;
@@ -357,7 +362,17 @@ public class WandOfRegrowth extends Wand {
 			{
 				plantClass = Dewcatcher.class;
 			}
-		}
+
+            @Override
+            public Emitter.Factory getPixelParticle() {
+                return DewcatcherPoisonParticle.FACTORY;
+            }
+
+            @Override
+            public PixelParticle poisonEmitterClass() {
+                return new DewcatcherPoisonParticle();
+            }
+        }
 	}
 
 	public static class Seedpod extends Plant{
@@ -433,7 +448,17 @@ public class WandOfRegrowth extends Wand {
 			{
 				plantClass = Seedpod.class;
 			}
-		}
+
+            @Override
+            public Emitter.Factory getPixelParticle() {
+                return SeedPodPoisonParticle.FACTORY;
+            }
+
+            @Override
+            public PixelParticle poisonEmitterClass() {
+                return new SeedPodPoisonParticle();
+            }
+        }
 
 	}
 

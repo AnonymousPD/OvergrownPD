@@ -30,7 +30,10 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Levitation;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Vertigo;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.StormvinePoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 
 public class Stormvine extends Plant {
 
@@ -72,5 +75,20 @@ public class Stormvine extends Plant {
 
 			plantClass = Stormvine.class;
 		}
-	}
+
+        @Override
+        public Emitter.Factory getPixelParticle() {
+            return StormvinePoisonParticle.FACTORY;
+        }
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new StormvinePoisonParticle();
+        }
+
+        @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            new Stormvine().attackProc(defender, damage);
+        }
+    }
 }

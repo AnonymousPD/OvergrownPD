@@ -32,11 +32,14 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FlavourBuff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.EarthParticle;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.EarthrootPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.Image;
+import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 import com.watabou.utils.Bundle;
 
 public class Earthroot extends Plant {
@@ -91,7 +94,22 @@ public class Earthroot extends Plant {
 
 			bones = true;
 		}
-	}
+
+        @Override
+        public Emitter.Factory getPixelParticle() {
+            return EarthrootPoisonParticle.FACTORY;
+        }
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new EarthrootPoisonParticle();
+        }
+
+        @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            new Earthroot().attackProc(defender, damage);
+        }
+    }
 	
 	public static class Armor extends Buff {
 		

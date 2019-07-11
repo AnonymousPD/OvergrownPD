@@ -35,7 +35,10 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.BlindweedPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 import com.watabou.utils.Random;
 
 public class Blindweed extends Plant {
@@ -98,5 +101,20 @@ public class Blindweed extends Plant {
 
 			plantClass = Blindweed.class;
 		}
-	}
+
+        @Override
+        public Emitter.Factory getPixelParticle() {
+            return BlindweedPoisonParticle.FACTORY;
+        }
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new BlindweedPoisonParticle();
+        }
+
+        @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            new Blindweed().attackProc(defender, damage);
+        }
+    }
 }
