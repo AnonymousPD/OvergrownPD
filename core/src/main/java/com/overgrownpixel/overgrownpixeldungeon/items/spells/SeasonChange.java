@@ -28,10 +28,8 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.LeafParticle;
-import com.overgrownpixel.overgrownpixeldungeon.items.food.Blandfruit;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfEarthenArmor;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfMagicMapping;
-import com.overgrownpixel.overgrownpixeldungeon.plants.Firebloom;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 

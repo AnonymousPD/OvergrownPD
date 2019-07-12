@@ -27,7 +27,6 @@ package com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
 import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
-import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.watabou.noosa.Game;

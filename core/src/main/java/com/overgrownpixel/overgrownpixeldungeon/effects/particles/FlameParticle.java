@@ -24,6 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects.particles;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.Emitter.Factory;
 import com.watabou.noosa.particles.PixelParticle;
@@ -44,7 +46,7 @@ public class FlameParticle extends PixelParticle.Shrinking {
 	public FlameParticle() {
 		super();
 		
-		color( 0xEE7722 );
+		color( Game.instance.getResources().getColor(R.color.flameparticle) );
 		lifespan = 0.6f;
 		
 		acc.set( 0, -80 );

@@ -23,6 +23,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.Emitter.Factory;
 import com.watabou.noosa.particles.PixelParticle;
@@ -43,7 +45,7 @@ public class FadeleafPoisonParticle extends PixelParticle {
 
     public FadeleafPoisonParticle() {
         size(2.0f);
-        color(0xBABABA);
+        color(Game.instance.getResources().getColor(R.color.fadeleafpoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

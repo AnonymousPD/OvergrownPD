@@ -24,6 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects.particles;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.Emitter.Factory;
 import com.watabou.noosa.particles.PixelParticle;
@@ -45,7 +47,7 @@ public class BlastParticle extends PixelParticle.Shrinking {
 	public BlastParticle() {
 		super();
 		
-		color( 0xEE7722 );
+		color( Game.instance.getResources().getColor(R.color.blastparticle) );
 		acc.set( 0, +50 );
 	}
 	

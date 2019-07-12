@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.spells;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
@@ -163,7 +164,7 @@ public class BeaconOfReturning extends Spell {
 		return desc;
 	}
 	
-	private static final ItemSprite.Glowing WHITE = new ItemSprite.Glowing( 0xFFFFFF );
+	private static final ItemSprite.Glowing WHITE = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.beaconofreturningspell) );
 	
 	@Override
 	public ItemSprite.Glowing glowing() {

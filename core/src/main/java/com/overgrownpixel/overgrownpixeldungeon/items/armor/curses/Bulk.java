@@ -24,13 +24,15 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.armor.curses;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.watabou.noosa.Game;
 
 public class Bulk extends Armor.Glyph {
 	
-	private static ItemSprite.Glowing BLACK = new ItemSprite.Glowing( 0x000000 );
+	private static ItemSprite.Glowing BLACK = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.curse) );
 	
 	@Override
 	public int proc(Armor armor, Char attacker, Char defender, int damage) {

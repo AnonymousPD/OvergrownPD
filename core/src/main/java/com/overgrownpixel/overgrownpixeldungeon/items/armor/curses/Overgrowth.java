@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.armor.curses;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
@@ -35,11 +36,12 @@ import com.overgrownpixel.overgrownpixeldungeon.plants.BlandfruitBush;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Starflower;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.watabou.noosa.Game;
 import com.watabou.utils.Random;
 
 public class Overgrowth extends Armor.Glyph {
 	
-	private static ItemSprite.Glowing BLACK = new ItemSprite.Glowing( 0x000000 );
+	private static ItemSprite.Glowing BLACK = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.curse) );
 	
 	@Override
 	public int proc(Armor armor, Char attacker, Char defender, int damage) {

@@ -24,6 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects.particles;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.Emitter.Factory;
 import com.watabou.noosa.particles.PixelParticle;
@@ -41,7 +43,7 @@ public class SmokeParticle extends PixelParticle {
 	public SmokeParticle() {
 		super();
 		
-		color( 0x222222 );
+		color( Game.instance.getResources().getColor(R.color.smokeparticle) );
 		
 		acc.set( 0, -40 );
 	}

@@ -24,16 +24,18 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.curses;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Bleeding;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.watabou.noosa.Game;
 import com.watabou.utils.Random;
 
 public class Sacrificial extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing BLACK = new ItemSprite.Glowing( 0x000000 );
+	private static ItemSprite.Glowing BLACK = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.curse) );
 
 	@Override
 	public int proc(Weapon weapon, Char attacker, Char defender, int damage ) {

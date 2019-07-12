@@ -24,6 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects.particles;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.Emitter.Factory;
 import com.watabou.noosa.particles.PixelParticle;
@@ -43,7 +45,7 @@ public class WebParticle extends PixelParticle {
 	public WebParticle() {
 		super();
 		
-		color( 0xCCCCCC );
+		color( Game.instance.getResources().getColor(R.color.webparticle) );
 		lifespan = 2f;
 	}
 	

@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Charm;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Weakness;
@@ -35,13 +36,14 @@ import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
 import com.overgrownpixel.overgrownpixeldungeon.levels.traps.DisintegrationTrap;
 import com.overgrownpixel.overgrownpixeldungeon.levels.traps.GrimTrap;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.watabou.noosa.Game;
 import com.watabou.utils.Random;
 
 import java.util.HashSet;
 
 public class AntiMagic extends Armor.Glyph {
 
-	private static ItemSprite.Glowing TEAL = new ItemSprite.Glowing( 0x88EEFF );
+	private static ItemSprite.Glowing TEAL = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.antimagic) );
 	
 	public static final HashSet<Class> RESISTS = new HashSet<>();
 	static {

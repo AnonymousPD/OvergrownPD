@@ -24,6 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects.particles;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.Emitter.Factory;
 import com.watabou.noosa.particles.PixelParticle;
@@ -53,7 +55,7 @@ public class BloodParticle extends PixelParticle.Shrinking {
 	public BloodParticle() {
 		super();
 		
-		color( 0xCC0000 );
+		color( Game.instance.getResources().getColor(R.color.bloodparticle) );
 		lifespan = 0.8f;
 		
 		acc.set( 0, +40 );

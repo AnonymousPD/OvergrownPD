@@ -24,6 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects.particles;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.Emitter.Factory;
 import com.watabou.noosa.particles.PixelParticle;
@@ -44,7 +46,7 @@ public class SacrificialParticle extends PixelParticle.Shrinking {
 	public SacrificialParticle() {
 		super();
 
-		color( 0x4488EE );
+		color( Game.instance.getResources().getColor(R.color.sacrificialparticle) );
 		lifespan = 0.6f;
 
 		acc.set( 0, -100 );

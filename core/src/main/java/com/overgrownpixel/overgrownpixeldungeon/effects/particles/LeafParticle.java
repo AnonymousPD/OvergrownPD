@@ -25,6 +25,8 @@
 package com.overgrownpixel.overgrownpixeldungeon.effects.particles;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.Emitter.Factory;
 import com.watabou.noosa.particles.PixelParticle;
@@ -41,7 +43,7 @@ public class LeafParticle extends PixelParticle.Shrinking {
 		@Override
 		public void emit( Emitter emitter, int index, float x, float y ) {
 			LeafParticle p = ((LeafParticle)emitter.recycle( LeafParticle.class ));
-			p.color( ColorMath.random( 0x004400, 0x88CC44 ) );
+			p.color( ColorMath.random( Game.instance.getResources().getColor(R.color.leafparticle1), Game.instance.getResources().getColor(R.color.leafparticle2) ) );
 			p.reset( x, y );
 		}
 	};

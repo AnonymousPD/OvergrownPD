@@ -24,6 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects.particles;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.Emitter.Factory;
 import com.watabou.noosa.particles.PixelParticle;
@@ -90,6 +92,6 @@ public class PoisonParticle extends PixelParticle {
 		// alpha: 1 -> 0; size: 1 -> 4
 		size( 4 - (am = left / lifespan) * 3 );
 		// color: 0x8844FF -> 0x00FF00
-		color( ColorMath.interpolate( 0x00FF00, 0x8844FF, am ) );
+		color( ColorMath.interpolate( Game.instance.getResources().getColor(R.color.poisonparticle1), Game.instance.getResources().getColor(R.color.poisonparticle2), am ) );
 	}
 }

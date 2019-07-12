@@ -29,7 +29,6 @@ import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.SpiritBow;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.HookedWaraxe;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.AssassinsBlade;
@@ -61,7 +60,6 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.scythes.Spike
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.spears.Sasumata;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.whips.ChainWhip;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.whips.NailWhip;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;

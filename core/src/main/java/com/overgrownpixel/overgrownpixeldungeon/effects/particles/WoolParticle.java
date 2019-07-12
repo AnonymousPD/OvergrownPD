@@ -24,6 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects.particles;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.Emitter.Factory;
 import com.watabou.noosa.particles.PixelParticle;
@@ -42,7 +44,7 @@ public class WoolParticle extends PixelParticle.Shrinking {
 	public WoolParticle() {
 		super();
 		
-		color( ColorMath.random( 0x999999, 0xEEEEE0 ) );
+		color( ColorMath.random( Game.instance.getResources().getColor(R.color.woolparticle1), Game.instance.getResources().getColor(R.color.woolparticle2)) );
 		
 		acc.set( 0, -40 );
 	}

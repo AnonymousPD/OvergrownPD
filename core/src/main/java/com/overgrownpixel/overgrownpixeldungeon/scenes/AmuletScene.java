@@ -27,6 +27,7 @@ package com.overgrownpixel.overgrownpixeldungeon.scenes;
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.GamesInProgress;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Flare;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.items.Amulet;
@@ -108,7 +109,7 @@ public class AmuletScene extends PixelScene {
 			btnStay.setPos( btnExit.left(), btnExit.bottom() + SMALL_GAP );
 		}
 
-		new Flare( 8, 48 ).color( 0xFFDDBB, true ).show( amulet, 0 ).angularSpeed = +30;
+		new Flare( 8, 48 ).color( Game.instance.getResources().getColor(R.color.amuletflare), true ).show( amulet, 0 ).angularSpeed = +30;
 		
 		fadeIn();
 	}

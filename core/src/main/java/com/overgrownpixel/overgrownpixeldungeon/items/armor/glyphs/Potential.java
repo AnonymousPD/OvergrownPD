@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.EnergyParticle;
@@ -31,11 +32,12 @@ import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor.Glyph;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite.Glowing;
+import com.watabou.noosa.Game;
 import com.watabou.utils.Random;
 
 public class Potential extends Glyph {
 	
-	private static ItemSprite.Glowing WHITE = new ItemSprite.Glowing( 0xFFFFFF, 0.6f );
+	private static ItemSprite.Glowing WHITE = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.potential), 0.6f );
 	
 	@Override
 	public int proc( Armor armor, Char attacker, Char defender, int damage) {

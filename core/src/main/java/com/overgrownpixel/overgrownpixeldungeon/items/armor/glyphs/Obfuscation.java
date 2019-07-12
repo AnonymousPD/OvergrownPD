@@ -24,13 +24,15 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.watabou.noosa.Game;
 
 public class Obfuscation extends Armor.Glyph {
 
-	private static ItemSprite.Glowing GREY = new ItemSprite.Glowing( 0x888888 );
+	private static ItemSprite.Glowing GREY = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.obfuscation) );
 
 	@Override
 	public int proc(Armor armor, Char attacker, Char defender, int damage) {

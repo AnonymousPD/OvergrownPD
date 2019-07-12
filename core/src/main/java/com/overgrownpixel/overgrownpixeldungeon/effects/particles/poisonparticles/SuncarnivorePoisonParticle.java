@@ -23,6 +23,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.Emitter.Factory;
 import com.watabou.noosa.particles.PixelParticle;
@@ -43,7 +45,7 @@ public class SuncarnivorePoisonParticle extends PixelParticle {
 
     public SuncarnivorePoisonParticle() {
         size(2.0f);
-        color(0xD97764);
+        color(Game.instance.getResources().getColor(R.color.suncarnivorepoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

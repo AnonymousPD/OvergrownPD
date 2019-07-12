@@ -24,6 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects.particles;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.Emitter.Factory;
 import com.watabou.noosa.particles.PixelParticle;
@@ -42,7 +44,7 @@ public class EarthParticle extends PixelParticle {
 	public EarthParticle() {
 		super();
 		
-		color( ColorMath.random( 0x444444, 0x777766 ) );
+		color( ColorMath.random( Game.instance.getResources().getColor(R.color.earthparticle1), Game.instance.getResources().getColor(R.color.earthparticle2)) );
 		angle = Random.Float( -30, 30 );
 		
 		lifespan = 0.5f;

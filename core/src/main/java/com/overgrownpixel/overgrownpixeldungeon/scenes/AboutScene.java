@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.scenes;
 
 import com.overgrownpixel.overgrownpixeldungeon.OGPDSettings;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Flare;
 import com.overgrownpixel.overgrownpixeldungeon.ui.Archs;
 import com.overgrownpixel.overgrownpixeldungeon.ui.ExitButton;
@@ -34,6 +35,7 @@ import com.overgrownpixel.overgrownpixeldungeon.ui.RenderedTextMultiline;
 import com.overgrownpixel.overgrownpixeldungeon.ui.Window;
 import com.watabou.input.Touchscreen.Touch;
 import com.watabou.noosa.Camera;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.TouchArea;
@@ -72,7 +74,7 @@ public class AboutScene extends PixelScene {
         align(shpx);
         add( shpx );
 
-        new Flare( 7, 64 ).color( 0x8532AB, true ).show( shpx, 0 ).angularSpeed = +20;
+        new Flare( 7, 64 ).color( Game.instance.getResources().getColor(R.color.aboutflare1), true ).show( shpx, 0 ).angularSpeed = +20;
 
         RenderedText shpxtitle = renderText( TTL_SHPX, 8 );
         shpxtitle.hardlight( Window.OGPX_COLOR);
@@ -113,7 +115,7 @@ public class AboutScene extends PixelScene {
         align(wata);
         add( wata );
 
-        new Flare( 7, 64 ).color(0x3CC743, true ).show( wata, 0 ).angularSpeed = +20;
+        new Flare( 7, 64 ).color(Game.instance.getResources().getColor(R.color.aboutflare2), true ).show( wata, 0 ).angularSpeed = +20;
 
         RenderedText wataTitle = renderText( TTL_WATA, 8 );
         wataTitle.hardlight(Window.TITLE_COLOR);

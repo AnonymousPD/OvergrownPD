@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
@@ -34,11 +35,12 @@ import com.overgrownpixel.overgrownpixeldungeon.plants.Earthroot;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite.Glowing;
 import com.watabou.noosa.Camera;
+import com.watabou.noosa.Game;
 import com.watabou.utils.Random;
 
 public class Entanglement extends Glyph {
 	
-	private static ItemSprite.Glowing BROWN = new ItemSprite.Glowing( 0x663300 );
+	private static ItemSprite.Glowing BROWN = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.entanglement) );
 	
 	@Override
 	public int proc(Armor armor, Char attacker, final Char defender, final int damage ) {

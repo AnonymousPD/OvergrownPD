@@ -24,6 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects.particles;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.Emitter.Factory;
 import com.watabou.noosa.particles.PixelParticle;
@@ -47,7 +49,7 @@ public class EnergyParticle extends PixelParticle {
 		super();
 		
 		lifespan = 1f;
-		color( 0xFFFFAA );
+		color( Game.instance.getResources().getColor(R.color.energyparticle) );
 		
 		speed.polar( Random.Float( PointF.PI2 ), Random.Float( 24, 32 ) );
 	}

@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.weapon.curses;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Invisibility;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
@@ -34,12 +35,13 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Random;
 
 public class Annoying extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing BLACK = new ItemSprite.Glowing( 0x000000 );
+	private static ItemSprite.Glowing BLACK = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.curse) );
 
 	@Override
 	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {

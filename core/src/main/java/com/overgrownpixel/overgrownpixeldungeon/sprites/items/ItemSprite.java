@@ -24,11 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.sprites.items;
 
-import android.graphics.Color;
-
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
-import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.items.Gold;

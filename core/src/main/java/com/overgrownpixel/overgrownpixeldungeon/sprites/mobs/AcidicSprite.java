@@ -25,6 +25,8 @@
 package com.overgrownpixel.overgrownpixeldungeon.sprites.mobs;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.TextureFilm;
 
 public class AcidicSprite extends ScorpioSprite {
@@ -55,6 +57,6 @@ public class AcidicSprite extends ScorpioSprite {
 	
 	@Override
 	public int blood() {
-		return 0xFF66FF22;
+		return Game.instance.getResources().getColor(R.color.acidicsprite);
 	}
 }

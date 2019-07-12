@@ -24,16 +24,18 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfBlastWave;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.watabou.noosa.Game;
 import com.watabou.utils.Random;
 
 public class Repulsion extends Armor.Glyph {
 
-	private static ItemSprite.Glowing WHITE = new ItemSprite.Glowing( 0xFFFFFF );
+	private static ItemSprite.Glowing WHITE = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.repulsion) );
 	
 	@Override
 	public int proc( Armor armor, Char attacker, Char defender, int damage) {

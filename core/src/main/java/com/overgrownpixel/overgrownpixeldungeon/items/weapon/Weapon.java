@@ -24,8 +24,6 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon;
 
-import android.graphics.Color;
-
 import com.overgrownpixel.overgrownpixeldungeon.Badges;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
@@ -76,7 +74,6 @@ import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.utils.Bundlable;
 import com.watabou.utils.Bundle;
-import com.watabou.utils.ColorMath;
 import com.watabou.utils.Random;
 
 import java.util.ArrayList;

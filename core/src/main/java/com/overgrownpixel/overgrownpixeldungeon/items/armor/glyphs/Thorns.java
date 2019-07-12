@@ -24,16 +24,18 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Bleeding;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.watabou.noosa.Game;
 import com.watabou.utils.Random;
 
 public class Thorns extends Armor.Glyph {
 
-	private static ItemSprite.Glowing RED = new ItemSprite.Glowing( 0x660022 );
+	private static ItemSprite.Glowing RED = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.thorns) );
 
 	@Override
 	public int proc(Armor armor, Char attacker, Char defender, int damage) {

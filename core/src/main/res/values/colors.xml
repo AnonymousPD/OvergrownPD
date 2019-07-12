@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="absorbing">#91CA52</color>
+    <color name="blazing">#FF4400</color>
+    <color name="blocking">#0000FF</color>
+    <color name="blooming">#008800</color>
+    <color name="chilling">#00FFFF</color>
+    <color name="corrupting">#440066</color>
+    <color name="dazzling">#E4D473</color>
+    <color name="disintegrating">#290157</color>
+    <color name="eating">#7E5400</color>
+    <color name="elastic">#FF00FF</color>
+    <color name="eldritch">#F01F66</color>
+    <color name="explosion">#FF9422</color>
+    <color name="grim">#000000</color>
+    <color name="hitting">#187C5F</color>
+    <color name="kinetic">#FFFF00</color>
+    <color name="lucky">#00FF00</color>
+    <color name="precise">#171E50</color>
+    <color name="projecting">#8844CC</color>
+    <color name="shocking">#FFFFFF</color>
+    <color name="stunning">#E47070</color>
+    <color name="swift">#4D82B3</color>
+    <color name="teleporting">#4100C9</color>
+    <color name="unstable">#999999</color>
+    <color name="vampiric">#660022</color>
+    <color name="venomous">#7CE053</color>
+    <color name="vorpal">#AA6666</color>
+    <color name="whirlwind">#DDFBC2</color>
+
+    <color name="affection">#FF4488</color>
+    <color name="antimagic">#88EEFF</color>
+    <color name="brimstone">#FF4400</color>
+    <color name="camouflage">#448822</color>
+    <color name="entanglement">#663300</color>
+    <color name="flow">#0000FF</color>
+    <color name="obfuscation">#888888</color>
+    <color name="potential">#FFFFFF</color>
+    <color name="repulsion">#A9AC5A</color>
+    <color name="stone">#222222</color>
+    <color name="swiftness">#FFFF00</color>
+    <color name="thorns">#660022</color>
+    <color name="viscosity">#8844CC</color>
+
+    <color name="curse">#000000</color>
+
+    <color name="apricobushpoisonparticle">#FF51CC</color>
+    <color name="blackholeflowerpoisonparticle">#000000</color>
+    <color name="blandfruitpoisonparticle">#DBDBDB</color>
+    <color name="blindweedpoisonparticle">#FFFFFF</color>
+    <color name="butterlionpoisonparticle">#BA4122</color>
+    <color name="chandaliertailoisonparticle">#DDAC14</color>
+    <color name="chillisnapperpoisonparticle">#E35D22</color>
+    <color name="crimsonpepperpoisonparticle">#902E16</color>
+    <color name="dewcatcherpoisonparticle">#25C9B5</color>
+    <color name="dreamfoilpoisonparticle">#8B3F84</color>
+    <color name="earthrootpoisonparticle">#5C1C00</color>
+    <color name="fadeleafpoisonparticle">#BABABA</color>
+    <color name="firebloompoisonparticle">#FF0000</color>
+    <color name="firefoxglovepoisonparticle">#B9BA22</color>
+    <color name="frostcornpoisonparticle">#009FFF</color>
+    <color name="grasslillypoisonparticle">#22A20B</color>
+    <color name="icecappoisonparticle">#76F5FF</color>
+    <color name="kiwivetchpoisonparticle">#C0E31C</color>
+    <color name="musclemosspoisonparticle">#B922BA</color>
+    <color name="nightshadeonionpoisonparticle">#4C25CC</color>
+    <color name="parasiteshrubpoisonparticle">#750094</color>
+    <color name="peanutpetalpoisonparticle">#D78A5B</color>
+    <color name="rosepoisonparticle">#F492E1</color>
+    <color name="rotberrypoisonparticle">#C71B1B</color>
+    <color name="seedpodpoisonparticle">#282D00</color>
+    <color name="snowhedgepoisonparticle">#CECECE</color>
+    <color name="sorrowmosspoisonparticle">#A15BC1</color>
+    <color name="starflowerpoisonparticle">#F0FF00</color>
+    <color name="steamweedpoisonparticle">#B8C551</color>
+    <color name="stormvinepoisonparticle">#4681D2</color>
+    <color name="sunbloompoisonparticle">#ACB42C</color>
+    <color name="suncarnivorepoisonparticle">#D97764</color>
+    <color name="sungrasspoisonparticle">#0CD20F</color>
+    <color name="swiftthistlepoisonparticle">#1C221C</color>
+    <color name="tomatobushpoisonparticle">#BA4122</color>
+    <color name="venusflytrappoisonparticle">#F420C0</color>
+    <color name="waterweedpoisonparticle">#2260E3</color>
+    <color name="willowcanepoisonparticle">#1784C5</color>
+    <color name="witherfennelpoisonparticle">#EA9A48</color>
+
+    <color name="blastparticle">#EE7722</color>
+    <color name="bloodparticle">#CC0000</color>
+    <color name="corrosionparticle1">#FF8800</color>
+    <color name="corrosionparticle2">#AAAAAA</color>
+    <color name="earthparticle1">#444444</color>
+    <color name="earthparticle2">#777766</color>
+    <color name="elmoparticle">#22EE66</color>
+    <color name="energyparticle">#FFFFAA</color>
+    <color name="flameparticle">#EE7722</color>
+    <color name="leafparticle1">#004400</color>
+    <color name="leafparticle2">#88CC44</color>
+    <color name="poisonparticle1">#00FF00</color>
+    <color name="poisonparticle2">#8844FF</color>
+    <color name="purpleparticle1">#220066</color>
+    <color name="purpleparticle2">#FF0044</color>
+    <color name="sacrificialparticle">#4488EE</color>
+    <color name="shadowparticle1">#000000</color>
+    <color name="shadowparticle2">#440044</color>
+    <color name="smokeparticle">#222222</color>
+    <color name="webparticle">#CCCCCC</color>
+    <color name="woolparticle1">#999999</color>
+    <color name="woolparticle2">#EEEEE0</color>
+
+    <color name="aquablastspell">#00AAFF</color>
+    <color name="beaconofreturningspell">#FFFFFF</color>
+
+    <color name="aboutflare1">#8532AB</color>
+    <color name="aboutflare2">#3CC743</color>
+    <color name="amuletflare">#FFDDBB</color>
+
+    <color name="acidicsprite">#FF66FF22</color>
+
+    <color name="actionindicator">#FFFF4C</color>
+
+    <color name="ankh">#FFFFCC</color>
+    
+</resources>

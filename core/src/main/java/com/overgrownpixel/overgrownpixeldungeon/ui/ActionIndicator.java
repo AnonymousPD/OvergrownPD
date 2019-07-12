@@ -25,7 +25,9 @@
 package com.overgrownpixel.overgrownpixeldungeon.ui;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 
 public class ActionIndicator extends Tag {
@@ -36,7 +38,7 @@ public class ActionIndicator extends Tag {
 	public static ActionIndicator instance;
 
 	public ActionIndicator() {
-		super( 0xFFFF4C );
+		super( Game.instance.getResources().getColor(R.color.actionindicator) );
 
 		instance = this;
 

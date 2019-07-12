@@ -33,7 +33,6 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Regrowth;
 import com.overgrownpixel.overgrownpixeldungeon.effects.MagicMissile;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.DewcatcherPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.SeedPodPoisonParticle;
-import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.SwiftthistlePoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.Dewdrop;
 import com.overgrownpixel.overgrownpixeldungeon.items.Generator;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Blooming;

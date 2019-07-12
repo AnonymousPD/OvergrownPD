@@ -25,6 +25,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.items;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
@@ -32,6 +33,7 @@ import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite.Glowing;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;
 
@@ -105,7 +107,7 @@ public class Ankh extends Item {
 		return blessed;
 	}
 
-	private static final Glowing WHITE = new Glowing( 0xFFFFCC );
+	private static final Glowing WHITE = new Glowing( Game.instance.getResources().getColor(R.color.ankh) );
 
 	@Override
 	public Glowing glowing() {

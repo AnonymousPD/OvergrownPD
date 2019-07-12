@@ -25,6 +25,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.spells;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
@@ -37,6 +38,7 @@ import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.Game;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;
 
@@ -50,7 +52,7 @@ public class AquaBlast extends TargetedSpell {
 	protected void affectTarget(Ballistica bolt, Hero hero) {
 		int cell = bolt.collisionPos;
 		
-		Splash.at(cell, 0x00AAFF, 10);
+		Splash.at(cell, Game.instance.getResources().getColor(R.color.aquablastspell), 10);
 		
 		for (int i : PathFinder.NEIGHBOURS9){
 			if (i == 0 || Random.Int(5) != 0){
