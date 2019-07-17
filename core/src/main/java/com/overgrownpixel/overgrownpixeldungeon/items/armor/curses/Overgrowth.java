@@ -53,7 +53,7 @@ public class Overgrowth extends Armor.Glyph {
 				s = (Plant.Seed) Generator.random(Generator.Category.SEED);
 			} while (s instanceof BlandfruitBush.Seed || s instanceof Starflower.Seed);
 			
-			Plant p = s.couch(defender.pos, null);
+			Plant p = s.couch(defender.pos, null, true);
 			
 			//momentarily revoke warden benefits, otherwise this curse would be incredibly powerful
 			if (defender instanceof Hero && ((Hero) defender).subClass == HeroSubClass.WARDEN){

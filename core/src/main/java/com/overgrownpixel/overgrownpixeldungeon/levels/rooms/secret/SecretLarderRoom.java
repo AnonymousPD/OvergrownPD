@@ -59,7 +59,7 @@ public class SecretLarderRoom extends SecretRoom {
 		Painter.set(level, c, Terrain.GRASS);
 		
 		if (!Dungeon.isChallenged(Challenges.NO_FOOD)) {
-			level.plant(new BlandfruitBush.Seed(), level.pointToCell(c));
+			level.plant(new BlandfruitBush.Seed(), level.pointToCell(c), false);
 		}
 		
 		int extraFood = (int)(Hunger.STARVING - Hunger.HUNGRY) * (1 + Dungeon.depth / 5);

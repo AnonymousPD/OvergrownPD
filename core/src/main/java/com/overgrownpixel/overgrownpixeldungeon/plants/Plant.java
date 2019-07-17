@@ -66,6 +66,7 @@ public abstract class Plant implements Bundlable {
 	
 	public int image;
 	public int pos;
+	public boolean playerplanted = false;
 
 	public void trigger(){
 
@@ -77,7 +78,7 @@ public abstract class Plant implements Bundlable {
 
         wither();
 
-        if(!(this instanceof Rotberry)){
+        if(!(this instanceof Rotberry) || !playerplanted){
             if(ch instanceof LivingPlant){
                 //livingplants will trigger other living plants. Since livpla's will not step on other plants on purpose this only happens if they are pushed onto a plant.
                 ch.sprite.emitter().start( Speck.factory( Speck.UP ), 0.2f, 3 );
@@ -253,15 +254,18 @@ public abstract class Plant implements Bundlable {
     }
 	
 	private static final String POS	= "pos";
+    private static final String PLAYERPLANTED = "playerplant";
 
 	@Override
 	public void restoreFromBundle( Bundle bundle ) {
 		pos = bundle.getInt( POS );
+		playerplanted = bundle.getBoolean(PLAYERPLANTED);
 	}
 
 	@Override
 	public void storeInBundle( Bundle bundle ) {
 		bundle.put( POS, pos );
+		bundle.put( PLAYERPLANTED, playerplanted);
 	}
 	
 	public String desc() {
@@ -324,7 +328,7 @@ public abstract class Plant implements Bundlable {
 					|| Dungeon.isChallenged(Challenges.NO_HERBALISM)) {
 				super.onThrow( cell );
 			} else {
-				Dungeon.level.plant( this, cell );
+				Dungeon.level.plant( this, cell, true );
 				if (Dungeon.hero.subClass == HeroSubClass.WARDEN) {
 					for (int i : PathFinder.NEIGHBOURS8) {
 						int c = Dungeon.level.map[cell + i];
@@ -351,17 +355,18 @@ public abstract class Plant implements Bundlable {
 				((Seed)detach( hero.belongings.backpack )).onThrow( hero.pos );
 				
 				hero.sprite.operate( hero.pos );
-				
 			}
 		}
 		
-		public Plant couch( int pos, Level level ) {
+		public Plant couch( int pos, Level level, boolean playerplanted ) {
 			try {
 				if (level != null && level.heroFOV != null && level.heroFOV[pos]) {
 					Sample.INSTANCE.play(Assets.SND_PLANT);
 				}
 				Plant plant = plantClass.newInstance();
+				plant.playerplanted = playerplanted;
 				plant.pos = pos;
+
 				return plant;
 			} catch (Exception e) {
 				OvergrownPixelDungeon.reportException(e);

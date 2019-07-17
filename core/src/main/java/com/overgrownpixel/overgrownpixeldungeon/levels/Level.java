@@ -744,7 +744,7 @@ public abstract class Level implements Bundlable {
 		return heap;
 	}
 	
-	public Plant plant( Plant.Seed seed, int pos ) {
+	public Plant plant( Plant.Seed seed, int pos, boolean playerplanted ) {
 		
 		if (Dungeon.isChallenged(Challenges.NO_HERBALISM)){
 			return null;
@@ -764,7 +764,7 @@ public abstract class Level implements Bundlable {
 			GameScene.updateMap(pos);
 		}
 		
-		plant = seed.couch( pos, this );
+		plant = seed.couch( pos, this, playerplanted );
 		plants.put( pos, plant );
 		
 		GameScene.plantSeed( pos );

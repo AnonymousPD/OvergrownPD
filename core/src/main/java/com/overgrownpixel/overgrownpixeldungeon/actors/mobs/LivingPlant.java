@@ -106,7 +106,7 @@ public class LivingPlant extends Mob {
     public void goToSleep(LivingPlant livingPlant){
         //using the inherited method directly as to not trigger its normal die() effects
         super.die(livingPlant);
-        Dungeon.level.plant(livingPlant.plantClass.getPlant(livingPlant.plantClass), pos);
+        Dungeon.level.plant(livingPlant.plantClass.getPlant(livingPlant.plantClass), pos, false);
     }
 
     @Override
