@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Badges;
 import com.overgrownpixel.overgrownpixeldungeon.OGPDSettings;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.Rankings;
 import com.overgrownpixel.overgrownpixeldungeon.effects.BannerSprites;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Fireball;
@@ -121,15 +122,15 @@ public class WelcomeScene extends PixelScene {
 				}
 			};
 			okay.setRect(title.x, h-20, (title.width()/2)-2, 16);
-			okay.textColor(0xBBBB33);
+			okay.textColor(Game.instance.getResources().getInteger(R.integer.welcomesceneokay1));
 			add(okay);
 
 			changes.setRect(okay.right()+2, h-20, (title.width()/2)-2, 16);
-			changes.textColor(0xBBBB33);
+			changes.textColor(Game.instance.getResources().getInteger(R.integer.welcomescenechanges));
 			add(changes);
 		} else {
 			okay.setRect(title.x, h-20, title.width(), 16);
-			okay.textColor(0xBBBB33);
+			okay.textColor(Game.instance.getResources().getInteger(R.integer.welcomesceneokay2));
 			add(okay);
 		}
 

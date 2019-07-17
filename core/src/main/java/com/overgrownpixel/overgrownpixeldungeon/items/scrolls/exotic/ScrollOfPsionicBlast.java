@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.scrolls.exotic;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Blindness;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Invisibility;
@@ -34,6 +35,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 
 public class ScrollOfPsionicBlast extends ExoticScroll {
@@ -45,7 +47,7 @@ public class ScrollOfPsionicBlast extends ExoticScroll {
 	@Override
 	public void doRead() {
 		
-		GameScene.flash( 0xFFFFFF );
+		GameScene.flash( Game.instance.getResources().getInteger(R.integer.scrollofpsionicblast) );
 		
 		Sample.INSTANCE.play( Assets.SND_BLAST );
 		Invisibility.dispel();

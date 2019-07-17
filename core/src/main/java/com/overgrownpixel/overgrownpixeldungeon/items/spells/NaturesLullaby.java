@@ -25,6 +25,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.spells;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Invisibility;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.LivingPlant;
@@ -35,6 +36,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfLullaby;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
+import com.watabou.noosa.Game;
 
 public class NaturesLullaby extends Spell {
 	
@@ -44,7 +46,7 @@ public class NaturesLullaby extends Spell {
 
     @Override
     protected void onCast(Hero hero) {
-        new Flare(8, 14).color(0x1CB82E,true).show(hero.sprite, 0.5f);
+        new Flare(8, 14).color(Game.instance.getResources().getInteger(R.integer.natureslullaby),true).show(hero.sprite, 0.5f);
         Invisibility.dispel();
         GLog.h(Messages.get(this, "sleep"));
         for(Mob mob : Dungeon.level.mobs){

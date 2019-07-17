@@ -32,7 +32,7 @@ import com.watabou.noosa.Game;
 
 public class Stone extends Armor.Glyph {
 
-	private static ItemSprite.Glowing GREY = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.stone) );
+	private static ItemSprite.Glowing GREY = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.stone) );
 
 	@Override
 	public int proc(Armor armor, Char attacker, Char defender, int damage) {

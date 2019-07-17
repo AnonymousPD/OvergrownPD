@@ -45,7 +45,7 @@ public class MusclemossPoisonParticle extends PixelParticle {
 
     public MusclemossPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.musclemosspoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.musclemosspoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

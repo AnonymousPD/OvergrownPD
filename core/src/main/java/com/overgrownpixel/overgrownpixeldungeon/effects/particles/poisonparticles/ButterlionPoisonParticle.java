@@ -45,7 +45,7 @@ public class ButterlionPoisonParticle extends PixelParticle {
 
     public ButterlionPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.butterlionpoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.butterlionpoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

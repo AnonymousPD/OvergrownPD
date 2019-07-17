@@ -24,15 +24,17 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.ui;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.watabou.noosa.ColorBlock;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.ui.Component;
 
 public class HealthBar extends Component {
 
-	private static final int COLOR_BG	= 0xFFCC0000;
-	private static final int COLOR_HP	= 0xFF00EE00;
-	private static final int COLOR_SHLD = 0xFFBBEEBB;
+	private static final int COLOR_BG	= Game.instance.getResources().getInteger(R.integer.healthbar1);
+	private static final int COLOR_HP	= Game.instance.getResources().getInteger(R.integer.healthbar2);
+	private static final int COLOR_SHLD = Game.instance.getResources().getInteger(R.integer.healthbar3);
 	
 	private static final int HEIGHT	= 2;
 	

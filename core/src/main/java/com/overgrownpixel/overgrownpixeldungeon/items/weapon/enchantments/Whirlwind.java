@@ -37,7 +37,7 @@ import java.util.ArrayList;
 
 public class Whirlwind extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.whirlwind) );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.whirlwind) );
 
 	@Override
 	public int proc(Weapon weapon, Char attacker, Char defender, int damage) {

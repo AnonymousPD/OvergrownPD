@@ -33,7 +33,7 @@ public class ManjiSai extends MeleeWeapon {
 		image = ItemSpriteSheet.MANJI_SAI;
 
 		tier = 3;
-        DLY = 0.125f; //8x speed
+        DLY = 0.2f; //7x speed
 	}
 
     @Override

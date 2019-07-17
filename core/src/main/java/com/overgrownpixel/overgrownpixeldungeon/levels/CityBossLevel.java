@@ -27,6 +27,7 @@ package com.overgrownpixel.overgrownpixeldungeon.levels;
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Bones;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.King;
@@ -38,6 +39,7 @@ import com.overgrownpixel.overgrownpixeldungeon.levels.painters.Painter;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.DungeonTileSheet;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Group;
 import com.watabou.noosa.tweeners.AlphaTweener;
 import com.watabou.utils.Bundle;
@@ -47,8 +49,8 @@ import com.watabou.utils.Random;
 public class CityBossLevel extends Level {
 	
 	{
-		color1 = 0x4b6636;
-		color2 = 0xf2f2f2;
+		color1 = Game.instance.getResources().getInteger(R.integer.citylevelboss1);
+		color2 = Game.instance.getResources().getInteger(R.integer.citylevelboss2);
 	}
 	
 	private static final int TOP			= 2;

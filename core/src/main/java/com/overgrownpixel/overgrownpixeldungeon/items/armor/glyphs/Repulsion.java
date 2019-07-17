@@ -35,7 +35,7 @@ import com.watabou.utils.Random;
 
 public class Repulsion extends Armor.Glyph {
 
-	private static ItemSprite.Glowing WHITE = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.repulsion) );
+	private static ItemSprite.Glowing WHITE = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.repulsion) );
 	
 	@Override
 	public int proc( Armor armor, Char attacker, Char defender, int damage) {

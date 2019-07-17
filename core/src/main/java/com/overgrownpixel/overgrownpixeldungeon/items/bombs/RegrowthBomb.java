@@ -25,6 +25,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.bombs;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
@@ -40,6 +41,7 @@ import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
+import com.watabou.noosa.Game;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;
 
@@ -62,7 +64,7 @@ public class RegrowthBomb extends Bomb {
 		super.explode(cell);
 		
 		if (Dungeon.level.heroFOV[cell]) {
-			Splash.at(cell, 0x00FF00, 30);
+			Splash.at(cell, Game.instance.getResources().getInteger(R.integer.regrowthbomb), 30);
 		}
 		
 		ArrayList<Integer> plantCandidates = new ArrayList<>();

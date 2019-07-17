@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.wands;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Barrier;
@@ -44,6 +45,7 @@ import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.DungeonTilemap;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Callback;
@@ -164,7 +166,7 @@ public class WandOfTransfusion extends Wand {
 
 	@Override
 	public void staffFx(MagesStaff.StaffParticle particle) {
-		particle.color( 0xCC0000 );
+		particle.color( Game.instance.getResources().getInteger(R.integer.wandoftransfusion) );
 		particle.am = 0.6f;
 		particle.setLifespan(1f);
 		particle.speed.polar( Random.Float(PointF.PI2), 2f );

@@ -27,6 +27,7 @@ package com.overgrownpixel.overgrownpixeldungeon.scenes;
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Badges;
 import com.overgrownpixel.overgrownpixeldungeon.OGPDSettings;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.effects.BadgeBanner;
 import com.overgrownpixel.overgrownpixeldungeon.ui.RenderedTextMultiline;
 import com.overgrownpixel.overgrownpixeldungeon.ui.Window;
@@ -114,7 +115,7 @@ public class PixelScene extends Scene {
 
 			// 3x5 (6)
 			pixelFont = Font.colorMarked(
-				BitmapCache.get( Assets.PIXELFONT), 0x00000000, BitmapText.Font.LATIN_FULL );
+				BitmapCache.get( Assets.PIXELFONT), Game.instance.getResources().getInteger(R.integer.pixelscenecache), BitmapText.Font.LATIN_FULL );
 			pixelFont.baseLine = 6;
 			pixelFont.tracking = -1;
 
@@ -274,7 +275,7 @@ public class PixelScene extends Scene {
 		if (noFade) {
 			noFade = false;
 		} else {
-			fadeIn( 0xFF000000, false );
+			fadeIn( Game.instance.getResources().getInteger(R.integer.pixelscenefadein), false );
 		}
 	}
 	

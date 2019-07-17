@@ -32,7 +32,7 @@ import com.watabou.noosa.Game;
 
 public class Obfuscation extends Armor.Glyph {
 
-	private static ItemSprite.Glowing GREY = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.obfuscation) );
+	private static ItemSprite.Glowing GREY = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.obfuscation) );
 
 	@Override
 	public int proc(Armor armor, Char attacker, Char defender, int damage) {

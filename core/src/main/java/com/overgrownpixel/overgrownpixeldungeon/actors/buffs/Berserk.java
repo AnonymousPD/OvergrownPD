@@ -26,11 +26,13 @@ package com.overgrownpixel.overgrownpixeldungeon.actors.buffs;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.effects.SpellSprite;
 import com.overgrownpixel.overgrownpixeldungeon.items.BrokenSeal.WarriorShield;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;
@@ -128,7 +130,7 @@ public class Berserk extends Buff {
 
 				SpellSprite.show(target, SpellSprite.BERSERK);
 				Sample.INSTANCE.play( Assets.SND_CHALLENGE );
-				GameScene.flash(0xFF0000);
+				GameScene.flash(Game.instance.getResources().getInteger(R.integer.berserkflash));
 			}
 
 		}

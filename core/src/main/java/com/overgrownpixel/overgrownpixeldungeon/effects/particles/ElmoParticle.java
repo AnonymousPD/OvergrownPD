@@ -46,7 +46,7 @@ public class ElmoParticle extends PixelParticle.Shrinking {
 	public ElmoParticle() {
 		super();
 		
-		color( Game.instance.getResources().getColor(R.color.elmoparticle) );
+		color( Game.instance.getResources().getInteger(R.integer.elmoparticle) );
 		lifespan = 0.6f;
 		
 		acc.set( 0, -80 );

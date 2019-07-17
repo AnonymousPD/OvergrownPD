@@ -25,7 +25,9 @@
 package com.overgrownpixel.overgrownpixeldungeon.sprites.mobs;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.TextureFilm;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.Emitter.Factory;
@@ -88,7 +90,7 @@ public class GooSprite extends MobSprite {
 
 	@Override
 	public int blood() {
-		return 0xFF000000;
+		return Game.instance.getResources().getInteger(R.integer.gooblood);
 	}
 
 	public void spray(boolean on){
@@ -114,7 +116,7 @@ public class GooSprite extends MobSprite {
 		public GooParticle() {
 			super();
 
-			color( 0x000000 );
+			color( Game.instance.getResources().getInteger(R.integer.gooparticle) );
 			lifespan = 0.3f;
 
 			acc.set( 0, +50 );

@@ -25,8 +25,10 @@
 package com.overgrownpixel.overgrownpixeldungeon.ui;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.items.Heap;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
+import com.watabou.noosa.Game;
 
 public class LootIndicator extends Tag {
 	
@@ -36,7 +38,7 @@ public class LootIndicator extends Tag {
 	private int lastQuantity = 0;
 	
 	public LootIndicator() {
-		super( 0x1F75CC );
+		super( Game.instance.getResources().getInteger(R.integer.lootindicator) );
 		
 		setSize( 24, 24 );
 		

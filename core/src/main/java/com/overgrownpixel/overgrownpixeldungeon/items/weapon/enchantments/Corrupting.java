@@ -46,7 +46,7 @@ public class Corrupting extends Weapon.Enchantment {
 
 
 	
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.corrupting) );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.corrupting) );
 	
 	@Override
 	public int proc(Weapon weapon, Char attacker, Char defender, int damage) {

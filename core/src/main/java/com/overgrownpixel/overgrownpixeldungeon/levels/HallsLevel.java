@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.levels;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.items.Torch;
 import com.overgrownpixel.overgrownpixeldungeon.levels.painters.HallsPainter;
 import com.overgrownpixel.overgrownpixeldungeon.levels.painters.Painter;
@@ -61,8 +62,8 @@ public class HallsLevel extends RegularLevel {
 		
 		viewDistance = Math.min( 26 - Dungeon.depth, viewDistance );
 		
-		color1 = 0x801500;
-		color2 = 0xa68521;
+		color1 = Game.instance.getResources().getInteger(R.integer.hallslevel1);
+		color2 = Game.instance.getResources().getInteger(R.integer.hallslevel2);
 	}
 	
 	@Override
@@ -211,7 +212,7 @@ public class HallsLevel extends RegularLevel {
 		public FireParticle() {
 			super();
 			
-			color( 0xEE7722 );
+			color( Game.instance.getResources().getInteger(R.integer.hallsfire) );
 			lifespan = 1f;
 			
 			acc.set( 0, +80 );

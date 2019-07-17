@@ -37,7 +37,7 @@ import com.watabou.utils.Random;
 
 public class Grim extends Weapon.Enchantment {
 	
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.grim) );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.grim) );
 	
 	@Override
 	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {

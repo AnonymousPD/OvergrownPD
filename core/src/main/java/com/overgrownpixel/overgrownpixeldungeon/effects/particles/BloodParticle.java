@@ -55,7 +55,7 @@ public class BloodParticle extends PixelParticle.Shrinking {
 	public BloodParticle() {
 		super();
 		
-		color( Game.instance.getResources().getColor(R.color.bloodparticle) );
+		color( Game.instance.getResources().getInteger(R.integer.bloodparticle) );
 		lifespan = 0.8f;
 		
 		acc.set( 0, +40 );

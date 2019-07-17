@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.GamesInProgress;
 import com.overgrownpixel.overgrownpixeldungeon.OGPDSettings;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.effects.BannerSprites;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.ui.Archs;
@@ -157,7 +158,7 @@ public class TitleScene extends PixelScene {
 
 		BitmapText version = new BitmapText( "v " + Game.version + "", pixelFont);
 		version.measure();
-		version.hardlight( 0x888888 );
+		version.hardlight( Game.instance.getResources().getInteger(R.integer.titlescene) );
 		version.x = w - version.width();
 		version.y = h - version.height();
 		add( version );

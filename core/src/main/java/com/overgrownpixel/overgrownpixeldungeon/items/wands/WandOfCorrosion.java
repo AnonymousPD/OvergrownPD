@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.wands;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
@@ -39,6 +40,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.staffs.MagesS
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Callback;
 import com.watabou.utils.ColorMath;
@@ -98,7 +100,7 @@ public class WandOfCorrosion extends Wand {
 
 	@Override
 	public void staffFx(MagesStaff.StaffParticle particle) {
-		particle.color( ColorMath.random( 0xAAAAAA, 0xFF8800) );
+		particle.color( ColorMath.random( Game.instance.getResources().getInteger(R.integer.wandofcorrosion1), Game.instance.getResources().getInteger(R.integer.wandofcorrosion2)) );
 		particle.am = 0.6f;
 		particle.setLifespan( 1f );
 		particle.acc.set(0, 20);

@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.artifacts;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
@@ -309,7 +310,7 @@ public class LloydsBeacon extends Artifact {
 		return desc;
 	}
 	
-	private static final Glowing WHITE = new Glowing( 0xFFFFFF );
+	private static final Glowing WHITE = new Glowing( Game.instance.getResources().getInteger(R.integer.lloydsbeadonwhite) );
 	
 	@Override
 	public Glowing glowing() {

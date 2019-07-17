@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.levels;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.npcs.Blacksmith;
 import com.overgrownpixel.overgrownpixeldungeon.levels.painters.CavesPainter;
 import com.overgrownpixel.overgrownpixeldungeon.levels.painters.Painter;
@@ -56,8 +57,8 @@ import java.util.ArrayList;
 public class CavesLevel extends RegularLevel {
 
 	{
-		color1 = 0x534f3e;
-		color2 = 0xb9d661;
+		color1 = Game.instance.getResources().getInteger(R.integer.caveslevel1);
+		color2 = Game.instance.getResources().getInteger(R.integer.caveslevel2);
 
 		viewDistance = Math.min(6, viewDistance);
 	}

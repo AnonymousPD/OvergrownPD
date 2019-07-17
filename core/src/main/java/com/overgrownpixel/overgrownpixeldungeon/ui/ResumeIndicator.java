@@ -25,7 +25,9 @@
 package com.overgrownpixel.overgrownpixeldungeon.ui;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 
 public class ResumeIndicator extends Tag {
@@ -33,7 +35,7 @@ public class ResumeIndicator extends Tag {
 	private Image icon;
 
 	public ResumeIndicator() {
-		super(0xCDD5C0);
+		super(Game.instance.getResources().getInteger(R.integer.resumeindicator));
 
 		setSize( 24, 24 );
 

@@ -25,6 +25,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.wands;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
@@ -39,6 +40,7 @@ import com.overgrownpixel.overgrownpixeldungeon.tiles.DungeonTilemap;
 import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.noosa.Camera;
+import com.watabou.noosa.Game;
 import com.watabou.utils.Callback;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;
@@ -144,7 +146,7 @@ public class WandOfLightning extends DamageWand {
 
 	@Override
 	public void staffFx(MagesStaff.StaffParticle particle) {
-		particle.color(0xFFFFFF);
+		particle.color(Game.instance.getResources().getInteger(R.integer.wandoflightning));
 		particle.am = 0.6f;
 		particle.setLifespan(0.6f);
 		particle.acc.set(0, +10);

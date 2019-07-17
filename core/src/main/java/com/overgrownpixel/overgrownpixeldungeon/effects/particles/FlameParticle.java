@@ -46,7 +46,7 @@ public class FlameParticle extends PixelParticle.Shrinking {
 	public FlameParticle() {
 		super();
 		
-		color( Game.instance.getResources().getColor(R.color.flameparticle) );
+		color( Game.instance.getResources().getInteger(R.integer.flameparticle) );
 		lifespan = 0.6f;
 		
 		acc.set( 0, -80 );

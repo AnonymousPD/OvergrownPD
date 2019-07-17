@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Burning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Frost;
@@ -55,6 +56,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.wands.Wand;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundlable;
 import com.watabou.utils.Bundle;
@@ -148,10 +150,10 @@ public class Heap implements Bundlable {
 			if (bonus != null && !bonus.isEmpty()) {
 				items.addAll(0, bonus);
 				if (RingOfWealth.latestDropWasRare){
-					new Flare(8, 48).color(0xAA00FF, true).show(sprite, 2f);
+					new Flare(8, 48).color(Game.instance.getResources().getInteger(R.integer.heapflare1), true).show(sprite, 2f);
 					RingOfWealth.latestDropWasRare = false;
 				} else {
-					new Flare(8, 24).color(0xFFFFFF, true).show(sprite, 2f);
+					new Flare(8, 24).color(Game.instance.getResources().getInteger(R.integer.heapflare2), true).show(sprite, 2f);
 				}
 			}
 			sprite.link();

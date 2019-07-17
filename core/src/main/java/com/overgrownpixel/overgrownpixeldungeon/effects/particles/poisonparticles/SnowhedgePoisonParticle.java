@@ -45,7 +45,7 @@ public class SnowhedgePoisonParticle extends PixelParticle {
 
     public SnowhedgePoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.snowhedgepoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.snowhedgepoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

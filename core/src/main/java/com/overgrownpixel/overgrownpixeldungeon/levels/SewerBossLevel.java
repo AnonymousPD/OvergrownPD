@@ -25,6 +25,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.levels;
 
 import com.overgrownpixel.overgrownpixeldungeon.Bones;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Goo;
 import com.overgrownpixel.overgrownpixeldungeon.items.Heap;
@@ -37,6 +38,7 @@ import com.overgrownpixel.overgrownpixeldungeon.levels.rooms.standard.EmptyRoom;
 import com.overgrownpixel.overgrownpixeldungeon.levels.rooms.standard.SewerBossEntranceRoom;
 import com.overgrownpixel.overgrownpixeldungeon.levels.rooms.standard.StandardRoom;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
+import com.watabou.noosa.Game;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 
@@ -45,8 +47,8 @@ import java.util.ArrayList;
 public class SewerBossLevel extends SewerLevel {
 
 	{
-		color1 = 0x48763c;
-		color2 = 0x59994a;
+		color1 = Game.instance.getResources().getInteger(R.integer.sewerlevelboss1);
+		color2 = Game.instance.getResources().getInteger(R.integer.sewerlevelboss2);
 	}
 	
 	private int stairs = 0;

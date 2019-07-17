@@ -53,7 +53,7 @@ public class Teleporting extends Weapon.Enchantment {
     protected static Weapon curWeapon = null;
     protected static Weapon.Enchantment curEnchantment = null;
 
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.teleporting) );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.teleporting) );
 	
 	@Override
 	public int proc(Weapon weapon, Char attacker, Char defender, int damage ) {

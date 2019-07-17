@@ -45,7 +45,7 @@ public class FirefoxglovePoisonParticle extends PixelParticle {
 
     public FirefoxglovePoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.firefoxglovepoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.firefoxglovepoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

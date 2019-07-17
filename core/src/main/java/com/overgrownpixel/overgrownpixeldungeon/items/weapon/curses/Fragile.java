@@ -33,7 +33,7 @@ import com.watabou.utils.Bundle;
 
 public class Fragile extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing BLACK = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.curse) );
+	private static ItemSprite.Glowing BLACK = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.curse) );
 	private int hits = 0;
 
 	@Override

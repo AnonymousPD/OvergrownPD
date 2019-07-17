@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.sprites;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.effects.DarkBlock;
 import com.overgrownpixel.overgrownpixeldungeon.effects.EmoIcon;
@@ -62,11 +63,11 @@ import com.watabou.utils.Random;
 public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip.Listener {
 	
 	// Color constants for floating text
-	public static final int DEFAULT		= 0xFFFFFF;
-	public static final int POSITIVE	= 0x00FF00;
-	public static final int NEGATIVE	= 0xFF0000;
-	public static final int WARNING		= 0xFF8800;
-	public static final int NEUTRAL		= 0xFFFF00;
+	public static final int DEFAULT		= Game.instance.getResources().getInteger(R.integer.floatingtextdefault);
+	public static final int POSITIVE	= Game.instance.getResources().getInteger(R.integer.floatingtextpositive);
+	public static final int NEGATIVE	= Game.instance.getResources().getInteger(R.integer.floatingtextnegative);
+	public static final int WARNING		= Game.instance.getResources().getInteger(R.integer.floatingtextwarning);
+	public static final int NEUTRAL		= Game.instance.getResources().getInteger(R.integer.floatingtextneutral);
 	
 	private static final float MOVE_INTERVAL	= 0.1f;
 	private static final float FLASH_INTERVAL	= 0.05f;
@@ -308,7 +309,7 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 	}
 
 	public int blood() {
-		return 0xFFBB0000;
+		return Game.instance.getResources().getInteger(R.integer.blood);
 	}
 	
 	public void flash() {

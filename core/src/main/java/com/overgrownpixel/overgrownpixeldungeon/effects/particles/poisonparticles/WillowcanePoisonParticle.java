@@ -45,7 +45,7 @@ public class WillowcanePoisonParticle extends PixelParticle {
 
     public WillowcanePoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.willowcanepoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.willowcanepoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

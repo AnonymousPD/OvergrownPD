@@ -25,6 +25,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.ui;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.Game;
@@ -43,7 +44,7 @@ public class GoldIndicator extends Component {
 	@Override
 	protected void createChildren() {
 		tf = new BitmapText( PixelScene.pixelFont);
-		tf.hardlight( 0xFFFF00 );
+		tf.hardlight( Game.instance.getResources().getInteger(R.integer.goldindicator) );
 		add( tf );
 		
 		visible = false;

@@ -38,7 +38,7 @@ import java.util.Collection;
 
 public class Hitting extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.hitting) );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.hitting) );
 
 	private static ArrayList<Mob> mobs = new ArrayList<Mob>();
 	

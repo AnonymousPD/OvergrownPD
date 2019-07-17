@@ -45,7 +45,7 @@ public class ChandaliertailPoisonParticle extends PixelParticle {
 
     public ChandaliertailPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.chandaliertailoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.chandaliertailoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

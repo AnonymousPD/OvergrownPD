@@ -24,6 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects.particles;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
 import com.watabou.utils.PointF;
@@ -45,7 +47,7 @@ public class RainbowParticle extends PixelParticle {
 
 	public RainbowParticle() {
 		super();
-		color( Random.Int( 0x1000000 ) );
+		color( Random.Int( Game.instance.getResources().getInteger(R.integer.rainbowparticle) ) );
 		lifespan = 0.5f;
 	}
 

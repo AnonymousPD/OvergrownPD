@@ -29,6 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Badges;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OGPDSettings;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.Statistics;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
@@ -340,14 +341,14 @@ public class GameScene extends PixelScene {
 		add( busy );
 		
 		counter = new CircleArc(18, 4.25f);
-		counter.color( 0x808080, true );
+		counter.color( Game.instance.getResources().getInteger(R.integer.gamescene1), true );
 		counter.camera = uiCamera;
 		counter.show(this, busy.center(), 0f);
 		
 		switch (InterlevelScene.mode) {
 		case RESURRECT:
 			ScrollOfTeleportation.appear( Dungeon.hero, Dungeon.level.entrance );
-			new Flare( 8, 32 ).color( 0xFFFF66, true ).show( hero, 2f ) ;
+			new Flare( 8, 32 ).color( Game.instance.getResources().getInteger(R.integer.gamescene2), true ).show( hero, 2f ) ;
 			break;
 		case RETURN:
 			ScrollOfTeleportation.appear(  Dungeon.hero, Dungeon.hero.pos );
@@ -872,12 +873,12 @@ public class GameScene extends PixelScene {
 	}
 	
 	public static void flash( int color ) {
-		scene.fadeIn( 0xFF000000 | color, true );
+		scene.fadeIn( Game.instance.getResources().getInteger(R.integer.gamescene3) | color, true );
 	}
 	
 	public static void gameOver() {
 		Banner gameOver = new Banner( BannerSprites.get( BannerSprites.Type.GAME_OVER ) );
-		gameOver.show( 0x000000, 1f );
+		gameOver.show( Game.instance.getResources().getInteger(R.integer.gamescene4), 1f );
 		scene.showBanner( gameOver );
 		
 		Sample.INSTANCE.play( Assets.SND_DEATH );
@@ -886,7 +887,7 @@ public class GameScene extends PixelScene {
 	public static void bossSlain() {
 		if (Dungeon.hero.isAlive()) {
 			Banner bossSlain = new Banner( BannerSprites.get( BannerSprites.Type.BOSS_SLAIN ) );
-			bossSlain.show( 0xFFFFFF, 0.3f, 5f );
+			bossSlain.show( Game.instance.getResources().getInteger(R.integer.gamescene5), 0.3f, 5f );
 			scene.showBanner( bossSlain );
 			
 			Sample.INSTANCE.play( Assets.SND_BOSS );

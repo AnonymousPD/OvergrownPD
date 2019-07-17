@@ -47,7 +47,7 @@ public class BlastParticle extends PixelParticle.Shrinking {
 	public BlastParticle() {
 		super();
 		
-		color( Game.instance.getResources().getColor(R.color.blastparticle) );
+		color( Game.instance.getResources().getInteger(R.integer.blastparticle) );
 		acc.set( 0, +50 );
 	}
 	

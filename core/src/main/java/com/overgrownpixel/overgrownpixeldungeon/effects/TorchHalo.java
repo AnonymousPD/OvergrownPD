@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
 import com.watabou.glwrap.Blending;
 import com.watabou.noosa.Game;
@@ -36,7 +37,7 @@ public class TorchHalo extends Halo {
 	private float phase = 0;
 	
 	public TorchHalo( CharSprite sprite ) {
-		super( 20, 0xFFDDCC, 0.2f );
+		super( 20, Game.instance.getResources().getInteger(R.integer.torchhalo), 0.2f );
 		target = sprite;
 		am = 0;
 	}

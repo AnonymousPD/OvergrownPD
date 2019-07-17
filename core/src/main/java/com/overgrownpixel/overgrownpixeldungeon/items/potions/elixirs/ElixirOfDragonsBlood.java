@@ -25,6 +25,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.potions.elixirs;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FireImbue;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
@@ -32,6 +33,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.particles.FlameParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.AlchemicalCatalyst;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfDragonsBreath;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 
 public class ElixirOfDragonsBlood extends Elixir {
@@ -50,7 +52,7 @@ public class ElixirOfDragonsBlood extends Elixir {
 	
 	@Override
 	protected int splashColor() {
-		return 0xFFFF002A;
+		return Game.instance.getResources().getInteger(R.integer.elixirofdragonsbreathsplash);
 	}
 	
 	@Override

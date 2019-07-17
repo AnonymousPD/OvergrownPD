@@ -26,8 +26,10 @@ package com.overgrownpixel.overgrownpixeldungeon.tiles;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OGPDSettings;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.watabou.gltextures.BufferTexture;
 import com.watabou.gltextures.TextureCache;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.NoosaScript;
 import com.watabou.noosa.NoosaScriptNoLighting;
@@ -40,24 +42,24 @@ public class FogOfWar extends Image {
 	//first index is visibility type, second is brightness level
 	private static final int FOG_COLORS[][] = new int[][]{{
 			//visible
-			0x55000000, 0x00000000, //-2 and -1 brightness
-			0x00000000, //0 brightness
-			0x00000000, 0x00000000 //1 and 2 brightness
+            Game.instance.getResources().getInteger(R.integer.fogofwar1), Game.instance.getResources().getInteger(R.integer.fogofwar2), //-2 and -1 brightness
+            Game.instance.getResources().getInteger(R.integer.fogofwar3), //0 brightness
+            Game.instance.getResources().getInteger(R.integer.fogofwar4), Game.instance.getResources().getInteger(R.integer.fogofwar5) //1 and 2 brightness
 			}, {
 			//visited
-			0xDD000000, 0xBB000000,
-			0x99000000,
-			0x77000000, 0x55000000
+            Game.instance.getResources().getInteger(R.integer.fogofwar6), Game.instance.getResources().getInteger(R.integer.fogofwar7),
+            Game.instance.getResources().getInteger(R.integer.fogofwar8),
+            Game.instance.getResources().getInteger(R.integer.fogofwar9), Game.instance.getResources().getInteger(R.integer.fogofwar10)
 			}, {
 			//mapped
-			0xDD221108, 0xBB442211,
-			0x99663319,
-			0x77884411, 0x55AA552A
+            Game.instance.getResources().getInteger(R.integer.fogofwar11), Game.instance.getResources().getInteger(R.integer.fogofwar12),
+            Game.instance.getResources().getInteger(R.integer.fogofwar13),
+            Game.instance.getResources().getInteger(R.integer.fogofwar14), Game.instance.getResources().getInteger(R.integer.fogofwar15)
 			}, {
 			//invisible
-			0xFF000000, 0xFF000000,
-			0xFF000000,
-			0xFF000000, 0xFF000000
+            Game.instance.getResources().getInteger(R.integer.fogofwar16), Game.instance.getResources().getInteger(R.integer.fogofwar17),
+            Game.instance.getResources().getInteger(R.integer.fogofwar18),
+            Game.instance.getResources().getInteger(R.integer.fogofwar19), Game.instance.getResources().getInteger(R.integer.fogofwar20)
 			}};
 
 	private static final int VISIBLE    =   0;

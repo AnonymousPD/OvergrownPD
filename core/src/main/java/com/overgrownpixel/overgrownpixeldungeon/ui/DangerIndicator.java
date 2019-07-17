@@ -25,15 +25,17 @@
 package com.overgrownpixel.overgrownpixeldungeon.ui;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.Camera;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 
 public class DangerIndicator extends Tag {
 	
-	public static final int COLOR	= 0xFF4C4C;
+	public static final int COLOR	= Game.instance.getResources().getInteger(R.integer.dangerindicatorcolor);
 	
 	private BitmapText number;
 	private Image icon;
@@ -43,7 +45,7 @@ public class DangerIndicator extends Tag {
 	private int lastNumber = -1;
 	
 	public DangerIndicator() {
-		super( 0xFF4C4C );
+		super( Game.instance.getResources().getInteger(R.integer.dangerindicatorsuper) );
 		
 		setSize( 24, 16 );
 		

@@ -45,7 +45,7 @@ public class GrasslillyPoisonParticle extends PixelParticle {
 
     public GrasslillyPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.grasslillypoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.grasslillypoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

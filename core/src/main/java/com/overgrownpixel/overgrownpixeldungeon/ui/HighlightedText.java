@@ -24,8 +24,10 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.ui;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
 import com.watabou.noosa.BitmapTextMultiline;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.ui.Component;
 import com.watabou.utils.Highlighter;
 
@@ -34,8 +36,8 @@ public class HighlightedText extends Component {
 	protected BitmapTextMultiline normal;
 	protected BitmapTextMultiline highlighted;
 
-	protected int nColor = 0xFFFFFF;
-	protected int hColor = 0xFFFF44;
+	protected int nColor = Game.instance.getResources().getInteger(R.integer.highlightedtext1);
+	protected int hColor = Game.instance.getResources().getInteger(R.integer.highlightedtext2);
 
 	public HighlightedText( float size ) {
 		normal = PixelScene.createMultiline( size );
@@ -44,7 +46,7 @@ public class HighlightedText extends Component {
 		highlighted = PixelScene.createMultiline( size );
 		add( highlighted );
 
-		setColor( 0xFFFFFF, 0xFFFF44 );
+		setColor( Game.instance.getResources().getInteger(R.integer.highlightedtext1), Game.instance.getResources().getInteger(R.integer.highlightedtext2) );
 	}
 
 	@Override

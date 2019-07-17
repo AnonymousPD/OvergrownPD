@@ -30,6 +30,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.GamesInProgress;
 import com.overgrownpixel.overgrownpixeldungeon.OGPDSettings;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroClass;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.journal.Journal;
@@ -78,7 +79,7 @@ public class WndStartGame extends Window {
 			add(button);
 		}
 		
-		ColorBlock separator = new ColorBlock(1, 1, 0xFF222222);
+		ColorBlock separator = new ColorBlock(1, 1, Game.instance.getResources().getInteger(R.integer.wndstartgame));
 		separator.size(WIDTH, 1);
 		separator.x = 0;
 		separator.y = title.baseLine() + 6 + HeroBtn.HEIGHT;

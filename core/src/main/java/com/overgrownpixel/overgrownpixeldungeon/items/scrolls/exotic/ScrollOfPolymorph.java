@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.scrolls.exotic;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Invisibility;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
@@ -35,6 +36,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.Flare;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.ui.TargetHealthIndicator;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Random;
 
@@ -47,7 +49,7 @@ public class ScrollOfPolymorph extends ExoticScroll {
 	@Override
 	public void doRead() {
 		
-		new Flare( 5, 32 ).color( 0xFFFFFF, true ).show( curUser.sprite, 2f );
+		new Flare( 5, 32 ).color( Game.instance.getResources().getInteger(R.integer.scrollofpolymorph), true ).show( curUser.sprite, 2f );
 		Sample.INSTANCE.play( Assets.SND_READ );
 		Invisibility.dispel();
 		

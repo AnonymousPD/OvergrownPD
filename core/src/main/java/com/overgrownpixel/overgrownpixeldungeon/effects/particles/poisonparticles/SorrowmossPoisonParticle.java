@@ -45,7 +45,7 @@ public class SorrowmossPoisonParticle extends PixelParticle {
 
     public SorrowmossPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.sorrowmosspoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.sorrowmosspoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.wands;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
@@ -44,6 +45,7 @@ import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Starflower;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -264,7 +266,7 @@ public class WandOfRegrowth extends Wand {
 
 	@Override
 	public void staffFx(MagesStaff.StaffParticle particle) {
-		particle.color( ColorMath.random(0x004400, 0x88CC44) );
+		particle.color( ColorMath.random(Game.instance.getResources().getInteger(R.integer.wandofregrowth1), Game.instance.getResources().getInteger(R.integer.wandofregrowth2)) );
 		particle.am = 1f;
 		particle.setLifespan(1f);
 		particle.setSize( 1f, 1.5f);

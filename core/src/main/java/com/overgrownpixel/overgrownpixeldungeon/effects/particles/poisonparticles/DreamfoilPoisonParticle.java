@@ -45,7 +45,7 @@ public class DreamfoilPoisonParticle extends PixelParticle {
 
     public DreamfoilPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.absorbing));
+        color(Game.instance.getResources().getInteger(R.integer.dreamfoilpoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

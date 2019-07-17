@@ -25,11 +25,13 @@
 package com.overgrownpixel.overgrownpixeldungeon.levels;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.items.Amulet;
 import com.overgrownpixel.overgrownpixeldungeon.levels.painters.Painter;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Group;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.PathFinder;
@@ -40,8 +42,8 @@ import java.util.Arrays;
 public class LastLevel extends Level {
 
 	{
-		color1 = 0x801500;
-		color2 = 0xa68521;
+		color1 = Game.instance.getResources().getInteger(R.integer.lastlevel1);
+		color2 = Game.instance.getResources().getInteger(R.integer.lastlevel2);
 	}
 
 	private int pedestal;

@@ -24,9 +24,11 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.ui.changelist;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
 import com.overgrownpixel.overgrownpixeldungeon.ui.RenderedTextMultiline;
 import com.watabou.noosa.ColorBlock;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.ui.Component;
 
@@ -48,11 +50,11 @@ public class ChangeInfo extends Component {
 		
 		if (majorTitle){
 			this.title = PixelScene.renderText( title, 9 );
-			line = new ColorBlock( 1, 1, 0xFF222222);
+			line = new ColorBlock( 1, 1, Game.instance.getResources().getInteger(R.integer.changeinfo1));
 			add(line);
 		} else {
 			this.title = PixelScene.renderText( title, 6 );
-			line = new ColorBlock( 1, 1, 0xFF333333);
+			line = new ColorBlock( 1, 1, Game.instance.getResources().getInteger(R.integer.changeinfo2));
 			add(line);
 		}
 		major = majorTitle;

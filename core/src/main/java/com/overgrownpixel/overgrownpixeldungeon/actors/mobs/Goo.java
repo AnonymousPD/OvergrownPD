@@ -27,6 +27,7 @@ package com.overgrownpixel.overgrownpixeldungeon.actors.mobs;
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Badges;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.GooWarn;
@@ -46,6 +47,7 @@ import com.overgrownpixel.overgrownpixeldungeon.ui.BossHealthBar;
 import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.noosa.Camera;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.PathFinder;
@@ -127,7 +129,7 @@ public class Goo extends Mob {
 		damage = super.attackProc( enemy, damage );
 		if (Random.Int( 3 ) == 0) {
 			Buff.affect( enemy, Ooze.class ).set( 20f );
-			enemy.sprite.burst( 0x000000, 5 );
+			enemy.sprite.burst( Game.instance.getResources().getInteger(R.integer.gooattack), 5 );
 		}
 
 		if (pumpedUp > 0) {

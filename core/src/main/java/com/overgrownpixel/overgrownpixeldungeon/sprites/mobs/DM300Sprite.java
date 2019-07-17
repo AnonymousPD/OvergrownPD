@@ -25,7 +25,9 @@
 package com.overgrownpixel.overgrownpixeldungeon.sprites.mobs;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.TextureFilm;
 
 public class DM300Sprite extends MobSprite {
@@ -64,6 +66,6 @@ public class DM300Sprite extends MobSprite {
 	
 	@Override
 	public int blood() {
-		return 0xFFFFFF88;
+		return Game.instance.getResources().getInteger(R.integer.dm300blood);
 	}
 }

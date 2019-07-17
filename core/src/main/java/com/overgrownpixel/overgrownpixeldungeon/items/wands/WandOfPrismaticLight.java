@@ -27,6 +27,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.wands;
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Challenges;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Blindness;
@@ -45,6 +46,7 @@ import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.DungeonTilemap;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Callback;
 import com.watabou.utils.PathFinder;
@@ -152,7 +154,7 @@ public class WandOfPrismaticLight extends DamageWand {
 
 	@Override
 	public void staffFx(MagesStaff.StaffParticle particle) {
-		particle.color( Random.Int( 0x1000000 ) );
+		particle.color( Random.Int( Game.instance.getResources().getInteger(R.integer.wandofprismaticlight) ) );
 		particle.am = 0.5f;
 		particle.setLifespan(1f);
 		particle.speed.polar(Random.Float(PointF.PI2), 2f);

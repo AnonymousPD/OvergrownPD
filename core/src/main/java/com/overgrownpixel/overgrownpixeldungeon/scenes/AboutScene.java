@@ -74,7 +74,7 @@ public class AboutScene extends PixelScene {
         align(shpx);
         add( shpx );
 
-        new Flare( 7, 64 ).color( Game.instance.getResources().getColor(R.color.aboutflare1), true ).show( shpx, 0 ).angularSpeed = +20;
+        new Flare( 7, 64 ).color( Game.instance.getResources().getInteger(R.integer.aboutflare1), true ).show( shpx, 0 ).angularSpeed = +20;
 
         RenderedText shpxtitle = renderText( TTL_SHPX, 8 );
         shpxtitle.hardlight( Window.OGPX_COLOR);
@@ -115,7 +115,7 @@ public class AboutScene extends PixelScene {
         align(wata);
         add( wata );
 
-        new Flare( 7, 64 ).color(Game.instance.getResources().getColor(R.color.aboutflare2), true ).show( wata, 0 ).angularSpeed = +20;
+        new Flare( 7, 64 ).color(Game.instance.getResources().getInteger(R.integer.aboutflare2), true ).show( wata, 0 ).angularSpeed = +20;
 
         RenderedText wataTitle = renderText( TTL_WATA, 8 );
         wataTitle.hardlight(Window.TITLE_COLOR);

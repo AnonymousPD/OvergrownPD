@@ -45,7 +45,7 @@ public class KiwivetchPoisonParticle extends PixelParticle {
 
     public KiwivetchPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.kiwivetchpoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.kiwivetchpoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

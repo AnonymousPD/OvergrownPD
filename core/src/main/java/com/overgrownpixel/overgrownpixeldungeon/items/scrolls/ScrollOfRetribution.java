@@ -26,12 +26,14 @@ package com.overgrownpixel.overgrownpixeldungeon.items.scrolls;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Blindness;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Invisibility;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Weakness;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 
 public class ScrollOfRetribution extends Scroll {
@@ -43,7 +45,7 @@ public class ScrollOfRetribution extends Scroll {
 	@Override
 	public void doRead() {
 		
-		GameScene.flash( 0xFFFFFF );
+		GameScene.flash( Game.instance.getResources().getInteger(R.integer.scrollofretributionread) );
 		
 		//scales from 0x to 1x power, maxing at ~10% HP
 		float hpPercent = (curUser.HT - curUser.HP)/(float)(curUser.HT);
@@ -74,7 +76,7 @@ public class ScrollOfRetribution extends Scroll {
 	
 	@Override
 	public void empoweredRead() {
-		GameScene.flash( 0xFFFFFF );
+		GameScene.flash( Game.instance.getResources().getInteger(R.integer.scrollofretributionempoweredread) );
 		
 		Sample.INSTANCE.play( Assets.SND_BLAST );
 		Invisibility.dispel();

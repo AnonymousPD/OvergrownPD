@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.ui;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.Statistics;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
@@ -125,11 +126,11 @@ public class StatusPane extends Component {
 		add( bossHP );
 
 		level = new BitmapText( PixelScene.pixelFont);
-		level.hardlight( 0xFFEBA4 );
+		level.hardlight( Game.instance.getResources().getInteger(R.integer.statuspane1) );
 		add( level );
 
 		depth = new BitmapText( Integer.toString( Dungeon.depth ), PixelScene.pixelFont);
-		depth.hardlight( 0xCACFC2 );
+		depth.hardlight( Game.instance.getResources().getInteger(R.integer.statuspane2) );
 		depth.measure();
 		add( depth );
 
@@ -196,7 +197,7 @@ public class StatusPane extends Component {
 		float max = Dungeon.hero.HT;
 
 		if (!Dungeon.hero.isAlive()) {
-			avatar.tint(0x000000, 0.5f);
+			avatar.tint(Game.instance.getResources().getInteger(R.integer.statuspane3), 0.5f);
 		} else if ((health/max) < 0.3f) {
 			warning += Game.elapsed * 5f *(0.4f - (health/max));
 			warning %= 1f;

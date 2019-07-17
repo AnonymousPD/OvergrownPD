@@ -45,7 +45,7 @@ public class FirebloomPoisonParticle extends PixelParticle {
 
     public FirebloomPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.firebloompoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.firebloompoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

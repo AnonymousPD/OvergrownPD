@@ -25,7 +25,9 @@
 package com.overgrownpixel.overgrownpixeldungeon.sprites.mobs;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.TextureFilm;
 
 public class SpinnerSprite extends MobSprite {
@@ -62,6 +64,6 @@ public class SpinnerSprite extends MobSprite {
 
 	@Override
 	public int blood() {
-		return 0xFFBFE5B8;
+		return Game.instance.getResources().getInteger(R.integer.spinnerblood);
 	}
 }

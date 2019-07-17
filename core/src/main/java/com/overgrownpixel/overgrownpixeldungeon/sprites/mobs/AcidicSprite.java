@@ -57,6 +57,6 @@ public class AcidicSprite extends ScorpioSprite {
 	
 	@Override
 	public int blood() {
-		return Game.instance.getResources().getColor(R.color.acidicsprite);
+		return Game.instance.getResources().getInteger(R.integer.acidicspriteblood);
 	}
 }

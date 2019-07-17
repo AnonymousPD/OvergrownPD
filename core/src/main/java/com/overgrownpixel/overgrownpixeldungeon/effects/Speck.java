@@ -25,6 +25,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.effects;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.TextureFilm;
@@ -188,7 +189,7 @@ public class Speck extends Image {
 			break;
 
 		case RED_LIGHT:
-			tint(0xFFCC0000);
+			tint(Game.instance.getResources().getInteger(R.integer.specktint));
 		case LIGHT:
 			angle = Random.Float( 360 );
 			angularSpeed = 90;
@@ -289,70 +290,70 @@ public class Speck extends Image {
 			break;
 			
 		case TOXIC:
-			hardlight( 0x50FF60 );
+			hardlight( Game.instance.getResources().getInteger(R.integer.speck1) );
 			angularSpeed = 30;
 			angle = Random.Float( 360 );
 			lifespan = Random.Float( 1f, 3f );
 			break;
 
 		case CORROSION:
-			hardlight( 0xAAAAAA );
+			hardlight( Game.instance.getResources().getInteger(R.integer.speck2) );
 			angularSpeed = 30;
 			angle = Random.Float( 360 );
 			lifespan = Random.Float( 1f, 3f );
 			break;
 			
 		case PARALYSIS:
-			hardlight( 0xFFFF66 );
+			hardlight( Game.instance.getResources().getInteger(R.integer.speck3) );
 			angularSpeed = -30;
 			angle = Random.Float( 360 );
 			lifespan = Random.Float( 1f, 3f );
 			break;
 
 		case STENCH:
-			hardlight( 0x003300 );
+			hardlight( Game.instance.getResources().getInteger(R.integer.speck4) );
 			angularSpeed = -30;
 			angle = Random.Float( 360 );
 			lifespan = Random.Float( 1f, 3f );
 			break;
 
 		case CONFUSION:
-			hardlight( Random.Int( 0x1000000 ) | 0x000080 );
+			hardlight( Random.Int( Game.instance.getResources().getInteger(R.integer.speck5) ) | Game.instance.getResources().getInteger(R.integer.speck6) );
 			angularSpeed = Random.Float( -20, +20 );
 			angle = Random.Float( 360 );
 			lifespan = Random.Float( 1f, 3f );
 			break;
 			
 		case STORM:
-			hardlight( 0x8AD8D8 );
+			hardlight( Game.instance.getResources().getInteger(R.integer.speck7) );
 			angularSpeed = Random.Float( -20, +20 );
 			angle = Random.Float( 360 );
 			lifespan = Random.Float( 1f, 3f );
 			break;
 			
 		case INFERNO:
-			hardlight( 0xEE7722 );
+			hardlight( Game.instance.getResources().getInteger(R.integer.speck8) );
 			angularSpeed = Random.Float( 200, 300 ) * (Random.Int(2) == 0 ? -1 : 1);
 			angle = Random.Float( 360 );
 			lifespan = Random.Float( 1f, 3f );
 			break;
 			
 		case BLIZZARD:
-			hardlight( 0xFFFFFF );
+			hardlight( Game.instance.getResources().getInteger(R.integer.speck9) );
 			angularSpeed = Random.Float( 200, 300 ) * (Random.Int(2) == 0 ? -1 : 1);
 			angle = Random.Float( 360 );
 			lifespan = Random.Float( 1f, 3f );
 			break;
 			
 		case SMOKE:
-			hardlight( 0x000000 );
+			hardlight( Game.instance.getResources().getInteger(R.integer.speck10) );
 			angularSpeed = 30;
 			angle = Random.Float( 360 );
 			lifespan = Random.Float( 1f, 1.5f );
 			break;
 
 		case DUST:
-			hardlight( 0xFFFF66 );
+			hardlight( Game.instance.getResources().getInteger(R.integer.speck11) );
 			angle = Random.Float( 360 );
 			speed.polar( Random.Float( 2 * 3.1415926f ), Random.Float( 16, 48 ) );
 			lifespan = 0.5f;
@@ -469,7 +470,7 @@ public class Speck extends Image {
 				break;
 
 			case CORROSION:
-				hardlight( ColorMath.interpolate( 0xAAAAAA, 0xFF8800 , p ));
+				hardlight( ColorMath.interpolate( Game.instance.getResources().getInteger(R.integer.speckinterpolate1), Game.instance.getResources().getInteger(R.integer.speckinterpolate2) , p ));
 			case STENCH:
 			case SMOKE:
 				am = (float)Math.sqrt( (p < 0.5f ? p : 1 - p) );

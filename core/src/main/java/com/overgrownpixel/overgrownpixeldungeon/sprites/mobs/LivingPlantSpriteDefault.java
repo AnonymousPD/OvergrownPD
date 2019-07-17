@@ -25,6 +25,8 @@
 package com.overgrownpixel.overgrownpixeldungeon.sprites.mobs;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.TextureFilm;
 
 public class LivingPlantSpriteDefault extends MobSprite {
@@ -55,6 +57,6 @@ public class LivingPlantSpriteDefault extends MobSprite {
 	
 	@Override
 	public int blood() {
-		return 0x00C12A;
+		return Game.instance.getResources().getInteger(R.integer.livingplantdefaultblood);
 	}
 }

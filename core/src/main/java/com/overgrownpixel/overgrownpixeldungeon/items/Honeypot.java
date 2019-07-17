@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
@@ -34,6 +35,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.Pushing;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Splash;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.tweeners.AlphaTweener;
 import com.watabou.utils.PathFinder;
@@ -92,7 +94,7 @@ public class Honeypot extends Item {
 		
 		if (Dungeon.level.heroFOV[pos]) {
 			Sample.INSTANCE.play( Assets.SND_SHATTER );
-			Splash.at( pos, 0xffd500, 5 );
+			Splash.at( pos, Game.instance.getResources().getInteger(R.integer.honeypotsplash), 5 );
 		}
 		
 		int newPos = pos;

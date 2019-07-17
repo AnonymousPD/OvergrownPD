@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.artifacts;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
@@ -39,6 +40,7 @@ import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndOptions;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
@@ -97,14 +99,14 @@ public class TimekeepersHourglass extends Artifact {
 							protected void onSelect(int index) {
 								if (index == 0) {
 									GLog.i( Messages.get(TimekeepersHourglass.class, "onstasis") );
-									GameScene.flash(0xFFFFFF);
+									GameScene.flash(Game.instance.getResources().getInteger(R.integer.timekeepershourglassflash1));
 									Sample.INSTANCE.play(Assets.SND_TELEPORT);
 
 									activeBuff = new timeStasis();
 									activeBuff.attachTo(Dungeon.hero);
 								} else if (index == 1) {
 									GLog.i( Messages.get(TimekeepersHourglass.class, "onfreeze") );
-									GameScene.flash(0xFFFFFF);
+									GameScene.flash(Game.instance.getResources().getInteger(R.integer.timekeepershourglassflash2));
 									Sample.INSTANCE.play(Assets.SND_TELEPORT);
 
 									activeBuff = new timeFreeze();

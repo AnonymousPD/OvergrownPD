@@ -37,7 +37,7 @@ import com.watabou.utils.Bundle;
 
 public class Kinetic extends Weapon.Enchantment {
 	
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.kinetic) );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.kinetic) );
 	
 	@Override
 	public int proc(Weapon weapon, Char attacker, Char defender, int damage) {

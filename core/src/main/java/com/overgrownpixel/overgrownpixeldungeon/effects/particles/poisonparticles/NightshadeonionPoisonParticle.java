@@ -45,7 +45,7 @@ public class NightshadeonionPoisonParticle extends PixelParticle {
 
     public NightshadeonionPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.nightshadeonionpoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.nightshadeonionpoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

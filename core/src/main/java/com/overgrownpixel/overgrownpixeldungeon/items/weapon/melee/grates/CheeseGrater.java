@@ -37,7 +37,7 @@ public class CheeseGrater extends MeleeWeapon {
 
 		tier = 1;
 		ACC = 0.3f; //0.3x accuracy
-        DLY = 0.125f; //8x Speed
+        DLY = 0.2f; //8x Speed
 	}
 
 	@Override

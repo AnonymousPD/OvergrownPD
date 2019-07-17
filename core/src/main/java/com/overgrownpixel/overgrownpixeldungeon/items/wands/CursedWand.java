@@ -27,6 +27,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.wands;
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
@@ -363,7 +364,7 @@ public class CursedWand {
 				do {
 					GameScene.add(Blob.seed(Dungeon.level.randomDestination(), 10, Fire.class));
 				} while (Random.Int(5) != 0);
-				new Flare(8, 32).color(0xFFFF66, true).show(user.sprite, 2f);
+				new Flare(8, 32).color(Game.instance.getResources().getInteger(R.integer.cursedwand), true).show(user.sprite, 2f);
 				Sample.INSTANCE.play(Assets.SND_TELEPORT);
 				GLog.p(Messages.get(CursedWand.class, "grass"));
 				GLog.w(Messages.get(CursedWand.class, "fire"));

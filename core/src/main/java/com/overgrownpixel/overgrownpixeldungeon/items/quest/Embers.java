@@ -24,9 +24,11 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.quest;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.Game;
 
 public class Embers extends Item {
 
@@ -48,6 +50,6 @@ public class Embers extends Item {
 
 	@Override
 	public ItemSprite.Glowing glowing() {
-		return new ItemSprite.Glowing(0x660000, 3f);
+		return new ItemSprite.Glowing(Game.instance.getResources().getInteger(R.integer.embers), 3f);
 	}
 }

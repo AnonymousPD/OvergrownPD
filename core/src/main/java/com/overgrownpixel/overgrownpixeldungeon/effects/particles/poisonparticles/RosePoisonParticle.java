@@ -45,7 +45,7 @@ public class RosePoisonParticle extends PixelParticle {
 
     public RosePoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.rosepoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.rosepoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

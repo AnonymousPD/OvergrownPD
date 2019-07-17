@@ -43,7 +43,7 @@ public class SmokeParticle extends PixelParticle {
 	public SmokeParticle() {
 		super();
 		
-		color( Game.instance.getResources().getColor(R.color.smokeparticle) );
+		color( Game.instance.getResources().getInteger(R.integer.smokeparticle) );
 		
 		acc.set( 0, -40 );
 	}

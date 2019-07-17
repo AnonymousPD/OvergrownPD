@@ -26,9 +26,11 @@ package com.overgrownpixel.overgrownpixeldungeon.sprites.mobs;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.MissileSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.TextureFilm;
 import com.watabou.utils.Callback;
 
@@ -62,7 +64,7 @@ public class ScorpioSprite extends MobSprite {
 	
 	@Override
 	public int blood() {
-		return 0xFF44FF22;
+		return Game.instance.getResources().getInteger(R.integer.scorpioblood);
 	}
 	
 	@Override

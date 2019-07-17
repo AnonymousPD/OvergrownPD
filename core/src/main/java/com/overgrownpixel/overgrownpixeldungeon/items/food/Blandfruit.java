@@ -27,6 +27,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.food;
 import com.overgrownpixel.overgrownpixeldungeon.Challenges;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
@@ -51,6 +52,7 @@ import com.overgrownpixel.overgrownpixeldungeon.plants.Sungrass;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
+import com.watabou.noosa.Game;
 import com.watabou.utils.Bundle;
 
 import java.util.ArrayList;
@@ -146,40 +148,40 @@ public class Blandfruit extends Food {
 
 		if (potionAttrib instanceof PotionOfHealing){
 			name = Messages.get(this, "sunfruit");
-			potionGlow = new ItemSprite.Glowing( 0x2EE62E );
+			potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.blandfruitsunfruit) );
 		} else if (potionAttrib instanceof PotionOfStrength){
 			name = Messages.get(this, "rotfruit");
-			potionGlow = new ItemSprite.Glowing( 0xCC0022 );
+			potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.blandfruitrotfruit) );
 		} else if (potionAttrib instanceof PotionOfParalyticGas){
 			name = Messages.get(this, "earthfruit");
-			potionGlow = new ItemSprite.Glowing( 0x67583D );
+			potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.blandfruitearthfruit) );
 		} else if (potionAttrib instanceof PotionOfInvisibility){
 			name = Messages.get(this, "blindfruit");
-			potionGlow = new ItemSprite.Glowing( 0xD9D9D9 );
+			potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.blandfruitblindfruit) );
 		} else if (potionAttrib instanceof PotionOfLiquidFlame){
 			name = Messages.get(this, "firefruit");
-			potionGlow = new ItemSprite.Glowing( 0xFF7F00 );
+			potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.blandfruitfirefruit) );
 		} else if (potionAttrib instanceof PotionOfFrost){
 			name = Messages.get(this, "icefruit");
-			potionGlow = new ItemSprite.Glowing( 0x66B3FF );
+			potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.blandfruiticefruit) );
 		} else if (potionAttrib instanceof PotionOfMindVision){
 			name = Messages.get(this, "fadefruit");
-			potionGlow = new ItemSprite.Glowing( 0x919999 );
+			potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.blandfruitfadefruit) );
 		} else if (potionAttrib instanceof PotionOfToxicGas){
 			name = Messages.get(this, "sorrowfruit");
-			potionGlow = new ItemSprite.Glowing( 0xA15CE5 );
+			potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.blandfruitsorrowfruit) );
 		} else if (potionAttrib instanceof PotionOfLevitation) {
 			name = Messages.get(this, "stormfruit");
-			potionGlow = new ItemSprite.Glowing( 0x1B5F79 );
+			potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.blandfruitstormfruit) );
 		} else if (potionAttrib instanceof PotionOfPurity) {
 			name = Messages.get(this, "dreamfruit");
-			potionGlow = new ItemSprite.Glowing( 0xC152AA );
+			potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.blandfruitdreamfruit) );
 		} else if (potionAttrib instanceof PotionOfExperience) {
 			name = Messages.get(this, "starfruit");
-			potionGlow = new ItemSprite.Glowing( 0x404040 );
+			potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.blandfruitstarfruit) );
 		} else if (potionAttrib instanceof PotionOfHaste) {
 			name = Messages.get(this, "swiftfruit");
-			potionGlow = new ItemSprite.Glowing( 0xCCBB00 );
+			potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.blandfruitswiftfruit) );
 		}
 
 		return this;

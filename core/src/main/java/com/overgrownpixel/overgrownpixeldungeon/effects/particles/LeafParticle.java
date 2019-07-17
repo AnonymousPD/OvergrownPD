@@ -43,7 +43,7 @@ public class LeafParticle extends PixelParticle.Shrinking {
 		@Override
 		public void emit( Emitter emitter, int index, float x, float y ) {
 			LeafParticle p = ((LeafParticle)emitter.recycle( LeafParticle.class ));
-			p.color( ColorMath.random( Game.instance.getResources().getColor(R.color.leafparticle1), Game.instance.getResources().getColor(R.color.leafparticle2) ) );
+			p.color( ColorMath.random( Game.instance.getResources().getInteger(R.integer.leafparticle1), Game.instance.getResources().getInteger(R.integer.leafparticle2) ) );
 			p.reset( x, y );
 		}
 	};

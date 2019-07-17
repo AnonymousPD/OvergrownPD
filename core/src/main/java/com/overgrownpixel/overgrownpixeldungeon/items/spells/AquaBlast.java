@@ -52,7 +52,7 @@ public class AquaBlast extends TargetedSpell {
 	protected void affectTarget(Ballistica bolt, Hero hero) {
 		int cell = bolt.collisionPos;
 		
-		Splash.at(cell, Game.instance.getResources().getColor(R.color.aquablastspell), 10);
+		Splash.at(cell, Game.instance.getResources().getInteger(R.integer.aquablastspell), 10);
 		
 		for (int i : PathFinder.NEIGHBOURS9){
 			if (i == 0 || Random.Int(5) != 0){

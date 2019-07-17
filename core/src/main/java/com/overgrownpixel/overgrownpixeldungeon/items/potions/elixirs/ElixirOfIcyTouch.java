@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions.elixirs;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FrostImbue;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
@@ -31,6 +32,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.particles.SnowParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.AlchemicalCatalyst;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfSnapFreeze;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.Game;
 
 public class ElixirOfIcyTouch extends Elixir {
 	
@@ -47,7 +49,7 @@ public class ElixirOfIcyTouch extends Elixir {
 	
 	@Override
 	protected int splashColor() {
-		return 0xFF18C3E6;
+		return Game.instance.getResources().getInteger(R.integer.elixiroficytouchsplash);
 	}
 	
 	@Override

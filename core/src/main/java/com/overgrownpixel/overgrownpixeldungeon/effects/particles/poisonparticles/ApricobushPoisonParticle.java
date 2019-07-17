@@ -45,7 +45,7 @@ public class ApricobushPoisonParticle extends PixelParticle {
 
     public ApricobushPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.apricobushpoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.apricobushpoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

@@ -24,6 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.actors.buffs;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 
 //buff whose only internal logic is to wait and detach after a time.
@@ -39,7 +41,7 @@ public class FlavourBuff extends Buff {
 		if (remaining >= startGrey){
 			icon.resetColor();
 		} else {
-			icon.tint(0xb3b3b3, 0.6f + 0.3f*(startGrey - remaining)/startGrey);
+			icon.tint(Game.instance.getResources().getInteger(R.integer.flavourbuff), 0.6f + 0.3f*(startGrey - remaining)/startGrey);
 		}
 	}
 

@@ -27,6 +27,7 @@ package com.overgrownpixel.overgrownpixeldungeon.windows;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OGPDSettings;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.ClassArmor;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.Potion;
@@ -47,6 +48,7 @@ import com.overgrownpixel.overgrownpixeldungeon.ui.RenderedTextMultiline;
 import com.overgrownpixel.overgrownpixeldungeon.ui.ScrollPane;
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.ColorBlock;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.ui.Component;
 
@@ -178,7 +180,7 @@ public class WndJournal extends WndTabbed {
 			depth = new BitmapText( PixelScene.pixelFont);
 			add( depth );
 			
-			line = new ColorBlock( 1, 1, 0xFF222222);
+			line = new ColorBlock( 1, 1, Game.instance.getResources().getInteger(R.integer.wndjournal1));
 			add(line);
 			
 		}
@@ -235,7 +237,7 @@ public class WndJournal extends WndTabbed {
 			
 			float pos = 0;
 			
-			ColorBlock line = new ColorBlock( width(), 1, 0xFF222222);
+			ColorBlock line = new ColorBlock( width(), 1, Game.instance.getResources().getInteger(R.integer.wndjournal2));
 			line.y = pos;
 			content.add(line);
 			
@@ -277,7 +279,7 @@ public class WndJournal extends WndTabbed {
 				if (!found) {
 					icon.hardlight( 0.5f, 0.5f, 0.5f);
 					label.text( Messages.titleCase(Messages.get( this, "missing" )));
-					label.hardlight( 0x999999 );
+					label.hardlight( Game.instance.getResources().getInteger(R.integer.wndjournal3) );
 				}
 				
 			}
@@ -436,7 +438,7 @@ public class WndJournal extends WndTabbed {
 					r.setPos(left, top);
 					left += r.width() + spacing;
 					if (!toAddThisRow.isEmpty()) {
-						ColorBlock spacer = new ColorBlock(1, 16, 0xFF222222);
+						ColorBlock spacer = new ColorBlock(1, 16, Game.instance.getResources().getInteger(R.integer.wndjournal4));
 						spacer.y = top;
 						spacer.x = left - spacing / 2 - 0.5f;
 						PixelScene.align(spacer);
@@ -451,7 +453,7 @@ public class WndJournal extends WndTabbed {
 				}
 				
 				if (!toAdd.isEmpty() && toAdd.get(0) != null) {
-					ColorBlock spacer = new ColorBlock(width(), 1, 0xFF222222);
+					ColorBlock spacer = new ColorBlock(width(), 1, Game.instance.getResources().getInteger(R.integer.wndjournal5));
 					spacer.y = top + 16;
 					spacer.x = 0;
 					content.add(spacer);
@@ -490,7 +492,7 @@ public class WndJournal extends WndTabbed {
 			//Keys
 			ArrayList<Notes.KeyRecord> keys = Notes.getRecords(Notes.KeyRecord.class);
 			if (!keys.isEmpty()){
-				ColorBlock line = new ColorBlock( width(), 1, 0xFF222222);
+				ColorBlock line = new ColorBlock( width(), 1, Game.instance.getResources().getInteger(R.integer.wndjournal6));
 				line.y = pos;
 				content.add(line);
 				
@@ -515,7 +517,7 @@ public class WndJournal extends WndTabbed {
 			//Landmarks
 			ArrayList<Notes.LandmarkRecord> landmarks = Notes.getRecords(Notes.LandmarkRecord.class);
 			if (!landmarks.isEmpty()){
-				ColorBlock line = new ColorBlock( width(), 1, 0xFF222222);
+				ColorBlock line = new ColorBlock( width(), 1, Game.instance.getResources().getInteger(R.integer.wndjournal7));
 				line.y = pos;
 				content.add(line);
 				
@@ -712,10 +714,10 @@ public class WndJournal extends WndTabbed {
 				if (!seen) {
 					icon.copy( new ItemSprite( ItemSpriteSheet.SOMETHING + spriteIndexes[currentItemIdx], null) );
 					label.text("???");
-					label.hardlight( 0x999999 );
+					label.hardlight( Game.instance.getResources().getInteger(R.integer.wndjournal8) );
 				} else if (!IDed) {
 					icon.copy( new ItemSprite( ItemSpriteSheet.SOMETHING + spriteIndexes[currentItemIdx], null) );
-					label.hardlight( 0xCCCCCC );
+					label.hardlight( Game.instance.getResources().getInteger(R.integer.wndjournal9) );
 				}
 				
 			}

@@ -40,7 +40,7 @@ import com.watabou.utils.Random;
 
 public class Entanglement extends Glyph {
 	
-	private static ItemSprite.Glowing BROWN = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.entanglement) );
+	private static ItemSprite.Glowing BROWN = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.entanglement) );
 	
 	@Override
 	public int proc(Armor armor, Char attacker, final Char defender, final int damage ) {

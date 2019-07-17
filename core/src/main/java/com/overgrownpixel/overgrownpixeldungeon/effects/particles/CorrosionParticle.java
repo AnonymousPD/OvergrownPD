@@ -91,7 +91,7 @@ public class CorrosionParticle extends PixelParticle {
 		// alpha: 1 -> 0; size: 1 -> 4
 		size( 4 - (am = left / lifespan) * 3 );
 		// color: 0xAAAAAA -> 0xFF8800
-		color( ColorMath.interpolate( Game.instance.getResources().getColor(R.color.corrosionparticle1), Game.instance.getResources().getColor(R.color.corrosionparticle2), am ) );
+		color( ColorMath.interpolate( Game.instance.getResources().getInteger(R.integer.corrosionparticle1), Game.instance.getResources().getInteger(R.integer.corrosionparticle2), am ) );
 	}
 	
 }

@@ -109,7 +109,7 @@ public class AmuletScene extends PixelScene {
 			btnStay.setPos( btnExit.left(), btnExit.bottom() + SMALL_GAP );
 		}
 
-		new Flare( 8, 48 ).color( Game.instance.getResources().getColor(R.color.amuletflare), true ).show( amulet, 0 ).angularSpeed = +30;
+		new Flare( 8, 48 ).color( Game.instance.getResources().getInteger(R.integer.amuletflare), true ).show( amulet, 0 ).angularSpeed = +30;
 		
 		fadeIn();
 	}

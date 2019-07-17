@@ -27,6 +27,7 @@ package com.overgrownpixel.overgrownpixeldungeon.actors.mobs;
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Badges;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.ToxicGas;
@@ -51,6 +52,7 @@ import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.KingSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.UndeadSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BossHealthBar;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.PathFinder;
@@ -210,7 +212,7 @@ public class King extends Mob {
 						GameScene.add( undead );
 						
 						ScrollOfTeleportation.appear( undead, j );
-						new Flare( 3, 32 ).color( 0x000000, false ).show( undead.sprite, 2f ) ;
+						new Flare( 3, 32 ).color( Game.instance.getResources().getInteger(R.integer.king), false ).show( undead.sprite, 2f ) ;
 						
 						PathFinder.distance[j] = Integer.MAX_VALUE;
 						

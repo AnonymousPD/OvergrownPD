@@ -32,7 +32,7 @@ import com.watabou.noosa.Game;
 
 public class Flow extends Armor.Glyph {
 
-	private static ItemSprite.Glowing BLUE = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.flow) );
+	private static ItemSprite.Glowing BLUE = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.flow) );
 
 	@Override
 	public int proc(Armor armor, Char attacker, Char defender, int damage) {

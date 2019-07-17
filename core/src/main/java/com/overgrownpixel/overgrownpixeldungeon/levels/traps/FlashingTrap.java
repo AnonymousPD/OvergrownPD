@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.levels.traps;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Bleeding;
@@ -36,6 +37,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Level;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 
 public class FlashingTrap extends Trap {
@@ -74,7 +76,7 @@ public class FlashingTrap extends Trap {
 		}
 		
 		if (Dungeon.level.heroFOV[pos]) {
-			GameScene.flash(0xFFFFFF);
+			GameScene.flash(Game.instance.getResources().getInteger(R.integer.flashtrap));
 			Sample.INSTANCE.play( Assets.SND_BLAST );
 		}
 		

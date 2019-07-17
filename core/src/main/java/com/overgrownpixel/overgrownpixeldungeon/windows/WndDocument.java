@@ -27,6 +27,7 @@ package com.overgrownpixel.overgrownpixeldungeon.windows;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OGPDSettings;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.journal.Document;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
@@ -36,6 +37,7 @@ import com.overgrownpixel.overgrownpixeldungeon.ui.ScrollPane;
 import com.overgrownpixel.overgrownpixeldungeon.ui.Window;
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.ColorBlock;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.ui.Component;
 
@@ -81,7 +83,7 @@ public class WndDocument extends Window {
 		
 		float pos = 0;
 		
-		ColorBlock line = new ColorBlock( w, 1, 0xFF222222);
+		ColorBlock line = new ColorBlock( w, 1, Game.instance.getResources().getInteger(R.integer.wnddocument1));
 		line.y = pos;
 		content.add(line);
 		
@@ -128,7 +130,7 @@ public class WndDocument extends Window {
 			if (!found) {
 				icon.hardlight( 0.5f, 0.5f, 0.5f);
 				label.text( Messages.titleCase(Messages.get( WndDocument.class, "missing" )));
-				label.hardlight( 0x999999 );
+				label.hardlight( Game.instance.getResources().getInteger(R.integer.wnddocument2) );
 			}
 			
 		}
@@ -184,7 +186,7 @@ public class WndDocument extends Window {
 			depth = new BitmapText( PixelScene.pixelFont);
 			add( depth );
 			
-			line = new ColorBlock( 1, 1, 0xFF222222);
+			line = new ColorBlock( 1, 1, Game.instance.getResources().getInteger(R.integer.wnddocument3));
 			add(line);
 			
 		}

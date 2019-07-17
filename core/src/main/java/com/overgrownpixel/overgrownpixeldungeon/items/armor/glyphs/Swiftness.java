@@ -32,7 +32,7 @@ import com.watabou.noosa.Game;
 
 public class Swiftness extends Armor.Glyph {
 
-	private static ItemSprite.Glowing YELLOW = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.swiftness) );
+	private static ItemSprite.Glowing YELLOW = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.swiftness) );
 
 	@Override
 	public int proc(Armor armor, Char attacker, Char defender, int damage) {

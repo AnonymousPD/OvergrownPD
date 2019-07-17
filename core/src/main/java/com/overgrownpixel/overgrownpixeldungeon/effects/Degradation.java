@@ -24,7 +24,9 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.watabou.glwrap.Blending;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Group;
 import com.watabou.noosa.particles.PixelParticle;
 import com.watabou.utils.PointF;
@@ -122,7 +124,7 @@ public class Degradation extends Group {
 	
 	public static class Speck extends PixelParticle {
 		
-		private static final int COLOR = 0xFF4422;
+		private static final int COLOR = Game.instance.getResources().getInteger(R.integer.degradation);
 		private static final int SIZE = 3;
 		
 		public Speck( float x0, float y0, int mx, int my ) {

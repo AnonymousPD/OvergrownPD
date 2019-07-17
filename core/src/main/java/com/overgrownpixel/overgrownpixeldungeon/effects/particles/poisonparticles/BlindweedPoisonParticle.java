@@ -45,7 +45,7 @@ public class BlindweedPoisonParticle extends PixelParticle {
 
     public BlindweedPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.blindweedpoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.blindweedpoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

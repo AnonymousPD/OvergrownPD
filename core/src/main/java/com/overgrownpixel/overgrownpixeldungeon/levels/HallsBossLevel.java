@@ -27,6 +27,7 @@ package com.overgrownpixel.overgrownpixeldungeon.levels;
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Bones;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Yog;
@@ -38,6 +39,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.keys.SkeletonKey;
 import com.overgrownpixel.overgrownpixeldungeon.levels.painters.Painter;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Group;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.PathFinder;
@@ -46,8 +48,8 @@ import com.watabou.utils.Random;
 public class HallsBossLevel extends Level {
 	
 	{
-		color1 = 0x801500;
-		color2 = 0xa68521;
+		color1 = Game.instance.getResources().getInteger(R.integer.hallslevelboss1);
+		color2 = Game.instance.getResources().getInteger(R.integer.hallslevelboss2);
 		
 		viewDistance = Math.min(4, viewDistance);
 	}

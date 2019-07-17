@@ -24,7 +24,9 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.ui;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.ui.Component;
 
@@ -112,13 +114,13 @@ public class RenderedTextMultiline extends Component {
 				RenderedText word;
 				if (str.startsWith(UNDERSCORE) && str.endsWith(UNDERSCORE)){
 					word = new RenderedText(str.substring(1, str.length()-1), size);
-					word.hardlight(0xFFFF44);
+					word.hardlight(Game.instance.getResources().getInteger(R.integer.text1));
 				} else if(str.startsWith(POSITIVE) && str.endsWith(POSITIVE)){
                     word = new RenderedText(str.substring(1, str.length()-1), size);
-                    word.hardlight(0x00FF00);
+                    word.hardlight(Game.instance.getResources().getInteger(R.integer.text2));
                 } else if(str.startsWith(NEGATIVE) && str.endsWith(NEGATIVE)){
                     word = new RenderedText(str.substring(1, str.length()-1), size);
-                    word.hardlight(0xFF3300);
+                    word.hardlight(Game.instance.getResources().getInteger(R.integer.text3));
                 } else {
 					if (str.startsWith(UNDERSCORE)){
 						highlighting = !highlighting;
@@ -128,7 +130,7 @@ public class RenderedTextMultiline extends Component {
 					} else {
 						word = new RenderedText(str, size);
 					}
-					if (highlighting) word.hardlight(0xFFFF44);
+					if (highlighting) word.hardlight(Game.instance.getResources().getInteger(R.integer.text4));
 					else if (color != -1) word.hardlight(color);
 
 					if (str.endsWith(UNDERSCORE)) highlighting = !highlighting;

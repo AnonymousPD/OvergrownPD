@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.potions.brews;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
@@ -35,6 +36,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfToxicGas;
 import com.overgrownpixel.overgrownpixeldungeon.items.quest.GooBlob;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.PathFinder;
 
@@ -56,7 +58,7 @@ public class CausticBrew extends Brew {
 		PathFinder.buildDistanceMap( cell, BArray.not( Dungeon.level.solid, null ), 3 );
 		for (int i = 0; i < PathFinder.distance.length; i++) {
 			if (PathFinder.distance[i] < Integer.MAX_VALUE) {
-				Splash.at( i, 0x000000, 5);
+				Splash.at( i, Game.instance.getResources().getInteger(R.integer.causticbrew), 5);
 				Char ch = Actor.findChar(i);
 				
 				if (ch != null){

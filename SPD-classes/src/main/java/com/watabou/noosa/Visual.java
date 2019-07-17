@@ -21,7 +21,7 @@
 
 package com.watabou.noosa;
 
-import android.graphics.Color;
+import android.os.Build;
 
 import com.watabou.glwrap.Matrix;
 import com.watabou.utils.Point;
@@ -241,6 +241,14 @@ public class Visual extends Gizmo {
 
 	public int getColor(){
         return 0xff000000 | ((int) (ra   * 255.0f + 0.5f) << 16) | ((int) (ga * 255.0f + 0.5f) <<  8) | (int) (ba  * 255.0f + 0.5f);
+    }
+
+    public void xmlcolor(int color){
+	    if(Build.VERSION.SDK_INT >= 23){
+
+        } else {
+
+        }
     }
 	
 	public void hardlight( float r, float g, float b ) {

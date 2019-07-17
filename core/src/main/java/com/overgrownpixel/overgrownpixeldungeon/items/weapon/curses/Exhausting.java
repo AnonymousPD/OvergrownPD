@@ -36,7 +36,7 @@ import com.watabou.utils.Random;
 
 public class Exhausting extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing BLACK = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.curse) );
+	private static ItemSprite.Glowing BLACK = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.curse) );
 
 	@Override
 	public int proc(Weapon weapon, Char attacker, Char defender, int damage ) {

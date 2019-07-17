@@ -43,7 +43,7 @@ import java.util.HashSet;
 
 public class AntiMagic extends Armor.Glyph {
 
-	private static ItemSprite.Glowing TEAL = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.antimagic) );
+	private static ItemSprite.Glowing TEAL = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.antimagic) );
 	
 	public static final HashSet<Class> RESISTS = new HashSet<>();
 	static {

@@ -26,11 +26,13 @@ package com.overgrownpixel.overgrownpixeldungeon.levels.traps;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Freezing;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Splash;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.PathFinder;
 
@@ -45,7 +47,7 @@ public class FrostTrap extends Trap {
 	public void activate() {
 		
 		if (Dungeon.level.heroFOV[ pos ]){
-			Splash.at( pos, 0xFFB2D6FF, 5);
+			Splash.at( pos, Game.instance.getResources().getInteger(R.integer.frosttrap), 5);
 			Sample.INSTANCE.play( Assets.SND_SHATTER );
 		}
 		

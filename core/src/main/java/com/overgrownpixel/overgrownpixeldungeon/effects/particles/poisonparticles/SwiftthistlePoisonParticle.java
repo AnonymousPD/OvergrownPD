@@ -45,7 +45,7 @@ public class SwiftthistlePoisonParticle extends PixelParticle {
 
     public SwiftthistlePoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.swiftthistlepoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.swiftthistlepoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

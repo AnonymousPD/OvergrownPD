@@ -45,7 +45,7 @@ public class WebParticle extends PixelParticle {
 	public WebParticle() {
 		super();
 		
-		color( Game.instance.getResources().getColor(R.color.webparticle) );
+		color( Game.instance.getResources().getInteger(R.integer.webparticle) );
 		lifespan = 2f;
 	}
 	

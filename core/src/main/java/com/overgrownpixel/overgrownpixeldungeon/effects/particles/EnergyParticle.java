@@ -49,7 +49,7 @@ public class EnergyParticle extends PixelParticle {
 		super();
 		
 		lifespan = 1f;
-		color( Game.instance.getResources().getColor(R.color.energyparticle) );
+		color( Game.instance.getResources().getInteger(R.integer.energyparticle) );
 		
 		speed.polar( Random.Float( PointF.PI2 ), Random.Float( 24, 32 ) );
 	}

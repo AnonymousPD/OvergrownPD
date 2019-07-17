@@ -45,7 +45,7 @@ public class ChillisnapperPoisonParticle extends PixelParticle {
 
     public ChillisnapperPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.chillisnapperpoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.chillisnapperpoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

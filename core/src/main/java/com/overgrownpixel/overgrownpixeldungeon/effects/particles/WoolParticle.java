@@ -44,7 +44,7 @@ public class WoolParticle extends PixelParticle.Shrinking {
 	public WoolParticle() {
 		super();
 		
-		color( ColorMath.random( Game.instance.getResources().getColor(R.color.woolparticle1), Game.instance.getResources().getColor(R.color.woolparticle2)) );
+		color( ColorMath.random( Game.instance.getResources().getInteger(R.integer.woolparticle1), Game.instance.getResources().getInteger(R.integer.woolparticle2)) );
 		
 		acc.set( 0, -40 );
 	}

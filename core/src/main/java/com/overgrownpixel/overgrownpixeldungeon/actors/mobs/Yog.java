@@ -25,6 +25,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.actors.mobs;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
@@ -58,6 +59,7 @@ import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.RottingFistSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.YogSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BossHealthBar;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
+import com.watabou.noosa.Game;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;
@@ -243,7 +245,7 @@ public class Yog extends Mob {
 			
 			if (Random.Int( 3 ) == 0) {
 				Buff.affect( enemy, Ooze.class ).set( 20f );
-				enemy.sprite.burst( 0xFF000000, 5 );
+				enemy.sprite.burst( Game.instance.getResources().getInteger(R.integer.yog), 5 );
 			}
 			
 			return damage;

@@ -33,7 +33,7 @@ public class DualFencingBlades extends MeleeWeapon {
 		image = ItemSpriteSheet.DUAL_FENCING_BLADES;
 
 		tier = 2;
-		DLY = 0.125f; //x8 speed
+		DLY = 0.2f; //x8 speed
         ACC = 2f;     //+100% accuracy
 	}
 

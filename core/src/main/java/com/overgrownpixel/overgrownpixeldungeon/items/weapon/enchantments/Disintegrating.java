@@ -58,7 +58,7 @@ public class Disintegrating extends Weapon.Enchantment {
     protected static Weapon.Enchantment curEnchantment = null;
     protected static Weapon curWeapon = null;
 
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.disintegrating) );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.disintegrating) );
 	
 	@Override
 	public int proc(Weapon weapon, Char attacker, Char defender, int damage ) {

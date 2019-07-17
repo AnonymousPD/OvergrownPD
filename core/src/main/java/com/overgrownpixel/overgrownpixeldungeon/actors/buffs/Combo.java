@@ -27,6 +27,7 @@ package com.overgrownpixel.overgrownpixeldungeon.actors.buffs;
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Badges;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
@@ -42,6 +43,7 @@ import com.overgrownpixel.overgrownpixeldungeon.ui.ActionIndicator;
 import com.overgrownpixel.overgrownpixeldungeon.ui.AttackIndicator;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;
@@ -65,7 +67,7 @@ public class Combo extends Buff implements ActionIndicator.Action {
 		if (comboTime >= 3f){
 			icon.resetColor();
 		} else {
-			icon.tint(0xb3b3b3, 0.5f + 0.5f*(3f + 1 - comboTime)/3f);
+			icon.tint(Game.instance.getResources().getInteger(R.integer.combotime), 0.5f + 0.5f*(3f + 1 - comboTime)/3f);
 		}
 	}
 	
@@ -160,11 +162,11 @@ public class Combo extends Buff implements ActionIndicator.Action {
 			icon = new ItemSprite(new Item(){ {image = ItemSpriteSheet.WEAPON_HOLDER; }});
 		}
 
-		if (count >= 10)    icon.tint(0xFFFF0000);
-		else if (count >= 8)icon.tint(0xFFFFCC00);
-		else if (count >= 6)icon.tint(0xFFFFFF00);
-		else if (count >= 4)icon.tint(0xFFCCFF00);
-		else                icon.tint(0xFF00FF00);
+		if (count >= 10)    icon.tint(Game.instance.getResources().getInteger(R.integer.combotint1));
+		else if (count >= 8)icon.tint(Game.instance.getResources().getInteger(R.integer.combotint2));
+		else if (count >= 6)icon.tint(Game.instance.getResources().getInteger(R.integer.combotint3));
+		else if (count >= 4)icon.tint(Game.instance.getResources().getInteger(R.integer.combotint4));
+		else                icon.tint(Game.instance.getResources().getInteger(R.integer.combotint5));
 
 		return icon;
 	}

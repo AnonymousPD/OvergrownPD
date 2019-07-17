@@ -92,6 +92,6 @@ public class PoisonParticle extends PixelParticle {
 		// alpha: 1 -> 0; size: 1 -> 4
 		size( 4 - (am = left / lifespan) * 3 );
 		// color: 0x8844FF -> 0x00FF00
-		color( ColorMath.interpolate( Game.instance.getResources().getColor(R.color.poisonparticle1), Game.instance.getResources().getColor(R.color.poisonparticle2), am ) );
+		color( ColorMath.interpolate( Game.instance.getResources().getInteger(R.integer.poisonparticle1), Game.instance.getResources().getInteger(R.integer.poisonparticle2), am ) );
 	}
 }

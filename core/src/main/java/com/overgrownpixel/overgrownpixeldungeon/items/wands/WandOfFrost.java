@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.wands;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
@@ -37,6 +38,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.Heap;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.staffs.MagesStaff;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Callback;
 import com.watabou.utils.PointF;
@@ -77,7 +79,7 @@ public class WandOfFrost extends DamageWand {
 				float chill = ch.buff(Chill.class).cooldown();
 				damage = (int)Math.round(damage * Math.pow(0.9f, chill));
 			} else {
-				ch.sprite.burst( 0xFF99CCFF, level() / 2 + 2 );
+				ch.sprite.burst( Game.instance.getResources().getInteger(R.integer.wandoffrost), level() / 2 + 2 );
 			}
 
 			processSoulMark(ch, chargesPerCast());
@@ -121,7 +123,7 @@ public class WandOfFrost extends DamageWand {
 
 	@Override
 	public void staffFx(MagesStaff.StaffParticle particle) {
-		particle.color(0x88CCFF);
+		particle.color(Game.instance.getResources().getInteger(R.integer.wandoffrostparticle));
 		particle.am = 0.6f;
 		particle.setLifespan(2f);
 		float angle = Random.Float(PointF.PI2);

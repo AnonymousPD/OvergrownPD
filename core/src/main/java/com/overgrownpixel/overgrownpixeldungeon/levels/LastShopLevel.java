@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.levels;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Bones;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.items.Heap;
@@ -39,6 +40,7 @@ import com.overgrownpixel.overgrownpixeldungeon.levels.rooms.standard.EntranceRo
 import com.overgrownpixel.overgrownpixeldungeon.levels.rooms.standard.ExitRoom;
 import com.overgrownpixel.overgrownpixeldungeon.levels.rooms.standard.ImpShopRoom;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Group;
 
 import java.util.ArrayList;
@@ -46,8 +48,8 @@ import java.util.ArrayList;
 public class LastShopLevel extends RegularLevel {
 	
 	{
-		color1 = 0x4b6636;
-		color2 = 0xf2f2f2;
+		color1 = Game.instance.getResources().getInteger(R.integer.lastlevelshop1);
+		color2 = Game.instance.getResources().getInteger(R.integer.lastlevelshop2);
 	}
 	
 	@Override

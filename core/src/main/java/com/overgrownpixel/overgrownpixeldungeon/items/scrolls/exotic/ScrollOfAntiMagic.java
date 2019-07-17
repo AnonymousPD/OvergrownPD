@@ -24,10 +24,12 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.scrolls.exotic;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Invisibility;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MagicImmune;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Flare;
+import com.watabou.noosa.Game;
 
 public class ScrollOfAntiMagic extends ExoticScroll {
 	
@@ -41,7 +43,7 @@ public class ScrollOfAntiMagic extends ExoticScroll {
 		Invisibility.dispel();
 		
 		Buff.affect( curUser, MagicImmune.class, 20f );
-		new Flare( 5, 32 ).color( 0xFF0000, true ).show( curUser.sprite, 2f );
+		new Flare( 5, 32 ).color( Game.instance.getResources().getInteger(R.integer.scrollofantimagic), true ).show( curUser.sprite, 2f );
 		
 		setKnown();
 		

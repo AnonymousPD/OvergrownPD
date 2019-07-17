@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.windows;
 
 import com.overgrownpixel.overgrownpixeldungeon.OGPDSettings;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Languages;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
@@ -89,10 +90,10 @@ public class WndLangs extends Window {
 			} else {
 				switch (langs.get(i).status()) {
 					case INCOMPLETE:
-						btn.textColor(0x888888);
+						btn.textColor(Game.instance.getResources().getInteger(R.integer.wndlangs1));
 						break;
 					case UNREVIEWED:
-						btn.textColor(0xBBBBBB);
+						btn.textColor(Game.instance.getResources().getInteger(R.integer.wndlangs2));
 						break;
 				}
 			}
@@ -113,7 +114,7 @@ public class WndLangs extends Window {
 		int textLeft = width - 65;
 		int textWidth = width - textLeft;
 
-		ColorBlock separator = new ColorBlock(1, y, 0xFF000000);
+		ColorBlock separator = new ColorBlock(1, y, Game.instance.getResources().getInteger(R.integer.wndlangs3));
 		separator.x = textLeft - 2.5f;
 		add(separator);
 

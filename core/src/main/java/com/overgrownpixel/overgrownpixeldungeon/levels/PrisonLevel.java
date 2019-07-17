@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.levels;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.npcs.Wandmaker;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.FlameParticle;
 import com.overgrownpixel.overgrownpixeldungeon.levels.painters.Painter;
@@ -45,6 +46,7 @@ import com.overgrownpixel.overgrownpixeldungeon.levels.traps.TeleportationTrap;
 import com.overgrownpixel.overgrownpixeldungeon.levels.traps.ToxicTrap;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.DungeonTilemap;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Group;
 import com.watabou.noosa.Halo;
 import com.watabou.noosa.particles.Emitter;
@@ -56,8 +58,8 @@ import java.util.ArrayList;
 public class PrisonLevel extends RegularLevel {
 
 	{
-		color1 = 0x6a723d;
-		color2 = 0x88924c;
+		color1 = Game.instance.getResources().getInteger(R.integer.prisonlevel1);
+		color2 = Game.instance.getResources().getInteger(R.integer.prisonlevel2);
 	}
 	
 	@Override
@@ -163,7 +165,7 @@ public class PrisonLevel extends RegularLevel {
 			
 			pour( FlameParticle.FACTORY, 0.15f );
 			
-			add( new Halo( 12, 0xFFFFCC, 0.4f ).point( p.x, p.y + 1 ) );
+			add( new Halo( 12, Game.instance.getResources().getInteger(R.integer.prisonleveltorch), 0.4f ).point( p.x, p.y + 1 ) );
 		}
 		
 		@Override

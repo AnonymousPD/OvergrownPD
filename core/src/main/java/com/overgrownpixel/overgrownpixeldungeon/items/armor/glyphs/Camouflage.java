@@ -37,7 +37,7 @@ import com.watabou.utils.Bundle;
 
 public class Camouflage extends Armor.Glyph {
 
-	private static ItemSprite.Glowing GREEN = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.camouflage) );
+	private static ItemSprite.Glowing GREEN = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.camouflage) );
 
 	@Override
 	public int proc(Armor armor, Char attacker, Char defender, int damage) {

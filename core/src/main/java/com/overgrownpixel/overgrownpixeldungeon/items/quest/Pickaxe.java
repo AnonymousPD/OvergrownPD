@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.quest;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Bat;
@@ -39,6 +40,7 @@ import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite.Glowing;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Callback;
@@ -52,7 +54,7 @@ public class Pickaxe extends Weapon {
 	
 	public static final float TIME_TO_MINE = 2;
 	
-	private static final Glowing BLOODY = new Glowing( 0x550000 );
+	private static final Glowing BLOODY = new Glowing( Game.instance.getResources().getInteger(R.integer.pickaxebloody) );
 	
 	{
 		image = ItemSpriteSheet.PICKAXE;

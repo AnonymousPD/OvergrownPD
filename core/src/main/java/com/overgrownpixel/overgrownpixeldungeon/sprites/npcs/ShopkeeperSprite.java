@@ -25,7 +25,9 @@
 package com.overgrownpixel.overgrownpixeldungeon.sprites.npcs;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.MobSprite;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.TextureFilm;
 import com.watabou.noosa.particles.PixelParticle;
 
@@ -61,7 +63,7 @@ public class ShopkeeperSprite extends MobSprite {
 				coin = new PixelParticle();
 				parent.add( coin );
 			}
-			coin.reset( x + (flipHorizontal ? 0 : 13), y + 7, 0xFFFF00, 1, 0.5f );
+			coin.reset( x + (flipHorizontal ? 0 : 13), y + 7, Game.instance.getResources().getInteger(R.integer.shopkeepercoin), 1, 0.5f );
 			coin.speed.y = -40;
 			coin.acc.y = +160;
 		}

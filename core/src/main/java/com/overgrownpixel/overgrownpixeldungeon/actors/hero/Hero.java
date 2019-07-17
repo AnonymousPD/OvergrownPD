@@ -30,6 +30,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Bones;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.GamesInProgress;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.Statistics;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
@@ -512,6 +513,24 @@ public class Hero extends Char {
 		spend( time );
 		next();
 	}
+
+    public void color( int color ) {
+        color( ((color >> 16) & 0xFF) / 255f, ((color >> 8) & 0xFF) / 255f, (color & 0xFF) / 255f );
+    }
+
+    int rm = 0;
+    int gm = 0;
+    int bm = 0;
+    float ra = 0;
+    float ga = 0;
+    float ba = 0;
+
+    public void color( float r, float g, float b ) {
+        rm = gm = bm = 0;
+        ra = r;
+        ga = g;
+        ba = b;
+    }
 	
 	@Override
 	public boolean act() {
@@ -1410,7 +1429,7 @@ public class Hero extends Char {
 			Buff.detach(this, Paralysis.class);
 			spend(-cooldown());
 
-			new Flare(8, 32).color(0xFFFF66, true).show(sprite, 2f);
+			new Flare(8, 32).color(Game.instance.getResources().getInteger(R.integer.herodie), true).show(sprite, 2f);
 			CellEmitter.get(this.pos).start(Speck.factory(Speck.LIGHT), 0.2f, 3);
 
 			ankh.detach(belongings.backpack);

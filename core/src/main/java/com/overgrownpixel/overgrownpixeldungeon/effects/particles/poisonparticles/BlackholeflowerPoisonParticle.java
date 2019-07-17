@@ -45,7 +45,7 @@ public class BlackholeflowerPoisonParticle extends PixelParticle {
 
     public BlackholeflowerPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.blackholeflowerpoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.blackholeflowerpoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

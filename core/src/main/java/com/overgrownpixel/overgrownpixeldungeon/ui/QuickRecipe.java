@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.ui;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.items.Generator;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.Recipe;
@@ -83,6 +84,7 @@ import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndBag;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndInfoItem;
 import com.watabou.noosa.BitmapText;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Group;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.ui.Component;
@@ -136,7 +138,7 @@ public class QuickRecipe extends Component {
 		
 		if (cost > 0) {
 			arrow = new arrow(Icons.get(Icons.RESUME), cost);
-			arrow.hardlightText(0x00CCFF);
+			arrow.hardlightText(Game.instance.getResources().getInteger(R.integer.quickrecipe));
 		} else {
 			arrow = new arrow(Icons.get(Icons.RESUME));
 		}

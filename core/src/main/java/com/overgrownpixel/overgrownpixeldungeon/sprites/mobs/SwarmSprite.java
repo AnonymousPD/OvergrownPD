@@ -25,6 +25,8 @@
 package com.overgrownpixel.overgrownpixeldungeon.sprites.mobs;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.TextureFilm;
 
 public class SwarmSprite extends MobSprite {
@@ -53,6 +55,6 @@ public class SwarmSprite extends MobSprite {
 	
 	@Override
 	public int blood() {
-		return 0xFF8BA077;
+		return Game.instance.getResources().getInteger(R.integer.swarmblood);
 	}
 }

@@ -45,7 +45,7 @@ public class CrimsonpepperPoisonParticle extends PixelParticle {
 
     public CrimsonpepperPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.crimsonpepperpoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.crimsonpepperpoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

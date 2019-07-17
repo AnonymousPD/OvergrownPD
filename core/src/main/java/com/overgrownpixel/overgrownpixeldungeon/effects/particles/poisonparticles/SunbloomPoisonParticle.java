@@ -45,7 +45,7 @@ public class SunbloomPoisonParticle extends PixelParticle {
 
     public SunbloomPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.sunbloompoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.sunbloompoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

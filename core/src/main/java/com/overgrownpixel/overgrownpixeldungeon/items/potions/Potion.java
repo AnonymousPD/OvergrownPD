@@ -29,6 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Badges;
 import com.overgrownpixel.overgrownpixeldungeon.Challenges;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.Statistics;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
@@ -73,6 +74,7 @@ import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndBag;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndItem;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndOptions;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
@@ -413,7 +415,7 @@ public class Potion extends Item {
 	}
 	
 	protected int splashColor(){
-		return anonymous ? 0x00AAFF : ItemSprite.pick( image, 5, 9 );
+		return anonymous ? Game.instance.getResources().getInteger(R.integer.potionsplash) : ItemSprite.pick( image, 5, 9 );
 	}
 	
 	protected void splash( int cell ) {

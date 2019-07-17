@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Challenges;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.Statistics;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
@@ -150,8 +151,8 @@ public abstract class Level implements Bundlable {
 
 	protected Group visuals;
 	
-	public int color1 = 0x004400;
-	public int color2 = 0x88CC44;
+	public int color1 = Game.instance.getResources().getInteger(R.integer.level1);
+	public int color2 = Game.instance.getResources().getInteger(R.integer.level2);
 
 	private static final String VERSION     = "version";
 	private static final String WIDTH       = "width";

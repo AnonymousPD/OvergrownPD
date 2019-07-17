@@ -45,7 +45,7 @@ public class FadeleafPoisonParticle extends PixelParticle {
 
     public FadeleafPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.fadeleafpoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.fadeleafpoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

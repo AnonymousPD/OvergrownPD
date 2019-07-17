@@ -45,7 +45,7 @@ public class RotberryPoisonParticle extends PixelParticle {
 
     public RotberryPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.rotberrypoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.rotberrypoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

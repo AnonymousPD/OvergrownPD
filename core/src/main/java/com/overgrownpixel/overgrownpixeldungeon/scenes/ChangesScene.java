@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.scenes;
 
 import com.overgrownpixel.overgrownpixeldungeon.Chrome;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
@@ -38,6 +39,7 @@ import com.overgrownpixel.overgrownpixeldungeon.windows.WndTitledMessage;
 import com.watabou.input.Touchscreen;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.ColorBlock;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.NinePatch;
 import com.watabou.noosa.RenderedText;
@@ -188,11 +190,11 @@ public class ChangesScene extends PixelScene {
 
             if (majorTitle){
                 this.title = PixelScene.renderText( title, 9 );
-                line = new ColorBlock( 1, 1, 0xFF222222);
+                line = new ColorBlock( 1, 1, Game.instance.getResources().getInteger(R.integer.changeinfo1));
                 add(line);
             } else {
                 this.title = PixelScene.renderText( title, 6 );
-                line = new ColorBlock( 1, 1, 0xFF333333);
+                line = new ColorBlock( 1, 1, Game.instance.getResources().getInteger(R.integer.changeinfo2));
                 add(line);
             }
             major = majorTitle;

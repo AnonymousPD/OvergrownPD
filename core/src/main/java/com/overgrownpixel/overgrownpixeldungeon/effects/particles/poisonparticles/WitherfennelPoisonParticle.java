@@ -45,7 +45,7 @@ public class WitherfennelPoisonParticle extends PixelParticle {
 
     public WitherfennelPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.witherfennelpoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.witherfennelpoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

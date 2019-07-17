@@ -44,7 +44,7 @@ public class EarthParticle extends PixelParticle {
 	public EarthParticle() {
 		super();
 		
-		color( ColorMath.random( Game.instance.getResources().getColor(R.color.earthparticle1), Game.instance.getResources().getColor(R.color.earthparticle2)) );
+		color( ColorMath.random( Game.instance.getResources().getInteger(R.integer.earthparticle1), Game.instance.getResources().getInteger(R.integer.earthparticle2)) );
 		angle = Random.Float( -30, 30 );
 		
 		lifespan = 0.5f;

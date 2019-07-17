@@ -45,7 +45,7 @@ public class TomatobushPoisonParticle extends PixelParticle {
 
     public TomatobushPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.tomatobushpoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.tomatobushpoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

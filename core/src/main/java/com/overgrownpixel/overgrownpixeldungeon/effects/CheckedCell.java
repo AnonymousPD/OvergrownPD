@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.DungeonTilemap;
 import com.watabou.gltextures.TextureCache;
 import com.watabou.noosa.Game;
@@ -34,7 +35,7 @@ public class CheckedCell extends Image {
 	private float alpha;
 	
 	public CheckedCell( int pos ) {
-		super( TextureCache.createSolid( 0xFF55AAFF ) );
+		super( TextureCache.createSolid( Game.instance.getResources().getInteger(R.integer.checkedcell) ) );
 
 		origin.set( 0.5f );
 		

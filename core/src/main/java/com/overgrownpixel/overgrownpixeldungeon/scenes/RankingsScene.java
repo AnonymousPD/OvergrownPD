@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.scenes;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.Rankings;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Flare;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
@@ -40,6 +41,7 @@ import com.overgrownpixel.overgrownpixeldungeon.windows.WndError;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndRanking;
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.Camera;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.audio.Music;
@@ -108,7 +110,7 @@ public class RankingsScene extends PixelScene {
 			
 			if (Rankings.INSTANCE.totalNumber >= Rankings.TABLE_SIZE) {
 				RenderedText label = PixelScene.renderText( Messages.get(this, "total") + " ", 8 );
-				label.hardlight( 0xCCCCCC );
+				label.hardlight( Game.instance.getResources().getInteger(R.integer.rankingscene1) );
 				add( label );
 
 				RenderedText won = PixelScene.renderText( Integer.toString( Rankings.INSTANCE.wonNumber ), 8 );
@@ -116,7 +118,7 @@ public class RankingsScene extends PixelScene {
 				add( won );
 
 				RenderedText total = PixelScene.renderText( "/" + Rankings.INSTANCE.totalNumber, 8 );
-				total.hardlight( 0xCCCCCC );
+				total.hardlight( Game.instance.getResources().getInteger(R.integer.rankingscene2) );
 				total.x = (w - total.width()) / 2;
 				total.y = top + pos * rowHeight + GAP;
 				add( total );
@@ -136,7 +138,7 @@ public class RankingsScene extends PixelScene {
 		} else {
 
 			RenderedText noRec = PixelScene.renderText(Messages.get(this, "no_games"), 8);
-			noRec.hardlight( 0xCCCCCC );
+			noRec.hardlight( Game.instance.getResources().getInteger(R.integer.rankingscene3) );
 			noRec.x = (w - noRec.width()) / 2;
 			noRec.y = (h - noRec.height()) / 2;
 			align(noRec);

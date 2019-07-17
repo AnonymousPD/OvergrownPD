@@ -27,6 +27,7 @@ package com.overgrownpixel.overgrownpixeldungeon.scenes;
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Badges;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroClass;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.RatSprite;
@@ -107,7 +108,7 @@ public class SurfaceScene extends PixelScene {
 		if (!dayTime) {
 			for (int i=0; i < NSTARS; i++) {
 				float size = Random.Float();
-				ColorBlock star = new ColorBlock( size, size, 0xFFFFFFFF );
+				ColorBlock star = new ColorBlock( size, size, Game.instance.getResources().getInteger(R.integer.surfacescene1) );
 				star.x = Random.Float( SKY_WIDTH ) - size / 2;
 				star.y = Random.Float( SKY_HEIGHT ) - size / 2;
 				star.am = size * (1 - star.y / SKY_HEIGHT);
@@ -167,7 +168,7 @@ public class SurfaceScene extends PixelScene {
 			a.brightness( 1.2f );
 			pet.brightness( 1.2f );
 		} else {
-			frame.hardlight( 0xDDEEFF );
+			frame.hardlight( Game.instance.getResources().getInteger(R.integer.surfacescene2) );
 		}
 
 		RedButton gameOver = new RedButton( Messages.get(this, "exit") ) {
@@ -292,7 +293,7 @@ public class SurfaceScene extends PixelScene {
 			speed.x = scale.x * (dayTime ? +8 : -8);
 			
 			if (dayTime) {
-				tint( 0xCCEEFF, 1 - scale.y );
+				tint( Game.instance.getResources().getInteger(R.integer.surfacescene3), 1 - scale.y );
 			} else {
 				rm = gm = bm = +3.0f;
 				ra = ga = ba = -2.1f;

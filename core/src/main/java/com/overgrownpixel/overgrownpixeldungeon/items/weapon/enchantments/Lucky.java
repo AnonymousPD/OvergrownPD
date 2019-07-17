@@ -38,7 +38,7 @@ import com.watabou.utils.Random;
 
 public class Lucky extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.lucky) );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.lucky) );
 	
 	@Override
 	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {

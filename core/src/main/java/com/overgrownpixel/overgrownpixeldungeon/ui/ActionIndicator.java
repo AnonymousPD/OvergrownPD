@@ -38,7 +38,7 @@ public class ActionIndicator extends Tag {
 	public static ActionIndicator instance;
 
 	public ActionIndicator() {
-		super( Game.instance.getResources().getColor(R.color.actionindicator) );
+		super( Game.instance.getResources().getInteger(R.integer.actionindicator) );
 
 		instance = this;
 

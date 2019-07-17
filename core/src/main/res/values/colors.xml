@@ -1,124 +1,411 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="absorbing">#91CA52</color>
-    <color name="blazing">#FF4400</color>
-    <color name="blocking">#0000FF</color>
-    <color name="blooming">#008800</color>
-    <color name="chilling">#00FFFF</color>
-    <color name="corrupting">#440066</color>
-    <color name="dazzling">#E4D473</color>
-    <color name="disintegrating">#290157</color>
-    <color name="eating">#7E5400</color>
-    <color name="elastic">#FF00FF</color>
-    <color name="eldritch">#F01F66</color>
-    <color name="explosion">#FF9422</color>
-    <color name="grim">#000000</color>
-    <color name="hitting">#187C5F</color>
-    <color name="kinetic">#FFFF00</color>
-    <color name="lucky">#00FF00</color>
-    <color name="precise">#171E50</color>
-    <color name="projecting">#8844CC</color>
-    <color name="shocking">#FFFFFF</color>
-    <color name="stunning">#E47070</color>
-    <color name="swift">#4D82B3</color>
-    <color name="teleporting">#4100C9</color>
-    <color name="unstable">#999999</color>
-    <color name="vampiric">#660022</color>
-    <color name="venomous">#7CE053</color>
-    <color name="vorpal">#AA6666</color>
-    <color name="whirlwind">#DDFBC2</color>
+    <integer name="absorbing">0x91CA52</integer><color name="absorbing">#91CA52</color>
+    <integer name="blazing">0xFF4400</integer><color name="blazing">#FF4400</color>
+    <integer name="blocking">0x0000FF</integer><color name="blocking">#0000FF</color>
+    <integer name="blooming">0x008800</integer><color name="blooming">#008800</color>
+    <integer name="chilling">0x00FFFF</integer><color name="chilling">#00FFFF</color>
+    <integer name="corrupting">0x440066</integer><color name="corrupting">#440066</color>
+    <integer name="dazzling">0xE4D473</integer><color name="dazzling">#E4D473</color>
+    <integer name="disintegrating">0x290157</integer><color name="disintegrating">#290157</color>
+    <integer name="eating">0x7E5400</integer><color name="eating">#7E5400</color>
+    <integer name="elastic">0xFF00FF</integer><color name="elastic">#FF00FF</color>
+    <integer name="eldritch">0xF01F66</integer><color name="eldritch">#F01F66</color>
+    <integer name="explosion">0xFF9422</integer><color name="explosion">#FF9422</color>
+    <integer name="grim">0x000000</integer><color name="grim">#000000</color>
+    <integer name="hitting">0x187C5F</integer><color name="hitting">#187C5F</color>
+    <integer name="kinetic">0xFFFF00</integer><color name="kinetic">#FFFF00</color>
+    <integer name="lucky">0x00FF00</integer><color name="lucky">#00FF00</color>
+    <integer name="precise">0x171E50</integer><color name="precise">#171E50</color>
+    <integer name="projecting">0x8844CC</integer><color name="projecting">#8844CC</color>
+    <integer name="shocking">0xFFFFFF</integer><color name="shocking">#FFFFFF</color>
+    <integer name="stunning">0xE47070</integer><color name="stunning">#E47070</color>
+    <integer name="swift">0x4D82B3</integer><color name="swift">#4D82B3</color>
+    <integer name="teleporting">0x4100C9</integer><color name="teleporting">#4100C9</color>
+    <integer name="unstable">0x999999</integer><color name="unstable">#999999</color>
+    <integer name="vampiric">0x660022</integer><color name="vampiric">#660022</color>
+    <integer name="venomous">0x7CE053</integer><color name="venomous">#7CE053</color>
+    <integer name="vorpal">0xAA6666</integer><color name="vorpal">#AA6666</color>
+    <integer name="whirlwind">0xDDFBC2</integer><color name="whirlwind">#DDFBC2</color>
 
-    <color name="affection">#FF4488</color>
-    <color name="antimagic">#88EEFF</color>
-    <color name="brimstone">#FF4400</color>
-    <color name="camouflage">#448822</color>
-    <color name="entanglement">#663300</color>
-    <color name="flow">#0000FF</color>
-    <color name="obfuscation">#888888</color>
-    <color name="potential">#FFFFFF</color>
-    <color name="repulsion">#A9AC5A</color>
-    <color name="stone">#222222</color>
-    <color name="swiftness">#FFFF00</color>
-    <color name="thorns">#660022</color>
-    <color name="viscosity">#8844CC</color>
+    <integer name="affection">0xFF4488</integer><color name="affection">#FF4488</color>
+    <integer name="antimagic">0x88EEFF</integer><color name="antimagic">#88EEFF</color>
+    <integer name="brimstone">0xFF4400</integer><color name="brimstone">#FF4400</color>
+    <integer name="camouflage">0x448822</integer><color name="camouflage">#448822</color>
+    <integer name="entanglement">0x663300</integer><color name="entanglement">#663300</color>
+    <integer name="flow">0x0000FF</integer><color name="flow">#0000FF</color>
+    <integer name="obfuscation">0x888888</integer><color name="obfuscation">#888888</color>
+    <integer name="potential">0xFFFFFF</integer><color name="potential">#FFFFFF</color>
+    <integer name="repulsion">0xA9AC5A</integer><color name="repulsion">#A9AC5A</color>
+    <integer name="stone">0x222222</integer><color name="stone">#222222</color>
+    <integer name="swiftness">0xFFFF00</integer><color name="swiftness">#FFFF00</color>
+    <integer name="thorns">0x660022</integer><color name="thorns">#660022</color>
+    <integer name="viscosity">0x8844CC</integer><color name="viscosity">#8844CC</color>
 
-    <color name="curse">#000000</color>
+    <integer name="curse">0x000000</integer><color name="curse">#000000</color>
 
-    <color name="apricobushpoisonparticle">#FF51CC</color>
-    <color name="blackholeflowerpoisonparticle">#000000</color>
-    <color name="blandfruitpoisonparticle">#DBDBDB</color>
-    <color name="blindweedpoisonparticle">#FFFFFF</color>
-    <color name="butterlionpoisonparticle">#BA4122</color>
-    <color name="chandaliertailoisonparticle">#DDAC14</color>
-    <color name="chillisnapperpoisonparticle">#E35D22</color>
-    <color name="crimsonpepperpoisonparticle">#902E16</color>
-    <color name="dewcatcherpoisonparticle">#25C9B5</color>
-    <color name="dreamfoilpoisonparticle">#8B3F84</color>
-    <color name="earthrootpoisonparticle">#5C1C00</color>
-    <color name="fadeleafpoisonparticle">#BABABA</color>
-    <color name="firebloompoisonparticle">#FF0000</color>
-    <color name="firefoxglovepoisonparticle">#B9BA22</color>
-    <color name="frostcornpoisonparticle">#009FFF</color>
-    <color name="grasslillypoisonparticle">#22A20B</color>
-    <color name="icecappoisonparticle">#76F5FF</color>
-    <color name="kiwivetchpoisonparticle">#C0E31C</color>
-    <color name="musclemosspoisonparticle">#B922BA</color>
-    <color name="nightshadeonionpoisonparticle">#4C25CC</color>
-    <color name="parasiteshrubpoisonparticle">#750094</color>
-    <color name="peanutpetalpoisonparticle">#D78A5B</color>
-    <color name="rosepoisonparticle">#F492E1</color>
-    <color name="rotberrypoisonparticle">#C71B1B</color>
-    <color name="seedpodpoisonparticle">#282D00</color>
-    <color name="snowhedgepoisonparticle">#CECECE</color>
-    <color name="sorrowmosspoisonparticle">#A15BC1</color>
-    <color name="starflowerpoisonparticle">#F0FF00</color>
-    <color name="steamweedpoisonparticle">#B8C551</color>
-    <color name="stormvinepoisonparticle">#4681D2</color>
-    <color name="sunbloompoisonparticle">#ACB42C</color>
-    <color name="suncarnivorepoisonparticle">#D97764</color>
-    <color name="sungrasspoisonparticle">#0CD20F</color>
-    <color name="swiftthistlepoisonparticle">#1C221C</color>
-    <color name="tomatobushpoisonparticle">#BA4122</color>
-    <color name="venusflytrappoisonparticle">#F420C0</color>
-    <color name="waterweedpoisonparticle">#2260E3</color>
-    <color name="willowcanepoisonparticle">#1784C5</color>
-    <color name="witherfennelpoisonparticle">#EA9A48</color>
+    <integer name="chillingsplash">0xFFB2D6FF</integer><color name="chillingsplash">#FFB2D6FF</color>
 
-    <color name="blastparticle">#EE7722</color>
-    <color name="bloodparticle">#CC0000</color>
-    <color name="corrosionparticle1">#FF8800</color>
-    <color name="corrosionparticle2">#AAAAAA</color>
-    <color name="earthparticle1">#444444</color>
-    <color name="earthparticle2">#777766</color>
-    <color name="elmoparticle">#22EE66</color>
-    <color name="energyparticle">#FFFFAA</color>
-    <color name="flameparticle">#EE7722</color>
-    <color name="leafparticle1">#004400</color>
-    <color name="leafparticle2">#88CC44</color>
-    <color name="poisonparticle1">#00FF00</color>
-    <color name="poisonparticle2">#8844FF</color>
-    <color name="purpleparticle1">#220066</color>
-    <color name="purpleparticle2">#FF0044</color>
-    <color name="sacrificialparticle">#4488EE</color>
-    <color name="shadowparticle1">#000000</color>
-    <color name="shadowparticle2">#440044</color>
-    <color name="smokeparticle">#222222</color>
-    <color name="webparticle">#CCCCCC</color>
-    <color name="woolparticle1">#999999</color>
-    <color name="woolparticle2">#EEEEE0</color>
+    <integer name="apricobushpoisonparticle">0xFF51CC</integer><color name="apricobushpoisonparticle">#FF51CC</color>
+    <integer name="blackholeflowerpoisonparticle">0x000000</integer><color name="blackholeflowerpoisonparticle">#000000</color>
+    <integer name="blandfruitpoisonparticle">0xDBDBDB</integer><color name="blandfruitpoisonparticle">#DBDBDB</color>
+    <integer name="blindweedpoisonparticle">0xFFFFFF</integer><color name="blindweedpoisonparticle">#FFFFFF</color>
+    <integer name="butterlionpoisonparticle">0xBA4122</integer><color name="butterlionpoisonparticle">#BA4122</color>
+    <integer name="chandaliertailoisonparticle">0xDDAC14</integer><color name="chandaliertailoisonparticle">#DDAC14</color>
+    <integer name="chillisnapperpoisonparticle">0xE35D22</integer><color name="chillisnapperpoisonparticle">#E35D22</color>
+    <integer name="crimsonpepperpoisonparticle">0x902E16</integer><color name="crimsonpepperpoisonparticle">#902E16</color>
+    <integer name="dewcatcherpoisonparticle">0x25C9B5</integer><color name="dewcatcherpoisonparticle">#25C9B5</color>
+    <integer name="dreamfoilpoisonparticle">0x8B3F84</integer><color name="dreamfoilpoisonparticle">#8B3F84</color>
+    <integer name="earthrootpoisonparticle">0x5C1C00</integer><color name="earthrootpoisonparticle">#5C1C00</color>
+    <integer name="fadeleafpoisonparticle">0xBABABA</integer><color name="fadeleafpoisonparticle">#BABABA</color>
+    <integer name="firebloompoisonparticle">0xFF0000</integer><color name="firebloompoisonparticle">#FF0000</color>
+    <integer name="firefoxglovepoisonparticle">0xB9BA22</integer><color name="firefoxglovepoisonparticle">#B9BA22</color>
+    <integer name="frostcornpoisonparticle">0x009FFF</integer><color name="frostcornpoisonparticle">#009FFF</color>
+    <integer name="grasslillypoisonparticle">0x22A20B</integer><color name="grasslillypoisonparticle">#22A20B</color>
+    <integer name="icecappoisonparticle">0x76F5FF</integer><color name="icecappoisonparticle">#76F5FF</color>
+    <integer name="kiwivetchpoisonparticle">0xC0E31C</integer><color name="kiwivetchpoisonparticle">#C0E31C</color>
+    <integer name="musclemosspoisonparticle">0xB922BA</integer><color name="musclemosspoisonparticle">#B922BA</color>
+    <integer name="nightshadeonionpoisonparticle">0x4C25CC</integer><color name="nightshadeonionpoisonparticle">#4C25CC</color>
+    <integer name="parasiteshrubpoisonparticle">0x750094</integer><color name="parasiteshrubpoisonparticle">#750094</color>
+    <integer name="peanutpetalpoisonparticle">0xD78A5B</integer><color name="peanutpetalpoisonparticle">#D78A5B</color>
+    <integer name="rosepoisonparticle">0xF492E1</integer><color name="rosepoisonparticle">#F492E1</color>
+    <integer name="rotberrypoisonparticle">0xC71B1B</integer><color name="rotberrypoisonparticle">#C71B1B</color>
+    <integer name="seedpodpoisonparticle">0x282D00</integer><color name="seedpodpoisonparticle">#282D00</color>
+    <integer name="snowhedgepoisonparticle">0xCECECE</integer><color name="snowhedgepoisonparticle">#CECECE</color>
+    <integer name="sorrowmosspoisonparticle">0xA15BC1</integer><color name="sorrowmosspoisonparticle">#A15BC1</color>
+    <integer name="starflowerpoisonparticle">0xF0FF00</integer><color name="starflowerpoisonparticle">#F0FF00</color>
+    <integer name="steamweedpoisonparticle">0xB8C551</integer><color name="steamweedpoisonparticle">#B8C551</color>
+    <integer name="stormvinepoisonparticle">0x4681D2</integer><color name="stormvinepoisonparticle">#4681D2</color>
+    <integer name="sunbloompoisonparticle">0xACB42C</integer><color name="sunbloompoisonparticle">#ACB42C</color>
+    <integer name="suncarnivorepoisonparticle">0xD97764</integer><color name="suncarnivorepoisonparticle">#D97764</color>
+    <integer name="sungrasspoisonparticle">0x0CD20F</integer><color name="sungrasspoisonparticle">#0CD20F</color>
+    <integer name="swiftthistlepoisonparticle">0x1C221C</integer><color name="swiftthistlepoisonparticle">#1C221C</color>
+    <integer name="tomatobushpoisonparticle">0xBA4122</integer><color name="tomatobushpoisonparticle">#BA4122</color>
+    <integer name="venusflytrappoisonparticle">0xF420C0</integer><color name="venusflytrappoisonparticle">#F420C0</color>
+    <integer name="waterweedpoisonparticle">0x2260E3</integer><color name="waterweedpoisonparticle">#2260E3</color>
+    <integer name="willowcanepoisonparticle">0x1784C5</integer><color name="willowcanepoisonparticle">#1784C5</color>
+    <integer name="witherfennelpoisonparticle">0xEA9A48</integer><color name="witherfennelpoisonparticle">#EA9A48</color>
 
-    <color name="aquablastspell">#00AAFF</color>
-    <color name="beaconofreturningspell">#FFFFFF</color>
+    <integer name="blastparticle">0xEE7722</integer><color name="blastparticle">#EE7722</color>
+    <integer name="bloodparticle">0xCC0000</integer><color name="bloodparticle">#CC0000</color>
+    <integer name="corrosionparticle1">0xFF8800</integer><color name="corrosionparticle1">#FF8800</color>
+    <integer name="corrosionparticle2">0xAAAAAA</integer><color name="corrosionparticle2">#AAAAAA</color>
+    <integer name="earthparticle1">0x444444</integer><color name="earthparticle1">#444444</color>
+    <integer name="earthparticle2">0x777766</integer><color name="earthparticle2">#777766</color>
+    <integer name="elmoparticle">0x22EE66</integer><color name="elmoparticle">#22EE66</color>
+    <integer name="energyparticle">0xFFFFAA</integer><color name="energyparticle">#FFFFAA</color>
+    <integer name="flameparticle">0xEE7722</integer><color name="flameparticle">#EE7722</color>
+    <integer name="leafparticle1">0x004400</integer><color name="leafparticle1">#004400</color>
+    <integer name="leafparticle2">0x88CC44</integer><color name="leafparticle2">#88CC44</color>
+    <integer name="poisonparticle1">0x00FF00</integer><color name="poisonparticle1">#00FF00</color>
+    <integer name="poisonparticle2">0x8844FF</integer><color name="poisonparticle2">#8844FF</color>
+    <integer name="purpleparticle1">0x220066</integer><color name="purpleparticle1">#220066</color>
+    <integer name="purpleparticle2">0xFF0044</integer><color name="purpleparticle2">#FF0044</color>
+    <integer name="sacrificialparticle">0x4488EE</integer><color name="sacrificialparticle">#4488EE</color>
+    <integer name="shadowparticle1">0x000000</integer><color name="shadowparticle1">#000000</color>
+    <integer name="shadowparticle2">0x440044</integer><color name="shadowparticle2">#440044</color>
+    <integer name="smokeparticle">0x222222</integer><color name="smokeparticle">#222222</color>
+    <integer name="webparticle">0xCCCCCC</integer><color name="webparticle">#CCCCCC</color>
+    <integer name="woolparticle1">0x999999</integer><color name="woolparticle1">#999999</color>
+    <integer name="woolparticle2">0xEEEEE0</integer><color name="woolparticle2">#EEEEE0</color>
 
-    <color name="aboutflare1">#8532AB</color>
-    <color name="aboutflare2">#3CC743</color>
-    <color name="amuletflare">#FFDDBB</color>
+    <integer name="blandfruitsunfruit">0x2EE62E</integer><color name="blandfruitsunfruit">#2EE62E</color>
+    <integer name="blandfruitrotfruit">0xCC0022</integer><color name="blandfruitrotfruit">#CC0022</color>
+    <integer name="blandfruitearthfruit">0x67583D</integer><color name="blandfruitearthfruit">#67583D</color>
+    <integer name="blandfruitblindfruit">0xD9D9D9</integer><color name="blandfruitblindfruit">#D9D9D9</color>
+    <integer name="blandfruitfirefruit">0xFF7F00</integer><color name="blandfruitfirefruit">#FF7F00</color>
+    <integer name="blandfruiticefruit">0x66B3FF</integer><color name="blandfruiticefruit">#66B3FF</color>
+    <integer name="blandfruitfadefruit">0x919999</integer><color name="blandfruitfadefruit">#919999</color>
+    <integer name="blandfruitsorrowfruit">0xA15CE5</integer><color name="blandfruitsorrowfruit">#A15CE5</color>
+    <integer name="blandfruitstormfruit">0x1B5F79</integer><color name="blandfruitstormfruit">#1B5F79</color>
+    <integer name="blandfruitdreamfruit">0xC152AA</integer><color name="blandfruitdreamfruit">#C152AA</color>
+    <integer name="blandfruitstarfruit">0x404040</integer><color name="blandfruitstarfruit">#404040</color>
+    <integer name="blandfruitswiftfruit">0xCCBB00</integer><color name="blandfruitswiftfruit">#CCBB00</color>
 
-    <color name="acidicsprite">#FF66FF22</color>
+    <integer name="chillingtrapsplash">0xFFB2D6FF</integer><color name="chillingtrapsplash">#FFB2D6FF</color>
+    <integer name="flashtrap">0xFFFFFF</integer><color name="flashtrap">#FFFFFF</color>
+    <integer name="oozetrap">0x000000</integer><color name="oozetrap">#000000</color>
+    <integer name="frosttrap">0xFFB2D6FF</integer><color name="frosttrap">#FFB2D6FF</color>
 
-    <color name="actionindicator">#FFFF4C</color>
+    <integer name="aquablastspell">0x00AAFF</integer><color name="aquablastspell">#00AAFF</color>
+    <integer name="beaconofreturningspell">0xFFFFFF</integer><color name="beaconofreturningspell">#FFFFFF</color>
+    <integer name="ankh">0xFFFFCC</integer><color name="ankh">#FFFFCC</color>
+    <integer name="bombfuse">0xFF0000</integer><color name="bombfuse">#FF0000</color>
+    <integer name="flashbang">0xFFFFFF</integer><color name="flashbang">#FFFFFF</color>
+    <integer name="embers">0x660000</integer><color name="embers">#660000</color>
+    <integer name="heapflare1">0xAA00FF</integer><color name="heapflare1">#AA00FF</color>
+    <integer name="heapflare2">0xFFFFFF</integer><color name="heapflare2">#FFFFFF</color>
+    <integer name="honeypotsplash">0xffd500</integer><color name="honeypotsplash">#ffd500</color>
+    <integer name="lloydsbeadonwhite">0xFFFFFF</integer><color name="lloydsbeadonwhite">#FFFFFF</color>
+    <integer name="natureslullaby">0x1CB82E</integer><color name="natureslullaby">#1CB82E</color>
+    <integer name="pickaxebloody">0x550000</integer><color name="pickaxebloody">#550000</color>
+    <integer name="plantsummon">0x46FF4A</integer><color name="plantsummon">#46FF4A</color>
+    <integer name="potionsplash">0x00AAFF</integer><color name="potionsplash">#00AAFF</color>
+    <integer name="reclaimtrapcolor1">0xFF0000</integer><color name="reclaimtrapcolor1">#FF0000</color>
+    <integer name="reclaimtrapcolor2">0xFF8000</integer><color name="reclaimtrapcolor2">#FF8000</color>
+    <integer name="reclaimtrapcolor3">0xFFFF00</integer><color name="reclaimtrapcolor3">#FFFF00</color>
+    <integer name="reclaimtrapcolor4">0x00FF00</integer><color name="reclaimtrapcolor4">#00FF00</color>
+    <integer name="reclaimtrapcolor5">0x00FFFF</integer><color name="reclaimtrapcolor5">#00FFFF</color>
+    <integer name="reclaimtrapcolor6">0x8000FF</integer><color name="reclaimtrapcolor6">#8000FF</color>
+    <integer name="reclaimtrapcolor7">0xFFFFFF</integer><color name="reclaimtrapcolor7">#FFFFFF</color>
+    <integer name="reclaimtrapcolor8">0x808080</integer><color name="reclaimtrapcolor8">#808080</color>
+    <integer name="reclaimtrapcolor9">0x000000</integer><color name="reclaimtrapcolor9">#000000</color>
+    <integer name="regrowthbomb">0x00FF00</integer><color name="regrowthbomb">#00FF00</color>
+    <integer name="scrollofantimagic">0xFF0000</integer><color name="scrollofantimagic">#FF0000</color>
+    <integer name="scrollofpetrification">0xFF0000</integer><color name="scrollofpetrification">#FF0000</color>
+    <integer name="scrollofpolymorph">0xFFFFFF</integer><color name="scrollofpolymorph">#FFFFFF</color>
+    <integer name="scrollofpsionicblast">0xFFFFFF</integer><color name="scrollofpsionicblast">#FFFFFF</color>
+    <integer name="scrollofretributionread">0xFFFFFF</integer><color name="scrollofretributionread">#FFFFFF</color>
+    <integer name="scrollofretributionempoweredread">0xFFFFFF</integer><color name="scrollofretributionempoweredread">#FFFFFF</color>
+    <integer name="scrollofterror">0xFF0000</integer><color name="scrollofterror">#FF0000</color>
+    <integer name="spiritbowsplash1">0xCC99FFFF</integer><color name="spiritbowsplash1">#CC99FFFF</color>
+    <integer name="spiritbowsplash2">0xCC99FFFF</integer><color name="spiritbowsplash2">#CC99FFFF</color>
+    <integer name="timekeepershourglassflash1">0xFFFFFF</integer><color name="timekeepershourglassflash1">#FFFFFF</color>
+    <integer name="timekeepershourglassflash2">0xFFFFFF</integer><color name="timekeepershourglassflash2">#FFFFFF</color>
+    <integer name="wandstafffx">0xFFFFFF</integer><color name="wandstafffx">#FFFFFF</color>
+    <integer name="wandofblastwave">0x664422</integer><color name="wandofblastwave">#664422</color>
+    <integer name="wandofcorrosion1">0xAAAAAA</integer><color name="wandofcorrosion1">#AAAAAA</color>
+    <integer name="wandofcorrosion2">0xFF8800</integer><color name="wandofcorrosion2">#FF8800</color>
+    <integer name="wandofdisintegration">0x220022</integer><color name="wandofdisintegration">#220022</color>
+    <integer name="wandoffireblast">0xEE7722</integer><color name="wandoffireblast">#EE7722</color>
+    <integer name="wandoffrost">0xFF99CCFF</integer><color name="wandoffrost">#FF99CCFF</color>
+    <integer name="wandoffrostparticle">0x88CCFF</integer><color name="wandoffrostparticle">#88CCFF</color>
+    <integer name="wandoflightning">0xFFFFFF</integer><color name="wandoflightning">#FFFFFF</color>
+    <integer name="wandofmagicmissile">0xFFFFFFFF</integer><color name="wandofmagicmissile">#FFFFFFFF</color>
+    <integer name="wandofprismaticlight">0x1000000</integer><color name="wandofprismaticlight">#000000</color>
+    <integer name="wandofregrowth1">0x004400</integer><color name="wandofregrowth1">#004400</color>
+    <integer name="wandofregrowth2">0x88CC44</integer><color name="wandofregrowth2">#88CC44</color>
+    <integer name="wandoftransfusion">0xCC0000</integer><color name="wandoftransfusion">#CC0000</color>
 
-    <color name="ankh">#FFFFCC</color>
-    
+    <integer name="cursedwand">0xFFFF66</integer><color name="cursedwand">#FFFF66</color>
+
+    <integer name="elixirofdragonsbreathsplash">0xFFFF002A</integer><color name="elixirofdragonsbreathsplash">#FFFF002A</color>
+    <integer name="elixiroficytouchsplash">0xFF18C3E6</integer><color name="elixiroficytouchsplash">#FF18C3E6</color>
+    <integer name="elixiroftoxicessencesplash">0xFF00B34A</integer><color name="elixiroftoxicessencesplash">#FF00B34A</color>
+
+    <integer name="causticbrew">0x000000</integer><color name="causticbrew">#000000</color>
+
+    <integer name="magicmissile1">0x88CCFF</integer><color name="magicmissile1">#88CCFF</color>
+    <integer name="magicmissile2">0x555555</integer><color name="magicmissile2">#555555</color>
+    <integer name="magicmissile3">0x777766</integer><color name="magicmissile3">#777766</color>
+    <integer name="magicmissile4">0x664422</integer><color name="magicmissile4">#664422</color>
+    <integer name="magicmissile5">0xFFFFFF</integer><color name="magicmissile5">#FFFFFF</color>
+    <integer name="magicmissile6">0x2244FF</integer><color name="magicmissile6">#2244FF</color>
+
+    <integer name="berserkflash">0xFF0000</integer><color name="berserkflash">#FF0000</color>
+    <integer name="combotime">0xb3b3b3</integer><color name="combotime">#b3b3b3</color>
+    <integer name="combotint1">0xFFFF0000</integer><color name="combotint1">#FFFF0000</color>
+    <integer name="combotint2">0xFFFFCC00</integer><color name="combotint2">#FFFFCC00</color>
+    <integer name="combotint3">0xFFFFFF00</integer><color name="combotint3">#FFFFFF00</color>
+    <integer name="combotint4">0xFFCCFF00</integer><color name="combotint4">#FFCCFF00</color>
+    <integer name="combotint5">0xFF00FF00</integer><color name="combotint5">#FF00FF00</color>
+    <integer name="corrosionsplash">0x000000</integer><color name="corrosionsplash">#000000</color>
+    <integer name="flavourbuff">0xb3b3b3</integer><color name="flavourbuff">#b3b3b3</color>
+
+    <integer name="blood">0xFFBB0000</integer><color name="blood">#FFBB0000</color>
+    <integer name="beeblood">0xFFD500</integer><color name="beeblood">#FFD500</color>
+    <integer name="crabblood">0xFFFFEA80</integer><color name="crabblood">#FFFFEA80</color>
+    <integer name="dm300blood">0xFFFFFF88</integer><color name="dm300blood">#FFFFFF88</color>
+    <integer name="elementalspriteblood">0xFFFF7D13</integer><color name="elementalspriteblood">#FFFF7D13</color>
+    <integer name="acidicspriteblood">0xFF66FF22</integer><color name="acidicspriteblood">#FF66FF22</color>
+    <integer name="ghostblood">0xFFFFFF</integer><color name="ghostblood">#FFFFFF</color>
+    <integer name="golemblood">0xFF80706c</integer><color name="golemblood">#FF80706c</color>
+    <integer name="gooblood">0xFF000000</integer><color name="gooblood">#FF000000</color>
+    <integer name="gooparticle">0x000000</integer><color name="gooparticle">#000000</color>
+    <integer name="greatcrabblood">0xFFFFEA80</integer><color name="greatcrabblood">#FFFFEA80</color>
+    <integer name="larvablood">0xbbcc66</integer><color name="larvablood">#bbcc66</color>
+    <integer name="livingplantblood">0x00C12A</integer><color name="livingplantblood">#00C12A</color>
+    <integer name="livingplantdefaultblood">0x00C12A</integer><color name="livingplantdefaultblood">#00C12A</color>
+    <integer name="mimicblood">0xFFcb9700</integer><color name="mimicblood">#FFcb9700</color>
+    <integer name="newbornfireelementalblood">0xFFFF7D13</integer><color name="newbornfireelementalblood">#FFFF7D13</color>
+    <integer name="scorpioblood">0xFF44FF22</integer><color name="scorpioblood">#FF44FF22</color>
+    <integer name="shopkeepercoin">0xFFFF00</integer><color name="shopkeepercoin">#FFFF00</color>
+    <integer name="skeletonblood">0xFFcccccc</integer><color name="skeletonblood">#FFcccccc</color>
+    <integer name="spinnerblood">0xFFBFE5B8</integer><color name="spinnerblood">#FFBFE5B8</color>
+    <integer name="statueblood">0xFFcdcdb7</integer><color name="statueblood">#FFcdcdb7</color>
+    <integer name="swarmblood">0xFF8BA077</integer><color name="swarmblood">#FF8BA077</color>
+    <integer name="undeadblood">0xFFcccccc</integer><color name="undeadblood">#FFcccccc</color>
+    <integer name="wraithblood">0x88000000</integer><color name="wraithblood">#88000000</color>
+
+    <integer name="alchemygradient1">0x66000000</integer><color name="alchemygradient1">#66000000</color>
+    <integer name="alchemygradient2">0x88000000</integer><color name="alchemygradient2">#88000000</color>
+    <integer name="alchemygradient3">0xAA000000</integer><color name="alchemygradient3">#AA000000</color>
+    <integer name="alchemygradient4">0xCC000000</integer><color name="alchemygradient4">#CC000000</color>
+    <integer name="alchemygradient5">0xFF000000</integer><color name="alchemygradient5">#FF000000</color>
+    <integer name="alchemyoutput">0x9991938C</integer><color name="alchemyoutput">#9991938C</color>
+
+    <integer name="bosshealthbar">0xCC0000</integer><color name="bosshealthbar">#CC0000</color>
+    <integer name="aboutflare1">0x8532AB</integer><color name="aboutflare1">#8532AB</color>
+    <integer name="aboutflare2">0x3CC743</integer><color name="aboutflare2">#3CC743</color>
+    <integer name="amuletflare">0xFFDDBB</integer><color name="amuletflare">#FFDDBB</color>
+    <integer name="actionindicator">0xFFFF4C</integer><color name="actionindicator">#FFFF4C</color>
+    <integer name="changeinfo1">0xFF222222</integer><color name="changeinfo1">#FF222222</color>
+    <integer name="changeinfo2">0xFF333333</integer><color name="changeinfo2">#FF333333</color>
+    <integer name="checkedcell">0xFF55AAFF</integer><color name="checkedcell">#FF55AAFF</color>
+    <integer name="circlearc">0xFFFFFFFF</integer><color name="circlearc">#FFFFFFFF</color>
+    <integer name="dangerindicatorsuper">0xFF4C4C</integer><color name="dangerindicatorsuper">#FF4C4C</color>
+    <integer name="dangerindicatorcolor">0xFF4C4C</integer><color name="dangerindicatorcolor">#FF4C4C</color>
+    <integer name="degradation">0xFF4422</integer><color name="degradation">#FF4422</color>
+    <integer name="fireball">0x66FF66</integer><color name="fireball">#66FF66</color>
+    <integer name="fireballcolor">0xFF66FF</integer><color name="fireballcolor">#FF66FF</color>
+    <integer name="flare1">0xFFFFFFFF</integer><color name="flare1">#FFFFFFFF</color>
+    <integer name="flare2">0x00FFFFFF</integer><color name="flare2">#00FFFFFF</color>
+    <integer name="wndstartgame">0xFF222222</integer><color name="wndstartgame">#FF222222</color>
+    <integer name="wndranking1">0x9953564D</integer><color name="wndranking1">#9953564D</color>
+    <integer name="wndranking2">0x9953564D</integer><color name="wndranking2">#9953564D</color>
+    <integer name="wndranking3">0x9953564D</integer><color name="wndranking3">#9953564D</color>
+    <integer name="wndlangs1">0x888888</integer><color name="wndlangs1">#888888</color>
+    <integer name="wndlangs2">0xBBBBBB</integer><color name="wndlangs2">#BBBBBB</color>
+    <integer name="wndlangs3">0xFF000000</integer><color name="wndlangs3">#FF000000</color>
+    <integer name="wndjournal1">0xFF222222</integer><color name="wndjournal1">#FF222222</color>
+    <integer name="wndjournal2">0xFF222222</integer><color name="wndjournal2">#FF222222</color>
+    <integer name="wndjournal3">0x999999</integer><color name="wndjournal3">#999999</color>
+    <integer name="wndjournal4">0xFF222222</integer><color name="wndjournal4">#FF222222</color>
+    <integer name="wndjournal5">0xFF222222</integer><color name="wndjournal5">#FF222222</color>
+    <integer name="wndjournal6">0xFF222222</integer><color name="wndjournal6">#FF222222</color>
+    <integer name="wndjournal7">0xFF222222</integer><color name="wndjournal7">#FF222222</color>
+    <integer name="wndjournal8">0x999999</integer><color name="wndjournal8">#999999</color>
+    <integer name="wndjournal9">0xCCCCCC</integer><color name="wndjournal9">#CCCCCC</color>
+    <integer name="wnddocument1">0xFF222222</integer><color name="wnddocument1">#FF222222</color>
+    <integer name="wnddocument2">0x999999</integer><color name="wnddocument2">#999999</color>
+    <integer name="wnddocument3">0xFF222222</integer><color name="wnddocument3">#FF222222</color>
+    <integer name="welcomesceneokay1">0xBBBB33</integer><color name="welcomesceneokay1">#BBBB33</color>
+    <integer name="welcomesceneokay2">0xBBBB33</integer><color name="welcomesceneokay2">#BBBB33</color>
+    <integer name="welcomescenechanges">0xBBBB33</integer><color name="welcomescenechanges">#BBBB33</color>
+    <integer name="torchhalo">0xFFDDCC</integer><color name="torchhalo">#FFDDCC</color>
+    <integer name="titlescene">0x888888</integer><color name="titlescene">#888888</color>
+    <integer name="surfacescene1">0xFFFFFFFF</integer><color name="surfacescene1">#FFFFFFFF</color>
+    <integer name="surfacescene2">0xDDEEFF</integer><color name="surfacescene2">#DDEEFF</color>
+    <integer name="surfacescene3">0xCCEEFF</integer><color name="surfacescene3">#CCEEFF</color>
+    <integer name="statuspane1">0xFFEBA4</integer><color name="statuspane1">#FFEBA4</color>
+    <integer name="statuspane2">0xCACFC2</integer><color name="statuspane2">#CACFC2</color>
+    <integer name="statuspane3">0x000000</integer><color name="statuspane3">#000000</color>
+    <integer name="speckinterpolate1">0xAAAAAA</integer><color name="speckinterpolate1">#AAAAAA</color>
+    <integer name="speckinterpolate2">0xFF8800</integer><color name="speckinterpolate2">#FF8800</color>
+    <integer name="specktint">0xFFCC0000</integer><color name="specktint">#FFCC0000</color>
+    <integer name="speck1">0x50FF60</integer><color name="speck1">#50FF60</color>
+    <integer name="speck2">0xAAAAAA</integer><color name="speck2">#AAAAAA</color>
+    <integer name="speck3">0xFFFF66</integer><color name="speck3">#FFFF66</color>
+    <integer name="speck4">0x003300</integer><color name="speck4">#003300</color>
+    <integer name="speck5">0x1000000</integer><color name="speck5">#000000</color>
+    <integer name="speck6">0x000080</integer><color name="speck6">#000080</color>
+    <integer name="speck7">0x8AD8D8</integer><color name="speck7">#8AD8D8</color>
+    <integer name="speck8">0xEE7722</integer><color name="speck8">#EE7722</color>
+    <integer name="speck9">0xFFFFFF</integer><color name="speck9">#FFFFFF</color>
+    <integer name="speck10">0x000000</integer><color name="speck10">#000000</color>
+    <integer name="speck11">0xFFFF66</integer><color name="speck11">#FFFF66</color>
+    <integer name="shieldhero">0xBBAACC</integer><color name="shieldhero">#BBAACC</color>
+    <integer name="resumeindicator">0xCDD5C0</integer><color name="resumeindicator">#CDD5C0</color>
+    <integer name="rankingscene1">0xCCCCCC</integer><color name="rankingscene1">#CCCCCC</color>
+    <integer name="rankingscene2">0xCCCCCC</integer><color name="rankingscene2">#CCCCCC</color>
+    <integer name="rankingscene3">0xCCCCCC</integer><color name="rankingscene3">#CCCCCC</color>
+    <integer name="rainbowparticle">0x1000000</integer><color name="rainbowparticle">#000000</color>
+    <integer name="quickrecipe">0x00CCFF</integer><color name="quickrecipe">#00CCFF</color>
+    <integer name="pixelscenecache">0x00000000</integer><color name="pixelscenecache">#00000000</color>
+    <integer name="pixelscenefadein">0xFF000000</integer><color name="pixelscenefadein">#FF000000</color>
+    <integer name="optionslider1">0xFF222222</integer><color name="optionslider1">#FF222222</color>
+    <integer name="optionslider2">0xFF222222</integer><color name="optionslider2">#FF222222</color>
+    <integer name="lootindicator">0x1F75CC</integer><color name="lootindicator">#1F75CC</color>
+    <integer name="interlevelscene1">0xAA000000</integer><color name="interlevelscene1">#AA000000</color>
+    <integer name="interlevelscene2">0xBB000000</integer><color name="interlevelscene2">#BB000000</color>
+    <integer name="interlevelscene3">0xCC000000</integer><color name="interlevelscene3">#CC000000</color>
+    <integer name="interlevelscene4">0xDD000000</integer><color name="interlevelscene4">#DD000000</color>
+    <integer name="interlevelscene5">0xFF000000</integer><color name="interlevelscene5">#FF000000</color>
+    <integer name="iceblock">0xFFB2D6FF</integer><color name="iceblock">#FFB2D6FF</color>
+    <integer name="highlightedtext1">0xFFFFFF</integer><color name="highlightedtext1">#FFFFFF</color>
+    <integer name="highlightedtext2">0xFFFF44</integer><color name="highlightedtext2">#FFFF44</color>
+    <integer name="herodie">0xFFFF66</integer><color name="herodie">#FFFF66</color>
+    <integer name="healthbar1">0xFFCC0000</integer><color name="healthbar1">#FFCC0000</color>
+    <integer name="healthbar2">0xFF00EE00</integer><color name="healthbar2">#FF00EE00</color>
+    <integer name="healthbar3">0xFFBBEEBB</integer><color name="healthbar3">#FFBBEEBB</color>
+    <integer name="goldindicator">0xFFFF00</integer><color name="goldindicator">#FFFF00</color>
+    <integer name="gamescene1">0x808080</integer><color name="gamescene1">#808080</color>
+    <integer name="gamescene2">0xFFFF66</integer><color name="gamescene2">#FFFF66</color>
+    <integer name="gamescene3">0xFF000000</integer><color name="gamescene3">#FF000000</color>
+    <integer name="gamescene4">0x000000</integer><color name="gamescene4">#000000</color>
+    <integer name="gamescene5">0xFFFFFF</integer><color name="gamescene5">#FFFFFF</color>
+
+    <integer name="floatingtextdefault">0xFFFFFF</integer><color name="floatingtextdefault">#FFFFFF</color>
+    <integer name="floatingtextpositive">0x00FF00</integer><color name="floatingtextpositive">#00FF00</color>
+    <integer name="floatingtextnegative">0xFF0000</integer><color name="floatingtextnegative">#FF0000</color>
+    <integer name="floatingtextwarning">0xFF8800</integer><color name="floatingtextwarning">#FF8800</color>
+    <integer name="floatingtextneutral">0xFFFF00</integer><color name="floatingtextneutral">#FFFF00</color>
+
+    <integer name="text1">0xFFFF44</integer><color name="text1">#FFFF44</color>
+    <integer name="text2">0x00FF00</integer><color name="text2">#00FF00</color>
+    <integer name="text3">0xFF3300</integer><color name="text3">#FF3300</color>
+    <integer name="text4">0xFFFF44</integer><color name="text4">#FFFF44</color>
+
+    <integer name="caveslevel1">0x534f3e</integer><color name="caveslevel1">#534f3e</color>
+    <integer name="caveslevel2">0xb9d661</integer> <color name="caveslevel2">#b9d661</color>
+    <integer name="caveslevelboss1">0x534f3e</integer><color name="caveslevelboss1">#534f3e</color>
+    <integer name="caveslevelboss2">0xb9d661</integer><color name="caveslevelboss2">#b9d661</color>
+    <integer name="citylevel1">0x4b6636</integer><color name="citylevel1">#4b6636</color>
+    <integer name="citylevel2">0xf2f2f2</integer><color name="citylevel2">#f2f2f2</color>
+    <integer name="citylevelboss1">0x4b6636</integer><color name="citylevelboss1">#4b6636</color>
+    <integer name="citylevelboss2">0xf2f2f2</integer><color name="citylevelboss2">#f2f2f2</color>
+    <integer name="deadendlevel1">0x534f3e</integer><color name="deadendlevel1">#534f3e</color>
+    <integer name="deadendlevel2">0xb9d661</integer><color name="deadendlevel2">#b9d661</color>
+    <integer name="hallslevel1">0x801500</integer><color name="hallslevel1">#801500</color>
+    <integer name="hallslevel2">0xa68521</integer><color name="hallslevel2">#a68521</color>
+    <integer name="hallslevelboss1">0x801500</integer><color name="hallslevelboss1">#801500</color>
+    <integer name="hallslevelboss2">0xa68521</integer><color name="hallslevelboss2">#a68521</color>
+    <integer name="lastlevel1">0x801500</integer><color name="lastlevel1">#801500</color>
+    <integer name="lastlevel2">0xa68521</integer><color name="lastlevel2">#a68521</color>
+    <integer name="lastlevelshop1">0x4b6636</integer><color name="lastlevelshop1">#4b6636</color>
+    <integer name="lastlevelshop2">0xf2f2f2</integer><color name="lastlevelshop2">#f2f2f2</color>
+    <integer name="prisonlevel1">0x6a723d</integer><color name="prisonlevel1">#6a723d</color>
+    <integer name="prisonlevel2">0x88924c</integer><color name="prisonlevel2">#88924c</color>
+    <integer name="prisonlevelboss1">0x6a723d</integer><color name="prisonlevelboss1">#6a723d</color>
+    <integer name="prisonlevelboss2">0x88924c</integer><color name="prisonlevelboss2">#88924c</color>
+    <integer name="sewerlevel1">0x48763c</integer><color name="sewerlevel1">#48763c</color>
+    <integer name="sewerlevel2">0x59994a</integer><color name="sewerlevel2">#59994a</color>
+    <integer name="sewerlevelboss1">0x48763c</integer><color name="sewerlevelboss1">#48763c</color>
+    <integer name="sewerlevelboss2">0x59994a</integer><color name="sewerlevelboss2">#59994a</color>
+    <integer name="level1">0x004400</integer><color name="level1">#004400</color>
+    <integer name="level2">0x88CC44</integer><color name="level2">#88CC44</color>
+
+    <integer name="citylevelsmoke">0x000000</integer><color name="citylevelsmoke">#000000</color>
+    <integer name="sewerwater1">0xb6ccc2</integer><color name="sewerwater1">#b6ccc2</color>
+    <integer name="sewerwater2">0x3b6653</integer><color name="sewerwater2">#3b6653</color>
+    <integer name="prisonleveltorch">0xFFFFCC</integer><color name="prisonleveltorch">#FFFFCC</color>
+    <integer name="prisonbosslevelflash1">0xFFFFFF</integer><color name="prisonbosslevelflash1">#FFFFFF</color>
+    <integer name="prisonbosslevelflash2">0xFFFFFF</integer><color name="prisonbosslevelflash2">#FFFFFF</color>
+    <integer name="prisonbosslevelflash3">0xFFFFFF</integer><color name="prisonbosslevelflash3">#FFFFFF</color>
+    <integer name="hallsfire">0xEE7722</integer><color name="hallsfire">#EE7722</color>
+
+    <integer name="yog">0xFF000000</integer><color name="yog">#FF000000</color>
+    <integer name="mob1">0xAA00FF</integer><color name="mob1">#AA00FF</color>
+    <integer name="mob2">0xFFFFFF</integer><color name="mob2">#FFFFFF</color>
+    <integer name="mob3">0x00FF00</integer><color name="mob3">#00FF00</color>
+    <integer name="king">0x000000</integer><color name="king">#000000</color>
+    <integer name="gooattack">0x000000</integer><color name="gooattack">#000000</color>
+
+    <integer name="itemslot1">0xFF4444</integer><color name="itemslot1">#FF4444</color>
+    <integer name="itemslot2">0x44FF44</integer><color name="itemslot2">#44FF44</color>
+    <integer name="itemslot3">0x999999</integer><color name="itemslot3">#999999</color>
+    <integer name="itemslot4">0xFF8800</integer><color name="itemslot4">#FF8800</color>
+
+    <integer name="fogofwar1">0x55000000</integer><color name="fogofwar1">#55000000</color>
+    <integer name="fogofwar2">0x00000000</integer><color name="fogofwar2">#00000000</color>
+    <integer name="fogofwar3">0x00000000</integer><color name="fogofwar3">#00000000</color>
+    <integer name="fogofwar4">0x00000000</integer><color name="fogofwar4">#00000000</color>
+    <integer name="fogofwar5">0x00000000</integer><color name="fogofwar5">#00000000</color>
+    <integer name="fogofwar6">0xDD000000</integer><color name="fogofwar6">#DD000000</color>
+    <integer name="fogofwar7">0xBB000000</integer><color name="fogofwar7">#BB000000</color>
+    <integer name="fogofwar8">0x99000000</integer><color name="fogofwar8">#99000000</color>
+    <integer name="fogofwar9">0x77000000</integer><color name="fogofwar9">#77000000</color>
+    <integer name="fogofwar10">0x55000000</integer><color name="fogofwar10">#55000000</color>
+    <integer name="fogofwar11">0xDD221108</integer><color name="fogofwar11">#DD221108</color>
+    <integer name="fogofwar12">0xBB442211</integer><color name="fogofwar12">#BB442211</color>
+    <integer name="fogofwar13">0x99663319</integer><color name="fogofwar13">#99663319</color>
+    <integer name="fogofwar14">0x77884411</integer><color name="fogofwar14">#77884411</color>
+    <integer name="fogofwar15">0x55AA552A</integer><color name="fogofwar15">#55AA552A</color>
+    <integer name="fogofwar16">0xFF000000</integer><color name="fogofwar16">#FF000000</color>
+    <integer name="fogofwar17">0xFF000000</integer><color name="fogofwar17">#FF000000</color>
+    <integer name="fogofwar18">0xFF000000</integer><color name="fogofwar18">#FF000000</color>
+    <integer name="fogofwar19">0xFF000000</integer><color name="fogofwar19">#FF000000</color>
+    <integer name="fogofwar20">0xFF000000</integer><color name="fogofwar20">#FF000000</color>
+
 </resources>

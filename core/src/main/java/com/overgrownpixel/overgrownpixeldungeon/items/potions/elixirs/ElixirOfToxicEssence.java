@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions.elixirs;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ToxicImbue;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
@@ -31,6 +32,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.particles.PoisonParticle
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.AlchemicalCatalyst;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfToxicGas;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.Game;
 
 public class ElixirOfToxicEssence extends Elixir {
 	
@@ -47,7 +49,7 @@ public class ElixirOfToxicEssence extends Elixir {
 	
 	@Override
 	protected int splashColor() {
-		return 0xFF00B34A;
+		return Game.instance.getResources().getInteger(R.integer.elixiroftoxicessencesplash);
 	}
 	
 	@Override

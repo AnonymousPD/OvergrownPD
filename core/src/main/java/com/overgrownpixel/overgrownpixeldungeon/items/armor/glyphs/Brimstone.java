@@ -36,7 +36,7 @@ import com.watabou.utils.Bundle;
 
 public class Brimstone extends Armor.Glyph {
 
-	private static ItemSprite.Glowing ORANGE = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.brimstone) );
+	private static ItemSprite.Glowing ORANGE = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.brimstone) );
 
 	@Override
 	public int proc(Armor armor, Char attacker, Char defender, int damage) {

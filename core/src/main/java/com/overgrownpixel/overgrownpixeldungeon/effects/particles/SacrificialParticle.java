@@ -46,7 +46,7 @@ public class SacrificialParticle extends PixelParticle.Shrinking {
 	public SacrificialParticle() {
 		super();
 
-		color( Game.instance.getResources().getColor(R.color.sacrificialparticle) );
+		color( Game.instance.getResources().getInteger(R.integer.sacrificialparticle) );
 		lifespan = 0.6f;
 
 		acc.set( 0, -100 );

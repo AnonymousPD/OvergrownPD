@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.levels;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.npcs.Ghost;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Ripple;
 import com.overgrownpixel.overgrownpixeldungeon.items.DewVial;
@@ -55,8 +56,8 @@ import com.watabou.utils.Random;
 public class SewerLevel extends RegularLevel {
 
 	{
-		color1 = 0x48763c;
-		color2 = 0x59994a;
+		color1 = Game.instance.getResources().getInteger(R.integer.sewerlevel1);
+		color2 = Game.instance.getResources().getInteger(R.integer.sewerlevel2);
 	}
 	
 	@Override
@@ -209,7 +210,7 @@ public class SewerLevel extends RegularLevel {
 			acc.y = 50;
 			am = 0.5f;
 			
-			color( ColorMath.random( 0xb6ccc2, 0x3b6653 ) );
+			color( ColorMath.random( Game.instance.getResources().getInteger(R.integer.sewerwater1), Game.instance.getResources().getInteger(R.integer.sewerwater2) ) );
 			size( 2 );
 		}
 		

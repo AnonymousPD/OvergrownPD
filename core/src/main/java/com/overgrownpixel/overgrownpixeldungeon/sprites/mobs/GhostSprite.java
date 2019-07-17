@@ -25,9 +25,11 @@
 package com.overgrownpixel.overgrownpixeldungeon.sprites.mobs;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.ShaftParticle;
 import com.watabou.glwrap.Blending;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.TextureFilm;
 
 public class GhostSprite extends MobSprite {
@@ -70,6 +72,6 @@ public class GhostSprite extends MobSprite {
 	
 	@Override
 	public int blood() {
-		return 0xFFFFFF;
+		return Game.instance.getResources().getInteger(R.integer.ghostblood);
 	}
 }

@@ -45,7 +45,7 @@ public class PeanutpetalPoisonParticle extends PixelParticle {
 
     public PeanutpetalPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.peanutpetalpoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.peanutpetalpoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

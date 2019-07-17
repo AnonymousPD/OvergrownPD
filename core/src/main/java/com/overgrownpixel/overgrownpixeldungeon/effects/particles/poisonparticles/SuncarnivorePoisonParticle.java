@@ -45,7 +45,7 @@ public class SuncarnivorePoisonParticle extends PixelParticle {
 
     public SuncarnivorePoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.suncarnivorepoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.suncarnivorepoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

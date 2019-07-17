@@ -25,16 +25,18 @@
 package com.overgrownpixel.overgrownpixeldungeon.levels;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
+import com.watabou.noosa.Game;
 
 public class DeadEndLevel extends Level {
 
 	private static final int SIZE = 5;
 	
 	{
-		color1 = 0x534f3e;
-		color2 = 0xb9d661;
+		color1 = Game.instance.getResources().getInteger(R.integer.deadendlevel1);
+		color2 = Game.instance.getResources().getInteger(R.integer.deadendlevel2);
 	}
 	
 	@Override

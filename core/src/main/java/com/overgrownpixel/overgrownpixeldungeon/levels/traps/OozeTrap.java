@@ -24,11 +24,13 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.levels.traps;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Ooze;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Splash;
+import com.watabou.noosa.Game;
 
 public class OozeTrap extends Trap {
 
@@ -43,7 +45,7 @@ public class OozeTrap extends Trap {
 
 		if (ch != null && !ch.flying){
 			Buff.affect(ch, Ooze.class).set( 20f );
-			Splash.at( pos, 0x000000, 5);
+			Splash.at( pos, Game.instance.getResources().getInteger(R.integer.oozetrap), 5);
 		}
 	}
 }

@@ -27,6 +27,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.spells;
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.items.quest.MetalShard;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfMagicMapping;
@@ -37,6 +38,7 @@ import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;
 
@@ -100,15 +102,15 @@ public class ReclaimTrap extends TargetedSpell {
 	}
 	
 	private static final ItemSprite.Glowing[] COLORS = new ItemSprite.Glowing[]{
-			new ItemSprite.Glowing( 0xFF0000 ),
-			new ItemSprite.Glowing( 0xFF8000 ),
-			new ItemSprite.Glowing( 0xFFFF00 ),
-			new ItemSprite.Glowing( 0x00FF00 ),
-			new ItemSprite.Glowing( 0x00FFFF ),
-			new ItemSprite.Glowing( 0x8000FF ),
-			new ItemSprite.Glowing( 0xFFFFFF ),
-			new ItemSprite.Glowing( 0x808080 ),
-			new ItemSprite.Glowing( 0x000000 )
+			new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.reclaimtrapcolor1) ),
+			new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.reclaimtrapcolor2) ),
+			new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.reclaimtrapcolor3) ),
+			new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.reclaimtrapcolor4) ),
+			new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.reclaimtrapcolor5) ),
+			new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.reclaimtrapcolor6) ),
+			new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.reclaimtrapcolor7) ),
+			new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.reclaimtrapcolor8) ),
+			new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.reclaimtrapcolor9) )
 	};
 	
 	@Override

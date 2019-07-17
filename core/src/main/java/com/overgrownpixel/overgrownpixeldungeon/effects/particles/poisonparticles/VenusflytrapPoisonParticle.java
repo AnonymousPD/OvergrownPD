@@ -45,7 +45,7 @@ public class VenusflytrapPoisonParticle extends PixelParticle {
 
     public VenusflytrapPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.venusflytrappoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.venusflytrappoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

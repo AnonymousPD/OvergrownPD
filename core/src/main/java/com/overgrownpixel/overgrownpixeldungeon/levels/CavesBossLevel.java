@@ -27,6 +27,7 @@ package com.overgrownpixel.overgrownpixeldungeon.levels;
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Bones;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.DM300;
@@ -43,6 +44,7 @@ import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.DungeonTileSheet;
 import com.watabou.noosa.Camera;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Group;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;
@@ -53,8 +55,8 @@ import com.watabou.utils.Rect;
 public class CavesBossLevel extends Level {
 	
 	{
-		color1 = 0x534f3e;
-		color2 = 0xb9d661;
+		color1 = Game.instance.getResources().getInteger(R.integer.caveslevelboss1);
+		color2 = Game.instance.getResources().getInteger(R.integer.caveslevelboss2);
 
 		viewDistance = Math.min(6, viewDistance);
 	}

@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
 import com.watabou.glwrap.Blending;
 import com.watabou.noosa.Game;
@@ -39,7 +40,7 @@ public class ShieldHalo extends Halo {
 	public ShieldHalo( CharSprite sprite ) {
 		
 		//rectangular sprite to circular radius. Pythagorean theorem
-		super( (float)Math.sqrt(Math.pow(sprite.width()/2f, 2) + Math.pow(sprite.height()/2f, 2)), 0xBBAACC, 1f );
+		super( (float)Math.sqrt(Math.pow(sprite.width()/2f, 2) + Math.pow(sprite.height()/2f, 2)), Game.instance.getResources().getInteger(R.integer.shieldhero), 1f );
 		
 		am = -0.33f;
 		aa = +0.33f;

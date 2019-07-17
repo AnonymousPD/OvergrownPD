@@ -25,6 +25,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.bombs;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Blindness;
@@ -33,6 +34,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Cripple;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Level;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.Game;
 
 public class Flashbang extends Bomb {
 	
@@ -59,7 +61,7 @@ public class Flashbang extends Bomb {
 					Buff.prolong(ch, Cripple.class, power);
 				}
 				if (ch == Dungeon.hero){
-					GameScene.flash(0xFFFFFF);
+					GameScene.flash(Game.instance.getResources().getInteger(R.integer.absorbing));
 				}
 			}
 		}

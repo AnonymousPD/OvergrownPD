@@ -36,7 +36,7 @@ import com.watabou.utils.Random;
 
 public class Vampiric extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.vampiric) );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.vampiric) );
 	
 	@Override
 	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {

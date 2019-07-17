@@ -30,6 +30,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Chrome;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OGPDSettings;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Belongings;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
@@ -109,7 +110,11 @@ public class AlchemyScene extends PixelScene {
 		};
 		add(water);
 		
-		Image im = new Image(TextureCache.createGradient(0x66000000, 0x88000000, 0xAA000000, 0xCC000000, 0xFF000000));
+		Image im = new Image(TextureCache.createGradient(Game.instance.getResources().getInteger(R.integer.alchemygradient1),
+                Game.instance.getResources().getInteger(R.integer.alchemygradient2),
+                Game.instance.getResources().getInteger(R.integer.alchemygradient3),
+                Game.instance.getResources().getInteger(R.integer.alchemygradient4),
+                Game.instance.getResources().getInteger(R.integer.alchemygradient5)));
 		im.angle = 90;
 		im.x = Camera.main.width;
 		im.scale.x = Camera.main.height/5f;
@@ -216,7 +221,7 @@ public class AlchemyScene extends PixelScene {
 		};
 		output.setRect(left + w - BTN_SIZE - 10, inputs[1].top(), BTN_SIZE, BTN_SIZE);
 		
-		ColorBlock outputBG = new ColorBlock(output.width(), output.height(), 0x9991938C);
+		ColorBlock outputBG = new ColorBlock(output.width(), output.height(), Game.instance.getResources().getInteger(R.integer.alchemyoutput));
 		outputBG.x = output.left();
 		outputBG.y = output.top();
 		add(outputBG);

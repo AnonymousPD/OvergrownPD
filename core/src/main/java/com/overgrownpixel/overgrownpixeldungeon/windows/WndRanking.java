@@ -27,6 +27,7 @@ package com.overgrownpixel.overgrownpixeldungeon.windows;
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Badges;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.Rankings;
 import com.overgrownpixel.overgrownpixeldungeon.Statistics;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Belongings;
@@ -253,7 +254,7 @@ public class WndRanking extends WndTabbed {
 					add(slot);
 
 				} else {
-					ColorBlock bg = new ColorBlock( 28, 28, 0x9953564D );
+					ColorBlock bg = new ColorBlock( 28, 28, Game.instance.getResources().getInteger(R.integer.wndranking1));
 					bg.x = pos;
 					bg.y = 116;
 					add(bg);
@@ -314,7 +315,7 @@ public class WndRanking extends WndTabbed {
 		@Override
 		protected void createChildren() {
 			
-			bg = new ColorBlock( HEIGHT, HEIGHT, 0x9953564D );
+			bg = new ColorBlock( HEIGHT, HEIGHT, Game.instance.getResources().getInteger(R.integer.wndranking2) );
 			add( bg );
 			
 			slot = new ItemSlot();
@@ -380,7 +381,7 @@ public class WndRanking extends WndTabbed {
 
 		@Override
 		protected void createChildren() {
-			bg = new ColorBlock( HEIGHT, HEIGHT, 0x9953564D );
+			bg = new ColorBlock( HEIGHT, HEIGHT, Game.instance.getResources().getInteger(R.integer.wndranking3) );
 			add( bg );
 
 			super.createChildren();

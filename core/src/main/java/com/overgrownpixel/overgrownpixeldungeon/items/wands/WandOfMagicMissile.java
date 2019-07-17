@@ -25,6 +25,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.wands;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
@@ -33,6 +34,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.SpellSprite;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.staffs.MagesStaff;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.Game;
 
 public class WandOfMagicMissile extends DamageWand {
 
@@ -57,7 +59,7 @@ public class WandOfMagicMissile extends DamageWand {
 			processSoulMark(ch, chargesPerCast());
 			ch.damage(damageRoll(), this);
 
-			ch.sprite.burst(0xFFFFFFFF, level() / 2 + 2);
+			ch.sprite.burst(Game.instance.getResources().getInteger(R.integer.wandofmagicmissile), level() / 2 + 2);
 
 		} else {
 			Dungeon.level.press(bolt.collisionPos, null, true);

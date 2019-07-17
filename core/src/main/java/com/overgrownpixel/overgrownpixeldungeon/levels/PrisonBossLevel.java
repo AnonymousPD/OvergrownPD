@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Bones;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
@@ -47,6 +48,7 @@ import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.CustomTilemap;
 import com.overgrownpixel.overgrownpixeldungeon.ui.TargetHealthIndicator;
 import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Group;
 import com.watabou.noosa.Tilemap;
 import com.watabou.noosa.audio.Sample;
@@ -60,8 +62,8 @@ import java.util.ArrayList;
 public class PrisonBossLevel extends Level {
 
 	{
-		color1 = 0x6a723d;
-		color2 = 0x88924c;
+		color1 = Game.instance.getResources().getInteger(R.integer.prisonlevelboss1);
+		color2 = Game.instance.getResources().getInteger(R.integer.prisonlevelboss2);
 	}
 
 	public enum State {
@@ -349,7 +351,7 @@ public class PrisonBossLevel extends Level {
 				cleanWalls();
 				GameScene.resetMap();
 
-				GameScene.flash(0xFFFFFF);
+				GameScene.flash(Game.instance.getResources().getInteger(R.integer.prisonbosslevelflash1));
 				Sample.INSTANCE.play(Assets.SND_BLAST);
 
 				state = State.MAZE;
@@ -380,7 +382,7 @@ public class PrisonBossLevel extends Level {
 				GameScene.add(tengu);
 				tengu.notice();
 				
-				GameScene.flash(0xFFFFFF);
+				GameScene.flash(Game.instance.getResources().getInteger(R.integer.prisonbosslevelflash1));
 				Sample.INSTANCE.play(Assets.SND_BLAST);
 
 				state = State.FIGHT_ARENA;
@@ -434,7 +436,7 @@ public class PrisonBossLevel extends Level {
 				for (Item item : storedItems)
 					drop(item, randomTenguArenaCell());
 				
-				GameScene.flash(0xFFFFFF);
+				GameScene.flash(Game.instance.getResources().getInteger(R.integer.prisonbosslevelflash1));
 				Sample.INSTANCE.play(Assets.SND_BLAST);
 				
 				state = State.WON;

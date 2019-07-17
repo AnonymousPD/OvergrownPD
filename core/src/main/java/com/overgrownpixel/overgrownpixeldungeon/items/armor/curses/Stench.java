@@ -36,7 +36,7 @@ import com.watabou.utils.Random;
 
 public class Stench extends Armor.Glyph {
 
-	private static ItemSprite.Glowing BLACK = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.curse) );
+	private static ItemSprite.Glowing BLACK = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.curse) );
 
 	@Override
 	public int proc(Armor armor, Char attacker, Char defender, int damage) {

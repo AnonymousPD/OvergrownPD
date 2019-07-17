@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.GamesInProgress;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.Statistics;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
@@ -169,7 +170,11 @@ public class InterlevelScene extends PixelScene {
 		bg.scale(4, 4);
 		add(bg);
 		
-		Image im = new Image(TextureCache.createGradient(0xAA000000, 0xBB000000, 0xCC000000, 0xDD000000, 0xFF000000)){
+		Image im = new Image(TextureCache.createGradient(Game.instance.getResources().getInteger(R.integer.interlevelscene1),
+                Game.instance.getResources().getInteger(R.integer.interlevelscene2),
+                Game.instance.getResources().getInteger(R.integer.interlevelscene3),
+                Game.instance.getResources().getInteger(R.integer.interlevelscene4),
+                Game.instance.getResources().getInteger(R.integer.interlevelscene5))){
 			@Override
 			public void update() {
 				super.update();

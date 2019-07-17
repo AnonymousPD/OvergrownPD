@@ -45,7 +45,7 @@ public class ParasiteshrubPoisonParticle extends PixelParticle {
 
     public ParasiteshrubPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.parasiteshrubpoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.parasiteshrubpoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

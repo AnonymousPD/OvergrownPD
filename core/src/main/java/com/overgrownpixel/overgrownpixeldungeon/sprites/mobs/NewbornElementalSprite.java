@@ -26,8 +26,10 @@ package com.overgrownpixel.overgrownpixeldungeon.sprites.mobs;
 
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.MovieClip;
 import com.watabou.noosa.TextureFilm;
 
@@ -71,7 +73,7 @@ public class NewbornElementalSprite extends MobSprite{
 
 	@Override
 	public int blood() {
-		return 0xFFFF7D13;
+		return Game.instance.getResources().getInteger(R.integer.newbornfireelementalblood);
 	}
 
 }

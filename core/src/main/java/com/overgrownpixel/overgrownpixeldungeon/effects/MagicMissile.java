@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.CorrosionParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.FlameParticle;
@@ -210,7 +211,7 @@ public class MagicMissile extends Emitter {
 		public MagicParticle() {
 			super();
 			
-			color( 0x88CCFF );
+			color( Game.instance.getResources().getInteger(R.integer.magicmissile1) );
 			lifespan = 0.5f;
 			
 			speed.set( Random.Float( -10, +10 ), Random.Float( -10, +10 ) );
@@ -258,7 +259,7 @@ public class MagicMissile extends Emitter {
 			
 			lifespan = 0.5f;
 			
-			color( ColorMath.random( 0x555555, 0x777766 ) );
+			color( ColorMath.random( Game.instance.getResources().getInteger(R.integer.magicmissile2), Game.instance.getResources().getInteger(R.integer.magicmissile3) ) );
 			
 			acc.set( 0, +40 );
 		}
@@ -334,7 +335,7 @@ public class MagicMissile extends Emitter {
 			
 			lifespan = 0.6f;
 			
-			color( 0x664422 );
+			color( Game.instance.getResources().getInteger(R.integer.magicmissile4) );
 			size( 2 );
 		}
 		
@@ -370,7 +371,7 @@ public class MagicMissile extends Emitter {
 		};
 
 		public void reset( int index, float x, float y ) {
-			super.reset( x, y, 0xFFFFFF, 8, 0.5f );
+			super.reset( x, y, Game.instance.getResources().getInteger(R.integer.magicmissile5), 8, 0.5f );
 
 			speed.polar( PointF.PI2 / 8 * index, 12 );
 			this.x -= speed.x * lifespan;
@@ -403,7 +404,7 @@ public class MagicMissile extends Emitter {
 			
 			lifespan = 0.6f;
 			
-			color( 0x2244FF );
+			color( Game.instance.getResources().getInteger(R.integer.magicmissile6) );
 		}
 		
 		public void reset( float x, float y ) {

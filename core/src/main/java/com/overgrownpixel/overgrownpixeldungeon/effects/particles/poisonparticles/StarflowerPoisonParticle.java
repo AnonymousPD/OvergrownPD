@@ -45,7 +45,7 @@ public class StarflowerPoisonParticle extends PixelParticle {
 
     public StarflowerPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.starflowerpoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.starflowerpoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

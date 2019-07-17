@@ -45,7 +45,7 @@ public class EarthrootPoisonParticle extends PixelParticle {
 
     public EarthrootPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.earthrootpoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.earthrootpoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

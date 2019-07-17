@@ -25,6 +25,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.effects;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Gizmo;
@@ -60,7 +61,7 @@ public class IceBlock extends Gizmo {
 		killAndErase();
 
 		if (visible) {
-			Splash.at( target.center(), 0xFFB2D6FF, 5 );
+			Splash.at( target.center(), Game.instance.getResources().getInteger(R.integer.iceblock), 5 );
 			Sample.INSTANCE.play( Assets.SND_SHATTER );
 		}
 	}

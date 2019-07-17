@@ -45,7 +45,7 @@ public class DewcatcherPoisonParticle extends PixelParticle {
 
     public DewcatcherPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.dewcatcherpoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.dewcatcherpoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

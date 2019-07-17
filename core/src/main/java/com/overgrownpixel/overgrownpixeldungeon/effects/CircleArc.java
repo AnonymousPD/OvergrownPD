@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.watabou.gltextures.SmartTexture;
 import com.watabou.gltextures.TextureCache;
 import com.watabou.glwrap.Blending;
@@ -62,7 +63,7 @@ public class CircleArc extends Visual {
 		
 		super( 0, 0, 0, 0 );
 
-		texture = TextureCache.createSolid( 0xFFFFFFFF );
+		texture = TextureCache.createSolid( Game.instance.getResources().getInteger(R.integer.circlearc) );
 		
 		this.nTris = triangles;
 		this.rad = radius;

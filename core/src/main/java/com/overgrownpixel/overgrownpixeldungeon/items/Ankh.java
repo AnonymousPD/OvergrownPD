@@ -107,7 +107,7 @@ public class Ankh extends Item {
 		return blessed;
 	}
 
-	private static final Glowing WHITE = new Glowing( Game.instance.getResources().getColor(R.color.ankh) );
+	private static final Glowing WHITE = new Glowing( Game.instance.getResources().getInteger(R.integer.ankh) );
 
 	@Override
 	public Glowing glowing() {

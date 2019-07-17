@@ -164,7 +164,7 @@ public class BeaconOfReturning extends Spell {
 		return desc;
 	}
 	
-	private static final ItemSprite.Glowing WHITE = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.beaconofreturningspell) );
+	private static final ItemSprite.Glowing WHITE = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.beaconofreturningspell) );
 	
 	@Override
 	public ItemSprite.Glowing glowing() {

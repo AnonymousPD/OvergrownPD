@@ -37,7 +37,7 @@ import com.watabou.utils.Random;
 
 public class Chilling extends Weapon.Enchantment {
 
-	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.chilling) );
+	private static ItemSprite.Glowing COLOR = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.chilling) );
 	
 	@Override
 	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {
@@ -56,7 +56,7 @@ public class Chilling extends Weapon.Enchantment {
 			}
 			
 			Buff.affect( defender, Chill.class, durationToAdd );
-			Splash.at( defender.sprite.center(), 0xFFB2D6FF, 5);
+			Splash.at( defender.sprite.center(), Game.instance.getResources().getInteger(R.integer.chilling), 5);
 
 		}
 

@@ -35,7 +35,7 @@ import com.watabou.utils.Random;
 
 public class Thorns extends Armor.Glyph {
 
-	private static ItemSprite.Glowing RED = new ItemSprite.Glowing( Game.instance.getResources().getColor(R.color.thorns) );
+	private static ItemSprite.Glowing RED = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.thorns) );
 
 	@Override
 	public int proc(Armor armor, Char attacker, Char defender, int damage) {

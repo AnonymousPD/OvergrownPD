@@ -26,8 +26,10 @@ package com.overgrownpixel.overgrownpixeldungeon.ui;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.BloodParticle;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.ui.Component;
@@ -99,7 +101,7 @@ public class BossHealthBar extends Component {
 				if (hp.scale.x < 0.25f) bleed( true );
 
 				if (bleeding != blood.on){
-					if (bleeding)   skull.tint( 0xcc0000, 0.6f );
+					if (bleeding)   skull.tint( Game.instance.getResources().getInteger(R.integer.bosshealthbar), 0.6f );
 					else            skull.resetColor();
 					blood.on = bleeding;
 				}

@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.ui;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
 import com.overgrownpixel.overgrownpixeldungeon.items.keys.Key;
@@ -41,15 +42,16 @@ import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.BitmapText;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.ui.Button;
 
 public class ItemSlot extends Button {
 
-	public static final int DEGRADED	= 0xFF4444;
-	public static final int UPGRADED	= 0x44FF44;
-	public static final int FADED       = 0x999999;
-	public static final int WARNING		= 0xFF8800;
+	public static final int DEGRADED	= Game.instance.getResources().getInteger(R.integer.itemslot1);
+	public static final int UPGRADED	= Game.instance.getResources().getInteger(R.integer.itemslot2);
+	public static final int FADED       = Game.instance.getResources().getInteger(R.integer.itemslot3);
+	public static final int WARNING		= Game.instance.getResources().getInteger(R.integer.itemslot4);
 	
 	private static final float ENABLED	= 1.0f;
 	private static final float DISABLED	= 0.3f;

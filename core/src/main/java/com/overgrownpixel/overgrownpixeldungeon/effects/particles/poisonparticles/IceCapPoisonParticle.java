@@ -45,7 +45,7 @@ public class IceCapPoisonParticle extends PixelParticle {
 
     public IceCapPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.icecappoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.icecappoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

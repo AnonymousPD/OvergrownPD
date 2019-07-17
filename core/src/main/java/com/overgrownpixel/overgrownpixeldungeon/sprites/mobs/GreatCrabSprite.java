@@ -25,6 +25,8 @@
 package com.overgrownpixel.overgrownpixeldungeon.sprites.mobs;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.MovieClip;
 import com.watabou.noosa.TextureFilm;
 
@@ -54,6 +56,6 @@ public class GreatCrabSprite extends MobSprite {
 
 	@Override
 	public int blood() {
-		return 0xFFFFEA80;
+		return Game.instance.getResources().getInteger(R.integer.greatcrabblood);
 	}
 }

@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.effects;
 
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.watabou.gltextures.SmartTexture;
 import com.watabou.gltextures.TextureCache;
 import com.watabou.glwrap.Blending;
@@ -56,7 +57,7 @@ public class Flare extends Visual {
 		
 		super( 0, 0, 0, 0 );
 
-		int gradient[] = {0xFFFFFFFF, 0x00FFFFFF};
+		int gradient[] = {Game.instance.getResources().getInteger(R.integer.flare1), Game.instance.getResources().getInteger(R.integer.flare2)};
 		texture = TextureCache.createGradient( gradient );
 		
 		this.nRays = nRays;

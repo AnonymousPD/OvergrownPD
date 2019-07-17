@@ -45,7 +45,7 @@ public class StormvinePoisonParticle extends PixelParticle {
 
     public StormvinePoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.stormvinepoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.stormvinepoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 

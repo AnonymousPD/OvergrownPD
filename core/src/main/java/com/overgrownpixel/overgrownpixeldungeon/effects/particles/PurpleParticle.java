@@ -87,6 +87,6 @@ public class PurpleParticle extends PixelParticle {
 		// alpha: 1 -> 0; size: 1 -> 5
 		size( 5 - (am = left / lifespan) * 4 );
 		// color: 0xFF0044 -> 0x220066
-		color( ColorMath.interpolate( Game.instance.getResources().getColor(R.color.purpleparticle1), Game.instance.getResources().getColor(R.color.purpleparticle2), am ) );
+		color( ColorMath.interpolate( Game.instance.getResources().getInteger(R.integer.purpleparticle1), Game.instance.getResources().getInteger(R.integer.purpleparticle2), am ) );
 	}
 }

@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.levels;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.npcs.Imp;
 import com.overgrownpixel.overgrownpixeldungeon.levels.painters.CityPainter;
 import com.overgrownpixel.overgrownpixeldungeon.levels.painters.Painter;
@@ -46,6 +47,7 @@ import com.overgrownpixel.overgrownpixeldungeon.levels.traps.WarpingTrap;
 import com.overgrownpixel.overgrownpixeldungeon.levels.traps.WeakeningTrap;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.DungeonTilemap;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Group;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -55,8 +57,8 @@ import com.watabou.utils.Random;
 public class CityLevel extends RegularLevel {
 
 	{
-		color1 = 0x4b6636;
-		color2 = 0xf2f2f2;
+		color1 = Game.instance.getResources().getInteger(R.integer.citylevel1);
+		color2 = Game.instance.getResources().getInteger(R.integer.citylevel2);
 	}
 	
 	@Override
@@ -200,7 +202,7 @@ public class CityLevel extends RegularLevel {
 		public SmokeParticle() {
 			super();
 			
-			color( 0x000000 );
+			color( Game.instance.getResources().getInteger(R.integer.citylevelsmoke) );
 			speed.set( Random.Float( -2, 4 ), -Random.Float( 3, 6 ) );
 		}
 		

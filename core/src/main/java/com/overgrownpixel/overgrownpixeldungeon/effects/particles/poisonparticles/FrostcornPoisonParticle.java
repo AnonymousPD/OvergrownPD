@@ -45,7 +45,7 @@ public class FrostcornPoisonParticle extends PixelParticle {
 
     public FrostcornPoisonParticle() {
         size(2.0f);
-        color(Game.instance.getResources().getColor(R.color.frostcornpoisonparticle));
+        color(Game.instance.getResources().getInteger(R.integer.frostcornpoisonparticle));
         this.acc.set(0.0f, 50.0f);
     }
 
