@@ -43,6 +43,12 @@
     <integer name="thorns">0x660022</integer><color name="thorns">#660022</color>
     <integer name="viscosity">0x8844CC</integer><color name="viscosity">#8844CC</color>
 
+    <integer name="aqua">0x17C0D8</integer><color name="aqua">#17C0D8</color>
+    <integer name="cloning">0xDF9D00</integer><color name="cloning">#DF9D00</color>
+    <integer name="evasion">0xA9D015</integer><color name="evasion">#A9D015</color>
+    <integer name="explosionglyph">0xFF3300</integer><color name="explosionglyph">#FF3300</color>
+    <integer name="fauna">0x89FF00</integer><color name="fauna">#89FF00</color>
+
     <integer name="curse">0x000000</integer><color name="curse">#000000</color>
 
     <integer name="chillingsplash">0xFFB2D6FF</integer><color name="chillingsplash">#FFB2D6FF</color>

@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Healing;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroClass;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
@@ -35,6 +36,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.particles.LeafParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.Dewdrop;
 import com.overgrownpixel.overgrownpixeldungeon.items.Generator;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Camouflage;
+import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Fauna;
 import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.SandalsOfNature;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Level;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
@@ -101,6 +103,10 @@ public class HighGrass {
 				if (hero.belongings.armor != null && hero.belongings.armor.hasGlyph(Camouflage.class, hero)) {
 					Buff.affect(hero, Camouflage.Camo.class).set(3 + hero.belongings.armor.level());
 				}
+
+                if (hero.belongings.armor != null && hero.belongings.armor.hasGlyph(Fauna.class, hero)) {
+                    Buff.affect( hero, Healing.class ).setHeal(1, 100f, 1);
+                }
 			}
 			
 		}

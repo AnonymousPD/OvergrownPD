@@ -47,9 +47,15 @@ import com.overgrownpixel.overgrownpixeldungeon.items.armor.curses.Overgrowth;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.curses.Stench;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Affection;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.AntiMagic;
+import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Aqua;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Brimstone;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Camouflage;
+import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Chaotic;
+import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Cloning;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Entanglement;
+import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Evasion;
+import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Explosion;
+import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Fauna;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Flow;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Obfuscation;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Potential;
@@ -298,6 +304,10 @@ public class Armor extends EquipableItem {
 		if (hasGlyph(Stone.class, owner) && !((Stone)glyph).testingEvasion()){
 			return 0;
 		}
+
+        if (hasGlyph(Evasion.class, owner)){
+            evasion *= 2;
+        }
 		
 		if (owner instanceof Hero){
 			int aEnc = STRReq() - ((Hero) owner).STR();
@@ -559,14 +569,17 @@ public class Armor extends EquipableItem {
 	public static abstract class Glyph implements Bundlable {
 		
 		private static final Class<?>[] common = new Class<?>[]{
-				Obfuscation.class, Swiftness.class, Viscosity.class, Potential.class };
+				Obfuscation.class, Swiftness.class, Viscosity.class,
+                Potential.class, Cloning.class};
 		
 		private static final Class<?>[] uncommon = new Class<?>[]{
 				Brimstone.class, Stone.class, Entanglement.class,
-				Repulsion.class, Camouflage.class, Flow.class };
+				Repulsion.class, Camouflage.class, Flow.class,
+                Chaotic.class, Evasion.class, Fauna.class};
 		
 		private static final Class<?>[] rare = new Class<?>[]{
-				Affection.class, AntiMagic.class, Thorns.class };
+				Affection.class, AntiMagic.class, Thorns.class,
+                Aqua.class, Explosion.class};
 		
 		private static final float[] typeChances = new float[]{
 				50, //12.5% each
