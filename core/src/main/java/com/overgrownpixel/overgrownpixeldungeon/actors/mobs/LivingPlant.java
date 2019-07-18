@@ -121,6 +121,7 @@ public class LivingPlant extends Mob {
         if(plantClass instanceof BlandfruitBush){
             Dungeon.level.drop(new Blandfruit(), pos);
         }
+        sprite.burst(plantClass.getPlant(plantClass).poisonEmitterClass().getColor(), 10);
         super.die(cause);
     }
 
@@ -128,6 +129,7 @@ public class LivingPlant extends Mob {
     public int attackProc(Char enemy, int damage) {
         if(!enemy.flying){
             if(Random.Float() <= 0.3f){
+                enemy.sprite.burst(plantClass.getPlant(plantClass).poisonEmitterClass().getColor(), damage);
                 plantClass.attackProc(enemy, damage);
             }
         }
