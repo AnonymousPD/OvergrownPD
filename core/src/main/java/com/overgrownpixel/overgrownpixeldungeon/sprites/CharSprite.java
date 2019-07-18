@@ -37,6 +37,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Splash;
 import com.overgrownpixel.overgrownpixeldungeon.effects.TorchHalo;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.FlameParticle;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.HalomethaneFlameParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.ShadowParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.SnowParticle;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
@@ -83,7 +84,7 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 	protected float shadowOffset    = 0.25f;
 
 	public enum State {
-		BURNING, LEVITATING, INVISIBLE, PARALYSED, FROZEN, ILLUMINATED, CHILLED, DARKENED, MARKED, HEALING, SHIELDED
+		BURNING, LEVITATING, INVISIBLE, PARALYSED, FROZEN, ILLUMINATED, CHILLED, DARKENED, MARKED, HEALING, SHIELDED, HALOMETHANEBURNING
 	}
 	
 	protected Animation idle;
@@ -320,12 +321,19 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 	public void add( State state ) {
 		switch (state) {
 			case BURNING:
-				burning = emitter();
-				burning.pour( FlameParticle.FACTORY, 0.06f );
-				if (visible) {
-					Sample.INSTANCE.play( Assets.SND_BURNING );
-				}
-				break;
+                burning = emitter();
+                burning.pour( FlameParticle.FACTORY, 0.06f );
+                if (visible) {
+                    Sample.INSTANCE.play( Assets.SND_BURNING );
+                }
+                break;
+            case HALOMETHANEBURNING:
+                burning = emitter();
+                burning.pour( HalomethaneFlameParticle.FACTORY, 0.04f );
+                if (visible) {
+                    Sample.INSTANCE.play( Assets.SND_BURNING );
+                }
+                break;
 			case LEVITATING:
 				levitation = emitter();
 				levitation.pour( Speck.factory( Speck.JET ), 0.02f );

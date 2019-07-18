@@ -29,10 +29,11 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
-import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Fire;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.HalomethaneFire;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Amok;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Burning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Charm;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HalomethaneBurning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Terror;
 import com.overgrownpixel.overgrownpixeldungeon.effects.MagicMissile;
 import com.overgrownpixel.overgrownpixeldungeon.items.bombs.Bomb;
@@ -79,6 +80,11 @@ public class FlameB01 extends Mob {
         if(buff(Burning.class) != null){
             new Bomb().explode(this.pos);
             this.die(Burning.class);
+            return true;
+        }
+        if(buff(HalomethaneBurning.class) != null){
+            new Bomb().explode(this.pos);
+            this.die(HalomethaneBurning.class);
             return true;
         }
         return super.act();
@@ -321,7 +327,7 @@ public class FlameB01 extends Mob {
             //only ignite cells directly near caster if they are flammable
             if (!Dungeon.level.adjacent(bolt.sourcePos, cell)
                     || Dungeon.level.flamable[cell]){
-                GameScene.add( Blob.seed( cell, 1+2, Fire.class ) );
+                GameScene.add( Blob.seed( cell, 1+2, HalomethaneFire.class ) );
             }
         }
     }

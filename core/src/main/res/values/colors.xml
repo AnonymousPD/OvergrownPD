@@ -109,6 +109,7 @@
     <integer name="webparticle">0xCCCCCC</integer><color name="webparticle">#CCCCCC</color>
     <integer name="woolparticle1">0x999999</integer><color name="woolparticle1">#999999</color>
     <integer name="woolparticle2">0xEEEEE0</integer><color name="woolparticle2">#EEEEE0</color>
+    <integer name="halomethaneflameparticle">0x00DFFF</integer><color name="halomethaneflameparticle">#00DFFF</color>
 
     <integer name="blandfruitsunfruit">0x2EE62E</integer><color name="blandfruitsunfruit">#2EE62E</color>
     <integer name="blandfruitrotfruit">0xCC0022</integer><color name="blandfruitrotfruit">#CC0022</color>

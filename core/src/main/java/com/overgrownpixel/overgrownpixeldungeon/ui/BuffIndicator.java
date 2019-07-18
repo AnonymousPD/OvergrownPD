@@ -95,6 +95,7 @@ public class BuffIndicator extends Component {
 	public static final int HEALING     = 44;
 	public static final int WEAPON      = 45;
     public static final int FORCEFIELD  = 46;
+    public static final int HALOMETHANEBURNING  = 47;
 
 	public static final int SIZE	= 7;
 	

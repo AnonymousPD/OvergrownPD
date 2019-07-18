@@ -45,6 +45,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.EarthImbue;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FireImbue;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Frost;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FrostImbue;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HalomethaneBurning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Haste;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MagicalSleep;
@@ -624,7 +625,7 @@ public abstract class Char extends Actor {
 		BLOB_IMMUNE ( new HashSet<Class>(),
 				new HashSet<Class>( Arrays.asList(Blob.class) )),
 		FIERY ( new HashSet<Class>( Arrays.asList(WandOfFireblast.class)),
-				new HashSet<Class>( Arrays.asList(Burning.class, Blazing.class))),
+				new HashSet<Class>( Arrays.asList(Burning.class, Blazing.class, HalomethaneBurning.class))),
 		ACIDIC ( new HashSet<Class>( Arrays.asList(Corrosion.class)),
 				new HashSet<Class>( Arrays.asList(Ooze.class))),
 		ELECTRIC ( new HashSet<Class>( Arrays.asList(WandOfLightning.class, Shocking.class, Potential.class, Electricity.class, ShockingDart.class)),
