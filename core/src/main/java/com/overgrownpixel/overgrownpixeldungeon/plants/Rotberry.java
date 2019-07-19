@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.AdrenalineSurge;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
@@ -72,6 +73,11 @@ public class Rotberry extends Plant {
 		
 		//no warden benefit
 	}
+
+    @Override
+    public Blob immunity() {
+        return null;
+    }
 
 	public static class Seed extends Plant.Seed {
 		{

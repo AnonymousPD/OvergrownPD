@@ -99,7 +99,14 @@ public class LivingPlant extends Mob {
     public LivingPlant setPlantClass(Plant plantClass){
         this.plantClass = plantClass;
         name += (" "+plantClass.plantName);
+        setPlantImmunities(this.plantClass);
         return this;
+    }
+
+    public void setPlantImmunities(Plant plantClass){
+        if(plantClass.immunity() != null){
+            immunities.add(plantClass.immunity().getClass());
+        }
     }
 
     //sends livingplants sleeping

@@ -30,6 +30,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Haste;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
@@ -199,6 +200,8 @@ public abstract class Plant implements Bundlable {
 	public abstract void activate( Char ch );
 
     public abstract void activate();
+
+    public abstract Blob immunity();
 
     public void defaultProc(Char enemy, int damage){
         enemy.damage(damage, this);
@@ -428,5 +431,10 @@ public abstract class Plant implements Bundlable {
 
         @Override
         public void activate() {}
+
+        @Override
+        public Blob immunity() {
+            return null;
+        }
     }
 }

@@ -25,6 +25,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Bleeding;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.BlobImmunity;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
@@ -87,6 +88,11 @@ public class Dreamfoil extends Plant {
         } else {
 	        activate(enemy);
         }
+    }
+
+    @Override
+    public Blob immunity() {
+        return null;
     }
 
 	public static class Seed extends Plant.Seed {

@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Poison;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ToxicImbue;
@@ -77,6 +78,11 @@ public class Sorrowmoss extends Plant {
         if (Dungeon.level.heroFOV[enemy.pos]) {
             CellEmitter.center( enemy.pos ).burst( PoisonParticle.SPLASH, 3 );
         }
+    }
+
+    @Override
+    public Blob immunity() {
+        return null;
     }
 	
 	public static class Seed extends Plant.Seed {

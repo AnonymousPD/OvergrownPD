@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FlavourBuff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Healing;
@@ -73,6 +74,11 @@ public class Sungrass extends Plant {
     @Override
     public void attackProc(Char enemy, int damage) {
         defaultProc(enemy, damage);
+    }
+
+    @Override
+    public Blob immunity() {
+        return null;
     }
 	
 	public static class Seed extends Plant.Seed {

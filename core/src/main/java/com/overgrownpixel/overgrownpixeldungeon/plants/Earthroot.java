@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Barkskin;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FlavourBuff;
@@ -84,6 +85,11 @@ public class Earthroot extends Plant {
             CellEmitter.bottom( enemy.pos ).start( EarthParticle.FACTORY, 0.05f, 8 );
             Camera.main.shake( 1, 0.4f );
         }
+    }
+
+    @Override
+    public Blob immunity() {
+        return null;
     }
 	
 	public static class Seed extends Plant.Seed {

@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Fire;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Freezing;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
@@ -83,6 +84,11 @@ public class Icecap extends Plant {
                 Freezing.affect( i, fire );
             }
         }
+    }
+
+    @Override
+    public Blob immunity() {
+        return new Freezing();
     }
 	
 	public static class Seed extends Plant.Seed {

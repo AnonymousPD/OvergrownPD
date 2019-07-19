@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.BlandfruitPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.Blandfruit;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
@@ -46,6 +47,11 @@ public class BlandfruitBush extends Plant {
     @Override
     public void activate() {
         Dungeon.level.drop( new Blandfruit(), pos ).sprite.drop();
+    }
+
+    @Override
+    public Blob immunity() {
+        return null;
     }
 
     @Override

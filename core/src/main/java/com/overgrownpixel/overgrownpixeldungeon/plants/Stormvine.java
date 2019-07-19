@@ -25,6 +25,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Levitation;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Vertigo;
@@ -67,6 +68,11 @@ public class Stormvine extends Plant {
                 Buff.affect(enemy, Vertigo.class, Vertigo.DURATION);
             }
         }
+    }
+
+    @Override
+    public Blob immunity() {
+        return null;
     }
 
 	public static class Seed extends Plant.Seed {

@@ -81,6 +81,11 @@ public class Firebloom extends Plant {
             CellEmitter.get( enemy.pos ).burst( FlameParticle.FACTORY, 5 );
         }
     }
+
+    @Override
+    public Blob immunity() {
+        return null;
+    }
 	
 	public static class Seed extends Plant.Seed {
 		{
