@@ -40,6 +40,12 @@ public class SpikedStoneClub extends MeleeWeapon {
 	}
 
     @Override
+    public int max(int lvl) {
+        return  10*(tier) +                	//20 base
+                Math.round(lvl*(tier+1));	//+3 per level
+    }
+
+    @Override
     public int proc(Char attacker, Char defender, int damage) {
         Buff.affect(attacker, Bleeding.class).set(Math.max(1*level(), (attacker.HP/6)*level()));
         return super.proc(attacker, defender, damage);
