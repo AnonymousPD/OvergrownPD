@@ -55,7 +55,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Cloning;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Entanglement;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Evasion;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Explosion;
-import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Fauna;
+import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Flora;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Flow;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Obfuscation;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Potential;
@@ -575,7 +575,7 @@ public class Armor extends EquipableItem {
 		private static final Class<?>[] uncommon = new Class<?>[]{
 				Brimstone.class, Stone.class, Entanglement.class,
 				Repulsion.class, Camouflage.class, Flow.class,
-                Chaotic.class, Evasion.class, Fauna.class};
+                Chaotic.class, Evasion.class, Flora.class};
 		
 		private static final Class<?>[] rare = new Class<?>[]{
 				Affection.class, AntiMagic.class, Thorns.class,

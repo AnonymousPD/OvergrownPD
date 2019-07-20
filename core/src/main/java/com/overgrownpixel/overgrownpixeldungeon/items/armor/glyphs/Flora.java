@@ -29,7 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.watabou.noosa.Game;
 
-public class Fauna extends Armor.Glyph {
+public class Flora extends Armor.Glyph {
 
 	private static ItemSprite.Glowing GREEN = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.fauna) );
 
