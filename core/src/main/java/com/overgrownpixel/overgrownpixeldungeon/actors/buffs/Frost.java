@@ -56,6 +56,7 @@ public class Frost extends FlavourBuff {
 			
 			target.paralysed++;
 			Buff.detach( target, Burning.class );
+            Buff.detach( target, HalomethaneBurning.class );
 			Buff.detach( target, Chill.class );
 
 			if (target instanceof Hero) {

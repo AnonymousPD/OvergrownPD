@@ -43,6 +43,11 @@ public class Random {
 		return rand.nextFloat();
 	}
 
+    //returns a random boolean
+    public static Boolean Boolean() {
+        return rand.nextBoolean();
+    }
+
 	//returns a uniformly distributed float in the range [0, max)
 	public static float Float( float max ) {
 		return Float() * max;

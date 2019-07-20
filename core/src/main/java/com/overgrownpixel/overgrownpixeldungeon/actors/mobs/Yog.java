@@ -35,6 +35,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Amok;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Burning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Charm;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HalomethaneBurning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.LockedFloor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Ooze;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Paralysis;
@@ -193,6 +194,7 @@ public class Yog extends Mob {
 		immunities.add( Charm.class );
 		immunities.add( Sleep.class );
 		immunities.add( Burning.class );
+        immunities.add( HalomethaneBurning.class );
 		immunities.add( ToxicGas.class );
 		immunities.add( ScrollOfRetribution.class );
 		immunities.add( ScrollOfPsionicBlast.class );

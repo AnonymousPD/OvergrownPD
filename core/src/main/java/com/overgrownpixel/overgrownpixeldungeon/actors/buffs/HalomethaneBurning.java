@@ -28,7 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Badges;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
-import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Fire;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.HalomethaneFire;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
@@ -95,8 +95,8 @@ public class HalomethaneBurning extends Buff implements Hero.Doom {
 			detach();
 		}
 		
-		if (Dungeon.level.flamable[target.pos] && Blob.volumeAt(target.pos, Fire.class) == 0) {
-			GameScene.add( Blob.seed( target.pos, 4, Fire.class ) );
+		if (Dungeon.level.flamable[target.pos] && Blob.volumeAt(target.pos, HalomethaneFire.class) == 0) {
+			GameScene.add( Blob.seed( target.pos, 4, HalomethaneFire.class ) );
 		}
 		
 		spend( TICK );

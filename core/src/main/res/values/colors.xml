@@ -28,6 +28,7 @@
     <integer name="venomous">0x7CE053</integer><color name="venomous">#7CE053</color>
     <integer name="vorpal">0xAA6666</integer><color name="vorpal">#AA6666</color>
     <integer name="whirlwind">0xDDFBC2</integer><color name="whirlwind">#DDFBC2</color>
+    <integer name="chronomorphing">0xE28864</integer><color name="chronomorphing">#E28864</color>
 
     <integer name="affection">0xFF4488</integer><color name="affection">#FF4488</color>
     <integer name="antimagic">0x88EEFF</integer><color name="antimagic">#88EEFF</color>

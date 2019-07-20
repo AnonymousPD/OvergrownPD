@@ -847,14 +847,128 @@ public class ItemSpriteSheet {
 		for (int i = SEEDS; i < SEEDS+16; i++)
 			assignItemRect(i, 10, 10);
 	}
+
+    private static final int POTIONS2        =                               xy(1, 32);  //16 slots
+    public static final int POTION_HONEY    = POTIONS2+0;
+    public static final int POTION_BLOODY   = POTIONS2+1;
+    public static final int POTION_ORANGE   = POTIONS2+2;
+    public static final int POTION_VIOLETT  = POTIONS2+3;
+    public static final int POTION_YELLOW   = POTIONS2+4;
+    public static final int POTION_WHITE    = POTIONS2+5;
+    public static final int POTION_BROWN    = POTIONS2+6;
+    public static final int POTION_BRIGHTBLUE= POTIONS2+7;
+    public static final int POTION_RAINBOW   = POTIONS2+8;
+    public static final int POTION_BRIGHTORANGE= POTIONS2+9;
+    public static final int POTION_DARKBLUE = POTIONS2+10;
+    public static final int POTION_BLACK    = POTIONS2+11;
+    static {
+        for (int i = POTIONS2; i < POTIONS2+16; i++)
+            assignItemRect(i, 12, 14);
+    }
+
+    private static final int EXOTIC_POTIONS2 =                               xy(1, 33);  //16 slots
+    public static final int EXOTIC_HONEY    = EXOTIC_POTIONS2+0;
+    public static final int EXOTIC_BLOODY   = EXOTIC_POTIONS2+1;
+    public static final int EXOTIC_ORANGE   = EXOTIC_POTIONS2+2;
+    public static final int EXOTIC_VIOLETT  = EXOTIC_POTIONS2+3;
+    public static final int EXOTIC_YELLOW   = EXOTIC_POTIONS2+4;
+    public static final int EXOTIC_WHITE    = EXOTIC_POTIONS2+5;
+    public static final int EXOTIC_BROWN    = EXOTIC_POTIONS2+6;
+    public static final int EXOTIC_BRIGHTBLUE= EXOTIC_POTIONS2+7;
+    public static final int EXOTIC_RAINBOW  = EXOTIC_POTIONS2+8;
+    public static final int EXOTIC_BRIGHTORANGE= EXOTIC_POTIONS2+9;
+    public static final int EXOTIC_DARKBLUE = EXOTIC_POTIONS2+10;
+    public static final int EXOTIC_BLACK    = EXOTIC_POTIONS2+11;
+    static {
+        for (int i = EXOTIC_POTIONS2; i < EXOTIC_POTIONS2+16; i++)
+            assignItemRect(i, 12, 13);
+    }
+
+    private static final int SEEDS2              =                           xy(1, 34);  //16 slots
+    public static final int SEED_SUNBLOOM       = SEEDS2+0;
+    public static final int SEED_TOMATOBUSH     = SEEDS2+1;
+    public static final int SEED_FIREFOXGLOVE   = SEEDS2+2;
+    public static final int SEED_MUSCLEMOSS     = SEEDS2+3;
+    public static final int SEED_BUTTERLION     = SEEDS2 +4;
+    public static final int SEED_SNOWHEDGE      = SEEDS2 +5;
+    public static final int SEED_STEAMWEED      = SEEDS2 +6;
+    public static final int SEED_DEWCATCHER     = SEEDS2 +7;
+    public static final int SEED_SEEDPOD        = SEEDS2 +8;
+    public static final int SEED_CHANDALIERTAIL = SEEDS2 +9;
+    public static final int SEED_NIGHTSHADEONION= SEEDS2 +10;
+    public static final int SEED_BLACKHOLEFLOWER= SEEDS2 +11;
+    static{
+        for (int i = SEEDS2; i < SEEDS2+16; i++)
+            assignItemRect(i, 10, 10);
+    }
+
+    private static final int POTIONS3        =                               xy(1, 35);  //16 slots
+    public static final int POTION_BLUE     = POTIONS3+0;
+    public static final int POTION_FLATBLUE = POTIONS3+1;
+    public static final int POTION_PARASITIC= POTIONS3+2;
+    public static final int POTION_DIARRHOEA= POTIONS3+3;
+    public static final int POTION_PUNCH    = POTIONS3+4;
+    public static final int POTION_BEIGE    = POTIONS3+5;
+    public static final int POTION_BLOODY_POOP= POTIONS3+6;
+    public static final int POTION_WATERBLUE= POTIONS3+7;
+    public static final int POTION_BRIGHT_GREEN= POTIONS3+8;
+    public static final int POTION_INDIGO_PURPLE= POTIONS3+9;
+    public static final int POTION_LIMEGREEN= POTIONS3+10;
+    public static final int POTION_ROSE     = POTIONS3+11;
+    public static final int POTION_BRIGHT_PURPLE= POTIONS3+12;
+    public static final int POTION_DARK_ROSE= POTIONS3+13;
+    static {
+        for (int i = POTIONS3; i < POTIONS3+16; i++)
+            assignItemRect(i, 12, 14);
+    }
+
+    private static final int EXOTIC_POTIONS3 =                               xy(1, 36);  //16 slots
+    public static final int EXOTIC_BLUE             = EXOTIC_POTIONS3+0;
+    public static final int EXOTIC_FLATBLUE         = EXOTIC_POTIONS3+1;
+    public static final int EXOTIC_PARASITIC        = EXOTIC_POTIONS3+2;
+    public static final int EXOTIC_DIARRHOEA        = EXOTIC_POTIONS3+3;
+    public static final int EXOTIC_PUNCH            = EXOTIC_POTIONS3+4;
+    public static final int EXOTIC_BEIGE            = EXOTIC_POTIONS3+5;
+    public static final int EXOTIC_BLOODY_POOP      = EXOTIC_POTIONS3+6;
+    public static final int EXOTIC_WATERBLUE        = EXOTIC_POTIONS3+7;
+    public static final int EXOTIC_BRIGHT_GREEN     = EXOTIC_POTIONS3+8;
+    public static final int EXOTIC_INDIGO_PURPLE    = EXOTIC_POTIONS3+9;
+    public static final int EXOTIC_LIMEGREEN        = EXOTIC_POTIONS3+10;
+    public static final int EXOTIC_ROSE             = EXOTIC_POTIONS3+11;
+    public static final int EXOTIC_BRIGHT_PURPLE    = EXOTIC_POTIONS3+12;
+    public static final int EXOTIC_DARK_ROSE        = EXOTIC_POTIONS3+13;
+    static {
+        for (int i = EXOTIC_POTIONS3; i < EXOTIC_POTIONS3+16; i++)
+            assignItemRect(i, 12, 13);
+    }
+
+    private static final int SEEDS3              =                           xy(1, 37);  //16 slots
+    public static final int SEED_FROSTCORN       = SEEDS3 +0;
+    public static final int SEED_WILLOWCANE      = SEEDS3 +1;
+    public static final int SEED_PARASITESHRUB   = SEEDS3 +2;
+    public static final int SEED_CRIMSONPEPPER   = SEEDS3 +3;
+    public static final int SEED_APRICOBUSH      = SEEDS3 +4;
+    public static final int SEED_WITHERFENNEL    = SEEDS3 +5;
+    public static final int SEED_CHILLISNAPPER   = SEEDS3 +6;
+    public static final int SEED_WATERWEED       = SEEDS3 +7;
+    public static final int SEED_GRASSLILLY      = SEEDS3 +8;
+    public static final int SEED_PEANUTPETAL     = SEEDS3 +9;
+    public static final int SEED_KIWIVETCH       = SEEDS3 +10;
+    public static final int SEED_ROSE            = SEEDS3 +11;
+    public static final int SEED_VENUSFLYTRAP    = SEEDS3 +12;
+    public static final int SEED_SUNCARNIVORE    = SEEDS3 +13;
+    static{
+        for (int i = SEEDS3; i < SEEDS3+16; i++)
+            assignItemRect(i, 10, 10);
+    }
 	
-	private static final int BREWS          =                               xy(1, 32);  //8 slots
+	private static final int BREWS          =                               xy(1, 38);  //8 slots
 	public static final int BREW_INFERNAL   = BREWS+0;
 	public static final int BREW_BLIZZARD   = BREWS+1;
 	public static final int BREW_SHOCKING   = BREWS+2;
 	public static final int BREW_CAUSTIC    = BREWS+3;
 	
-	private static final int ELIXIRS        =                               xy(9, 32);  //8 slots
+	private static final int ELIXIRS        =                               xy(9, 38);  //8 slots
 	public static final int ELIXIR_HONEY    = ELIXIRS+0;
 	public static final int ELIXIR_AQUA     = ELIXIRS+1;
 	public static final int ELIXIR_MIGHT    = ELIXIRS+2;
@@ -869,7 +983,7 @@ public class ItemSpriteSheet {
 	
 	                                                                                    //16 free slots
 
-    private static final int SPELLS         =                               xy(1, 35);  //16 slots
+    private static final int SPELLS         =                               xy(1, 41);  //16 slots
     public static final int PHASE_SHIFT     = SPELLS+0;
     public static final int AQUA_BLAST      = SPELLS+1;
     public static final int MAGIC_INFUSE    = SPELLS+2;
@@ -905,7 +1019,7 @@ public class ItemSpriteSheet {
         assignItemRect(SEASONCHANGE,    11, 11);
     }
 
-    private static final int SPELLS_ROW2            =                               xy(1, 36);  //16 slots
+    private static final int SPELLS_ROW2            =                               xy(1, 42);  //16 slots
     public static final int PLANT_SUMMON            = SPELLS_ROW2+0;
     public static final int NATURES_LULLABY         = SPELLS_ROW2+1;
     public static final int SPONTANEOUS_COMBUSTION  = SPELLS_ROW2+2;
@@ -919,7 +1033,7 @@ public class ItemSpriteSheet {
         assignItemRect(WILD_ENEGRY,               8, 16);
     }
 	
-	private static final int FOOD       =                                   xy(1, 37);  //16 slots
+	private static final int FOOD       =                                   xy(1, 43);  //16 slots
 	public static final int MEAT        = FOOD+0;
 	public static final int STEAK       = FOOD+1;
 	public static final int STEWED      = FOOD+2;
@@ -947,7 +1061,7 @@ public class ItemSpriteSheet {
 		assignItemRect(BLAND_CHUNKS,14, 6);
 	}
 
-	private static final int QUEST  =                                       xy(1, 38);  //32 slots
+	private static final int QUEST  =                                       xy(1, 44);  //32 slots
 	public static final int SKULL   = QUEST+0;
 	public static final int DUST    = QUEST+1;
 	public static final int CANDLE  = QUEST+2;
@@ -969,7 +1083,7 @@ public class ItemSpriteSheet {
 		assignItemRect(SHARD,    8, 10);
 	}
 
-	private static final int BAGS       =                                   xy(1, 40);  //16 slots
+	private static final int BAGS       =                                   xy(1, 46);  //16 slots
 	public static final int VIAL        = BAGS+0;
 	public static final int POUCH       = BAGS+1;
 	public static final int HOLDER      = BAGS+2;

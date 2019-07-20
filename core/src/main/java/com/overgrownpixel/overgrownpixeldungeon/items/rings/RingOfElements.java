@@ -32,6 +32,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Charm;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Chill;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Corrosion;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Frost;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HalomethaneBurning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Ooze;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Paralysis;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Poison;
@@ -65,6 +66,7 @@ public class RingOfElements extends Ring {
 	public static final HashSet<Class> RESISTS = new HashSet<>();
 	static {
 		RESISTS.add( Burning.class );
+        RESISTS.add( HalomethaneBurning.class );
 		RESISTS.add( Charm.class );
 		RESISTS.add( Chill.class );
 		RESISTS.add( Frost.class );

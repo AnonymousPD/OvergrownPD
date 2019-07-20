@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.ToxicGas;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Burning;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HalomethaneBurning;
 import com.overgrownpixel.overgrownpixeldungeon.items.Generator;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.RotLasherSprite;
 import com.watabou.utils.Random;
@@ -59,7 +60,7 @@ public class Lasher extends Mob {
 
 	@Override
 	public void damage(int dmg, Object src) {
-		if (src instanceof Burning) {
+		if (src instanceof Burning || src instanceof HalomethaneBurning) {
 			destroy();
 			sprite.die();
 		} else {

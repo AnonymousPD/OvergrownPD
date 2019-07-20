@@ -45,6 +45,7 @@ public class Chill extends FlavourBuff {
 
 		if (super.attachTo(target)){
 			Buff.detach( target, Burning.class );
+            Buff.detach( target, HalomethaneBurning.class );
 			return true;
 		} else {
 			return false;

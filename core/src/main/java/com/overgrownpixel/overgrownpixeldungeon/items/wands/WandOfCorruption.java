@@ -44,6 +44,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Doom;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Drowsy;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FlavourBuff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Frost;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HalomethaneBurning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MagicalSleep;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Ooze;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Paralysis;
@@ -102,6 +103,7 @@ public class WandOfCorruption extends Wand {
 		MINOR_DEBUFFS.put(Drowsy.class,         0f);
 		MINOR_DEBUFFS.put(Bleeding.class,       0f);
 		MINOR_DEBUFFS.put(Burning.class,        0f);
+        MINOR_DEBUFFS.put(HalomethaneBurning.class,0f);
 		MINOR_DEBUFFS.put(Poison.class,         0f);
 	}
 	

@@ -119,6 +119,27 @@ public class TimekeepersHourglass extends Artifact {
 		}
 	}
 
+    public void getTimeStopEffectFreeze(int charge){
+        this.charge = charge;
+        GLog.i( Messages.get(TimekeepersHourglass.class, "onfreeze") );
+        GameScene.flash(Game.instance.getResources().getInteger(R.integer.timekeepershourglassflash2));
+        Sample.INSTANCE.play(Assets.SND_TELEPORT);
+
+        activeBuff = new timeFreeze();
+        activeBuff.attachTo(Dungeon.hero);
+        ((timeFreeze)activeBuff).processTime(0f);
+    }
+
+    public void getTimeStopEffectStasis(int charge){
+        this.charge = charge;
+        GLog.i( Messages.get(TimekeepersHourglass.class, "onstasis") );
+        GameScene.flash(Game.instance.getResources().getInteger(R.integer.timekeepershourglassflash1));
+        Sample.INSTANCE.play(Assets.SND_TELEPORT);
+
+        activeBuff = new timeStasis();
+        activeBuff.attachTo(Dungeon.hero);
+    }
+
 	@Override
 	public void activate(Char ch) {
 		super.activate(ch);

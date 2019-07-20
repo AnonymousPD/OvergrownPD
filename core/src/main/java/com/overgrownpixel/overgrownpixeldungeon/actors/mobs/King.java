@@ -34,6 +34,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.ToxicGas;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Blindness;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Burning;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HalomethaneBurning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.LockedFloor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Paralysis;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Terror;
@@ -238,6 +239,7 @@ public class King extends Mob {
 		resistances.add( WandOfDisintegration.class );
 		resistances.add( ToxicGas.class );
 		resistances.add( Burning.class );
+        resistances.add( HalomethaneBurning.class );
 	}
 	
 	{

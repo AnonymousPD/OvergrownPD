@@ -30,6 +30,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.ToxicGas;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Amok;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Burning;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HalomethaneBurning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Paralysis;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Sleep;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Terror;
@@ -58,7 +59,7 @@ public class RotHeart extends Mob {
 	@Override
 	public void damage(int dmg, Object src) {
 		//TODO: when effect properties are done, change this to FIRE
-		if (src instanceof Burning) {
+		if (src instanceof Burning || src instanceof HalomethaneBurning) {
 			destroy();
 			sprite.die();
 		} else {

@@ -46,6 +46,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Blazin
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Blocking;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Blooming;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Chilling;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Chronomorphing;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Corrupting;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Dazzling;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Disintegrating;
@@ -368,7 +369,7 @@ abstract public class Weapon extends KindOfWeapon {
 		private static final Class<?>[] rare = new Class<?>[]{
 				Corrupting.class, Grim.class, Vampiric.class,
                 Whirlwind.class, Vorpal.class, Precise.class,
-                Disintegrating.class, Teleporting.class};
+                Disintegrating.class, Teleporting.class, Chronomorphing.class};
 		
 		private static final float[] typeChances = new float[]{
 				50, //12.5% each
