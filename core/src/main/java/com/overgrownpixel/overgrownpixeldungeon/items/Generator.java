@@ -109,10 +109,12 @@ import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfDisintegration
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfFireblast;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfFrost;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfLightning;
+import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfLivingEarth;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfMagicMissile;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfPrismaticLight;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfRegrowth;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfTransfusion;
+import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfWarding;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MeleeWeapon;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.BattleAxe;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.Greataxe;
@@ -471,8 +473,7 @@ public class Generator {
 					StoneOfShock.class
 			};
 			STONE.probs = new float[]{ 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
-			
-			//TODO: add last ones when implemented
+
 			WAND.classes = new Class<?>[]{
 					WandOfMagicMissile.class,
 					WandOfLightning.class,
@@ -480,14 +481,14 @@ public class Generator {
 					WandOfFireblast.class,
 					WandOfCorrosion.class,
 					WandOfBlastWave.class,
-					//WandOfLivingEarth.class,
+					WandOfLivingEarth.class,
 					WandOfFrost.class,
 					WandOfPrismaticLight.class,
-					//WandOfWarding.class,
+					WandOfWarding.class,
 					WandOfTransfusion.class,
 					WandOfCorruption.class,
 					WandOfRegrowth.class };
-			WAND.probs = new float[]{ 5, 4, 4, 4, 4, 3, /*3,*/ 3, 3, /*3,*/ 3, 3, 3 };
+			WAND.probs = new float[]{ 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3 };
 			
 			//see generator.randomWeapon
 			WEAPON.classes = new Class<?>[]{};

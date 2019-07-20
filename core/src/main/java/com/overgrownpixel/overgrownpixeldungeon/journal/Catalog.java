@@ -88,10 +88,12 @@ import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfDisintegration
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfFireblast;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfFrost;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfLightning;
+import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfLivingEarth;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfMagicMissile;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfPrismaticLight;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfRegrowth;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfTransfusion;
+import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfWarding;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.BattleAxe;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.Greataxe;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.HandAxe;
@@ -342,10 +344,10 @@ public enum Catalog {
 		WANDS.seen.put( WandOfFireblast.class,              false);
 		WANDS.seen.put( WandOfCorrosion.class,              false);
 		WANDS.seen.put( WandOfBlastWave.class,              false);
-		//WANDS.seen.put( WandOfLivingEarth.class,          false);
+		WANDS.seen.put( WandOfLivingEarth.class,            false);
 		WANDS.seen.put( WandOfFrost.class,                  false);
 		WANDS.seen.put( WandOfPrismaticLight.class,         false);
-		//WANDS.seen.put( WandOfWarding.class,              false);
+		WANDS.seen.put( WandOfWarding.class,                false);
 		WANDS.seen.put( WandOfTransfusion.class,            false);
 		WANDS.seen.put( WandOfCorruption.class,             false);
 		WANDS.seen.put( WandOfRegrowth.class,               false);

@@ -64,6 +64,8 @@ public class MagicMissile extends Emitter {
 	public static final int SHADOW          = 7;
 	public static final int RAINBOW         = 8;
     public static final int WIND            = 9;
+    public static final int EARTH           = 10;
+    public static final int WARD            = 11;
 
 	public static final int FIRE_CONE       = 100;
 	public static final int FOLIAGE_CONE    = 101;
@@ -151,6 +153,14 @@ public class MagicMissile extends Emitter {
 				size( 10 );
 				pour( LeafParticle.GENERAL, 0.03f );
 				break;
+            case EARTH:
+                size( 4 );
+                pour( EarthParticle.FACTORY, 0.01f );
+                break;
+            case WARD:
+                size( 4 );
+                pour( WardParticle.FACTORY, 0.01f );
+                break;
 		}
 	}
 	
@@ -244,38 +254,129 @@ public class MagicMissile extends Emitter {
 			size( 4 - (am = left / lifespan) * 3 );
 		}
 	}
-	
-	public static class EarthParticle extends PixelParticle.Shrinking {
-		
-		public static final Emitter.Factory FACTORY = new Factory() {
-			@Override
-			public void emit( Emitter emitter, int index, float x, float y ) {
-				((EarthParticle)emitter.recycle( EarthParticle.class )).reset( x, y );
-			}
-		};
-		
-		public EarthParticle() {
-			super();
-			
-			lifespan = 0.5f;
-			
-			color( ColorMath.random( Game.instance.getResources().getInteger(R.integer.magicmissile2), Game.instance.getResources().getInteger(R.integer.magicmissile3) ) );
-			
-			acc.set( 0, +40 );
-		}
-		
-		public void reset( float x, float y ) {
-			revive();
-			
-			this.x = x;
-			this.y = y;
-			
-			left = lifespan;
-			size = 4;
-			
-			speed.set( Random.Float( -10, +10 ), Random.Float( -10, +10 ) );
-		}
-	}
+
+    public static class WardParticle extends PixelParticle.Shrinking {
+
+        public static final Emitter.Factory FACTORY = new Factory() {
+            @Override
+            public void emit( Emitter emitter, int index, float x, float y ) {
+                ((WardParticle)emitter.recycle( WardParticle.class )).reset( x, y );
+            }
+            @Override
+            public boolean lightMode() {
+                return true;
+            }
+        };
+
+        public static final Emitter.Factory UP = new Factory() {
+            @Override
+            public void emit( Emitter emitter, int index, float x, float y ) {
+                ((WardParticle)emitter.recycle( WardParticle.class )).resetUp( x, y );
+            }
+            @Override
+            public boolean lightMode() {
+                return true;
+            }
+        };
+
+        public WardParticle() {
+            super();
+
+            lifespan = 0.6f;
+
+            color( Game.instance.getResources().getInteger(R.integer.magicmissile8) );
+        }
+
+        public void reset( float x, float y ) {
+            revive();
+
+            this.x = x;
+            this.y = y;
+
+            left = lifespan;
+            size = 8;
+        }
+
+        public void resetUp( float x, float y){
+            reset(x, y);
+
+            speed.set( Random.Float( -8, +8 ), Random.Float( -32, -48 ) );
+        }
+
+        @Override
+        public void update() {
+            super.update();
+
+            am = 1 - left / lifespan;
+        }
+    }
+
+    public static class EarthParticle extends PixelParticle.Shrinking {
+
+        public static final Emitter.Factory FACTORY = new Factory() {
+            @Override
+            public void emit( Emitter emitter, int index, float x, float y ) {
+                ((EarthParticle)emitter.recycle( EarthParticle.class )).reset( x, y );
+            }
+        };
+
+        public static final Emitter.Factory BURST = new Factory() {
+            @Override
+            public void emit( Emitter emitter, int index, float x, float y ) {
+                ((EarthParticle)emitter.recycle( EarthParticle.class )).resetBurst( x, y );
+            }
+        };
+
+        public static final Emitter.Factory ATTRACT = new Factory() {
+            @Override
+            public void emit( Emitter emitter, int index, float x, float y ) {
+                ((EarthParticle)emitter.recycle( EarthParticle.class )).resetAttract( x, y );
+            }
+        };
+
+        public EarthParticle() {
+            super();
+
+            lifespan = 0.5f;
+
+            acc.set( 0, +40 );
+        }
+
+        public void reset( float x, float y ) {
+            revive();
+
+            this.x = x;
+            this.y = y;
+
+            left = lifespan;
+            size = 4;
+
+            if (Random.Int(10) == 0){
+                color(ColorMath.random(Game.instance.getResources().getInteger(R.integer.magicmissile9), Game.instance.getResources().getInteger(R.integer.magicmissile10)));
+            } else {
+                color(ColorMath.random(Game.instance.getResources().getInteger(R.integer.magicmissile11), Game.instance.getResources().getInteger(R.integer.magicmissile12)));
+            }
+
+            speed.set( Random.Float( -10, +10 ), Random.Float( -10, +10 ) );
+        }
+
+        public void resetBurst( float x, float y ){
+            reset(x, y);
+
+            speed.polar( Random.Float( PointF.PI2 ), Random.Float( 40, 60 ) );
+        }
+
+        public void resetAttract( float x, float y ){
+            reset(x, y);
+
+            speed.polar( Random.Float( PointF.PI2 ), Random.Float( 24, 32 ) );
+
+            this.x = x - speed.x * lifespan;
+            this.y = y - speed.y * lifespan;
+
+            acc.set( 0, 0 );
+        }
+    }
 	
 	public static class WhiteParticle extends PixelParticle {
 		

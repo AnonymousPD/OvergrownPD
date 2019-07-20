@@ -185,6 +185,11 @@
     <integer name="wandofregrowth2">0x88CC44</integer><color name="wandofregrowth2">#88CC44</color>
     <integer name="wandoftransfusion">0xCC0000</integer><color name="wandoftransfusion">#CC0000</color>
 
+    <integer name="wandoflivingearth1">0xFFF568</integer><color name="wandoflivingearth1">#FFF568</color>
+    <integer name="wandoflivingearth2">0x80791A</integer><color name="wandoflivingearth2">#80791A</color>
+    <integer name="wandoflivingearth3">0x805500</integer><color name="wandoflivingearth3">#805500</color>
+    <integer name="wandoflivingearth4">0x332500</integer><color name="wandoflivingearth4">#332500</color>
+
     <integer name="cursedwand">0xFFFF66</integer><color name="cursedwand">#FFFF66</color>
 
     <integer name="elixirofdragonsbreathsplash">0xFFFF002A</integer><color name="elixirofdragonsbreathsplash">#FFFF002A</color>
@@ -199,6 +204,12 @@
     <integer name="magicmissile4">0x664422</integer><color name="magicmissile4">#664422</color>
     <integer name="magicmissile5">0xFFFFFF</integer><color name="magicmissile5">#FFFFFF</color>
     <integer name="magicmissile6">0x2244FF</integer><color name="magicmissile6">#2244FF</color>
+    <integer name="magicmissile7">0x8822FF</integer><color name="magicmissile7">#8822FF</color>
+    <integer name="magicmissile8">0x8822FF</integer><color name="magicmissile8">#8822FF</color>
+    <integer name="magicmissile9">0xFFF568</integer><color name="magicmissile9">#FFF568</color>
+    <integer name="magicmissile10">0x80791A</integer><color name="magicmissile10">#80791A</color>
+    <integer name="magicmissile11">0x805500</integer><color name="magicmissile11">#805500</color>
+    <integer name="magicmissile12">0x332500</integer><color name="magicmissile12">#332500</color>
 
     <integer name="berserkflash">0xFF0000</integer><color name="berserkflash">#FF0000</color>
     <integer name="combotime">0xb3b3b3</integer><color name="combotime">#b3b3b3</color>
@@ -234,6 +245,7 @@
     <integer name="swarmblood">0xFF8BA077</integer><color name="swarmblood">#FF8BA077</color>
     <integer name="undeadblood">0xFFcccccc</integer><color name="undeadblood">#FFcccccc</color>
     <integer name="wraithblood">0x88000000</integer><color name="wraithblood">#88000000</color>
+    <integer name="earthguard">0xFFcdcdb7</integer><color name="earthguard">#FFcdcdb7</color>
 
     <integer name="alchemygradient1">0x66000000</integer><color name="alchemygradient1">#66000000</color>
     <integer name="alchemygradient2">0x88000000</integer><color name="alchemygradient2">#88000000</color>

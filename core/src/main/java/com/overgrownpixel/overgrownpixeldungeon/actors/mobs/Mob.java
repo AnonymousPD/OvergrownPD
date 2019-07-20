@@ -109,6 +109,8 @@ public abstract class Mob extends Char {
 	private static final String STATE	= "state";
 	private static final String SEEN	= "seen";
 	private static final String TARGET	= "target";
+
+    protected boolean intelligentAlly = false;
 	
 	@Override
 	public void storeInBundle( Bundle bundle ) {
@@ -193,115 +195,117 @@ public abstract class Mob extends Char {
 	
 	protected Char chooseEnemy() {
 
-		Terror terror = buff( Terror.class );
-		if (terror != null) {
-			Char source = (Char)Actor.findById( terror.object );
-			if (source != null) {
-				return source;
-			}
-		}
-		
-		//if we are an enemy, and have no target or current target isn't affected by aggression
-		//then auto-prioritize a target that is affected by aggression, even another enemy
-		if (alignment == Alignment.ENEMY
-				&& (enemy == null || enemy.buff(StoneOfAggression.Aggression.class) == null)) {
-			for (Char ch : Actor.chars()) {
-				if (ch != this && fieldOfView[ch.pos] &&
-						ch.buff(StoneOfAggression.Aggression.class) != null) {
-					return ch;
-				}
-			}
-		}
+        Terror terror = buff( Terror.class );
+        if (terror != null) {
+            Char source = (Char)Actor.findById( terror.object );
+            if (source != null) {
+                return source;
+            }
+        }
 
-		//find a new enemy if..
-		boolean newEnemy = false;
-		//we have no enemy, or the current one is dead
-		if ( enemy == null || !enemy.isAlive() || state == WANDERING)
-			newEnemy = true;
-		//We are an ally, and current enemy is another ally.
-		else if (alignment == Alignment.ALLY && enemy.alignment == Alignment.ALLY)
-			newEnemy = true;
-		//We are amoked and current enemy is the hero
-		else if (buff( Amok.class ) != null && enemy == Dungeon.hero)
-			newEnemy = true;
-		//We are charmed and current enemy is what charmed us
-		else if (buff(Charm.class) != null && buff(Charm.class).object == enemy.id())
-			newEnemy = true;
+        //if we are an enemy, and have no target or current target isn't affected by aggression
+        //then auto-prioritize a target that is affected by aggression, even another enemy
+        if (alignment == Alignment.ENEMY
+                && (enemy == null || enemy.buff(StoneOfAggression.Aggression.class) == null)) {
+            for (Char ch : Actor.chars()) {
+                if (ch != this && fieldOfView[ch.pos] &&
+                        ch.buff(StoneOfAggression.Aggression.class) != null) {
+                    return ch;
+                }
+            }
+        }
 
-		if ( newEnemy ) {
+        //find a new enemy if..
+        boolean newEnemy = false;
+        //we have no enemy, or the current one is dead
+        if ( enemy == null || !enemy.isAlive() || state == WANDERING)
+            newEnemy = true;
+            //We are an ally, and current enemy is another ally.
+        else if (alignment == Alignment.ALLY && enemy.alignment == Alignment.ALLY)
+            newEnemy = true;
+            //We are amoked and current enemy is the hero
+        else if (buff( Amok.class ) != null && enemy == Dungeon.hero)
+            newEnemy = true;
+            //We are charmed and current enemy is what charmed us
+        else if (buff(Charm.class) != null && buff(Charm.class).object == enemy.id())
+            newEnemy = true;
 
-			HashSet<Char> enemies = new HashSet<>();
+        if ( newEnemy ) {
 
-			//if the mob is amoked...
-			if ( buff(Amok.class) != null) {
-				//try to find an enemy mob to attack first.
-				for (Mob mob : Dungeon.level.mobs)
-					if (mob.alignment == Alignment.ENEMY && mob != this && fieldOfView[mob.pos])
-							enemies.add(mob);
-				
-				if (enemies.isEmpty()) {
-					//try to find ally mobs to attack second.
-					for (Mob mob : Dungeon.level.mobs)
-						if (mob.alignment == Alignment.ALLY && mob != this && fieldOfView[mob.pos])
-							enemies.add(mob);
-					
-					if (enemies.isEmpty()) {
-						//try to find the hero third
-						if (fieldOfView[Dungeon.hero.pos]) {
-							enemies.add(Dungeon.hero);
-						}
-					}
-				}
-				
-			//if the mob is an ally...
-			} else if ( alignment == Alignment.ALLY ) {
-				//look for hostile mobs that are not passive to attack
-				for (Mob mob : Dungeon.level.mobs)
-					if (mob.alignment == Alignment.ENEMY
-							&& fieldOfView[mob.pos]
-							&& mob.state != mob.PASSIVE)
-						enemies.add(mob);
-				
-			//if the mob is an enemy...
-			} else if (alignment == Alignment.ENEMY) {
-				//look for ally mobs to attack
-				for (Mob mob : Dungeon.level.mobs)
-					if (mob.alignment == Alignment.ALLY && fieldOfView[mob.pos])
-						enemies.add(mob);
+            HashSet<Char> enemies = new HashSet<>();
 
-				//and look for the hero
-				if (fieldOfView[Dungeon.hero.pos]) {
-					enemies.add(Dungeon.hero);
-				}
-				
-			}
-			
-			Charm charm = buff( Charm.class );
-			if (charm != null){
-				Char source = (Char)Actor.findById( charm.object );
-				if (source != null && enemies.contains(source) && enemies.size() > 1){
-					enemies.remove(source);
-				}
-			}
-			
-			//neutral characters in particular do not choose enemies.
-			if (enemies.isEmpty()){
-				return null;
-			} else {
-				//go after the closest potential enemy, preferring the hero if two are equidistant
-				Char closest = null;
-				for (Char curr : enemies){
-					if (closest == null
-							|| Dungeon.level.distance(pos, curr.pos) < Dungeon.level.distance(pos, closest.pos)
-							|| Dungeon.level.distance(pos, curr.pos) == Dungeon.level.distance(pos, closest.pos) && curr == Dungeon.hero){
-						closest = curr;
-					}
-				}
-				return closest;
-			}
+            //if the mob is amoked...
+            if ( buff(Amok.class) != null) {
+                //try to find an enemy mob to attack first.
+                for (Mob mob : Dungeon.level.mobs)
+                    if (mob.alignment == Alignment.ENEMY && mob != this && fieldOfView[mob.pos])
+                        enemies.add(mob);
 
-		} else
-			return enemy;
+                if (enemies.isEmpty()) {
+                    //try to find ally mobs to attack second.
+                    for (Mob mob : Dungeon.level.mobs)
+                        if (mob.alignment == Alignment.ALLY && mob != this && fieldOfView[mob.pos])
+                            enemies.add(mob);
+
+                    if (enemies.isEmpty()) {
+                        //try to find the hero third
+                        if (fieldOfView[Dungeon.hero.pos]) {
+                            enemies.add(Dungeon.hero);
+                        }
+                    }
+                }
+
+                //if the mob is an ally...
+            } else if ( alignment == Alignment.ALLY ) {
+                //look for hostile mobs to attack
+                for (Mob mob : Dungeon.level.mobs)
+                    if (mob.alignment == Alignment.ENEMY && fieldOfView[mob.pos])
+                        //intelligent allies do not target mobs which are passive, wandering, or asleep
+                        if (!intelligentAlly ||
+                                (mob.state != mob.SLEEPING && mob.state != mob.PASSIVE && mob.state != mob.WANDERING)) {
+                            enemies.add(mob);
+                        }
+
+                //if the mob is an enemy...
+            } else if (alignment == Alignment.ENEMY) {
+                //look for ally mobs to attack
+                for (Mob mob : Dungeon.level.mobs)
+                    if (mob.alignment == Alignment.ALLY && fieldOfView[mob.pos])
+                        enemies.add(mob);
+
+                //and look for the hero
+                if (fieldOfView[Dungeon.hero.pos]) {
+                    enemies.add(Dungeon.hero);
+                }
+
+            }
+
+            Charm charm = buff( Charm.class );
+            if (charm != null){
+                Char source = (Char)Actor.findById( charm.object );
+                if (source != null && enemies.contains(source) && enemies.size() > 1){
+                    enemies.remove(source);
+                }
+            }
+
+            //neutral characters in particular do not choose enemies.
+            if (enemies.isEmpty()){
+                return null;
+            } else {
+                //go after the closest potential enemy, preferring the hero if two are equidistant
+                Char closest = null;
+                for (Char curr : enemies){
+                    if (closest == null
+                            || Dungeon.level.distance(pos, curr.pos) < Dungeon.level.distance(pos, closest.pos)
+                            || Dungeon.level.distance(pos, curr.pos) == Dungeon.level.distance(pos, closest.pos) && curr == Dungeon.hero){
+                        closest = curr;
+                    }
+                }
+                return closest;
+            }
+
+        } else
+            return enemy;
 	}
 
 	protected boolean moveSprite( int from, int to ) {

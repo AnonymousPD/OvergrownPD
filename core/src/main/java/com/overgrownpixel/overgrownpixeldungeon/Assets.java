@@ -101,6 +101,8 @@ public class Assets {
 	public static final String GUARD    = "mobs/guard.png";
     public static final String PLANTS	= "mobs/livingplants.png";
     public static final String FLAMEB01	= "mobs/dwarven_flameboi.png";
+    public static final String GUARDIAN	= "mobs/npcs/guardian.png";
+    public static final String WARD	    = "mobs/npcs/wards.png";
 
 	public static final String ITEMS	        = "items.png";
 	public static final String TERRAIN_FEATURES	= "tiles/terrain_features.png";
