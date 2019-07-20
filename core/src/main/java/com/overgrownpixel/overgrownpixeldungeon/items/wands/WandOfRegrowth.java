@@ -297,6 +297,11 @@ public class WandOfRegrowth extends Wand {
 		}
 
         @Override
+        public Blob immunity() {
+            return null;
+        }
+
+        @Override
 		public void activate( Char ch ) {
 
 			int nDrops = Random.NormalIntRange(3, 6);
@@ -382,7 +387,12 @@ public class WandOfRegrowth extends Wand {
 			image = 14;
 		}
 
-		@Override
+        @Override
+        public Blob immunity() {
+            return null;
+        }
+
+        @Override
 		public void activate( Char ch ) {
 
 			int nSeeds = Random.NormalIntRange(2, 4);

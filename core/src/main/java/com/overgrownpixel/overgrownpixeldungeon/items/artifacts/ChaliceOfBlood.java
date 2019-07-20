@@ -29,6 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.ShadowParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
+import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfLivingEarth;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Earthroot;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
@@ -94,6 +95,11 @@ public class ChaliceOfBlood extends Artifact {
 		if (armor != null) {
 			damage = armor.absorb(damage);
 		}
+
+        WandOfLivingEarth.RockArmor rockArmor = hero.buff(WandOfLivingEarth.RockArmor.class);
+        if (rockArmor != null) {
+            damage = rockArmor.absorb(damage);
+        }
 
 		damage -= hero.drRoll();
 

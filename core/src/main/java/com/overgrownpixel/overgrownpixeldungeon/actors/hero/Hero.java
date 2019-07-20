@@ -97,6 +97,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.rings.RingOfTenacity;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.Scroll;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfMagicMapping;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfUpgrade;
+import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfLivingEarth;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.SpiritBow;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Blocking;
@@ -1034,6 +1035,11 @@ public class Hero extends Char {
 		if (armor != null) {
 			damage = armor.absorb( damage );
 		}
+
+        WandOfLivingEarth.RockArmor rockArmor = buff(WandOfLivingEarth.RockArmor.class);
+        if (rockArmor != null) {
+            damage = rockArmor.absorb(damage);
+        }
 		
 		return damage;
 	}
