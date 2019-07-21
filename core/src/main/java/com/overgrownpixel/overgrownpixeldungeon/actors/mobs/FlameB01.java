@@ -275,14 +275,14 @@ public class FlameB01 extends Mob {
         for (int cell : visualCells){
             //this way we only get the cells at the tip, much better performance.
             ((MagicMissile)ch.sprite.parent.recycle( MagicMissile.class )).reset(
-                    MagicMissile.FIRE_CONE,
+                    MagicMissile.HFIRE_CONE,
                     ch.sprite,
                     cell,
                     null
             );
         }
         MagicMissile.boltFromChar( ch.sprite.parent,
-                MagicMissile.FIRE_CONE,
+                MagicMissile.HFIRE_CONE,
                 ch.sprite,
                 bolt.path.get(dist/2),
                 callback );

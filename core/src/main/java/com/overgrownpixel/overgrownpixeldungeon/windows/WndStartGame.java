@@ -92,9 +92,12 @@ public class WndStartGame extends Window {
 		RedButton start = new RedButton(Messages.get(this, "start")){
 			@Override
 			protected void onClick() {
+
 				if (GamesInProgress.selectedClass == null) return;
 				
 				super.onClick();
+
+                OvergrownPixelDungeon.mFirebaseAnalytics.logEvent("game_started", null);
 				
 				GamesInProgress.curSlot = slot;
 				Dungeon.hero = null;

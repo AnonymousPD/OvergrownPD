@@ -69,16 +69,16 @@ public class TerrainFeaturesTilemap extends DungeonTilemap {
 				return (trap.active ? trap.color : Trap.BLACK) + (trap.shape * 16);
 		}
 
-		if (plants.get(pos) != null){
-			return plants.get(pos).image + 7*16;
-		}
-
         if (flora.get(pos) != null){
             return flora.get(pos).image + 11*16;
         }
 
         if (shadows.get(pos) != null){
             return shadows.get(pos).image + 15*16;
+        }
+
+        if (plants.get(pos) != null){
+            return plants.get(pos).image + 7*16;
         }
 
 		int stage = (Dungeon.depth-1)/5;

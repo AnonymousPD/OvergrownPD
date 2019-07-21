@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.CorrosionParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.FlameParticle;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.HalomethaneFlameParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.LeafParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.RainbowParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.ShadowParticle;
@@ -69,6 +70,7 @@ public class MagicMissile extends Emitter {
 
 	public static final int FIRE_CONE       = 100;
 	public static final int FOLIAGE_CONE    = 101;
+    public static final int HFIRE_CONE      = 102;
 	
 	public void reset( int type, int from, int to, Callback callback ) {
 		reset( type,
@@ -149,6 +151,10 @@ public class MagicMissile extends Emitter {
 				size( 10 );
 				pour( FlameParticle.FACTORY, 0.03f );
 				break;
+            case HFIRE_CONE:
+                size( 10 );
+                pour( HalomethaneFlameParticle.FACTORY, 0.03f );
+                break;
 			case FOLIAGE_CONE:
 				size( 10 );
 				pour( LeafParticle.GENERAL, 0.03f );
