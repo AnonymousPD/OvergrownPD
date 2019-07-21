@@ -24,9 +24,9 @@
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
-import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.FriendlyWraith;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.RosePoisonParticle;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 
 public class Rose extends Plant {
@@ -35,19 +35,24 @@ public class Rose extends Plant {
 		image = 36;
 	}
 
-	@Override
-	public void activate( Char ch ) {
-        FriendlyWraith.spawnAt(ch.pos);
-	}
-
-    @Override
-    public void activate() {
-        FriendlyWraith.spawnAt(pos);
-    }
-
     @Override
     public void attackProc(Char enemy, int damage) {
 
+    }
+
+    @Override
+    public void activate(Char ch) {
+
+    }
+
+    @Override
+    public void activate() {
+
+    }
+
+    @Override
+    public Blob immunity() {
+        return null;
     }
 
     public static class Seed extends Plant.Seed{
@@ -56,7 +61,6 @@ public class Rose extends Plant {
 		    image = ItemSpriteSheet.SEED_ROSE;
 
 			plantClass = Rose.class;
-			heroDanger = HeroDanger.NEUTRAL;
 		}
 
         @Override

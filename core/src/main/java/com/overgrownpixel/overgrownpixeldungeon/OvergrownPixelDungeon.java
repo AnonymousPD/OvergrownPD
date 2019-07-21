@@ -30,6 +30,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.gloves.Gloves;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.WelcomeScene;
@@ -51,6 +52,8 @@ public class OvergrownPixelDungeon extends Game {
 	public static final int v0_7_1d = 323;
 	public static final int v0_7_2d = 340;
 	public static final int v0_7_3  = 346;
+
+    public static FirebaseAnalytics mFirebaseAnalytics;
 	
 	public OvergrownPixelDungeon() {
 		super( sceneClass == null ? WelcomeScene.class : sceneClass );
@@ -114,6 +117,9 @@ public class OvergrownPixelDungeon extends Game {
 	@Override
 	protected void onCreate( Bundle savedInstanceState ) {
 		super.onCreate(savedInstanceState);
+
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
 		updateSystemUI();
 		OGPDSettings.landscape ( OGPDSettings.landscape() );

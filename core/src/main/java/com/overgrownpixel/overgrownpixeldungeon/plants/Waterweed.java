@@ -23,18 +23,11 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
-import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
-import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
-import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Piranha;
-import com.overgrownpixel.overgrownpixeldungeon.effects.Pushing;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.WaterweedPoisonParticle;
-import com.overgrownpixel.overgrownpixeldungeon.levels.Level;
-import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
-import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
-import com.watabou.utils.PathFinder;
 
 public class Waterweed extends Plant {
 
@@ -42,61 +35,24 @@ public class Waterweed extends Plant {
 		image = 32;
 	}
 
-	@Override
-	public void activate( Char ch ) {
-
-        int piras = 1;
-        for(int i : PathFinder.NEIGHBOURS8){
-            int cell = ch.pos + i;
-            int terr = Dungeon.level.map[cell];
-            if (terr == Terrain.EMPTY || terr == Terrain.GRASS ||
-                    terr == Terrain.EMBERS || terr == Terrain.EMPTY_SP ||
-                    terr == Terrain.HIGH_GRASS || terr == Terrain.FURROWED_GRASS
-                    || terr == Terrain.EMPTY_DECO) {
-                Level.set(cell, Terrain.WATER);
-                GameScene.updateMap(cell);
-                if(piras >= 0){
-                    piras--;
-                    Piranha piranha = new Piranha();
-                    piranha.pos = cell;
-
-                    GameScene.add( piranha );
-                    Actor.addDelayed( new Pushing( piranha, pos, piranha.pos ), -1 );
-                    piranha.aggro(ch);
-                }
-            } else if (terr == Terrain.SECRET_TRAP || terr == Terrain.TRAP || terr == Terrain.INACTIVE_TRAP) {
-                Level.set(cell, Terrain.WATER);
-                Dungeon.level.traps.remove(cell);
-                GameScene.updateMap(cell);
-                if(piras >= 0){
-                    piras--;
-                    Piranha piranha = new Piranha();
-                    piranha.pos = cell;
-
-                    GameScene.add( piranha );
-                    Actor.addDelayed( new Pushing( piranha, pos, piranha.pos ), -1 );
-                    piranha.aggro(ch);
-                }
-            }
-
-        }
-	}
-
     @Override
-    public void activate() {
-        Level.set(pos, Terrain.WATER);
-        GameScene.updateMap(pos);
-        Piranha piranha = new Piranha();
-        piranha.pos = pos;
+    public void attackProc(Char enemy, int damage) {
 
-        GameScene.add( piranha );
-        Actor.addDelayed( new Pushing( piranha, pos, piranha.pos ), -1 );
     }
 
     @Override
-    public void attackProc(Char enemy, int damage) {
-        Level.set(enemy.pos, Terrain.WATER);
-        GameScene.updateMap(enemy.pos);
+    public void activate(Char ch) {
+
+    }
+
+    @Override
+    public void activate() {
+
+    }
+
+    @Override
+    public Blob immunity() {
+        return null;
     }
 
     public static class Seed extends Plant.Seed{
@@ -105,7 +61,7 @@ public class Waterweed extends Plant {
 			image = ItemSpriteSheet.SEED_WATERWEED;
 
 			plantClass = Waterweed.class;
-			heroDanger = HeroDanger.NEUTRAL;
+			;
 		}
 
         @Override

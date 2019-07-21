@@ -21,57 +21,20 @@
  * along with this program. If not, see <http://www.gnu.org/licenses>
  */
 
-package com.overgrownpixel.overgrownpixeldungeon.plants;
+package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
-import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
-import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.SunbloomPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
-import com.watabou.noosa.particles.Emitter;
 
-public class Sunbloom extends Plant {
-
+public class WaterDart extends TippedDart {
+	
 	{
-		image = 20;
+		image = ItemSpriteSheet.DART_WATER;
 	}
-
-    @Override
-    public void attackProc(Char enemy, int damage) {
-
-    }
-
-    @Override
-    public void activate(Char ch) {
-
-    }
-
-    @Override
-    public void activate() {
-
-    }
-
-    @Override
-    public Blob immunity() {
-        return null;
-    }
-
-    public static class Seed extends Plant.Seed{
-
-		{
-			image = ItemSpriteSheet.SEED_SUNBLOOM;
-
-			plantClass = Sunbloom.class;
-
-		}
-
-        @Override
-        public Emitter.Factory getPixelParticle() {
-            return SunbloomPoisonParticle.FACTORY;
-        }
+	
+	@Override
+	public int proc(Char attacker, Char defender, int damage) {
 		
-		@Override
-		public int price() {
-			return 30 * quantity;
-		}
+		return super.proc(attacker, defender, damage);
 	}
 }

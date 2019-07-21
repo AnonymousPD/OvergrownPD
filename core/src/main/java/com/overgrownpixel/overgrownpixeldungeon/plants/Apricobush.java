@@ -25,9 +25,16 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Healing;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.ApricobushPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
+import com.watabou.utils.Random;
 
 public class Apricobush extends Plant {
 
@@ -35,19 +42,39 @@ public class Apricobush extends Plant {
 		image = 15;
 	}
 
+    protected void satisfy( Hero hero ){
+        (hero.buff( Hunger.class )).satisfy( 100f );
+    }
+
+    protected void starve(Hero hero){
+        (hero.buff( Hunger.class )).reduceHunger(50f);
+    }
+
     @Override
     public void attackProc(Char enemy, int damage) {
-
+	    if(Random.Float() < 0.3f){
+            if(enemy instanceof Hero){
+                starve((Hero) enemy);
+            }
+        }
     }
 
     @Override
     public void activate(Char ch) {
-
+        if (ch != null) {
+            if (ch instanceof Hero && ((Hero) ch).subClass == HeroSubClass.WARDEN){
+                Buff.affect( ch, Healing.class ).setHeal(Math.round(ch.HT/2), 0.25f, 0);
+                satisfy((Hero) ch);
+            } else {
+                Buff.affect( ch, Healing.class ).setHeal(Math.round(ch.HT/4), 0.25f, 0);
+                satisfy((Hero) ch);
+            }
+        }
     }
 
     @Override
     public void activate() {
-
+        spawnLasher(pos);
     }
 
     @Override
@@ -64,11 +91,28 @@ public class Apricobush extends Plant {
 		}
 
         @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+		    if(attacker instanceof Hero){
+                statisfy((Hero) attacker);
+            }
+            Buff.affect( attacker, Healing.class ).setHeal(Math.round(damage/10), 0.25f, 0);
+        }
+
+        private void statisfy(Hero hero) {
+            (hero.buff( Hunger.class )).satisfy( 20f );
+        }
+
+        @Override
         public Emitter.Factory getPixelParticle() {
             return ApricobushPoisonParticle.FACTORY;
         }
-		
-		@Override
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new ApricobushPoisonParticle();
+        }
+
+        @Override
 		public int price() {
 			return 30 * quantity;
 		}

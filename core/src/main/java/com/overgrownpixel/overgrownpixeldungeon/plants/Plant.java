@@ -251,6 +251,8 @@ public abstract class Plant implements Bundlable {
                 return new WandOfRegrowth.Dewcatcher.Seed();
             case 14:
                 return new WandOfRegrowth.Seedpod.Seed();
+            case 15:
+                return new Apricobush.Seed();
             default:
                 return null;
         }

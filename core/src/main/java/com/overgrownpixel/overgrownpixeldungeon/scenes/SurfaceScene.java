@@ -24,10 +24,16 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.scenes;
 
+import android.os.Bundle;
+
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Badges;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
 import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.overgrownpixel.overgrownpixeldungeon.Rankings;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroClass;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.RatSprite;
@@ -173,7 +179,20 @@ public class SurfaceScene extends PixelScene {
 
 		RedButton gameOver = new RedButton( Messages.get(this, "exit") ) {
 			protected void onClick() {
-				Game.switchScene( RankingsScene.class );
+                String HERO = "hero";
+                Bundle bundle = new Bundle();
+                com.watabou.utils.Bundle b = Rankings.INSTANCE.records.get(Rankings.INSTANCE.lastRecord).gameData;
+                Dungeon.hero = (Hero) b.get(HERO);
+                bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, Dungeon.hero.belongings.weapon.name());
+                bundle.putInt(FirebaseAnalytics.Param.ITEM_ID, Dungeon.hero.belongings.weapon.level());
+                bundle.putInt(FirebaseAnalytics.Param.ITEM_ID, Rankings.INSTANCE.records.get(Rankings.INSTANCE.lastRecord).armorTier);
+                bundle.putInt(FirebaseAnalytics.Param.ITEM_ID, Dungeon.hero.belongings.armor.level());
+                bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, Dungeon.hero.belongings.misc1.name());
+                bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, Dungeon.hero.belongings.misc2.name());
+                bundle.putString(FirebaseAnalytics.Param.CHARACTER, Rankings.INSTANCE.records.get(Rankings.INSTANCE.lastRecord).heroClass.title());
+			    OvergrownPixelDungeon.mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.CAMPAIGN_DETAILS, bundle);
+
+			    Game.switchScene( RankingsScene.class );
 			}
 		};
 		gameOver.setSize( SKY_WIDTH - FRAME_MARGIN_X * 2, BUTTON_HEIGHT );

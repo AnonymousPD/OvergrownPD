@@ -21,57 +21,23 @@
  * along with this program. If not, see <http://www.gnu.org/licenses>
  */
 
-package com.overgrownpixel.overgrownpixeldungeon.plants;
+package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
-import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
-import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.SunbloomPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Healing;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
-import com.watabou.noosa.particles.Emitter;
 
-public class Sunbloom extends Plant {
-
+public class HealthDart extends TippedDart {
+	
 	{
-		image = 20;
+		image = ItemSpriteSheet.DART_HEALTH;
 	}
-
-    @Override
-    public void attackProc(Char enemy, int damage) {
-
-    }
-
-    @Override
-    public void activate(Char ch) {
-
-    }
-
-    @Override
-    public void activate() {
-
-    }
-
-    @Override
-    public Blob immunity() {
-        return null;
-    }
-
-    public static class Seed extends Plant.Seed{
-
-		{
-			image = ItemSpriteSheet.SEED_SUNBLOOM;
-
-			plantClass = Sunbloom.class;
-
-		}
-
-        @Override
-        public Emitter.Factory getPixelParticle() {
-            return SunbloomPoisonParticle.FACTORY;
-        }
-		
-		@Override
-		public int price() {
-			return 30 * quantity;
-		}
+	
+	@Override
+	public int proc(Char attacker, Char defender, int damage) {
+        Buff.affect( defender, Healing.class ).setHeal(defender.HT*2, 0.50f, 1);
+		return super.proc(attacker, defender, damage);
 	}
+	
 }

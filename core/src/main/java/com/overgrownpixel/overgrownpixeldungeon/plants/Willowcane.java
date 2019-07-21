@@ -24,11 +24,9 @@
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
-import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
-import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Slow;
-import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.WillowcanePoisonParticle;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 
 public class Willowcane extends Plant {
@@ -37,31 +35,24 @@ public class Willowcane extends Plant {
 		image = 27;
 	}
 
-	@Override
-	public void activate( Char ch ) {
-        if(ch instanceof Mob){
-            if(!ch.properties().contains(Char.Property.INORGANIC)){
-                Buff.prolong( ch, Slow.class, Slow.DURATION );
-            }
-        } else {
-            Buff.prolong( ch, Slow.class, Slow.DURATION );
-        }
-	}
-
     @Override
-    public void activate() {
-        Plant.spawnLasher(pos);
+    public void attackProc(Char enemy, int damage) {
+
     }
 
     @Override
-    public void attackProc(Char enemy, int damage) {
-        if(enemy instanceof Mob){
-            if(!enemy.properties().contains(Char.Property.INORGANIC)){
-                Buff.prolong( enemy, Slow.class, Slow.DURATION );
-            }
-        } else {
-            Buff.prolong( enemy, Slow.class, Slow.DURATION );
-        }
+    public void activate(Char ch) {
+
+    }
+
+    @Override
+    public void activate() {
+
+    }
+
+    @Override
+    public Blob immunity() {
+        return null;
     }
 
     public static class Seed extends Plant.Seed{
@@ -70,7 +61,7 @@ public class Willowcane extends Plant {
 			image = ItemSpriteSheet.SEED_WILLOWCANE;
 
 			plantClass = Willowcane.class;
-			heroDanger = HeroDanger.NEUTRAL;
+			;
 		}
 
         @Override

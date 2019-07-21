@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 28
@@ -6,7 +7,7 @@ android {
     defaultConfig {
         resConfigs "en_US", "de"
         //noinspection MinSdkTooLow
-        minSdkVersion 8
+        minSdkVersion 14
         targetSdkVersion 28
     }
 
@@ -30,6 +31,7 @@ android {
 
 dependencies {
     implementation project(':SPD-classes')
+    implementation 'com.google.firebase:firebase-core:16.0.4'
     repositories {
         google()
         jcenter()

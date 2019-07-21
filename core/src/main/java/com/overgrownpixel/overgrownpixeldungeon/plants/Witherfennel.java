@@ -24,10 +24,9 @@
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
-import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
-import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Wither;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.WitherfennelPoisonParticle;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 
 public class Witherfennel extends Plant {
@@ -36,10 +35,15 @@ public class Witherfennel extends Plant {
 		image = 30;
 	}
 
-	@Override
-	public void activate( Char ch ) {
-        Buff.prolong(ch, Wither.class, Wither.DURATION);
-	}
+    @Override
+    public void attackProc(Char enemy, int damage) {
+
+    }
+
+    @Override
+    public void activate(Char ch) {
+
+    }
 
     @Override
     public void activate() {
@@ -47,8 +51,8 @@ public class Witherfennel extends Plant {
     }
 
     @Override
-    public void attackProc(Char enemy, int damage) {
-        Buff.prolong(enemy, Wither.class, Wither.DURATION);
+    public Blob immunity() {
+        return null;
     }
 
     public static class Seed extends Plant.Seed{
@@ -57,7 +61,7 @@ public class Witherfennel extends Plant {
 			image = ItemSpriteSheet.SEED_WITHERFENNEL;
 
 			plantClass = Witherfennel.class;
-			heroDanger = HeroDanger.NEUTRAL;
+			;
 		}
 
         @Override

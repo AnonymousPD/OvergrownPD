@@ -25,12 +25,8 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
-import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.StormCloud;
-import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
-import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Paralysis;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.SteamweedPoisonParticle;
-import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 
 public class Steamweed extends Plant {
@@ -39,25 +35,24 @@ public class Steamweed extends Plant {
 		image = 21;
 	}
 
-	@Override
-	public void activate( Char ch ) {
+    @Override
+    public void attackProc(Char enemy, int damage) {
 
-        GameScene.add( Blob.seed( ch.pos, 1000, StormCloud.class ) );
-	}
+    }
+
+    @Override
+    public void activate(Char ch) {
+
+    }
 
     @Override
     public void activate() {
-        GameScene.add( Blob.seed( pos, 1000, StormCloud.class ) );
+
     }
 
     @Override
-    public void attackProc(Char enemy, int damage) {
-        GameScene.add( Blob.seed( enemy.pos, 100, StormCloud.class ) );
-    }
-
-    @Override
-    public void activatePosionDangerous(Char attacker, Char defender) {
-        Buff.prolong(defender, Paralysis.class, Paralysis.DURATION);
+    public Blob immunity() {
+        return null;
     }
 
     public static class Seed extends Plant.Seed{
@@ -66,7 +61,7 @@ public class Steamweed extends Plant {
 			image = ItemSpriteSheet.SEED_STEAMWEED;
 
 			plantClass = Steamweed.class;
-			heroDanger = HeroDanger.DANGEROUS;
+
 		}
 
         @Override
