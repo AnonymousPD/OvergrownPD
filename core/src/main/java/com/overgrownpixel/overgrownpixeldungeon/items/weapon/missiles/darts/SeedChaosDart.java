@@ -24,6 +24,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfRegrowth;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class SeedChaosDart extends TippedDart {
@@ -34,7 +35,7 @@ public class SeedChaosDart extends TippedDart {
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-		
+		new WandOfRegrowth.Seedpod().activate(defender);
 		return super.proc(attacker, defender, damage);
 	}
 }

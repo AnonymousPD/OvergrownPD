@@ -23,7 +23,9 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfTeleportation;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class TeleportingDart extends TippedDart {
@@ -34,7 +36,11 @@ public class TeleportingDart extends TippedDart {
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-		
-		return super.proc(attacker, defender, damage);
+
+        if (!defender.properties().contains(Char.Property.IMMOVABLE)){
+            ScrollOfTeleportation.appear( defender, Dungeon.level.randomRespawnCell() );
+        }
+
+	    return super.proc(attacker, defender, damage);
 	}
 }

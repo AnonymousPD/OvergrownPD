@@ -55,6 +55,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Poison;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Preparation;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ShieldBuff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Slow;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.SpaceTimePowers;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Speed;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Stamina;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Terror;
@@ -274,6 +275,7 @@ public abstract class Char extends Actor {
 	}
 	
 	public static boolean hit( Char attacker, Char defender, boolean magic ) {
+	    if(attacker.buff(SpaceTimePowers.class) != null) return true;
 		float acuRoll = Random.Float( attacker.attackSkill( defender ) );
 		float defRoll = Random.Float( defender.defenseSkill( attacker ) );
 		if (attacker.buff(Bless.class) != null) acuRoll *= 1.20f;

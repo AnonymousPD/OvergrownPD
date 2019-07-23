@@ -23,10 +23,23 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.SpaceTimePowers;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.BlackholeflowerPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.TimekeepersHourglass;
+import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfTeleportation;
+import com.overgrownpixel.overgrownpixeldungeon.levels.features.Chasm;
+import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.InterlevelScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.particles.Emitter;
 
 public class Blackholeflower extends Plant {
@@ -35,17 +48,58 @@ public class Blackholeflower extends Plant {
 		image = 25;
 	}
     public void attackProc(Char enemy, int damage) {
-        activate(enemy);
+        if(enemy instanceof Mob && !enemy.properties().contains(Char.Property.MINIBOSS) && !enemy.properties().contains(Char.Property.BOSS)){
+            if(enemy.isAlive()) Chasm.mobFall((Mob) enemy);
+        }
+        if(enemy instanceof Hero) {
+            if (Dungeon.bossLevel() || Dungeon.depth <= 1) {
+
+                GLog.w(Messages.get(ScrollOfTeleportation.class, "no_tele"));
+                return;
+
+            }
+
+            Buff buff = Dungeon.hero.buff(TimekeepersHourglass.timeFreeze.class);
+            if (buff != null) buff.detach();
+
+            InterlevelScene.mode = InterlevelScene.Mode.RETURN;
+            InterlevelScene.returnDepth = Dungeon.depth-1;
+            InterlevelScene.returnPos = -1;
+            Game.switchScene( InterlevelScene.class );
+        }
     }
 
     @Override
     public void activate(Char ch) {
+        ch.damage(Math.round(ch.HP/2), this);
+        if(ch instanceof Hero) {
+            if(((Hero) ch).subClass == HeroSubClass.WARDEN){
+                Buff.prolong(ch, SpaceTimePowers.class, SpaceTimePowers.DURATION);
+            } else {
+                if (Dungeon.bossLevel() || Dungeon.depth <= 1) {
 
+                    GLog.w(Messages.get(ScrollOfTeleportation.class, "no_tele"));
+                    return;
+
+                }
+
+                Buff buff = Dungeon.hero.buff(TimekeepersHourglass.timeFreeze.class);
+                if (buff != null) buff.detach();
+
+                InterlevelScene.mode = InterlevelScene.Mode.RETURN;
+                InterlevelScene.returnDepth = Dungeon.depth-1;
+                InterlevelScene.returnPos = -1;
+                Game.switchScene( InterlevelScene.class );
+            }
+        }
+        if(ch instanceof Mob && !ch.properties().contains(Char.Property.MINIBOSS) && !ch.properties().contains(Char.Property.BOSS)){
+            if(ch.isAlive()) Chasm.mobFall((Mob) ch);
+        }
     }
 
     @Override
     public void activate() {
-
+        spawnLasher(pos);
     }
 
     @Override
