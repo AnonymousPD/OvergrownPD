@@ -32,6 +32,7 @@ android {
 dependencies {
     implementation project(':SPD-classes')
     implementation 'com.google.firebase:firebase-core:16.0.4'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
     repositories {
         google()
         jcenter()

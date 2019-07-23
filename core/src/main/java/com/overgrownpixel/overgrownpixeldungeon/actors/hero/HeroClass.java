@@ -31,6 +31,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.items.BrokenSeal;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.ClothArmor;
+import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Brimstone;
 import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.CloakOfShadows;
 import com.overgrownpixel.overgrownpixeldungeon.items.bags.PotionBandolier;
 import com.overgrownpixel.overgrownpixeldungeon.items.bags.ScrollHolder;
@@ -55,6 +56,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.staffs.MagesS
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.ThrowingKnife;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.ThrowingStone;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Firebloom;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.DeviceCompat;
 
@@ -111,6 +113,16 @@ public enum HeroClass {
 		}
 		
 		new ScrollOfIdentify().identify();
+
+		for(int a = 100; a > 0; a-- ){
+		    new Firebloom.Seed().collect();
+        }
+
+		ClothArmor clothArmor = new ClothArmor();
+		clothArmor.upgrade(100);
+		clothArmor.inscribe(new Brimstone());
+		clothArmor.identify();
+		clothArmor.collect();
 	}
 
 	public Badges.Badge masteryBadge() {

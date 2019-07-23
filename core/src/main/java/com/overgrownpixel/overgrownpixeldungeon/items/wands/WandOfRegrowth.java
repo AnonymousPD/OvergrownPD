@@ -366,6 +366,8 @@ public class WandOfRegrowth extends Wand {
         //seed is never dropped, only care about plant class
 		public static class Seed extends Plant.Seed {
 			{
+                image = ItemSpriteSheet.SEED_DEWCATCHER;
+
 				plantClass = Dewcatcher.class;
 			}
 
@@ -457,7 +459,9 @@ public class WandOfRegrowth extends Wand {
 		//seed is never dropped, only care about plant class
 		public static class Seed extends Plant.Seed {
 			{
-				plantClass = Seedpod.class;
+			    image = ItemSpriteSheet.SEED_SEEDPOD;
+
+                plantClass = Seedpod.class;
 			}
 
             @Override

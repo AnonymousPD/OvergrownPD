@@ -33,6 +33,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Haste;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Lasher;
@@ -79,7 +80,7 @@ public abstract class Plant implements Bundlable {
 
         wither();
 
-        if(!(this instanceof Rotberry) || !playerplanted){
+        if(!(this instanceof Rotberry) && !playerplanted){
             if(ch instanceof LivingPlant){
                 //livingplants will trigger other living plants. Since livpla's will not step on other plants on purpose this only happens if they are pushed onto a plant.
                 ch.sprite.emitter().start( Speck.factory( Speck.UP ), 0.2f, 3 );
@@ -280,6 +281,7 @@ public abstract class Plant implements Bundlable {
 	public static class Seed extends Item {
 
 		public static final String AC_PLANT	= "PLANT";
+        public static final String AC_EAT	= "EAT";
 		
 		private static final float TIME_TO_PLANT = 1f;
 		
@@ -322,6 +324,7 @@ public abstract class Plant implements Bundlable {
 		public ArrayList<String> actions( Hero hero ) {
 			ArrayList<String> actions = super.actions( hero );
 			actions.add( AC_PLANT );
+			actions.add( AC_EAT );
 			return actions;
 		}
 		
@@ -354,14 +357,29 @@ public abstract class Plant implements Bundlable {
 			super.execute (hero, action );
 
 			if (action.equals( AC_PLANT )) {
-							
-				hero.spend( TIME_TO_PLANT );
-				hero.busy();
-				((Seed)detach( hero.belongings.backpack )).onThrow( hero.pos );
-				
-				hero.sprite.operate( hero.pos );
-			}
+
+                hero.spend( TIME_TO_PLANT );
+                hero.busy();
+                ((Seed)detach( hero.belongings.backpack )).onThrow( hero.pos );
+
+                hero.sprite.operate( hero.pos );
+            }
+
+            if (action.equals( AC_EAT )) {
+
+                hero.spend( TIME_TO_PLANT );
+                hero.busy();
+                detach(hero.belongings.backpack);
+
+                hero.sprite.operate( hero.pos );
+
+                eatEffect(hero);
+            }
 		}
+
+		public void eatEffect(Hero hero){
+            (hero.buff( Hunger.class )).satisfy( 30f );
+        }
 		
 		public Plant couch( int pos, Level level, boolean playerplanted ) {
 			try {
