@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "384216233746",
+    "firebase_url": "https://overgrown-pixel-dungeon-master.firebaseio.com",
+    "project_id": "overgrown-pixel-dungeon-master",
+    "storage_bucket": "overgrown-pixel-dungeon-master.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:384216233746:android:ce2a80521d0c2fc8",
+        "android_client_info": {
+          "package_name": "com.overgrownpixel.overgrownpixeldungeon.indev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "384216233746-f8lo2m4kcjhaduk04pf49p8lpo8vsngq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.overgrownpixel.overgrownpixeldungeon.indev",
+            "certificate_hash": "09eff405ecdf285094b43aaa1ced4dbf9dc2c198"
+          }
+        },
+        {
+          "client_id": "384216233746-n6b4fhged7d9d05c6876jl7duk3kngns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7o99aCOvaLe_OXRBp7rlNnSKictT41n0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "384216233746-n6b4fhged7d9d05c6876jl7duk3kngns.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -53,7 +53,19 @@ public class Annoying extends Weapon.Enchantment {
 			attacker.sprite.centerEmitter().start(Speck.factory(Speck.SCREAM), 0.3f, 3);
 			Sample.INSTANCE.play(Assets.SND_MIMIC);
 			Invisibility.dispel();
-			GLog.n(Messages.get(this, "msg_" + (Random.Int(5)+1)));
+			if(defender.properties().contains(Char.Property.BOSS)){
+                GLog.n(Messages.get(this, "msg_boss_" + (Random.Int(5)+1)));
+            } else if(defender.properties().contains(Char.Property.MINIBOSS)){
+                GLog.n(Messages.get(this, "msg_miniboss_" + (Random.Int(5)+1)));
+            } else if(defender.properties().contains(Char.Property.PLANT)){
+                GLog.n(Messages.get(this, "msg_plant_" + (Random.Int(5)+1)));
+            } else if(defender.properties().contains(Char.Property.UNDEAD)){
+                GLog.n(Messages.get(this, "msg_undead_" + (Random.Int(5)+1)));
+            } else if(defender.properties().contains(Char.Property.FIERY)){
+                GLog.n(Messages.get(this, "msg_fiery_" + (Random.Int(5)+1)));
+            } else {
+                GLog.n(Messages.get(this, "msg_" + (Random.Int(5)+1)));
+            }
 		}
 
 		return damage;
