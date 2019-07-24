@@ -174,8 +174,7 @@ public class LivingPlant extends Mob {
 
         //try to find a new enemy in these circumstances
         if (enemy == null || !enemy.isAlive() || state == WANDERING
-                || Dungeon.level.distance(enemy.pos, pos) > 2
-                || (alignment == Alignment.ALLY && enemy.alignment == Alignment.ALLY)){
+                || Dungeon.level.distance(enemy.pos, pos) > 2){
 
             //find all mobs near the living plant
             HashSet<Char> enemies = new HashSet<>();
