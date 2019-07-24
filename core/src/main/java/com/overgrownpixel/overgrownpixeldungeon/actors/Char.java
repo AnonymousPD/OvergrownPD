@@ -623,7 +623,7 @@ public abstract class Char extends Actor {
 		INORGANIC ( new HashSet<Class>(),
 				new HashSet<Class>( Arrays.asList(Bleeding.class, ToxicGas.class, Poison.class) )),
         PLANT( new HashSet<Class>(),
-                new HashSet<Class>()),
+                new HashSet<Class>(Arrays.asList(Corruption.class) )),
 		BLOB_IMMUNE ( new HashSet<Class>(),
 				new HashSet<Class>( Arrays.asList(Blob.class) )),
 		FIERY ( new HashSet<Class>( Arrays.asList(WandOfFireblast.class)),
