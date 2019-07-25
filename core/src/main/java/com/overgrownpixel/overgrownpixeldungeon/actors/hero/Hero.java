@@ -40,6 +40,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Awareness;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Barkskin;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Berserk;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Bless;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Blindness;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Combo;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Drowsy;
@@ -1203,7 +1204,11 @@ public class Hero extends Char {
 				boolean[] m = Dungeon.level.mapped;
 				boolean[] passable = new boolean[len];
 				for (int i = 0; i < len; i++) {
-					passable[i] = p[i] && (v[i] || m[i]);
+				    if(Dungeon.level.plants.get(i) != null && buff(Blindness.class) == null){
+                        passable[i] = false;
+                    } else {
+                        passable[i] = p[i] && (v[i] || m[i]);
+                    }
 				}
 
 				path = Dungeon.findPath(this, pos, target, passable, fieldOfView);
