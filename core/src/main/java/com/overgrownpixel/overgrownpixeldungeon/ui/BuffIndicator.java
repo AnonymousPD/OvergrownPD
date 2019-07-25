@@ -98,6 +98,7 @@ public class BuffIndicator extends Component {
     public static final int HALOMETHANEBURNING  = 47;
     public static final int SPACETIME   = 48;
     public static final int HEAVY       = 49;
+    public static final int GLOWING     = 50;
 
 	public static final int SIZE	= 7;
 	

@@ -37,6 +37,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Amok;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Charm;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Corruption;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Glowing;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Preparation;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Sleep;
@@ -179,13 +180,19 @@ public abstract class Mob extends Char {
 			sprite.hideAlert();
 			sprite.hideLost();
 		}
+
+        for (Char ch : Actor.chars()) {
+            if( ch != this && ch.buff(Glowing.class) != null){
+                enemy = ch;
+                return state.act( true, justAlerted );
+            }
+        }
 		
 		if (paralysed > 0) {
 			enemySeen = false;
 			spend( TICK );
 			return true;
 		}
-		
 		enemy = chooseEnemy();
 		
 		boolean enemyInFOV = enemy != null && enemy.isAlive() && fieldOfView[enemy.pos] && enemy.invisible <= 0;

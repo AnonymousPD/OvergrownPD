@@ -230,6 +230,7 @@ import com.overgrownpixel.overgrownpixeldungeon.plants.Apricobush;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Blackholeflower;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Blindweed;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Butterlion;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Chandaliertail;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Dreamfoil;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Earthroot;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Fadeleaf;
@@ -348,8 +349,9 @@ public class Generator {
 					Starflower.Seed.class,
                     Apricobush.Seed.class,
                     Blackholeflower.Seed.class,
-                    Butterlion.Seed.class,};
-			SEED.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, };
+                    Butterlion.Seed.class,
+                    Chandaliertail.Seed.class,};
+			SEED.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, };
 
             BASESEED.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -366,8 +368,9 @@ public class Generator {
                     Starflower.Seed.class,
                     Apricobush.Seed.class,
                     Blackholeflower.Seed.class,
-                    Butterlion.Seed.class,};
-            BASESEED.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, };
+                    Butterlion.Seed.class,
+                    Chandaliertail.Seed.class,};
+            BASESEED.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, };
 
             SEEDWATER.classes = new Class<?>[]{
 
@@ -391,8 +394,9 @@ public class Generator {
                     Starflower.Seed.class,
                     Apricobush.Seed.class,
                     Blackholeflower.Seed.class,
-                    Butterlion.Seed.class,};
-            SEEDSEWER.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, };
+                    Butterlion.Seed.class,
+                    Chandaliertail.Seed.class,};
+            SEEDSEWER.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, };
 
             SEEDPRISON.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -409,8 +413,9 @@ public class Generator {
                     Starflower.Seed.class,
                     Apricobush.Seed.class,
                     Blackholeflower.Seed.class,
-                    Butterlion.Seed.class,};
-            SEEDPRISON.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, };
+                    Butterlion.Seed.class,
+                    Chandaliertail.Seed.class,};
+            SEEDPRISON.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, };
 
             SEEDCAVES.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -427,8 +432,9 @@ public class Generator {
                     Starflower.Seed.class,
                     Apricobush.Seed.class,
                     Blackholeflower.Seed.class,
-                    Butterlion.Seed.class,};
-            SEEDCAVES.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, };
+                    Butterlion.Seed.class,
+                    Chandaliertail.Seed.class,};
+            SEEDCAVES.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, };
 
             SEEDCITY.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -445,8 +451,9 @@ public class Generator {
                     Starflower.Seed.class,
                     Apricobush.Seed.class,
                     Blackholeflower.Seed.class,
-                    Butterlion.Seed.class,};
-            SEEDCITY.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, };
+                    Butterlion.Seed.class,
+                    Chandaliertail.Seed.class,};
+            SEEDCITY.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5,};
 
             SEEDHELL.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -463,8 +470,9 @@ public class Generator {
                     Starflower.Seed.class,
                     Apricobush.Seed.class,
                     Blackholeflower.Seed.class,
-                    Butterlion.Seed.class,};                                                                                                  //
-            SEEDHELL.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, };
+                    Butterlion.Seed.class,
+                    Chandaliertail.Seed.class,};                                                                                                  //
+            SEEDHELL.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, };
 			
 			SCROLL.classes = new Class<?>[]{
 					ScrollOfUpgrade.class, //3 drop every chapter, see Dungeon.souNeeded()

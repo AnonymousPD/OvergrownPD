@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Amok;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Awareness;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Glowing;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Light;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MindVision;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
@@ -774,6 +775,16 @@ public class Dungeon {
 				GameScene.updateFog(m.pos, 2);
 			}
 		}
+
+		for(Mob mob : Dungeon.level.mobs){
+            if(mob.buff(Glowing.class) != null){
+                BArray.or( level.visited, level.heroFOV, mob.pos - 1 - level.width(), 3, level.visited );
+                BArray.or( level.visited, level.heroFOV, mob.pos, 3, level.visited );
+                BArray.or( level.visited, level.heroFOV, mob.pos - 1 + level.width(), 3, level.visited );
+                //updates adjacent cells too
+                GameScene.updateFog(mob.pos, 2);
+            }
+        }
 		
 		if (hero.buff(Awareness.class) != null){
 			for (Heap h : level.heaps.values()){

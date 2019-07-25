@@ -25,6 +25,8 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Glowing;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.ChandaliertailPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
@@ -37,17 +39,17 @@ public class Chandaliertail extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        Buff.prolong(enemy, Glowing.class, Glowing.DURATION);
     }
 
     @Override
     public void activate(Char ch) {
-
+        Buff.prolong(ch, Glowing.class, Glowing.DURATION);
     }
 
     @Override
     public void activate() {
-
+        spawnLasher(pos);
     }
 
     @Override

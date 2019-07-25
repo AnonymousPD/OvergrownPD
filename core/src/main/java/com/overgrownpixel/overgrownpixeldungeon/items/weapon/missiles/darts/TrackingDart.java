@@ -24,6 +24,8 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Glowing;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class TrackingDart extends TippedDart {
@@ -34,7 +36,7 @@ public class TrackingDart extends TippedDart {
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-		
+        Buff.prolong(defender, Glowing.class, Glowing.DURATION);
 		return super.proc(attacker, defender, damage);
 	}
 }
