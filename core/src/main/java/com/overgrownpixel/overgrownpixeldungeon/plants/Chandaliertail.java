@@ -30,6 +30,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Glowing;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.ChandaliertailPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 
 public class Chandaliertail extends Plant {
 
@@ -68,6 +69,11 @@ public class Chandaliertail extends Plant {
         @Override
         public Emitter.Factory getPixelParticle() {
             return ChandaliertailPoisonParticle.FACTORY;
+        }
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new ChandaliertailPoisonParticle();
         }
 		
 		@Override

@@ -40,6 +40,7 @@ import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 import com.watabou.utils.PathFinder;
 
 public class Butterlion extends Plant {
@@ -114,6 +115,11 @@ public class Butterlion extends Plant {
         @Override
         public Emitter.Factory getPixelParticle() {
             return ButterlionPoisonParticle.FACTORY;
+        }
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new ButterlionPoisonParticle();
         }
 		
 		@Override

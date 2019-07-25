@@ -55,7 +55,6 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.staffs.MagesS
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.ThrowingKnife;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.ThrowingStone;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.plants.Firebloom;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.DeviceCompat;
 
@@ -112,10 +111,6 @@ public enum HeroClass {
 		}
 		
 		new ScrollOfIdentify().identify();
-
-		for(int a = 100; a > 0; a-- ){
-		    new Firebloom.Seed().collect();
-        }
 	}
 
 	public Badges.Badge masteryBadge() {

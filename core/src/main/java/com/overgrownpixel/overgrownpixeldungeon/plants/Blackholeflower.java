@@ -41,6 +41,7 @@ import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 
 public class Blackholeflower extends Plant {
 
@@ -118,6 +119,11 @@ public class Blackholeflower extends Plant {
         @Override
         public Emitter.Factory getPixelParticle() {
             return BlackholeflowerPoisonParticle.FACTORY;
+        }
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new BlackholeflowerPoisonParticle();
         }
 		
 		@Override
