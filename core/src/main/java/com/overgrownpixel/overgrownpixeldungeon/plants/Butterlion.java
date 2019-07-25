@@ -23,11 +23,24 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Heavy;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
+import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
+import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.ButterlionPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.Camera;
+import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.particles.Emitter;
+import com.watabou.utils.PathFinder;
 
 public class Butterlion extends Plant {
 
@@ -37,17 +50,52 @@ public class Butterlion extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        if (Dungeon.level.heroFOV[pos]) {
+            CellEmitter.get( enemy.pos ).start( Speck.factory( Speck.ROCK ), 0.07f, 10 );
+            Camera.main.shake( 3, 0.7f );
+            Sample.INSTANCE.play( Assets.SND_ROCKS );
+        }
+        enemy.damage(damage, this);
+        for (int i = 0; i < PathFinder.NEIGHBOURS8.length; i++) {
+            Char ch = Actor.findChar(enemy.pos + PathFinder.NEIGHBOURS8[i]);
+            if(ch instanceof Mob && ch.alignment != Char.Alignment.ALLY){
+                ch.damage(damage, this);
+            }
+        }
     }
 
     @Override
     public void activate(Char ch) {
-
+        if (ch instanceof Hero && ((Hero) ch).subClass == HeroSubClass.WARDEN){
+            Buff.prolong( ch, Heavy.class, Heavy.DURATION );
+        }
+        if (Dungeon.level.heroFOV[pos]) {
+            CellEmitter.get( ch.pos ).start( Speck.factory( Speck.ROCK ), 0.07f, 10 );
+            Camera.main.shake( 3, 0.7f );
+            Sample.INSTANCE.play( Assets.SND_ROCKS );
+        }
+        ch.damage(Math.round(ch.HP/8), this);
+        for (int i = 0; i < PathFinder.NEIGHBOURS8.length; i++) {
+            Char ch1 = Actor.findChar(ch.pos + PathFinder.NEIGHBOURS8[i]);
+            if(ch1 instanceof Mob && ch1.alignment != Char.Alignment.ALLY){
+                ch1.damage(Math.round(ch.HP/8), this);
+            }
+        }
     }
 
     @Override
     public void activate() {
-
+        if (Dungeon.level.heroFOV[pos]) {
+            CellEmitter.get( pos ).start( Speck.factory( Speck.ROCK ), 0.07f, 10 );
+            Camera.main.shake( 3, 0.7f );
+            Sample.INSTANCE.play( Assets.SND_ROCKS );
+        }
+        for (int i = 0; i < PathFinder.NEIGHBOURS8.length; i++) {
+            Char ch = Actor.findChar(pos + PathFinder.NEIGHBOURS8[i]);
+            if(ch instanceof Mob && ch.alignment != Char.Alignment.ALLY){
+                ch.damage(Math.round(ch.HP/8), this);
+            }
+        }
     }
 
     @Override

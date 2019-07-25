@@ -492,6 +492,7 @@ public abstract class RegularPainter extends Painter {
                         try {
                             plant.pos = p;
                             l.plants.put(plant.pos, plant);
+                            set(l, plant.pos, Terrain.GRASS);
                             plantCells.remove((Object)p);
                         } catch (Exception e) {
                             OvergrownPixelDungeon.reportException(e);

@@ -46,6 +46,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Drowsy;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FlavourBuff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Foresight;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Fury;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Heavy;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Invisibility;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MindVision;
@@ -1135,6 +1136,18 @@ public class Hero extends Char {
 			Camera.main.shake( 1, 1f );
 			return false;
 		}
+
+        if (buff(Heavy.class) != null) {
+            CellEmitter.get( pos ).start( Speck.factory( Speck.ROCK ), 0.07f, 10 );
+            Camera.main.shake( 3, 0.7f );
+            Sample.INSTANCE.play( Assets.SND_ROCKS );
+            for (int i = 0; i < PathFinder.NEIGHBOURS8.length; i++) {
+                Char ch = Actor.findChar(pos + PathFinder.NEIGHBOURS8[i]);
+                if(ch instanceof Mob && ch.alignment != Alignment.ALLY){
+                    damage(STR(), this);
+                }
+            }
+        }
 		
 		int step = -1;
 		
