@@ -48,6 +48,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Frost;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FrostImbue;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HalomethaneBurning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Haste;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HeatAura;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MagicalSleep;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Ooze;
@@ -78,6 +79,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Grim;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.enchantments.Shocking;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.ShockingDart;
+import com.overgrownpixel.overgrownpixeldungeon.levels.Level;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
 import com.overgrownpixel.overgrownpixeldungeon.levels.features.Chasm;
 import com.overgrownpixel.overgrownpixeldungeon.levels.features.Door;
@@ -548,6 +550,14 @@ public abstract class Char extends Actor {
 		if (!flying) {
 			Dungeon.level.press( pos, this );
 		}
+
+		if(buff(HeatAura.class) != null){
+		    for(int p : PathFinder.NEIGHBOURS9){
+		        if(Dungeon.level.map[pos+p] == Terrain.WATER){
+                    Level.set(pos+p, Terrain.EMPTY);
+                }
+            }
+        }
 	}
 	
 	public int distance( Char other ) {

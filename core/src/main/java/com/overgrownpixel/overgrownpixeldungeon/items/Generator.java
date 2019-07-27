@@ -231,6 +231,8 @@ import com.overgrownpixel.overgrownpixeldungeon.plants.Blackholeflower;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Blindweed;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Butterlion;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Chandaliertail;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Chillisnapper;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Crimsonpepper;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Dreamfoil;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Earthroot;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Fadeleaf;
@@ -350,8 +352,10 @@ public class Generator {
                     Apricobush.Seed.class,
                     Blackholeflower.Seed.class,
                     Butterlion.Seed.class,
-                    Chandaliertail.Seed.class,};
-			SEED.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, };
+                    Chandaliertail.Seed.class,
+                    Chillisnapper.Seed.class,
+                    Crimsonpepper.Seed.class,};
+			SEED.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, 5, 5 };
 
             BASESEED.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -369,8 +373,10 @@ public class Generator {
                     Apricobush.Seed.class,
                     Blackholeflower.Seed.class,
                     Butterlion.Seed.class,
-                    Chandaliertail.Seed.class,};
-            BASESEED.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, };
+                    Chandaliertail.Seed.class,
+                    Chillisnapper.Seed.class,
+                    Crimsonpepper.Seed.class,};
+            BASESEED.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, 5, 5 };
 
             SEEDWATER.classes = new Class<?>[]{
 
@@ -395,8 +401,10 @@ public class Generator {
                     Apricobush.Seed.class,
                     Blackholeflower.Seed.class,
                     Butterlion.Seed.class,
-                    Chandaliertail.Seed.class,};
-            SEEDSEWER.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, };
+                    Chandaliertail.Seed.class,
+                    Chillisnapper.Seed.class,
+                    Crimsonpepper.Seed.class,};
+            SEEDSEWER.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, 5, 5 };
 
             SEEDPRISON.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -414,8 +422,10 @@ public class Generator {
                     Apricobush.Seed.class,
                     Blackholeflower.Seed.class,
                     Butterlion.Seed.class,
-                    Chandaliertail.Seed.class,};
-            SEEDPRISON.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, };
+                    Chandaliertail.Seed.class,
+                    Chillisnapper.Seed.class,
+                    Crimsonpepper.Seed.class,};
+            SEEDPRISON.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, 5, 5 };
 
             SEEDCAVES.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -433,8 +443,10 @@ public class Generator {
                     Apricobush.Seed.class,
                     Blackholeflower.Seed.class,
                     Butterlion.Seed.class,
-                    Chandaliertail.Seed.class,};
-            SEEDCAVES.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, };
+                    Chandaliertail.Seed.class,
+                    Chillisnapper.Seed.class,
+                    Crimsonpepper.Seed.class,};
+            SEEDCAVES.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, 5, 5 };
 
             SEEDCITY.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -452,8 +464,10 @@ public class Generator {
                     Apricobush.Seed.class,
                     Blackholeflower.Seed.class,
                     Butterlion.Seed.class,
-                    Chandaliertail.Seed.class,};
-            SEEDCITY.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5,};
+                    Chandaliertail.Seed.class,
+                    Chillisnapper.Seed.class,
+                    Crimsonpepper.Seed.class,};
+            SEEDCITY.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, 5, 5};
 
             SEEDHELL.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -471,8 +485,10 @@ public class Generator {
                     Apricobush.Seed.class,
                     Blackholeflower.Seed.class,
                     Butterlion.Seed.class,
-                    Chandaliertail.Seed.class,};                                                                                                  //
-            SEEDHELL.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, };
+                    Chandaliertail.Seed.class,
+                    Chillisnapper.Seed.class,
+                    Crimsonpepper.Seed.class,};                                                                                                  //
+            SEEDHELL.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, 5, 5 };
 			
 			SCROLL.classes = new Class<?>[]{
 					ScrollOfUpgrade.class, //3 drop every chapter, see Dungeon.souNeeded()
@@ -567,7 +583,7 @@ public class Generator {
                     Naginata.class,
                     Sasumata.class,
 			};
-			WEP_T2.probs = new float[]{ 6, 5, 5, 4, 4, 3, 3, 2, 2, 2, 2, 3, 2, 2, 3, 3, 2, 2, 3, 2 };
+			WEP_T2.probs = new float[]{ 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
 			
 			WEP_T3.classes = new Class<?>[]{
 					Sword.class,
@@ -592,7 +608,7 @@ public class Generator {
                     GooWeapon.class,
                     PendulumSpear.class,
 			};
-			WEP_T3.probs = new float[]{ 6, 5, 5, 4, 4, 4, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 4, 4, 2, 0, 2 };
+			WEP_T3.probs = new float[]{ 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 3 };
 			
 			WEP_T4.classes = new Class<?>[]{
 					Longsword.class,
@@ -617,7 +633,7 @@ public class Generator {
                     BambooSpear.class,
                     Lance.class,
 			};
-			WEP_T4.probs = new float[]{ 6, 5, 5, 4, 4, 4, 3, 3, 2, 3, 2, 3, 2, 2, 2, 2, 2, 2, 2 };
+			WEP_T4.probs = new float[]{ 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
 			
 			WEP_T5.classes = new Class<?>[]{
 					Greatsword.class,
@@ -639,7 +655,7 @@ public class Generator {
                     BroadSpear.class,
                     RoundedSpear.class,
 			};
-			WEP_T5.probs = new float[]{ 6, 5, 5, 4, 4, 4, 3, 2, 2, 2, 3, 3, 2, 2, 2, 4, 2, 2 };
+			WEP_T5.probs = new float[]{ 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
 			
 			//see Generator.randomArmor
 			ARMOR.classes = new Class<?>[]{

@@ -27,6 +27,9 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Dehydrated;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HeatAura;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.CrimsonpepperPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
@@ -45,7 +48,11 @@ public class Crimsonpepper extends Plant {
 
     @Override
     public void activate(Char ch) {
-        Buff.prolong(ch, Dehydrated.class, Dehydrated.DURATION);
+	    if(ch instanceof Hero && ((Hero) ch).subClass == HeroSubClass.WARDEN){
+	        Buff.prolong(ch, HeatAura.class, HeatAura.DURATION);
+        } else {
+            Buff.prolong(ch, Dehydrated.class, Dehydrated.DURATION);
+        }
     }
 
     @Override

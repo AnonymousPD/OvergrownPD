@@ -29,6 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Fire;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.effects.MagicMissile;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.ChillisnapperPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
@@ -166,7 +167,9 @@ public class Chillisnapper extends Plant {
             for (Char cha : Dungeon.level.mobs) {
                 if (ch.fieldOfView[cha.pos]) {
                     shoot(ch, cha.pos);
-                    return;
+                    if(((Hero) ch).subClass != HeroSubClass.WARDEN){
+                        return;
+                    }
                 }
             }
         } else {
