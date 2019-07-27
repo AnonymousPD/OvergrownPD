@@ -40,6 +40,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Chill;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Corrosion;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Corruption;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Cripple;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Dehydrated;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Doom;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.EarthImbue;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FireImbue;
@@ -317,6 +318,7 @@ public abstract class Char extends Actor {
 		if ( buff( Stamina.class ) != null) speed *= 1.5f;
 		if ( buff( Adrenaline.class ) != null) speed *= 2f;
 		if ( buff( Haste.class ) != null) speed *= 3f;
+        if ( buff( Dehydrated.class ) != null ) speed /= 2f;
 		return speed;
 	}
 	

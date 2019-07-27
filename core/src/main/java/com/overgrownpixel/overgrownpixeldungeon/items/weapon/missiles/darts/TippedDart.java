@@ -40,6 +40,7 @@ import com.overgrownpixel.overgrownpixeldungeon.plants.Blindweed;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Butterlion;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Chandaliertail;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Chillisnapper;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Crimsonpepper;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Dreamfoil;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Earthroot;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Fadeleaf;
@@ -169,6 +170,7 @@ public abstract class TippedDart extends Dart {
         types.put(Butterlion.Seed.class,    EarthquakeDart.class);
         types.put(Chandaliertail.Seed.class,TrackingDart.class);
         types.put(Chillisnapper.Seed.class, HeatDart.class);
+        types.put(Crimsonpepper.Seed.class, SpicyDart.class);
 	}
 	
 	public static TippedDart getTipped( Plant.Seed s, int quantity ){

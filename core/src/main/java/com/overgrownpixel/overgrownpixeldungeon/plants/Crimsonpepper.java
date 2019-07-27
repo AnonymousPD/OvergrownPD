@@ -25,9 +25,12 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Dehydrated;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.CrimsonpepperPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 
 public class Crimsonpepper extends Plant {
 
@@ -37,17 +40,17 @@ public class Crimsonpepper extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        Buff.prolong(enemy, Dehydrated.class, Dehydrated.DURATION);
     }
 
     @Override
     public void activate(Char ch) {
-
+        Buff.prolong(ch, Dehydrated.class, Dehydrated.DURATION);
     }
 
     @Override
     public void activate() {
-
+        spawnLasher(pos);
     }
 
     @Override
@@ -67,8 +70,13 @@ public class Crimsonpepper extends Plant {
         public Emitter.Factory getPixelParticle() {
             return CrimsonpepperPoisonParticle.FACTORY;
         }
-		
-		@Override
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new CrimsonpepperPoisonParticle();
+        }
+
+        @Override
 		public int price() {
 			return 30 * quantity;
 		}

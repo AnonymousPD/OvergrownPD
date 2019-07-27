@@ -262,6 +262,8 @@ public abstract class Plant implements Bundlable {
                 return new Blackholeflower.Seed();
             case 31:
                 return new Chillisnapper.Seed();
+            case 29:
+                return new Crimsonpepper.Seed();
             default:
                 return null;
         }

@@ -99,6 +99,10 @@ public class BuffIndicator extends Component {
     public static final int SPACETIME   = 48;
     public static final int HEAVY       = 49;
     public static final int GLOWING     = 50;
+    public static final int DEHYDRATED  = 51;
+    public static final int HEATAURA    = 52;
+    public static final int SUGARRUSH   = 53;
+    public static final int HONEYED     = 54;
 
 	public static final int SIZE	= 7;
 	
