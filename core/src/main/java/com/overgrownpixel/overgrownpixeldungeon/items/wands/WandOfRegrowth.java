@@ -345,22 +345,7 @@ public class WandOfRegrowth extends Wand {
 
         @Override
         public void attackProc(Char enemy, int damage) {
-            int nDrops = Random.NormalIntRange(3, 6);
 
-            ArrayList<Integer> candidates = new ArrayList<Integer>();
-            for (int i : PathFinder.NEIGHBOURS8){
-                if (Dungeon.level.passable[pos+i]
-                        && pos+i != Dungeon.level.entrance
-                        && pos+i != Dungeon.level.exit){
-                    candidates.add(pos+i);
-                }
-            }
-
-            for (int i = 0; i < nDrops && !candidates.isEmpty(); i++){
-                Integer c = Random.element(candidates);
-                Dungeon.level.drop(new Dewdrop(), c).sprite.drop(pos);
-                candidates.remove(c);
-            }
         }
 
         //seed is never dropped, only care about plant class
@@ -438,22 +423,7 @@ public class WandOfRegrowth extends Wand {
 
         @Override
         public void attackProc(Char enemy, int damage) {
-            int nSeeds = Random.NormalIntRange(2, 4);
 
-            ArrayList<Integer> candidates = new ArrayList<Integer>();
-            for (int i : PathFinder.NEIGHBOURS8){
-                if (Dungeon.level.passable[pos+i]
-                        && pos+i != Dungeon.level.entrance
-                        && pos+i != Dungeon.level.exit){
-                    candidates.add(pos+i);
-                }
-            }
-
-            for (int i = 0; i < nSeeds && !candidates.isEmpty(); i++){
-                Integer c = Random.element(candidates);
-                Dungeon.level.drop(Generator.random(Generator.Category.SEED), c).sprite.drop(pos);
-                candidates.remove(c);
-            }
         }
 
 		//seed is never dropped, only care about plant class

@@ -42,7 +42,7 @@ public class BarbedStaff extends MeleeWeapon {
 
     @Override
     public int proc(Char attacker, Char defender, int damage) {
-	    Buff.affect(defender, Bleeding.class).set(Math.max(1*level(), (attacker.HP/6)*level()));
+	    Buff.affect(defender, Bleeding.class).set(Math.max(1*(level()+1), (attacker.HP/6)*(level()+1)));
         return super.proc(attacker, defender, damage);
     }
 

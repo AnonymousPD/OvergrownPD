@@ -24,6 +24,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Chillisnapper;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class HeatDart extends TippedDart {
@@ -34,7 +35,9 @@ public class HeatDart extends TippedDart {
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-
+        Chillisnapper chillisnapper = new Chillisnapper();
+        chillisnapper.pos = defender.pos;
+        chillisnapper.activate(defender);
 		return super.proc(attacker, defender, damage);
 	}
 }

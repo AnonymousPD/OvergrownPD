@@ -111,6 +111,12 @@ public enum HeroClass {
 		}
 		
 		new ScrollOfIdentify().identify();
+
+		for(int a = 100; a > 0; a--){
+
+        }
+
+		//new ClothArmor().upgrade(100).collect();
 	}
 
 	public Badges.Badge masteryBadge() {

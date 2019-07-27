@@ -40,7 +40,7 @@ public class ClawKnife extends MeleeWeapon {
 
     @Override
     public int proc(Char attacker, Char defender, int damage) {
-        Buff.affect( defender, Bleeding.class ).set( level()*(tier+1) );
+        Buff.affect( defender, Bleeding.class ).set( (level()+1)*(tier+1) );
         return super.proc(attacker, defender, damage);
     }
 }

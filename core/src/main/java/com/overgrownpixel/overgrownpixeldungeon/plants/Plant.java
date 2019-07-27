@@ -260,6 +260,8 @@ public abstract class Plant implements Bundlable {
                 return new Chandaliertail.Seed();
             case 25:
                 return new Blackholeflower.Seed();
+            case 31:
+                return new Chillisnapper.Seed();
             default:
                 return null;
         }
@@ -393,7 +395,7 @@ public abstract class Plant implements Bundlable {
 					Sample.INSTANCE.play(Assets.SND_PLANT);
 				}
 				Plant plant = plantClass.newInstance();
-				plant.playerplanted = playerplanted;
+				//plant.playerplanted = playerplanted;
 				plant.pos = pos;
 
 				return plant;
