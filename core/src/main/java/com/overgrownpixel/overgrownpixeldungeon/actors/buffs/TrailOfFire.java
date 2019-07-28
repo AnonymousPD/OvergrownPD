@@ -22,19 +22,38 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades;
+package com.overgrownpixel.overgrownpixeldungeon.actors.buffs;
 
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MeleeWeapon;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
+import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
+import com.watabou.noosa.Image;
 
-public class Hackblade extends MeleeWeapon {
-
+public class TrailOfFire extends FlavourBuff {
+	
 	{
-		image = ItemSpriteSheet.HACKBLADE;
-
-		tier = 3;
-        ACC = 1.45f; //45% boost to accuracy
-        DLY = 1.45f; //45% slower
+		type = buffType.POSITIVE;
 	}
-
+	
+	public static final float DURATION	= 10f;
+	
+	@Override
+	public int icon() {
+		return BuffIndicator.TRAILOFFIRE;
+	}
+	
+	@Override
+	public void tintIcon(Image icon) {
+		greyIcon(icon, 5f, cooldown());
+	}
+	
+	@Override
+	public String toString() {
+		return Messages.get(this, "name");
+	}
+	
+	@Override
+	public String desc() {
+		return Messages.get(this, "desc", dispTurns());
+	}
+	
 }

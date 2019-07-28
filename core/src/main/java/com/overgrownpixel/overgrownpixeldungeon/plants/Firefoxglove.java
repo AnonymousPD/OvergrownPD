@@ -25,6 +25,10 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.TrailOfFire;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.FirefoxglovePoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.bombs.Firebomb;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
@@ -39,12 +43,20 @@ public class Firefoxglove extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-        new Firebomb().explode(enemy.pos);
+        if(enemy instanceof Hero && ((Hero) enemy).subClass == HeroSubClass.WARDEN){
+            Buff.prolong(enemy, TrailOfFire.class, TrailOfFire.DURATION);
+        } else {
+            new Firebomb().explode(enemy.pos);
+        }
     }
 
     @Override
     public void activate(Char ch) {
-        new Firebomb().explode(ch.pos);
+	    if(ch instanceof Hero && ((Hero) ch).subClass == HeroSubClass.WARDEN){
+            Buff.prolong(ch, TrailOfFire.class, TrailOfFire.DURATION);
+        } else {
+            new Firebomb().explode(ch.pos);
+        }
     }
 
     @Override

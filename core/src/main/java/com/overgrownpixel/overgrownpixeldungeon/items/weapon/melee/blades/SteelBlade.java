@@ -32,14 +32,9 @@ public class SteelBlade extends MeleeWeapon {
 	{
 		image = ItemSpriteSheet.STEEL_BLADE;
 
-		//TODO:
-		//tier = 4;
-	}
-
-	@Override
-	public int max(int lvl) {
-	    //TODO:
-		return  0;
+		tier = 4;
+        ACC = 1.63f; //63% boost to accuracy
+        DLY = 1.63f; //63% slower
 	}
 
 }

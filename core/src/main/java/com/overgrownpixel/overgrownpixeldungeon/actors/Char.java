@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Electricity;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Fire;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.ToxicGas;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Adrenaline;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ArcaneArmor;
@@ -62,6 +63,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.SpaceTimePowers;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Speed;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Stamina;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Terror;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.TrailOfFire;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Vertigo;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
@@ -87,6 +89,7 @@ import com.overgrownpixel.overgrownpixeldungeon.levels.features.Chasm;
 import com.overgrownpixel.overgrownpixeldungeon.levels.features.Door;
 import com.overgrownpixel.overgrownpixeldungeon.levels.traps.GrimTrap;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.noosa.Camera;
@@ -344,6 +347,11 @@ public abstract class Char extends Actor {
 	}
 	
 	public void damage( int dmg, Object src ) {
+
+	    //you recieve no damage while burning and having the trail of fire buff
+	    if(buff(TrailOfFire.class) != null && buff(Burning.class) != null){
+	        return;
+        }
 		
 		if (!isAlive() || dmg < 0) {
 			return;
@@ -534,6 +542,10 @@ public abstract class Char extends Actor {
 				step = newPos;
 			}
 		}
+
+        if(buff(TrailOfFire.class) != null){
+            GameScene.add(Blob.seed(pos, 1, Fire.class));
+        }
 
 		if (Dungeon.level.map[pos] == Terrain.OPEN_DOOR) {
 			Door.leave( pos );

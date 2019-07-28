@@ -28,6 +28,8 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Frost;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.IceAura;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.FrostcornPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
@@ -42,12 +44,20 @@ public class Frostcorn extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-        Buff.prolong( enemy, Frost.class, Frost.duration( enemy ) * Random.Float( 1.0f, 1.5f ) );
+	    if(enemy instanceof Hero && ((Hero) enemy).subClass == HeroSubClass.WARDEN){
+            Buff.prolong(enemy, IceAura.class, IceAura.DURATION);
+        } else {
+            Buff.prolong( enemy, Frost.class, Frost.duration( enemy ) * Random.Float( 1.0f, 1.5f ) );
+        }
     }
 
     @Override
     public void activate(Char ch) {
-        Buff.prolong(ch, IceAura.class, IceAura.DURATION);
+        if(ch instanceof Hero && ((Hero) ch).subClass == HeroSubClass.WARDEN){
+            Buff.prolong(ch, IceAura.class, IceAura.DURATION*10);
+        } else {
+            Buff.prolong(ch, IceAura.class, IceAura.DURATION);
+        }
     }
 
     @Override

@@ -123,7 +123,12 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.HookedWa
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.TwoSidedWaraxe;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.Waraxe;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.AssassinsBlade;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.BroadBlade;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.ButcherBlade;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.DoubleBlade;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.Hackblade;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.RunicBlade;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.SteelBlade;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.bows.GoldenBow;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.bows.SmallBow;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.canes.CaneBlade;
@@ -623,8 +628,11 @@ public class Generator {
                     Kanabo.class,
                     GooWeapon.class,
                     PendulumSpear.class,
+                    ButcherBlade.class,
+                    DoubleBlade.class,
+                    Hackblade.class,
 			};
-			WEP_T3.probs = new float[]{ 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 3 };
+			WEP_T3.probs = new float[]{ 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 3, 3, 3, 3 };
 			
 			WEP_T4.classes = new Class<?>[]{
 					Longsword.class,
@@ -648,8 +656,10 @@ public class Generator {
                     SpikedClub.class,
                     BambooSpear.class,
                     Lance.class,
+                    BroadBlade.class,
+                    SteelBlade.class,
 			};
-			WEP_T4.probs = new float[]{ 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
+			WEP_T4.probs = new float[]{ 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
 			
 			WEP_T5.classes = new Class<?>[]{
 					Greatsword.class,

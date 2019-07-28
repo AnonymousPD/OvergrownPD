@@ -101,7 +101,11 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.HookedWa
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.TwoSidedWaraxe;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.Waraxe;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.AssassinsBlade;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.BroadBlade;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.DoubleBlade;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.Hackblade;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.RunicBlade;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.SteelBlade;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.bows.GoldenBow;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.bows.SmallBow;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.canes.CaneBlade;
@@ -284,6 +288,8 @@ public enum Catalog {
         WEAPONS.seen.put( Kanabo.class,                     false);
         WEAPONS.seen.put( GooWeapon.class,                  false);
         WEAPONS.seen.put( PendulumSpear.class,              false);
+        WEAPONS.seen.put( DoubleBlade.class,                false);
+        WEAPONS.seen.put( Hackblade.class,                  false);
 
         //TIER 4
         WEAPONS.seen.put( Longsword.class,                  false);
@@ -307,6 +313,8 @@ public enum Catalog {
         WEAPONS.seen.put( SpikedClub.class,                 false);
         WEAPONS.seen.put( BambooSpear.class,                false);
         WEAPONS.seen.put( Lance.class,                      false);
+        WEAPONS.seen.put( BroadBlade.class,                 false);
+        WEAPONS.seen.put( SteelBlade.class,                 false);
 
         //TIER 5
         WEAPONS.seen.put( Greatsword.class,                 false);

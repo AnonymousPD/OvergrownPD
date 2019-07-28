@@ -32,14 +32,8 @@ public class BroadBlade extends MeleeWeapon {
 	{
 		image = ItemSpriteSheet.BROAD_BLADE;
 
-		//TODO:
-		//tier = 4;
+		tier = 4;
+        ACC = 1.3f; //30% boost to accuracy
+        DLY = 1.3f; //30% slower
 	}
-
-	@Override
-	public int max(int lvl) {
-	    //TODO:
-		return  0;
-	}
-
 }

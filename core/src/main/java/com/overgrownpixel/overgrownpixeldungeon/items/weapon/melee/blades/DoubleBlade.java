@@ -32,14 +32,9 @@ public class DoubleBlade extends MeleeWeapon {
 	{
 		image = ItemSpriteSheet.DOUBLE_BLADE;
 
-		//TODO:
-		//tier = 4;
-	}
-
-	@Override
-	public int max(int lvl) {
-	    //TODO:
-		return  0;
+		tier = 3;
+        ACC = 1.5f; //50% boost to accuracy
+        DLY = 1.5f; //50% slower
 	}
 
 }

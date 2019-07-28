@@ -32,14 +32,9 @@ public class ButcherBlade extends MeleeWeapon {
 	{
 		image = ItemSpriteSheet.BUTCHER_BLADE;
 
-		//TODO:
-		//tier = 4;
-	}
-
-	@Override
-	public int max(int lvl) {
-	    //TODO:
-		return  0;
+		tier = 3;
+        ACC = 1.4f; //40% boost to accuracy
+        DLY = 1.4f; //40% slower
 	}
 
 }
