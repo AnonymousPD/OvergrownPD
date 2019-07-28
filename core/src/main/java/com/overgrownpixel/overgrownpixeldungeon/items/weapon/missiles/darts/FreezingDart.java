@@ -24,7 +24,10 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Frost;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.utils.Random;
 
 public class FreezingDart extends TippedDart {
 	
@@ -34,7 +37,7 @@ public class FreezingDart extends TippedDart {
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-		
+        Buff.prolong( defender, Frost.class, Frost.duration( defender ) * Random.Float( 1.0f, 1.5f ) );
 		return super.proc(attacker, defender, damage);
 	}
 }

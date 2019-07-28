@@ -25,9 +25,14 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Frost;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.IceAura;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.FrostcornPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
+import com.watabou.utils.Random;
 
 public class Frostcorn extends Plant {
 
@@ -37,17 +42,17 @@ public class Frostcorn extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        Buff.prolong( enemy, Frost.class, Frost.duration( enemy ) * Random.Float( 1.0f, 1.5f ) );
     }
 
     @Override
     public void activate(Char ch) {
-
+        Buff.prolong(ch, IceAura.class, IceAura.DURATION);
     }
 
     @Override
     public void activate() {
-
+        spawnLasher(pos);
     }
 
     @Override
@@ -67,8 +72,13 @@ public class Frostcorn extends Plant {
         public Emitter.Factory getPixelParticle() {
             return FrostcornPoisonParticle.FACTORY;
         }
-		
-		@Override
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new FrostcornPoisonParticle();
+        }
+
+        @Override
 		public int price() {
 			return 30 * quantity;
 		}

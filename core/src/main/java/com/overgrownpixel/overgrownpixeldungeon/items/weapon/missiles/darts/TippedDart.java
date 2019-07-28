@@ -45,6 +45,8 @@ import com.overgrownpixel.overgrownpixeldungeon.plants.Dreamfoil;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Earthroot;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Fadeleaf;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Firebloom;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Firefoxglove;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Frostcorn;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Icecap;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Rotberry;
@@ -151,26 +153,28 @@ public abstract class TippedDart extends Dart {
 	
 	private static HashMap<Class<?extends Plant.Seed>, Class<?extends TippedDart>> types = new HashMap<>();
 	static {
-		types.put(Blindweed.Seed.class,     BlindingDart.class);
-		types.put(Dreamfoil.Seed.class,     SleepDart.class);
-		types.put(Earthroot.Seed.class,     ParalyticDart.class);
-		types.put(Fadeleaf.Seed.class,      DisplacingDart.class);
-		types.put(Firebloom.Seed.class,     IncendiaryDart.class);
-		types.put(Icecap.Seed.class,        ChillingDart.class);
-		types.put(Rotberry.Seed.class,      RotDart.class);
-		types.put(Sorrowmoss.Seed.class,    PoisonDart.class);
-		types.put(Starflower.Seed.class,    HolyDart.class);
-		types.put(Stormvine.Seed.class,     ShockingDart.class);
-		types.put(Sungrass.Seed.class,      HealingDart.class);
-		types.put(Swiftthistle.Seed.class,  AdrenalineDart.class);
-        types.put(Apricobush.Seed.class,    HealthDart.class);
-        types.put(Blackholeflower.Seed.class,TeleportingDart.class);
-        types.put(WandOfRegrowth.Dewcatcher.Seed.class,DewDart.class);
-        types.put(WandOfRegrowth.Seedpod.Seed.class,SeedChaosDart.class);
-        types.put(Butterlion.Seed.class,    EarthquakeDart.class);
-        types.put(Chandaliertail.Seed.class,TrackingDart.class);
-        types.put(Chillisnapper.Seed.class, HeatDart.class);
-        types.put(Crimsonpepper.Seed.class, SpicyDart.class);
+		types.put(Blindweed.Seed.class,                 BlindingDart.class);
+		types.put(Dreamfoil.Seed.class,                 SleepDart.class);
+		types.put(Earthroot.Seed.class,                 ParalyticDart.class);
+		types.put(Fadeleaf.Seed.class,                  DisplacingDart.class);
+		types.put(Firebloom.Seed.class,                 IncendiaryDart.class);
+		types.put(Icecap.Seed.class,                    ChillingDart.class);
+		types.put(Rotberry.Seed.class,                  RotDart.class);
+		types.put(Sorrowmoss.Seed.class,                PoisonDart.class);
+		types.put(Starflower.Seed.class,                HolyDart.class);
+		types.put(Stormvine.Seed.class,                 ShockingDart.class);
+		types.put(Sungrass.Seed.class,                  HealingDart.class);
+		types.put(Swiftthistle.Seed.class,              AdrenalineDart.class);
+        types.put(Apricobush.Seed.class,                HealthDart.class);
+        types.put(Blackholeflower.Seed.class,           TeleportingDart.class);
+        types.put(WandOfRegrowth.Dewcatcher.Seed.class, DewDart.class);
+        types.put(WandOfRegrowth.Seedpod.Seed.class,    SeedChaosDart.class);
+        types.put(Butterlion.Seed.class,                EarthquakeDart.class);
+        types.put(Chandaliertail.Seed.class,            TrackingDart.class);
+        types.put(Chillisnapper.Seed.class,             HeatDart.class);
+        types.put(Crimsonpepper.Seed.class,             SpicyDart.class);
+        types.put(Firefoxglove.Seed.class,              FirefoxDart.class);
+        types.put(Frostcorn.Seed.class,                 FreezingDart.class);
 	}
 	
 	public static TippedDart getTipped( Plant.Seed s, int quantity ){

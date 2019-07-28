@@ -26,8 +26,10 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.FirefoxglovePoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.items.bombs.Firebomb;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 
 public class Firefoxglove extends Plant {
 
@@ -37,17 +39,17 @@ public class Firefoxglove extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        new Firebomb().explode(enemy.pos);
     }
 
     @Override
     public void activate(Char ch) {
-
+        new Firebomb().explode(ch.pos);
     }
 
     @Override
     public void activate() {
-
+        new Firebomb().explode(pos);
     }
 
     @Override
@@ -67,8 +69,13 @@ public class Firefoxglove extends Plant {
         public Emitter.Factory getPixelParticle() {
             return FirefoxglovePoisonParticle.FACTORY;
         }
-		
-		@Override
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new FirefoxglovePoisonParticle();
+        }
+
+        @Override
 		public int price() {
 			return 30 * quantity;
 		}

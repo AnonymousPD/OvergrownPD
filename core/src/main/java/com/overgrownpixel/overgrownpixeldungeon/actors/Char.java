@@ -50,6 +50,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HalomethaneBurning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Haste;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HeatAura;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.IceAura;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MagicalSleep;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Ooze;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Paralysis;
@@ -64,6 +65,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Terror;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Vertigo;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.items.BrokenSeal;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.AntiMagic;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Brimstone;
@@ -555,6 +557,21 @@ public abstract class Char extends Actor {
 		    for(int p : PathFinder.NEIGHBOURS9){
 		        if(Dungeon.level.map[pos+p] == Terrain.WATER){
                     Level.set(pos+p, Terrain.EMPTY);
+                }
+            }
+        }
+
+        if(buff(IceAura.class) != null){
+            if(this instanceof Hero){
+                for(Mob mob : ((Hero) this).visibleEnemiesList()){
+                    Buff.prolong( mob, Frost.class, Frost.duration( mob ) * Random.Float( 1.0f, 1.5f ) );
+                }
+            } else {
+                for(Mob mob : ((Hero) this).visibleEnemiesList()){
+                    Buff.prolong( mob, Frost.class, Frost.duration( mob ) * Random.Float( 1.0f, 1.5f ) );
+                }
+                if(this.fieldOfView[Dungeon.hero.pos]){
+                    Buff.prolong( Dungeon.hero, Frost.class, Frost.duration( Dungeon.hero ) * Random.Float( 1.0f, 1.5f ) );
                 }
             }
         }

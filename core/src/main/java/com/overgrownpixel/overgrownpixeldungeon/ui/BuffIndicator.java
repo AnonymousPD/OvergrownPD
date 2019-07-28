@@ -103,6 +103,7 @@ public class BuffIndicator extends Component {
     public static final int HEATAURA    = 52;
     public static final int SUGARRUSH   = 53;
     public static final int HONEYED     = 54;
+    public static final int ICEAURA     = 55;
 
 	public static final int SIZE	= 7;
 	

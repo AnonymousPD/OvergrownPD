@@ -24,6 +24,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.items.bombs.Firebomb;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class FirefoxDart extends TippedDart {
@@ -34,7 +35,7 @@ public class FirefoxDart extends TippedDart {
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-		
+		new Firebomb().explode(defender.pos);
 		return super.proc(attacker, defender, damage);
 	}
 }

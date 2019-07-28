@@ -36,13 +36,11 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Haste;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
-import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Lasher;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.LivingPlant;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Pushing;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.LeafParticle;
-import com.overgrownpixel.overgrownpixeldungeon.items.Generator;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfRegrowth;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Level;
@@ -129,7 +127,8 @@ public abstract class Plant implements Bundlable {
 	}
 
     public void spawnLasher(int pos){
-        //try and spawn a lasher. This is only reserved for when you have no idea what an activate() effect should be.
+       /*
+       //try and spawn a lasher. This is only reserved for when you have no idea what an activate() effect should be.
         if (Actor.findChar(pos) == null && ((Dungeon.level.passable[pos] || Dungeon.level.avoid[pos]) && !Dungeon.level.pit[pos])) {
             Lasher lasher = new Lasher();
             lasher.pos = pos;
@@ -140,6 +139,7 @@ public abstract class Plant implements Bundlable {
             //fuck it! Give the player a seed! They deserve it if they managed to pull this fucking shit off!
             Dungeon.level.drop(Generator.random(Generator.Category.SEED), pos).sprite.drop(pos);
         }
+        */
     }
 
     public void spawnLivingPlant(LivingPlant livingPlant, Char activator) {
@@ -264,6 +264,10 @@ public abstract class Plant implements Bundlable {
                 return new Chillisnapper.Seed();
             case 29:
                 return new Crimsonpepper.Seed();
+            case 16:
+                return new Firefoxglove.Seed();
+            case 26:
+                return new Frostcorn.Seed();
             default:
                 return null;
         }
