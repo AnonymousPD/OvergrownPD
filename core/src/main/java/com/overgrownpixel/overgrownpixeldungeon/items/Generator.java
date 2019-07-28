@@ -355,7 +355,7 @@ public class Generator {
                     Chandaliertail.Seed.class,
                     Chillisnapper.Seed.class,
                     Crimsonpepper.Seed.class,};
-			SEED.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, 5, 5 };
+			SEED.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
 
             BASESEED.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -376,7 +376,7 @@ public class Generator {
                     Chandaliertail.Seed.class,
                     Chillisnapper.Seed.class,
                     Crimsonpepper.Seed.class,};
-            BASESEED.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, 5, 5 };
+            BASESEED.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
 
             SEEDWATER.classes = new Class<?>[]{
 
@@ -404,7 +404,7 @@ public class Generator {
                     Chandaliertail.Seed.class,
                     Chillisnapper.Seed.class,
                     Crimsonpepper.Seed.class,};
-            SEEDSEWER.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, 5, 5 };
+            SEEDSEWER.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
 
             SEEDPRISON.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -425,7 +425,7 @@ public class Generator {
                     Chandaliertail.Seed.class,
                     Chillisnapper.Seed.class,
                     Crimsonpepper.Seed.class,};
-            SEEDPRISON.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, 5, 5 };
+            SEEDPRISON.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
 
             SEEDCAVES.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -446,7 +446,7 @@ public class Generator {
                     Chandaliertail.Seed.class,
                     Chillisnapper.Seed.class,
                     Crimsonpepper.Seed.class,};
-            SEEDCAVES.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, 5, 5 };
+            SEEDCAVES.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
 
             SEEDCITY.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -467,7 +467,7 @@ public class Generator {
                     Chandaliertail.Seed.class,
                     Chillisnapper.Seed.class,
                     Crimsonpepper.Seed.class,};
-            SEEDCITY.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, 5, 5};
+            SEEDCITY.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
 
             SEEDHELL.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -488,7 +488,7 @@ public class Generator {
                     Chandaliertail.Seed.class,
                     Chillisnapper.Seed.class,
                     Crimsonpepper.Seed.class,};                                                                                                  //
-            SEEDHELL.probs = new float[]{ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 5, 5, 5, 5, 5, 5 };
+            SEEDHELL.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
 			
 			SCROLL.classes = new Class<?>[]{
 					ScrollOfUpgrade.class, //3 drop every chapter, see Dungeon.souNeeded()

@@ -83,6 +83,21 @@ public class Dart extends MissileWeapon {
 		} else if(goldencrossbow != null){
             return  3 +                 //3 base
                     bow.level() + lvl;  //+1 per level or bow level
+        } else if(ironcrossbow != null){
+            return  5 +                 //3 base
+                    bow.level() + lvl;  //+1 per level or bow level
+        } else if(smallcrossbow != null){
+            return  5 +                 //3 base
+                    bow.level() + lvl;  //+1 per level or bow level
+        } else if(woodencrossbow != null){
+            return  5 +                 //3 base
+                    bow.level() + lvl;  //+1 per level or bow level
+        } else if(goldenbow != null){
+            return  3 +                 //3 base
+                    bow.level() + lvl;  //+1 per level or bow level
+        } else if(smallbow != null){
+            return  2 +                 //3 base
+                    bow.level() + lvl;  //+1 per level or bow level
         } else {
 			return  1 +     //1 base, down from 2
 					lvl;    //scaling unchanged
