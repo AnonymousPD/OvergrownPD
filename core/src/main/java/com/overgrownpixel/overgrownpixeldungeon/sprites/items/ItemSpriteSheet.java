@@ -843,7 +843,7 @@ public class ItemSpriteSheet {
 	public static final int POTION_CHARCOAL = POTIONS+9;
 	public static final int POTION_SILVER   = POTIONS+10;
 	public static final int POTION_IVORY    = POTIONS+11;
-	public static final int POTION_CATALYST = POTIONS+13;
+	public static final int POTION_CATALYST = POTIONS+15;
 	static {
 		for (int i = POTIONS; i < POTIONS+16; i++)
 			assignItemRect(i, 12, 14);
