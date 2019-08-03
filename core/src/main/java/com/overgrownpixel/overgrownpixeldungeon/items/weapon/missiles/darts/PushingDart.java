@@ -24,6 +24,8 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfBlastWave;
+import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class PushingDart extends TippedDart {
@@ -34,7 +36,11 @@ public class PushingDart extends TippedDart {
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-		
+
+        int oppositeHero = attacker.pos + (attacker.pos - defender.pos);
+        Ballistica trajectory = new Ballistica(attacker.pos, oppositeHero, Ballistica.MAGIC_BOLT);
+        WandOfBlastWave.throwChar(attacker, trajectory, 1000);
+
 		return super.proc(attacker, defender, damage);
 	}
 }

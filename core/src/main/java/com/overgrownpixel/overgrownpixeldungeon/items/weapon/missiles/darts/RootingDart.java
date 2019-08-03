@@ -24,6 +24,8 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Roots;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class RootingDart extends TippedDart {
@@ -34,7 +36,9 @@ public class RootingDart extends TippedDart {
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-		
-		return super.proc(attacker, defender, damage);
+
+	    Buff.affect( defender, Roots.class, 5 );
+
+	    return super.proc(attacker, defender, damage);
 	}
 }

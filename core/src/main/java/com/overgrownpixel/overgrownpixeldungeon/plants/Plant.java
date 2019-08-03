@@ -206,9 +206,9 @@ public abstract class Plant implements Bundlable {
 
     public void defaultProc(Char enemy, int damage){
         enemy.damage(damage, this);
-        if (Dungeon.level.heroFOV[enemy.pos]) {
+        /*if (Dungeon.level.heroFOV[enemy.pos]) {
             CellEmitter.get( enemy.pos ).burst( LeafParticle.GENERAL, 6 );
-        }
+        }*/
     }
 	
 	public void wither() {
@@ -268,6 +268,12 @@ public abstract class Plant implements Bundlable {
                 return new Firefoxglove.Seed();
             case 26:
                 return new Frostcorn.Seed();
+            case 33:
+                return new Grasslilly.Seed();
+            case 35:
+                return new Kiwivetch.Seed();
+            case 18:
+                return new Musclemoss.Seed();
             default:
                 return null;
         }

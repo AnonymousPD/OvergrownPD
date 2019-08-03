@@ -47,7 +47,10 @@ import com.overgrownpixel.overgrownpixeldungeon.plants.Fadeleaf;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Firebloom;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Firefoxglove;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Frostcorn;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Grasslilly;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Icecap;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Kiwivetch;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Musclemoss;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Rotberry;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Sorrowmoss;
@@ -175,6 +178,9 @@ public abstract class TippedDart extends Dart {
         types.put(Crimsonpepper.Seed.class,             SpicyDart.class);
         types.put(Firefoxglove.Seed.class,              FirefoxDart.class);
         types.put(Frostcorn.Seed.class,                 FreezingDart.class);
+        types.put(Grasslilly.Seed.class,                ChaosDart.class);
+        types.put(Kiwivetch.Seed.class,                 RootingDart.class);
+        types.put(Musclemoss.Seed.class,                PushingDart.class);
 	}
 	
 	public static TippedDart getTipped( Plant.Seed s, int quantity ){

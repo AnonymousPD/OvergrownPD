@@ -23,9 +23,11 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.GrasslillyPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.items.Generator;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 
@@ -37,17 +39,38 @@ public class Grasslilly extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        try {
+            Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
+            Plant plant = seed.plantClass.newInstance();
+            plant.pos = enemy.pos;
+            plant.attackProc(enemy, damage);
+        } catch (Exception e){
+            OvergrownPixelDungeon.reportException(e);
+        }
     }
 
     @Override
     public void activate(Char ch) {
-
+        try {
+            Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
+            Plant plant = seed.plantClass.newInstance();
+            plant.pos = ch.pos;
+            plant.activate(ch);
+        } catch (Exception e){
+            OvergrownPixelDungeon.reportException(e);
+        }
     }
 
     @Override
     public void activate() {
-
+        try {
+            Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
+            Plant plant = seed.plantClass.newInstance();
+            plant.pos = pos;
+            plant.activate();
+        } catch (Exception e){
+            OvergrownPixelDungeon.reportException(e);
+        }
     }
 
     @Override

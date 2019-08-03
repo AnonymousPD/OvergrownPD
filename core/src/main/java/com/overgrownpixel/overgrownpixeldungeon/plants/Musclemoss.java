@@ -23,11 +23,18 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
+import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.MusclemossPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfBlastWave;
+import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
+import com.watabou.utils.PathFinder;
+import com.watabou.utils.Random;
 
 public class Musclemoss extends Plant {
 
@@ -37,17 +44,52 @@ public class Musclemoss extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        try{
+            int opposite;
+            int path;
+            do{
+                path = PathFinder.NEIGHBOURS8[Random.Int( 8 )];
+                opposite = pos + path;
+            } while ((Dungeon.level.passable[opposite]) && (Dungeon.level.passable[opposite+path]));
+            Ballistica trajectory = new Ballistica(pos, opposite, Ballistica.MAGIC_BOLT);
+            WandOfBlastWave.throwChar(enemy, trajectory, damage*10);
+        } catch (Exception e){
+            OvergrownPixelDungeon.reportException(e);
+        }
     }
 
     @Override
     public void activate(Char ch) {
-
+        try{
+            int opposite;
+            int path;
+            do{
+                path = PathFinder.NEIGHBOURS8[Random.Int( 8 )];
+                opposite = pos + path;
+            } while ((Dungeon.level.passable[opposite]) && (Dungeon.level.passable[opposite+path]));
+            Ballistica trajectory = new Ballistica(pos, opposite, Ballistica.MAGIC_BOLT);
+            WandOfBlastWave.throwChar(ch, trajectory, 100);
+        } catch (Exception e){
+            OvergrownPixelDungeon.reportException(e);
+        }
     }
 
     @Override
     public void activate() {
-
+        try{
+            if(Actor.findChar(pos) != null){
+                int opposite;
+                int path;
+                do{
+                    path = PathFinder.NEIGHBOURS8[Random.Int( 8 )];
+                    opposite = pos + path;
+                } while ((Dungeon.level.passable[opposite]) && (Dungeon.level.passable[opposite+path]));
+                Ballistica trajectory = new Ballistica(pos, opposite, Ballistica.MAGIC_BOLT);
+                WandOfBlastWave.throwChar(Actor.findChar(pos), trajectory, 100);
+            }
+        } catch (Exception e){
+            OvergrownPixelDungeon.reportException(e);
+        }
     }
 
     @Override

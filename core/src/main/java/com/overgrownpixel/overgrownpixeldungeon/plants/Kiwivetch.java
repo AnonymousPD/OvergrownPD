@@ -25,7 +25,9 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Regrowth;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.KiwivetchPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 
@@ -37,17 +39,17 @@ public class Kiwivetch extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        GameScene.add( Blob.seed( enemy.pos, 100, Regrowth.class ) );
     }
 
     @Override
     public void activate(Char ch) {
-
+        GameScene.add( Blob.seed( ch.pos, 100, Regrowth.class ) );
     }
 
     @Override
     public void activate() {
-
+        GameScene.add( Blob.seed( pos, 10, Regrowth.class ) );
     }
 
     @Override

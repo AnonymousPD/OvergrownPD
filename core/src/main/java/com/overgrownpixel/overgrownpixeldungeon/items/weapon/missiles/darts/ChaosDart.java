@@ -23,7 +23,9 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 
+import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.items.Generator;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class ChaosDart extends TippedDart {
@@ -34,7 +36,12 @@ public class ChaosDart extends TippedDart {
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-		
+        try {
+            TippedDart dart = (TippedDart) Generator.random(Generator.Category.DARTS);
+            dart.proc(attacker, defender, damage);
+        } catch (Exception e){
+            OvergrownPixelDungeon.reportException(e);
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }
