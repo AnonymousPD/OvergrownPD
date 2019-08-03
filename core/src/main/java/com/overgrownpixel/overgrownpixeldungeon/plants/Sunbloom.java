@@ -26,8 +26,10 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.SunbloomPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.SungrassPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 
 public class Sunbloom extends Plant {
 
@@ -68,8 +70,13 @@ public class Sunbloom extends Plant {
         public Emitter.Factory getPixelParticle() {
             return SunbloomPoisonParticle.FACTORY;
         }
-		
-		@Override
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new SungrassPoisonParticle();
+        }
+
+        @Override
 		public int price() {
 			return 30 * quantity;
 		}

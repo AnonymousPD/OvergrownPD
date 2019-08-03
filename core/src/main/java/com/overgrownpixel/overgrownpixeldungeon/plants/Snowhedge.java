@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.SnowhedgePoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 
 public class Snowhedge extends Plant {
 
@@ -67,8 +68,13 @@ public class Snowhedge extends Plant {
         public Emitter.Factory getPixelParticle() {
             return SnowhedgePoisonParticle.FACTORY;
         }
-		
-		@Override
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new SnowhedgePoisonParticle();
+        }
+
+        @Override
 		public int price() {
 			return 30 * quantity;
 		}

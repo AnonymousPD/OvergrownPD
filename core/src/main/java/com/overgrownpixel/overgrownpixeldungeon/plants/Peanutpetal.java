@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.PeanutpetalPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 
 public class Peanutpetal extends Plant {
 
@@ -67,8 +68,13 @@ public class Peanutpetal extends Plant {
         public Emitter.Factory getPixelParticle() {
             return PeanutpetalPoisonParticle.FACTORY;
         }
-		
-		@Override
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new PeanutpetalPoisonParticle();
+        }
+
+        @Override
 		public int price() {
 			return 30 * quantity;
 		}

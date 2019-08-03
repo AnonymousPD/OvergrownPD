@@ -33,6 +33,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfBlastWave;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;
 
@@ -109,8 +110,13 @@ public class Musclemoss extends Plant {
         public Emitter.Factory getPixelParticle() {
             return MusclemossPoisonParticle.FACTORY;
         }
-		
-		@Override
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new MusclemossPoisonParticle();
+        }
+
+        @Override
 		public int price() {
 			return 30 * quantity;
 		}

@@ -30,6 +30,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticle
 import com.overgrownpixel.overgrownpixeldungeon.items.Generator;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 
 public class Grasslilly extends Plant {
 
@@ -90,8 +91,13 @@ public class Grasslilly extends Plant {
         public Emitter.Factory getPixelParticle() {
             return GrasslillyPoisonParticle.FACTORY;
         }
-		
-		@Override
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new GrasslillyPoisonParticle();
+        }
+
+        @Override
 		public int price() {
 			return 30 * quantity;
 		}

@@ -30,6 +30,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticle
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.PixelParticle;
 
 public class Kiwivetch extends Plant {
 
@@ -69,8 +70,13 @@ public class Kiwivetch extends Plant {
         public Emitter.Factory getPixelParticle() {
             return KiwivetchPoisonParticle.FACTORY;
         }
-		
-		@Override
+
+        @Override
+        public PixelParticle poisonEmitterClass() {
+            return new KiwivetchPoisonParticle();
+        }
+
+        @Override
 		public int price() {
 			return 30 * quantity;
 		}
