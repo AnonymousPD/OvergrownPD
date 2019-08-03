@@ -102,8 +102,7 @@ public class HalomethaneBurning extends Buff implements Hero.Doom {
 		spend( TICK );
 		left -= TICK;
 		
-		if (left <= 0 ||
-			(Dungeon.level.water[target.pos] && !target.flying)) {
+		if (left <= 0 || (Dungeon.level.water[target.pos] && !target.flying)) {
 			
 			detach();
 		}

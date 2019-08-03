@@ -99,6 +99,7 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 	protected Tweener motion;
 	
 	protected Emitter burning;
+    protected Emitter haloburning;
 	protected Emitter chilled;
 	protected Emitter marked;
 	protected Emitter levitation;
@@ -328,8 +329,8 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
                 }
                 break;
             case HALOMETHANEBURNING:
-                burning = emitter();
-                burning.pour( HalomethaneFlameParticle.FACTORY, 0.04f );
+                haloburning = emitter();
+                haloburning.pour( HalomethaneFlameParticle.FACTORY, 0.04f );
                 if (visible) {
                     Sample.INSTANCE.play( Assets.SND_BURNING );
                 }
@@ -387,6 +388,12 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 					burning = null;
 				}
 				break;
+            case HALOMETHANEBURNING:
+                if (haloburning != null) {
+                    haloburning.on = false;
+                    haloburning = null;
+                }
+                break;
 			case LEVITATING:
 				if (levitation != null) {
 					levitation.on = false;
@@ -464,6 +471,9 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 		if (burning != null) {
 			burning.visible = visible;
 		}
+        if (haloburning != null) {
+            haloburning.visible = visible;
+        }
 		if (levitation != null) {
 			levitation.visible = visible;
 		}
