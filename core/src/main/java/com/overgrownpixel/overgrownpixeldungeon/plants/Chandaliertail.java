@@ -67,6 +67,11 @@ public class Chandaliertail extends Plant {
 		}
 
         @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            Buff.prolong(defender, Glowing.class, Glowing.DURATION);
+        }
+
+        @Override
         public Emitter.Factory getPixelParticle() {
             return ChandaliertailPoisonParticle.FACTORY;
         }

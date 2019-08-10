@@ -51,8 +51,13 @@ import com.overgrownpixel.overgrownpixeldungeon.plants.Grasslilly;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Icecap;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Kiwivetch;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Musclemoss;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Nightshadeonion;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Parasiteshrub;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Peanutpetal;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Rose;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Rotberry;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Snowhedge;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Sorrowmoss;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Starflower;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Stormvine;
@@ -181,6 +186,11 @@ public abstract class TippedDart extends Dart {
         types.put(Grasslilly.Seed.class,                ChaosDart.class);
         types.put(Kiwivetch.Seed.class,                 RootingDart.class);
         types.put(Musclemoss.Seed.class,                PushingDart.class);
+        types.put(Nightshadeonion.Seed.class,           SmokingDart.class);
+        types.put(Parasiteshrub.Seed.class,             ParasiticDart.class);
+        types.put(Peanutpetal.Seed.class,               PeanutMarkDart.class);
+        types.put(Rose.Seed.class,                      RoseDart.class);
+        types.put(Snowhedge.Seed.class,                 SnowstormDart.class);
 	}
 	
 	public static TippedDart getTipped( Plant.Seed s, int quantity ){

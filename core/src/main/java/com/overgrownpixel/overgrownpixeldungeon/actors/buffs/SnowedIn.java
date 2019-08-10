@@ -24,34 +24,45 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.actors.buffs;
 
+import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
 import com.watabou.noosa.Image;
 
-public class Glowing extends FlavourBuff {
+public class SnowedIn extends FlavourBuff {
 	
 	{
-		type = buffType.NEGATIVE;
+		type = buffType.POSITIVE;
+		announced = true;
 	}
 	
 	public static final float DURATION	= 10f;
+
+    @Override
+    public boolean attachTo( Char target ) {
+        if (!target.flying && super.attachTo( target )) {
+            target.rooted = true;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public void detach() {
+        target.rooted = false;
+        super.detach();
+    }
 	
 	@Override
 	public int icon() {
-		return BuffIndicator.GLOWING;
+		return BuffIndicator.SNOWEDIN;
 	}
 	
 	@Override
 	public void tintIcon(Image icon) {
 		greyIcon(icon, 5f, cooldown());
 	}
-
-    @Override
-    public void fx(boolean on) {
-        if (on) target.sprite.add(CharSprite.State.ILLUMINATED);
-        else target.sprite.remove(CharSprite.State.ILLUMINATED);
-    }
 	
 	@Override
 	public String toString() {

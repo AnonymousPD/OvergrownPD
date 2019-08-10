@@ -44,6 +44,8 @@ public class Levitation extends FlavourBuff {
 		if (super.attachTo( target )) {
 			target.flying = true;
 			Roots.detach( target, Roots.class );
+			Thorns.detach( target, Thorns.class );
+            SnowedIn.detach( target, SnowedIn.class );
 			return true;
 		} else {
 			return false;

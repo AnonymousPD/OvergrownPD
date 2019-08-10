@@ -24,17 +24,19 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Thorns;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
-public class DiseaseDart extends TippedDart {
+public class RoseDart extends TippedDart {
 	
 	{
-		image = ItemSpriteSheet.DART_DISEASE;
+		image = ItemSpriteSheet.DART_WRAITH;
 	}
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-		
+        Buff.prolong(defender, Thorns.class, Thorns.DURATION);
 		return super.proc(attacker, defender, damage);
 	}
 }

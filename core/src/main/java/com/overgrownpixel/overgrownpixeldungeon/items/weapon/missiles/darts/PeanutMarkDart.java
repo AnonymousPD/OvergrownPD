@@ -24,6 +24,8 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MarkOfTheNut;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class PeanutMarkDart extends TippedDart {
@@ -34,7 +36,7 @@ public class PeanutMarkDart extends TippedDart {
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-		
+        Buff.prolong(defender, MarkOfTheNut.class, MarkOfTheNut.DURATION);
 		return super.proc(attacker, defender, damage);
 	}
 }

@@ -25,6 +25,11 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ParasiticInfection;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ParasiticSymbiosis;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.ParasiteshrubPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
@@ -38,17 +43,25 @@ public class Parasiteshrub extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        if (enemy instanceof Hero && ((Hero) enemy).subClass == HeroSubClass.WARDEN){
+            Buff.prolong(enemy, ParasiticSymbiosis.class, ParasiticSymbiosis.DURATION);
+        } else {
+            Buff.prolong(enemy, ParasiticInfection.class, ParasiticInfection.DURATION);
+        }
     }
 
     @Override
     public void activate(Char ch) {
-
+        if (ch instanceof Hero && ((Hero) ch).subClass == HeroSubClass.WARDEN){
+            Buff.prolong(ch, ParasiticSymbiosis.class, ParasiticSymbiosis.DURATION);
+        } else {
+            Buff.prolong(ch, ParasiticInfection.class, ParasiticInfection.DURATION);
+        }
     }
 
     @Override
     public void activate() {
-
+        spawnLasher(pos);
     }
 
     @Override
@@ -63,6 +76,11 @@ public class Parasiteshrub extends Plant {
 
 			plantClass = Parasiteshrub.class;
 		}
+
+        @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            Buff.prolong(defender, ParasiticInfection.class, ParasiticInfection.DURATION);
+        }
 
         @Override
         public Emitter.Factory getPixelParticle() {

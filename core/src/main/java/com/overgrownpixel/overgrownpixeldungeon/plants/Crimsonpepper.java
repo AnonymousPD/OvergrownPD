@@ -74,6 +74,11 @@ public class Crimsonpepper extends Plant {
 		}
 
         @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            Buff.prolong(defender, Dehydrated.class, Dehydrated.DURATION);
+        }
+
+        @Override
         public Emitter.Factory getPixelParticle() {
             return CrimsonpepperPoisonParticle.FACTORY;
         }

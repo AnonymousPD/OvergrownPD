@@ -62,8 +62,12 @@ public class Waterweed extends Plant {
 			image = ItemSpriteSheet.SEED_WATERWEED;
 
 			plantClass = Waterweed.class;
-			;
 		}
+
+        @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+
+        }
 
         @Override
         public Emitter.Factory getPixelParticle() {

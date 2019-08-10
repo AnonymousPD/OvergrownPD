@@ -113,6 +113,11 @@ public class Butterlion extends Plant {
 		}
 
         @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            new Butterlion().attackProc(defender, damage);
+        }
+
+        @Override
         public Emitter.Factory getPixelParticle() {
             return ButterlionPoisonParticle.FACTORY;
         }

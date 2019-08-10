@@ -79,6 +79,11 @@ public class Frostcorn extends Plant {
 		}
 
         @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            Buff.prolong( defender, Frost.class, Frost.duration( defender ) * Random.Float( 1.0f, 1.5f ) );
+        }
+
+        @Override
         public Emitter.Factory getPixelParticle() {
             return FrostcornPoisonParticle.FACTORY;
         }

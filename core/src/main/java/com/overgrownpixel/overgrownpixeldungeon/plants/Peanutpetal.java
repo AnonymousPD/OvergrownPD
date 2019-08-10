@@ -23,9 +23,13 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MarkOfTheNut;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.PeanutpetalPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.items.food.Peanut;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -38,17 +42,17 @@ public class Peanutpetal extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        Buff.prolong(enemy, MarkOfTheNut.class, MarkOfTheNut.DURATION);
     }
 
     @Override
     public void activate(Char ch) {
-
+        Buff.prolong(ch, MarkOfTheNut.class, MarkOfTheNut.DURATION);
     }
 
     @Override
     public void activate() {
-
+        Dungeon.level.drop(new Peanut(), pos).sprite.drop(pos);
     }
 
     @Override
@@ -63,6 +67,14 @@ public class Peanutpetal extends Plant {
 
 			plantClass = Peanutpetal.class;
 		}
+
+        @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+		    int d = defender.HP;
+            if(d - damage <= 0){
+                Dungeon.level.drop(new Peanut(), defender.pos).sprite.drop(defender.pos);
+            }
+        }
 
         @Override
         public Emitter.Factory getPixelParticle() {

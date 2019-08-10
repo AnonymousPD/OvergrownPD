@@ -41,7 +41,7 @@ public class Aqua extends Armor.Glyph {
 
         if(defender instanceof Hero){
             if(Dungeon.level.water[defender.pos]){
-                return Math.round(damage / armor.level());
+                return Math.round(damage / (armor.level()+1));
             }
         }
 

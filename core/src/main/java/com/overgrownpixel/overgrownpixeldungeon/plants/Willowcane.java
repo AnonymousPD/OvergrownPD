@@ -62,8 +62,12 @@ public class Willowcane extends Plant {
 			image = ItemSpriteSheet.SEED_WILLOWCANE;
 
 			plantClass = Willowcane.class;
-			;
 		}
+
+		@Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+
+        }
 
         @Override
         public Emitter.Factory getPixelParticle() {

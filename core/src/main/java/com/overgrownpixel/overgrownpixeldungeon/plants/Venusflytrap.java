@@ -65,6 +65,11 @@ public class Venusflytrap extends Plant {
 		}
 
         @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+
+        }
+
+        @Override
         public Emitter.Factory getPixelParticle() {
             return VenusflytrapPoisonParticle.FACTORY;
         }

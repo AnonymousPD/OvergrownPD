@@ -52,9 +52,13 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Haste;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HeatAura;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.IceAura;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MagicalShield;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MagicalSleep;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MarkOfTheNut;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Ooze;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Paralysis;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ParasiticInfection;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ParasiticSymbiosis;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Poison;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Preparation;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ShieldBuff;
@@ -287,6 +291,7 @@ public abstract class Char extends Actor {
 		float acuRoll = Random.Float( attacker.attackSkill( defender ) );
 		float defRoll = Random.Float( defender.defenseSkill( attacker ) );
 		if (attacker.buff(Bless.class) != null) acuRoll *= 1.20f;
+        if (attacker.buff(MarkOfTheNut.class) != null) acuRoll *= 2f;
 		if (defender.buff(Bless.class) != null) defRoll *= 1.20f;
 		return (magic ? acuRoll * 2 : acuRoll) >= defRoll;
 	}
@@ -312,6 +317,9 @@ public abstract class Char extends Actor {
 	}
 	
 	public int attackProc( Char enemy, int damage ) {
+        if(enemy.buff(MagicalShield.class) != null){
+            return 0;
+        }
 		return damage;
 	}
 	
@@ -326,6 +334,9 @@ public abstract class Char extends Actor {
 		if ( buff( Adrenaline.class ) != null) speed *= 2f;
 		if ( buff( Haste.class ) != null) speed *= 3f;
         if ( buff( Dehydrated.class ) != null ) speed /= 2f;
+        if ( buff( ParasiticInfection.class ) != null) speed /= 2f;
+        if ( buff( ParasiticSymbiosis.class ) != null) speed *= 2f;
+        if ( buff( MarkOfTheNut.class ) != null) speed /= 2f;
 		return speed;
 	}
 	

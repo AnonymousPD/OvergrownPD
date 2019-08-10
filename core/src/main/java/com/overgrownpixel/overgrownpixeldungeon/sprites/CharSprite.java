@@ -32,6 +32,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.DarkBlock;
 import com.overgrownpixel.overgrownpixeldungeon.effects.EmoIcon;
 import com.overgrownpixel.overgrownpixeldungeon.effects.FloatingText;
 import com.overgrownpixel.overgrownpixeldungeon.effects.IceBlock;
+import com.overgrownpixel.overgrownpixeldungeon.effects.RoseHalo;
 import com.overgrownpixel.overgrownpixeldungeon.effects.ShieldHalo;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Splash;
@@ -84,7 +85,7 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 	protected float shadowOffset    = 0.25f;
 
 	public enum State {
-		BURNING, LEVITATING, INVISIBLE, PARALYSED, FROZEN, ILLUMINATED, CHILLED, DARKENED, MARKED, HEALING, SHIELDED, HALOMETHANEBURNING
+		BURNING, LEVITATING, INVISIBLE, PARALYSED, FROZEN, ILLUMINATED, CHILLED, DARKENED, MARKED, HEALING, SHIELDED, HALOMETHANEBURNING, ROSESHIELDED
 	}
 	
 	protected Animation idle;
@@ -109,6 +110,7 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 	protected DarkBlock darkBlock;
 	protected TorchHalo light;
 	protected ShieldHalo shield;
+    protected RoseHalo roseshield;
 	protected AlphaTweener invisible;
 	
 	protected EmoIcon emo;
@@ -377,6 +379,9 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 			case SHIELDED:
 				GameScene.effect( shield = new ShieldHalo( this ));
 				break;
+            case ROSESHIELDED:
+                GameScene.effect( roseshield = new RoseHalo( this ));
+                break;
 		}
 	}
 	
@@ -451,6 +456,11 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 					shield.putOut();
 				}
 				break;
+            case ROSESHIELDED:
+                if (roseshield != null){
+                    roseshield.putOut();
+                }
+                break;
 		}
 	}
 	

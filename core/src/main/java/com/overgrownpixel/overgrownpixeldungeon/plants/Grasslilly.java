@@ -88,6 +88,16 @@ public class Grasslilly extends Plant {
 		}
 
         @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            try {
+                Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
+                seed.procEffect(attacker, defender, damage);
+            } catch (Exception e){
+                OvergrownPixelDungeon.reportException(e);
+            }
+        }
+
+        @Override
         public Emitter.Factory getPixelParticle() {
             return GrasslillyPoisonParticle.FACTORY;
         }

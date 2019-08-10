@@ -24,35 +24,90 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.actors.buffs;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
+import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.noosa.Image;
 
-public class Glowing extends FlavourBuff {
+public class Steaming extends FlavourBuff {
 	
 	{
 		type = buffType.NEGATIVE;
+		announced = true;
 	}
+
+	public static final float DURATION	= 20f;
 	
-	public static final float DURATION	= 10f;
+	@Override
+	public boolean attachTo( Char target ) {
+		if (super.attachTo( target )) {
+			target.flying = true;
+			Roots.detach( target, Roots.class );
+			Thorns.detach( target, Thorns.class );
+            SnowedIn.detach( target, SnowedIn.class );
+            Chill.detach( target, Chill.class );
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+    @Override
+    public boolean act() {
+        if (target.isAlive()) {
+
+            float level = 1f;
+            int dmg = Math.round(level);
+
+            if (dmg > 0) {
+
+                target.damage( dmg, this );
+
+                if (target == Dungeon.hero && !target.isAlive()) {
+                    Dungeon.fail( getClass() );
+                    GLog.n( Messages.get(this, "ondeath") );
+                }
+
+                spend( TICK );
+            } else {
+                detach();
+            }
+
+        } else {
+
+            detach();
+
+        }
+
+        return true;
+    }
+
+    @Override
+	public void detach() {
+		target.flying = false;
+		Dungeon.level.press( target.pos, target );
+		super.detach();
+	}
 	
 	@Override
 	public int icon() {
-		return BuffIndicator.GLOWING;
+		return BuffIndicator.LEVITATION;
 	}
 	
 	@Override
 	public void tintIcon(Image icon) {
 		greyIcon(icon, 5f, cooldown());
 	}
-
-    @Override
-    public void fx(boolean on) {
-        if (on) target.sprite.add(CharSprite.State.ILLUMINATED);
-        else target.sprite.remove(CharSprite.State.ILLUMINATED);
-    }
 	
+	@Override
+	public void fx(boolean on) {
+		if (on) target.sprite.add(CharSprite.State.LEVITATING);
+		else target.sprite.remove(CharSprite.State.LEVITATING);
+	}
+
 	@Override
 	public String toString() {
 		return Messages.get(this, "name");
@@ -62,10 +117,9 @@ public class Glowing extends FlavourBuff {
     public String heroMessage() {
         return Messages.get(this, "heromsg");
     }
-	
+
 	@Override
 	public String desc() {
 		return Messages.get(this, "desc", dispTurns());
 	}
-	
 }

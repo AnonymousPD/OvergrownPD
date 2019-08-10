@@ -345,6 +345,7 @@
     <integer name="gamescene3">0xFF000000</integer><color name="gamescene3">#FF000000</color>
     <integer name="gamescene4">0x000000</integer><color name="gamescene4">#000000</color>
     <integer name="gamescene5">0xFFFFFF</integer><color name="gamescene5">#FFFFFF</color>
+    <integer name="rosehalo">0xDB7EB9</integer><color name="rosehalo">#DB7EB9</color>
 
     <integer name="floatingtextdefault">0xFFFFFF</integer><color name="floatingtextdefault">#FFFFFF</color>
     <integer name="floatingtextpositive">0x00FF00</integer><color name="floatingtextpositive">#00FF00</color>

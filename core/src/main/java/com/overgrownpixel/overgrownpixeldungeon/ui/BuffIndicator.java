@@ -105,6 +105,12 @@ public class BuffIndicator extends Component {
     public static final int HONEYED     = 54;
     public static final int ICEAURA     = 55;
     public static final int TRAILOFFIRE = 56;
+    public static final int PARASITICINF= 57;
+    public static final int PARASITICSYM= 58;
+    public static final int MARKOFTHENUT= 59;
+    public static final int ROSETHORNS  = 60;
+    public static final int ROSEBARRIER = 61;
+    public static final int SNOWEDIN    = 62;
 
 	public static final int SIZE	= 7;
 	

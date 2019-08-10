@@ -23,9 +23,14 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.RoseBarrier;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Thorns;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.RosePoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.DriedRose;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -38,17 +43,29 @@ public class Rose extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        Buff.prolong(enemy, Thorns.class, Thorns.DURATION);
     }
 
     @Override
     public void activate(Char ch) {
-
+        Buff.prolong(ch, RoseBarrier.class, RoseBarrier.DURATION);
     }
 
     @Override
     public void activate() {
+        DriedRose rose = Dungeon.hero.belongings.getItem( DriedRose.class );
+        if (rose != null && rose.isIdentified() && !rose.cursed){
+            //aim to drop 1 petal every 2 floors
+            int petalsNeeded = (int) Math.ceil((float)((Dungeon.depth / 2) - rose.droppedPetals) / 3);
 
+            for (int i=1; i <= petalsNeeded; i++) {
+                //the player may miss a single petal and still max their rose.
+                if (rose.droppedPetals < 11) {
+                    Dungeon.level.drop(new DriedRose.Petal(), pos).sprite.drop(pos);
+                    rose.droppedPetals++;
+                }
+            }
+        }
     }
 
     @Override
@@ -63,6 +80,11 @@ public class Rose extends Plant {
 
 			plantClass = Rose.class;
 		}
+
+        @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            Buff.prolong(defender, Thorns.class, Thorns.DURATION);
+        }
 
         @Override
         public Emitter.Factory getPixelParticle() {

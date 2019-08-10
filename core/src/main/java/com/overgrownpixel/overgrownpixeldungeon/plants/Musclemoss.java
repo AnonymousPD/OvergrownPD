@@ -107,6 +107,11 @@ public class Musclemoss extends Plant {
 		}
 
         @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            new Musclemoss().attackProc(defender, damage);
+        }
+
+        @Override
         public Emitter.Factory getPixelParticle() {
             return MusclemossPoisonParticle.FACTORY;
         }

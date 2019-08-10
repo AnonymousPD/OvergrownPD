@@ -25,33 +25,27 @@
 package com.overgrownpixel.overgrownpixeldungeon.actors.buffs;
 
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
 import com.watabou.noosa.Image;
 
-public class Glowing extends FlavourBuff {
+public class MarkOfTheNut extends FlavourBuff {
 	
 	{
 		type = buffType.NEGATIVE;
+		announced = true;
 	}
 	
 	public static final float DURATION	= 10f;
 	
 	@Override
 	public int icon() {
-		return BuffIndicator.GLOWING;
-	}
-	
-	@Override
-	public void tintIcon(Image icon) {
-		greyIcon(icon, 5f, cooldown());
+		return BuffIndicator.MARKOFTHENUT;
 	}
 
     @Override
-    public void fx(boolean on) {
-        if (on) target.sprite.add(CharSprite.State.ILLUMINATED);
-        else target.sprite.remove(CharSprite.State.ILLUMINATED);
-    }
+	public void tintIcon(Image icon) {
+		greyIcon(icon, 5f, cooldown());
+	}
 	
 	@Override
 	public String toString() {

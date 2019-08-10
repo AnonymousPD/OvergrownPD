@@ -31,6 +31,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Paralysis;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Roots;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Thorns;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.FetidRat;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.GnollTrickster;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.GreatCrab;
@@ -182,6 +183,7 @@ public class Ghost extends NPC {
 	{
 		immunities.add( Paralysis.class );
 		immunities.add( Roots.class );
+        immunities.add( Thorns.class );
 	}
 
 	public static class Quest {

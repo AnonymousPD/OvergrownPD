@@ -67,6 +67,11 @@ public class Kiwivetch extends Plant {
 		}
 
         @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            GameScene.add( Blob.seed( defender.pos, 100, Regrowth.class ) );
+        }
+
+        @Override
         public Emitter.Factory getPixelParticle() {
             return KiwivetchPoisonParticle.FACTORY;
         }

@@ -25,7 +25,11 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Snowstorm;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.SnowedIn;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.SnowhedgePoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -38,17 +42,17 @@ public class Snowhedge extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        GameScene.add(Blob.seed(enemy.pos, 50, Snowstorm.class));
     }
 
     @Override
     public void activate(Char ch) {
-
+        GameScene.add(Blob.seed(ch.pos, 50, Snowstorm.class));
     }
 
     @Override
     public void activate() {
-
+        GameScene.add(Blob.seed(pos, 50, Snowstorm.class));
     }
 
     @Override
@@ -63,6 +67,11 @@ public class Snowhedge extends Plant {
 
 			plantClass = Snowhedge.class;
 		}
+
+        @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            Buff.prolong(defender, SnowedIn.class, SnowedIn.DURATION);
+        }
 
         @Override
         public Emitter.Factory getPixelParticle() {

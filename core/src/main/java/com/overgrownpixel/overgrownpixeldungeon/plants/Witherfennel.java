@@ -62,8 +62,12 @@ public class Witherfennel extends Plant {
 			image = ItemSpriteSheet.SEED_WITHERFENNEL;
 
 			plantClass = Witherfennel.class;
-			;
 		}
+
+        @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+
+        }
 
         @Override
         public Emitter.Factory getPixelParticle() {

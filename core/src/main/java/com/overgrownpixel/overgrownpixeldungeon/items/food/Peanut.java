@@ -22,43 +22,20 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.overgrownpixel.overgrownpixeldungeon.actors.buffs;
+package com.overgrownpixel.overgrownpixeldungeon.items.food;
 
-import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
-import com.watabou.noosa.Image;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
-public class Heavy extends FlavourBuff {
-	
+public class Peanut extends Food {
+
 	{
-		type = buffType.POSITIVE;
-	}
-	
-	public static final float DURATION	= 10f;
-	
-	@Override
-	public int icon() {
-		return BuffIndicator.HEAVY;
+		image = ItemSpriteSheet.PEANUT;
+		energy = Hunger.HUNGRY/2f;
 	}
 	
 	@Override
-	public void tintIcon(Image icon) {
-		greyIcon(icon, 5f, cooldown());
+	public int price() {
+		return 1 * quantity;
 	}
-	
-	@Override
-	public String toString() {
-		return Messages.get(this, "name");
-	}
-
-    @Override
-    public String heroMessage() {
-        return Messages.get(this, "heromsg");
-    }
-	
-	@Override
-	public String desc() {
-		return Messages.get(this, "desc", dispTurns());
-	}
-	
 }

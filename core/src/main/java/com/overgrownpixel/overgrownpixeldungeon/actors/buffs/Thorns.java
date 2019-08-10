@@ -25,32 +25,83 @@
 package com.overgrownpixel.overgrownpixeldungeon.actors.buffs;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.effects.Splash;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
+import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.noosa.Image;
+import com.watabou.utils.PointF;
 
-public class Dehydrated extends FlavourBuff {
+import static com.watabou.utils.Random.NormalFloat;
+
+public class Thorns extends FlavourBuff {
 	
 	{
 		type = buffType.NEGATIVE;
+		announced = true;
 	}
 	
 	public static final float DURATION	= 10f;
-	
-	@Override
-	public int icon() {
-		return BuffIndicator.DEHYDRATED;
-	}
 
     @Override
-    public boolean act() {
-        if (Dungeon.level.water[target.pos] && !target.flying) {
-            detach();
+    public boolean attachTo( Char target ) {
+        if (!target.flying && super.attachTo( target )) {
+            target.rooted = true;
+            return true;
+        } else {
+            return false;
         }
-        return super.act();
     }
 
     @Override
+    public boolean act() {
+        if (target.isAlive()) {
+
+            float level = 3f;
+
+            level = NormalFloat(level / 2f, level);
+            int dmg = Math.round(level);
+
+            if (dmg > 0) {
+
+                target.damage( dmg, this );
+                if (target.sprite.visible) {
+                    Splash.at( target.sprite.center(), -PointF.PI / 2, PointF.PI / 6,
+                            target.sprite.blood(), Math.min( 10 * dmg / target.HT, 10 ) );
+                }
+
+                if (target == Dungeon.hero && !target.isAlive()) {
+                    Dungeon.fail( getClass() );
+                    GLog.n( Messages.get(this, "ondeath") );
+                }
+
+                spend( TICK );
+            } else {
+                detach();
+            }
+
+        } else {
+
+            detach();
+
+        }
+
+        return true;
+    }
+
+    @Override
+    public void detach() {
+        target.rooted = false;
+        super.detach();
+    }
+	
+	@Override
+	public int icon() {
+		return BuffIndicator.ROSETHORNS;
+	}
+	
+	@Override
 	public void tintIcon(Image icon) {
 		greyIcon(icon, 5f, cooldown());
 	}

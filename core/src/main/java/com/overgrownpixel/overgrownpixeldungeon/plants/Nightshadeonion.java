@@ -25,10 +25,15 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.SmokeScreen;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Blindness;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.NightshadeonionPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
+import com.watabou.utils.Random;
 
 public class Nightshadeonion extends Plant {
 
@@ -38,17 +43,23 @@ public class Nightshadeonion extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
+        GameScene.add( Blob.seed( enemy.pos, 1000, SmokeScreen.class ) );
 
+        if(enemy.properties().contains(Char.Property.INORGANIC)){
+            return;
+        }
+
+        Buff.prolong( enemy, Blindness.class, Random.Int( 2, 5 ) );
     }
 
     @Override
     public void activate(Char ch) {
-
+        GameScene.add( Blob.seed( ch.pos, 1000, SmokeScreen.class ) );
     }
 
     @Override
     public void activate() {
-
+        GameScene.add( Blob.seed( pos, 1000, SmokeScreen.class ) );
     }
 
     @Override
@@ -63,6 +74,11 @@ public class Nightshadeonion extends Plant {
 
 			plantClass = Nightshadeonion.class;
 		}
+
+        @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            Buff.prolong( defender, Blindness.class, Random.Int( 2, 5 ) );
+        }
 
         @Override
         public Emitter.Factory getPixelParticle() {

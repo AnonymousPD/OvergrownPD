@@ -25,6 +25,8 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Steaming;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.SteamweedPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
@@ -38,17 +40,17 @@ public class Steamweed extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        Buff.prolong(enemy, Steaming.class, Steaming.DURATION);
     }
 
     @Override
     public void activate(Char ch) {
-
+        Buff.prolong(ch, Steaming.class, Steaming.DURATION);
     }
 
     @Override
     public void activate() {
-
+        spawnLasher(pos);
     }
 
     @Override
@@ -64,6 +66,11 @@ public class Steamweed extends Plant {
 			plantClass = Steamweed.class;
 
 		}
+
+        @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            Buff.prolong(defender, Steaming.class, Steaming.DURATION);
+        }
 
         @Override
         public Emitter.Factory getPixelParticle() {

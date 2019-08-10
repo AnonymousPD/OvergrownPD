@@ -207,6 +207,11 @@ public class Chillisnapper extends Plant {
 		}
 
         @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            GameScene.add(Blob.seed(defender.pos, 3, Fire.class));
+        }
+
+        @Override
         public Emitter.Factory getPixelParticle() {
             return ChillisnapperPoisonParticle.FACTORY;
         }

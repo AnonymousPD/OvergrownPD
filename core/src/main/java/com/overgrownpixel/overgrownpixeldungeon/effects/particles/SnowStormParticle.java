@@ -22,43 +22,41 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.overgrownpixel.overgrownpixeldungeon.actors.buffs;
+package com.overgrownpixel.overgrownpixeldungeon.effects.particles;
 
-import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
-import com.watabou.noosa.Image;
+import com.watabou.noosa.particles.Emitter;
+import com.watabou.noosa.particles.Emitter.Factory;
+import com.watabou.noosa.particles.PixelParticle;
+import com.watabou.utils.Random;
 
-public class Heavy extends FlavourBuff {
-	
-	{
-		type = buffType.POSITIVE;
-	}
-	
-	public static final float DURATION	= 10f;
-	
-	@Override
-	public int icon() {
-		return BuffIndicator.HEAVY;
-	}
-	
-	@Override
-	public void tintIcon(Image icon) {
-		greyIcon(icon, 5f, cooldown());
-	}
-	
-	@Override
-	public String toString() {
-		return Messages.get(this, "name");
-	}
+public class SnowStormParticle extends PixelParticle {
 
-    @Override
-    public String heroMessage() {
-        return Messages.get(this, "heromsg");
-    }
-	
-	@Override
-	public String desc() {
-		return Messages.get(this, "desc", dispTurns());
+	public static final Factory FACTORY = new Factory() {
+		@Override
+		public void emit( Emitter emitter, int index, float x, float y ) {
+			((SnowStormParticle)emitter.recycle( SnowStormParticle.class )).reset( x, y );
+		}
+	};
+
+	public SnowStormParticle() {
+		super();
+		speed.set( 0, Random.Float( 5, 8 ) );
+		lifespan = 2f;
 	}
 	
+	public void reset( float x, float y ) {
+		revive();
+		
+		this.x = x;
+		this.y = y - speed.y * lifespan;
+		
+		left = lifespan;
+	}
+	
+	@Override
+	public void update() {
+		super.update();
+		float p = left / lifespan;
+		am = (p < 0.5f ? p : 1 - p) * 1.5f;
+	}
 }

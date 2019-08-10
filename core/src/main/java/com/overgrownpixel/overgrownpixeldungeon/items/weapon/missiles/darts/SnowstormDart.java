@@ -24,17 +24,20 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Snowstorm;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
-public class WraithDart extends TippedDart {
+public class SnowstormDart extends TippedDart {
 	
 	{
-		image = ItemSpriteSheet.DART_WRAITH;
+		image = ItemSpriteSheet.DART_DISEASE;
 	}
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-		
+        GameScene.add(Blob.seed(defender.pos, 50, Snowstorm.class));
 		return super.proc(attacker, defender, damage);
 	}
 }
