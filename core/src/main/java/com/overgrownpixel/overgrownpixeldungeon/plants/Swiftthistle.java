@@ -30,6 +30,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FlavourBuff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Haste;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Stunned;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.SwiftthistlePoisonParticle;
@@ -68,7 +69,7 @@ public class Swiftthistle extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-        defaultProc(enemy, damage);
+        Buff.prolong(enemy, Stunned.class, Stunned.DURATION);
     }
 
     @Override

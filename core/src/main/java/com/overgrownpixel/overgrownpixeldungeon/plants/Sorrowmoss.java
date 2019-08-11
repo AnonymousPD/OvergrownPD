@@ -27,6 +27,7 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.PoisonGas;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Poison;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ToxicImbue;
@@ -35,6 +36,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.PoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.SorrowmossPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -62,7 +64,7 @@ public class Sorrowmoss extends Plant {
 
     @Override
     public void activate() {
-        spawnLasher(pos);
+        GameScene.add(Blob.seed(pos, 50, PoisonGas.class));
     }
 
     @Override

@@ -23,12 +23,18 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Wither;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.WitherfennelPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.levels.Level;
+import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
+import com.watabou.utils.PathFinder;
 
 public class Witherfennel extends Plant {
 
@@ -38,17 +44,24 @@ public class Witherfennel extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        Buff.prolong(enemy, Wither.class, Wither.DURATION);
     }
 
     @Override
     public void activate(Char ch) {
-
+        Buff.prolong(ch, Wither.class, Wither.DURATION);
     }
 
     @Override
     public void activate() {
-
+        for(int p : PathFinder.NEIGHBOURS8){
+            if (Dungeon.level.map[pos+p] == Terrain.HIGH_GRASS || Dungeon.level.map[pos+p] == Terrain.GRASS){
+                Level.set(pos+p, Terrain.FURROWED_GRASS);
+            }
+            if(Dungeon.level.plants.get(pos+p) != null){
+                Dungeon.level.plants.get(pos+p).wither();
+            }
+        }
     }
 
     @Override
@@ -66,7 +79,7 @@ public class Witherfennel extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            Buff.prolong(defender, Wither.class, Wither.DURATION);
         }
 
         @Override

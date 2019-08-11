@@ -23,7 +23,10 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.ShadowParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class SunDart extends TippedDart {
@@ -34,7 +37,12 @@ public class SunDart extends TippedDart {
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-		
+        if(defender instanceof Mob && defender.properties().contains(Char.Property.UNDEAD)){
+            defender.die(this);
+            if(Dungeon.level.heroFOV[defender.pos]){
+                defender.sprite.emitter().start( ShadowParticle.UP, 0.05f, 10 );
+            }
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

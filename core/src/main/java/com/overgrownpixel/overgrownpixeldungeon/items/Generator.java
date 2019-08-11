@@ -294,9 +294,16 @@ import com.overgrownpixel.overgrownpixeldungeon.plants.Rotberry;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Snowhedge;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Sorrowmoss;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Starflower;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Steamweed;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Stormvine;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Sunbloom;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Suncarnivore;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Sungrass;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Swiftthistle;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Tomatobush;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Venusflytrap;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Willowcane;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Witherfennel;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.GameMath;
 import com.watabou.utils.Random;
@@ -466,8 +473,15 @@ public class Generator {
                     Parasiteshrub.Seed.class,
                     Peanutpetal.Seed.class,
                     Rose.Seed.class,
-                    Snowhedge.Seed.class,};
-			SEED.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Snowhedge.Seed.class,
+                    Steamweed.Seed.class,
+                    Sunbloom.Seed.class,
+                    Suncarnivore.Seed.class,
+                    Tomatobush.Seed.class,
+                    Venusflytrap.Seed.class,
+                    Willowcane.Seed.class,
+                    Witherfennel.Seed.class,};
+			SEED.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
 
             BASESEED.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -497,8 +511,15 @@ public class Generator {
                     Parasiteshrub.Seed.class,
                     Peanutpetal.Seed.class,
                     Rose.Seed.class,
-                    Snowhedge.Seed.class,};
-            BASESEED.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Snowhedge.Seed.class,
+                    Steamweed.Seed.class,
+                    Sunbloom.Seed.class,
+                    Suncarnivore.Seed.class,
+                    Tomatobush.Seed.class,
+                    Venusflytrap.Seed.class,
+                    Willowcane.Seed.class,
+                    Witherfennel.Seed.class,};
+            BASESEED.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
 
             SEEDWATER.classes = new Class<?>[]{
 
@@ -535,8 +556,15 @@ public class Generator {
                     Parasiteshrub.Seed.class,
                     Peanutpetal.Seed.class,
                     Rose.Seed.class,
-                    Snowhedge.Seed.class,};
-            SEEDSEWER.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Snowhedge.Seed.class,
+                    Steamweed.Seed.class,
+                    Sunbloom.Seed.class,
+                    Suncarnivore.Seed.class,
+                    Tomatobush.Seed.class,
+                    Venusflytrap.Seed.class,
+                    Willowcane.Seed.class,
+                    Witherfennel.Seed.class,};
+            SEEDSEWER.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
 
             SEEDPRISON.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -566,8 +594,15 @@ public class Generator {
                     Parasiteshrub.Seed.class,
                     Peanutpetal.Seed.class,
                     Rose.Seed.class,
-                    Snowhedge.Seed.class,};
-            SEEDPRISON.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Snowhedge.Seed.class,
+                    Steamweed.Seed.class,
+                    Sunbloom.Seed.class,
+                    Suncarnivore.Seed.class,
+                    Tomatobush.Seed.class,
+                    Venusflytrap.Seed.class,
+                    Willowcane.Seed.class,
+                    Witherfennel.Seed.class,};
+            SEEDPRISON.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
 
             SEEDCAVES.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -597,8 +632,15 @@ public class Generator {
                     Parasiteshrub.Seed.class,
                     Peanutpetal.Seed.class,
                     Rose.Seed.class,
-                    Snowhedge.Seed.class,};
-            SEEDCAVES.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Snowhedge.Seed.class,
+                    Steamweed.Seed.class,
+                    Sunbloom.Seed.class,
+                    Suncarnivore.Seed.class,
+                    Tomatobush.Seed.class,
+                    Venusflytrap.Seed.class,
+                    Willowcane.Seed.class,
+                    Witherfennel.Seed.class,};
+            SEEDCAVES.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
 
             SEEDCITY.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -628,8 +670,15 @@ public class Generator {
                     Parasiteshrub.Seed.class,
                     Peanutpetal.Seed.class,
                     Rose.Seed.class,
-                    Snowhedge.Seed.class,};
-            SEEDCITY.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Snowhedge.Seed.class,
+                    Steamweed.Seed.class,
+                    Sunbloom.Seed.class,
+                    Suncarnivore.Seed.class,
+                    Tomatobush.Seed.class,
+                    Venusflytrap.Seed.class,
+                    Willowcane.Seed.class,
+                    Witherfennel.Seed.class,};
+            SEEDCITY.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
 
             SEEDHELL.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -659,8 +708,15 @@ public class Generator {
                     Parasiteshrub.Seed.class,
                     Peanutpetal.Seed.class,
                     Rose.Seed.class,
-                    Snowhedge.Seed.class,};
-            SEEDHELL.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Snowhedge.Seed.class,
+                    Steamweed.Seed.class,
+                    Sunbloom.Seed.class,
+                    Suncarnivore.Seed.class,
+                    Tomatobush.Seed.class,
+                    Venusflytrap.Seed.class,
+                    Willowcane.Seed.class,
+                    Witherfennel.Seed.class,};
+            SEEDHELL.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
 			
 			SCROLL.classes = new Class<?>[]{
 					ScrollOfUpgrade.class, //3 drop every chapter, see Dungeon.souNeeded()

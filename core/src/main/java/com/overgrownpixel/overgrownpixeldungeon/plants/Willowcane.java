@@ -25,7 +25,12 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Depressant;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Slow;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.WillowcanePoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -38,17 +43,29 @@ public class Willowcane extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        if(enemy instanceof Mob){
+            if(!enemy.properties().contains(Char.Property.INORGANIC)){
+                Buff.prolong( enemy, Slow.class, Slow.DURATION );
+            }
+        } else {
+            Buff.prolong( enemy, Slow.class, Slow.DURATION );
+        }
     }
 
     @Override
     public void activate(Char ch) {
-
+        if(ch instanceof Mob){
+            if(!ch.properties().contains(Char.Property.INORGANIC)){
+                Buff.prolong( ch, Slow.class, Slow.DURATION );
+            }
+        } else {
+            Buff.prolong( ch, Slow.class, Slow.DURATION );
+        }
     }
 
     @Override
     public void activate() {
-
+        GameScene.add(Blob.seed(pos, 50, Depressant.class));
     }
 
     @Override
@@ -66,7 +83,7 @@ public class Willowcane extends Plant {
 
 		@Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            Buff.prolong( defender, Slow.class, Slow.DURATION );
         }
 
         @Override

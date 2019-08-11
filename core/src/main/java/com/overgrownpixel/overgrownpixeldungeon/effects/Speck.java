@@ -72,6 +72,9 @@ public class Speck extends Image {
 	public static final int STORM       = 117;
 	public static final int INFERNO     = 118;
 	public static final int BLIZZARD    = 119;
+    public static final int MIASMA      = 120;
+    public static final int NECTAR      = 121;
+    public static final int DEPRESSANT  = 122;
 	
 	private static final int SIZE = 7;
 	
@@ -123,6 +126,9 @@ public class Speck extends Image {
 		case SMOKE:
 		case BLIZZARD:
 		case INFERNO:
+            case MIASMA:
+            case NECTAR:
+            case DEPRESSANT:
 			frame( film.get( STEAM ) );
 			break;
 		case CALM:
@@ -148,6 +154,33 @@ public class Speck extends Image {
 			speed.set( 0, -20 );
 			lifespan = 1f;
 			break;
+
+            case MIASMA:
+                hardlight( Game.instance.getResources().getInteger(R.integer.miasma) );
+                speed.y = +32;
+                acc.y = +32;
+                angularSpeed = -30;
+                angle = Random.Float( 360 );
+                lifespan = Random.Float( 1f, 3f );
+                break;
+
+            case NECTAR:
+                hardlight( Game.instance.getResources().getInteger(R.integer.nectar) );
+                speed.y = -32;
+                acc.y = -32;
+                angularSpeed = +60;
+                angle = Random.Float( 360 );
+                lifespan = Random.Float( 0.5f, 1.5f );
+                break;
+
+            case DEPRESSANT:
+                hardlight( Game.instance.getResources().getInteger(R.integer.depressant) );
+                speed.y = +15;
+                acc.y = +15;
+                angularSpeed = -15;
+                angle = Random.Float( 360 );
+                lifespan = Random.Float( 3f, 5f );
+                break;
 			
 		case STAR:
 			speed.polar( Random.Float( 2 * 3.1415926f ), Random.Float( 128 ) );
@@ -465,6 +498,8 @@ public class Speck extends Image {
 			case BLIZZARD:
 			case INFERNO:
 			case DUST:
+                case MIASMA:
+                case DEPRESSANT:
 				am = (float)Math.sqrt( (p < 0.5f ? p : 1 - p) * 0.5f );
 				scale.set( 1 + p );
 				break;
@@ -473,6 +508,7 @@ public class Speck extends Image {
 				hardlight( ColorMath.interpolate( Game.instance.getResources().getInteger(R.integer.speckinterpolate1), Game.instance.getResources().getInteger(R.integer.speckinterpolate2) , p ));
 			case STENCH:
 			case SMOKE:
+                case NECTAR:
 				am = (float)Math.sqrt( (p < 0.5f ? p : 1 - p) );
 				scale.set( 1 + p );
 				break;

@@ -24,6 +24,8 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Wither;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class WitherDart extends TippedDart {
@@ -34,7 +36,7 @@ public class WitherDart extends TippedDart {
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-		
+        Buff.prolong(defender, Wither.class, Wither.DURATION );
 		return super.proc(attacker, defender, damage);
 	}
 }

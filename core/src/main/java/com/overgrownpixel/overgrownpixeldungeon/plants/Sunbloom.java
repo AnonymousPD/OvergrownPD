@@ -23,10 +23,15 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Sunlight;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.ShadowParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.SunbloomPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.SungrassPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -39,17 +44,27 @@ public class Sunbloom extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        if(enemy instanceof Mob && enemy.properties().contains(Char.Property.UNDEAD)){
+            enemy.die(this);
+            if(Dungeon.level.heroFOV[enemy.pos]){
+                enemy.sprite.emitter().start( ShadowParticle.UP, 0.05f, 10 );
+            }
+        }
     }
 
     @Override
     public void activate(Char ch) {
-
+        if(ch instanceof Mob && ch.properties().contains(Char.Property.UNDEAD)){
+            ch.die(this);
+            if(Dungeon.level.heroFOV[ch.pos]){
+                ch.sprite.emitter().start( ShadowParticle.UP, 0.05f, 10 );
+            }
+        }
     }
 
     @Override
     public void activate() {
-
+        GameScene.add(Blob.seed(pos, 50, Sunlight.class));
     }
 
     @Override
@@ -68,7 +83,12 @@ public class Sunbloom extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            if(defender instanceof Mob && defender.properties().contains(Char.Property.UNDEAD)){
+                defender.die(this);
+                if(Dungeon.level.heroFOV[defender.pos]){
+                    defender.sprite.emitter().start( ShadowParticle.UP, 0.05f, 10 );
+                }
+            }
         }
 
         @Override

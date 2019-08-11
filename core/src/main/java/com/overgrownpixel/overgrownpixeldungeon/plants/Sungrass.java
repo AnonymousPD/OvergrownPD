@@ -30,6 +30,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FlavourBuff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Healing;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Sprouting;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
@@ -73,7 +74,7 @@ public class Sungrass extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-        defaultProc(enemy, damage);
+        Buff.prolong(enemy, Sprouting.class, Sprouting.DURATION);
     }
 
     @Override

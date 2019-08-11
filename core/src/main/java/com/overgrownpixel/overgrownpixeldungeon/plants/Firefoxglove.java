@@ -78,6 +78,11 @@ public class Firefoxglove extends Plant {
 		}
 
         @Override
+        public void procEffect(Char attacker, Char defender, int damage) {
+            new Firebomb().explode(defender.pos);
+        }
+
+        @Override
         public Emitter.Factory getPixelParticle() {
             return FirefoxglovePoisonParticle.FACTORY;
         }

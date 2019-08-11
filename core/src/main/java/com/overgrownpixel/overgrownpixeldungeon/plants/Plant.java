@@ -433,7 +433,7 @@ public abstract class Plant implements Bundlable {
 					Sample.INSTANCE.play(Assets.SND_PLANT);
 				}
 				Plant plant = plantClass.newInstance();
-				//plant.playerplanted = playerplanted;
+				plant.playerplanted = playerplanted;
 				plant.pos = pos;
 
 				return plant;

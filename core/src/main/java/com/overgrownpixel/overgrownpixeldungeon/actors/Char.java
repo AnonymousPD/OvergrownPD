@@ -61,14 +61,18 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ParasiticInfection;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ParasiticSymbiosis;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Poison;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Preparation;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Secreting;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ShieldBuff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Slow;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.SpaceTimePowers;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Speed;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Sprouting;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Stamina;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Stunned;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Terror;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.TrailOfFire;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Vertigo;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Wither;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
@@ -320,6 +324,7 @@ public abstract class Char extends Actor {
         if(enemy.buff(MagicalShield.class) != null){
             return 0;
         }
+        if ( buff( Wither.class ) != null ) Math.round(damage /= 2f);
 		return damage;
 	}
 	
@@ -337,6 +342,8 @@ public abstract class Char extends Actor {
         if ( buff( ParasiticInfection.class ) != null) speed /= 2f;
         if ( buff( ParasiticSymbiosis.class ) != null) speed *= 2f;
         if ( buff( MarkOfTheNut.class ) != null) speed /= 2f;
+        if ( buff( Sprouting.class ) != null) speed /= 2f;
+        if ( buff( Stunned.class ) != null) speed /= 8f;
 		return speed;
 	}
 	
@@ -543,7 +550,7 @@ public abstract class Char extends Actor {
 	
 	public void move( int step ) {
 
-		if (Dungeon.level.adjacent( step, pos ) && buff( Vertigo.class ) != null) {
+		if (Dungeon.level.adjacent( step, pos ) && (buff( Vertigo.class ) != null || buff( Secreting.class ) != null)) {
 			sprite.interruptMotion();
 			int newPos = pos + PathFinder.NEIGHBOURS8[Random.Int( 8 )];
 			if (!(Dungeon.level.passable[newPos] || Dungeon.level.avoid[newPos]) || Actor.findChar( newPos ) != null)
@@ -556,6 +563,12 @@ public abstract class Char extends Actor {
 
         if(buff(TrailOfFire.class) != null){
             GameScene.add(Blob.seed(pos, 1, Fire.class));
+        }
+
+        if(buff(Sprouting.class) != null
+                && (Dungeon.level.map[pos] == Terrain.GRASS || Dungeon.level.map[pos] == Terrain.EMPTY) ){
+            Level.set( pos, Terrain.HIGH_GRASS );
+            GameScene.updateMap( pos );
         }
 
 		if (Dungeon.level.map[pos] == Terrain.OPEN_DOOR) {

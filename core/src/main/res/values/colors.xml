@@ -117,6 +117,8 @@
     <integer name="woolparticle1">0x999999</integer><color name="woolparticle1">#999999</color>
     <integer name="woolparticle2">0xEEEEE0</integer><color name="woolparticle2">#EEEEE0</color>
     <integer name="halomethaneflameparticle">0x00DFFF</integer><color name="halomethaneflameparticle">#00DFFF</color>
+    <integer name="lightparticle">0xFEFFBE</integer><color name="lightparticle">#FEFFBE</color>
+    <integer name="sunlightparticle">0xFEFF79</integer><color name="sunlightparticle">#FEFF79</color>
 
     <integer name="blandfruitsunfruit">0x2EE62E</integer><color name="blandfruitsunfruit">#2EE62E</color>
     <integer name="blandfruitrotfruit">0xCC0022</integer><color name="blandfruitrotfruit">#CC0022</color>
@@ -315,6 +317,10 @@
     <integer name="speck9">0xFFFFFF</integer><color name="speck9">#FFFFFF</color>
     <integer name="speck10">0x000000</integer><color name="speck10">#000000</color>
     <integer name="speck11">0xFFFF66</integer><color name="speck11">#FFFF66</color>
+    <integer name="miasma">0xEE29DC</integer><color name="miasma">#EE29DC</color>
+    <integer name="nectar">0x9DD360</integer><color name="nectar">#9DD360</color>
+    <integer name="depressant">0x806FCC</integer><color name="depressant">#806FCC</color>
+    <integer name="tomatoexplosionparticles">0xFF0000</integer><color name="tomatoexplosionparticles">#FF0000</color>
     <integer name="shieldhero">0xBBAACC</integer><color name="shieldhero">#BBAACC</color>
     <integer name="resumeindicator">0xCDD5C0</integer><color name="resumeindicator">#CDD5C0</color>
     <integer name="rankingscene1">0xCCCCCC</integer><color name="rankingscene1">#CCCCCC</color>

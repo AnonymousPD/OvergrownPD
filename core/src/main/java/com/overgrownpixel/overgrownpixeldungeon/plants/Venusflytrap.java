@@ -25,7 +25,14 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.NectarWind;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Secreting;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Vertigo;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.VenusflytrapPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -38,17 +45,29 @@ public class Venusflytrap extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        if (enemy != null) {
+            if (enemy instanceof Hero && ((Hero) enemy).subClass == HeroSubClass.WARDEN){
+                Buff.affect( enemy, Secreting.class ).setHeal(Math.round(enemy.HT/2), 0.25f, 0);
+            } else {
+                Buff.affect( enemy, Secreting.class ).setHeal(Math.round(enemy.HT/4), 0.25f, 0);
+            }
+        }
     }
 
     @Override
     public void activate(Char ch) {
-
+        if (ch != null) {
+            if (ch instanceof Hero && ((Hero) ch).subClass == HeroSubClass.WARDEN){
+                Buff.affect( ch, Secreting.class ).setHeal(Math.round(ch.HT/2), 0.25f, 0);
+            } else {
+                Buff.affect( ch, Secreting.class ).setHeal(Math.round(ch.HT/4), 0.25f, 0);
+            }
+        }
     }
 
     @Override
     public void activate() {
-
+        GameScene.add(Blob.seed(pos, 50, NectarWind.class));
     }
 
     @Override
@@ -66,7 +85,7 @@ public class Venusflytrap extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            Buff.prolong(defender, Vertigo.class, Vertigo.DURATION);
         }
 
         @Override

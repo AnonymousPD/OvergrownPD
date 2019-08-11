@@ -24,6 +24,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Tomatobush;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
 public class TomatoDart extends TippedDart {
@@ -34,7 +35,7 @@ public class TomatoDart extends TippedDart {
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-		
+		new Tomatobush().explode(defender.pos, attacker);
 		return super.proc(attacker, defender, damage);
 	}
 }
