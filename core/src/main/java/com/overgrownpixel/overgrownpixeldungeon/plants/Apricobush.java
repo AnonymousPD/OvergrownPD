@@ -23,6 +23,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
@@ -31,6 +32,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.ApricobushPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.items.food.Aprico;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -74,7 +76,7 @@ public class Apricobush extends Plant {
 
     @Override
     public void activate() {
-        spawnLasher(pos);
+        Dungeon.level.drop(new Aprico(), pos).sprite.drop(pos);
     }
 
     @Override
