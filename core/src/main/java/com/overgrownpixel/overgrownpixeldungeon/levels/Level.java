@@ -41,6 +41,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.LockedFloor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MagicalSight;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MindVision;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Shadow;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Shadows;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroClass;
@@ -927,8 +928,7 @@ public abstract class Level implements Bundlable {
 		int cx = c.pos % width();
 		int cy = c.pos / width();
 		
-		boolean sighted = c.buff( Blindness.class ) == null && c.buff( Shadows.class ) == null
-						&& c.buff( TimekeepersHourglass.timeStasis.class ) == null && c.isAlive();
+		boolean sighted = c.buff( Blindness.class ) == null && c.buff( Shadows.class ) == null && c.buff( Shadow.class ) == null && c.buff( TimekeepersHourglass.timeStasis.class ) == null && c.isAlive();
 		if (sighted) {
 			boolean[] blocking;
 			

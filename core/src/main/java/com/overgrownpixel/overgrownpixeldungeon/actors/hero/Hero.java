@@ -54,6 +54,8 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MindVision;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Momentum;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Paralysis;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Regeneration;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Shadow;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Shadows;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.SnipersMark;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Vertigo;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Weakness;
@@ -1204,7 +1206,7 @@ public class Hero extends Char {
 				boolean[] m = Dungeon.level.mapped;
 				boolean[] passable = new boolean[len];
 				for (int i = 0; i < len; i++) {
-				    if(Dungeon.level.plants.get(i) != null && buff(Blindness.class) == null){
+				    if(Dungeon.level.plants.get(i) != null && buff(Blindness.class) == null && buff(Shadow.class) == null && buff(Shadows.class) == null){
                         passable[i] = false;
                     } else {
                         passable[i] = p[i] && (v[i] || m[i]);

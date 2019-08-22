@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Blindness;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MagicImmune;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Shadow;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.ItemStatusHandler;
@@ -180,7 +181,9 @@ public abstract class Scroll extends Item {
 				GLog.w( Messages.get(this, "no_magic") );
 			} else if (hero.buff( Blindness.class ) != null) {
 				GLog.w( Messages.get(this, "blinded") );
-			} else if (hero.buff(UnstableSpellbook.bookRecharge.class) != null
+			} else if (hero.buff( Shadow.class ) != null) {
+                GLog.w( Messages.get(this, "blinded") );
+            } else if (hero.buff(UnstableSpellbook.bookRecharge.class) != null
 					&& hero.buff(UnstableSpellbook.bookRecharge.class).isCursed()
 					&& !(this instanceof ScrollOfRemoveCurse || this instanceof ScrollOfAntiMagic)){
 				GLog.n( Messages.get(this, "cursed") );

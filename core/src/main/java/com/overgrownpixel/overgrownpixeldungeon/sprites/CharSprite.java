@@ -33,6 +33,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.EmoIcon;
 import com.overgrownpixel.overgrownpixeldungeon.effects.FloatingText;
 import com.overgrownpixel.overgrownpixeldungeon.effects.IceBlock;
 import com.overgrownpixel.overgrownpixeldungeon.effects.RoseHalo;
+import com.overgrownpixel.overgrownpixeldungeon.effects.Shadow;
 import com.overgrownpixel.overgrownpixeldungeon.effects.ShieldHalo;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Splash;
@@ -85,7 +86,7 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 	protected float shadowOffset    = 0.25f;
 
 	public enum State {
-		BURNING, LEVITATING, INVISIBLE, PARALYSED, FROZEN, ILLUMINATED, CHILLED, DARKENED, MARKED, HEALING, SHIELDED, HALOMETHANEBURNING, ROSESHIELDED
+		BURNING, LEVITATING, INVISIBLE, PARALYSED, FROZEN, ILLUMINATED, CHILLED, DARKENED, MARKED, HEALING, SHIELDED, HALOMETHANEBURNING, ROSESHIELDED, SHADOW
 	}
 	
 	protected Animation idle;
@@ -107,6 +108,7 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 	protected Emitter healing;
 	
 	protected IceBlock iceBlock;
+    protected Shadow shadow;
 	protected DarkBlock darkBlock;
 	protected TorchHalo light;
 	protected ShieldHalo shield;
@@ -342,15 +344,26 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 				levitation.pour( Speck.factory( Speck.JET ), 0.02f );
 				break;
 			case INVISIBLE:
-				if (invisible != null) {
-					invisible.killAndErase();
-				}
-				invisible = new AlphaTweener( this, 0.4f, 0.4f );
-				if (parent != null){
-					parent.add(invisible);
-				} else
-					alpha( 0.4f );
-				break;
+                if (invisible != null) {
+                    invisible.killAndErase();
+                }
+                invisible = new AlphaTweener( this, 0.4f, 0.4f );
+                if (parent != null){
+                    parent.add(invisible);
+                } else
+                    alpha( 0.4f );
+                break;
+            case SHADOW:
+                if (invisible != null) {
+                    invisible.killAndErase();
+                }
+                invisible = new AlphaTweener( this, 0.6f, 0.6f );
+                if (parent != null){
+                    parent.add(invisible);
+                } else
+                    alpha( 0.6f );
+                shadow = Shadow.cloak( this );
+                break;
 			case PARALYSED:
 				paused = true;
 				break;
@@ -412,6 +425,17 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 				}
 				alpha( 1f );
 				break;
+            case SHADOW:
+                if (invisible != null) {
+                    invisible.killAndErase();
+                    invisible = null;
+                }
+                alpha( 1f );
+                if (shadow != null) {
+                    shadow.dissapear();
+                    shadow = null;
+                }
+                break;
 			case PARALYSED:
 				paused = false;
 				break;
@@ -490,6 +514,9 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 		if (iceBlock != null) {
 			iceBlock.visible = visible;
 		}
+        if (shadow != null) {
+            shadow.visible = visible;
+        }
 		if (chilled != null) {
 			chilled.visible = visible;
 		}

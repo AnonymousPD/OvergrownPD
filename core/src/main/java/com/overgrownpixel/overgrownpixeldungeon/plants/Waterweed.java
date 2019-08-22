@@ -26,6 +26,10 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.WaterOfAwareness;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.WaterOfHealth;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.WaterOfTransmutation;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.WellWater;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.WaterweedPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Level;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
@@ -34,6 +38,7 @@ import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
 import com.watabou.utils.PathFinder;
+import com.watabou.utils.Random;
 
 public class Waterweed extends Plant {
 
@@ -41,10 +46,20 @@ public class Waterweed extends Plant {
 		image = 32;
 	}
 
+    private static final Class<?>[] WATERS =
+            {WaterOfAwareness.class, WaterOfHealth.class, WaterOfTransmutation.class};
+
     @Override
     public void attackProc(Char enemy, int damage) {
         if(Dungeon.level.map[enemy.pos] == Terrain.EMPTY || Dungeon.level.map[enemy.pos] == Terrain.GRASS){
             Level.set(enemy.pos, Terrain.WATER);
+            GameScene.updateMap(enemy.pos);
+        }
+        if(Dungeon.level.map[enemy.pos] == Terrain.EMPTY_WELL){
+            @SuppressWarnings("unchecked")
+            Class<? extends WellWater> waterClass = (Class<? extends WellWater>) Random.element( WATERS );
+            WellWater.seed(enemy.pos, 1, waterClass, Dungeon.level);
+            Level.set(enemy.pos, Terrain.WELL);
             GameScene.updateMap(enemy.pos);
         }
     }
@@ -56,6 +71,13 @@ public class Waterweed extends Plant {
                 Level.set(ch.pos+p, Terrain.WATER);
                 GameScene.updateMap(ch.pos+p);
             }
+            if(Dungeon.level.map[ch.pos+p] == Terrain.EMPTY_WELL){
+                @SuppressWarnings("unchecked")
+                Class<? extends WellWater> waterClass = (Class<? extends WellWater>) Random.element( WATERS );
+                WellWater.seed(ch.pos+p, 1, waterClass, Dungeon.level);
+                Level.set(ch.pos+p, Terrain.WELL);
+                GameScene.updateMap(ch.pos+p);
+            }
         }
     }
 
@@ -64,6 +86,13 @@ public class Waterweed extends Plant {
         for(int p : PathFinder.NEIGHBOURS8){
             if(Dungeon.level.map[pos+p] == Terrain.EMPTY || Dungeon.level.map[pos+p] == Terrain.GRASS){
                 Level.set(pos+p, Terrain.WATER);
+                GameScene.updateMap(pos+p);
+            }
+            if(Dungeon.level.map[pos+p] == Terrain.EMPTY_WELL){
+                @SuppressWarnings("unchecked")
+                Class<? extends WellWater> waterClass = (Class<? extends WellWater>) Random.element( WATERS );
+                WellWater.seed(pos+p, 1, waterClass, Dungeon.level);
+                Level.set(pos+p, Terrain.WELL);
                 GameScene.updateMap(pos+p);
             }
         }

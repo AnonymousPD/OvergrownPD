@@ -55,6 +55,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.staffs.MagesS
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.ThrowingKnife;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.ThrowingStone;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Bananabean;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.DeviceCompat;
 
@@ -112,11 +113,15 @@ public enum HeroClass {
 		
 		new ScrollOfIdentify().identify();
 
-		for(int a = 100; a > 0; a--){
-
-        }
-
-		//new ClothArmor().upgrade(100).collect();
+		new Bananabean.Seed().collect();
+		/**for(int a = 100; a > 0; a--){
+            try {
+                Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
+                seed.collect();
+            } catch (Exception e){
+                OvergrownPixelDungeon.reportException(e);
+            }
+        }**/
 	}
 
 	public Badges.Badge masteryBadge() {

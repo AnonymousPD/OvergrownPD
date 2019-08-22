@@ -93,6 +93,31 @@
     <integer name="waterweedpoisonparticle">0x2260E3</integer><color name="waterweedpoisonparticle">#2260E3</color>
     <integer name="willowcanepoisonparticle">0x1784C5</integer><color name="willowcanepoisonparticle">#1784C5</color>
     <integer name="witherfennelpoisonparticle">0xEA9A48</integer><color name="witherfennelpoisonparticle">#EA9A48</color>
+    <integer name="combflowerpoisonparticle">0xE2D239</integer><color name="combflowerpoisonparticle">#E2D239</color>
+    <integer name="ballcroppoisonparticle">0x2F791F</integer><color name="ballcroppoisonparticle">#2F791F</color>
+    <integer name="blueeyedsusanpoisonparticle">0x286F8B</integer><color name="blueeyedsusanpoisonparticle">#286F8B</color>
+    <integer name="cornwheatpoisonparticle">0x9C933F</integer><color name="cornwheatpoisonparticle">#9C933F</color>
+    <integer name="clitbalmpoisonparticle">0xBA79D9</integer><color name="clitbalmpoisonparticle">#BA79D9</color>
+    <integer name="bananabeanpoisonparticle">0xA4AC1C</integer><color name="bananabeanpoisonparticle">#A4AC1C</color>
+    <integer name="clockcypresspoisonparticle">0x0D0D0D</integer><color name="clockcypresspoisonparticle">#0D0D0D</color>
+    <integer name="crimsoncrownpoisonparticle">0xE76F6F</integer><color name="crimsoncrownpoisonparticle">#E76F6F</color>
+    <integer name="dirtdaisypoisonparticle">0x6F7027</integer><color name="dirtdaisypoisonparticle">#6F7027</color>
+    <integer name="eggbloompoisonparticle">0xA26AF0</integer><color name="eggbloompoisonparticle">#A26AF0</color>
+    <integer name="eyeeunoymuspoisonparticle">0x0D000D</integer><color name="eyeeunoymuspoisonparticle">#0D000D</color>
+    <integer name="feelerfernpoisonparticle">0x5B8C1B</integer><color name="feelerfernpoisonparticle">#5B8C1B</color>
+    <integer name="flowertreepoisonparticle">0x18E277</integer><color name="flowertreepoisonparticle">#18E277</color>
+    <integer name="gobgrapepoisonparticle">0xA86DB3</integer><color name="gobgrapepoisonparticle">#A86DB3</color>
+    <integer name="goograsspoisonparticle">0xEDEDED</integer><color name="goograsspoisonparticle">#EDEDED</color>
+    <integer name="grassvinepoisonparticle">0x418217</integer><color name="grassvinepoisonparticle">#418217</color>
+    <integer name="hypnohemppoisonparticle">0xC600FF</integer><color name="hypnohemppoisonparticle">#C600FF</color>
+    <integer name="larvaleavepoisonparticle">0xBFBAA2</integer><color name="larvaleavepoisonparticle">#BFBAA2</color>
+    <integer name="lavenderlanternpoisonparticle">0x8D56D9</integer><color name="lavenderlanternpoisonparticle">#8D56D9</color>
+    <integer name="lightninglillypoisonparticle">0xB2F2FF</integer><color name="lightninglillypoisonparticle">#B2F2FF</color>
+    <integer name="poppoplarpoisonparticle">0xAC2121</integer><color name="poppoplarpoisonparticle">#AC2121</color>
+    <integer name="shadowbloompoisonparticle">0xE3E115</integer><color name="shadowbloompoisonparticle">#E3E115</color>
+    <integer name="sourpitcherpoisonparticle">0x91A50F</integer><color name="sourpitcherpoisonparticle">#91A50F</color>
+    <integer name="tankcabbagepoisonparticle">0xC6D194</integer><color name="tankcabbagepoisonparticle">#C6D194</color>
+    <integer name="cocostuftpoisonparticle">0x999A3B</integer><color name="cocostuftpoisonparticle">#999A3B</color>
 
     <integer name="blastparticle">0xEE7722</integer><color name="blastparticle">#EE7722</color>
     <integer name="bloodparticle">0xCC0000</integer><color name="bloodparticle">#CC0000</color>
@@ -339,6 +364,7 @@
     <integer name="interlevelscene4">0xDD000000</integer><color name="interlevelscene4">#DD000000</color>
     <integer name="interlevelscene5">0xFF000000</integer><color name="interlevelscene5">#FF000000</color>
     <integer name="iceblock">0xFFB2D6FF</integer><color name="iceblock">#FFB2D6FF</color>
+    <integer name="shadow">0x51545E</integer><color name="shadow">#51545E</color>
     <integer name="highlightedtext1">0xFFFFFF</integer><color name="highlightedtext1">#FFFFFF</color>
     <integer name="highlightedtext2">0xFFFF44</integer><color name="highlightedtext2">#FFFF44</color>
     <integer name="herodie">0xFFFF66</integer><color name="herodie">#FFFF66</color>

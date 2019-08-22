@@ -122,7 +122,11 @@ public abstract class Plant implements Bundlable {
                 }
             }
         } else {
-            activate(ch);
+            if(ch != null){
+                activate(ch);
+            } else {
+                activate();
+            }
         }
 	}
 
@@ -300,6 +304,56 @@ public abstract class Plant implements Bundlable {
                 return new Willowcane.Seed();
             case 30:
                 return new Witherfennel.Seed();
+            case 39:
+                return new Combflower.Seed();
+            case 40:
+                return new Ballcrop.Seed();
+            case 41:
+                return new Blueeyedsusan.Seed();
+            case 42:
+                return new Cornwheat.Seed();
+            case 43:
+                return new Cocostuft.Seed();
+            case 44:
+                return new Eggbloom.Seed();
+            case 45:
+                return new Feelerfern.Seed();
+            case 46:
+                return new Larvaleave.Seed();
+            case 47:
+                return new Tankcabbage.Seed();
+            case 48:
+                return new Lightninglily.Seed();
+            case 49:
+                return new Goograss.Seed();
+            case 50:
+                return new Poppoplar.Seed();
+            case 51:
+                return new Sourpitcher.Seed();
+            case 52:
+                return new Clitbalm.Seed();
+            case 53:
+                return new Hypnohemp.Seed();
+            case 54:
+                return new Clockcypress.Seed();
+            case 55:
+                return new Eyeeuonymus.Seed();
+            case 56:
+                return new Gobgrape.Seed();
+            case 57:
+                return new Bananabean.Seed();
+            case 58:
+                return new Dirtdaisy.Seed();
+            case 59:
+                return new Grassvine.Seed();
+            case 60:
+                return new Lavenderlantern.Seed();
+            case 61:
+                return new Flowertree.Seed();
+            case 62:
+                return new Crimsoncrown.Seed();
+            case 63:
+                return new Shadowbloom.Seed();
             default:
                 return null;
         }

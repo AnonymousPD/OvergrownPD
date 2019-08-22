@@ -99,14 +99,14 @@ public class Chillisnapper extends Plant {
         for (int cell : visualCells){
             //this way we only get the cells at the tip, much better performance.
             ((MagicMissile)ch.sprite.parent.recycle( MagicMissile.class )).reset(
-                    MagicMissile.HFIRE_CONE,
+                    MagicMissile.FIRE_CONE,
                     ch.sprite,
                     cell,
                     null
             );
         }
         MagicMissile.boltFromChar( ch.sprite.parent,
-                MagicMissile.HFIRE_CONE,
+                MagicMissile.FIRE_CONE,
                 ch.sprite,
                 bolt.path.get(dist/2),
                 callback );

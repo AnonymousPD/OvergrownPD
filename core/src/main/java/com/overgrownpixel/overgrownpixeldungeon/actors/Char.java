@@ -50,6 +50,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FrostImbue;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HalomethaneBurning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Haste;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HeatAura;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Honeyed;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.IceAura;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MagicalShield;
@@ -63,12 +64,14 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Poison;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Preparation;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Secreting;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ShieldBuff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Slippery;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Slow;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.SpaceTimePowers;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Speed;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Sprouting;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Stamina;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Stunned;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.SugarRush;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Terror;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.TrailOfFire;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Vertigo;
@@ -344,6 +347,8 @@ public abstract class Char extends Actor {
         if ( buff( MarkOfTheNut.class ) != null) speed /= 2f;
         if ( buff( Sprouting.class ) != null) speed /= 2f;
         if ( buff( Stunned.class ) != null) speed /= 8f;
+        if ( buff( Honeyed.class ) != null) speed /= 6f;
+        if ( buff( SugarRush.class ) != null) speed *= 6f;
 		return speed;
 	}
 	
@@ -549,6 +554,16 @@ public abstract class Char extends Actor {
 	}
 	
 	public void move( int step ) {
+
+        if (Dungeon.level.adjacent( step, pos ) && (buff( Slippery.class ) != null)) {
+            for(int p : PathFinder.NEIGHBOURS8){
+                if(Dungeon.level.map[pos+p] == Terrain.CHASM){
+                    sprite.interruptMotion();
+                    sprite.move(pos, pos+p);
+                    step = pos+p;
+                }
+            }
+        }
 
 		if (Dungeon.level.adjacent( step, pos ) && (buff( Vertigo.class ) != null || buff( Secreting.class ) != null)) {
 			sprite.interruptMotion();

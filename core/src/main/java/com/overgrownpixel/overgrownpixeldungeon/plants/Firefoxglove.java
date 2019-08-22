@@ -23,17 +23,34 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Fire;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.TrailOfFire;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.LivingPlant;
+import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.BlastParticle;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.FlameParticle;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.SmokeParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.FirefoxglovePoisonParticle;
-import com.overgrownpixel.overgrownpixeldungeon.items.bombs.Firebomb;
+import com.overgrownpixel.overgrownpixeldungeon.items.Heap;
+import com.overgrownpixel.overgrownpixeldungeon.items.bombs.Bomb;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
+import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
+import com.watabou.utils.PathFinder;
+import com.watabou.utils.Random;
+
+import java.util.ArrayList;
 
 public class Firefoxglove extends Plant {
 
@@ -66,7 +83,7 @@ public class Firefoxglove extends Plant {
 
     @Override
     public Blob immunity() {
-        return null;
+        return new Fire();
     }
 
     public static class Seed extends Plant.Seed{
@@ -97,4 +114,83 @@ public class Firefoxglove extends Plant {
 			return 30 * quantity;
 		}
 	}
+
+	public static class Firebomb extends Bomb {
+
+	    @Override
+        public void explode(int cell) {
+            //We're blowing up, so no need for a fuse anymore.
+            this.fuse = null;
+
+            Sample.INSTANCE.play( Assets.SND_BLAST );
+
+            if (explodesDestructively()) {
+
+                ArrayList<Char> affected = new ArrayList<>();
+
+                if (Dungeon.level.heroFOV[cell]) {
+                    CellEmitter.center(cell).burst(BlastParticle.FACTORY, 30);
+                }
+
+                boolean terrainAffected = false;
+                for (int n : PathFinder.NEIGHBOURS9) {
+                    int c = cell + n;
+                    if (c >= 0 && c < Dungeon.level.length()) {
+                        if (Dungeon.level.heroFOV[c]) {
+                            CellEmitter.get(c).burst(SmokeParticle.FACTORY, 4);
+                        }
+
+                        if (Dungeon.level.flamable[c]) {
+                            Dungeon.level.destroy(c);
+                            GameScene.updateMap(c);
+                            terrainAffected = true;
+                        }
+
+                        //destroys items / triggers bombs caught in the blast.
+                        Heap heap = Dungeon.level.heaps.get(c);
+                        if (heap != null)
+                            heap.explode();
+
+                        Char ch = Actor.findChar(c);
+                        if (ch != null) {
+                            affected.add(ch);
+                        }
+                    }
+                }
+
+                for (Char ch : affected){
+                    //those not at the center of the blast take damage less consistently.
+                    int minDamage = ch.pos == cell ? Dungeon.depth + 5 : 1;
+                    int maxDamage = 10 + Dungeon.depth * 2;
+
+                    int dmg = Random.NormalIntRange(minDamage, maxDamage) - ch.drRoll();
+                    if (dmg > 0) {
+                        if(!(ch instanceof LivingPlant)){
+                            ch.damage(dmg, this);
+                        }
+                    }
+
+                    if (ch == Dungeon.hero && !ch.isAlive()) {
+                        Dungeon.fail(Bomb.class);
+                    }
+                }
+
+                if (terrainAffected) {
+                    Dungeon.observe();
+                }
+            }
+
+            PathFinder.buildDistanceMap( cell, BArray.not( Dungeon.level.solid, null ), 2 );
+            for (int i = 0; i < PathFinder.distance.length; i++) {
+                if (PathFinder.distance[i] < Integer.MAX_VALUE) {
+                    if (Dungeon.level.pit[i])
+                        GameScene.add(Blob.seed(i, 2, Fire.class));
+                    else
+                        GameScene.add(Blob.seed(i, 10, Fire.class));
+                    CellEmitter.get(i).burst(FlameParticle.FACTORY, 5);
+                }
+            }
+            Sample.INSTANCE.play(Assets.SND_BURNING);
+        }
+    }
 }

@@ -30,7 +30,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HalomethaneBurning;
 import com.overgrownpixel.overgrownpixeldungeon.effects.BlobEmitter;
-import com.overgrownpixel.overgrownpixeldungeon.effects.particles.FlameParticle;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.HalomethaneFlameParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.Heap;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
@@ -130,7 +130,7 @@ public class HalomethaneFire extends Blob {
 	@Override
 	public void use( BlobEmitter emitter ) {
 		super.use( emitter );
-		emitter.pour( FlameParticle.FACTORY, 0.03f );
+		emitter.pour( HalomethaneFlameParticle.FACTORY, 0.03f );
 	}
 	
 	@Override
