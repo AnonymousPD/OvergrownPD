@@ -36,7 +36,7 @@ public class StormDart extends TippedDart {
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-        Buff.prolong(defender, Steaming.class, Steaming.DURATION);
+        Buff.affect(defender, Steaming.class).set(damage);
 		return super.proc(attacker, defender, damage);
 	}
 }

@@ -23,12 +23,26 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
+import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
+import com.overgrownpixel.overgrownpixeldungeon.effects.Lightning;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.SparkParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.LightninglillyPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.tiles.DungeonTilemap;
+import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
+import com.watabou.noosa.Camera;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
+import com.watabou.utils.Callback;
+import com.watabou.utils.PathFinder;
+
+import java.util.ArrayList;
 
 public class Lightninglily extends Plant {
 
@@ -36,19 +50,96 @@ public class Lightninglily extends Plant {
 		image = 48;
 	}
 
+    private ArrayList<Char> affected = new ArrayList<>();
+
+    ArrayList<Lightning.Arc> arcs = new ArrayList<>();
+
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        shoot(pos, enemy.pos);
     }
 
     @Override
     public void activate(Char ch) {
-
+        shoot(pos, ch.pos);
     }
 
     @Override
     public void activate() {
+        for(Mob mob : Dungeon.level.mobs){
+            shoot(pos, mob.pos);
+        }
+        shoot(pos, Dungeon.hero.pos);
+    }
 
+    public void shoot(int pos1, int pos2){
+        final Ballistica shot = new Ballistica( pos1, pos2, Ballistica.PROJECTILE);
+        fx(shot, new Callback() {
+            @Override
+            public void call() {
+                onZap(shot);
+            }
+        });
+    }
+
+    protected void onZap( Ballistica bolt ) {
+
+        //lightning deals less damage per-target, the more targets that are hit.
+        float multipler = 0.4f + (0.6f/affected.size());
+        //if the main target is in water, all affected take full damage
+        if (Dungeon.level.water[bolt.collisionPos]) multipler = 1f;
+
+        for (Char ch : affected){
+            ch.damage(Math.round(2 * multipler), this);
+
+            if (ch == Dungeon.hero) Camera.main.shake( 2, 0.3f );
+            ch.sprite.centerEmitter().burst( SparkParticle.FACTORY, 3 );
+            ch.sprite.flash();
+        }
+    }
+
+    private void arc( Char ch ) {
+
+        affected.add( ch );
+
+        int dist;
+        if (Dungeon.level.water[ch.pos] && !ch.flying)
+            dist = 2;
+        else
+            dist = 1;
+
+        PathFinder.buildDistanceMap( ch.pos, BArray.not( Dungeon.level.solid, null ), dist );
+        for (int i = 0; i < PathFinder.distance.length; i++) {
+            if (PathFinder.distance[i] < Integer.MAX_VALUE){
+                Char n = Actor.findChar( i );
+                if (n == Dungeon.hero && PathFinder.distance[i] > 1)
+                    //the hero is only zapped if they are adjacent
+                    continue;
+                else if (n != null && !affected.contains( n )) {
+                    arcs.add(new Lightning.Arc(ch.sprite.center(), n.sprite.center()));
+                    arc(n);
+                }
+            }
+        }
+    }
+
+    protected void fx( Ballistica bolt, Callback callback ) {
+
+        affected.clear();
+        arcs.clear();
+
+        int cell = bolt.collisionPos;
+
+        Char ch = Actor.findChar( cell );
+        if (ch != null) {
+            arcs.add( new Lightning.Arc(DungeonTilemap.raisedTileCenterToWorld(pos), ch.sprite.center()));
+            arc(ch);
+        } else {
+            arcs.add( new Lightning.Arc(DungeonTilemap.raisedTileCenterToWorld(pos), DungeonTilemap.raisedTileCenterToWorld(bolt.collisionPos)));
+            CellEmitter.center( cell ).burst( SparkParticle.FACTORY, 3 );
+        }
+
+        callback.call();
     }
 
     @Override
@@ -66,7 +157,7 @@ public class Lightninglily extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            new Lightninglily().shoot(attacker.pos, defender.pos);
         }
 
         @Override

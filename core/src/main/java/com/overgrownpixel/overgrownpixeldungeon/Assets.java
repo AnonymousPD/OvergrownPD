@@ -105,6 +105,8 @@ public class Assets {
     public static final String WARD	    = "mobs/npcs/wards.png";
     public static final String PITCHER  = "mobs/pitcherplant.png";
     public static final String BANSPIDER= "mobs/bananaspider.png";
+    public static final String COCOCLAM = "mobs/cococlam.png";
+    public static final String BEETLE   = "mobs/beetle.png";
 
 	public static final String ITEMS	        = "items.png";
 	public static final String TERRAIN_FEATURES	= "tiles/terrain_features.png";

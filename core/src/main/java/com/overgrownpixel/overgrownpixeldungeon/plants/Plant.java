@@ -319,7 +319,7 @@ public abstract class Plant implements Bundlable {
             case 45:
                 return new Feelerfern.Seed();
             case 46:
-                return new Larvaleave.Seed();
+                return new Larvaleaf.Seed();
             case 47:
                 return new Tankcabbage.Seed();
             case 48:

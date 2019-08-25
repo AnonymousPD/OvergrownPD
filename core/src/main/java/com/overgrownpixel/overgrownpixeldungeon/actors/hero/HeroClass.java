@@ -55,7 +55,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.staffs.MagesS
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.ThrowingKnife;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.ThrowingStone;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
-import com.overgrownpixel.overgrownpixeldungeon.plants.Bananabean;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Steamweed;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.DeviceCompat;
 
@@ -113,7 +113,7 @@ public enum HeroClass {
 		
 		new ScrollOfIdentify().identify();
 
-		new Bananabean.Seed().collect();
+		new Steamweed.Seed().collect();
 		/**for(int a = 100; a > 0; a--){
             try {
                 Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);

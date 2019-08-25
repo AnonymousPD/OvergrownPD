@@ -23,12 +23,23 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Cocoshield;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Cripple;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Cococlam;
+import com.overgrownpixel.overgrownpixeldungeon.effects.Pushing;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.CocostuftPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
+import com.watabou.noosa.tweeners.AlphaTweener;
 
 public class Cocostuft extends Plant {
 
@@ -38,17 +49,32 @@ public class Cocostuft extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        if (enemy instanceof Hero && ((Hero) enemy).subClass == HeroSubClass.WARDEN){
+            Buff.prolong( enemy, Cocoshield.class, Cocoshield.DURATION );
+        } else {
+            Buff.prolong( enemy, Cripple.class, Cripple.DURATION );
+        }
     }
 
     @Override
     public void activate(Char ch) {
-
+        if (ch instanceof Hero && ((Hero) ch).subClass == HeroSubClass.WARDEN){
+            Buff.prolong( ch, Cocoshield.class, Cocoshield.DURATION );
+        } else {
+            Buff.prolong( ch, Cripple.class, Cripple.DURATION );
+        }
     }
 
     @Override
     public void activate() {
+        Cococlam cococlam = new Cococlam();
+        cococlam.pos = pos;
+        cococlam.spawn(Dungeon.depth);
+        GameScene.add( cococlam );
+        Actor.addDelayed( new Pushing( cococlam, pos, pos ), -1f );
 
+        cococlam.sprite.alpha( 0 );
+        cococlam.sprite.parent.add( new AlphaTweener( cococlam.sprite, 1, 0.15f ) );
     }
 
     @Override
@@ -66,7 +92,7 @@ public class Cocostuft extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            Buff.prolong( defender, Cripple.class, Cripple.DURATION );
         }
 
         @Override

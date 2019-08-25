@@ -347,6 +347,7 @@
     <integer name="depressant">0x806FCC</integer><color name="depressant">#806FCC</color>
     <integer name="tomatoexplosionparticles">0xFF0000</integer><color name="tomatoexplosionparticles">#FF0000</color>
     <integer name="shieldhero">0xBBAACC</integer><color name="shieldhero">#BBAACC</color>
+    <integer name="cocoshieldhero">0x6D4E00</integer><color name="cocoshieldhero">#6D4E00</color>
     <integer name="resumeindicator">0xCDD5C0</integer><color name="resumeindicator">#CDD5C0</color>
     <integer name="rankingscene1">0xCCCCCC</integer><color name="rankingscene1">#CCCCCC</color>
     <integer name="rankingscene2">0xCCCCCC</integer><color name="rankingscene2">#CCCCCC</color>
@@ -389,6 +390,7 @@
     <integer name="text2">0x00FF00</integer><color name="text2">#00FF00</color>
     <integer name="text3">0xFF3300</integer><color name="text3">#FF3300</color>
     <integer name="text4">0xFFFF44</integer><color name="text4">#FFFF44</color>
+    <integer name="text5">0x44FF98</integer><color name="text5">#44FF98</color>
 
     <integer name="caveslevel1">0x534f3e</integer><color name="caveslevel1">#534f3e</color>
     <integer name="caveslevel2">0xb9d661</integer> <color name="caveslevel2">#b9d661</color>

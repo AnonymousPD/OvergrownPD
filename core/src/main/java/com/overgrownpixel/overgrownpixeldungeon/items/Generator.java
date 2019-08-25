@@ -269,11 +269,14 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.Wate
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.WitherDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.RoseDart;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Apricobush;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Bananabean;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Blackholeflower;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Blindweed;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Butterlion;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Chandaliertail;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Chillisnapper;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Clockcypress;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Cocostuft;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Combflower;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Crimsonpepper;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Dreamfoil;
@@ -285,6 +288,8 @@ import com.overgrownpixel.overgrownpixeldungeon.plants.Frostcorn;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Grasslilly;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Icecap;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Kiwivetch;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Larvaleaf;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Lightninglily;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Musclemoss;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Nightshadeonion;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Parasiteshrub;
@@ -292,6 +297,7 @@ import com.overgrownpixel.overgrownpixeldungeon.plants.Peanutpetal;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Rose;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Rotberry;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Shadowbloom;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Snowhedge;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Sorrowmoss;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Sourpitcher;
@@ -486,8 +492,14 @@ public class Generator {
                     Witherfennel.Seed.class,
                     Tankcabbage.Seed.class,
                     Combflower.Seed.class,
-                    Sourpitcher.Seed.class,};
-			SEED.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Sourpitcher.Seed.class,
+                    Clockcypress.Seed.class,
+                    Cocostuft.Seed.class,
+                    Bananabean.Seed.class,
+                    Shadowbloom.Seed.class,
+                    Larvaleaf.Seed.class,
+                    Lightninglily.Seed.class,};
+			SEED.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
 
             BASESEED.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -527,8 +539,14 @@ public class Generator {
                     Witherfennel.Seed.class,
                     Tankcabbage.Seed.class,
                     Combflower.Seed.class,
-                    Sourpitcher.Seed.class,};
-            BASESEED.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Sourpitcher.Seed.class,
+                    Clockcypress.Seed.class,
+                    Cocostuft.Seed.class,
+                    Bananabean.Seed.class,
+                    Shadowbloom.Seed.class,
+                    Larvaleaf.Seed.class,
+                    Lightninglily.Seed.class,};
+            BASESEED.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
 
             SEEDWATER.classes = new Class<?>[]{
 
@@ -575,8 +593,14 @@ public class Generator {
                     Witherfennel.Seed.class,
                     Tankcabbage.Seed.class,
                     Combflower.Seed.class,
-                    Sourpitcher.Seed.class,};
-            SEEDSEWER.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Sourpitcher.Seed.class,
+                    Clockcypress.Seed.class,
+                    Cocostuft.Seed.class,
+                    Bananabean.Seed.class,
+                    Shadowbloom.Seed.class,
+                    Larvaleaf.Seed.class,
+                    Lightninglily.Seed.class,};
+            SEEDSEWER.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
 
             SEEDPRISON.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -616,8 +640,14 @@ public class Generator {
                     Witherfennel.Seed.class,
                     Tankcabbage.Seed.class,
                     Combflower.Seed.class,
-                    Sourpitcher.Seed.class,};
-            SEEDPRISON.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Sourpitcher.Seed.class,
+                    Clockcypress.Seed.class,
+                    Cocostuft.Seed.class,
+                    Bananabean.Seed.class,
+                    Shadowbloom.Seed.class,
+                    Larvaleaf.Seed.class,
+                    Lightninglily.Seed.class,};
+            SEEDPRISON.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
 
             SEEDCAVES.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -657,8 +687,14 @@ public class Generator {
                     Witherfennel.Seed.class,
                     Tankcabbage.Seed.class,
                     Combflower.Seed.class,
-                    Sourpitcher.Seed.class,};
-            SEEDCAVES.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Sourpitcher.Seed.class,
+                    Clockcypress.Seed.class,
+                    Cocostuft.Seed.class,
+                    Bananabean.Seed.class,
+                    Shadowbloom.Seed.class,
+                    Larvaleaf.Seed.class,
+                    Lightninglily.Seed.class,};
+            SEEDCAVES.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
 
             SEEDCITY.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -698,8 +734,14 @@ public class Generator {
                     Witherfennel.Seed.class,
                     Tankcabbage.Seed.class,
                     Combflower.Seed.class,
-                    Sourpitcher.Seed.class,};
-            SEEDCITY.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Sourpitcher.Seed.class,
+                    Clockcypress.Seed.class,
+                    Cocostuft.Seed.class,
+                    Bananabean.Seed.class,
+                    Shadowbloom.Seed.class,
+                    Larvaleaf.Seed.class,
+                    Lightninglily.Seed.class,};
+            SEEDCITY.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
 
             SEEDHELL.classes = new Class<?>[]{
                     Rotberry.Seed.class, //quest item
@@ -739,8 +781,14 @@ public class Generator {
                     Witherfennel.Seed.class,
                     Tankcabbage.Seed.class,
                     Combflower.Seed.class,
-                    Sourpitcher.Seed.class,};
-            SEEDHELL.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Sourpitcher.Seed.class,
+                    Clockcypress.Seed.class,
+                    Cocostuft.Seed.class,
+                    Bananabean.Seed.class,
+                    Shadowbloom.Seed.class,
+                    Larvaleaf.Seed.class,
+                    Lightninglily.Seed.class,};
+            SEEDHELL.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
 			
 			SCROLL.classes = new Class<?>[]{
 					ScrollOfUpgrade.class, //3 drop every chapter, see Dungeon.souNeeded()

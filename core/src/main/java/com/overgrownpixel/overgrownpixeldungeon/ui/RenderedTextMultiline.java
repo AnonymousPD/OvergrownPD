@@ -52,6 +52,7 @@ public class RenderedTextMultiline extends Component {
 	private static final String UNDERSCORE = "_";
     private static final String POSITIVE = "§";
     private static final String NEGATIVE = "$";
+    private static final String PLANTSYM = "¢";
 
 	private boolean chinese = false;
 
@@ -121,6 +122,9 @@ public class RenderedTextMultiline extends Component {
                 } else if(str.startsWith(NEGATIVE) && str.endsWith(NEGATIVE)){
                     word = new RenderedText(str.substring(1, str.length()-1), size);
                     word.hardlight(Game.instance.getResources().getInteger(R.integer.text3));
+                } else if(str.startsWith(PLANTSYM) && str.endsWith(PLANTSYM)){
+                    word = new RenderedText(str.substring(1, str.length()-1), size);
+                    word.hardlight(Game.instance.getResources().getInteger(R.integer.text5));
                 } else {
 					if (str.startsWith(UNDERSCORE)){
 						highlighting = !highlighting;

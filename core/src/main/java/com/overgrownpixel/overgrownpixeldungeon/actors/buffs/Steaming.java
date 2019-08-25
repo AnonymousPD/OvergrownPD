@@ -30,16 +30,37 @@ import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
-import com.watabou.noosa.Image;
+import com.watabou.utils.Bundle;
 
-public class Steaming extends FlavourBuff {
+import static com.watabou.utils.Random.NormalFloat;
+
+public class Steaming extends Buff {
 	
 	{
 		type = buffType.NEGATIVE;
 		announced = true;
 	}
 
-	public static final float DURATION	= 20f;
+    protected float level;
+
+    private static final String LEVEL	= "level";
+
+    @Override
+    public void storeInBundle( Bundle bundle ) {
+        super.storeInBundle( bundle );
+        bundle.put( LEVEL, level );
+
+    }
+
+    @Override
+    public void restoreFromBundle( Bundle bundle ) {
+        super.restoreFromBundle( bundle );
+        level = bundle.getFloat( LEVEL );
+    }
+
+    public void set( float level ) {
+        this.level = Math.max(this.level, level);
+    }
 	
 	@Override
 	public boolean attachTo( Char target ) {
@@ -59,7 +80,7 @@ public class Steaming extends FlavourBuff {
     public boolean act() {
         if (target.isAlive()) {
 
-            float level = 1f;
+            level = NormalFloat(level / 4f, level / 2f);
             int dmg = Math.round(level);
 
             if (dmg > 0) {
@@ -98,11 +119,6 @@ public class Steaming extends FlavourBuff {
 	}
 	
 	@Override
-	public void tintIcon(Image icon) {
-		greyIcon(icon, 5f, cooldown());
-	}
-	
-	@Override
 	public void fx(boolean on) {
 		if (on) target.sprite.add(CharSprite.State.LEVITATING);
 		else target.sprite.remove(CharSprite.State.LEVITATING);
@@ -120,6 +136,6 @@ public class Steaming extends FlavourBuff {
 
 	@Override
 	public String desc() {
-		return Messages.get(this, "desc", dispTurns());
+		return Messages.get(this, "desc");
 	}
 }

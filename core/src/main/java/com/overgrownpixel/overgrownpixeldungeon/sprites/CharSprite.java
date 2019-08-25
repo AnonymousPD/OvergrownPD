@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.effects.CocosHalo;
 import com.overgrownpixel.overgrownpixeldungeon.effects.DarkBlock;
 import com.overgrownpixel.overgrownpixeldungeon.effects.EmoIcon;
 import com.overgrownpixel.overgrownpixeldungeon.effects.FloatingText;
@@ -86,7 +87,7 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 	protected float shadowOffset    = 0.25f;
 
 	public enum State {
-		BURNING, LEVITATING, INVISIBLE, PARALYSED, FROZEN, ILLUMINATED, CHILLED, DARKENED, MARKED, HEALING, SHIELDED, HALOMETHANEBURNING, ROSESHIELDED, SHADOW
+		BURNING, LEVITATING, INVISIBLE, PARALYSED, FROZEN, ILLUMINATED, CHILLED, DARKENED, MARKED, HEALING, SHIELDED, HALOMETHANEBURNING, ROSESHIELDED, SHADOW, COCOSHIELDED,
 	}
 	
 	protected Animation idle;
@@ -112,6 +113,7 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 	protected DarkBlock darkBlock;
 	protected TorchHalo light;
 	protected ShieldHalo shield;
+    protected CocosHalo cocosshield;
     protected RoseHalo roseshield;
 	protected AlphaTweener invisible;
 	
@@ -392,6 +394,9 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 			case SHIELDED:
 				GameScene.effect( shield = new ShieldHalo( this ));
 				break;
+            case COCOSHIELDED:
+                GameScene.effect( cocosshield = new CocosHalo( this ));
+                break;
             case ROSESHIELDED:
                 GameScene.effect( roseshield = new RoseHalo( this ));
                 break;
@@ -480,6 +485,11 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 					shield.putOut();
 				}
 				break;
+            case COCOSHIELDED:
+                if (cocosshield != null){
+                    cocosshield.putOut();
+                }
+                break;
             case ROSESHIELDED:
                 if (roseshield != null){
                     roseshield.putOut();

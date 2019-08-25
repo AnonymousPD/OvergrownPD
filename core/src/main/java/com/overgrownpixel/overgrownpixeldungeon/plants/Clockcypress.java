@@ -25,10 +25,14 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Slow;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.ClockcypressPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.TimekeepersHourglass;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
+import com.watabou.utils.Random;
 
 public class Clockcypress extends Plant {
 
@@ -38,17 +42,19 @@ public class Clockcypress extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        Buff.prolong( enemy, Slow.class, Slow.DURATION );
     }
 
     @Override
     public void activate(Char ch) {
-
+        TimekeepersHourglass timekeepersHourglass = new TimekeepersHourglass();
+        timekeepersHourglass.getTimeStopEffectFreeze(ch.attackSkill(ch));
     }
 
     @Override
     public void activate() {
-
+        TimekeepersHourglass timekeepersHourglass = new TimekeepersHourglass();
+        timekeepersHourglass.getTimeStopEffectStasis(Random.Int(3, 5));
     }
 
     @Override
@@ -66,7 +72,8 @@ public class Clockcypress extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            TimekeepersHourglass timekeepersHourglass = new TimekeepersHourglass();
+            timekeepersHourglass.getTimeStopEffectFreeze(damage);
         }
 
         @Override

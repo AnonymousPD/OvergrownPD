@@ -40,12 +40,12 @@ public class Steamweed extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-        Buff.prolong(enemy, Steaming.class, Steaming.DURATION);
+        Buff.affect(enemy, Steaming.class).set(damage);
     }
 
     @Override
     public void activate(Char ch) {
-        Buff.prolong(ch, Steaming.class, Steaming.DURATION);
+        Buff.affect(ch, Steaming.class).set(ch.attackSkill(ch));
     }
 
     @Override
@@ -69,7 +69,7 @@ public class Steamweed extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-            Buff.prolong(defender, Steaming.class, Steaming.DURATION);
+            Buff.affect(defender, Steaming.class).set(damage);
         }
 
         @Override

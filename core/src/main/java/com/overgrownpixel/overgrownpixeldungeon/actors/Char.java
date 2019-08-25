@@ -32,12 +32,14 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Fire;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.ToxicGas;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Adrenaline;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ArcaneArmor;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.BeetleInfected;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Bleeding;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Bless;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Burning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Charm;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Chill;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Cocoshield;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Corrosion;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Corruption;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Cripple;
@@ -62,6 +64,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ParasiticInfection;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ParasiticSymbiosis;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Poison;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Preparation;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.RoseBarrier;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Secreting;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ShieldBuff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Slippery;
@@ -327,6 +330,12 @@ public abstract class Char extends Actor {
         if(enemy.buff(MagicalShield.class) != null){
             return 0;
         }
+        if(enemy.buff(RoseBarrier.class) != null){
+            return 0;
+        }
+        if(enemy.buff(Cocoshield.class) != null){
+            return 0;
+        }
         if ( buff( Wither.class ) != null ) Math.round(damage /= 2f);
 		return damage;
 	}
@@ -413,6 +422,10 @@ public abstract class Char extends Actor {
 		if (buff( Paralysis.class ) != null) {
 			buff( Paralysis.class ).processDamage(dmg);
 		}
+
+        if (buff( BeetleInfected.class ) != null) {
+            dmg += 2;
+        }
 
 		int shielded = dmg;
 		//FIXME: when I add proper damage properties, should add an IGNORES_SHIELDS property to use here.

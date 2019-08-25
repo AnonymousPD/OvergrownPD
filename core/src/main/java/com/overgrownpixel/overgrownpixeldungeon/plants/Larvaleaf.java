@@ -23,14 +23,22 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.BeetleInfected;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Beetle;
+import com.overgrownpixel.overgrownpixeldungeon.effects.Pushing;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.LarvaleavePoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
+import com.watabou.noosa.tweeners.AlphaTweener;
 
-public class Larvaleave extends Plant {
+public class Larvaleaf extends Plant {
 
 	{
 		image = 46;
@@ -38,17 +46,24 @@ public class Larvaleave extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        Buff.prolong(enemy, BeetleInfected.class, BeetleInfected.DURATION);
     }
 
     @Override
     public void activate(Char ch) {
-
+        Buff.prolong(ch, BeetleInfected.class, BeetleInfected.DURATION);
     }
 
     @Override
     public void activate() {
+        Beetle beetle = new Beetle();
+        beetle.pos = pos;
+        beetle.spawn(Dungeon.depth);
+        GameScene.add( beetle );
+        Actor.addDelayed( new Pushing( beetle, pos, pos ), -1f );
 
+        beetle.sprite.alpha( 0 );
+        beetle.sprite.parent.add( new AlphaTweener( beetle.sprite, 1, 0.15f ) );
     }
 
     @Override
@@ -61,12 +76,12 @@ public class Larvaleave extends Plant {
 		{
 			image = ItemSpriteSheet.SEED_LARVALEAVE;
 
-			plantClass = Larvaleave.class;
+			plantClass = Larvaleaf.class;
 		}
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            Buff.prolong(defender, BeetleInfected.class, BeetleInfected.DURATION);
         }
 
         @Override
