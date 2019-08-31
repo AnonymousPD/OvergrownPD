@@ -32,6 +32,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.Recipe;
 import com.overgrownpixel.overgrownpixeldungeon.items.bombs.Bomb;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.Blandfruit;
+import com.overgrownpixel.overgrownpixeldungeon.items.food.Cornwheatshaft;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.Food;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.MeatPie;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.MysteryMeat;
@@ -283,6 +284,9 @@ public class QuickRecipe extends Component {
 				result.add(new QuickRecipe( new StewedMeat.oneMeat() ));
 				result.add(new QuickRecipe( new StewedMeat.twoMeat() ));
 				result.add(new QuickRecipe( new StewedMeat.threeMeat() ));
+                result.add(null);
+                result.add(null);
+                result.add(new QuickRecipe( new Cornwheatshaft.threeWheat() ));
 				result.add(null);
 				result.add(null);
 				result.add(new QuickRecipe( new MeatPie.Recipe(),

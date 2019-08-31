@@ -343,6 +343,11 @@
     <integer name="speck10">0x000000</integer><color name="speck10">#000000</color>
     <integer name="speck11">0xFFFF66</integer><color name="speck11">#FFFF66</color>
     <integer name="miasma">0xEE29DC</integer><color name="miasma">#EE29DC</color>
+    <integer name="firewind">0xEE6E29</integer><color name="firewind">#EE6E29</color>
+    <integer name="dirtcloud">0x331A0A</integer><color name="dirtcloud">#331A0A</color>
+    <integer name="knowwind">0x93DDAC</integer><color name="knowwind">#93DDAC</color>
+    <integer name="cloudofcorr">0x1D1717</integer><color name="cloudofcorr">#1D1717</color>
+    <integer name="lavenderflash">0xA470DD</integer><color name="lavenderflash">#A470DD</color>
     <integer name="nectar">0x9DD360</integer><color name="nectar">#9DD360</color>
     <integer name="depressant">0x806FCC</integer><color name="depressant">#806FCC</color>
     <integer name="tomatoexplosionparticles">0xFF0000</integer><color name="tomatoexplosionparticles">#FF0000</color>

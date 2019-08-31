@@ -142,9 +142,19 @@ public class Assets {
 	public static final String FONT1X       = "fonts/font1x.png";
 	public static final String FONT2X       = "fonts/font2x.png";
 	
-	public static final String THEME	= "sound/music/theme.ogg";
-	public static final String TUNE		= "sound/music/game.ogg";
-	public static final String HAPPY	= "sound/music/surface.ogg";
+	public static final String THEME	    = "sound/music/theme.ogg";
+	public static final String HAPPY	    = "sound/music/surface.ogg";
+    public static final String GAME	        = "sound/music/game.ogg";
+    /**public static final String MUSICSEWERS	= "sound/music/sewers.ogg";
+    public static final String MUSICPRISON	= "sound/music/prison.ogg";
+    public static final String MUSICCAVES	= "sound/music/caves.ogg";
+    public static final String MUSICCITY	= "sound/music/city.ogg";
+    public static final String MUSICHELL	= "sound/music/hell.ogg";
+    public static final String MUSICGOO	    = "sound/music/goo.ogg";
+    public static final String MUSICTENGU	= "sound/music/tengu.ogg";
+    public static final String MUSICDM300	= "sound/music/dm300.ogg";
+    public static final String MUSICKING	= "sound/music/king.ogg";
+    public static final String MUSICYOG	    = "sound/music/yog.ogg";**/
 	
 	public static final String SND_CLICK	= "sound/snd_click.mp3";
 	public static final String SND_BADGE	= "sound/snd_badge.mp3";

@@ -25,7 +25,9 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Dirtcloud;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.DirtdaisyPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -38,17 +40,17 @@ public class Dirtdaisy extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        GameScene.add(Blob.seed(enemy.pos, damage+1, Dirtcloud.class));
     }
 
     @Override
     public void activate(Char ch) {
-
+        GameScene.add(Blob.seed(ch.pos, 20, Dirtcloud.class));
     }
 
     @Override
     public void activate() {
-
+        GameScene.add(Blob.seed(pos, 20, Dirtcloud.class));
     }
 
     @Override
@@ -66,7 +68,7 @@ public class Dirtdaisy extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            GameScene.add(Blob.seed(defender.pos, damage+1, Dirtcloud.class));
         }
 
         @Override

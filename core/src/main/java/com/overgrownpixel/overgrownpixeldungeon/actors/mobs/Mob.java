@@ -100,8 +100,8 @@ public abstract class Mob extends Char {
 	
 	public int EXP = 1;
 	public int maxLvl = Hero.MAX_LEVEL;
-	
-	protected Char enemy;
+
+    protected Char enemy;
 	protected boolean enemySeen;
 	protected boolean alerted = false;
 
@@ -165,6 +165,10 @@ public abstract class Mob extends Char {
 		}
 		return sprite;
 	}
+
+    public Char getEnemy() {
+        return enemy;
+    }
 	
 	@Override
 	protected boolean act() {

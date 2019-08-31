@@ -29,8 +29,10 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.RoseBarrier;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Thorns;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.RosePoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.DriedRose;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.MeleeWeapon;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -43,11 +45,19 @@ public class Rose extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-        Buff.prolong(enemy, Thorns.class, Thorns.DURATION);
+        Buff.affect(enemy, Thorns.class).set(damage);
     }
 
     @Override
     public void activate(Char ch) {
+	    if(ch instanceof Hero){
+	        if(((Hero) ch).belongings.weapon instanceof MeleeWeapon){
+	            int t = ((MeleeWeapon) ((Hero) ch).belongings.weapon).tier;
+	            int d = Math.abs(t-5)+1;
+                Buff.prolong(ch, RoseBarrier.class, d);
+                return;
+            }
+        }
         Buff.prolong(ch, RoseBarrier.class, RoseBarrier.DURATION);
     }
 
@@ -83,7 +93,7 @@ public class Rose extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-            Buff.prolong(defender, Thorns.class, Thorns.DURATION);
+            Buff.affect(defender, Thorns.class).set(damage);
         }
 
         @Override

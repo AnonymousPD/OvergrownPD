@@ -171,8 +171,8 @@ public class GameScene extends PixelScene {
 			OvergrownPixelDungeon.switchNoFade(TitleScene.class);
 			return;
 		}
-		
-		Music.INSTANCE.play( Assets.TUNE, true );
+
+        Music.INSTANCE.play( Assets.GAME, true );
 
 		OGPDSettings.lastClass(Dungeon.hero.heroClass.ordinal());
 		

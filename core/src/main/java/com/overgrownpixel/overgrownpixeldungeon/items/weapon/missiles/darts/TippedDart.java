@@ -35,38 +35,65 @@ import com.overgrownpixel.overgrownpixeldungeon.items.Generator;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfRegrowth;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Apricobush;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Ballcrop;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Bananabean;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Blackholeflower;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Blindweed;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Blueeyedsusan;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Butterlion;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Chandaliertail;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Chillisnapper;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Clitbalm;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Clockcypress;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Cocostuft;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Combflower;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Cornwheat;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Crimsoncrown;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Crimsonpepper;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Dirtdaisy;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Dreamfoil;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Earthroot;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Eggbloom;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Eyeeuonymus;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Fadeleaf;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Feelerfern;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Firebloom;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Firefoxglove;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Flowertree;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Frostcorn;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Gobgrape;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Goograss;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Grasslilly;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Grassvine;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Hypnohemp;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Icecap;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Kiwivetch;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Larvaleaf;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Lavenderlantern;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Lightninglily;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Musclemoss;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Nightshadeonion;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Parasiteshrub;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Peanutpetal;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Poppoplar;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Rose;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Rotberry;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Shadowbloom;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Snowhedge;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Sorrowmoss;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Sourpitcher;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Starflower;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Steamweed;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Stormvine;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Sunbloom;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Suncarnivore;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Sungrass;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Swiftthistle;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Tankcabbage;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Tomatobush;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Venusflytrap;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Waterweed;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Willowcane;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Witherfennel;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
@@ -167,42 +194,69 @@ public abstract class TippedDart extends Dart {
 	
 	private static HashMap<Class<?extends Plant.Seed>, Class<?extends TippedDart>> types = new HashMap<>();
 	static {
-		types.put(Blindweed.Seed.class,                 BlindingDart.class);
-		types.put(Dreamfoil.Seed.class,                 SleepDart.class);
-		types.put(Earthroot.Seed.class,                 ParalyticDart.class);
-		types.put(Fadeleaf.Seed.class,                  DisplacingDart.class);
-		types.put(Firebloom.Seed.class,                 IncendiaryDart.class);
-		types.put(Icecap.Seed.class,                    ChillingDart.class);
-		types.put(Rotberry.Seed.class,                  RotDart.class);
-		types.put(Sorrowmoss.Seed.class,                PoisonDart.class);
-		types.put(Starflower.Seed.class,                HolyDart.class);
-		types.put(Stormvine.Seed.class,                 ShockingDart.class);
-		types.put(Sungrass.Seed.class,                  HealingDart.class);
-		types.put(Swiftthistle.Seed.class,              AdrenalineDart.class);
-        types.put(Apricobush.Seed.class,                HealthDart.class);
-        types.put(Blackholeflower.Seed.class,           TeleportingDart.class);
-        types.put(WandOfRegrowth.Dewcatcher.Seed.class, DewDart.class);
-        types.put(WandOfRegrowth.Seedpod.Seed.class,    SeedChaosDart.class);
-        types.put(Butterlion.Seed.class,                EarthquakeDart.class);
-        types.put(Chandaliertail.Seed.class,            TrackingDart.class);
-        types.put(Chillisnapper.Seed.class,             HeatDart.class);
-        types.put(Crimsonpepper.Seed.class,             SpicyDart.class);
-        types.put(Firefoxglove.Seed.class,              FirefoxDart.class);
-        types.put(Frostcorn.Seed.class,                 FreezingDart.class);
-        types.put(Grasslilly.Seed.class,                ChaosDart.class);
-        types.put(Kiwivetch.Seed.class,                 RootingDart.class);
-        types.put(Musclemoss.Seed.class,                PushingDart.class);
-        types.put(Nightshadeonion.Seed.class,           SmokingDart.class);
-        types.put(Parasiteshrub.Seed.class,             ParasiticDart.class);
-        types.put(Peanutpetal.Seed.class,               PeanutMarkDart.class);
-        types.put(Rose.Seed.class,                      RoseDart.class);
-        types.put(Snowhedge.Seed.class,                 SnowstormDart.class);
-        types.put(Steamweed.Seed.class,                 StormDart.class);
-        types.put(Sunbloom.Seed.class,                  SunDart.class);
-        types.put(Tomatobush.Seed.class,                TomatoDart.class);
-        types.put(Venusflytrap.Seed.class,              ConfusingDart.class);
-        types.put(Willowcane.Seed.class,                SlownessDart.class);
-        types.put(Witherfennel.Seed.class,              WitherDart.class);
+		types.put(Blindweed.Seed.class,                 BlindingDart.class); //1
+		types.put(Dreamfoil.Seed.class,                 SleepDart.class); //2
+		types.put(Earthroot.Seed.class,                 ParalyticDart.class); //3
+		types.put(Fadeleaf.Seed.class,                  DisplacingDart.class); //4
+		types.put(Firebloom.Seed.class,                 IncendiaryDart.class); //5
+		types.put(Icecap.Seed.class,                    ChillingDart.class); //6
+		types.put(Rotberry.Seed.class,                  RotDart.class); //7
+		types.put(Sorrowmoss.Seed.class,                PoisonDart.class); //8
+		types.put(Starflower.Seed.class,                HolyDart.class); //9
+		types.put(Stormvine.Seed.class,                 ShockingDart.class); //10
+		types.put(Sungrass.Seed.class,                  HealingDart.class); //11
+		types.put(Swiftthistle.Seed.class,              AdrenalineDart.class); //12
+        types.put(Apricobush.Seed.class,                HealthDart.class); //13
+        types.put(Blackholeflower.Seed.class,           TeleportingDart.class); //14
+        types.put(WandOfRegrowth.Dewcatcher.Seed.class, DewDart.class); //15
+        types.put(WandOfRegrowth.Seedpod.Seed.class,    SeedChaosDart.class); //16
+        types.put(Butterlion.Seed.class,                EarthquakeDart.class); //17
+        types.put(Chandaliertail.Seed.class,            TrackingDart.class); //18
+        types.put(Chillisnapper.Seed.class,             HeatDart.class); //19
+        types.put(Crimsonpepper.Seed.class,             SpicyDart.class); //20
+        types.put(Firefoxglove.Seed.class,              FirefoxDart.class); //21
+        types.put(Frostcorn.Seed.class,                 FreezingDart.class); //22
+        types.put(Grasslilly.Seed.class,                ChaosDart.class); //23
+        types.put(Kiwivetch.Seed.class,                 RootingDart.class); //24
+        types.put(Musclemoss.Seed.class,                PushingDart.class); //25
+        types.put(Nightshadeonion.Seed.class,           SmokingDart.class); //26
+        types.put(Parasiteshrub.Seed.class,             ParasiticDart.class); //27
+        types.put(Peanutpetal.Seed.class,               PeanutMarkDart.class); //28
+        types.put(Rose.Seed.class,                      RoseDart.class); //29
+        types.put(Snowhedge.Seed.class,                 SnowstormDart.class); //30
+        types.put(Steamweed.Seed.class,                 StormDart.class); //31
+        types.put(Sunbloom.Seed.class,                  SunDart.class); //32
+        types.put(Tomatobush.Seed.class,                TomatoDart.class); //33
+        types.put(Venusflytrap.Seed.class,              ConfusingDart.class); //34
+        types.put(Willowcane.Seed.class,                SlownessDart.class); //35
+        types.put(Witherfennel.Seed.class,              WitherDart.class); //36
+        types.put(Suncarnivore.Seed.class,              CorruptionDart.class); //37
+        types.put(Ballcrop.Seed.class,                  BallDart.class); //38
+        types.put(Bananabean.Seed.class,                BananaDart.class); //39
+        types.put(Blueeyedsusan.Seed.class,             SusanDart.class); //40
+        types.put(Clitbalm.Seed.class,                  ClitDart.class); //41
+        types.put(Clockcypress.Seed.class,              ClockDart.class); //42
+        types.put(Cocostuft.Seed.class,                 CocoDart.class); //43
+        types.put(Combflower.Seed.class,                HoneyDart.class); //44
+        types.put(Cornwheat.Seed.class,                 CornDart.class); //45
+        types.put(Crimsoncrown.Seed.class,              CrownDart.class); //46
+        types.put(Dirtdaisy.Seed.class,                 DirtDart.class); //47
+        types.put(Eggbloom.Seed.class,                  EggDart.class); //48
+        types.put(Eyeeuonymus.Seed.class,               EyeDart.class); //49
+        types.put(Feelerfern.Seed.class,                FeelerDart.class); //50
+        types.put(Flowertree.Seed.class,                TreeDart.class); //51
+        types.put(Gobgrape.Seed.class,                  GrapeDart.class); //52
+        types.put(Goograss.Seed.class,                  GooDart.class); //53
+        types.put(Grassvine.Seed.class,                 GrassDart.class); //54
+        types.put(Hypnohemp.Seed.class,                 HypnoDart.class); //55
+        types.put(Lavenderlantern.Seed.class,           LanternDart.class); //56
+        types.put(Poppoplar.Seed.class,                 PopDart.class); //57
+        types.put(Lightninglily.Seed.class,             LightningDart.class); //58
+        types.put(Sourpitcher.Seed.class,               SourDart.class); //59
+        types.put(Shadowbloom.Seed.class,               ShadowDart.class); //60
+        types.put(Larvaleaf.Seed.class,                 BeetleDart.class); //61
+        types.put(Tankcabbage.Seed.class,               TankDart.class); //62
+        types.put(Waterweed.Seed.class,                 WaterDart.class); //63
 	}
 	
 	public static TippedDart getTipped( Plant.Seed s, int quantity ){

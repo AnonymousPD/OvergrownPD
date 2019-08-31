@@ -26,6 +26,9 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.GrassvinePoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.levels.Level;
+import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -38,17 +41,20 @@ public class Grassvine extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        Level.set( enemy.pos, Terrain.HIGH_GRASS );
+        GameScene.updateMap( enemy.pos );
     }
 
     @Override
     public void activate(Char ch) {
-
+        Level.set( ch.pos,  Terrain.HIGH_GRASS );
+        GameScene.updateMap( ch.pos );
     }
 
     @Override
     public void activate() {
-
+        Level.set( pos,  Terrain.HIGH_GRASS );
+        GameScene.updateMap( pos );
     }
 
     @Override
@@ -66,7 +72,8 @@ public class Grassvine extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            Level.set( defender.pos,  Terrain.HIGH_GRASS );
+            GameScene.updateMap( defender.pos );
         }
 
         @Override

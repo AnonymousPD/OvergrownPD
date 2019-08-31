@@ -25,7 +25,9 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Firewind;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.CrimsoncrownPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -38,17 +40,17 @@ public class Crimsoncrown extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        GameScene.add(Blob.seed(enemy.pos, 20, Firewind.class));
     }
 
     @Override
     public void activate(Char ch) {
-
+        GameScene.add(Blob.seed(ch.pos, 20, Firewind.class));
     }
 
     @Override
     public void activate() {
-
+        GameScene.add(Blob.seed(pos, 20, Firewind.class));
     }
 
     @Override
@@ -66,7 +68,7 @@ public class Crimsoncrown extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            GameScene.add(Blob.seed(defender.pos, damage+1, Firewind.class));
         }
 
         @Override

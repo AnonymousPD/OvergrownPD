@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
+import com.overgrownpixel.overgrownpixeldungeon.items.armor.curses.Corrosion;
 import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.CloakOfShadows;
 import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.TimekeepersHourglass;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
@@ -35,6 +36,9 @@ import com.overgrownpixel.overgrownpixeldungeon.plants.Swiftthistle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
 import com.watabou.noosa.Image;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Shadow extends FlavourBuff {
 
@@ -47,8 +51,10 @@ public class Shadow extends FlavourBuff {
 	
 	@Override
 	public boolean attachTo( Char target ) {
-	    for(Buff buff : target.buffs()){
-            if (buff != null && !(buff instanceof LockedFloor) && !(buff instanceof Hunger) ) {
+        ArrayList<Class<?>> buffs = new ArrayList<>(Arrays.asList(removableBuffs));
+        for(Buff buff : target.buffs()){
+            Class b = buff.getClass();
+            if(buffs.contains(b)){
                 buff.detach();
             }
         }
@@ -72,10 +78,29 @@ public class Shadow extends FlavourBuff {
         Dungeon.observe();
 	}
 
+    private static final Class<?>[] removableBuffs = new Class<?>[]{
+            Adrenaline.class, AdrenalineSurge.class, Amok.class, ArcaneArmor.class,
+            Awareness.class, Balling.class, Barkskin.class, Barrier.class, BeetleInfected.class,
+            Berserk.class, Bleeding.class, Bless.class, Blindness.class, Burning.class, Charm.class,
+            Chill.class, Cocoshield.class, Combo.class, Corrosion.class, Corruption.class, Cripple.class,
+            Dehydrated.class, Digesting.class, Doom.class, Drowsy.class, EarthImbue.class, FireImbue.class,
+            Foresight.class, Frost.class, FrostImbue.class, Fury.class, Glowing.class, HalomethaneBurning.class,
+            Haste.class, Healing.class, HeatAura.class, Heavy.class, Honeyed.class, IceAura.class,
+            Invisibility.class, Levitation.class, Light.class, MagicalSleep.class, MagicalSight.class,
+            MagicalShield.class, MagicImmune.class, MarkOfTheNut.class, MindVision.class, Momentum.class,
+            Ooze.class, Paralysis.class, ParasiticInfection.class, ParasiticSymbiosis.class, Poison.class,
+            PrismaticGuard.class, Roots.class, RoseBarrier.class, Secreting.class, Shadows.class, Sleep.class,
+            Slippery.class, Slow.class, SoulMark.class, SnowedIn.class, SpaceTimePowers.class, Speed.class, Sprouting.class,
+            Stamina.class, Steaming.class, Stunned.class, SugarRush.class, Terror.class, Thorns.class, ToxicImbue.class,
+            TrailOfFire.class, Vertigo.class, Weakness.class, Wither.class,
+    };
+
     @Override
     public boolean act() {
+        ArrayList<Class<?>> buffs = new ArrayList<>(Arrays.asList(removableBuffs));
         for(Buff buff : target.buffs()){
-            if (buff != null && !(buff instanceof LockedFloor) && !(buff instanceof Hunger) ) {
+            Class b = buff.getClass();
+            if(buffs.contains(b)){
                 buff.detach();
             }
         }

@@ -75,6 +75,11 @@ public class Speck extends Image {
     public static final int MIASMA      = 120;
     public static final int NECTAR      = 121;
     public static final int DEPRESSANT  = 122;
+    public static final int FIREWIND    = 123;
+    public static final int DIRTCLOUD   = 124;
+    public static final int KNOWWIND    = 125;
+    public static final int CLOUDOFCORR = 126;
+    public static final int POPGAS = 127;
 	
 	private static final int SIZE = 7;
 	
@@ -126,6 +131,11 @@ public class Speck extends Image {
 		case SMOKE:
 		case BLIZZARD:
 		case INFERNO:
+            case DIRTCLOUD:
+            case POPGAS:
+            case CLOUDOFCORR:
+            case KNOWWIND:
+            case FIREWIND:
             case MIASMA:
             case NECTAR:
             case DEPRESSANT:
@@ -162,6 +172,51 @@ public class Speck extends Image {
                 angularSpeed = -30;
                 angle = Random.Float( 360 );
                 lifespan = Random.Float( 1f, 3f );
+                break;
+
+            case FIREWIND:
+                hardlight( Game.instance.getResources().getInteger(R.integer.firewind) );
+                speed.y = +64;
+                acc.y = +64;
+                angularSpeed = -30;
+                angle = Random.Float( 360 );
+                lifespan = Random.Float( 1f, 3f );
+                break;
+
+            case POPGAS:
+                hardlight( Game.instance.getResources().getInteger(R.integer.poppoplarpoisonparticle) );
+                speed.y = +8;
+                acc.y = +8;
+                angularSpeed = -8;
+                angle = Random.Float( 360 );
+                lifespan = Random.Float( 1f, 3f );
+                break;
+
+            case CLOUDOFCORR:
+                hardlight( Game.instance.getResources().getInteger(R.integer.cloudofcorr) );
+                speed.y = +16;
+                acc.y = +64;
+                angularSpeed = -66;
+                angle = Random.Float( 360 );
+                lifespan = Random.Float( 1f, 2f );
+                break;
+
+            case KNOWWIND:
+                hardlight( Game.instance.getResources().getInteger(R.integer.knowwind) );
+                speed.y = +32;
+                acc.y = +16;
+                angularSpeed = -64;
+                angle = Random.Float( 360 );
+                lifespan = Random.Float( 1f, 4f );
+                break;
+
+            case DIRTCLOUD:
+                hardlight( Game.instance.getResources().getInteger(R.integer.dirtcloud) );
+                speed.y = +8;
+                acc.y = +8;
+                angularSpeed = -16;
+                angle = Random.Float( 360 );
+                lifespan = Random.Float( 3f, 5f );
                 break;
 
             case NECTAR:
@@ -499,6 +554,9 @@ public class Speck extends Image {
 			case INFERNO:
 			case DUST:
                 case MIASMA:
+                case KNOWWIND:
+                case FIREWIND:
+                case DIRTCLOUD:
                 case DEPRESSANT:
 				am = (float)Math.sqrt( (p < 0.5f ? p : 1 - p) * 0.5f );
 				scale.set( 1 + p );
@@ -509,6 +567,8 @@ public class Speck extends Image {
 			case STENCH:
 			case SMOKE:
                 case NECTAR:
+                case CLOUDOFCORR:
+                case POPGAS:
 				am = (float)Math.sqrt( (p < 0.5f ? p : 1 - p) );
 				scale.set( 1 + p );
 				break;

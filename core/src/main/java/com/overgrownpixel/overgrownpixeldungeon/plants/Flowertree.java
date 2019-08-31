@@ -23,9 +23,12 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.FlowertreePoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.items.Generator;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -38,17 +41,32 @@ public class Flowertree extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        try {
+            Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
+            seed.couch(enemy.pos, Dungeon.level, false);
+        } catch (Exception e){
+            OvergrownPixelDungeon.reportException(e);
+        }
     }
 
     @Override
     public void activate(Char ch) {
-
+        try {
+            Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
+            seed.couch(ch.pos, Dungeon.level, false);
+        } catch (Exception e){
+            OvergrownPixelDungeon.reportException(e);
+        }
     }
 
     @Override
     public void activate() {
-
+        try {
+            Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
+            seed.couch(pos, Dungeon.level, false);
+        } catch (Exception e){
+            OvergrownPixelDungeon.reportException(e);
+        }
     }
 
     @Override
@@ -66,7 +84,12 @@ public class Flowertree extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            try {
+                Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
+                seed.couch(defender.pos, Dungeon.level, false);
+            } catch (Exception e){
+                OvergrownPixelDungeon.reportException(e);
+            }
         }
 
         @Override

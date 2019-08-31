@@ -23,9 +23,15 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
+import com.overgrownpixel.overgrownpixeldungeon.effects.Flare;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.BlueEyedSusanPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.items.Dewdrop;
+import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfRemoveCurse;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -38,17 +44,35 @@ public class Blueeyedsusan extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        if(enemy instanceof Hero){
+            if(((Hero) enemy).belongings.weapon.cursed){
+                ScrollOfRemoveCurse scroll = new ScrollOfRemoveCurse();
+                boolean bool = scroll.uncurse((Hero)enemy, ((Hero) enemy).belongings.weapon);
+                if(bool) new Flare( 6, 32 ).show( enemy.sprite, 1f ) ;
+            }
+        }
+        if(enemy instanceof Mob){
+            enemy.HP = enemy.HT;
+        }
     }
 
     @Override
     public void activate(Char ch) {
-
+        if(ch instanceof Hero){
+            if(((Hero) ch).belongings.weapon.cursed){
+                ScrollOfRemoveCurse scroll = new ScrollOfRemoveCurse();
+                boolean bool = scroll.uncurse((Hero)ch, ((Hero) ch).belongings.weapon);
+                if(bool) new Flare( 6, 32 ).show( ch.sprite, 1f ) ;
+            }
+        }
+        if(ch instanceof Mob){
+            ch.HP = ch.HT;
+        }
     }
 
     @Override
     public void activate() {
-
+        Dungeon.level.drop(new Dewdrop(), pos).sprite.drop(pos);
     }
 
     @Override
@@ -66,7 +90,13 @@ public class Blueeyedsusan extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            if(attacker instanceof Hero){
+                if(((Hero) attacker).belongings.weapon.cursed){
+                    ScrollOfRemoveCurse scroll = new ScrollOfRemoveCurse();
+                    boolean bool = scroll.uncurse((Hero)attacker, ((Hero) attacker).belongings.weapon);
+                    if(bool) new Flare( 6, 32 ).show( attacker.sprite, 1f ) ;
+                }
+            }
         }
 
         @Override

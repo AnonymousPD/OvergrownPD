@@ -36,7 +36,7 @@ public class RoseDart extends TippedDart {
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-        Buff.prolong(defender, Thorns.class, Thorns.DURATION);
+        Buff.affect(defender, Thorns.class).set(damage);
 		return super.proc(attacker, defender, damage);
 	}
 }

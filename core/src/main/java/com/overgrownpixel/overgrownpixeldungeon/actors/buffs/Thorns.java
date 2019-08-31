@@ -30,19 +30,37 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.Splash;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
-import com.watabou.noosa.Image;
+import com.watabou.utils.Bundle;
 import com.watabou.utils.PointF;
 
 import static com.watabou.utils.Random.NormalFloat;
 
-public class Thorns extends FlavourBuff {
-	
-	{
-		type = buffType.NEGATIVE;
-		announced = true;
-	}
-	
-	public static final float DURATION	= 10f;
+public class Thorns extends Buff {
+
+    {
+        type = buffType.NEGATIVE;
+        announced = true;
+    }
+
+    protected float level;
+
+    private static final String LEVEL	= "level";
+
+    @Override
+    public void storeInBundle( Bundle bundle ) {
+        super.storeInBundle( bundle );
+        bundle.put( LEVEL, level );
+    }
+
+    @Override
+    public void restoreFromBundle( Bundle bundle ) {
+        super.restoreFromBundle( bundle );
+        level = bundle.getFloat( LEVEL );
+    }
+
+    public void set( float level ) {
+        this.level = Math.max(this.level, level);
+    }
 
     @Override
     public boolean attachTo( Char target ) {
@@ -55,10 +73,23 @@ public class Thorns extends FlavourBuff {
     }
 
     @Override
+    public String toString() {
+        return Messages.get(this, "name");
+    }
+
+    @Override
+    public String heroMessage() {
+        return Messages.get(this, "heromsg");
+    }
+
+    @Override
+    public String desc() {
+        return Messages.get(this, "desc", Math.round(level));
+    }
+
+    @Override
     public boolean act() {
         if (target.isAlive()) {
-
-            float level = 3f;
 
             level = NormalFloat(level / 2f, level);
             int dmg = Math.round(level);
@@ -99,26 +130,6 @@ public class Thorns extends FlavourBuff {
 	@Override
 	public int icon() {
 		return BuffIndicator.ROSETHORNS;
-	}
-	
-	@Override
-	public void tintIcon(Image icon) {
-		greyIcon(icon, 5f, cooldown());
-	}
-	
-	@Override
-	public String toString() {
-		return Messages.get(this, "name");
-	}
-
-    @Override
-    public String heroMessage() {
-        return Messages.get(this, "heromsg");
-    }
-	
-	@Override
-	public String desc() {
-		return Messages.get(this, "desc", dispTurns());
 	}
 	
 }

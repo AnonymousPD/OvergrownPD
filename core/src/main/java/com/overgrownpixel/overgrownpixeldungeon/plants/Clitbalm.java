@@ -23,12 +23,18 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Charm;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.ClitbalmPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
+import com.watabou.utils.Random;
 
 public class Clitbalm extends Plant {
 
@@ -38,17 +44,35 @@ public class Clitbalm extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+	    if(enemy instanceof Mob){
+            if(((Mob) enemy).getEnemy() != null && enemy.buff(Charm.class) != null) Buff.prolong(enemy, Charm.class, 10f).object = ((Mob) enemy).getEnemy().id();
+	    }
+        if(enemy instanceof Hero){
+            if(((Hero) enemy).enemy() != null) Buff.prolong(enemy, Charm.class, 10f).object = ((Hero) enemy).enemy().id();
+        }
     }
 
     @Override
     public void activate(Char ch) {
-
+        if(ch instanceof Mob){
+            if(((Mob) ch).getEnemy() != null && ch.buff(Charm.class) != null) Buff.prolong(ch, Charm.class, 10f).object = ((Mob) ch).getEnemy().id();
+        }
+        if(ch instanceof Hero){
+            if(((Hero) ch).enemy() != null) Buff.prolong(ch, Charm.class, 10f).object = ((Hero) ch).enemy().id();
+        }
     }
 
     @Override
     public void activate() {
-
+        if(Random.Boolean()){
+            for(Mob mob : Dungeon.level.mobs){
+                Buff.prolong(Dungeon.hero, Charm.class, 10f).object = mob.id();
+            }
+        } else {
+            for(Mob mob : Dungeon.level.mobs){
+                if(mob.getEnemy() != null && mob.buff(Charm.class) != null) Buff.prolong(mob, Charm.class, 10f).object = mob.getEnemy().id();
+            }
+        }
     }
 
     @Override
@@ -66,7 +90,7 @@ public class Clitbalm extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            Buff.prolong(defender, Charm.class, 10f).object = attacker.id();
         }
 
         @Override

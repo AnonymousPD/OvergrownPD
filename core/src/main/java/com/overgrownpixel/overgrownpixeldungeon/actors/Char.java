@@ -46,6 +46,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Cripple;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Dehydrated;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Doom;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.EarthImbue;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Feelers;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FireImbue;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Frost;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FrostImbue;
@@ -66,6 +67,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Poison;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Preparation;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.RoseBarrier;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Secreting;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Shadow;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ShieldBuff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Slippery;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Slow;
@@ -207,6 +209,10 @@ public abstract class Char extends Actor {
 	public boolean attack( Char enemy ) {
 
 		if (enemy == null) return false;
+
+		if(buff(Shadow.class) != null){
+		    return false;
+        }
 		
 		boolean visibleFight = Dungeon.level.heroFOV[pos] || Dungeon.level.heroFOV[enemy.pos];
 		
@@ -330,13 +336,8 @@ public abstract class Char extends Actor {
         if(enemy.buff(MagicalShield.class) != null){
             return 0;
         }
-        if(enemy.buff(RoseBarrier.class) != null){
-            return 0;
-        }
-        if(enemy.buff(Cocoshield.class) != null){
-            return 0;
-        }
         if ( buff( Wither.class ) != null ) Math.round(damage /= 2f);
+        if ( buff(Feelers.class ) != null ) Math.round(damage *= 2f);
 		return damage;
 	}
 	
@@ -383,6 +384,14 @@ public abstract class Char extends Actor {
 	    //you recieve no damage while burning and having the trail of fire buff
 	    if(buff(TrailOfFire.class) != null && buff(Burning.class) != null){
 	        return;
+        }
+
+        if(buff(RoseBarrier.class) != null){
+            return;
+        }
+
+        if(buff(Cocoshield.class) != null){
+            return;
         }
 		
 		if (!isAlive() || dmg < 0) {
@@ -568,16 +577,6 @@ public abstract class Char extends Actor {
 	
 	public void move( int step ) {
 
-        if (Dungeon.level.adjacent( step, pos ) && (buff( Slippery.class ) != null)) {
-            for(int p : PathFinder.NEIGHBOURS8){
-                if(Dungeon.level.map[pos+p] == Terrain.CHASM){
-                    sprite.interruptMotion();
-                    sprite.move(pos, pos+p);
-                    step = pos+p;
-                }
-            }
-        }
-
 		if (Dungeon.level.adjacent( step, pos ) && (buff( Vertigo.class ) != null || buff( Secreting.class ) != null)) {
 			sprite.interruptMotion();
 			int newPos = pos + PathFinder.NEIGHBOURS8[Random.Int( 8 )];
@@ -588,6 +587,32 @@ public abstract class Char extends Actor {
 				step = newPos;
 			}
 		}
+
+        if(buff(TrailOfFire.class) != null){
+            if(this instanceof Hero){
+                for(Mob mob : Dungeon.hero.visibleEnemiesList()){
+                    Buff.prolong(mob, Vertigo.class, Vertigo.DURATION);
+                }
+            }
+            if(this instanceof Mob){
+                if(Dungeon.hero != null && Dungeon.hero.visibleEnemiesList().contains(this)){
+                    Buff.prolong(Dungeon.hero, Vertigo.class, Vertigo.DURATION);
+                    for(Mob mob : Dungeon.hero.visibleEnemiesList()){
+                        Buff.prolong(mob, Vertigo.class, Vertigo.DURATION);
+                    }
+                }
+            }
+        }
+
+        if (Dungeon.level.adjacent( step, pos ) && (buff( Slippery.class ) != null)) {
+            for(int p : PathFinder.NEIGHBOURS8){
+                if(Dungeon.level.map[pos+p] == Terrain.CHASM){
+                    sprite.interruptMotion();
+                    sprite.move(pos, pos+p);
+                    step = pos+p;
+                }
+            }
+        }
 
         if(buff(TrailOfFire.class) != null){
             GameScene.add(Blob.seed(pos, 1, Fire.class));

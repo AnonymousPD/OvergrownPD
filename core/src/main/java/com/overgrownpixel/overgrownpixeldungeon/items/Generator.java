@@ -232,11 +232,34 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.ThrowingSt
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.Tomahawk;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.Trident;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.AdrenalineDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.BallDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.BananaDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.BeetleDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.BlindingDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.ChaosDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.ChillingDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.ClitDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.ClockDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.CocoDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.ConfusingDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.CornDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.CorruptionDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.CrownDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.DewDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.DirtDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.EggDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.EyeDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.FeelerDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.GooDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.GrapeDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.GrassDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.HoneyDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.HypnoDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.LanternDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.LightningDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.PopDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.SeedChaosDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.ShadowDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.SnowstormDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.DisplacingDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.EarthquakeDart;
@@ -258,43 +281,63 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.Shoc
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.SleepDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.SlownessDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.SmokingDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.SourDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.SpicyDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.StormDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.SunDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.SusanDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.TankDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.TeleportingDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.TippedDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.TomatoDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.TrackingDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.TreeDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.WaterDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.WitherDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.RoseDart;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Apricobush;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Ballcrop;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Bananabean;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Blackholeflower;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Blindweed;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Blueeyedsusan;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Butterlion;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Chandaliertail;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Chillisnapper;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Clitbalm;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Clockcypress;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Cocostuft;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Combflower;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Cornwheat;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Crimsoncrown;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Crimsonpepper;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Dirtdaisy;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Dreamfoil;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Earthroot;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Eggbloom;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Eyeeuonymus;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Fadeleaf;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Feelerfern;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Firebloom;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Firefoxglove;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Flowertree;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Frostcorn;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Gobgrape;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Goograss;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Grasslilly;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Grassvine;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Hypnohemp;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Icecap;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Kiwivetch;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Larvaleaf;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Lavenderlantern;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Lightninglily;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Musclemoss;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Nightshadeonion;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Parasiteshrub;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Peanutpetal;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Poppoplar;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Rose;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Rotberry;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Shadowbloom;
@@ -311,6 +354,7 @@ import com.overgrownpixel.overgrownpixeldungeon.plants.Swiftthistle;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Tankcabbage;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Tomatobush;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Venusflytrap;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Waterweed;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Willowcane;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Witherfennel;
 import com.watabou.utils.Bundle;
@@ -392,51 +436,22 @@ public class Generator {
 			GOLD.probs = new float[]{ 1 };
 
             DARTS.classes = new Class<?>[]{
-                    AdrenalineDart.class,
-                    BlindingDart.class,
-                    SleepDart.class,
-                    ParalyticDart.class,
-                    DisplacingDart.class,
-                    IncendiaryDart.class,
-                    ChillingDart.class,
-                    RotDart.class,
-                    PoisonDart.class,
-                    HolyDart.class,
-                    ShockingDart.class,
-                    HealingDart.class,
-                    HealthDart.class,
-                    TeleportingDart.class,
-                    EarthquakeDart.class,
-                    TrackingDart.class,
-                    HeatDart.class,
-                    SpicyDart.class,
-                    FirefoxDart.class,
-                    FreezingDart.class,
-                    ChaosDart.class,
-                    RootingDart.class,
-                    PushingDart.class,
-                    SmokingDart.class,
-                    ParasiticDart.class,
-                    PeanutMarkDart.class,
-                    RoseDart.class,
-                    SnowstormDart.class,
-                    StormDart.class,
-                    SunDart.class,
-                    CorruptionDart.class,
-                    TomatoDart.class,
-                    ConfusingDart.class,
-                    WaterDart.class,
-                    SlownessDart.class,
-                    WitherDart.class
+                    BlindingDart.class, SleepDart.class, ParalyticDart.class, DisplacingDart.class, IncendiaryDart.class, ChillingDart.class, RotDart.class, PoisonDart.class, HolyDart.class, ShockingDart.class,
+                    HealingDart.class, AdrenalineDart.class, HealthDart.class, TeleportingDart.class, DewDart.class, SeedChaosDart.class, EarthquakeDart.class, TrackingDart.class, HeatDart.class, SpicyDart.class,
+                    FirefoxDart.class, FreezingDart.class, ChaosDart.class, RootingDart.class, PushingDart.class, SmokingDart.class, ParasiticDart.class, PeanutMarkDart.class, RoseDart.class, SnowstormDart.class,
+                    StormDart.class, SunDart.class, TomatoDart.class, ConfusingDart.class, SlownessDart.class, WitherDart.class, CorruptionDart.class, BallDart.class, BananaDart.class, SusanDart.class,
+                    ClitDart.class, ClockDart.class, CocoDart.class, HoneyDart.class, CornDart.class, CrownDart.class, DirtDart.class, EggDart.class, EyeDart.class, FeelerDart.class,
+                    TreeDart.class, GrapeDart.class, GooDart.class, GrassDart.class, HypnoDart.class, LanternDart.class, PopDart.class, LightningDart.class, SourDart.class, ShadowDart.class,
+                    BeetleDart.class, TankDart.class, WaterDart.class,
             };
             DARTS.probs = new float[]{
-                    1, 1, 1, 1, 1,
-                    1, 1, 1, 1, 1,
-                    1, 1, 1, 1, 1,
-                    1, 1, 1, 1, 1,
-                    1, 1, 1, 1, 1,
-                    1, 1, 1, 1, 1,
-                    1, 1, 1, 1, 1, 1,
+                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                    1, 1, 1,
             };
 			
 			POTION.classes = new Class<?>[]{
@@ -455,98 +470,38 @@ public class Generator {
 			POTION.probs = new float[]{ 0, 6, 4, 3, 3, 3, 2, 2, 2, 2, 2, 1 };
 			
 			SEED.classes = new Class<?>[]{
-					Rotberry.Seed.class, //quest item
-					Blindweed.Seed.class,
-					Dreamfoil.Seed.class,
-					Earthroot.Seed.class,
-					Fadeleaf.Seed.class,
-					Firebloom.Seed.class,
-					Icecap.Seed.class,
-					Sorrowmoss.Seed.class,
-					Stormvine.Seed.class,
-					Sungrass.Seed.class,
-					Swiftthistle.Seed.class,
-					Starflower.Seed.class,
-                    Apricobush.Seed.class,
-                    Blackholeflower.Seed.class,
-                    Butterlion.Seed.class,
-                    Chandaliertail.Seed.class,
-                    Chillisnapper.Seed.class,
-                    Crimsonpepper.Seed.class,
-                    Firefoxglove.Seed.class,
-                    Frostcorn.Seed.class,
-                    Grasslilly.Seed.class,
-                    Kiwivetch.Seed.class,
-                    Musclemoss.Seed.class,
-                    Nightshadeonion.Seed.class,
-                    Parasiteshrub.Seed.class,
-                    Peanutpetal.Seed.class,
-                    Rose.Seed.class,
-                    Snowhedge.Seed.class,
-                    Steamweed.Seed.class,
-                    Sunbloom.Seed.class,
-                    Suncarnivore.Seed.class,
-                    Tomatobush.Seed.class,
-                    Venusflytrap.Seed.class,
-                    Willowcane.Seed.class,
-                    Witherfennel.Seed.class,
-                    Tankcabbage.Seed.class,
-                    Combflower.Seed.class,
-                    Sourpitcher.Seed.class,
-                    Clockcypress.Seed.class,
-                    Cocostuft.Seed.class,
-                    Bananabean.Seed.class,
-                    Shadowbloom.Seed.class,
-                    Larvaleaf.Seed.class,
-                    Lightninglily.Seed.class,};
-			SEED.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+			        Apricobush.Seed.class, Ballcrop.class, Bananabean.Seed.class, Blackholeflower.Seed.class, Blindweed.Seed.class, Blueeyedsusan.Seed.class, Butterlion.Seed.class, Chandaliertail.Seed.class, Chillisnapper.Seed.class, Clitbalm.Seed.class,
+                    Clockcypress.Seed.class, Cocostuft.Seed.class, Combflower.Seed.class, Cornwheat.Seed.class, Crimsoncrown.Seed.class, Crimsonpepper.Seed.class, Dirtdaisy.Seed.class, Dreamfoil.Seed.class, Earthroot.Seed.class, Eggbloom.Seed.class,
+                    Eyeeuonymus.Seed.class, Fadeleaf.Seed.class, Feelerfern.Seed.class, Firebloom.Seed.class, Firefoxglove.Seed.class, Flowertree.Seed.class, Frostcorn.Seed.class, Gobgrape.Seed.class, Goograss.Seed.class, Grasslilly.Seed.class,
+                    Grassvine.Seed.class, Hypnohemp.Seed.class, Icecap.Seed.class, Kiwivetch.Seed.class, Larvaleaf.Seed.class, Lavenderlantern.Seed.class, Lightninglily.Seed.class, Musclemoss.Seed.class, Nightshadeonion.Seed.class, Parasiteshrub.Seed.class,
+                    Peanutpetal.Seed.class, Poppoplar.Seed.class, Rose.Seed.class, Rotberry.Seed.class, Shadowbloom.Seed.class, Snowhedge.Seed.class, Sorrowmoss.Seed.class, Sourpitcher.Seed.class, Starflower.Seed.class, Steamweed.Seed.class,
+                    Stormvine.Seed.class, Sunbloom.Seed.class, Suncarnivore.Seed.class, Sungrass.Seed.class, Swiftthistle.Seed.class, Tankcabbage.Seed.class, Tomatobush.Seed.class, Venusflytrap.Seed.class, Waterweed.Seed.class, Willowcane.Seed.class,
+                    Witherfennel.Seed.class};
+			SEED.probs = new float[]{
+			        5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 0, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5};
 
             BASESEED.classes = new Class<?>[]{
-                    Rotberry.Seed.class, //quest item
-                    Blindweed.Seed.class,
-                    Dreamfoil.Seed.class,
-                    Earthroot.Seed.class,
-                    Fadeleaf.Seed.class,
-                    Firebloom.Seed.class,
-                    Icecap.Seed.class,
-                    Sorrowmoss.Seed.class,
-                    Stormvine.Seed.class,
-                    Sungrass.Seed.class,
-                    Swiftthistle.Seed.class,
-                    Starflower.Seed.class,
-                    Apricobush.Seed.class,
-                    Blackholeflower.Seed.class,
-                    Butterlion.Seed.class,
-                    Chandaliertail.Seed.class,
-                    Chillisnapper.Seed.class,
-                    Crimsonpepper.Seed.class,
-                    Firefoxglove.Seed.class,
-                    Frostcorn.Seed.class,
-                    Grasslilly.Seed.class,
-                    Kiwivetch.Seed.class,
-                    Musclemoss.Seed.class,
-                    Nightshadeonion.Seed.class,
-                    Parasiteshrub.Seed.class,
-                    Peanutpetal.Seed.class,
-                    Rose.Seed.class,
-                    Snowhedge.Seed.class,
-                    Steamweed.Seed.class,
-                    Sunbloom.Seed.class,
-                    Suncarnivore.Seed.class,
-                    Tomatobush.Seed.class,
-                    Venusflytrap.Seed.class,
-                    Willowcane.Seed.class,
-                    Witherfennel.Seed.class,
-                    Tankcabbage.Seed.class,
-                    Combflower.Seed.class,
-                    Sourpitcher.Seed.class,
-                    Clockcypress.Seed.class,
-                    Cocostuft.Seed.class,
-                    Bananabean.Seed.class,
-                    Shadowbloom.Seed.class,
-                    Larvaleaf.Seed.class,
-                    Lightninglily.Seed.class,};
-            BASESEED.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Apricobush.Seed.class, Ballcrop.class, Bananabean.Seed.class, Blackholeflower.Seed.class, Blindweed.Seed.class, Blueeyedsusan.Seed.class, Butterlion.Seed.class, Chandaliertail.Seed.class, Chillisnapper.Seed.class, Clitbalm.Seed.class,
+                    Clockcypress.Seed.class, Cocostuft.Seed.class, Combflower.Seed.class, Cornwheat.Seed.class, Crimsoncrown.Seed.class, Crimsonpepper.Seed.class, Dirtdaisy.Seed.class, Dreamfoil.Seed.class, Earthroot.Seed.class, Eggbloom.Seed.class,
+                    Eyeeuonymus.Seed.class, Fadeleaf.Seed.class, Feelerfern.Seed.class, Firebloom.Seed.class, Firefoxglove.Seed.class, Flowertree.Seed.class, Frostcorn.Seed.class, Gobgrape.Seed.class, Goograss.Seed.class, Grasslilly.Seed.class,
+                    Grassvine.Seed.class, Hypnohemp.Seed.class, Icecap.Seed.class, Kiwivetch.Seed.class, Larvaleaf.Seed.class, Lavenderlantern.Seed.class, Lightninglily.Seed.class, Musclemoss.Seed.class, Nightshadeonion.Seed.class, Parasiteshrub.Seed.class,
+                    Peanutpetal.Seed.class, Poppoplar.Seed.class, Rose.Seed.class, Rotberry.Seed.class, Shadowbloom.Seed.class, Snowhedge.Seed.class, Sorrowmoss.Seed.class, Sourpitcher.Seed.class, Starflower.Seed.class, Steamweed.Seed.class,
+                    Stormvine.Seed.class, Sunbloom.Seed.class, Suncarnivore.Seed.class, Sungrass.Seed.class, Swiftthistle.Seed.class, Tankcabbage.Seed.class, Tomatobush.Seed.class, Venusflytrap.Seed.class, Waterweed.Seed.class, Willowcane.Seed.class,
+                    Witherfennel.Seed.class};
+            BASESEED.probs = new float[]{
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 0, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5};
 
             SEEDWATER.classes = new Class<?>[]{
 
@@ -556,239 +511,89 @@ public class Generator {
             };
 
             SEEDSEWER.classes = new Class<?>[]{
-                    Rotberry.Seed.class, //quest item
-                    Blindweed.Seed.class,
-                    Dreamfoil.Seed.class,
-                    Earthroot.Seed.class,
-                    Fadeleaf.Seed.class,
-                    Firebloom.Seed.class,
-                    Icecap.Seed.class,
-                    Sorrowmoss.Seed.class,
-                    Stormvine.Seed.class,
-                    Sungrass.Seed.class,
-                    Swiftthistle.Seed.class,
-                    Starflower.Seed.class,
-                    Apricobush.Seed.class,
-                    Blackholeflower.Seed.class,
-                    Butterlion.Seed.class,
-                    Chandaliertail.Seed.class,
-                    Chillisnapper.Seed.class,
-                    Crimsonpepper.Seed.class,
-                    Firefoxglove.Seed.class,
-                    Frostcorn.Seed.class,
-                    Grasslilly.Seed.class,
-                    Kiwivetch.Seed.class,
-                    Musclemoss.Seed.class,
-                    Nightshadeonion.Seed.class,
-                    Parasiteshrub.Seed.class,
-                    Peanutpetal.Seed.class,
-                    Rose.Seed.class,
-                    Snowhedge.Seed.class,
-                    Steamweed.Seed.class,
-                    Sunbloom.Seed.class,
-                    Suncarnivore.Seed.class,
-                    Tomatobush.Seed.class,
-                    Venusflytrap.Seed.class,
-                    Willowcane.Seed.class,
-                    Witherfennel.Seed.class,
-                    Tankcabbage.Seed.class,
-                    Combflower.Seed.class,
-                    Sourpitcher.Seed.class,
-                    Clockcypress.Seed.class,
-                    Cocostuft.Seed.class,
-                    Bananabean.Seed.class,
-                    Shadowbloom.Seed.class,
-                    Larvaleaf.Seed.class,
-                    Lightninglily.Seed.class,};
-            SEEDSEWER.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Apricobush.Seed.class, Ballcrop.class, Bananabean.Seed.class, Blackholeflower.Seed.class, Blindweed.Seed.class, Blueeyedsusan.Seed.class, Butterlion.Seed.class, Chandaliertail.Seed.class, Chillisnapper.Seed.class, Clitbalm.Seed.class,
+                    Clockcypress.Seed.class, Cocostuft.Seed.class, Combflower.Seed.class, Cornwheat.Seed.class, Crimsoncrown.Seed.class, Crimsonpepper.Seed.class, Dirtdaisy.Seed.class, Dreamfoil.Seed.class, Earthroot.Seed.class, Eggbloom.Seed.class,
+                    Eyeeuonymus.Seed.class, Fadeleaf.Seed.class, Feelerfern.Seed.class, Firebloom.Seed.class, Firefoxglove.Seed.class, Flowertree.Seed.class, Frostcorn.Seed.class, Gobgrape.Seed.class, Goograss.Seed.class, Grasslilly.Seed.class,
+                    Grassvine.Seed.class, Hypnohemp.Seed.class, Icecap.Seed.class, Kiwivetch.Seed.class, Larvaleaf.Seed.class, Lavenderlantern.Seed.class, Lightninglily.Seed.class, Musclemoss.Seed.class, Nightshadeonion.Seed.class, Parasiteshrub.Seed.class,
+                    Peanutpetal.Seed.class, Poppoplar.Seed.class, Rose.Seed.class, Rotberry.Seed.class, Shadowbloom.Seed.class, Snowhedge.Seed.class, Sorrowmoss.Seed.class, Sourpitcher.Seed.class, Starflower.Seed.class, Steamweed.Seed.class,
+                    Stormvine.Seed.class, Sunbloom.Seed.class, Suncarnivore.Seed.class, Sungrass.Seed.class, Swiftthistle.Seed.class, Tankcabbage.Seed.class, Tomatobush.Seed.class, Venusflytrap.Seed.class, Waterweed.Seed.class, Willowcane.Seed.class,
+                    Witherfennel.Seed.class};
+            SEEDSEWER.probs = new float[]{
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 0, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5};
 
             SEEDPRISON.classes = new Class<?>[]{
-                    Rotberry.Seed.class, //quest item
-                    Blindweed.Seed.class,
-                    Dreamfoil.Seed.class,
-                    Earthroot.Seed.class,
-                    Fadeleaf.Seed.class,
-                    Firebloom.Seed.class,
-                    Icecap.Seed.class,
-                    Sorrowmoss.Seed.class,
-                    Stormvine.Seed.class,
-                    Sungrass.Seed.class,
-                    Swiftthistle.Seed.class,
-                    Starflower.Seed.class,
-                    Apricobush.Seed.class,
-                    Blackholeflower.Seed.class,
-                    Butterlion.Seed.class,
-                    Chandaliertail.Seed.class,
-                    Chillisnapper.Seed.class,
-                    Crimsonpepper.Seed.class,
-                    Firefoxglove.Seed.class,
-                    Frostcorn.Seed.class,
-                    Grasslilly.Seed.class,
-                    Kiwivetch.Seed.class,
-                    Musclemoss.Seed.class,
-                    Nightshadeonion.Seed.class,
-                    Parasiteshrub.Seed.class,
-                    Peanutpetal.Seed.class,
-                    Rose.Seed.class,
-                    Snowhedge.Seed.class,
-                    Steamweed.Seed.class,
-                    Sunbloom.Seed.class,
-                    Suncarnivore.Seed.class,
-                    Tomatobush.Seed.class,
-                    Venusflytrap.Seed.class,
-                    Willowcane.Seed.class,
-                    Witherfennel.Seed.class,
-                    Tankcabbage.Seed.class,
-                    Combflower.Seed.class,
-                    Sourpitcher.Seed.class,
-                    Clockcypress.Seed.class,
-                    Cocostuft.Seed.class,
-                    Bananabean.Seed.class,
-                    Shadowbloom.Seed.class,
-                    Larvaleaf.Seed.class,
-                    Lightninglily.Seed.class,};
-            SEEDPRISON.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Apricobush.Seed.class, Ballcrop.class, Bananabean.Seed.class, Blackholeflower.Seed.class, Blindweed.Seed.class, Blueeyedsusan.Seed.class, Butterlion.Seed.class, Chandaliertail.Seed.class, Chillisnapper.Seed.class, Clitbalm.Seed.class,
+                    Clockcypress.Seed.class, Cocostuft.Seed.class, Combflower.Seed.class, Cornwheat.Seed.class, Crimsoncrown.Seed.class, Crimsonpepper.Seed.class, Dirtdaisy.Seed.class, Dreamfoil.Seed.class, Earthroot.Seed.class, Eggbloom.Seed.class,
+                    Eyeeuonymus.Seed.class, Fadeleaf.Seed.class, Feelerfern.Seed.class, Firebloom.Seed.class, Firefoxglove.Seed.class, Flowertree.Seed.class, Frostcorn.Seed.class, Gobgrape.Seed.class, Goograss.Seed.class, Grasslilly.Seed.class,
+                    Grassvine.Seed.class, Hypnohemp.Seed.class, Icecap.Seed.class, Kiwivetch.Seed.class, Larvaleaf.Seed.class, Lavenderlantern.Seed.class, Lightninglily.Seed.class, Musclemoss.Seed.class, Nightshadeonion.Seed.class, Parasiteshrub.Seed.class,
+                    Peanutpetal.Seed.class, Poppoplar.Seed.class, Rose.Seed.class, Rotberry.Seed.class, Shadowbloom.Seed.class, Snowhedge.Seed.class, Sorrowmoss.Seed.class, Sourpitcher.Seed.class, Starflower.Seed.class, Steamweed.Seed.class,
+                    Stormvine.Seed.class, Sunbloom.Seed.class, Suncarnivore.Seed.class, Sungrass.Seed.class, Swiftthistle.Seed.class, Tankcabbage.Seed.class, Tomatobush.Seed.class, Venusflytrap.Seed.class, Waterweed.Seed.class, Willowcane.Seed.class,
+                    Witherfennel.Seed.class};
+            SEEDPRISON.probs = new float[]{
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 0, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5};
 
             SEEDCAVES.classes = new Class<?>[]{
-                    Rotberry.Seed.class, //quest item
-                    Blindweed.Seed.class,
-                    Dreamfoil.Seed.class,
-                    Earthroot.Seed.class,
-                    Fadeleaf.Seed.class,
-                    Firebloom.Seed.class,
-                    Icecap.Seed.class,
-                    Sorrowmoss.Seed.class,
-                    Stormvine.Seed.class,
-                    Sungrass.Seed.class,
-                    Swiftthistle.Seed.class,
-                    Starflower.Seed.class,
-                    Apricobush.Seed.class,
-                    Blackholeflower.Seed.class,
-                    Butterlion.Seed.class,
-                    Chandaliertail.Seed.class,
-                    Chillisnapper.Seed.class,
-                    Crimsonpepper.Seed.class,
-                    Firefoxglove.Seed.class,
-                    Frostcorn.Seed.class,
-                    Grasslilly.Seed.class,
-                    Kiwivetch.Seed.class,
-                    Musclemoss.Seed.class,
-                    Nightshadeonion.Seed.class,
-                    Parasiteshrub.Seed.class,
-                    Peanutpetal.Seed.class,
-                    Rose.Seed.class,
-                    Snowhedge.Seed.class,
-                    Steamweed.Seed.class,
-                    Sunbloom.Seed.class,
-                    Suncarnivore.Seed.class,
-                    Tomatobush.Seed.class,
-                    Venusflytrap.Seed.class,
-                    Willowcane.Seed.class,
-                    Witherfennel.Seed.class,
-                    Tankcabbage.Seed.class,
-                    Combflower.Seed.class,
-                    Sourpitcher.Seed.class,
-                    Clockcypress.Seed.class,
-                    Cocostuft.Seed.class,
-                    Bananabean.Seed.class,
-                    Shadowbloom.Seed.class,
-                    Larvaleaf.Seed.class,
-                    Lightninglily.Seed.class,};
-            SEEDCAVES.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Apricobush.Seed.class, Ballcrop.class, Bananabean.Seed.class, Blackholeflower.Seed.class, Blindweed.Seed.class, Blueeyedsusan.Seed.class, Butterlion.Seed.class, Chandaliertail.Seed.class, Chillisnapper.Seed.class, Clitbalm.Seed.class,
+                    Clockcypress.Seed.class, Cocostuft.Seed.class, Combflower.Seed.class, Cornwheat.Seed.class, Crimsoncrown.Seed.class, Crimsonpepper.Seed.class, Dirtdaisy.Seed.class, Dreamfoil.Seed.class, Earthroot.Seed.class, Eggbloom.Seed.class,
+                    Eyeeuonymus.Seed.class, Fadeleaf.Seed.class, Feelerfern.Seed.class, Firebloom.Seed.class, Firefoxglove.Seed.class, Flowertree.Seed.class, Frostcorn.Seed.class, Gobgrape.Seed.class, Goograss.Seed.class, Grasslilly.Seed.class,
+                    Grassvine.Seed.class, Hypnohemp.Seed.class, Icecap.Seed.class, Kiwivetch.Seed.class, Larvaleaf.Seed.class, Lavenderlantern.Seed.class, Lightninglily.Seed.class, Musclemoss.Seed.class, Nightshadeonion.Seed.class, Parasiteshrub.Seed.class,
+                    Peanutpetal.Seed.class, Poppoplar.Seed.class, Rose.Seed.class, Rotberry.Seed.class, Shadowbloom.Seed.class, Snowhedge.Seed.class, Sorrowmoss.Seed.class, Sourpitcher.Seed.class, Starflower.Seed.class, Steamweed.Seed.class,
+                    Stormvine.Seed.class, Sunbloom.Seed.class, Suncarnivore.Seed.class, Sungrass.Seed.class, Swiftthistle.Seed.class, Tankcabbage.Seed.class, Tomatobush.Seed.class, Venusflytrap.Seed.class, Waterweed.Seed.class, Willowcane.Seed.class,
+                    Witherfennel.Seed.class};
+            SEEDCAVES.probs = new float[]{
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 0, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5};
 
             SEEDCITY.classes = new Class<?>[]{
-                    Rotberry.Seed.class, //quest item
-                    Blindweed.Seed.class,
-                    Dreamfoil.Seed.class,
-                    Earthroot.Seed.class,
-                    Fadeleaf.Seed.class,
-                    Firebloom.Seed.class,
-                    Icecap.Seed.class,
-                    Sorrowmoss.Seed.class,
-                    Stormvine.Seed.class,
-                    Sungrass.Seed.class,
-                    Swiftthistle.Seed.class,
-                    Starflower.Seed.class,
-                    Apricobush.Seed.class,
-                    Blackholeflower.Seed.class,
-                    Butterlion.Seed.class,
-                    Chandaliertail.Seed.class,
-                    Chillisnapper.Seed.class,
-                    Crimsonpepper.Seed.class,
-                    Firefoxglove.Seed.class,
-                    Frostcorn.Seed.class,
-                    Grasslilly.Seed.class,
-                    Kiwivetch.Seed.class,
-                    Musclemoss.Seed.class,
-                    Nightshadeonion.Seed.class,
-                    Parasiteshrub.Seed.class,
-                    Peanutpetal.Seed.class,
-                    Rose.Seed.class,
-                    Snowhedge.Seed.class,
-                    Steamweed.Seed.class,
-                    Sunbloom.Seed.class,
-                    Suncarnivore.Seed.class,
-                    Tomatobush.Seed.class,
-                    Venusflytrap.Seed.class,
-                    Willowcane.Seed.class,
-                    Witherfennel.Seed.class,
-                    Tankcabbage.Seed.class,
-                    Combflower.Seed.class,
-                    Sourpitcher.Seed.class,
-                    Clockcypress.Seed.class,
-                    Cocostuft.Seed.class,
-                    Bananabean.Seed.class,
-                    Shadowbloom.Seed.class,
-                    Larvaleaf.Seed.class,
-                    Lightninglily.Seed.class,};
-            SEEDCITY.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Apricobush.Seed.class, Ballcrop.class, Bananabean.Seed.class, Blackholeflower.Seed.class, Blindweed.Seed.class, Blueeyedsusan.Seed.class, Butterlion.Seed.class, Chandaliertail.Seed.class, Chillisnapper.Seed.class, Clitbalm.Seed.class,
+                    Clockcypress.Seed.class, Cocostuft.Seed.class, Combflower.Seed.class, Cornwheat.Seed.class, Crimsoncrown.Seed.class, Crimsonpepper.Seed.class, Dirtdaisy.Seed.class, Dreamfoil.Seed.class, Earthroot.Seed.class, Eggbloom.Seed.class,
+                    Eyeeuonymus.Seed.class, Fadeleaf.Seed.class, Feelerfern.Seed.class, Firebloom.Seed.class, Firefoxglove.Seed.class, Flowertree.Seed.class, Frostcorn.Seed.class, Gobgrape.Seed.class, Goograss.Seed.class, Grasslilly.Seed.class,
+                    Grassvine.Seed.class, Hypnohemp.Seed.class, Icecap.Seed.class, Kiwivetch.Seed.class, Larvaleaf.Seed.class, Lavenderlantern.Seed.class, Lightninglily.Seed.class, Musclemoss.Seed.class, Nightshadeonion.Seed.class, Parasiteshrub.Seed.class,
+                    Peanutpetal.Seed.class, Poppoplar.Seed.class, Rose.Seed.class, Rotberry.Seed.class, Shadowbloom.Seed.class, Snowhedge.Seed.class, Sorrowmoss.Seed.class, Sourpitcher.Seed.class, Starflower.Seed.class, Steamweed.Seed.class,
+                    Stormvine.Seed.class, Sunbloom.Seed.class, Suncarnivore.Seed.class, Sungrass.Seed.class, Swiftthistle.Seed.class, Tankcabbage.Seed.class, Tomatobush.Seed.class, Venusflytrap.Seed.class, Waterweed.Seed.class, Willowcane.Seed.class,
+                    Witherfennel.Seed.class};
+            SEEDCITY.probs = new float[]{
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 0, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5};
 
             SEEDHELL.classes = new Class<?>[]{
-                    Rotberry.Seed.class, //quest item
-                    Blindweed.Seed.class,
-                    Dreamfoil.Seed.class,
-                    Earthroot.Seed.class,
-                    Fadeleaf.Seed.class,
-                    Firebloom.Seed.class,
-                    Icecap.Seed.class,
-                    Sorrowmoss.Seed.class,
-                    Stormvine.Seed.class,
-                    Sungrass.Seed.class,
-                    Swiftthistle.Seed.class,
-                    Starflower.Seed.class,
-                    Apricobush.Seed.class,
-                    Blackholeflower.Seed.class,
-                    Butterlion.Seed.class,
-                    Chandaliertail.Seed.class,
-                    Chillisnapper.Seed.class,
-                    Crimsonpepper.Seed.class,
-                    Firefoxglove.Seed.class,
-                    Frostcorn.Seed.class,
-                    Grasslilly.Seed.class,
-                    Kiwivetch.Seed.class,
-                    Musclemoss.Seed.class,
-                    Nightshadeonion.Seed.class,
-                    Parasiteshrub.Seed.class,
-                    Peanutpetal.Seed.class,
-                    Rose.Seed.class,
-                    Snowhedge.Seed.class,
-                    Steamweed.Seed.class,
-                    Sunbloom.Seed.class,
-                    Suncarnivore.Seed.class,
-                    Tomatobush.Seed.class,
-                    Venusflytrap.Seed.class,
-                    Willowcane.Seed.class,
-                    Witherfennel.Seed.class,
-                    Tankcabbage.Seed.class,
-                    Combflower.Seed.class,
-                    Sourpitcher.Seed.class,
-                    Clockcypress.Seed.class,
-                    Cocostuft.Seed.class,
-                    Bananabean.Seed.class,
-                    Shadowbloom.Seed.class,
-                    Larvaleaf.Seed.class,
-                    Lightninglily.Seed.class,};
-            SEEDHELL.probs = new float[]{ 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,};
+                    Apricobush.Seed.class, Ballcrop.class, Bananabean.Seed.class, Blackholeflower.Seed.class, Blindweed.Seed.class, Blueeyedsusan.Seed.class, Butterlion.Seed.class, Chandaliertail.Seed.class, Chillisnapper.Seed.class, Clitbalm.Seed.class,
+                    Clockcypress.Seed.class, Cocostuft.Seed.class, Combflower.Seed.class, Cornwheat.Seed.class, Crimsoncrown.Seed.class, Crimsonpepper.Seed.class, Dirtdaisy.Seed.class, Dreamfoil.Seed.class, Earthroot.Seed.class, Eggbloom.Seed.class,
+                    Eyeeuonymus.Seed.class, Fadeleaf.Seed.class, Feelerfern.Seed.class, Firebloom.Seed.class, Firefoxglove.Seed.class, Flowertree.Seed.class, Frostcorn.Seed.class, Gobgrape.Seed.class, Goograss.Seed.class, Grasslilly.Seed.class,
+                    Grassvine.Seed.class, Hypnohemp.Seed.class, Icecap.Seed.class, Kiwivetch.Seed.class, Larvaleaf.Seed.class, Lavenderlantern.Seed.class, Lightninglily.Seed.class, Musclemoss.Seed.class, Nightshadeonion.Seed.class, Parasiteshrub.Seed.class,
+                    Peanutpetal.Seed.class, Poppoplar.Seed.class, Rose.Seed.class, Rotberry.Seed.class, Shadowbloom.Seed.class, Snowhedge.Seed.class, Sorrowmoss.Seed.class, Sourpitcher.Seed.class, Starflower.Seed.class, Steamweed.Seed.class,
+                    Stormvine.Seed.class, Sunbloom.Seed.class, Suncarnivore.Seed.class, Sungrass.Seed.class, Swiftthistle.Seed.class, Tankcabbage.Seed.class, Tomatobush.Seed.class, Venusflytrap.Seed.class, Waterweed.Seed.class, Willowcane.Seed.class,
+                    Witherfennel.Seed.class};
+            SEEDHELL.probs = new float[]{
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 0, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5};
 			
 			SCROLL.classes = new Class<?>[]{
 					ScrollOfUpgrade.class, //3 drop every chapter, see Dungeon.souNeeded()

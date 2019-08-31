@@ -23,12 +23,15 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.EggbloomPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.items.food.Egg;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
+import com.watabou.utils.Random;
 
 public class Eggbloom extends Plant {
 
@@ -38,17 +41,17 @@ public class Eggbloom extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        if(Random.Float() < 0.3f) Dungeon.level.drop(new Egg(), enemy.pos).sprite.drop(enemy.pos);
     }
 
     @Override
     public void activate(Char ch) {
-
+        if(Random.Float() < 0.3f) Dungeon.level.drop(new Egg(), ch.pos).sprite.drop(ch.pos);
     }
 
     @Override
     public void activate() {
-
+        Dungeon.level.drop(new Egg(), pos).sprite.drop(pos);
     }
 
     @Override
@@ -66,7 +69,7 @@ public class Eggbloom extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            if(Random.Float() < 0.3f) Dungeon.level.drop(new Egg(), defender.pos).sprite.drop(attacker.pos);
         }
 
         @Override

@@ -23,18 +23,40 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.WaterOfAwareness;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.WaterOfHealth;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.WaterOfTransmutation;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.WellWater;
+import com.overgrownpixel.overgrownpixeldungeon.levels.Level;
+import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.utils.Random;
 
 public class WaterDart extends TippedDart {
 	
 	{
 		image = ItemSpriteSheet.DART_WATER;
 	}
+
+    private static final Class<?>[] WATERS =
+            {WaterOfAwareness.class, WaterOfHealth.class, WaterOfTransmutation.class};
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-		
+        if(Dungeon.level.map[defender.pos] == Terrain.EMPTY || Dungeon.level.map[defender.pos] == Terrain.GRASS){
+            Level.set(defender.pos, Terrain.WATER);
+            GameScene.updateMap(defender.pos);
+        }
+        if(Dungeon.level.map[defender.pos] == Terrain.EMPTY_WELL){
+            @SuppressWarnings("unchecked")
+            Class<? extends WellWater> waterClass = (Class<? extends WellWater>) Random.element( WATERS );
+            WellWater.seed(defender.pos, 1, waterClass, Dungeon.level);
+            Level.set(defender.pos, Terrain.WELL);
+            GameScene.updateMap(defender.pos);
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

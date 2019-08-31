@@ -44,12 +44,6 @@ public class Nightshadeonion extends Plant {
     @Override
     public void attackProc(Char enemy, int damage) {
         GameScene.add( Blob.seed( enemy.pos, 1000, SmokeScreen.class ) );
-
-        if(enemy.properties().contains(Char.Property.INORGANIC)){
-            return;
-        }
-
-        Buff.prolong( enemy, Blindness.class, Random.Int( 2, 5 ) );
     }
 
     @Override

@@ -25,7 +25,11 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Regrowth;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Feelers;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.FeelerfernPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -38,17 +42,17 @@ public class Feelerfern extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        Buff.prolong(enemy, Feelers.class, Feelers.DURATION);
     }
 
     @Override
     public void activate(Char ch) {
-
+        Buff.prolong(ch, Feelers.class, Feelers.DURATION);
     }
 
     @Override
     public void activate() {
-
+        GameScene.add(Blob.seed(pos, 10, Regrowth.class));
     }
 
     @Override
@@ -66,7 +70,7 @@ public class Feelerfern extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            Buff.prolong(attacker, Feelers.class, Feelers.DURATION);
         }
 
         @Override

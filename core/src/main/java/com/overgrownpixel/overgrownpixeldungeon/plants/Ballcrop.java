@@ -23,8 +23,12 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Balling;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.BallcropPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
@@ -38,17 +42,22 @@ public class Ballcrop extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        Buff.prolong(enemy, Balling.class, Balling.DURATION);
     }
 
     @Override
     public void activate(Char ch) {
-
+        Buff.prolong(ch, Balling.class, Balling.DURATION);
     }
 
     @Override
     public void activate() {
-
+        for(Mob mob : Dungeon.level.mobs){
+            Buff.prolong(mob, Balling.class, Balling.DURATION/2);
+        }
+        if(Dungeon.hero != null){
+            Buff.prolong(Dungeon.hero, Balling.class, Balling.DURATION/2);
+        }
     }
 
     @Override
@@ -66,7 +75,7 @@ public class Ballcrop extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            Buff.prolong(defender, Balling.class, Balling.DURATION);
         }
 
         @Override

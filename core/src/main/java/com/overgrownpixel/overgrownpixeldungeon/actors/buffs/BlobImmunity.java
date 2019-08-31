@@ -27,16 +27,24 @@ package com.overgrownpixel.overgrownpixeldungeon.actors.buffs;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blizzard;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.ConfusionGas;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.CorrosiveGas;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Depressant;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Electricity;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Fire;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Firewind;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Freezing;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.HalomethaneFire;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Inferno;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Miasma;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.NectarWind;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.ParalyticGas;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.PoisonGas;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Regrowth;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.SmokeScreen;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.StenchGas;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.StormCloud;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Sunlight;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.ToxicGas;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.UnfilteredSunlight;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Web;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
@@ -81,6 +89,14 @@ public class BlobImmunity extends FlavourBuff {
 		immunities.add( StormCloud.class );
 		immunities.add( ToxicGas.class );
 		immunities.add( Web.class );
+        immunities.add( Depressant.class );
+        immunities.add( HalomethaneFire.class );
+        immunities.add( Miasma.class );
+        immunities.add( NectarWind.class );
+        immunities.add( PoisonGas.class );
+        immunities.add( Sunlight.class );
+        immunities.add( UnfilteredSunlight.class );
+        immunities.add( Firewind.class );
 	}
 
 	@Override

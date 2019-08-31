@@ -617,6 +617,10 @@ public class ItemSpriteSheet {
 	public static final int HOLY_DART       = TIPPED_DARTS+9;
 	public static final int DISPLACING_DART = TIPPED_DARTS+10;
 	public static final int BLINDING_DART   = TIPPED_DARTS+11;
+    public static final int DART_HONEY      = TIPPED_DARTS+12;
+    public static final int DART_BALL       = TIPPED_DARTS+13;
+    public static final int DART_COCO       = TIPPED_DARTS+14;
+    public static final int DART_BEETLE     = TIPPED_DARTS+15;
 	static {
 		for (int i = TIPPED_DARTS; i < TIPPED_DARTS+16; i++)
 			assignItemRect(i, 16, 16);
@@ -635,6 +639,10 @@ public class ItemSpriteSheet {
     public static final int DART_TRACKING   = TIPPED_DARTS2+9;
     public static final int DART_SMOKING    = TIPPED_DARTS2+10;
     public static final int DART_TELEPORTING= TIPPED_DARTS2+11;
+    public static final int DART_EGG        = TIPPED_DARTS2+12;
+    public static final int DART_SUSAN      = TIPPED_DARTS2+13;
+    public static final int DART_FEELER     = TIPPED_DARTS2+14;
+    public static final int DART_TANK       = TIPPED_DARTS2+15;
     static {
         for (int i = TIPPED_DARTS2; i < TIPPED_DARTS2+16; i++)
             assignItemRect(i, 16, 16);
@@ -655,6 +663,7 @@ public class ItemSpriteSheet {
     public static final int DART_WRAITH     = TIPPED_DARTS3+11;
     public static final int DART_CONFUSING  = TIPPED_DARTS3+12;
     public static final int DART_CORRUPTION = TIPPED_DARTS3+13;
+    public static final int DART_WHEAT      = TIPPED_DARTS3+14;
     static {
         for (int i = TIPPED_DARTS3; i < TIPPED_DARTS3+16; i++)
             assignItemRect(i, 16, 16);
@@ -662,6 +671,21 @@ public class ItemSpriteSheet {
 
     public static final int TIPPED_DARTS4    =                               xy(1, 21);  //16 slots
     public static final int DART_LIGHTNING   = TIPPED_DARTS4+0;
+    public static final int DART_GOO         = TIPPED_DARTS4+1;
+    public static final int DART_POP         = TIPPED_DARTS4+2;
+    public static final int DART_VETCH       = TIPPED_DARTS4+3;
+    public static final int DART_CLIT        = TIPPED_DARTS4+4;
+    public static final int DART_HYPNO       = TIPPED_DARTS4+5;
+    public static final int DART_CLOCK       = TIPPED_DARTS4+6;
+    public static final int DART_EYE         = TIPPED_DARTS4+7;
+    public static final int DART_GRAPE       = TIPPED_DARTS4+8;
+    public static final int DART_BANANA      = TIPPED_DARTS4+9;
+    public static final int DART_DIRT        = TIPPED_DARTS4+10;
+    public static final int DART_GRASS       = TIPPED_DARTS4+11;
+    public static final int DART_LAMP        = TIPPED_DARTS4+12;
+    public static final int DART_TREE        = TIPPED_DARTS4+13;
+    public static final int DART_CROWN       = TIPPED_DARTS4+14;
+    public static final int DART_SHADOW      = TIPPED_DARTS4+15;
     static {
         for (int i = TIPPED_DARTS4; i < TIPPED_DARTS4+16; i++)
             assignItemRect(i, 16, 16);
@@ -1123,38 +1147,48 @@ public class ItemSpriteSheet {
     }
 	
 	private static final int FOOD       =                                   xy(1, 49);  //16 slots
-	public static final int MEAT        = FOOD+0;
-	public static final int STEAK       = FOOD+1;
-	public static final int STEWED      = FOOD+2;
-	public static final int OVERPRICED  = FOOD+3;
-	public static final int CARPACCIO   = FOOD+4;
-	public static final int RATION      = FOOD+5;
-	public static final int PASTY       = FOOD+6;
-	public static final int PUMPKIN_PIE = FOOD+7;
-	public static final int CANDY_CANE  = FOOD+8;
-	public static final int MEAT_PIE    = FOOD+9;
-	public static final int BLANDFRUIT  = FOOD+10;
-	public static final int BLAND_CHUNKS= FOOD+11;
-    public static final int PEANUT      = FOOD+12;
-    public static final int APRICO      = FOOD+13;
+	public static final int MEAT                = FOOD+0;
+	public static final int STEAK               = FOOD+1;
+	public static final int STEWED              = FOOD+2;
+	public static final int OVERPRICED          = FOOD+3;
+	public static final int CARPACCIO           = FOOD+4;
+	public static final int RATION              = FOOD+5;
+	public static final int PASTY               = FOOD+6;
+	public static final int PUMPKIN_PIE         = FOOD+7;
+	public static final int CANDY_CANE          = FOOD+8;
+	public static final int MEAT_PIE            = FOOD+9;
+	public static final int BLANDFRUIT          = FOOD+10;
+	public static final int BLAND_CHUNKS        = FOOD+11;
+    public static final int PEANUT              = FOOD+12;
+    public static final int APRICO              = FOOD+13;
+    public static final int CORNWHEATSHAFT      = FOOD+14;
+    public static final int EGG                 = FOOD+15;
 	static{
-		assignItemRect(MEAT,        15, 11);
-		assignItemRect(STEAK,       15, 11);
-		assignItemRect(STEWED,      15, 11);
-		assignItemRect(OVERPRICED,  14, 11);
-		assignItemRect(CARPACCIO,   15, 11);
-		assignItemRect(RATION,      16, 12);
-		assignItemRect(PASTY,       16, 11);
-		assignItemRect(PUMPKIN_PIE, 16, 12);
-		assignItemRect(CANDY_CANE,  13, 16);
-		assignItemRect(MEAT_PIE,    16, 12);
-		assignItemRect(BLANDFRUIT,  9,  12);
-		assignItemRect(BLAND_CHUNKS,14, 6);
-        assignItemRect(PEANUT,      8,  9);
-        assignItemRect(APRICO,      11, 11);
+		assignItemRect(MEAT,            15, 11);
+		assignItemRect(STEAK,           15, 11);
+		assignItemRect(STEWED,          15, 11);
+		assignItemRect(OVERPRICED,      14, 11);
+		assignItemRect(CARPACCIO,       15, 11);
+		assignItemRect(RATION,          16, 12);
+		assignItemRect(PASTY,           16, 11);
+		assignItemRect(PUMPKIN_PIE,     16, 12);
+		assignItemRect(CANDY_CANE,      13, 16);
+		assignItemRect(MEAT_PIE,        16, 12);
+		assignItemRect(BLANDFRUIT,      9,  12);
+		assignItemRect(BLAND_CHUNKS,    14, 6);
+        assignItemRect(PEANUT,          8,  9);
+        assignItemRect(APRICO,          11, 11);
+        assignItemRect(CORNWHEATSHAFT,  9,  9);
+        assignItemRect(EGG,             11, 13);
 	}
 
-	private static final int QUEST  =                                       xy(1, 50);  //32 slots
+    private static final int FOOD2       =                                   xy(1, 50);  //16 slots
+    public static final int GRAPE                = FOOD2+0;
+    static{
+        assignItemRect(GRAPE,            9, 9);
+    }
+
+	private static final int QUEST  =                                       xy(1, 51);  //32 slots
 	public static final int SKULL           = QUEST+0;
 	public static final int DUST            = QUEST+1;
 	public static final int CANDLE          = QUEST+2;
@@ -1179,7 +1213,7 @@ public class ItemSpriteSheet {
         assignItemRect(POTION_CATALYST, 6,  15);
 	}
 
-	private static final int BAGS       =                                   xy(1, 52);  //16 slots
+	private static final int BAGS       =                                   xy(1, 53);  //16 slots
 	public static final int VIAL        = BAGS+0;
 	public static final int POUCH       = BAGS+1;
 	public static final int HOLDER      = BAGS+2;

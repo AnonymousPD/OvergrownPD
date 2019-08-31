@@ -23,12 +23,20 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Blindness;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.LavenderlanternPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
+import com.watabou.utils.Random;
 
 public class Lavenderlantern extends Plant {
 
@@ -38,17 +46,29 @@ public class Lavenderlantern extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        GameScene.flash( Game.instance.getResources().getInteger(R.integer.lavenderflash) );
+        for(Mob mob : Dungeon.level.mobs){
+            Buff.prolong( mob, Blindness.class, Random.Int( 2, 5 ) );
+        }
+        Buff.prolong( Dungeon.hero, Blindness.class, Random.Int( 2, 5 ) );
     }
 
     @Override
     public void activate(Char ch) {
-
+        GameScene.flash( Game.instance.getResources().getInteger(R.integer.lavenderflash) );
+        for(Mob mob : Dungeon.level.mobs){
+            Buff.prolong( mob, Blindness.class, Random.Int( 2, 5 ) );
+        }
+        Buff.prolong( Dungeon.hero, Blindness.class, Random.Int( 2, 5 ) );
     }
 
     @Override
     public void activate() {
-
+        GameScene.flash( Game.instance.getResources().getInteger(R.integer.lavenderflash) );
+        for(Mob mob : Dungeon.level.mobs){
+            Buff.prolong( mob, Blindness.class, Random.Int( 2, 5 ) );
+        }
+        Buff.prolong( Dungeon.hero, Blindness.class, Random.Int( 2, 5 ) );
     }
 
     @Override
@@ -66,7 +86,10 @@ public class Lavenderlantern extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            GameScene.flash( Game.instance.getResources().getInteger(R.integer.lavenderflash) );
+            for(Mob mob : Dungeon.level.mobs){
+                Buff.prolong( mob, Blindness.class, Random.Int( 2, 5 ) );
+            }
         }
 
         @Override

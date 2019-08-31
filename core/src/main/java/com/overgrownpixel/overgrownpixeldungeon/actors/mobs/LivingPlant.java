@@ -85,7 +85,7 @@ public class LivingPlant extends Mob {
         CharSprite sprite = null;
         try {
             if(plantClass.image == 0){
-                sprite = new LivingPlantSprite(48);
+                sprite = new LivingPlantSprite(64);
             } else {
                 sprite = new LivingPlantSprite(plantClass.image);
             }

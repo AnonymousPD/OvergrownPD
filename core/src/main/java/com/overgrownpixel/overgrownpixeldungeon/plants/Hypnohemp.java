@@ -25,7 +25,11 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.CloudOfCorruption;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Corruption;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.HypnohempPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -38,17 +42,17 @@ public class Hypnohemp extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-
+        Buff.affect(enemy, Corruption.class);
     }
 
     @Override
     public void activate(Char ch) {
-
+        Buff.affect(ch, Corruption.class);
     }
 
     @Override
     public void activate() {
-
+        GameScene.add(Blob.seed(pos, 10, CloudOfCorruption.class));
     }
 
     @Override
@@ -66,7 +70,7 @@ public class Hypnohemp extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            Buff.affect(defender, Corruption.class);
         }
 
         @Override

@@ -120,6 +120,8 @@ public class BuffIndicator extends Component {
     public static final int SLIPPERY    = 69;
     public static final int COCOSHIELD  = 70;
     public static final int BEETLEINFECTED = 71;
+    public static final int BALLING     = 72;
+    public static final int FEELERFERN  = 73;
 
 	public static final int SIZE	= 7;
 	

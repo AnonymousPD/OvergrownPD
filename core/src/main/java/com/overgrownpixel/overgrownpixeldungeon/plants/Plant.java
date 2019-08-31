@@ -258,52 +258,52 @@ public abstract class Plant implements Bundlable {
                 return new WandOfRegrowth.Seedpod.Seed();
             case 15:
                 return new Apricobush.Seed();
-            case 17:
-                return new Butterlion.Seed();
-            case 23:
-                return new Chandaliertail.Seed();
-            case 25:
-                return new Blackholeflower.Seed();
-            case 31:
-                return new Chillisnapper.Seed();
-            case 29:
-                return new Crimsonpepper.Seed();
             case 16:
                 return new Firefoxglove.Seed();
-            case 26:
-                return new Frostcorn.Seed();
-            case 33:
-                return new Grasslilly.Seed();
-            case 35:
-                return new Kiwivetch.Seed();
+            case 17:
+                return new Butterlion.Seed();
             case 18:
                 return new Musclemoss.Seed();
-            case 24:
-                return new Nightshadeonion.Seed();
-            case 28:
-                return new Parasiteshrub.Seed();
-            case 34:
-                return new Peanutpetal.Seed();
-            case 36:
-                return new Rose.Seed();
             case 19:
                 return new Snowhedge.Seed();
-            case 21:
-                return new Steamweed.Seed();
             case 20:
                 return new Sunbloom.Seed();
-            case 38:
-                return new Suncarnivore.Seed();
+            case 21:
+                return new Steamweed.Seed();
             case 22:
                 return new Tomatobush.Seed();
-            case 37:
-                return new Venusflytrap.Seed();
-            case 32:
-                return new Waterweed.Seed();
+            case 23:
+                return new Chandaliertail.Seed();
+            case 24:
+                return new Nightshadeonion.Seed();
+            case 25:
+                return new Blackholeflower.Seed();
+            case 26:
+                return new Frostcorn.Seed();
             case 27:
                 return new Willowcane.Seed();
+            case 28:
+                return new Parasiteshrub.Seed();
+            case 29:
+                return new Crimsonpepper.Seed();
             case 30:
                 return new Witherfennel.Seed();
+            case 31:
+                return new Chillisnapper.Seed();
+            case 32:
+                return new Waterweed.Seed();
+            case 33:
+                return new Grasslilly.Seed();
+            case 34:
+                return new Peanutpetal.Seed();
+            case 35:
+                return new Kiwivetch.Seed();
+            case 36:
+                return new Rose.Seed();
+            case 37:
+                return new Venusflytrap.Seed();
+            case 38:
+                return new Suncarnivore.Seed();
             case 39:
                 return new Combflower.Seed();
             case 40:
