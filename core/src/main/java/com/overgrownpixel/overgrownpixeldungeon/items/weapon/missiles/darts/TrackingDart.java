@@ -37,6 +37,9 @@ public class TrackingDart extends TippedDart {
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
         Buff.prolong(defender, Glowing.class, Glowing.DURATION);
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

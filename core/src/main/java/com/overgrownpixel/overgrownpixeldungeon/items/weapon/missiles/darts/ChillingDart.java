@@ -44,6 +44,10 @@ public class ChillingDart extends TippedDart {
 		} else {
 			Buff.prolong(defender, Chill.class, 6f);
 		}
+
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		
 		return super.proc(attacker, defender, damage);
 	}

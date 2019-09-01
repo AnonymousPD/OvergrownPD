@@ -36,6 +36,9 @@ public class SeedChaosDart extends TippedDart {
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
 		new WandOfRegrowth.Seedpod().activate(defender);
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

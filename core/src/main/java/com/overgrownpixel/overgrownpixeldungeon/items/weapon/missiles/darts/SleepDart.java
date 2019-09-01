@@ -47,6 +47,10 @@ public class SleepDart extends TippedDart {
 				return super.act();
 			}
 		}.attachTo(defender);
+
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		
 		return super.proc(attacker, defender, damage);
 	}

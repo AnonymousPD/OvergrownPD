@@ -40,6 +40,9 @@ public class TeleportingDart extends TippedDart {
         if (!defender.properties().contains(Char.Property.IMMOVABLE)){
             ScrollOfTeleportation.appear( defender, Dungeon.level.randomRespawnCell() );
         }
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 
 	    return super.proc(attacker, defender, damage);
 	}

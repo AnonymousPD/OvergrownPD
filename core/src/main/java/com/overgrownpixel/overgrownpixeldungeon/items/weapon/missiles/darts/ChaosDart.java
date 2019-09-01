@@ -42,6 +42,9 @@ public class ChaosDart extends TippedDart {
         } catch (Exception e){
             OvergrownPixelDungeon.reportException(e);
         }
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

@@ -57,6 +57,9 @@ public class WaterDart extends TippedDart {
             Level.set(defender.pos, Terrain.WELL);
             GameScene.updateMap(defender.pos);
         }
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

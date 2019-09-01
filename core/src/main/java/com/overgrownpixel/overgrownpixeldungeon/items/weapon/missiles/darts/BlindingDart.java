@@ -40,6 +40,10 @@ public class BlindingDart extends TippedDart {
 	public int proc(Char attacker, Char defender, int damage) {
 		
 		Buff.affect(defender, Blindness.class, 10f);
+
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		
 		return super.proc(attacker, defender, damage);
 	}

@@ -84,6 +84,10 @@ public class DisplacingDart extends TippedDart {
 			}
 		
 		}
+
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		
 		return super.proc(attacker, defender, damage);
 	}

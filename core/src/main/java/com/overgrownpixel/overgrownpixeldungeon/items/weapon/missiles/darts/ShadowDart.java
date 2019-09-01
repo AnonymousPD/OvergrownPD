@@ -37,6 +37,9 @@ public class ShadowDart extends TippedDart {
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
         Buff.prolong(defender, Shadow.class, Shadow.DURATION);
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

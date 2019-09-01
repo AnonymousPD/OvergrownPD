@@ -38,6 +38,9 @@ public class RootingDart extends TippedDart {
 	public int proc(Char attacker, Char defender, int damage) {
 
 	    Buff.affect( defender, Roots.class, 5 );
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 
 	    return super.proc(attacker, defender, damage);
 	}

@@ -25,6 +25,7 @@
 package com.overgrownpixel.overgrownpixeldungeon.actors.buffs;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
@@ -50,6 +51,9 @@ public class Corruption extends Buff {
 	
 	@Override
 	public boolean act() {
+	    if(target instanceof Hero){
+	        detach(this);
+        }
 		buildToDamage += target.HT/200f;
 
 		int damage = (int)buildToDamage;

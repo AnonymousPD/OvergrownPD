@@ -36,7 +36,7 @@ public class CocoDart extends TippedDart {
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-        Buff.prolong( attacker, Cocoshield.class, Cocoshield.DURATION );
+        Buff.prolong( defender, Cocoshield.class, Cocoshield.DURATION );
 		return super.proc(attacker, defender, damage);
 	}
 }

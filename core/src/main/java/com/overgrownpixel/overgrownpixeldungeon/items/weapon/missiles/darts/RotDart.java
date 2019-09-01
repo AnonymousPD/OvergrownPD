@@ -46,6 +46,10 @@ public class RotDart extends TippedDart {
 		} else{
 			Buff.affect(defender, Corrosion.class).set(10f, Dungeon.depth);
 		}
+
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		
 		return super.proc(attacker, defender, damage);
 	}

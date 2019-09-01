@@ -39,6 +39,9 @@ public class GrassDart extends TippedDart {
 	public int proc(Char attacker, Char defender, int damage) {
         Level.set( defender.pos, Terrain.HIGH_GRASS );
         GameScene.updateMap( defender.pos );
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

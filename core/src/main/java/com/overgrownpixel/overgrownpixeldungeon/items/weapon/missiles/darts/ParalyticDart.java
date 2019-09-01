@@ -38,6 +38,9 @@ public class ParalyticDart extends TippedDart {
 	@Override
 	public int proc( Char attacker, Char defender, int damage ) {
 		Buff.prolong( defender, Paralysis.class, 5f );
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc( attacker, defender, damage );
 	}
 	

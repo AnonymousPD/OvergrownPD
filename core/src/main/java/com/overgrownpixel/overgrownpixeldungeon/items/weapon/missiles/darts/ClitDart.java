@@ -37,6 +37,9 @@ public class ClitDart extends TippedDart {
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
         Buff.prolong(defender, Charm.class, 100f).object = attacker.id();
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

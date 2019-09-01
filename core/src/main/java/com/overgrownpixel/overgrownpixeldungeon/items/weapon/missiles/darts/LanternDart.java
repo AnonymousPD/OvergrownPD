@@ -44,9 +44,12 @@ public class LanternDart extends TippedDart {
 	public int proc(Char attacker, Char defender, int damage) {
         GameScene.flash( Game.instance.getResources().getInteger(R.integer.lavenderflash) );
         for(Mob mob : Dungeon.level.mobs){
-            Buff.prolong( mob, Blindness.class, Random.Int( 2, 5 ) );
+            if(mob != null) Buff.prolong( mob, Blindness.class, Random.Int( 2, 5 ) );
         }
-        Buff.prolong( Dungeon.hero, Blindness.class, Random.Int( 2, 5 ) );
+        if(Dungeon.hero != null) Buff.prolong( Dungeon.hero, Blindness.class, Random.Int( 2, 5 ) );
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

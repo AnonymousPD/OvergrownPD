@@ -47,6 +47,10 @@ public class EarthquakeDart extends TippedDart {
             Sample.INSTANCE.play( Assets.SND_ROCKS );
         }
         defender.damage(defender.damageRoll(), this);
+
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		
 		return super.proc(attacker, defender, damage);
 	}

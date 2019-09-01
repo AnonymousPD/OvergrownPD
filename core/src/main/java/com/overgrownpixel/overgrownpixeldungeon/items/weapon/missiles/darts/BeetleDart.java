@@ -39,6 +39,10 @@ public class BeetleDart extends TippedDart {
 	public int proc(Char attacker, Char defender, int damage) {
 
         Buff.prolong(defender, BeetleInfected.class, BeetleInfected.DURATION);
+
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		
 		return super.proc(attacker, defender, damage);
 	}

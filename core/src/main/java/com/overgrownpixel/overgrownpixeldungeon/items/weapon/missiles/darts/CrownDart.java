@@ -38,6 +38,9 @@ public class CrownDart extends TippedDart {
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
         GameScene.add(Blob.seed(defender.pos, 20, Firewind.class));
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

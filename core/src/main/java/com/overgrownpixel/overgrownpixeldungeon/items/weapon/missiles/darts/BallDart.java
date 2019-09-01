@@ -39,6 +39,10 @@ public class BallDart extends TippedDart {
 	public int proc(Char attacker, Char defender, int damage) {
 		
 		Buff.prolong( defender, Balling.class, Balling.DURATION);
+
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		
 		return super.proc(attacker, defender, damage);
 	}

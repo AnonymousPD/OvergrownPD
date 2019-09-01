@@ -51,6 +51,9 @@ public class ShockingDart extends TippedDart {
 			arcs.add(new Lightning.Arc(new PointF(s.x + s.width / 2, s.y), new PointF(s.x + s.width / 2, s.y + s.height)));
 			s.parent.add(new Lightning(arcs, null));
 		}
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		
 		return super.proc(attacker, defender, damage);
 	}

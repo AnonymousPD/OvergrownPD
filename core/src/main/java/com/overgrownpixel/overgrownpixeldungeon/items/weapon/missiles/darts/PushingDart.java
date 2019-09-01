@@ -40,6 +40,9 @@ public class PushingDart extends TippedDart {
         int oppositeHero = attacker.pos + (attacker.pos - defender.pos);
         Ballistica trajectory = new Ballistica(attacker.pos, oppositeHero, Ballistica.MAGIC_BOLT);
         WandOfBlastWave.throwChar(attacker, trajectory, 1000);
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 
 		return super.proc(attacker, defender, damage);
 	}

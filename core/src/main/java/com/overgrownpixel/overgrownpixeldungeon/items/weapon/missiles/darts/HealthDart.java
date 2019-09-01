@@ -37,6 +37,9 @@ public class HealthDart extends TippedDart {
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
         Buff.affect( defender, Healing.class ).setHeal(defender.HT*2, 0.50f, 1);
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 	

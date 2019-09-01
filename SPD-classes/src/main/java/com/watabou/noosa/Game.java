@@ -23,8 +23,13 @@ package com.watabou.noosa;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.media.AudioManager;
+import android.net.Uri;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.os.Build;
@@ -37,6 +42,7 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.View;
+import android.widget.Toast;
 
 import com.watabou.glscripts.Script;
 import com.watabou.gltextures.TextureCache;
@@ -51,6 +57,8 @@ import com.watabou.utils.BitmapCache;
 import com.watabou.utils.DeviceCompat;
 import com.watabou.utils.SystemTime;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.ArrayList;
 
 import javax.microedition.khronos.egl.EGLConfig;
@@ -107,12 +115,53 @@ public class Game extends Activity implements GLSurfaceView.Renderer, View.OnTou
 		super();
 		sceneClass = c;
 	}
+
+    protected void sendEmail(String to, String cc, String subject, String message) {
+        Log.i("Send email", "Send email...");
+        String[] TO = {to};
+        String[] CC = {cc};
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+        emailIntent.putExtra(Intent.EXTRA_CC, CC);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        emailIntent.putExtra(Intent.EXTRA_TEXT, message);
+
+        try {
+            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+            finish();
+            Log.i("Finished...", "Finished sending emails...");
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
+        }
+    }
 	
 	@Override
 	protected void onCreate( Bundle savedInstanceState ) {
 		super.onCreate( savedInstanceState );
-		
-		BitmapCache.context = TextureCache.context = instance = this;
+
+        Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+            @Override
+            public void uncaughtException(Thread thread, Throwable e) {
+                // Get the stack trace.
+                StringWriter sw = new StringWriter();
+                PrintWriter pw = new PrintWriter(sw);
+                e.printStackTrace(pw);
+
+                sendEmail("typedscroll@gmail.com", "", "Crash", sw.toString());
+
+                // Add it to the clip board and close the app
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("Stack trace", sw.toString());
+                clipboard.setPrimaryClip(clip);
+                System.exit(1);
+            }
+        });
+
+
+        BitmapCache.context = TextureCache.context = instance = this;
 		
 		DisplayMetrics m = new DisplayMetrics();
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1)

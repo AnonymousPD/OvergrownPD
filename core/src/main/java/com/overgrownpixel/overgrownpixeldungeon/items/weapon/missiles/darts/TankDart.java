@@ -38,6 +38,9 @@ public class TankDart extends TippedDart {
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
         GameScene.add( Blob.seed( defender.pos, 1+2, HalomethaneFire.class ) );
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

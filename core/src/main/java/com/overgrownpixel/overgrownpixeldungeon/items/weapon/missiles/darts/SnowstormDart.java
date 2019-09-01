@@ -38,6 +38,9 @@ public class SnowstormDart extends TippedDart {
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
         GameScene.add(Blob.seed(defender.pos, 50, Snowstorm.class));
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

@@ -43,6 +43,9 @@ public class SunDart extends TippedDart {
                 defender.sprite.emitter().start( ShadowParticle.UP, 0.05f, 10 );
             }
         }
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

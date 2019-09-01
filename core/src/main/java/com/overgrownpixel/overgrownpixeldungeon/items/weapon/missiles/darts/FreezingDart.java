@@ -38,6 +38,9 @@ public class FreezingDart extends TippedDart {
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
         Buff.prolong( defender, Frost.class, Frost.duration( defender ) * Random.Float( 1.0f, 1.5f ) );
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

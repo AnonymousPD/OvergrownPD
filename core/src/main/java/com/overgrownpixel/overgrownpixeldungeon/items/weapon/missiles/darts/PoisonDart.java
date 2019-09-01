@@ -40,6 +40,9 @@ public class PoisonDart extends TippedDart {
 	public int proc(Char attacker, Char defender, int damage) {
 		
 		Buff.affect( defender, Poison.class ).set( 3 + Dungeon.depth / 3 );
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		
 		return super.proc(attacker, defender, damage);
 	}

@@ -36,6 +36,9 @@ public class LightningDart extends TippedDart {
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
         new Lightninglily().shoot(attacker.pos, defender.pos);
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

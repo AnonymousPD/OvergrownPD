@@ -36,6 +36,9 @@ public class FirefoxDart extends TippedDart {
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
 		new Firebomb().explode(defender.pos);
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

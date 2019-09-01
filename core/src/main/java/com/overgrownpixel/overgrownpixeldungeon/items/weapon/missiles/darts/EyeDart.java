@@ -38,6 +38,9 @@ public class EyeDart extends TippedDart {
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
         GameScene.add(Blob.seed(defender.pos, damage+1, WindOfKnowledge.class));
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

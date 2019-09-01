@@ -37,6 +37,9 @@ public class ClockDart extends TippedDart {
 	public int proc(Char attacker, Char defender, int damage) {
         TimekeepersHourglass timekeepersHourglass = new TimekeepersHourglass();
         timekeepersHourglass.getTimeStopEffectFreeze(attacker.attackSkill(defender));
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

@@ -44,6 +44,9 @@ public class SusanDart extends TippedDart {
                 if(bool) new Flare( 6, 32 ).show( attacker.sprite, 1f ) ;
             }
         }
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

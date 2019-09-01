@@ -38,6 +38,9 @@ public class HeatDart extends TippedDart {
         Chillisnapper chillisnapper = new Chillisnapper();
         chillisnapper.pos = defender.pos;
         chillisnapper.activate(defender);
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

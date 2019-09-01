@@ -27,6 +27,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.Egg;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.watabou.utils.Random;
 
 public class EggDart extends TippedDart {
 	
@@ -36,7 +37,10 @@ public class EggDart extends TippedDart {
 	
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
-        Dungeon.level.drop(new Egg(), defender.pos).sprite.drop(defender.pos);
+        if(Random.Float() < 0.3f) Dungeon.level.drop(new Egg(), defender.pos).sprite.drop(defender.pos);
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }

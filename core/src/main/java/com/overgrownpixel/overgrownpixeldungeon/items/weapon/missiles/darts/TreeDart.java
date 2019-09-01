@@ -39,6 +39,9 @@ public class TreeDart extends TippedDart {
 	public int proc(Char attacker, Char defender, int damage) {
         Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
         seed.couch(defender.pos, Dungeon.level, false);
+        if (attacker.alignment == defender.alignment){
+            return 0;
+        }
 		return super.proc(attacker, defender, damage);
 	}
 }
