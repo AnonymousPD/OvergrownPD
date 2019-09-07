@@ -32,6 +32,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Fire;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.ToxicGas;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Adrenaline;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ArcaneArmor;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Balling;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.BeetleInfected;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Bleeding;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Bless;
@@ -77,6 +78,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Sprouting;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Stamina;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Stunned;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.SugarRush;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.SuperBalling;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Terror;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.TrailOfFire;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Vertigo;
@@ -642,6 +644,40 @@ public abstract class Char extends Actor {
 			Dungeon.level.press( pos, this );
 		}
 
+        if(buff(Balling.class) != null){
+            if(this instanceof Hero){
+                for(Mob ch : ((Hero) this).visibleEnemiesList()){
+                    Buff.prolong(ch, Balling.class, Balling.DURATION);
+                }
+            } else {
+                for(Mob mob : Dungeon.level.mobs){
+                    if(this.fieldOfView[mob.pos]){
+                        Buff.prolong(mob, Balling.class, Balling.DURATION);
+                    }
+                }
+                if(this.fieldOfView[Dungeon.hero.pos]){
+                    Buff.prolong(Dungeon.hero, Balling.class, Balling.DURATION);
+                }
+            }
+        }
+
+        if(buff(SuperBalling.class) != null){
+            if(this instanceof Hero){
+                for(Mob ch : ((Hero) this).visibleEnemiesList()){
+                    Buff.prolong(ch, Vertigo.class, Vertigo.DURATION);
+                }
+            } else {
+                for(Mob mob : Dungeon.level.mobs){
+                    if(this.fieldOfView[mob.pos]){
+                        Buff.prolong(mob, Vertigo.class, Vertigo.DURATION);
+                    }
+                }
+                if(this.fieldOfView[Dungeon.hero.pos]){
+                    Buff.prolong(Dungeon.hero, Vertigo.class, Vertigo.DURATION);
+                }
+            }
+        }
+
 		if(buff(HeatAura.class) != null){
 		    for(int p : PathFinder.NEIGHBOURS9){
 		        if(Dungeon.level.map[pos+p] == Terrain.WATER){
@@ -656,8 +692,12 @@ public abstract class Char extends Actor {
                     Buff.prolong( mob, Frost.class, Frost.duration( mob ) * Random.Float( 1.0f, 1.5f ) );
                 }
             } else {
-                for(Mob mob : ((Hero) this).visibleEnemiesList()){
-                    Buff.prolong( mob, Frost.class, Frost.duration( mob ) * Random.Float( 1.0f, 1.5f ) );
+                for(Mob mob : Dungeon.level.mobs){
+                    if(this.fieldOfView[mob.pos]){
+                        if(mob != this){
+                            Buff.prolong( mob, Frost.class, Frost.duration( mob ) * Random.Float( 1.0f, 1.5f ) );
+                        }
+                    }
                 }
                 if(this.fieldOfView[Dungeon.hero.pos]){
                     Buff.prolong( Dungeon.hero, Frost.class, Frost.duration( Dungeon.hero ) * Random.Float( 1.0f, 1.5f ) );

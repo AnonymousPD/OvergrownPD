@@ -166,9 +166,11 @@ public class Chillisnapper extends Plant {
         if(ch instanceof Hero) {
             for (Char cha : Dungeon.level.mobs) {
                 if (ch.fieldOfView[cha.pos]) {
-                    shoot(ch, cha.pos);
-                    if(((Hero) ch).subClass != HeroSubClass.WARDEN){
-                        return;
+                    if(cha != null){
+                        shoot(ch, cha.pos);
+                        if(((Hero) ch).subClass != HeroSubClass.WARDEN){
+                            return;
+                        }
                     }
                 }
             }
@@ -178,9 +180,11 @@ public class Chillisnapper extends Plant {
                 return;
             } else {
                 for (Char cha : Dungeon.level.mobs) {
-                    if(ch != cha){
-                        shoot(ch, cha.pos);
-                        return;
+                    if(cha != null){
+                        if(ch != cha){
+                            shoot(ch, cha.pos);
+                            return;
+                        }
                     }
                 }
             }

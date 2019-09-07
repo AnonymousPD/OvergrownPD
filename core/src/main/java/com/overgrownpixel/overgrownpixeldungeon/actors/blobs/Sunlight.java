@@ -45,7 +45,7 @@ public class Sunlight extends Blob {
 					if (off[cell] > 0) {
 					    if(Dungeon.level.plants.get(cell) == null){
                             Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
-                            seed.couch(cell, Dungeon.level, false);
+                            seed.couch(cell, null, false);
                             GameScene.updateMap( cell );
                         }
 					}

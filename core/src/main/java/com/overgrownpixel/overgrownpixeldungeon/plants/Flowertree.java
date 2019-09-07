@@ -23,7 +23,6 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
-import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
@@ -43,7 +42,7 @@ public class Flowertree extends Plant {
     public void attackProc(Char enemy, int damage) {
         try {
             Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
-            seed.couch(enemy.pos, Dungeon.level, false);
+            seed.couch(enemy.pos, null, false);
         } catch (Exception e){
             OvergrownPixelDungeon.reportException(e);
         }
@@ -53,7 +52,7 @@ public class Flowertree extends Plant {
     public void activate(Char ch) {
         try {
             Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
-            seed.couch(ch.pos, Dungeon.level, false);
+            seed.couch(ch.pos,null, false);
         } catch (Exception e){
             OvergrownPixelDungeon.reportException(e);
         }
@@ -63,7 +62,7 @@ public class Flowertree extends Plant {
     public void activate() {
         try {
             Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
-            seed.couch(pos, Dungeon.level, false);
+            seed.couch(pos, null, false);
         } catch (Exception e){
             OvergrownPixelDungeon.reportException(e);
         }
@@ -86,7 +85,7 @@ public class Flowertree extends Plant {
         public void procEffect(Char attacker, Char defender, int damage) {
             try {
                 Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
-                seed.couch(defender.pos, Dungeon.level, false);
+                seed.couch(defender.pos, null, false);
             } catch (Exception e){
                 OvergrownPixelDungeon.reportException(e);
             }

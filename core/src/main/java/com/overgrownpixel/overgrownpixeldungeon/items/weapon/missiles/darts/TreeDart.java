@@ -23,7 +23,6 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts;
 
-import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.items.Generator;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
@@ -38,7 +37,7 @@ public class TreeDart extends TippedDart {
 	@Override
 	public int proc(Char attacker, Char defender, int damage) {
         Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
-        seed.couch(defender.pos, Dungeon.level, false);
+        seed.couch(defender.pos, null, false);
         if (attacker.alignment == defender.alignment){
             return 0;
         }

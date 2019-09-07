@@ -27,10 +27,12 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Flare;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.BlueEyedSusanPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.Dewdrop;
+import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfRemoveCurse;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
@@ -45,6 +47,18 @@ public class Blueeyedsusan extends Plant {
     @Override
     public void attackProc(Char enemy, int damage) {
         if(enemy instanceof Hero){
+            if(((Hero) enemy).subClass == HeroSubClass.WARDEN){
+                boolean uncursed = false;
+                for(Item item : ((Hero) enemy).belongings){
+                    if(item.cursed){
+                        ScrollOfRemoveCurse scroll = new ScrollOfRemoveCurse();
+                        uncursed = scroll.uncurse((Hero)enemy, item);
+                    }
+                }
+                if(uncursed){
+                    new Flare( 6, 32 ).show( enemy.sprite, 1f ) ;
+                }
+            } else
             if(((Hero) enemy).belongings.weapon.cursed){
                 ScrollOfRemoveCurse scroll = new ScrollOfRemoveCurse();
                 boolean bool = scroll.uncurse((Hero)enemy, ((Hero) enemy).belongings.weapon);
@@ -59,6 +73,18 @@ public class Blueeyedsusan extends Plant {
     @Override
     public void activate(Char ch) {
         if(ch instanceof Hero){
+            if(((Hero) ch).subClass == HeroSubClass.WARDEN){
+                boolean uncursed = false;
+                for(Item item : ((Hero) ch).belongings){
+                    if(item.cursed){
+                        ScrollOfRemoveCurse scroll = new ScrollOfRemoveCurse();
+                        uncursed = scroll.uncurse((Hero)ch, item);
+                    }
+                }
+                if(uncursed){
+                    new Flare( 6, 32 ).show( ch.sprite, 1f ) ;
+                }
+            } else
             if(((Hero) ch).belongings.weapon.cursed){
                 ScrollOfRemoveCurse scroll = new ScrollOfRemoveCurse();
                 boolean bool = scroll.uncurse((Hero)ch, ((Hero) ch).belongings.weapon);
@@ -91,6 +117,18 @@ public class Blueeyedsusan extends Plant {
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
             if(attacker instanceof Hero){
+                if(((Hero) attacker).subClass == HeroSubClass.WARDEN){
+                    boolean uncursed = false;
+                    for(Item item : ((Hero) attacker).belongings){
+                        if(item.cursed){
+                            ScrollOfRemoveCurse scroll = new ScrollOfRemoveCurse();
+                            uncursed = scroll.uncurse((Hero)attacker, item);
+                        }
+                    }
+                    if(uncursed){
+                        new Flare( 6, 32 ).show( attacker.sprite, 1f ) ;
+                    }
+                } else
                 if(((Hero) attacker).belongings.weapon.cursed){
                     ScrollOfRemoveCurse scroll = new ScrollOfRemoveCurse();
                     boolean bool = scroll.uncurse((Hero)attacker, ((Hero) attacker).belongings.weapon);
