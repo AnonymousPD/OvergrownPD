@@ -308,16 +308,16 @@ public class WandOfRegrowth extends Wand {
 
 			ArrayList<Integer> candidates = new ArrayList<Integer>();
 			for (int i : PathFinder.NEIGHBOURS8){
-				if (Dungeon.level.passable[pos+i]
-						&& pos+i != Dungeon.level.entrance
-						&& pos+i != Dungeon.level.exit){
-					candidates.add(pos+i);
+				if (Dungeon.level.passable[ch.pos+i]
+						&& ch.pos+i != Dungeon.level.entrance
+						&& ch.pos+i != Dungeon.level.exit){
+					candidates.add(ch.pos+i);
 				}
 			}
 
 			for (int i = 0; i < nDrops && !candidates.isEmpty(); i++){
 				Integer c = Random.element(candidates);
-				Dungeon.level.drop(new Dewdrop(), c).sprite.drop(pos);
+				Dungeon.level.drop(new Dewdrop(), c).sprite.drop(ch.pos);
 				candidates.remove(c);
 			}
 
@@ -357,6 +357,11 @@ public class WandOfRegrowth extends Wand {
 			}
 
             @Override
+            public void procEffect(Char attacker, Char defender, int damage) {
+
+            }
+
+            @Override
             public Emitter.Factory getPixelParticle() {
                 return DewcatcherPoisonParticle.FACTORY;
             }
@@ -386,16 +391,16 @@ public class WandOfRegrowth extends Wand {
 
 			ArrayList<Integer> candidates = new ArrayList<Integer>();
 			for (int i : PathFinder.NEIGHBOURS8){
-				if (Dungeon.level.passable[pos+i]
-						&& pos+i != Dungeon.level.entrance
-						&& pos+i != Dungeon.level.exit){
-					candidates.add(pos+i);
+				if (Dungeon.level.passable[ch.pos+i]
+						&& ch.pos+i != Dungeon.level.entrance
+						&& ch.pos+i != Dungeon.level.exit){
+					candidates.add(ch.pos+i);
 				}
 			}
 
 			for (int i = 0; i < nSeeds && !candidates.isEmpty(); i++){
 				Integer c = Random.element(candidates);
-				Dungeon.level.drop(Generator.random(Generator.Category.SEED), c).sprite.drop(pos);
+				Dungeon.level.drop(Generator.random(Generator.Category.SEED), c).sprite.drop(ch.pos);
 				candidates.remove(c);
 			}
 
@@ -433,6 +438,11 @@ public class WandOfRegrowth extends Wand {
 
                 plantClass = Seedpod.class;
 			}
+
+            @Override
+            public void procEffect(Char attacker, Char defender, int damage) {
+
+            }
 
             @Override
             public Emitter.Factory getPixelParticle() {

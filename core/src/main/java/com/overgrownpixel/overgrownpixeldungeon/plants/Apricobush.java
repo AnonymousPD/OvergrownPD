@@ -69,7 +69,6 @@ public class Apricobush extends Plant {
                 satisfy((Hero) ch);
             } else {
                 Buff.affect( ch, Healing.class ).setHeal(Math.round(ch.HT/4), 0.25f, 0);
-                satisfy((Hero) ch);
             }
         }
     }

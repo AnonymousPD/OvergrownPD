@@ -391,8 +391,9 @@ public class Generator {
 		FOOD	( 0,    Food.class ),
 		
 		POTION	( 20,   Potion.class ),
-		SEED	( 0,    Plant.Seed.class ), //dropped by grass
+		SEED	    ( 0,    Plant.Seed.class ), //dropped by grass
         BASESEED	( 0,    Plant.Seed.class ),
+        ALLSEEDS	( 0,    Plant.Seed.class ),
         SEEDWATER	( 0,    Plant.Seed.class ),
         SEEDSEWER	( 0,    Plant.Seed.class ),
         SEEDPRISON	( 0,    Plant.Seed.class ),
@@ -485,6 +486,23 @@ public class Generator {
                     5, 5, 5, 0, 5, 5, 5, 5, 5, 5,
                     5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
                     5};
+
+            ALLSEEDS.classes = new Class<?>[]{
+                    Apricobush.Seed.class, Ballcrop.class, Bananabean.Seed.class, Blackholeflower.Seed.class, Blindweed.Seed.class, Blueeyedsusan.Seed.class, Butterlion.Seed.class, Chandaliertail.Seed.class, Chillisnapper.Seed.class, Clitbalm.Seed.class,
+                    Clockcypress.Seed.class, Cocostuft.Seed.class, Combflower.Seed.class, Cornwheat.Seed.class, Crimsoncrown.Seed.class, Crimsonpepper.Seed.class, Dirtdaisy.Seed.class, Dreamfoil.Seed.class, Earthroot.Seed.class, Eggbloom.Seed.class,
+                    Eyeeuonymus.Seed.class, Fadeleaf.Seed.class, Feelerfern.Seed.class, Firebloom.Seed.class, Firefoxglove.Seed.class, Flowertree.Seed.class, Frostcorn.Seed.class, Gobgrape.Seed.class, Goograss.Seed.class, Grasslilly.Seed.class,
+                    Grassvine.Seed.class, Hypnohemp.Seed.class, Icecap.Seed.class, Kiwivetch.Seed.class, Larvaleaf.Seed.class, Lavenderlantern.Seed.class, Lightninglily.Seed.class, Musclemoss.Seed.class, Nightshadeonion.Seed.class, Parasiteshrub.Seed.class,
+                    Peanutpetal.Seed.class, Poppoplar.Seed.class, Rose.Seed.class, Rotberry.Seed.class, Shadowbloom.Seed.class, Snowhedge.Seed.class, Sorrowmoss.Seed.class, Sourpitcher.Seed.class, Starflower.Seed.class, Steamweed.Seed.class,
+                    Stormvine.Seed.class, Sunbloom.Seed.class, Suncarnivore.Seed.class, Sungrass.Seed.class, Swiftthistle.Seed.class, Tankcabbage.Seed.class, Tomatobush.Seed.class, Venusflytrap.Seed.class, Waterweed.Seed.class, Willowcane.Seed.class,
+                    Witherfennel.Seed.class, WandOfRegrowth.Seedpod.Seed.class, WandOfRegrowth.Dewcatcher.class};
+            ALLSEEDS.probs = new float[]{
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 0, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5};
 
             BASESEED.classes = new Class<?>[]{
                     Apricobush.Seed.class, Ballcrop.class, Bananabean.Seed.class, Blackholeflower.Seed.class, Blindweed.Seed.class, Blueeyedsusan.Seed.class, Butterlion.Seed.class, Chandaliertail.Seed.class, Chillisnapper.Seed.class, Clitbalm.Seed.class,

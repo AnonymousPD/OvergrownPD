@@ -205,7 +205,7 @@ public abstract class TippedDart extends Dart {
 		types.put(Starflower.Seed.class,                HolyDart.class); //9
 		types.put(Stormvine.Seed.class,                 ShockingDart.class); //10
 		types.put(Sungrass.Seed.class,                  HealingDart.class); //11
-		types.put(Swiftthistle.Seed.class,              AdrenalineDart.class); //12
+		types.put(Swiftthistle.Seed.class,             AdrenalineDart.class); //12
         types.put(Apricobush.Seed.class,                HealthDart.class); //13
         types.put(Blackholeflower.Seed.class,           TeleportingDart.class); //14
         types.put(WandOfRegrowth.Dewcatcher.Seed.class, DewDart.class); //15
@@ -271,7 +271,7 @@ public abstract class TippedDart extends Dart {
 	public static TippedDart randomTipped( int quantity ){
 		Plant.Seed s;
 		do{
-			s = (Plant.Seed) Generator.random(Generator.Category.SEED);
+			s = (Plant.Seed) Generator.random(Generator.Category.ALLSEEDS);
 		} while (!types.containsKey(s.getClass()));
 		
 		return getTipped(s, quantity );
