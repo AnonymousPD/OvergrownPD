@@ -125,6 +125,16 @@ public class HalomethaneFire extends Blob {
                 Dungeon.level.flora.get(pos+i).wither();
             }
         }
+
+        if(Dungeon.level.butter.get(pos) != null){
+            Dungeon.level.butter.get(pos).melt();
+        }
+
+        for(int i : PathFinder.NEIGHBOURS8){
+            if(Dungeon.level.butter.get(pos+i) != null){
+                Dungeon.level.butter.get(pos+i).melt();
+            }
+        }
 	}
 	
 	@Override

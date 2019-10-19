@@ -86,7 +86,8 @@ public class DungeonTileSheet {
 			Terrain.BARRICADE, Terrain.HIGH_GRASS, Terrain.FURROWED_GRASS, Terrain.SECRET_TRAP,
 			Terrain.TRAP, Terrain.INACTIVE_TRAP, Terrain.EMPTY_DECO,
 			Terrain.SIGN, Terrain.WELL, Terrain.STATUE, Terrain.ALCHEMY,
-			Terrain.DOOR, Terrain.OPEN_DOOR, Terrain.LOCKED_DOOR
+			Terrain.DOOR, Terrain.OPEN_DOOR, Terrain.LOCKED_DOOR, Terrain.SOIL,
+            Terrain.SOIL_CORNWHEAT, Terrain.SOIL_GREENWHEAT, Terrain.SOIL_STRAWWHEAT, Terrain.SOIL_WATERWHEAT
 	));
 
 	//+1 for ground above, +2 for ground right, +4 for ground below, +8 for ground left.
@@ -125,6 +126,11 @@ public class DungeonTileSheet {
 		chasmStitcheable.put( Terrain.EMBERS,       CHASM_FLOOR );
 		chasmStitcheable.put( Terrain.EMPTY_WELL,   CHASM_FLOOR );
 		chasmStitcheable.put( Terrain.HIGH_GRASS,   CHASM_FLOOR );
+        chasmStitcheable.put( Terrain.SOIL_CORNWHEAT,CHASM_FLOOR );
+        chasmStitcheable.put( Terrain.SOIL_GREENWHEAT,CHASM_FLOOR );
+        chasmStitcheable.put( Terrain.SOIL_STRAWWHEAT,CHASM_FLOOR );
+        chasmStitcheable.put( Terrain.SOIL_WATERWHEAT,CHASM_FLOOR );
+        chasmStitcheable.put( Terrain.SOIL,         CHASM_FLOOR );
 		chasmStitcheable.put( Terrain.FURROWED_GRASS,CHASM_FLOOR );
 		chasmStitcheable.put( Terrain.EMPTY_DECO,   CHASM_FLOOR );
 		chasmStitcheable.put( Terrain.SIGN,         CHASM_FLOOR );
@@ -190,6 +196,11 @@ public class DungeonTileSheet {
 	public static final int FLAT_HIGH_GRASS_ALT = FLAT_OTHER+8;
 	public static final int FLAT_FURROWED_ALT   = FLAT_OTHER+9;
 
+    public static final int FLAT_SOIL_CORN      = FLAT_OTHER+11;
+    public static final int FLAT_SOIL_STRAW     = FLAT_OTHER+12;
+    public static final int FLAT_SOIL_WATER     = FLAT_OTHER+13;
+    public static final int FLAT_SOIL_GREEN     = FLAT_OTHER+14;
+
 
 	/**********************************************************************
 	 * Raised Tiles, Lower Layer
@@ -247,6 +258,9 @@ public class DungeonTileSheet {
 	//floor tile that appears on a top/bottom doorway
 	public static final int RAISED_DOOR_SIDEWAYS    = RAISED_DOORS+3;
 
+	/**SOIL**/
+	public static final int SOIL                    = RAISED_DOOR +4;
+
 
 	public static int getRaisedDoorTile(int tile, int below){
 		if (wallStitcheable(below))             return RAISED_DOOR_SIDEWAYS;
@@ -279,6 +293,14 @@ public class DungeonTileSheet {
 	public static final int RAISED_HIGH_GRASS_ALT   = RAISED_OTHER+9;
 	public static final int RAISED_FURROWED_ALT     = RAISED_OTHER+10;
 
+    public static final int RAISED_SOIL_CORNWHEAT   = RAISED_DOOR +5;
+    public static final int RAISED_SOIL_STRAWWHEAT  = RAISED_DOOR +6;
+    public static final int RAISED_SOIL_WATERWHEAT  = RAISED_DOOR +7;
+    public static final int RAISED_SOIL_GREENWHEAT  = RAISED_DOOR +8;
+    public static final int RAISED_SOIL_CORNWHEAT_UPPER_PART   = RAISED_DOOR +9;
+    public static final int RAISED_SOIL_STRAWWHEAT_UPPER_PART  = RAISED_DOOR +10;
+    public static final int RAISED_SOIL_WATERWHEAT_UPPER_PART  = RAISED_DOOR +11;
+    public static final int RAISED_SOIL_GREENWHEAT_UPPER_PART  = RAISED_DOOR +12;
 
 
 	/**********************************************************************
@@ -340,6 +362,11 @@ public class DungeonTileSheet {
 	public static final int HIGH_GRASS_OVERHANG_ALT     = WALL_OVERHANG+38;
 	public static final int FURROWED_OVERHANG_ALT       = WALL_OVERHANG+39;
 
+	public static final int SOIL_CORNWHEAT_OVERHANG     = WALL_OVERHANG+40;
+    public static final int SOIL_STRAWWHEAT_OVERHANG    = WALL_OVERHANG+41;
+    public static final int SOIL_WATERWHEAT_OVERHANG    = WALL_OVERHANG+42;
+    public static final int SOIL_GREENWHEAT_OVERHANG    = WALL_OVERHANG+43;
+
 	/**********************************************************************
 	 * Logic for the selection of tile visuals
 	 **********************************************************************/
@@ -349,6 +376,7 @@ public class DungeonTileSheet {
 	static {
 		directVisuals.put(Terrain.EMPTY,            FLOOR);
 		directVisuals.put(Terrain.GRASS,            GRASS);
+        directVisuals.put(Terrain.SOIL,             SOIL);
 		directVisuals.put(Terrain.EMPTY_WELL,       EMPTY_WELL);
 		directVisuals.put(Terrain.ENTRANCE,         ENTRANCE);
 		directVisuals.put(Terrain.EXIT,             EXIT);
@@ -382,6 +410,10 @@ public class DungeonTileSheet {
 		directFlatVisuals.put(Terrain.ALCHEMY,          FLAT_ALCHEMY_POT);
 		directFlatVisuals.put(Terrain.BARRICADE,        FLAT_BARRICADE);
 		directFlatVisuals.put(Terrain.HIGH_GRASS,       FLAT_HIGH_GRASS);
+        directFlatVisuals.put(Terrain.SOIL_CORNWHEAT,   FLAT_SOIL_CORN);
+        directFlatVisuals.put(Terrain.SOIL_GREENWHEAT,  FLAT_SOIL_GREEN);
+        directFlatVisuals.put(Terrain.SOIL_STRAWWHEAT,  FLAT_SOIL_STRAW);
+        directFlatVisuals.put(Terrain.SOIL_WATERWHEAT,  FLAT_SOIL_WATER);
 		directFlatVisuals.put(Terrain.FURROWED_GRASS,   FLAT_FURROWED_GRASS);
 
 		directFlatVisuals.put(Terrain.SECRET_DOOR,      directFlatVisuals.get(Terrain.WALL));

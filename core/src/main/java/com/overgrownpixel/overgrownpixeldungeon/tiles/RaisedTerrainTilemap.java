@@ -47,7 +47,23 @@ public class RaisedTerrainTilemap extends DungeonTilemap {
 			return DungeonTileSheet.getVisualWithAlts(
 					DungeonTileSheet.RAISED_FURROWED_GRASS,
 					pos) + 2;
-		}
+		} else if (tile == Terrain.SOIL_CORNWHEAT){
+            return DungeonTileSheet.getVisualWithAlts(
+                    DungeonTileSheet.RAISED_SOIL_CORNWHEAT_UPPER_PART,
+                    pos);
+        } else if (tile == Terrain.SOIL_STRAWWHEAT){
+            return DungeonTileSheet.getVisualWithAlts(
+                    DungeonTileSheet.RAISED_SOIL_STRAWWHEAT_UPPER_PART,
+                    pos);
+        } else if (tile == Terrain.SOIL_WATERWHEAT){
+            return DungeonTileSheet.getVisualWithAlts(
+                    DungeonTileSheet.RAISED_SOIL_WATERWHEAT_UPPER_PART,
+                    pos);
+        } else if (tile == Terrain.SOIL_GREENWHEAT){
+            return DungeonTileSheet.getVisualWithAlts(
+                    DungeonTileSheet.RAISED_SOIL_GREENWHEAT_UPPER_PART,
+                    pos);
+        }
 		
 		
 		return -1;

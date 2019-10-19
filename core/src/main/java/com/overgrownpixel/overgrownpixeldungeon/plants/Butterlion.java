@@ -36,7 +36,9 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.ButterlionPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.particles.Emitter;
@@ -57,6 +59,10 @@ public class Butterlion extends Plant {
             Sample.INSTANCE.play( Assets.SND_ROCKS );
         }
         enemy.damage(damage, this);
+        if(enemy == Dungeon.hero && !enemy.isAlive()){
+            Dungeon.fail(getClass());
+            GLog.n( Messages.get(this, "ondeath") );
+        }
         for (int i = 0; i < PathFinder.NEIGHBOURS8.length; i++) {
             Char ch = Actor.findChar(enemy.pos + PathFinder.NEIGHBOURS8[i]);
             if(ch instanceof Mob && ch.alignment != Char.Alignment.ALLY){
@@ -76,6 +82,10 @@ public class Butterlion extends Plant {
             Sample.INSTANCE.play( Assets.SND_ROCKS );
         }
         ch.damage(Math.round(ch.HP/8), this);
+        if(ch == Dungeon.hero && !ch.isAlive()){
+            Dungeon.fail(getClass());
+            GLog.n( Messages.get(this, "ondeath") );
+        }
         for (int i = 0; i < PathFinder.NEIGHBOURS8.length; i++) {
             Char ch1 = Actor.findChar(ch.pos + PathFinder.NEIGHBOURS8[i]);
             if(ch1 instanceof Mob && ch1.alignment != Char.Alignment.ALLY){

@@ -75,6 +75,7 @@ public class Assets {
 	public static final String DM300	= "mobs/bosses/dm300.png";
 	public static final String WRAITH	= "mobs/wraith.png";
 	public static final String ELEMENTAL= "mobs/elemental.png";
+    public static final String SOULDELEM= "mobs/soul_elemental.png";
 	public static final String MONK		= "mobs/monk.png";
 	public static final String WARLOCK	= "mobs/warlock.png";
 	public static final String GOLEM	= "mobs/golem.png";

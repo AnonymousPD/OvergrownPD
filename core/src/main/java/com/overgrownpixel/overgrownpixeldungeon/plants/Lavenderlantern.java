@@ -48,7 +48,7 @@ public class Lavenderlantern extends Plant {
     public void attackProc(Char enemy, int damage) {
         GameScene.flash( Game.instance.getResources().getInteger(R.integer.lavenderflash) );
         for(Mob mob : Dungeon.level.mobs){
-            Buff.prolong( mob, Blindness.class, Random.Int( 2, 5 ) );
+            if(mob != null) Buff.prolong( mob, Blindness.class, Random.Int( 2, 5 ) );
         }
         Buff.prolong( Dungeon.hero, Blindness.class, Random.Int( 2, 5 ) );
     }
@@ -57,7 +57,7 @@ public class Lavenderlantern extends Plant {
     public void activate(Char ch) {
         GameScene.flash( Game.instance.getResources().getInteger(R.integer.lavenderflash) );
         for(Mob mob : Dungeon.level.mobs){
-            Buff.prolong( mob, Blindness.class, Random.Int( 2, 5 ) );
+            if(mob != null) Buff.prolong( mob, Blindness.class, Random.Int( 2, 5 ) );
         }
         Buff.prolong( Dungeon.hero, Blindness.class, Random.Int( 2, 5 ) );
     }
@@ -66,7 +66,7 @@ public class Lavenderlantern extends Plant {
     public void activate() {
         GameScene.flash( Game.instance.getResources().getInteger(R.integer.lavenderflash) );
         for(Mob mob : Dungeon.level.mobs){
-            Buff.prolong( mob, Blindness.class, Random.Int( 2, 5 ) );
+            if(mob != null) Buff.prolong( mob, Blindness.class, Random.Int( 2, 5 ) );
         }
         Buff.prolong( Dungeon.hero, Blindness.class, Random.Int( 2, 5 ) );
     }
@@ -88,7 +88,7 @@ public class Lavenderlantern extends Plant {
         public void procEffect(Char attacker, Char defender, int damage) {
             GameScene.flash( Game.instance.getResources().getInteger(R.integer.lavenderflash) );
             for(Mob mob : Dungeon.level.mobs){
-                Buff.prolong( mob, Blindness.class, Random.Int( 2, 5 ) );
+                if(mob != null) Buff.prolong( mob, Blindness.class, Random.Int( 2, 5 ) );
             }
         }
 

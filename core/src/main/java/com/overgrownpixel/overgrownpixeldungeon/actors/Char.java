@@ -72,6 +72,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Shadow;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ShieldBuff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Slippery;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Slow;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.SoulFire;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.SpaceTimePowers;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Speed;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Sprouting;
@@ -82,6 +83,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.SuperBalling;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Terror;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.TrailOfFire;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Vertigo;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.VitaminSuper;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Wither;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
@@ -311,6 +313,7 @@ public abstract class Char extends Actor {
 		if (attacker.buff(Bless.class) != null) acuRoll *= 1.20f;
         if (attacker.buff(MarkOfTheNut.class) != null) acuRoll *= 2f;
 		if (defender.buff(Bless.class) != null) defRoll *= 1.20f;
+        if (defender.buff(VitaminSuper.class) != null) defRoll *= 5f;
 		return (magic ? acuRoll * 2 : acuRoll) >= defRoll;
 	}
 	
@@ -416,6 +419,9 @@ public abstract class Char extends Actor {
 		if (this.buff(Doom.class) != null){
 			dmg *= 2;
 		}
+        if (this.buff(SoulFire.class) != null){
+            dmg *= 2;
+        }
 		
 		Class<?> srcClass = src.getClass();
 		if (isImmune( srcClass )) {
@@ -456,7 +462,9 @@ public abstract class Char extends Actor {
 
 		if (HP < 0) HP = 0;
 
-		if (!isAlive()) {
+		if (!isAlive()
+                //you cant die when you have soulfire
+                && this.buff(SoulFire.class) == null) {
 			die( src );
 		}
 	}

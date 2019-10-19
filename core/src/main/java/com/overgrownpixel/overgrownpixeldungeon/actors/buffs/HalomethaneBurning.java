@@ -73,10 +73,16 @@ public class HalomethaneBurning extends Buff implements Hero.Doom {
                 if(Dungeon.level.flora.get(target.pos+i) != null){
                     Dungeon.level.flora.get(target.pos+i).wither();
                 }
+                if(Dungeon.level.butter.get(target.pos+i) != null){
+                    Dungeon.level.butter.get(target.pos+i).melt();
+                }
             }
 
             //more damage than normal fire but doesnt burn items
 			int damage = Random.NormalIntRange( 2, 4 + Dungeon.depth/4 );
+            if(target.buffs(Butter.class) != null){
+                damage *= 3;
+            }
 			Buff.detach( target, Chill.class);
 
 			//FIXME doesn't work with the sad ghost

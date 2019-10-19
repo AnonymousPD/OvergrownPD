@@ -82,6 +82,9 @@ public class Steaming extends Buff {
 
             level = NormalFloat(level / 4f, level / 2f);
             int dmg = Math.round(level);
+            if(target.buffs(Butter.class) != null){
+                dmg *= 3;
+            }
 
             if (dmg > 0) {
 

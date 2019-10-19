@@ -79,7 +79,10 @@ public class Speck extends Image {
     public static final int DIRTCLOUD   = 124;
     public static final int KNOWWIND    = 125;
     public static final int CLOUDOFCORR = 126;
-    public static final int POPGAS = 127;
+    public static final int POPGAS      = 127;
+    public static final int GLOWGAS     = 128;
+    public static final int BALLGAS     = 129;
+    public static final int FEAGAS      = 130;
 	
 	private static final int SIZE = 7;
 	
@@ -139,6 +142,9 @@ public class Speck extends Image {
             case MIASMA:
             case NECTAR:
             case DEPRESSANT:
+            case GLOWGAS:
+            case BALLGAS:
+            case FEAGAS:
 			frame( film.get( STEAM ) );
 			break;
 		case CALM:
@@ -190,6 +196,33 @@ public class Speck extends Image {
                 angularSpeed = -8;
                 angle = Random.Float( 360 );
                 lifespan = Random.Float( 1f, 3f );
+                break;
+
+            case GLOWGAS:
+                hardlight( Game.instance.getResources().getInteger(R.integer.chandaliertailoisonparticle) );
+                speed.y = +9;
+                acc.y = +7;
+                angularSpeed = -6;
+                angle = Random.Float( 360 );
+                lifespan = Random.Float( 1f, 3f );
+                break;
+
+            case BALLGAS:
+                hardlight( Game.instance.getResources().getInteger(R.integer.ballcroppoisonparticle) );
+                speed.y = +64;
+                acc.y = +64;
+                angularSpeed = -64;
+                angle = Random.Float( 360 );
+                lifespan = Random.Float( 1f, 3f );
+                break;
+
+            case FEAGAS:
+                hardlight( Game.instance.getResources().getInteger(R.integer.flesheatingacidcloud) );
+                speed.y = +8;
+                acc.y = +32;
+                angularSpeed = -64;
+                angle = Random.Float( 360 );
+                lifespan = Random.Float( 1f, 2f );
                 break;
 
             case CLOUDOFCORR:
@@ -569,6 +602,9 @@ public class Speck extends Image {
                 case NECTAR:
                 case CLOUDOFCORR:
                 case POPGAS:
+                case GLOWGAS:
+                case BALLGAS:
+                case FEAGAS:
 				am = (float)Math.sqrt( (p < 0.5f ? p : 1 - p) );
 				scale.set( 1 + p );
 				break;

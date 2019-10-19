@@ -33,18 +33,68 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.Recipe;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.Potion;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfBall;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfBanana;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfBlessing;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfButter;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfChilli;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfDew;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfDigesting;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfDirt;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfEgg;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfExperience;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfEye;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfFirelightning;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfFirestorm;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfFlora;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfFrost;
-import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfHaste;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfGlowing;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfGoo;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfGrass;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfHarvest;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfHealing;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfHoney;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfHunger;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfHydrogenFire;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfHypno;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfIceStorm;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfInfection;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfInvisibility;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfKiwi;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfLantern;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfLevitation;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfLightning;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfLiquidFlame;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfLove;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfMindVision;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfMuscle;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfParalyticGas;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfParasites;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfPeanuts;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfPepper;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfProtection;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfPurity;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfRegrowth;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfSecreting;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfSeed;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfShadows;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfShield;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfSlowness;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfSmoke;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfSnowstorm;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfSoda;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfSteam;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfStrength;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfSun;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfTeleporting;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfTime;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfTomatoSoup;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfToxicGas;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfUltraviolett;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfVine;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfWater;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfWine;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfWithering;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant.Seed;
@@ -179,10 +229,160 @@ public class Blandfruit extends Food {
 		} else if (potionAttrib instanceof PotionOfExperience) {
 			name = Messages.get(this, "starfruit");
 			potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.blandfruitstarfruit) );
-		} else if (potionAttrib instanceof PotionOfHaste) {
-			name = Messages.get(this, "swiftfruit");
-			potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.blandfruitswiftfruit) );
-		}
+		} else if (potionAttrib instanceof PotionOfBall) {
+            name = Messages.get(this, "ballfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.ballcroppoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfBanana) {
+            name = Messages.get(this, "bananafruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.bananabeanpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfBlessing) {
+            name = Messages.get(this, "blessingfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.blueeyedsusanpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfButter) {
+            name = Messages.get(this, "butterfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.butterlionpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfChilli) {
+            name = Messages.get(this, "chillifruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.chillisnapperpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfDew) {
+            name = Messages.get(this, "dewfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.dewcatcherpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfDigesting) {
+            name = Messages.get(this, "stomachfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.sourpitcherpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfDirt) {
+            name = Messages.get(this, "dirtfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.dirtdaisypoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfEgg) {
+            name = Messages.get(this, "eggfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.eggbloompoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfEye) {
+            name = Messages.get(this, "eyefruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.eyeeunoymuspoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfFirelightning) {
+            name = Messages.get(this, "firelightningfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.crimsoncrownpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfFirestorm) {
+            name = Messages.get(this, "firestormfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.firefoxglovepoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfFlora) {
+            name = Messages.get(this, "florafruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.flowertreepoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfGlowing) {
+            name = Messages.get(this, "glowfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.chandaliertailoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfGoo) {
+            name = Messages.get(this, "goofruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.goograsspoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfGrass) {
+            name = Messages.get(this, "grassfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.grasslillypoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfHarvest) {
+            name = Messages.get(this, "harvestfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.cornwheatpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfHoney) {
+            name = Messages.get(this, "honeyfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.combflowerpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfHunger) {
+            name = Messages.get(this, "hungerfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.apricobushpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfHydrogenFire) {
+            name = Messages.get(this, "hydrofirefruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.tankcabbagepoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfHypno) {
+            name = Messages.get(this, "hypnofruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.hypnohemppoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfIceStorm) {
+            name = Messages.get(this, "icestormfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.frostcornpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfInfection) {
+            name = Messages.get(this, "infectionfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.larvaleavepoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfKiwi) {
+            name = Messages.get(this, "kiwifruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.kiwivetchpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfLantern) {
+            name = Messages.get(this, "lanternfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.lavenderlanternpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfLightning) {
+            name = Messages.get(this, "lightningfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.lightninglillypoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfLove) {
+            name = Messages.get(this, "lovefruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.clitbalmpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfMuscle) {
+            name = Messages.get(this, "musclefruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.musclemosspoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfParasites) {
+            name = Messages.get(this, "parasitefruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.parasiteshrubpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfPeanuts) {
+            name = Messages.get(this, "peanutfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.peanutpetalpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfPepper) {
+            name = Messages.get(this, "pepperfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.crimsonpepperpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfProtection) {
+            name = Messages.get(this, "protectionfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.cocostuftpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfRegrowth) {
+            name = Messages.get(this, "regrowthfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.feelerfernpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfSecreting) {
+            name = Messages.get(this, "secretingfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.venusflytrappoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfSeed) {
+            name = Messages.get(this, "seedfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.seedpodpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfShadows) {
+            name = Messages.get(this, "shadowfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.shadowbloompoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfShield) {
+            name = Messages.get(this, "shieldfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.rosepoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfSlowness) {
+            name = Messages.get(this, "slownessfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.willowcanepoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfSmoke) {
+            name = Messages.get(this, "smokefruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.nightshadeonionpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfSnowstorm) {
+            name = Messages.get(this, "snowstormfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.snowhedgepoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfSoda) {
+            name = Messages.get(this, "sodafruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.poppoplarpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfSteam) {
+            name = Messages.get(this, "steamfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.steamweedpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfSun) {
+            name = Messages.get(this, "sunnyfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.sunbloompoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfTeleporting) {
+            name = Messages.get(this, "teleportingfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.blackholeflowerpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfTime) {
+            name = Messages.get(this, "timefruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.clockcypresspoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfTomatoSoup) {
+            name = Messages.get(this, "tomatofruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.tomatobushpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfUltraviolett) {
+            name = Messages.get(this, "ultrafruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.suncarnivorepoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfVine) {
+            name = Messages.get(this, "vinefruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.grassvinepoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfWater) {
+            name = Messages.get(this, "waterfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.waterweedpoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfWine) {
+            name = Messages.get(this, "winefruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.gobgrapepoisonparticle) );
+        } else if (potionAttrib instanceof PotionOfWithering) {
+            name = Messages.get(this, "witherfruit");
+            potionGlow = new ItemSprite.Glowing( Game.instance.getResources().getInteger(R.integer.witherfennelpoisonparticle) );
+        }
 
 		return this;
 	}
@@ -199,7 +399,8 @@ public class Blandfruit extends Food {
 				potionAttrib instanceof PotionOfParalyticGas ||
 				potionAttrib instanceof PotionOfFrost ||
 				potionAttrib instanceof PotionOfLevitation ||
-				potionAttrib instanceof PotionOfPurity) {
+				potionAttrib instanceof PotionOfPurity ||
+                potionAttrib instanceof PotionOfBall) {
 
 			potionAttrib.shatter( cell );
 			Dungeon.level.drop(new Chunks(), cell).sprite.drop();

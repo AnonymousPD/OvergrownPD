@@ -95,6 +95,7 @@
     <integer name="witherfennelpoisonparticle">0xEA9A48</integer><color name="witherfennelpoisonparticle">#EA9A48</color>
     <integer name="combflowerpoisonparticle">0xE2D239</integer><color name="combflowerpoisonparticle">#E2D239</color>
     <integer name="ballcroppoisonparticle">0x2F791F</integer><color name="ballcroppoisonparticle">#2F791F</color>
+    <integer name="flesheatingacidcloud">0xE61739</integer><color name="flesheatingacidcloud">#E61739</color>
     <integer name="blueeyedsusanpoisonparticle">0x286F8B</integer><color name="blueeyedsusanpoisonparticle">#286F8B</color>
     <integer name="cornwheatpoisonparticle">0x9C933F</integer><color name="cornwheatpoisonparticle">#9C933F</color>
     <integer name="clitbalmpoisonparticle">0xBA79D9</integer><color name="clitbalmpoisonparticle">#BA79D9</color>
@@ -128,8 +129,11 @@
     <integer name="elmoparticle">0x22EE66</integer><color name="elmoparticle">#22EE66</color>
     <integer name="energyparticle">0xFFFFAA</integer><color name="energyparticle">#FFFFAA</color>
     <integer name="flameparticle">0xEE7722</integer><color name="flameparticle">#EE7722</color>
+    <integer name="soulflameparticle">0x99EE22</integer><color name="soulflameparticle">#99EE22</color>
     <integer name="leafparticle1">0x004400</integer><color name="leafparticle1">#004400</color>
     <integer name="leafparticle2">0x88CC44</integer><color name="leafparticle2">#88CC44</color>
+    <integer name="cropparticle1">0x70702a</integer><color name="cropparticle1">#70702a</color>
+    <integer name="cropparticle2">0x979740</integer><color name="cropparticle2">#979740</color>
     <integer name="poisonparticle1">0x00FF00</integer><color name="poisonparticle1">#00FF00</color>
     <integer name="poisonparticle2">0x8844FF</integer><color name="poisonparticle2">#8844FF</color>
     <integer name="purpleparticle1">0x220066</integer><color name="purpleparticle1">#220066</color>
@@ -254,6 +258,7 @@
     <integer name="crabblood">0xFFFFEA80</integer><color name="crabblood">#FFFFEA80</color>
     <integer name="dm300blood">0xFFFFFF88</integer><color name="dm300blood">#FFFFFF88</color>
     <integer name="elementalspriteblood">0xFFFF7D13</integer><color name="elementalspriteblood">#FFFF7D13</color>
+    <integer name="soulelementalspriteblood">0xACFF13</integer><color name="soulelementalspriteblood">#ACFF13</color>
     <integer name="acidicspriteblood">0xFF66FF22</integer><color name="acidicspriteblood">#FF66FF22</color>
     <integer name="ghostblood">0xFFFFFF</integer><color name="ghostblood">#FFFFFF</color>
     <integer name="golemblood">0xFF80706c</integer><color name="golemblood">#FF80706c</color>
@@ -370,6 +375,7 @@
     <integer name="interlevelscene4">0xDD000000</integer><color name="interlevelscene4">#DD000000</color>
     <integer name="interlevelscene5">0xFF000000</integer><color name="interlevelscene5">#FF000000</color>
     <integer name="iceblock">0xFFB2D6FF</integer><color name="iceblock">#FFB2D6FF</color>
+    <integer name="butter">0xF0E691</integer><color name="butter">#F0E691</color>
     <integer name="shadow">0x51545E</integer><color name="shadow">#51545E</color>
     <integer name="highlightedtext1">0xFFFFFF</integer><color name="highlightedtext1">#FFFFFF</color>
     <integer name="highlightedtext2">0xFFFF44</integer><color name="highlightedtext2">#FFFF44</color>

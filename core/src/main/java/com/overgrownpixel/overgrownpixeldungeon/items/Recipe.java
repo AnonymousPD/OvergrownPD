@@ -28,9 +28,9 @@ import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
 import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.AlchemistsToolkit;
 import com.overgrownpixel.overgrownpixeldungeon.items.bombs.Bomb;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.Blandfruit;
-import com.overgrownpixel.overgrownpixeldungeon.items.food.Cornwheatshaft;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.MeatPie;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.StewedMeat;
+import com.overgrownpixel.overgrownpixeldungeon.items.food.crops.Wheat;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.AlchemicalCatalyst;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.Potion;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.brews.BlizzardBrew;
@@ -236,7 +236,7 @@ public abstract class Recipe {
 		new ExoticScroll.ScrollToExotic(),
 		new StewedMeat.threeMeat(),
 		new MeatPie.Recipe(),
-            new Cornwheatshaft.threeWheat(),
+            new Wheat.threeWheat(),
 	};
 	
 	public static Recipe findRecipe(ArrayList<Item> ingredients){

@@ -27,6 +27,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.food;
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Badges;
 import com.overgrownpixel.overgrownpixeldungeon.Statistics;
+import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Recharging;
@@ -78,6 +79,8 @@ public class Food extends Item {
 			GLog.i( message );
 			
 			foodProc( hero );
+
+			eatEffect( hero );
 			
 			hero.sprite.operate( hero.pos );
 			hero.busy();
@@ -91,6 +94,8 @@ public class Food extends Item {
 			
 		}
 	}
+
+	public void eatEffect(Char hero){}
 	
 	protected void satisfy( Hero hero ){
 		Buff.affect(hero, Hunger.class).satisfy( energy );

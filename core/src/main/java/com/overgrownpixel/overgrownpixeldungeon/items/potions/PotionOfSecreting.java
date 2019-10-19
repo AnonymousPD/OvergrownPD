@@ -22,32 +22,25 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.overgrownpixel.overgrownpixeldungeon.items.food;
+package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
-import com.overgrownpixel.overgrownpixeldungeon.items.Recipe;
-import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 
-public class Cornwheatshaft extends Food {
+public class PotionOfSecreting extends Potion {
 
 	{
-		image = ItemSpriteSheet.CORNWHEATSHAFT;
-		energy = 1f;
+		initials = 57;
+
+		bones = true;
+	}
+	
+	@Override
+	public void apply( Hero hero ) {
+
 	}
 	
 	@Override
 	public int price() {
-		return 1 * quantity;
+		return isKnown() ? 50 * quantity : super.price();
 	}
-
-    public static class threeWheat extends Recipe.SimpleRecipe{
-        {
-            inputs =  new Class[]{Cornwheatshaft.class};
-            inQuantity = new int[]{3};
-
-            cost = 1;
-
-            output = Food.class;
-            outQuantity = 1;
-        }
-    }
 }

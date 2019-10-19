@@ -31,6 +31,8 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Honeyed;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.SugarRush;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Bee;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Pushing;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.CombflowerPoisonParticle;
@@ -54,7 +56,11 @@ public class Combflower extends Plant {
 
     @Override
     public void activate(Char ch) {
-        Buff.prolong(ch, SugarRush.class, SugarRush.DURATION);
+	    float duration = SugarRush.DURATION;
+	    if(ch instanceof Hero){
+            duration = (((Hero)ch).subClass == HeroSubClass.WARDEN) ? SugarRush.DURATION * 2 : SugarRush.DURATION;
+        }
+        Buff.prolong(ch, SugarRush.class, duration);
     }
 
     @Override

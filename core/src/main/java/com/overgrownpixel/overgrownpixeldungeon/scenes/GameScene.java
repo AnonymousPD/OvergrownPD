@@ -60,6 +60,7 @@ import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.hero.HeroSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.DiscardedItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.tiles.butters.Butter;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.CustomTilemap;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.DungeonTerrainTilemap;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.DungeonTileSheet;
@@ -89,6 +90,7 @@ import com.overgrownpixel.overgrownpixeldungeon.windows.WndBag;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndBag.Mode;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndGame;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndHero;
+import com.overgrownpixel.overgrownpixeldungeon.windows.WndInfoButter;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndInfoCell;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndInfoItem;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndInfoMob;
@@ -222,7 +224,7 @@ public class GameScene extends PixelScene {
 		visualGrid = new GridTileMap();
 		terrain.add( visualGrid );
 
-		terrainFeatures = new TerrainFeaturesTilemap(Dungeon.level.plants, Dungeon.level.traps, Dungeon.level.flora, Dungeon.level.shadows);
+		terrainFeatures = new TerrainFeaturesTilemap(Dungeon.level.plants, Dungeon.level.traps, Dungeon.level.flora, Dungeon.level.shadows, Dungeon.level.butter);
 		terrain.add(terrainFeatures);
 		
 		levelVisuals = Dungeon.level.addVisuals();
@@ -994,6 +996,12 @@ public class GameScene extends PixelScene {
 			names.add(Messages.titleCase( trap.name ));
 		}
 
+        Butter butter = Dungeon.level.butter.get( cell );
+        if (butter != null) {
+            objects.add(butter);
+            names.add(Messages.titleCase( butter.name ));
+        }
+
 		if (objects.isEmpty()) {
 			GameScene.show(new WndInfoCell(cell));
 		} else if (objects.size() == 1){
@@ -1026,7 +1034,9 @@ public class GameScene extends PixelScene {
 			GameScene.show( new WndInfoPlant((Plant) o) );
 		} else if ( o instanceof Trap ){
 			GameScene.show( new WndInfoTrap((Trap) o));
-		} else {
+		} else if ( o instanceof Butter ){
+            GameScene.show( new WndInfoButter((Butter) o));
+        } else {
 			GameScene.show( new WndMessage( Messages.get(GameScene.class, "dont_know") ) ) ;
 		}
 	}

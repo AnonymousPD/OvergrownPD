@@ -29,6 +29,8 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Slippery;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Bananaspider;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Pushing;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.BananabeanPoisonParticle;
@@ -46,12 +48,24 @@ public class Bananabean extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-        Buff.prolong(enemy, Slippery.class, Slippery.DURATION);
+        if(enemy instanceof Hero && ((Hero) enemy).subClass == HeroSubClass.WARDEN){
+            if(((Hero) enemy).enemy() != null){
+                Buff.prolong(((Hero) enemy).enemy(), Slippery.class, Slippery.DURATION);
+            }
+        } else {
+            Buff.prolong(enemy, Slippery.class, Slippery.DURATION);
+        }
     }
 
     @Override
     public void activate(Char ch) {
-        Buff.prolong(ch, Slippery.class, Slippery.DURATION);
+        if(ch instanceof Hero && ((Hero) ch).subClass == HeroSubClass.WARDEN){
+            if(((Hero) ch).enemy() != null){
+                Buff.prolong(((Hero) ch).enemy(), Slippery.class, Slippery.DURATION);
+            }
+        } else {
+            Buff.prolong(ch, Slippery.class, Slippery.DURATION);
+        }
     }
 
     @Override
@@ -81,7 +95,13 @@ public class Bananabean extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            if(defender instanceof Hero && ((Hero) defender).subClass == HeroSubClass.WARDEN){
+                if(((Hero) defender).enemy() != null){
+                    Buff.prolong(((Hero) defender).enemy(), Slippery.class, Slippery.DURATION);
+                }
+            } else {
+                Buff.prolong(defender, Slippery.class, Slippery.DURATION);
+            }
         }
 
         @Override

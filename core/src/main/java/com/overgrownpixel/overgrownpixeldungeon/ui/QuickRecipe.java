@@ -32,12 +32,12 @@ import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.Recipe;
 import com.overgrownpixel.overgrownpixeldungeon.items.bombs.Bomb;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.Blandfruit;
-import com.overgrownpixel.overgrownpixeldungeon.items.food.Cornwheatshaft;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.Food;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.MeatPie;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.MysteryMeat;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.Pasty;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.StewedMeat;
+import com.overgrownpixel.overgrownpixeldungeon.items.food.crops.Wheat;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.AlchemicalCatalyst;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.Potion;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.brews.BlizzardBrew;
@@ -286,7 +286,7 @@ public class QuickRecipe extends Component {
 				result.add(new QuickRecipe( new StewedMeat.threeMeat() ));
                 result.add(null);
                 result.add(null);
-                result.add(new QuickRecipe( new Cornwheatshaft.threeWheat() ));
+                result.add(new QuickRecipe( new Wheat.threeWheat() ));
 				result.add(null);
 				result.add(null);
 				result.add(new QuickRecipe( new MeatPie.Recipe(),

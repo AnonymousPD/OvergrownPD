@@ -93,6 +93,9 @@ public class Burning extends Buff implements Hero.Doom {
             }
 			
 			int damage = Random.NormalIntRange( 1, 3 + Dungeon.depth/4 );
+            if(target.buffs(Butter.class) != null){
+                damage *= 3;
+            }
 			Buff.detach( target, Chill.class);
 
 			//FIXME doesn't work with the sad ghost

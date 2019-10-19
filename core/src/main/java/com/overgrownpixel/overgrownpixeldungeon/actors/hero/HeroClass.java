@@ -37,6 +37,14 @@ import com.overgrownpixel.overgrownpixeldungeon.items.bags.ScrollHolder;
 import com.overgrownpixel.overgrownpixeldungeon.items.bags.VelvetPouch;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.Food;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.SmallRation;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfBall;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfBanana;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfBlessing;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfButter;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfChilli;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfDew;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfDigesting;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfDirt;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfHealing;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfInvisibility;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfLiquidFlame;
@@ -111,6 +119,14 @@ public enum HeroClass {
 		}
 		
 		new ScrollOfIdentify().identify();
+		new PotionOfDirt().identify().collect();
+        new PotionOfBall().identify().collect();
+        new PotionOfBanana().identify().collect();
+        new PotionOfBlessing().identify().collect();
+        new PotionOfButter().identify().collect();
+        new PotionOfChilli().identify().collect();
+        new PotionOfDew().identify().collect();
+        new PotionOfDigesting().identify().collect();
 	}
 
 	public Badges.Badge masteryBadge() {

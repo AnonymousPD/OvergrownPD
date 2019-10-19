@@ -39,6 +39,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Charm;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Corruption;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Glowing;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Luck;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Preparation;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Sleep;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.SoulMark;
@@ -680,6 +681,9 @@ public abstract class Mob extends Char {
 			new Flare(8, 24).color(Game.instance.getResources().getInteger(R.integer.mob3), true).show(sprite, 3f);
 			Dungeon.level.drop(Lucky.genLoot(), pos).sprite.drop();
 		}
+		if(Dungeon.hero.buff(Luck.class) != null){
+            Dungeon.level.drop(Lucky.genLoot(), pos).sprite.drop();
+        }
 	}
 	
 	protected Object loot = null;

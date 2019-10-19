@@ -28,6 +28,8 @@ import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.MusclemossPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfBlastWave;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
@@ -52,8 +54,10 @@ public class Musclemoss extends Plant {
                 path = PathFinder.NEIGHBOURS8[Random.Int( 8 )];
                 opposite = pos + path;
             } while ((Dungeon.level.passable[opposite]) && (Dungeon.level.passable[opposite+path]));
-            Ballistica trajectory = new Ballistica(pos, opposite, Ballistica.MAGIC_BOLT);
-            WandOfBlastWave.throwChar(enemy, trajectory, damage*10);
+            if((enemy instanceof Mob && Dungeon.level.mobs.contains(enemy)) || enemy instanceof Hero){
+                Ballistica trajectory = new Ballistica(pos, opposite, Ballistica.MAGIC_BOLT);
+                WandOfBlastWave.throwChar(enemy, trajectory, damage*10);
+            }
         } catch (Exception e){
             OvergrownPixelDungeon.reportException(e);
         }
@@ -68,8 +72,10 @@ public class Musclemoss extends Plant {
                 path = PathFinder.NEIGHBOURS8[Random.Int( 8 )];
                 opposite = pos + path;
             } while ((Dungeon.level.passable[opposite]) && (Dungeon.level.passable[opposite+path]));
-            Ballistica trajectory = new Ballistica(pos, opposite, Ballistica.MAGIC_BOLT);
-            WandOfBlastWave.throwChar(ch, trajectory, 100);
+            if((ch instanceof Mob && Dungeon.level.mobs.contains(ch)) || ch instanceof Hero){
+                Ballistica trajectory = new Ballistica(pos, opposite, Ballistica.MAGIC_BOLT);
+                WandOfBlastWave.throwChar(ch, trajectory, 100);
+            }
         } catch (Exception e){
             OvergrownPixelDungeon.reportException(e);
         }
@@ -85,8 +91,10 @@ public class Musclemoss extends Plant {
                     path = PathFinder.NEIGHBOURS8[Random.Int( 8 )];
                     opposite = pos + path;
                 } while ((Dungeon.level.passable[opposite]) && (Dungeon.level.passable[opposite+path]));
-                Ballistica trajectory = new Ballistica(pos, opposite, Ballistica.MAGIC_BOLT);
-                WandOfBlastWave.throwChar(Actor.findChar(pos), trajectory, 100);
+                if((Actor.findChar(pos) instanceof Mob &&Dungeon.level.mobs.contains(Actor.findChar(pos))) || Actor.findChar(pos) instanceof Hero){
+                    Ballistica trajectory = new Ballistica(pos, opposite, Ballistica.MAGIC_BOLT);
+                    WandOfBlastWave.throwChar(Actor.findChar(pos), trajectory, 100);
+                }
             }
         } catch (Exception e){
             OvergrownPixelDungeon.reportException(e);

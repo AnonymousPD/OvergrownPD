@@ -26,6 +26,8 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.EggbloomPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.Egg;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
@@ -41,12 +43,20 @@ public class Eggbloom extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-        if(Random.Float() < 0.3f) Dungeon.level.drop(new Egg(), enemy.pos).sprite.drop(enemy.pos);
+	    float chances = 0.3f;
+	    if(enemy instanceof Hero){
+            chances = (((Hero)enemy).subClass == HeroSubClass.WARDEN) ? 0.7f : 0.3f;
+        }
+        if(Random.Float() < chances) Dungeon.level.drop(new Egg(), enemy.pos).sprite.drop(enemy.pos);
     }
 
     @Override
     public void activate(Char ch) {
-        if(Random.Float() < 0.3f) Dungeon.level.drop(new Egg(), ch.pos).sprite.drop(ch.pos);
+        float chances = 0.3f;
+        if(ch instanceof Hero){
+            chances = (((Hero)ch).subClass == HeroSubClass.WARDEN) ? 0.7f : 0.3f;
+        }
+        if(Random.Float() < chances) Dungeon.level.drop(new Egg(), ch.pos).sprite.drop(ch.pos);
     }
 
     @Override
@@ -69,7 +79,11 @@ public class Eggbloom extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-            if(Random.Float() < 0.3f) Dungeon.level.drop(new Egg(), defender.pos).sprite.drop(attacker.pos);
+		    float chances = 0.3f;
+		    if(attacker instanceof Hero){
+                chances = (((Hero)attacker).subClass == HeroSubClass.WARDEN) ? 0.7f : 0.3f;
+            }
+            if(Random.Float() < chances) Dungeon.level.drop(new Egg(), defender.pos).sprite.drop(attacker.pos);
         }
 
         @Override

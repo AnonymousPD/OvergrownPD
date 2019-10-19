@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.DewInfusion;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Healing;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroClass;
@@ -89,8 +90,8 @@ public class HighGrass {
 					level.drop(Generator.random(Generator.Category.SEED), pos).sprite.drop();
 				}
 				
-				// Dew, scales from 1/6 to 1/3
-				if (Random.Int(24 - naturalismLevel*3) <= 3) {
+				// Dew, scales from 1/6 to 1/3 or the ch has the dew infusion buff
+				if ((Random.Int(24 - naturalismLevel*3) <= 3) || ch.buff(DewInfusion.class) != null) {
 					level.drop(new Dewdrop(), pos).sprite.drop();
 				}
 			}

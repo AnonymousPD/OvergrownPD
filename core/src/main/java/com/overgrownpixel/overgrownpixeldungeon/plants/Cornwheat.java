@@ -26,8 +26,10 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.CornwheatPoisonParticle;
-import com.overgrownpixel.overgrownpixeldungeon.items.food.Cornwheatshaft;
+import com.overgrownpixel.overgrownpixeldungeon.items.food.crops.Cornwheatshaft;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -41,15 +43,23 @@ public class Cornwheat extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-        if(Random.Float() < 0.2f) {
+        float chances = 0.2f;
+	    if(enemy instanceof Hero){
+            chances = (((Hero)enemy).subClass == HeroSubClass.WARDEN) ? 0.8f : 0.2f;
+        }
+        if(Random.Float() < chances) {
             Dungeon.level.drop(new Cornwheatshaft(), enemy.pos).sprite.drop(enemy.pos);
         }
     }
 
     @Override
     public void activate(Char ch) {
+        float chances = 0.3f;
+        if(ch instanceof Hero){
+            chances = (((Hero)ch).subClass == HeroSubClass.WARDEN) ? 0.7f : 0.3f;
+        }
         for(int a = 2; a > 0; a--){
-            if(Random.Float() < 0.3f) {
+            if(Random.Float() < chances) {
                 Dungeon.level.drop(new Cornwheatshaft(), ch.pos).sprite.drop(ch.pos);
             }
         }

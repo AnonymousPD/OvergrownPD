@@ -45,11 +45,19 @@ public class Apricobush extends Plant {
 	}
 
     protected void satisfy( Hero hero ){
-        (hero.buff( Hunger.class )).satisfy( 100f );
+        if(hero.subClass == HeroSubClass.WARDEN){
+            (hero.buff( Hunger.class )).satisfy( 200f );
+        } else {
+            (hero.buff( Hunger.class )).satisfy( 100f );
+        }
     }
 
     protected void starve(Hero hero){
-        (hero.buff( Hunger.class )).reduceHunger(50f);
+        if(hero.subClass == HeroSubClass.WARDEN){
+            (hero.buff( Hunger.class )).reduceHunger(25f);
+        } else {
+            (hero.buff( Hunger.class )).reduceHunger(50f);
+        }
     }
 
     @Override

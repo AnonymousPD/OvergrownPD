@@ -84,7 +84,15 @@ public class DungeonWallsTilemap extends DungeonTilemap {
 			return DungeonTileSheet.BARRICADE_OVERHANG;
 		} else if (pos + mapWidth < size && map[pos+mapWidth] == Terrain.HIGH_GRASS){
 			return DungeonTileSheet.getVisualWithAlts(DungeonTileSheet.HIGH_GRASS_OVERHANG, pos + mapWidth);
-		} else if (pos + mapWidth < size && map[pos+mapWidth] == Terrain.FURROWED_GRASS){
+		} else if (pos + mapWidth < size && map[pos+mapWidth] == Terrain.SOIL_CORNWHEAT){
+            return DungeonTileSheet.getVisualWithAlts(DungeonTileSheet.SOIL_CORNWHEAT_OVERHANG, pos + mapWidth);
+        } else if (pos + mapWidth < size && map[pos+mapWidth] == Terrain.SOIL_STRAWWHEAT){
+            return DungeonTileSheet.getVisualWithAlts(DungeonTileSheet.SOIL_STRAWWHEAT_OVERHANG, pos + mapWidth);
+        } else if (pos + mapWidth < size && map[pos+mapWidth] == Terrain.SOIL_WATERWHEAT){
+            return DungeonTileSheet.getVisualWithAlts(DungeonTileSheet.SOIL_WATERWHEAT_OVERHANG, pos + mapWidth);
+        } else if (pos + mapWidth < size && map[pos+mapWidth] == Terrain.SOIL_GREENWHEAT){
+            return DungeonTileSheet.getVisualWithAlts(DungeonTileSheet.SOIL_GREENWHEAT_OVERHANG, pos + mapWidth);
+        } else if (pos + mapWidth < size && map[pos+mapWidth] == Terrain.FURROWED_GRASS){
 			return DungeonTileSheet.getVisualWithAlts(DungeonTileSheet.FURROWED_OVERHANG, pos + mapWidth);
 		}
 

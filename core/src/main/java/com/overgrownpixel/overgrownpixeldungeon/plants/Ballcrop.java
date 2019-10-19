@@ -28,6 +28,9 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Balling;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.SuperBalling;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.BallcropPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
@@ -42,12 +45,20 @@ public class Ballcrop extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-        Buff.prolong(enemy, Balling.class, Balling.DURATION);
+	    if(enemy instanceof Hero && ((Hero) enemy).subClass == HeroSubClass.WARDEN){
+            Buff.prolong(enemy, SuperBalling.class, SuperBalling.DURATION);
+        } else {
+            Buff.prolong(enemy, Balling.class, Balling.DURATION);
+        }
     }
 
     @Override
     public void activate(Char ch) {
-        Buff.prolong(ch, Balling.class, Balling.DURATION);
+        if(ch instanceof Hero && ((Hero) ch).subClass == HeroSubClass.WARDEN){
+            Buff.prolong(ch, SuperBalling.class, SuperBalling.DURATION);
+        } else {
+            Buff.prolong(ch, Balling.class, Balling.DURATION);
+        }
     }
 
     @Override
@@ -56,7 +67,11 @@ public class Ballcrop extends Plant {
             Buff.prolong(mob, Balling.class, Balling.DURATION/2);
         }
         if(Dungeon.hero != null){
-            Buff.prolong(Dungeon.hero, Balling.class, Balling.DURATION/2);
+            if(Dungeon.hero.subClass == HeroSubClass.WARDEN){
+                Buff.prolong(Dungeon.hero, SuperBalling.class, SuperBalling.DURATION/2);
+            } else {
+                Buff.prolong(Dungeon.hero, Balling.class, Balling.DURATION/2);
+            }
         }
     }
 
@@ -75,7 +90,11 @@ public class Ballcrop extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-            Buff.prolong(defender, Balling.class, Balling.DURATION);
+            if(defender instanceof Hero && ((Hero) defender).subClass == HeroSubClass.WARDEN){
+                Buff.prolong(defender, SuperBalling.class, SuperBalling.DURATION);
+            } else {
+                Buff.prolong(defender, Balling.class, Balling.DURATION);
+            }
         }
 
         @Override

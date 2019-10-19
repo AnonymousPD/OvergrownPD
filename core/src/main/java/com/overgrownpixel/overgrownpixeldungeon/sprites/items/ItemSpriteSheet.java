@@ -862,36 +862,44 @@ public class ItemSpriteSheet {
 	}
 
 	private static final int POTIONS        =                               xy(1, 32);  //16 slots
-	public static final int POTION_CRIMSON  = POTIONS+0;
-	public static final int POTION_AMBER    = POTIONS+1;
-	public static final int POTION_GOLDEN   = POTIONS+2;
-	public static final int POTION_JADE     = POTIONS+3;
-	public static final int POTION_TURQUOISE= POTIONS+4;
-	public static final int POTION_AZURE    = POTIONS+5;
-	public static final int POTION_INDIGO   = POTIONS+6;
-	public static final int POTION_MAGENTA  = POTIONS+7;
-	public static final int POTION_BISTRE   = POTIONS+8;
-	public static final int POTION_CHARCOAL = POTIONS+9;
-	public static final int POTION_SILVER   = POTIONS+10;
-	public static final int POTION_IVORY    = POTIONS+11;
+	public static final int POTION_CRIMSON          = POTIONS+0;
+	public static final int POTION_AMBER            = POTIONS+1;
+	public static final int POTION_GOLDEN           = POTIONS+2;
+	public static final int POTION_JADE             = POTIONS+3;
+	public static final int POTION_TURQUOISE        = POTIONS+4;
+	public static final int POTION_AZURE            = POTIONS+5;
+	public static final int POTION_INDIGO           = POTIONS+6;
+	public static final int POTION_MAGENTA          = POTIONS+7;
+	public static final int POTION_BISTRE           = POTIONS+8;
+	public static final int POTION_CHARCOAL         = POTIONS+9;
+	public static final int POTION_SILVER           = POTIONS+10;
+	public static final int POTION_IVORY            = POTIONS+11;
+    public static final int POTION_POISON_GREEN     = POTIONS+12;
+    public static final int POTION_SNOW_WHITE       = POTIONS+13;
+    public static final int POTION_MUDDY_GREEN      = POTIONS+14;
+    public static final int POTION_MUDDY_YELLOW     = POTIONS+15;
 	static {
 		for (int i = POTIONS; i < POTIONS+16; i++)
 			assignItemRect(i, 12, 14);
 	}
 	
 	private static final int EXOTIC_POTIONS =                               xy(1, 33);  //16 slots
-	public static final int EXOTIC_CRIMSON  = EXOTIC_POTIONS+0;
-	public static final int EXOTIC_AMBER    = EXOTIC_POTIONS+1;
-	public static final int EXOTIC_GOLDEN   = EXOTIC_POTIONS+2;
-	public static final int EXOTIC_JADE     = EXOTIC_POTIONS+3;
-	public static final int EXOTIC_TURQUOISE= EXOTIC_POTIONS+4;
-	public static final int EXOTIC_AZURE    = EXOTIC_POTIONS+5;
-	public static final int EXOTIC_INDIGO   = EXOTIC_POTIONS+6;
-	public static final int EXOTIC_MAGENTA  = EXOTIC_POTIONS+7;
-	public static final int EXOTIC_BISTRE   = EXOTIC_POTIONS+8;
-	public static final int EXOTIC_CHARCOAL = EXOTIC_POTIONS+9;
-	public static final int EXOTIC_SILVER   = EXOTIC_POTIONS+10;
-	public static final int EXOTIC_IVORY    = EXOTIC_POTIONS+11;
+	public static final int EXOTIC_CRIMSON          = EXOTIC_POTIONS+0;
+	public static final int EXOTIC_AMBER            = EXOTIC_POTIONS+1;
+	public static final int EXOTIC_GOLDEN           = EXOTIC_POTIONS+2;
+	public static final int EXOTIC_JADE             = EXOTIC_POTIONS+3;
+	public static final int EXOTIC_TURQUOISE        = EXOTIC_POTIONS+4;
+	public static final int EXOTIC_AZURE            = EXOTIC_POTIONS+5;
+	public static final int EXOTIC_INDIGO           = EXOTIC_POTIONS+6;
+	public static final int EXOTIC_MAGENTA          = EXOTIC_POTIONS+7;
+	public static final int EXOTIC_BISTRE           = EXOTIC_POTIONS+8;
+	public static final int EXOTIC_CHARCOAL         = EXOTIC_POTIONS+9;
+	public static final int EXOTIC_SILVER           = EXOTIC_POTIONS+10;
+	public static final int EXOTIC_IVORY            = EXOTIC_POTIONS+11;
+    public static final int EXOTIC_POISON_GREEN     = EXOTIC_POTIONS+12;
+    public static final int EXOTIC_SNOW_WHITE       = EXOTIC_POTIONS+13;
+    public static final int EXOTIC_MUDDY_GREEN      = EXOTIC_POTIONS+14;
+    public static final int EXOTIC_MUDDY_YELLOW     = EXOTIC_POTIONS+15;
 	static {
 		for (int i = EXOTIC_POTIONS; i < EXOTIC_POTIONS+16; i++)
 			assignItemRect(i, 12, 13);
@@ -920,36 +928,44 @@ public class ItemSpriteSheet {
 	}
 
     private static final int POTIONS2        =                               xy(1, 35);  //16 slots
-    public static final int POTION_HONEY    = POTIONS2+0;
-    public static final int POTION_BLOODY   = POTIONS2+1;
-    public static final int POTION_ORANGE   = POTIONS2+2;
-    public static final int POTION_VIOLETT  = POTIONS2+3;
-    public static final int POTION_YELLOW   = POTIONS2+4;
-    public static final int POTION_WHITE    = POTIONS2+5;
-    public static final int POTION_BROWN    = POTIONS2+6;
-    public static final int POTION_BRIGHTBLUE= POTIONS2+7;
-    public static final int POTION_RAINBOW   = POTIONS2+8;
-    public static final int POTION_BRIGHTORANGE= POTIONS2+9;
-    public static final int POTION_DARKBLUE = POTIONS2+10;
-    public static final int POTION_BLACK    = POTIONS2+11;
+    public static final int POTION_HONEY            = POTIONS2+0;
+    public static final int POTION_BLOODY           = POTIONS2+1;
+    public static final int POTION_ORANGE           = POTIONS2+2;
+    public static final int POTION_VIOLETT          = POTIONS2+3;
+    public static final int POTION_YELLOW           = POTIONS2+4;
+    public static final int POTION_WHITE            = POTIONS2+5;
+    public static final int POTION_BROWN            = POTIONS2+6;
+    public static final int POTION_BRIGHT_BLUE      = POTIONS2+7;
+    public static final int POTION_RAINBOW          = POTIONS2+8;
+    public static final int POTION_BRIGHT_ORANGE    = POTIONS2+9;
+    public static final int POTION_DARK_BLUE        = POTIONS2+10;
+    public static final int POTION_BLACK            = POTIONS2+11;
+    public static final int POTION_YELLOW_ORANGE    = POTIONS2+12;
+    public static final int POTION_GRASS_GREEN      = POTIONS2+13;
+    public static final int POTION_SKY_BLUE         = POTIONS2+14;
+    public static final int POTION_GREEN_BLUE       = POTIONS2+15;
     static {
         for (int i = POTIONS2; i < POTIONS2+16; i++)
             assignItemRect(i, 12, 14);
     }
 
     private static final int EXOTIC_POTIONS2 =                               xy(1, 36);  //16 slots
-    public static final int EXOTIC_HONEY    = EXOTIC_POTIONS2+0;
-    public static final int EXOTIC_BLOODY   = EXOTIC_POTIONS2+1;
-    public static final int EXOTIC_ORANGE   = EXOTIC_POTIONS2+2;
-    public static final int EXOTIC_VIOLETT  = EXOTIC_POTIONS2+3;
-    public static final int EXOTIC_YELLOW   = EXOTIC_POTIONS2+4;
-    public static final int EXOTIC_WHITE    = EXOTIC_POTIONS2+5;
-    public static final int EXOTIC_BROWN    = EXOTIC_POTIONS2+6;
-    public static final int EXOTIC_BRIGHTBLUE= EXOTIC_POTIONS2+7;
-    public static final int EXOTIC_RAINBOW  = EXOTIC_POTIONS2+8;
-    public static final int EXOTIC_BRIGHTORANGE= EXOTIC_POTIONS2+9;
-    public static final int EXOTIC_DARKBLUE = EXOTIC_POTIONS2+10;
-    public static final int EXOTIC_BLACK    = EXOTIC_POTIONS2+11;
+    public static final int EXOTIC_HONEY            = EXOTIC_POTIONS2+0;
+    public static final int EXOTIC_BLOODY           = EXOTIC_POTIONS2+1;
+    public static final int EXOTIC_ORANGE           = EXOTIC_POTIONS2+2;
+    public static final int EXOTIC_VIOLETT          = EXOTIC_POTIONS2+3;
+    public static final int EXOTIC_YELLOW           = EXOTIC_POTIONS2+4;
+    public static final int EXOTIC_WHITE            = EXOTIC_POTIONS2+5;
+    public static final int EXOTIC_BROWN            = EXOTIC_POTIONS2+6;
+    public static final int EXOTIC_BRIGHTBLUE       = EXOTIC_POTIONS2+7;
+    public static final int EXOTIC_RAINBOW          = EXOTIC_POTIONS2+8;
+    public static final int EXOTIC_BRIGHTORANGE     = EXOTIC_POTIONS2+9;
+    public static final int EXOTIC_DARKBLUE         = EXOTIC_POTIONS2+10;
+    public static final int EXOTIC_BLACK            = EXOTIC_POTIONS2+11;
+    public static final int EXOTIC_YELLOW_ORANGE    = EXOTIC_POTIONS2+12;
+    public static final int EXOTIC_GRASS_GREEN      = EXOTIC_POTIONS2+13;
+    public static final int EXOTIC_SKY_BLUE         = EXOTIC_POTIONS2+14;
+    public static final int EXOTIC_GREEN_BLUE       = EXOTIC_POTIONS2+15;
     static {
         for (int i = EXOTIC_POTIONS2; i < EXOTIC_POTIONS2+16; i++)
             assignItemRect(i, 12, 13);
@@ -979,19 +995,21 @@ public class ItemSpriteSheet {
 
     private static final int POTIONS3        =                               xy(1, 38);  //16 slots
     public static final int POTION_BLUE             = POTIONS3+0;
-    public static final int POTION_FLATBLUE         = POTIONS3+1;
+    public static final int POTION_FLAT_BLUE        = POTIONS3+1;
     public static final int POTION_PARASITIC        = POTIONS3+2;
     public static final int POTION_DIARRHOEA        = POTIONS3+3;
     public static final int POTION_PUNCH            = POTIONS3+4;
     public static final int POTION_BEIGE            = POTIONS3+5;
     public static final int POTION_BLOODY_POOP      = POTIONS3+6;
-    public static final int POTION_WATERBLUE        = POTIONS3+7;
+    public static final int POTION_WATER_BLUE       = POTIONS3+7;
     public static final int POTION_BRIGHT_GREEN     = POTIONS3+8;
     public static final int POTION_INDIGO_PURPLE    = POTIONS3+9;
-    public static final int POTION_LIMEGREEN        = POTIONS3+10;
+    public static final int POTION_LIME_GREEN       = POTIONS3+10;
     public static final int POTION_ROSE             = POTIONS3+11;
     public static final int POTION_BRIGHT_PURPLE    = POTIONS3+12;
     public static final int POTION_DARK_ROSE        = POTIONS3+13;
+    public static final int POTION_CORN_YELLOW      = POTIONS3+14;
+    public static final int POTION_DARK_PURPLE      = POTIONS3+15;
     static {
         for (int i = POTIONS3; i < POTIONS3+16; i++)
             assignItemRect(i, 12, 14);
@@ -1012,6 +1030,7 @@ public class ItemSpriteSheet {
     public static final int EXOTIC_ROSE             = EXOTIC_POTIONS3+11;
     public static final int EXOTIC_BRIGHT_PURPLE    = EXOTIC_POTIONS3+12;
     public static final int EXOTIC_DARK_ROSE        = EXOTIC_POTIONS3+13;
+    public static final int EXOTIC_DARK_PURPLE      = EXOTIC_POTIONS3+15;
     static {
         for (int i = EXOTIC_POTIONS3; i < EXOTIC_POTIONS3+16; i++)
             assignItemRect(i, 12, 13);
@@ -1032,7 +1051,6 @@ public class ItemSpriteSheet {
     public static final int SEED_ROSE            = SEEDS3 +11;
     public static final int SEED_VENUSFLYTRAP    = SEEDS3 +12;
     public static final int SEED_SUNCARNIVORE    = SEEDS3 +13;
-
     public static final int SEED_EGGBLOOM        = SEEDS3 +15;
     static{
         for (int i = SEEDS3; i < SEEDS3+16; i++)
@@ -1040,7 +1058,22 @@ public class ItemSpriteSheet {
     }
 
     private static final int POTIONS4        =                               xy(1, 41);  //16 slots
-    public static final int POTION_LIGHTNING_BLUE             = POTIONS4+0;
+    public static final int POTION_LIGHTNING_BLUE               = POTIONS4+0;
+    public static final int POTION_VINE_RED                     = POTIONS4+1;
+    public static final int POTION_PURE_WHITE                   = POTIONS4+2;
+    public static final int POTION_LIGHT_LIME_GREEN             = POTIONS4+3;
+    public static final int POTION_PALE_PURPLE                  = POTIONS4+4;
+    public static final int POTION_LIGHT_VIOLETT                = POTIONS4+5;
+    public static final int POTION_BLACK_WHITE                  = POTIONS4+6;
+    public static final int POTION_WHITE_BLACK                  = POTIONS4+7;
+    public static final int POTION_PALE_VIOLETT                 = POTIONS4+8;
+    public static final int POTION_BROWN_GREEN                  = POTIONS4+9;
+    public static final int POTION_DARK_BROWN_GREEN             = POTIONS4+10;
+    public static final int POTION_MOSSY_GREEN                  = POTIONS4+11;
+    public static final int POTION_PURPLE_VIOLETT               = POTIONS4+12;
+    public static final int POTION_LIGHT_BLUE_GREEN             = POTIONS4+13;
+    public static final int POTION_LIGHT_ROSE                   = POTIONS4+14;
+    public static final int POTION_YELLOW_PURPLE                = POTIONS4+15;
     static {
         for (int i = POTIONS4; i < POTIONS4+16; i++)
             assignItemRect(i, 12, 14);
@@ -1048,6 +1081,21 @@ public class ItemSpriteSheet {
 
     private static final int EXOTIC_POTIONS4 =                               xy(1, 42);  //16 slots
     public static final int EXOTIC_LIGHTNING_BLUE             = EXOTIC_POTIONS4+0;
+    public static final int EXOTIC_DARK_BLOODY                  = EXOTIC_POTIONS4+1;
+    public static final int EXOTIC_PURE_WHITE                   = EXOTIC_POTIONS4+2;
+    public static final int EXOTIC_LIME_GREEN                   = EXOTIC_POTIONS4+3;
+    public static final int EXOTIC_PALE_PURPLE                  = EXOTIC_POTIONS4+4;
+    public static final int EXOTIC_LIGHT_VIOLETT                = EXOTIC_POTIONS4+5;
+    public static final int EXOTIC_BLACK_WHITE                  = EXOTIC_POTIONS4+6;
+    public static final int EXOTIC_WHITE_BLACK                  = EXOTIC_POTIONS4+7;
+    public static final int EXOTIC_PALE_VIOLETT                 = EXOTIC_POTIONS4+8;
+    public static final int EXOTIC_BROWN_GREEN                  = EXOTIC_POTIONS4+9;
+    public static final int EXOTIC_DARK_BROWN_GREEN             = EXOTIC_POTIONS4+10;
+    public static final int EXOTIC_MOSSY_GREEN                  = EXOTIC_POTIONS4+11;
+    public static final int EXOTIC_PURPLE_VIOLETT               = EXOTIC_POTIONS4+12;
+    public static final int EXOTIC_LIGHT_BLUE_GREEN             = EXOTIC_POTIONS4+13;
+    public static final int EXOTIC_LIGHT_ROSE                   = EXOTIC_POTIONS4+14;
+    public static final int EXOTIC_YELLOW_PURPLE                = EXOTIC_POTIONS4+15;
     static {
         for (int i = EXOTIC_POTIONS4; i < EXOTIC_POTIONS4+16; i++)
             assignItemRect(i, 12, 13);
@@ -1184,8 +1232,14 @@ public class ItemSpriteSheet {
 
     private static final int FOOD2       =                                   xy(1, 50);  //16 slots
     public static final int GRAPE                = FOOD2+0;
+    public static final int STRAWBERRYWHEAT      = FOOD2+1;
+    public static final int WATERWHEAT           = FOOD2+2;
+    public static final int GREENAPPLEWHEAT      = FOOD2+3;
     static{
         assignItemRect(GRAPE,            9, 9);
+        assignItemRect(STRAWBERRYWHEAT,  9, 9);
+        assignItemRect(WATERWHEAT,       9, 9);
+        assignItemRect(GREENAPPLEWHEAT,  9, 9);
     }
 
 	private static final int QUEST  =                                       xy(1, 51);  //32 slots

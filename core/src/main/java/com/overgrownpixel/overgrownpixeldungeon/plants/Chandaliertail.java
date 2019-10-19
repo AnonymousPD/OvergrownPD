@@ -25,9 +25,13 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.GlowingGas;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Glowing;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.ChandaliertailPoisonParticle;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -40,17 +44,21 @@ public class Chandaliertail extends Plant {
 
     @Override
     public void attackProc(Char enemy, int damage) {
-        Buff.prolong(enemy, Glowing.class, Glowing.DURATION);
+        if(enemy instanceof Hero &&((Hero) enemy).subClass != HeroSubClass.WARDEN){
+            Buff.prolong(enemy, Glowing.class, Glowing.DURATION);
+        }
     }
 
     @Override
     public void activate(Char ch) {
-        Buff.prolong(ch, Glowing.class, Glowing.DURATION);
+        if(ch instanceof Hero && ((Hero) ch).subClass != HeroSubClass.WARDEN){
+            Buff.prolong(ch, Glowing.class, Glowing.DURATION);
+        }
     }
 
     @Override
     public void activate() {
-        spawnLasher(pos);
+        GameScene.add(Blob.seed(pos, 10, GlowingGas.class));
     }
 
     @Override

@@ -27,6 +27,8 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Slow;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.ClockcypressPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.TimekeepersHourglass;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
@@ -48,7 +50,11 @@ public class Clockcypress extends Plant {
     @Override
     public void activate(Char ch) {
         TimekeepersHourglass timekeepersHourglass = new TimekeepersHourglass();
-        timekeepersHourglass.getTimeStopEffectFreeze(ch.attackSkill(ch));
+        int time = ch.attackSkill(ch);
+        if(ch instanceof Hero){
+            time = (((Hero) ch).subClass == HeroSubClass.WARDEN) ? 10 : ch.attackSkill(ch);
+        }
+        timekeepersHourglass.getTimeStopEffectFreeze(time);
     }
 
     @Override

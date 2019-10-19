@@ -52,22 +52,72 @@ import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfCor
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfShroudingFog;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfSnapFreeze;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfStormClouds;
+import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfRegrowth;
 import com.overgrownpixel.overgrownpixeldungeon.journal.Catalog;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Apricobush;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Ballcrop;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Bananabean;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Blackholeflower;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Blindweed;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Blueeyedsusan;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Butterlion;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Chandaliertail;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Chillisnapper;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Clitbalm;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Clockcypress;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Cocostuft;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Combflower;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Cornwheat;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Crimsoncrown;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Crimsonpepper;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Dirtdaisy;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Dreamfoil;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Earthroot;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Eggbloom;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Eyeeuonymus;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Fadeleaf;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Feelerfern;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Firebloom;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Firefoxglove;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Flowertree;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Frostcorn;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Gobgrape;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Goograss;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Grasslilly;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Grassvine;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Hypnohemp;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Icecap;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Kiwivetch;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Larvaleaf;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Lavenderlantern;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Lightninglily;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Musclemoss;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Nightshadeonion;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Parasiteshrub;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Peanutpetal;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Poppoplar;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Rose;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Rotberry;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Shadowbloom;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Snowhedge;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Sorrowmoss;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Sourpitcher;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Starflower;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Steamweed;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Stormvine;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Sunbloom;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Suncarnivore;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Sungrass;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Swiftthistle;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Tankcabbage;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Tomatobush;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Venusflytrap;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Waterweed;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Willowcane;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Witherfennel;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
@@ -96,34 +146,137 @@ public class Potion extends Item {
 	protected Integer initials;
 
 	private static final Class<?>[] potions = {
-			PotionOfHealing.class,
-			PotionOfExperience.class,
-			PotionOfToxicGas.class,
-			PotionOfLiquidFlame.class,
-			PotionOfStrength.class,
-			PotionOfParalyticGas.class,
-			PotionOfLevitation.class,
-			PotionOfMindVision.class,
-			PotionOfPurity.class,
-			PotionOfInvisibility.class,
-			PotionOfHaste.class,
-			PotionOfFrost.class
+			PotionOfHealing.class,  //1
+			PotionOfExperience.class,  //2
+			PotionOfToxicGas.class,  //3
+			PotionOfLiquidFlame.class,  //4
+			PotionOfStrength.class,  //5
+			PotionOfParalyticGas.class,  //6
+			PotionOfLevitation.class,  //7
+			PotionOfMindVision.class,  //8
+			PotionOfPurity.class,  //9
+			PotionOfInvisibility.class,  //10
+			PotionOfHaste.class,  //11
+			PotionOfFrost.class,  //12
+            PotionOfHunger.class,  //13
+            PotionOfBall.class,  //14
+            PotionOfBanana.class,  //15
+            PotionOfBlessing.class,   //16
+            PotionOfTeleporting.class,  //17
+            PotionOfButter.class,   //18
+            PotionOfGlowing.class,   //19
+            PotionOfChilli.class,   //20
+            PotionOfLove.class,   //21
+            PotionOfTime.class,  //22
+            PotionOfProtection.class,   //23
+            PotionOfHoney.class,   //24
+            PotionOfHarvest.class,   //25
+            PotionOfFirelightning.class,   //26
+            PotionOfPepper.class,  //27
+            PotionOfDirt.class,   //28
+            PotionOfEgg.class,   //29
+            PotionOfEye.class,   //30
+            PotionOfRegrowth.class,  //31
+            PotionOfFirestorm.class,  //32
+            PotionOfFlora.class,  //33
+            PotionOfIceStorm.class,  //34
+            PotionOfWine.class,  //35
+            PotionOfGoo.class,  //36
+            PotionOfGrass.class,  //37
+            PotionOfVine.class,  //38
+            PotionOfHypno.class,  //39
+            PotionOfKiwi.class,  //40
+            PotionOfInfection.class,  //41
+            PotionOfLantern.class,  //42
+            PotionOfLightning.class,  //43
+            PotionOfMuscle.class,  //44
+            PotionOfSmoke.class,  //45
+            PotionOfParasites.class,  //46
+            PotionOfPeanuts.class,  //47
+            PotionOfSoda.class,  //48
+            PotionOfShield.class,  //49
+            PotionOfShadows.class,  //50
+            PotionOfSnowstorm.class,  //51
+            PotionOfDigesting.class,  //52
+            PotionOfSteam.class,  //53
+            PotionOfSun.class,  //54
+            PotionOfUltraviolett.class,  //55
+            PotionOfHydrogenFire.class,  //56
+            PotionOfTomatoSoup.class,  //57
+            PotionOfSecreting.class,  //59
+            PotionOfWater.class,  //60
+            PotionOfSlowness.class,  //61
+            PotionOfWithering.class,  //62
+            PotionOfSeed.class,  //63
+            PotionOfDew.class  //64
 	};
 
 	private static final HashMap<String, Integer> colors = new HashMap<String, Integer>() {
 		{
-			put("crimson",ItemSpriteSheet.POTION_CRIMSON);
-			put("amber",ItemSpriteSheet.POTION_AMBER);
-			put("golden",ItemSpriteSheet.POTION_GOLDEN);
-			put("jade",ItemSpriteSheet.POTION_JADE);
-			put("turquoise",ItemSpriteSheet.POTION_TURQUOISE);
-			put("azure",ItemSpriteSheet.POTION_AZURE);
-			put("indigo",ItemSpriteSheet.POTION_INDIGO);
-			put("magenta",ItemSpriteSheet.POTION_MAGENTA);
-			put("bistre",ItemSpriteSheet.POTION_BISTRE);
-			put("charcoal",ItemSpriteSheet.POTION_CHARCOAL);
-			put("silver",ItemSpriteSheet.POTION_SILVER);
-			put("ivory",ItemSpriteSheet.POTION_IVORY);
+			put("crimson",ItemSpriteSheet.POTION_CRIMSON);  //1
+			put("amber",ItemSpriteSheet.POTION_AMBER);  //2
+			put("golden",ItemSpriteSheet.POTION_GOLDEN);  //3
+			put("jade",ItemSpriteSheet.POTION_JADE);  //4
+			put("turquoise",ItemSpriteSheet.POTION_TURQUOISE);  //5
+			put("azure",ItemSpriteSheet.POTION_AZURE);  //6
+			put("indigo",ItemSpriteSheet.POTION_INDIGO);  //7
+			put("magenta",ItemSpriteSheet.POTION_MAGENTA);  //8
+			put("bistre",ItemSpriteSheet.POTION_BISTRE);  //9
+			put("charcoal",ItemSpriteSheet.POTION_CHARCOAL);  //10
+			put("silver",ItemSpriteSheet.POTION_SILVER);  //11
+			put("ivory",ItemSpriteSheet.POTION_IVORY);  //12
+            put("poisongreen",ItemSpriteSheet.POTION_POISON_GREEN);  //13
+            put("snowwhite",ItemSpriteSheet.POTION_SNOW_WHITE);  //14
+            put("muddygreen",ItemSpriteSheet.POTION_MUDDY_GREEN);  //15
+            put("muddyyellow",ItemSpriteSheet.POTION_MUDDY_YELLOW);  //16
+            put("honey",ItemSpriteSheet.POTION_HONEY);  //17
+            put("bloody",ItemSpriteSheet.POTION_BLOODY);  //18
+            put("orange",ItemSpriteSheet.POTION_ORANGE);  //19
+            put("violett",ItemSpriteSheet.POTION_VIOLETT);  //20
+            put("yellow",ItemSpriteSheet.POTION_YELLOW);  //21
+            put("white",ItemSpriteSheet.POTION_WHITE);  //22
+            put("brown",ItemSpriteSheet.POTION_BROWN);  //23
+            put("brightblue",ItemSpriteSheet.POTION_BRIGHT_BLUE);  //24
+            put("rainbow",ItemSpriteSheet.POTION_RAINBOW);  //25
+            put("brightorange",ItemSpriteSheet.POTION_BRIGHT_ORANGE);  //26
+            put("darkblue",ItemSpriteSheet.POTION_DARK_BLUE);  //27
+            put("black",ItemSpriteSheet.POTION_BLACK);  //28
+            put("yelloworange",ItemSpriteSheet.POTION_YELLOW_ORANGE);  //29
+            put("grassgreen",ItemSpriteSheet.POTION_GRASS_GREEN);  //30
+            put("skyblue",ItemSpriteSheet.POTION_SKY_BLUE);  //31
+            put("greenblue",ItemSpriteSheet.POTION_GREEN_BLUE);  //32
+            put("blue",ItemSpriteSheet.POTION_BLUE);  //33
+            put("flatblue",ItemSpriteSheet.POTION_FLAT_BLUE);  //34
+            put("parasitic",ItemSpriteSheet.POTION_PARASITIC);  //35
+            put("diarrhoea",ItemSpriteSheet.POTION_DIARRHOEA);  //36
+            put("punch",ItemSpriteSheet.POTION_PUNCH);  //37
+            put("beige",ItemSpriteSheet.POTION_BEIGE);  //38
+            put("bloodypoop",ItemSpriteSheet.POTION_BLOODY_POOP);  //39
+            put("waterblue",ItemSpriteSheet.POTION_WATER_BLUE);  //40
+            put("brightgreen",ItemSpriteSheet.POTION_BRIGHT_GREEN);  //41
+            put("indigopurple",ItemSpriteSheet.POTION_INDIGO_PURPLE);  //42
+            put("limegreen",ItemSpriteSheet.POTION_LIME_GREEN);  //43
+            put("rose",ItemSpriteSheet.POTION_ROSE);  //44
+            put("brightpurple",ItemSpriteSheet.POTION_BRIGHT_PURPLE);  //45
+            put("darkrose",ItemSpriteSheet.POTION_DARK_ROSE);  //46
+            put("darkpurple",ItemSpriteSheet.POTION_DARK_PURPLE);  //47
+            put("lightningblue",ItemSpriteSheet.POTION_LIGHTNING_BLUE);  //48
+            put("vinered",ItemSpriteSheet.POTION_VINE_RED);  //49
+            put("purewhite",ItemSpriteSheet.POTION_PURE_WHITE);  //50
+            put("lightlimegreen",ItemSpriteSheet.POTION_LIGHT_LIME_GREEN);  //51
+            put("palepurple",ItemSpriteSheet.POTION_PALE_PURPLE);  //52
+            put("lightviolett",ItemSpriteSheet.POTION_LIGHT_VIOLETT);  //53
+            put("blackwhite",ItemSpriteSheet.POTION_BLACK_WHITE);  //54
+            put("whiteblack",ItemSpriteSheet.POTION_WHITE_BLACK);  //55
+            put("paleviolett",ItemSpriteSheet.POTION_PALE_VIOLETT);  //56
+            put("browngreen",ItemSpriteSheet.POTION_BROWN_GREEN);  //57
+            put("darkbrowngreen",ItemSpriteSheet.POTION_DARK_BROWN_GREEN);  //58
+            put("mossygreen",ItemSpriteSheet.POTION_MOSSY_GREEN);  //59
+            put("purpleviolett",ItemSpriteSheet.POTION_PURPLE_VIOLETT);  //60
+            put("lightbluegreen",ItemSpriteSheet.POTION_LIGHT_BLUE_GREEN);  //61
+            put("lightrose",ItemSpriteSheet.POTION_LIGHT_ROSE);  //62
+            put("yellowpurple",ItemSpriteSheet.POTION_YELLOW_PURPLE);  //63
+            put("cornyellow",ItemSpriteSheet.POTION_CORN_YELLOW);  //64
 		}
 	};
 	
@@ -133,6 +286,9 @@ public class Potion extends Item {
 		mustThrowPots.add(PotionOfLiquidFlame.class);
 		mustThrowPots.add(PotionOfParalyticGas.class);
 		mustThrowPots.add(PotionOfFrost.class);
+        mustThrowPots.add(PotionOfButter.class);
+        mustThrowPots.add(PotionOfDigesting.class);
+        mustThrowPots.add(PotionOfDirt.class);
 		
 		//exotic
 		mustThrowPots.add(PotionOfCorrosiveGas.class);
@@ -149,6 +305,9 @@ public class Potion extends Item {
 		
 		canThrowPots.add(PotionOfPurity.class);
 		canThrowPots.add(PotionOfLevitation.class);
+        canThrowPots.add(PotionOfBall.class);
+        canThrowPots.add(PotionOfChilli.class);
+        canThrowPots.add(PotionOfDew.class);
 		
 		//exotic
 		canThrowPots.add(PotionOfCleansing.class);
@@ -465,18 +624,69 @@ public class Potion extends Item {
 		
 		public static HashMap<Class<?extends Plant.Seed>, Class<?extends Potion>> types = new HashMap<>();
 		static {
-			types.put(Blindweed.Seed.class,     PotionOfInvisibility.class);
-			types.put(Dreamfoil.Seed.class,     PotionOfPurity.class);
-			types.put(Earthroot.Seed.class,     PotionOfParalyticGas.class);
-			types.put(Fadeleaf.Seed.class,      PotionOfMindVision.class);
-			types.put(Firebloom.Seed.class,     PotionOfLiquidFlame.class);
-			types.put(Icecap.Seed.class,        PotionOfFrost.class);
-			types.put(Rotberry.Seed.class,      PotionOfStrength.class);
-			types.put(Sorrowmoss.Seed.class,    PotionOfToxicGas.class);
-			types.put(Starflower.Seed.class,    PotionOfExperience.class);
-			types.put(Stormvine.Seed.class,     PotionOfLevitation.class);
-			types.put(Sungrass.Seed.class,      PotionOfHealing.class);
-			types.put(Swiftthistle.Seed.class,  PotionOfHaste.class);
+			types.put(Blindweed.Seed.class,         PotionOfInvisibility.class); //1
+			types.put(Dreamfoil.Seed.class,         PotionOfPurity.class); //2
+			types.put(Earthroot.Seed.class,         PotionOfParalyticGas.class); //3
+			types.put(Fadeleaf.Seed.class,          PotionOfMindVision.class); //4
+			types.put(Firebloom.Seed.class,         PotionOfLiquidFlame.class); //5
+			types.put(Icecap.Seed.class,            PotionOfFrost.class); //6
+			types.put(Rotberry.Seed.class,          PotionOfStrength.class); //7
+			types.put(Sorrowmoss.Seed.class,        PotionOfToxicGas.class); //8
+			types.put(Starflower.Seed.class,        PotionOfExperience.class); //9
+			types.put(Stormvine.Seed.class,         PotionOfLevitation.class); //10
+			types.put(Sungrass.Seed.class,          PotionOfHealing.class); //11
+			types.put(Swiftthistle.Seed.class,      PotionOfHaste.class); //12
+            types.put(Apricobush.Seed.class,        PotionOfHunger.class); //13
+            types.put(Ballcrop.Seed.class,          PotionOfBall.class); //14
+            types.put(Bananabean.Seed.class,        PotionOfBanana.class); //15
+            types.put(Blueeyedsusan.Seed.class,     PotionOfBlessing.class); //16
+            types.put(Blackholeflower.Seed.class,   PotionOfTeleporting.class); //17
+            types.put(Butterlion.Seed.class,        PotionOfButter.class); //18
+            types.put(Chandaliertail.Seed.class,    PotionOfGlowing.class); //19
+            types.put(Chillisnapper.Seed.class,     PotionOfChilli.class); //20
+            types.put(Clitbalm.Seed.class,          PotionOfLove.class); //21
+            types.put(Clockcypress.Seed.class,      PotionOfTime.class); //22
+            types.put(Cocostuft.Seed.class,         PotionOfProtection.class); //23
+            types.put(Combflower.Seed.class,        PotionOfHoney.class); //24
+            types.put(Cornwheat.Seed.class,         PotionOfHarvest.class); //25
+            types.put(Crimsoncrown.Seed.class,      PotionOfFirelightning.class); //26
+            types.put(Crimsonpepper.Seed.class,     PotionOfPepper.class); //27
+            types.put(Dirtdaisy.Seed.class,         PotionOfDirt.class); //28
+            types.put(Eggbloom.Seed.class,          PotionOfEgg.class); //29
+            types.put(Eyeeuonymus.Seed.class,       PotionOfEye.class); //30
+            types.put(Feelerfern.Seed.class,        PotionOfRegrowth.class); //31
+            types.put(Firefoxglove.Seed.class,      PotionOfFirestorm.class); //32
+            types.put(Flowertree.Seed.class,        PotionOfFlora.class); //33
+            types.put(Frostcorn.Seed.class,         PotionOfIceStorm.class); //34
+            types.put(Gobgrape.Seed.class,          PotionOfWine.class); //35
+            types.put(Goograss.Seed.class,          PotionOfGoo.class); //36
+            types.put(Grasslilly.Seed.class,        PotionOfGrass.class); //37
+            types.put(Grassvine.Seed.class,         PotionOfVine.class); //38
+            types.put(Hypnohemp.Seed.class,         PotionOfHypno.class); //39
+            types.put(Kiwivetch.Seed.class,         PotionOfKiwi.class); //40
+            types.put(Larvaleaf.Seed.class,         PotionOfInfection.class); //41
+            types.put(Lavenderlantern.Seed.class,   PotionOfLantern.class); //42
+            types.put(Lightninglily.Seed.class,     PotionOfLightning.class); //43
+            types.put(Musclemoss.Seed.class,        PotionOfMuscle.class); //43
+            types.put(Nightshadeonion.Seed.class,   PotionOfSmoke.class); //44
+            types.put(Parasiteshrub.Seed.class,     PotionOfParasites.class); //45
+            types.put(Peanutpetal.Seed.class,       PotionOfPeanuts.class); //46
+            types.put(Poppoplar.Seed.class,         PotionOfSoda.class); //47
+            types.put(Rose.Seed.class,              PotionOfShield.class); //48
+            types.put(Shadowbloom.Seed.class,       PotionOfShadows.class); //49
+            types.put(Snowhedge.Seed.class,         PotionOfSnowstorm.class); //50
+            types.put(Sourpitcher.Seed.class,       PotionOfDigesting.class); //51
+            types.put(Steamweed.Seed.class,         PotionOfSteam.class); //52
+            types.put(Sunbloom.Seed.class,          PotionOfSun.class); //53
+            types.put(Suncarnivore.Seed.class,      PotionOfUltraviolett.class); //54
+            types.put(Tankcabbage.Seed.class,       PotionOfHydrogenFire.class); //55
+            types.put(Tomatobush.Seed.class,        PotionOfTomatoSoup.class); //56
+            types.put(Venusflytrap.Seed.class,      PotionOfSecreting.class); //57
+            types.put(Waterweed.Seed.class,         PotionOfWater.class); //58
+            types.put(Willowcane.Seed.class,        PotionOfSlowness.class); //59
+            types.put(Witherfennel.Seed.class,      PotionOfWithering.class); //60
+            types.put(WandOfRegrowth.Seedpod.Seed.class,      PotionOfSeed.class); //61
+            types.put(WandOfRegrowth.Dewcatcher.Seed.class,   PotionOfDew.class); //62
 		}
 		
 		@Override

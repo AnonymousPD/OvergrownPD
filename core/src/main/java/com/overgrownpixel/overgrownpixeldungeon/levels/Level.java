@@ -63,6 +63,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfUpgrade;
 import com.overgrownpixel.overgrownpixeldungeon.items.stones.StoneOfEnchantment;
 import com.overgrownpixel.overgrownpixeldungeon.items.stones.StoneOfIntuition;
 import com.overgrownpixel.overgrownpixeldungeon.levels.features.Chasm;
+import com.overgrownpixel.overgrownpixeldungeon.levels.features.Crops;
 import com.overgrownpixel.overgrownpixeldungeon.levels.features.Door;
 import com.overgrownpixel.overgrownpixeldungeon.levels.features.HighGrass;
 import com.overgrownpixel.overgrownpixeldungeon.levels.painters.Painter;
@@ -73,6 +74,7 @@ import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Swiftthistle;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.tiles.butters.Butter;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.CustomTilemap;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.shadows.WallShadows;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.wallflora.WallFlora;
@@ -145,6 +147,7 @@ public abstract class Level implements Bundlable {
 	public SparseArray<Trap> traps;
     public SparseArray<WallFlora> flora;
     public SparseArray<WallShadows> shadows;
+    public SparseArray<Butter> butter;
 	public HashSet<CustomTilemap> customTiles;
 	public HashSet<CustomTilemap> customWalls;
 	
@@ -167,6 +170,7 @@ public abstract class Level implements Bundlable {
 	private static final String HEAPS		= "heaps";
 	private static final String PLANTS		= "plants";
     private static final String FLORA       = "flora";
+    private static final String BUTTER      = "butter";
     private static final String SHADOWS     = "shadows";
 	private static final String TRAPS       = "traps";
 	private static final String CUSTOM_TILES= "customTiles";
@@ -258,6 +262,7 @@ public abstract class Level implements Bundlable {
 			blobs = new HashMap<>();
 			plants = new SparseArray<>();
             flora = new SparseArray<>();
+            butter = new SparseArray<>();
             shadows = new SparseArray<>();
 			traps = new SparseArray<>();
 			customTiles = new HashSet<>();
@@ -326,6 +331,7 @@ public abstract class Level implements Bundlable {
 		heaps = new SparseArray<>();
 		blobs = new HashMap<>();
 		plants = new SparseArray<>();
+        butter = new SparseArray<>();
         flora = new SparseArray<>();
         shadows = new SparseArray<>();
 		traps = new SparseArray<>();
@@ -359,6 +365,13 @@ public abstract class Level implements Bundlable {
         for (Bundlable p : collection) {
             WallFlora floras = (WallFlora)p;
             flora.put( floras.pos, floras );
+        }
+
+        collection = bundle.getCollection( BUTTER );
+        for (Bundlable p : collection) {
+            GLog.w("brah!");
+            Butter butters = (Butter)p;
+            butter.put( butters.pos, butters );
         }
 
         collection = bundle.getCollection( SHADOWS );
@@ -427,6 +440,7 @@ public abstract class Level implements Bundlable {
 		bundle.put( HEAPS, heaps.values() );
 		bundle.put( PLANTS, plants.values() );
         bundle.put( FLORA, flora.values() );
+        bundle.put( BUTTER, butter.values() );
         bundle.put( SHADOWS, shadows.values() );
 		bundle.put( TRAPS, traps.values() );
 		bundle.put( CUSTOM_TILES, customTiles );
@@ -811,6 +825,17 @@ public abstract class Level implements Bundlable {
         return shadow;
     }
 
+    public Butter setButters( Butter butters , int pos ){
+        Butter existingPlate = butter.get(pos);
+        if (existingPlate != null){
+            butter.remove( pos );
+        }
+        butters.set( pos );
+        butter.put( pos, butters );
+        GameScene.updateMap( pos );
+        return butters;
+    }
+
 	public void disarmTrap( int pos ) {
 		set(pos, Terrain.INACTIVE_TRAP);
 		GameScene.updateMap(pos);
@@ -872,6 +897,13 @@ public abstract class Level implements Bundlable {
 		case Terrain.FURROWED_GRASS:
 			HighGrass.trample( this, cell, ch );
 			break;
+
+            case Terrain.SOIL_CORNWHEAT:
+            case Terrain.SOIL_STRAWWHEAT:
+            case Terrain.SOIL_WATERWHEAT:
+            case Terrain.SOIL_GREENWHEAT:
+                Crops.trample( this, cell );
+                break;
 			
 		case Terrain.WELL:
 			WellWater.affectCell( cell );
@@ -921,6 +953,11 @@ public abstract class Level implements Bundlable {
 		if (plant != null) {
 			plant.trigger();
 		}
+
+		Butter butters = butter.get(cell);
+		if(butters != null && ch != null){
+		    butters.stepOnEffect(ch);
+        }
 	}
 	
 	public void updateFieldOfView( Char c, boolean[] fieldOfView ) {
@@ -1111,6 +1148,16 @@ public abstract class Level implements Bundlable {
 				return Messages.get(Level.class, "barricade_name");
 			case Terrain.HIGH_GRASS:
 				return Messages.get(Level.class, "high_grass_name");
+            case Terrain.SOIL:
+                return Messages.get(Level.class, "soil_name");
+            case Terrain.SOIL_CORNWHEAT:
+                return Messages.get(Level.class, "soil_corn_name");
+            case Terrain.SOIL_STRAWWHEAT:
+                return Messages.get(Level.class, "soil_straw_name");
+            case Terrain.SOIL_WATERWHEAT:
+                return Messages.get(Level.class, "soil_water_name");
+            case Terrain.SOIL_GREENWHEAT:
+                return Messages.get(Level.class, "soil_green_name");
 			case Terrain.LOCKED_EXIT:
 				return Messages.get(Level.class, "locked_exit_name");
 			case Terrain.UNLOCKED_EXIT:
@@ -1152,6 +1199,16 @@ public abstract class Level implements Bundlable {
 			case Terrain.HIGH_GRASS:
 			case Terrain.FURROWED_GRASS:
 				return Messages.get(Level.class, "high_grass_desc");
+            case Terrain.SOIL:
+                return Messages.get(Level.class, "soil_desc");
+            case Terrain.SOIL_CORNWHEAT:
+                return Messages.get(Level.class, "soil_corn_desc");
+            case Terrain.SOIL_STRAWWHEAT:
+                return Messages.get(Level.class, "soil_straw_desc");
+            case Terrain.SOIL_WATERWHEAT:
+                return Messages.get(Level.class, "soil_water_desc");
+            case Terrain.SOIL_GREENWHEAT:
+                return Messages.get(Level.class, "soil_green_desc");
 			case Terrain.LOCKED_DOOR:
 				return Messages.get(Level.class, "locked_door_desc");
 			case Terrain.LOCKED_EXIT:

@@ -29,6 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
 import com.overgrownpixel.overgrownpixeldungeon.levels.traps.Trap;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
+import com.overgrownpixel.overgrownpixeldungeon.tiles.butters.Butter;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.shadows.WallShadows;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.wallflora.WallFlora;
 import com.watabou.noosa.Image;
@@ -46,14 +47,16 @@ public class TerrainFeaturesTilemap extends DungeonTilemap {
 	private SparseArray<Trap> traps;
     private SparseArray<WallFlora> flora;
     private SparseArray<WallShadows> shadows;
+    private SparseArray<Butter> butter;
 
-	public TerrainFeaturesTilemap(SparseArray<Plant> plants, SparseArray<Trap> traps, SparseArray<WallFlora> flora, SparseArray<WallShadows> shadows) {
+	public TerrainFeaturesTilemap(SparseArray<Plant> plants, SparseArray<Trap> traps, SparseArray<WallFlora> flora, SparseArray<WallShadows> shadows, SparseArray<Butter> butter) {
 		super(Assets.TERRAIN_FEATURES);
 
 		this.plants = plants;
 		this.traps = traps;
         this.flora = flora;
         this.shadows = shadows;
+        this.butter = butter;
 
 		map( Dungeon.level.map, Dungeon.level.width() );
 
@@ -75,6 +78,10 @@ public class TerrainFeaturesTilemap extends DungeonTilemap {
 
         if (shadows.get(pos) != null){
             return shadows.get(pos).image + 15*16;
+        }
+
+        if (butter.get(pos) != null){
+            return butter.get(pos).image + 19*16;
         }
 
         if (plants.get(pos) != null){

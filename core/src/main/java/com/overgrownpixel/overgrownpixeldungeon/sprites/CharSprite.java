@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.effects.Butter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CocosHalo;
 import com.overgrownpixel.overgrownpixeldungeon.effects.DarkBlock;
 import com.overgrownpixel.overgrownpixeldungeon.effects.EmoIcon;
@@ -43,6 +44,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.particles.FlameParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.HalomethaneFlameParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.ShadowParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.SnowParticle;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.SoulFlameParticle;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
@@ -87,7 +89,11 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 	protected float shadowOffset    = 0.25f;
 
 	public enum State {
-		BURNING, LEVITATING, INVISIBLE, PARALYSED, FROZEN, ILLUMINATED, CHILLED, DARKENED, MARKED, HEALING, SHIELDED, HALOMETHANEBURNING, ROSESHIELDED, SHADOW, COCOSHIELDED,
+		BURNING, LEVITATING, INVISIBLE, PARALYSED,
+        FROZEN, ILLUMINATED, CHILLED, DARKENED,
+        MARKED, HEALING, SHIELDED, HALOMETHANEBURNING,
+        ROSESHIELDED, SHADOW, COCOSHIELDED, BUTTER,
+        SOULFIRE,
 	}
 	
 	protected Animation idle;
@@ -107,6 +113,7 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 	protected Emitter marked;
 	protected Emitter levitation;
 	protected Emitter healing;
+    protected Emitter soulfire;
 	
 	protected IceBlock iceBlock;
     protected Shadow shadow;
@@ -116,6 +123,7 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
     protected CocosHalo cocosshield;
     protected RoseHalo roseshield;
 	protected AlphaTweener invisible;
+    protected Butter butter;
 	
 	protected EmoIcon emo;
 	protected CharHealthIndicator health;
@@ -334,6 +342,13 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
                     Sample.INSTANCE.play( Assets.SND_BURNING );
                 }
                 break;
+            case SOULFIRE:
+                soulfire = emitter();
+                soulfire.pour( SoulFlameParticle.FACTORY, 0.06f );
+                if (visible) {
+                    Sample.INSTANCE.play( Assets.SND_BURNING );
+                }
+                break;
             case HALOMETHANEBURNING:
                 haloburning = emitter();
                 haloburning.pour( HalomethaneFlameParticle.FACTORY, 0.04f );
@@ -373,6 +388,9 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 				iceBlock = IceBlock.freeze( this );
 				paused = true;
 				break;
+            case BUTTER:
+                butter = Butter.butter( this );
+                break;
 			case ILLUMINATED:
 				GameScene.effect( light = new TorchHalo( this ) );
 				break;
@@ -411,6 +429,12 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 					burning = null;
 				}
 				break;
+            case SOULFIRE:
+            if (soulfire != null) {
+                soulfire.on = false;
+                soulfire = null;
+            }
+            break;
             case HALOMETHANEBURNING:
                 if (haloburning != null) {
                     haloburning.on = false;
@@ -445,12 +469,18 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 				paused = false;
 				break;
 			case FROZEN:
-				if (iceBlock != null) {
-					iceBlock.melt();
-					iceBlock = null;
-				}
-				paused = false;
-				break;
+                if (iceBlock != null) {
+                    iceBlock.melt();
+                    iceBlock = null;
+                }
+                paused = false;
+                break;
+            case BUTTER:
+                if (butter != null) {
+                    butter.dissapear();
+                    butter = null;
+                }
+                break;
 			case ILLUMINATED:
 				if (light != null) {
 					light.putOut();

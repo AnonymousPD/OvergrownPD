@@ -122,6 +122,16 @@ public class BuffIndicator extends Component {
     public static final int BEETLEINFECTED = 71;
     public static final int BALLING     = 72;
     public static final int FEELERFERN  = 73;
+    public static final int LUCK        = 74;
+    public static final int BUTTER      = 75;
+    public static final int SOULFIRE    = 76;
+    public static final int DEWINFUSION = 77;
+    public static final int FLESHEATINGACID = 78;
+    public static final int VITAMINC    = 79;
+    public static final int VITAMING    = 80;
+    public static final int VITAMINS    = 81;
+    public static final int VITAMINW    = 82;
+    public static final int VITAMINSUPER= 83;
 
 	public static final int SIZE	= 7;
 	
