@@ -173,7 +173,11 @@ public class StoneOfIntuition extends InventoryStone {
 				hide();
 				return;
 			} else if (item instanceof Potion){
-				unIDed.addAll(Potion.getUnknown());
+			    for(Class potion : potions){
+			        if(Potion.getUnknown().contains(potion)){
+			            unIDed.add(potion);
+                    }
+                }
 				all = potions.clone();
 				if (item instanceof ExoticPotion){
 					row = 8;

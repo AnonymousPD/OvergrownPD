@@ -204,9 +204,6 @@ public class Hero extends Char {
 		belongings = new Belongings( this );
 
 		foundBooks = new ArrayList<Class>();
-		for(Class cl : Book.allBooks){
-		    foundBooks.add(cl);
-        }
 		
 		visibleEnemies = new ArrayList<Mob>();
 	}
