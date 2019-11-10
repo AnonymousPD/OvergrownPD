@@ -74,7 +74,7 @@ public class Food extends Item {
 
 		if (action.equals( AC_EAT )) {
 
-            if(hero.buff(Coughing.class) == null){
+            if(hero.buff(Coughing.class) != null){
                 GLog.n(Messages.get(this, "coughing"));
                 return;
             }
