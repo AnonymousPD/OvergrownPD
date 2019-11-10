@@ -255,6 +255,7 @@
 
     <integer name="blood">0xFFBB0000</integer><color name="blood">#FFBB0000</color>
     <integer name="beeblood">0xFFD500</integer><color name="beeblood">#FFD500</color>
+    <integer name="plantgooblood">0xFFFFFF</integer><color name="plantgooblood">#FFFFFF</color>
     <integer name="crabblood">0xFFFFEA80</integer><color name="crabblood">#FFFFEA80</color>
     <integer name="dm300blood">0xFFFFFF88</integer><color name="dm300blood">#FFFFFF88</color>
     <integer name="elementalspriteblood">0xFFFF7D13</integer><color name="elementalspriteblood">#FFFF7D13</color>
@@ -286,6 +287,8 @@
     <integer name="alchemygradient4">0xCC000000</integer><color name="alchemygradient4">#CC000000</color>
     <integer name="alchemygradient5">0xFF000000</integer><color name="alchemygradient5">#FF000000</color>
     <integer name="alchemyoutput">0x9991938C</integer><color name="alchemyoutput">#9991938C</color>
+
+    <integer name="whiteflashsun">0xFFEE99</integer><color name="whiteflashsun">#FFEE99</color>
 
     <integer name="bosshealthbar">0xCC0000</integer><color name="bosshealthbar">#CC0000</color>
     <integer name="aboutflare1">0x8532AB</integer><color name="aboutflare1">#8532AB</color>
@@ -319,6 +322,7 @@
     <integer name="wndjournal7">0xFF222222</integer><color name="wndjournal7">#FF222222</color>
     <integer name="wndjournal8">0x999999</integer><color name="wndjournal8">#999999</color>
     <integer name="wndjournal9">0xCCCCCC</integer><color name="wndjournal9">#CCCCCC</color>
+    <integer name="wndjournal10">0xFF222222</integer><color name="wndjournal10">#FF222222</color>
     <integer name="wnddocument1">0xFF222222</integer><color name="wnddocument1">#FF222222</color>
     <integer name="wnddocument2">0x999999</integer><color name="wnddocument2">#999999</color>
     <integer name="wnddocument3">0xFF222222</integer><color name="wnddocument3">#FF222222</color>
@@ -346,6 +350,8 @@
     <integer name="speck8">0xEE7722</integer><color name="speck8">#EE7722</color>
     <integer name="speck9">0xFFFFFF</integer><color name="speck9">#FFFFFF</color>
     <integer name="speck10">0x000000</integer><color name="speck10">#000000</color>
+    <integer name="highsmoke">0x263F26</integer><color name="highsmoke">#263F26</color>
+    <integer name="slowcloud">0x89DFCB</integer><color name="slowcloud">#89DFCB</color>
     <integer name="speck11">0xFFFF66</integer><color name="speck11">#FFFF66</color>
     <integer name="miasma">0xEE29DC</integer><color name="miasma">#EE29DC</color>
     <integer name="firewind">0xEE6E29</integer><color name="firewind">#EE6E29</color>
@@ -358,11 +364,13 @@
     <integer name="tomatoexplosionparticles">0xFF0000</integer><color name="tomatoexplosionparticles">#FF0000</color>
     <integer name="shieldhero">0xBBAACC</integer><color name="shieldhero">#BBAACC</color>
     <integer name="cocoshieldhero">0x6D4E00</integer><color name="cocoshieldhero">#6D4E00</color>
+    <integer name="eyehalo">0xE05656</integer><color name="eyehalo">#E05656</color>
     <integer name="resumeindicator">0xCDD5C0</integer><color name="resumeindicator">#CDD5C0</color>
     <integer name="rankingscene1">0xCCCCCC</integer><color name="rankingscene1">#CCCCCC</color>
     <integer name="rankingscene2">0xCCCCCC</integer><color name="rankingscene2">#CCCCCC</color>
     <integer name="rankingscene3">0xCCCCCC</integer><color name="rankingscene3">#CCCCCC</color>
     <integer name="rainbowparticle">0x1000000</integer><color name="rainbowparticle">#000000</color>
+    <integer name="eyeparticle">0xFFFFFF</integer><color name="eyeparticle">#FFFFFF</color>
     <integer name="quickrecipe">0x00CCFF</integer><color name="quickrecipe">#00CCFF</color>
     <integer name="pixelscenecache">0x00000000</integer><color name="pixelscenecache">#00000000</color>
     <integer name="pixelscenefadein">0xFF000000</integer><color name="pixelscenefadein">#FF000000</color>

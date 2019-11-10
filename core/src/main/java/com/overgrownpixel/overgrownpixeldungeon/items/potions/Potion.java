@@ -289,6 +289,25 @@ public class Potion extends Item {
         mustThrowPots.add(PotionOfButter.class);
         mustThrowPots.add(PotionOfDigesting.class);
         mustThrowPots.add(PotionOfDirt.class);
+        mustThrowPots.add(PotionOfFirestorm.class);
+        mustThrowPots.add(PotionOfGoo.class);
+        mustThrowPots.add(PotionOfHarvest.class);
+        mustThrowPots.add(PotionOfHydrogenFire.class);
+        mustThrowPots.add(PotionOfWater.class);
+        mustThrowPots.add(PotionOfWithering.class);
+        mustThrowPots.add(PotionOfSlowness.class);
+        mustThrowPots.add(PotionOfVine.class);
+        mustThrowPots.add(PotionOfUltraviolett.class);
+        mustThrowPots.add(PotionOfSun.class);
+        mustThrowPots.add(PotionOfSteam.class);
+        mustThrowPots.add(PotionOfSoda.class);
+        mustThrowPots.add(PotionOfSmoke.class);
+        mustThrowPots.add(PotionOfSnowstorm.class);
+        mustThrowPots.add(PotionOfKiwi.class);
+        mustThrowPots.add(PotionOfInfection.class);
+        mustThrowPots.add(PotionOfIceStorm.class);
+        mustThrowPots.add(PotionOfHypno.class);
+
 		
 		//exotic
 		mustThrowPots.add(PotionOfCorrosiveGas.class);
@@ -308,6 +327,13 @@ public class Potion extends Item {
         canThrowPots.add(PotionOfBall.class);
         canThrowPots.add(PotionOfChilli.class);
         canThrowPots.add(PotionOfDew.class);
+        canThrowPots.add(PotionOfFlora.class);
+        canThrowPots.add(PotionOfGlowing.class);
+        canThrowPots.add(PotionOfGrass.class);
+        canThrowPots.add(PotionOfTime.class);
+        canThrowPots.add(PotionOfSeed.class);
+        canThrowPots.add(PotionOfLove.class);
+        canThrowPots.add(PotionOfRegrowth.class);
 		
 		//exotic
 		canThrowPots.add(PotionOfCleansing.class);

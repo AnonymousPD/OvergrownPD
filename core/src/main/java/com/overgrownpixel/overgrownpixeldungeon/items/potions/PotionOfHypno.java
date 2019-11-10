@@ -24,7 +24,12 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
-import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Corruption;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
+import com.watabou.noosa.audio.Sample;
 
 public class PotionOfHypno extends Potion {
 
@@ -33,13 +38,24 @@ public class PotionOfHypno extends Potion {
 
 		bones = true;
 	}
-	
-	@Override
-	public void apply( Hero hero ) {
 
-	}
-	
-	@Override
+    @Override
+    public void shatter(int cell) {
+        if (Dungeon.level.heroFOV[cell]) {
+            setKnown();
+
+            splash( cell );
+            Sample.INSTANCE.play( Assets.SND_SHATTER );
+        }
+
+        for(Mob mob : Dungeon.level.mobs){
+            if(mob.fieldOfView[cell]){
+                Buff.affect(mob, Corruption.class);
+            }
+        }
+    }
+
+    @Override
 	public int price() {
 		return isKnown() ? 50 * quantity : super.price();
 	}

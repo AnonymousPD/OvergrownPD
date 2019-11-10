@@ -24,6 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Drunk;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 
 public class PotionOfWine extends Potion {
@@ -36,7 +38,8 @@ public class PotionOfWine extends Potion {
 	
 	@Override
 	public void apply( Hero hero ) {
-
+        Buff.prolong(hero, Drunk.class, Drunk.DURATION);
+        setKnown();
 	}
 	
 	@Override

@@ -31,6 +31,7 @@ import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.High;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Invisibility;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.LockedFloor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MagicImmune;
@@ -146,6 +147,7 @@ public abstract class Wand extends Item {
 	}
 
 	public void charge( Char owner, float chargeScaleFactor ){
+	    if(owner.buff(High.class) != null) chargeScaleFactor *= 2f;
 		charge( owner );
 		charger.setScaleFactor( chargeScaleFactor );
 	}

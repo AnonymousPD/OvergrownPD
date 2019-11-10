@@ -32,7 +32,7 @@ import com.watabou.noosa.Image;
 public class SnowedIn extends FlavourBuff {
 	
 	{
-		type = buffType.POSITIVE;
+		type = buffType.NEGATIVE;
 		announced = true;
 	}
 	

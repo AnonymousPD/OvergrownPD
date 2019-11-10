@@ -27,11 +27,13 @@ package com.overgrownpixel.overgrownpixeldungeon.items.food.crops;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.items.Recipe;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.Food;
+import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 
-public abstract class Wheat extends Food {
+public class Wheat extends Food {
 
 	{
 		energy = 1f;
+		image = ItemSpriteSheet.WHEAT;
 	}
 	
 	@Override
@@ -39,7 +41,7 @@ public abstract class Wheat extends Food {
 		return 1 * quantity;
 	}
 
-    public abstract void effect(Hero hero);
+    public void effect(Hero hero){}
 
     @Override
     protected void satisfy(Hero hero) {

@@ -24,6 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Shadow;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 
 public class PotionOfShadows extends Potion {
@@ -36,7 +38,7 @@ public class PotionOfShadows extends Potion {
 	
 	@Override
 	public void apply( Hero hero ) {
-
+        Buff.prolong(hero, Shadow.class, Shadow.DURATION*2f);
 	}
 	
 	@Override

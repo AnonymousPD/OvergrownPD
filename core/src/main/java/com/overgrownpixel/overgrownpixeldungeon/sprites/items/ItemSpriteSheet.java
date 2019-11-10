@@ -1235,11 +1235,13 @@ public class ItemSpriteSheet {
     public static final int STRAWBERRYWHEAT      = FOOD2+1;
     public static final int WATERWHEAT           = FOOD2+2;
     public static final int GREENAPPLEWHEAT      = FOOD2+3;
+    public static final int WHEAT                = FOOD2+4;
     static{
         assignItemRect(GRAPE,            9, 9);
         assignItemRect(STRAWBERRYWHEAT,  9, 9);
         assignItemRect(WATERWHEAT,       9, 9);
         assignItemRect(GREENAPPLEWHEAT,  9, 9);
+        assignItemRect(WHEAT,            9, 9);
     }
 
 	private static final int QUEST  =                                       xy(1, 51);  //32 slots
@@ -1280,6 +1282,28 @@ public class ItemSpriteSheet {
 		assignItemRect(BANDOLIER,   15, 16);
 		assignItemRect(HOLSTER,     15, 16);
 	}
+
+    private static final int BOOKS        =                               xy(1, 54);  //16 slots
+    public static final int BOOK_BLUE_GREEN        = BOOKS+0;
+    public static final int BOOK_DARK_RED          = BOOKS+1;
+    public static final int BOOK_PURPLE            = BOOKS+2;
+    public static final int BOOK_PALE_BLUE         = BOOKS+3;
+    public static final int BOOK_DARK_BLUE         = BOOKS+4;
+    public static final int BOOK_YELLOW_GREEN      = BOOKS+5;
+    public static final int BOOK_BRIGHT_RED        = BOOKS+6;
+    public static final int BOOK_BRIGHT_GREEN      = BOOKS+7;
+    public static final int BOOK_BRIGHT_DARK_BLUE  = BOOKS+8;
+    public static final int BOOK_RED_PURPLE        = BOOKS+9;
+    public static final int BOOK_BLUE              = BOOKS+10;
+    public static final int BOOK_BROWN             = BOOKS+11;
+    public static final int BOOK_BRIGHT_BROWN      = BOOKS+12;
+    public static final int BOOK_BLACK             = BOOKS+13;
+    public static final int BOOK_BRIGHT_BLUE_GREEN = BOOKS+14;
+    public static final int BOOK_DARK_BRIGHT_BLUE  = BOOKS+15;
+    static {
+        for (int i = BOOKS; i < BOOKS+16; i++)
+            assignItemRect(i, 13, 16);;
+    }
 
 	                                                                                    //16 free slots
 

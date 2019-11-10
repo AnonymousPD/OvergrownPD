@@ -37,7 +37,6 @@ import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.tweeners.AlphaTweener;
-import com.watabou.utils.PathFinder;
 
 public class PotionOfChilli extends Potion {
 
@@ -63,21 +62,16 @@ public class PotionOfChilli extends Potion {
             Sample.INSTANCE.play( Assets.SND_SHATTER );
         }
 
-        for (int offset : PathFinder.NEIGHBOURS9){
-            if (!Dungeon.level.solid[cell+offset]) {
+        SoulElemental soulElemental = new SoulElemental();
+        soulElemental.pos = cell;
 
-                SoulElemental soulElemental = new SoulElemental();
-                soulElemental.pos = cell+offset;
+        GameScene.add( soulElemental );
+        Actor.addDelayed( new Pushing( soulElemental, cell, cell ), -1f );
 
-                GameScene.add( soulElemental );
-                Actor.addDelayed( new Pushing( soulElemental, cell+offset, cell+offset ), -1f );
+        soulElemental.sprite.alpha( 0 );
+        soulElemental.sprite.parent.add( new AlphaTweener( soulElemental.sprite, 1, 0.15f ) );
 
-                soulElemental.sprite.alpha( 0 );
-                soulElemental.sprite.parent.add( new AlphaTweener( soulElemental.sprite, 1, 0.15f ) );
-
-                GLog.p(Messages.get(this, "summon"));
-            }
-        }
+        GLog.p(Messages.get(this, "summon"));
     }
 
     @Override

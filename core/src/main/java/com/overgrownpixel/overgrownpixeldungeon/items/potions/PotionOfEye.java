@@ -24,6 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Eyeing;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 
 public class PotionOfEye extends Potion {
@@ -36,10 +38,13 @@ public class PotionOfEye extends Potion {
 	
 	@Override
 	public void apply( Hero hero ) {
-
+        Buff.prolong(hero, Eyeing.class, Eyeing.DURATION);
+        setKnown();
 	}
-	
-	@Override
+
+
+
+    @Override
 	public int price() {
 		return isKnown() ? 50 * quantity : super.price();
 	}

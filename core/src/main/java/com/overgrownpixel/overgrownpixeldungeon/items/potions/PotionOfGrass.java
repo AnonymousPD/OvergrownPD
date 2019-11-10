@@ -24,7 +24,16 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
+import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.GrassSmokeGas;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.High;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
+import com.watabou.noosa.audio.Sample;
+import com.watabou.utils.PathFinder;
 
 public class PotionOfGrass extends Potion {
 
@@ -36,10 +45,29 @@ public class PotionOfGrass extends Potion {
 	
 	@Override
 	public void apply( Hero hero ) {
-
+        Buff.prolong(hero, High.class, High.DURATION);
+        setKnown();
 	}
-	
-	@Override
+
+    @Override
+    public void shatter(int cell) {
+
+	    if (Dungeon.level.heroFOV[cell]) {
+            setKnown();
+
+            splash( cell );
+            Sample.INSTANCE.play( Assets.SND_SHATTER );
+        }
+
+        for (int offset : PathFinder.NEIGHBOURS9){
+            if(Dungeon.level.passable[cell + offset]){
+                GameScene.add(Blob.seed(cell + offset, 2, GrassSmokeGas.class));
+            }
+        }
+
+    }
+
+    @Override
 	public int price() {
 		return isKnown() ? 50 * quantity : super.price();
 	}

@@ -24,6 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ParasiticSymbiosis;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 
 public class PotionOfParasites extends Potion {
@@ -36,7 +38,8 @@ public class PotionOfParasites extends Potion {
 	
 	@Override
 	public void apply( Hero hero ) {
-
+        Buff.prolong(hero, ParasiticSymbiosis.class, ParasiticSymbiosis.DURATION);
+        setKnown();
 	}
 	
 	@Override

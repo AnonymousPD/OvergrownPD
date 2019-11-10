@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OGPDSettings;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
 import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.overgrownpixel.overgrownpixeldungeon.books.Book;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.ClassArmor;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.Potion;
@@ -70,6 +71,7 @@ public class WndJournal extends WndTabbed {
 	private GuideTab guideTab;
 	private AlchemyTab alchemyTab;
 	private NotesTab notesTab;
+    private BooksTab booksTab;
 	private CatalogTab catalogTab;
 	
 	public static int last_index = 0;
@@ -94,6 +96,11 @@ public class WndJournal extends WndTabbed {
 		add(notesTab);
 		notesTab.setRect(0, 0, width, height);
 		notesTab.updateList();
+
+        booksTab = new BooksTab();
+        add(booksTab);
+        booksTab.setRect(0, 0, width, height);
+        booksTab.updateList();
 		
 		catalogTab = new CatalogTab();
 		add(catalogTab);
@@ -122,11 +129,18 @@ public class WndJournal extends WndTabbed {
 						if (value) last_index = 2;
 					}
 				},
+                new IconTab( new ItemSprite(ItemSpriteSheet.BOOK_BRIGHT_RED, null) ) {
+                    protected void select( boolean value ) {
+                        super.select( value );
+                        booksTab.active = booksTab.visible = value;
+                        if (value) last_index = 3;
+                    }
+                },
 				new IconTab( new ItemSprite(ItemSpriteSheet.WEAPON_HOLDER, null) ) {
 					protected void select( boolean value ) {
 						super.select( value );
 						catalogTab.active = catalogTab.visible = value;
-						if (value) last_index = 3;
+						if (value) last_index = 4;
 					}
 				}
 		};
@@ -296,6 +310,95 @@ public class WndJournal extends WndTabbed {
 		}
 		
 	}
+
+    private static class BooksTab extends Component {
+
+        private ScrollPane list;
+        private ArrayList<BookItem> books = new ArrayList<>();
+
+        @Override
+        protected void createChildren() {
+            list = new ScrollPane( new Component() ){
+                @Override
+                public void onClick( float x, float y ) {
+                    int size = books.size();
+                    for (int i=0; i < size; i++) {
+                        if (books.get( i ).onClick( x, y )) {
+                            break;
+                        }
+                    }
+                }
+            };
+            add( list );
+        }
+
+        @Override
+        protected void layout() {
+            super.layout();
+            list.setRect( 0, 0, width, height);
+        }
+
+        private void updateList(){
+            Component content = list.content();
+
+            float pos = 0;
+
+            ColorBlock line = new ColorBlock( width(), 1, Game.instance.getResources().getInteger(R.integer.wndjournal10));
+            line.y = pos;
+            content.add(line);
+
+            RenderedTextMultiline title = PixelScene.renderMultiline(Messages.get(this, "title"), 9);
+            title.hardlight(TITLE_COLOR);
+            title.maxWidth( (int)width() - 2 );
+            title.setPos( (width() - title.width())/2f, pos + 1 + ((ITEM_HEIGHT) - title.height())/2f);
+            PixelScene.align(title);
+            content.add(title);
+
+            pos += Math.max(ITEM_HEIGHT, title.height());
+
+            for (Class book : Dungeon.hero.foundBooks){
+                try{
+                    if(book.newInstance() instanceof Book){
+                        BookItem item = new BookItem((Book) book.newInstance());
+
+                        item.setRect( 0, pos, width(), ITEM_HEIGHT );
+                        content.add( item );
+
+                        pos += item.height();
+                        books.add(item);
+                    }
+                } catch (Exception e){
+                    OvergrownPixelDungeon.reportException(e);
+                }
+            }
+
+            content.setSize( width(), pos );
+            list.setSize( list.width(), list.height() );
+        }
+
+        private static class BookItem extends ListItem {
+
+            private Book book;
+
+            public BookItem( Book book ){
+                super(new ItemSprite(book.icon, book.glowing()), book.title, -1);
+
+                this.book = book;
+
+            }
+
+            public boolean onClick( float x, float y ) {
+                if (inside( x, y )) {
+                    GameScene.show( new WndBook( book ));
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+        }
+
+    }
 	
 	public static class AlchemyTab extends Component {
 		
@@ -467,83 +570,83 @@ public class WndJournal extends WndTabbed {
 			list.scrollTo(0, 0);
 		}
 	}
-	
-	private static class NotesTab extends Component {
-		
-		private ScrollPane list;
-		
-		@Override
-		protected void createChildren() {
-			list = new ScrollPane( new Component() );
-			add( list );
-		}
-		
-		@Override
-		protected void layout() {
-			super.layout();
-			list.setRect( 0, 0, width, height);
-		}
-		
-		private void updateList(){
-			Component content = list.content();
-			
-			float pos = 0;
-			
-			//Keys
-			ArrayList<Notes.KeyRecord> keys = Notes.getRecords(Notes.KeyRecord.class);
-			if (!keys.isEmpty()){
-				ColorBlock line = new ColorBlock( width(), 1, Game.instance.getResources().getInteger(R.integer.wndjournal6));
-				line.y = pos;
-				content.add(line);
-				
-				RenderedTextMultiline title = PixelScene.renderMultiline(Messages.get(this, "keys"), 9);
-				title.hardlight(TITLE_COLOR);
-				title.maxWidth( (int)width() - 2 );
-				title.setPos( (width() - title.width())/2f, pos + 1 + ((ITEM_HEIGHT) - title.height())/2f);
-				PixelScene.align(title);
-				content.add(title);
-				
-				pos += Math.max(ITEM_HEIGHT, title.height());
-			}
-			for(Notes.Record rec : keys){
-				ListItem item = new ListItem( Icons.get(Icons.DEPTH),
-						Messages.titleCase(rec.desc()), rec.depth() );
-				item.setRect( 0, pos, width(), ITEM_HEIGHT );
-				content.add( item );
-				
-				pos += item.height();
-			}
-			
-			//Landmarks
-			ArrayList<Notes.LandmarkRecord> landmarks = Notes.getRecords(Notes.LandmarkRecord.class);
-			if (!landmarks.isEmpty()){
-				ColorBlock line = new ColorBlock( width(), 1, Game.instance.getResources().getInteger(R.integer.wndjournal7));
-				line.y = pos;
-				content.add(line);
-				
-				RenderedTextMultiline title = PixelScene.renderMultiline(Messages.get(this, "landmarks"), 9);
-				title.hardlight(TITLE_COLOR);
-				title.maxWidth( (int)width() - 2 );
-				title.setPos( (width() - title.width())/2f, pos + 1 + ((ITEM_HEIGHT) - title.height())/2f);
-				PixelScene.align(title);
-				content.add(title);
-				
-				pos += Math.max(ITEM_HEIGHT, title.height());
-			}
-			for (Notes.Record rec : landmarks) {
-				ListItem item = new ListItem( Icons.get(Icons.DEPTH),
-						Messages.titleCase(rec.desc()), rec.depth() );
-				item.setRect( 0, pos, width(), ITEM_HEIGHT );
-				content.add( item );
-				
-				pos += item.height();
-			}
-			
-			content.setSize( width(), pos );
-			list.setSize( list.width(), list.height() );
-		}
-		
-	}
+
+    private static class NotesTab extends Component {
+
+        private ScrollPane list;
+
+        @Override
+        protected void createChildren() {
+            list = new ScrollPane( new Component() );
+            add( list );
+        }
+
+        @Override
+        protected void layout() {
+            super.layout();
+            list.setRect( 0, 0, width, height);
+        }
+
+        private void updateList(){
+            Component content = list.content();
+
+            float pos = 0;
+
+            //Keys
+            ArrayList<Notes.KeyRecord> keys = Notes.getRecords(Notes.KeyRecord.class);
+            if (!keys.isEmpty()){
+                ColorBlock line = new ColorBlock( width(), 1, Game.instance.getResources().getInteger(R.integer.wndjournal6));
+                line.y = pos;
+                content.add(line);
+
+                RenderedTextMultiline title = PixelScene.renderMultiline(Messages.get(this, "keys"), 9);
+                title.hardlight(TITLE_COLOR);
+                title.maxWidth( (int)width() - 2 );
+                title.setPos( (width() - title.width())/2f, pos + 1 + ((ITEM_HEIGHT) - title.height())/2f);
+                PixelScene.align(title);
+                content.add(title);
+
+                pos += Math.max(ITEM_HEIGHT, title.height());
+            }
+            for(Notes.Record rec : keys){
+                ListItem item = new ListItem( Icons.get(Icons.DEPTH),
+                        Messages.titleCase(rec.desc()), rec.depth() );
+                item.setRect( 0, pos, width(), ITEM_HEIGHT );
+                content.add( item );
+
+                pos += item.height();
+            }
+
+            //Landmarks
+            ArrayList<Notes.LandmarkRecord> landmarks = Notes.getRecords(Notes.LandmarkRecord.class);
+            if (!landmarks.isEmpty()){
+                ColorBlock line = new ColorBlock( width(), 1, Game.instance.getResources().getInteger(R.integer.wndjournal7));
+                line.y = pos;
+                content.add(line);
+
+                RenderedTextMultiline title = PixelScene.renderMultiline(Messages.get(this, "landmarks"), 9);
+                title.hardlight(TITLE_COLOR);
+                title.maxWidth( (int)width() - 2 );
+                title.setPos( (width() - title.width())/2f, pos + 1 + ((ITEM_HEIGHT) - title.height())/2f);
+                PixelScene.align(title);
+                content.add(title);
+
+                pos += Math.max(ITEM_HEIGHT, title.height());
+            }
+            for (Notes.Record rec : landmarks) {
+                ListItem item = new ListItem( Icons.get(Icons.DEPTH),
+                        Messages.titleCase(rec.desc()), rec.depth() );
+                item.setRect( 0, pos, width(), ITEM_HEIGHT );
+                content.add( item );
+
+                pos += item.height();
+            }
+
+            content.setSize( width(), pos );
+            list.setSize( list.width(), list.height() );
+        }
+
+    }
 	
 	private static class CatalogTab extends Component{
 		

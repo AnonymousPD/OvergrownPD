@@ -24,7 +24,14 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
-import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Beetle;
+import com.overgrownpixel.overgrownpixeldungeon.effects.Pushing;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
+import com.watabou.noosa.audio.Sample;
+import com.watabou.noosa.tweeners.AlphaTweener;
 
 public class PotionOfInfection extends Potion {
 
@@ -33,13 +40,27 @@ public class PotionOfInfection extends Potion {
 
 		bones = true;
 	}
-	
-	@Override
-	public void apply( Hero hero ) {
 
-	}
-	
-	@Override
+    @Override
+    public void shatter(int cell) {
+        if (Dungeon.level.heroFOV[cell]) {
+            setKnown();
+
+            splash( cell );
+            Sample.INSTANCE.play( Assets.SND_SHATTER );
+        }
+
+        Beetle beetle = new Beetle();
+        beetle.pos = cell;
+        beetle.spawn(Dungeon.depth);
+        GameScene.add( beetle );
+        Actor.addDelayed( new Pushing( beetle, cell, cell ), -1f );
+
+        beetle.sprite.alpha( 0 );
+        beetle.sprite.parent.add( new AlphaTweener( beetle.sprite, 1, 0.15f ) );
+    }
+
+    @Override
 	public int price() {
 		return isKnown() ? 50 * quantity : super.price();
 	}

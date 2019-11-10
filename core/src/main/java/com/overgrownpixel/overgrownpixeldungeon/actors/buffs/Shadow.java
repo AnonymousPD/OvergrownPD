@@ -45,7 +45,7 @@ public class Shadow extends FlavourBuff {
 	public static final float DURATION	= 20f;
 
 	{
-		type = buffType.POSITIVE;
+		type = buffType.NEUTRAL;
 		announced = true;
 	}
 	
@@ -92,7 +92,9 @@ public class Shadow extends FlavourBuff {
             PrismaticGuard.class, Roots.class, RoseBarrier.class, Secreting.class, Shadows.class, Sleep.class,
             Slippery.class, Slow.class, SoulMark.class, SnowedIn.class, SpaceTimePowers.class, Speed.class, Sprouting.class,
             Stamina.class, Steaming.class, Stunned.class, SugarRush.class, Terror.class, Thorns.class, ToxicImbue.class,
-            TrailOfFire.class, Vertigo.class, Weakness.class, Wither.class,
+            TrailOfFire.class, Vertigo.class, Weakness.class, Wither.class, VitaminC.class, VitaminS.class, VitaminW.class,
+            VitaminG.class, VitaminSuper.class, SuperBalling.class, SoulFire.class, DewInfusion.class, Feelers.class,
+            FleshEatingAcid.class, Eyeing.class, FiendBurning.class, Drunk.class, High.class,
     };
 
     @Override

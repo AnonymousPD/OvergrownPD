@@ -24,7 +24,14 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
+import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Charm;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
+import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
+import com.watabou.noosa.audio.Sample;
 
 public class PotionOfLove extends Potion {
 
@@ -36,10 +43,32 @@ public class PotionOfLove extends Potion {
 	
 	@Override
 	public void apply( Hero hero ) {
-
+	    for(Mob mob : Dungeon.level.mobs){
+	        if(hero.visibleEnemiesList().contains(mob)){
+                Buff.affect( mob, Charm.class, 10f).object = hero.id();
+                mob.sprite.centerEmitter().start( Speck.factory( Speck.HEART ), 0.2f, 5 );
+            }
+        }
 	}
-	
-	@Override
+
+    @Override
+    public void shatter(int cell) {
+        if (Dungeon.level.heroFOV[cell]) {
+            setKnown();
+
+            splash( cell );
+            Sample.INSTANCE.play( Assets.SND_SHATTER );
+        }
+
+        for(Mob mob : Dungeon.level.mobs){
+            if(mob.fieldOfView[cell] && Dungeon.hero.fieldOfView[cell]){
+                Buff.affect( mob, Charm.class, 10f).object = Dungeon.hero.id();
+                mob.sprite.centerEmitter().start( Speck.factory( Speck.HEART ), 0.2f, 5 );
+            }
+        }
+    }
+
+    @Override
 	public int price() {
 		return isKnown() ? 50 * quantity : super.price();
 	}

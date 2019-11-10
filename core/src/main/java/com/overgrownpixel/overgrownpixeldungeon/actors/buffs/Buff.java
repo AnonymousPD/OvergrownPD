@@ -116,6 +116,7 @@ public class Buff extends Actor {
 
 	//creates a fresh instance of the buff and attaches that, this allows duplication.
 	public static<T extends Buff> T append( Char target, Class<T> buffClass ) {
+        if(!target.isAlive()) return null;
 		try {
 			T buff = buffClass.newInstance();
 			buff.attachTo( target );
@@ -127,6 +128,7 @@ public class Buff extends Actor {
 	}
 
 	public static<T extends FlavourBuff> T append( Char target, Class<T> buffClass, float duration ) {
+        if(!target.isAlive()) return null;
 		T buff = append( target, buffClass );
 		buff.spend( duration * target.resist(buffClass) );
 		return buff;
@@ -134,6 +136,7 @@ public class Buff extends Actor {
 
 	//same as append, but prevents duplication.
 	public static<T extends Buff> T affect( Char target, Class<T> buffClass ) {
+        if(!target.isAlive()) return null;
 		T buff = target.buff( buffClass );
 		if (buff != null) {
 			return buff;
@@ -143,6 +146,7 @@ public class Buff extends Actor {
 	}
 	
 	public static<T extends FlavourBuff> T affect( Char target, Class<T> buffClass, float duration ) {
+        if(!target.isAlive()) return null;
 		T buff = affect( target, buffClass );
 		buff.spend( duration * target.resist(buffClass) );
 		return buff;
@@ -150,6 +154,7 @@ public class Buff extends Actor {
 
 	//postpones an already active buff, or creates & attaches a new buff and delays that.
 	public static<T extends FlavourBuff> T prolong( Char target, Class<T> buffClass, float duration ) {
+	    if(!target.isAlive()) return null;
 		T buff = affect( target, buffClass );
 		buff.postpone( duration * target.resist(buffClass) );
 		return buff;
@@ -162,6 +167,7 @@ public class Buff extends Actor {
 	}
 	
 	public static void detach( Char target, Class<? extends Buff> cl ) {
+        if(!target.isAlive()) return;
 		detach( target.buff( cl ) );
 	}
 }

@@ -1175,6 +1175,8 @@ public abstract class Level implements Bundlable {
 				return Messages.get(Level.class, "inactive_trap_name");
 			case Terrain.BOOKSHELF:
 				return Messages.get(Level.class, "bookshelf_name");
+            case Terrain.EMPTY_BOOKSHELF:
+                return Messages.get(Level.class, "empty_bookshelf_name");
 			case Terrain.ALCHEMY:
 				return Messages.get(Level.class, "alchemy_name");
 			default:
@@ -1217,6 +1219,8 @@ public abstract class Level implements Bundlable {
 				return Messages.get(Level.class, "barricade_desc");
 			case Terrain.SIGN:
 				return Messages.get(Level.class, "sign_desc");
+            case Terrain.EMPTY_BOOKSHELF:
+                return Messages.get(Level.class, "empty_bookshelf_desc");
 			case Terrain.INACTIVE_TRAP:
 				return Messages.get(Level.class, "inactive_trap_desc");
 			case Terrain.STATUE:

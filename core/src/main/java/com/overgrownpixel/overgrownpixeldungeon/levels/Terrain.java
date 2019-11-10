@@ -57,6 +57,7 @@ public class Terrain {
 	public static final int STATUE			= 25;
 	public static final int STATUE_SP		= 26;
 	public static final int BOOKSHELF		= 27;
+    public static final int EMPTY_BOOKSHELF	= 36;
 	public static final int ALCHEMY			= 28;
 
 	public static final int WATER		    = 29;
@@ -110,6 +111,7 @@ public class Terrain {
 		flags[STATUE]		= SOLID;
 		flags[STATUE_SP]	= flags[STATUE];
 		flags[BOOKSHELF]	= flags[BARRICADE];
+        flags[EMPTY_BOOKSHELF]	= flags[BARRICADE];
 		flags[ALCHEMY]		= SOLID;
 
         flags[SOIL]		            = PASSABLE;

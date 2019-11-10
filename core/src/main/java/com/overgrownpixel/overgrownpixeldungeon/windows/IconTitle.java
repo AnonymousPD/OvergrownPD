@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.windows;
 
+import com.overgrownpixel.overgrownpixeldungeon.books.Book;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.PixelScene;
@@ -56,6 +57,13 @@ public class IconTitle extends Component {
 		label( Messages.titleCase( item.toString() ) );
 		icon.view( item );
 	}
+
+    public IconTitle( Book book ) {
+        ItemSprite icon = new ItemSprite();
+        icon( icon );
+        label( Messages.titleCase( book.title ) );
+        icon.view( book );
+    }
 
 	public IconTitle( Image icon, String label ) {
 		super();

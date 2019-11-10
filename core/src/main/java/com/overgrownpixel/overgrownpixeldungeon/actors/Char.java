@@ -46,6 +46,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Corruption;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Cripple;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Dehydrated;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Doom;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Drunk;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.EarthImbue;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Feelers;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FireImbue;
@@ -54,6 +55,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FrostImbue;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HalomethaneBurning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Haste;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HeatAura;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.High;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Honeyed;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.IceAura;
@@ -314,6 +316,7 @@ public abstract class Char extends Actor {
         if (attacker.buff(MarkOfTheNut.class) != null) acuRoll *= 2f;
 		if (defender.buff(Bless.class) != null) defRoll *= 1.20f;
         if (defender.buff(VitaminSuper.class) != null) defRoll *= 5f;
+        if (defender.buff(Drunk.class) != null) defRoll *= 1.50f;
 		return (magic ? acuRoll * 2 : acuRoll) >= defRoll;
 	}
 	
@@ -343,6 +346,7 @@ public abstract class Char extends Actor {
         }
         if ( buff( Wither.class ) != null ) Math.round(damage /= 2f);
         if ( buff(Feelers.class ) != null ) Math.round(damage *= 2f);
+        if ( buff(Drunk.class ) != null ) Math.round(damage *= 2f);
 		return damage;
 	}
 	
@@ -364,6 +368,7 @@ public abstract class Char extends Actor {
         if ( buff( Stunned.class ) != null) speed /= 8f;
         if ( buff( Honeyed.class ) != null) speed /= 6f;
         if ( buff( SugarRush.class ) != null) speed *= 6f;
+        if ( buff( Drunk.class ) != null) speed /= 3f;
 		return speed;
 	}
 	
@@ -587,7 +592,7 @@ public abstract class Char extends Actor {
 	
 	public void move( int step ) {
 
-		if (Dungeon.level.adjacent( step, pos ) && (buff( Vertigo.class ) != null || buff( Secreting.class ) != null)) {
+		if (Dungeon.level.adjacent( step, pos ) && (buff( Vertigo.class ) != null || buff( Secreting.class ) != null || buff(High.class) != null)) {
 			sprite.interruptMotion();
 			int newPos = pos + PathFinder.NEIGHBOURS8[Random.Int( 8 )];
 			if (!(Dungeon.level.passable[newPos] || Dungeon.level.avoid[newPos]) || Actor.findChar( newPos ) != null)

@@ -24,6 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Cocoshield;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 
 public class PotionOfProtection extends Potion {
@@ -36,7 +38,8 @@ public class PotionOfProtection extends Potion {
 	
 	@Override
 	public void apply( Hero hero ) {
-
+        Buff.prolong( hero, Cocoshield.class, Cocoshield.DURATION*2f);
+        setKnown();
 	}
 	
 	@Override

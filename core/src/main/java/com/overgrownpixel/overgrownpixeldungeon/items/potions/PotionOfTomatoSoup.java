@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 
 public class PotionOfTomatoSoup extends Potion {
@@ -36,7 +37,8 @@ public class PotionOfTomatoSoup extends Potion {
 	
 	@Override
 	public void apply( Hero hero ) {
-
+        hero.buff(Hunger.class).satisfy(hero.STR);
+        setKnown();
 	}
 	
 	@Override

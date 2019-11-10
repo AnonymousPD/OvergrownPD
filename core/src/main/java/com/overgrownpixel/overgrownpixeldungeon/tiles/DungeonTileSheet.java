@@ -28,6 +28,7 @@ import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
 import com.watabou.utils.Random;
 import com.watabou.utils.SparseArray;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 
@@ -141,6 +142,7 @@ public class DungeonTileSheet {
 		chasmStitcheable.put( Terrain.INACTIVE_TRAP,CHASM_FLOOR );
 		chasmStitcheable.put( Terrain.TRAP,         CHASM_FLOOR );
 		chasmStitcheable.put( Terrain.BOOKSHELF,    CHASM_FLOOR );
+        chasmStitcheable.put( Terrain.EMPTY_BOOKSHELF,CHASM_FLOOR );
 		chasmStitcheable.put( Terrain.BARRICADE,    CHASM_FLOOR );
 		chasmStitcheable.put( Terrain.PEDESTAL,     CHASM_FLOOR );
 
@@ -172,6 +174,7 @@ public class DungeonTileSheet {
 	public static final int FLAT_WALL           = FLAT_WALLS+0;
 	public static final int FLAT_WALL_DECO      = FLAT_WALLS+1;
 	public static final int FLAT_BOOKSHELF      = FLAT_WALLS+2;
+    public static final int FLAT_EMPTY_BOOKSHELF= FLAT_WALLS+3;
 
 	public static final int FLAT_WALL_ALT       = FLAT_WALLS+4;
 	public static final int FLAT_WALL_DECO_ALT  = FLAT_WALLS+5;
@@ -183,6 +186,7 @@ public class DungeonTileSheet {
 	public static final int FLAT_DOOR_LOCKED    = FLAT_DOORS+2;
 	public static final int UNLOCKED_EXIT       = FLAT_DOORS+3;
 	public static final int LOCKED_EXIT         = FLAT_DOORS+4;
+    public static final int RAISED_WALL_EMPTY_BOOKSHELF = FLAT_DOORS+12;
 
 	public static final int FLAT_OTHER          =                           xy(1, 7);   //16 slots
 	public static final int FLAT_SIGN           = FLAT_OTHER+0;
@@ -213,10 +217,16 @@ public class DungeonTileSheet {
 	//wall that appears behind a top/bottom doorway
 	public static final int RAISED_WALL_DOOR            = RAISED_WALLS+8;
 	public static final int RAISED_WALL_BOOKSHELF       = RAISED_WALLS+12;
+    public static final int RAISED_WALL_BOOKSHELF_ALT_1 = RAISED_WALLS+13;
+    public static final int RAISED_WALL_BOOKSHELF_ALT_2 = RAISED_WALLS+14;
+    public static final int RAISED_WALL_BOOKSHELF_ALT_3 = RAISED_WALLS+15;
 
 	public static final int RAISED_WALL_ALT             = RAISED_WALLS+16;
 	public static final int RAISED_WALL_DECO_ALT        = RAISED_WALLS+20;
-	public static final int RAISED_WALL_BOOKSHELF_ALT   = RAISED_WALLS+28;
+	public static final int RAISED_WALL_BOOKSHELF_ALT_4 = RAISED_WALLS+28;
+    public static final int RAISED_WALL_BOOKSHELF_ALT_5 = RAISED_WALLS+29;
+    public static final int RAISED_WALL_BOOKSHELF_ALT_6 = RAISED_WALLS+30;
+    public static final int RAISED_WALL_BOOKSHELF_ALT_7 = RAISED_WALLS+32;
 
 	//we use an array instead of a collection because the small element count
 	// makes array traversal much faster than something like HashSet.contains.
@@ -224,7 +234,7 @@ public class DungeonTileSheet {
 	//These tiles count as wall for the purposes of wall stitching
 	private static int[] wallStitcheable = new int[]{
 			Terrain.WALL, Terrain.WALL_DECO, Terrain.SECRET_DOOR,
-			Terrain.LOCKED_EXIT, Terrain.UNLOCKED_EXIT, Terrain.BOOKSHELF, NULL_TILE
+			Terrain.LOCKED_EXIT, Terrain.UNLOCKED_EXIT, Terrain.BOOKSHELF, Terrain.EMPTY_BOOKSHELF, NULL_TILE
 	};
 
 	public static boolean wallStitcheable(int tile){
@@ -242,6 +252,7 @@ public class DungeonTileSheet {
 		else if (tile == Terrain.WALL || tile == Terrain.SECRET_DOOR)   result = RAISED_WALL;
 		else if (tile == Terrain.WALL_DECO)                             result = RAISED_WALL_DECO;
 		else if (tile == Terrain.BOOKSHELF)                             result = RAISED_WALL_BOOKSHELF;
+        else if (tile == Terrain.EMPTY_BOOKSHELF)                       result = RAISED_WALL_EMPTY_BOOKSHELF;
 		else                                                            return -1;
 
 		result = getVisualWithAlts(result, pos);
@@ -315,7 +326,7 @@ public class DungeonTileSheet {
 	public static int stitchInternalWallTile(int tile, int right, int rightBelow, int below, int leftBelow, int left){
 		int result;
 
-		if (tile == Terrain.BOOKSHELF || below == Terrain.BOOKSHELF)  result = WALL_INTERNAL_WOODEN;
+		if (tile == Terrain.BOOKSHELF || below == Terrain.BOOKSHELF || tile == Terrain.EMPTY_BOOKSHELF || below == Terrain.EMPTY_BOOKSHELF)  result = WALL_INTERNAL_WOODEN;
 		else                            result = WALL_INTERNAL;
 
 		if (!wallStitcheable(right))        result += 1;
@@ -339,6 +350,7 @@ public class DungeonTileSheet {
 		else if (tile == Terrain.OPEN_DOOR)                         visual = DOOR_SIDEWAYS_OVERHANG_OPEN;
 		else if (tile == Terrain.LOCKED_DOOR)                       visual = DOOR_SIDEWAYS_OVERHANG_LOCKED;
 		else if (below == Terrain.BOOKSHELF)                        visual = WALL_OVERHANG_WOODEN;
+        else if (below == Terrain.EMPTY_BOOKSHELF)                  visual = WALL_OVERHANG_WOODEN;
 		else                                                        visual = WALL_OVERHANG;
 
 		if (!wallStitcheable(rightBelow))  visual += 1;
@@ -353,6 +365,13 @@ public class DungeonTileSheet {
 	public static final int DOOR_SIDEWAYS               = WALL_OVERHANG+23;
 	public static final int DOOR_SIDEWAYS_LOCKED        = WALL_OVERHANG+24;
 
+    public static final int HIGH_GRASS_OVERHANG_ALT_3   = WALL_OVERHANG+25;
+    public static final int FURROWED_OVERHANG_ALT_3     = WALL_OVERHANG+26;
+    public static final int HIGH_GRASS_OVERHANG_ALT_4   = WALL_OVERHANG+27;
+    public static final int FURROWED_OVERHANG_ALT_4     = WALL_OVERHANG+28;
+    public static final int HIGH_GRASS_OVERHANG_ALT_5   = WALL_OVERHANG+29;
+    public static final int FURROWED_OVERHANG_ALT_5     = WALL_OVERHANG+30;
+
 	public static final int STATUE_OVERHANG             = WALL_OVERHANG+32;
 	public static final int ALCHEMY_POT_OVERHANG        = WALL_OVERHANG+33;
 	public static final int BARRICADE_OVERHANG          = WALL_OVERHANG+34;
@@ -366,6 +385,12 @@ public class DungeonTileSheet {
     public static final int SOIL_STRAWWHEAT_OVERHANG    = WALL_OVERHANG+41;
     public static final int SOIL_WATERWHEAT_OVERHANG    = WALL_OVERHANG+42;
     public static final int SOIL_GREENWHEAT_OVERHANG    = WALL_OVERHANG+43;
+
+    public static final int HIGH_GRASS_OVERHANG_ALT_2     = WALL_OVERHANG+44;
+    public static final int FURROWED_OVERHANG_ALT_2       = WALL_OVERHANG+45;
+
+    public static final int HIGH_GRASS_OVERHANG_ALT_ALT   = WALL_OVERHANG+46;
+    public static final int FURROWED_OVERHANG_ALT_ALT     = WALL_OVERHANG+47;
 
 	/**********************************************************************
 	 * Logic for the selection of tile visuals
@@ -404,6 +429,7 @@ public class DungeonTileSheet {
 		directFlatVisuals.put(Terrain.LOCKED_DOOR,      FLAT_DOOR_LOCKED);
 		directFlatVisuals.put(Terrain.WALL_DECO,        FLAT_WALL_DECO);
 		directFlatVisuals.put(Terrain.BOOKSHELF,        FLAT_BOOKSHELF);
+        directFlatVisuals.put(Terrain.EMPTY_BOOKSHELF,  FLAT_EMPTY_BOOKSHELF);
 		directFlatVisuals.put(Terrain.SIGN,             FLAT_SIGN);
 		directFlatVisuals.put(Terrain.STATUE,           FLAT_STATUE);
 		directFlatVisuals.put(Terrain.STATUE_SP,        FLAT_STATUE_SP);
@@ -451,12 +477,11 @@ public class DungeonTileSheet {
 
 		commonAltVisuals.put(RAISED_WALL,           RAISED_WALL_ALT);
 		commonAltVisuals.put(RAISED_WALL_DECO,      RAISED_WALL_DECO_ALT);
-		commonAltVisuals.put(RAISED_WALL_BOOKSHELF, RAISED_WALL_BOOKSHELF_ALT);
 
 		commonAltVisuals.put(RAISED_HIGH_GRASS,     RAISED_HIGH_GRASS_ALT);
-		commonAltVisuals.put(RAISED_FURROWED_GRASS, RAISED_FURROWED_ALT);
-		commonAltVisuals.put(HIGH_GRASS_OVERHANG,   HIGH_GRASS_OVERHANG_ALT);
-		commonAltVisuals.put(FURROWED_OVERHANG,     FURROWED_OVERHANG_ALT);
+        commonAltVisuals.put(RAISED_FURROWED_GRASS, RAISED_FURROWED_ALT);
+        //commonAltVisuals.put(HIGH_GRASS_OVERHANG,   HIGH_GRASS_OVERHANG_ALT);
+        //commonAltVisuals.put(FURROWED_OVERHANG,     FURROWED_OVERHANG_ALT);
 	}
 
 	//These alt visuals trigger 5% of the time (and also override common alts when they show up)
@@ -465,7 +490,50 @@ public class DungeonTileSheet {
 		rareAltVisuals.put(FLOOR,               FLOOR_ALT_2);
 	}
 
-	public static int getVisualWithAlts(int visual, int pos){
+    public static ArrayList<Integer> highgrassoverhangVariants = new ArrayList<Integer>();
+    static {
+        highgrassoverhangVariants.add(HIGH_GRASS_OVERHANG);
+        highgrassoverhangVariants.add(HIGH_GRASS_OVERHANG_ALT);
+        highgrassoverhangVariants.add(HIGH_GRASS_OVERHANG_ALT_2);
+        highgrassoverhangVariants.add(HIGH_GRASS_OVERHANG_ALT_ALT);
+        highgrassoverhangVariants.add(HIGH_GRASS_OVERHANG_ALT_3);
+        highgrassoverhangVariants.add(HIGH_GRASS_OVERHANG_ALT_4);
+        highgrassoverhangVariants.add(HIGH_GRASS_OVERHANG_ALT_5);
+    }
+    public static ArrayList<Integer> highgrassoverhangVariantsFurrowed = new ArrayList<Integer>();
+    static {
+        highgrassoverhangVariantsFurrowed.add(FURROWED_OVERHANG);
+        highgrassoverhangVariantsFurrowed.add(FURROWED_OVERHANG_ALT);
+        highgrassoverhangVariantsFurrowed.add(FURROWED_OVERHANG_ALT_2);
+        highgrassoverhangVariantsFurrowed.add(FURROWED_OVERHANG_ALT_ALT);
+        highgrassoverhangVariantsFurrowed.add(FURROWED_OVERHANG_ALT_3);
+        highgrassoverhangVariantsFurrowed.add(FURROWED_OVERHANG_ALT_4);
+        highgrassoverhangVariantsFurrowed.add(FURROWED_OVERHANG_ALT_5);
+    }
+
+    public static ArrayList<Integer> bookshelfVariants = new ArrayList<Integer>();
+    static {
+        bookshelfVariants.add(RAISED_WALL_BOOKSHELF);
+        bookshelfVariants.add(RAISED_WALL_BOOKSHELF_ALT_1);
+        bookshelfVariants.add(RAISED_WALL_BOOKSHELF_ALT_2);
+        bookshelfVariants.add(RAISED_WALL_BOOKSHELF_ALT_3);
+        bookshelfVariants.add(RAISED_WALL_BOOKSHELF_ALT_4);
+        bookshelfVariants.add(RAISED_WALL_BOOKSHELF_ALT_5);
+        bookshelfVariants.add(RAISED_WALL_BOOKSHELF_ALT_6);
+        bookshelfVariants.add(RAISED_WALL_BOOKSHELF_ALT_7);
+    }
+
+    public static int getVisualWithAlts(int visual, int pos){
+	    if(visual == Terrain.BOOKSHELF){
+            if(tileVariance[pos] >= 87) return bookshelfVariants.get(0);
+            if(tileVariance[pos] >= 75) return bookshelfVariants.get(1);
+            if(tileVariance[pos] >= 62) return bookshelfVariants.get(2);
+            if(tileVariance[pos] >= 50) return bookshelfVariants.get(3);
+            if(tileVariance[pos] >= 37) return bookshelfVariants.get(4);
+            if(tileVariance[pos] >= 25) return bookshelfVariants.get(5);
+            if(tileVariance[pos] >= 12) return bookshelfVariants.get(6);
+            if(tileVariance[pos] >= 5) return bookshelfVariants.get(7);
+        }
 		if (tileVariance[pos] >= 95 && rareAltVisuals.indexOfKey(visual) >= 0)
 			return rareAltVisuals.get(visual);
 		else if (tileVariance[pos] >= 50 && commonAltVisuals.indexOfKey(visual) >= 0)

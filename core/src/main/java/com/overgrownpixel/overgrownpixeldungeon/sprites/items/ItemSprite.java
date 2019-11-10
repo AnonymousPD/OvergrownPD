@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.sprites.items;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.books.Book;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.items.Gold;
@@ -82,6 +83,12 @@ public class ItemSprite extends MovieClip {
 
 		view (item);
 	}
+
+    public ItemSprite( Book book ) {
+        super(Assets.ITEMS);
+
+        view (book);
+    }
 	
 	public ItemSprite( int image ){
 		this( image, null );
@@ -195,6 +202,17 @@ public class ItemSprite extends MovieClip {
 		}
 		return this;
 	}
+
+    public ItemSprite view(Book book){
+        view(book.icon, book.glowing());
+        Emitter emitter = book.emitter();
+        if (emitter != null && parent != null) {
+            emitter.pos( this );
+            parent.add( emitter );
+            this.emitter = emitter;
+        }
+        return this;
+    }
 	
 	public ItemSprite view( int image, Glowing glowing ) {
 		if (this.emitter != null) this.emitter.killAndErase();

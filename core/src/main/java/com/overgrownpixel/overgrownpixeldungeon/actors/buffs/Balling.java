@@ -24,6 +24,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.actors.buffs;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.tiles.DungeonTilemap;
@@ -47,8 +48,10 @@ public class Balling extends FlavourBuff {
 
     @Override
     public boolean attachTo(Char target) {
-        target.sprite.origin.set( target.sprite.width / 2, target.sprite.height - DungeonTilemap.SIZE / 2 );
-        target.sprite.angularSpeed = Random.Int( 2 ) == 0 ? -720 : 720;
+	    if(Dungeon.level != null){
+	        target.sprite.origin.set( target.sprite.width / 2, target.sprite.height - DungeonTilemap.SIZE / 2 );
+            target.sprite.angularSpeed = Random.Int( 2 ) == 0 ? -720 : 720;
+        }
         return super.attachTo(target);
     }
 

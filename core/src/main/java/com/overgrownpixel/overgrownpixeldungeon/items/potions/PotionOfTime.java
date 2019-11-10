@@ -24,7 +24,11 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
+import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.TimekeepersHourglass;
+import com.watabou.noosa.audio.Sample;
 
 public class PotionOfTime extends Potion {
 
@@ -36,10 +40,25 @@ public class PotionOfTime extends Potion {
 	
 	@Override
 	public void apply( Hero hero ) {
-
+        TimekeepersHourglass timekeepersHourglass = new TimekeepersHourglass();
+        timekeepersHourglass.getTimeStopEffectFreeze(hero.STR);
 	}
-	
-	@Override
+
+    @Override
+    public void shatter(int cell) {
+        if (Dungeon.level.heroFOV[cell]) {
+            setKnown();
+
+            splash( cell );
+            Sample.INSTANCE.play( Assets.SND_SHATTER );
+        }
+
+        //really powerful if you can throw it on wheat lol
+        TimekeepersHourglass timekeepersHourglass = new TimekeepersHourglass();
+        timekeepersHourglass.getTimeStopEffectFreeze(Dungeon.level.map[cell]);
+    }
+
+    @Override
 	public int price() {
 		return isKnown() ? 50 * quantity : super.price();
 	}

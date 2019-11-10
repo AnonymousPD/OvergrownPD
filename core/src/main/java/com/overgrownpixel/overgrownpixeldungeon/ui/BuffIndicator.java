@@ -132,6 +132,10 @@ public class BuffIndicator extends Component {
     public static final int VITAMINS    = 81;
     public static final int VITAMINW    = 82;
     public static final int VITAMINSUPER= 83;
+    public static final int EYEING      = 84;
+    public static final int DRUNK       = 85;
+    public static final int HIGH        = 86;
+    public static final int COUGHING    = 87;
 
 	public static final int SIZE	= 7;
 	

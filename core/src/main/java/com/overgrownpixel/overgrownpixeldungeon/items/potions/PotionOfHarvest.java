@@ -24,7 +24,14 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
-import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.levels.Level;
+import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
+import com.watabou.noosa.audio.Sample;
+import com.watabou.utils.PathFinder;
+import com.watabou.utils.Random;
 
 public class PotionOfHarvest extends Potion {
 
@@ -33,13 +40,29 @@ public class PotionOfHarvest extends Potion {
 
 		bones = true;
 	}
-	
-	@Override
-	public void apply( Hero hero ) {
 
-	}
-	
-	@Override
+    @Override
+    public void shatter(int cell) {
+
+	    if (Dungeon.level.heroFOV[cell]) {
+            setKnown();
+
+            splash( cell );
+            Sample.INSTANCE.play( Assets.SND_SHATTER );
+        }
+
+        for (int offset : PathFinder.NEIGHBOURS9){
+            if (Dungeon.level.passable[cell+offset]) {
+
+                Level.set(cell+offset, Terrain.SOIL_CORNWHEAT+ Random.Int(0, 3));
+                GameScene.updateMap(cell+offset);
+
+            }
+        }
+
+    }
+
+    @Override
 	public int price() {
 		return isKnown() ? 50 * quantity : super.price();
 	}

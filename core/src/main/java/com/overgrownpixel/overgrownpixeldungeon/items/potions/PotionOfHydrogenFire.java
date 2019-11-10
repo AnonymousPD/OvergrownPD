@@ -24,7 +24,13 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
-import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.HalomethaneFire;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
+import com.watabou.noosa.audio.Sample;
+import com.watabou.utils.PathFinder;
 
 public class PotionOfHydrogenFire extends Potion {
 
@@ -33,13 +39,28 @@ public class PotionOfHydrogenFire extends Potion {
 
 		bones = true;
 	}
-	
-	@Override
-	public void apply( Hero hero ) {
 
-	}
-	
-	@Override
+    @Override
+    public void shatter(int cell) {
+
+	    if (Dungeon.level.heroFOV[cell]) {
+            setKnown();
+
+            splash( cell );
+            Sample.INSTANCE.play( Assets.SND_SHATTER );
+        }
+
+        for (int offset : PathFinder.NEIGHBOURS9){
+            if (!Dungeon.level.solid[cell+offset]) {
+
+                GameScene.add(Blob.seed(cell + offset, 2, HalomethaneFire.class));
+
+            }
+        }
+
+    }
+
+    @Override
 	public int price() {
 		return isKnown() ? 50 * quantity : super.price();
 	}

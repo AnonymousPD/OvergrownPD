@@ -44,7 +44,7 @@ public class ParasiticInfection extends FlavourBuff {
 
     @Override
     public void detach() {
-        Buff.affect(target, Ooze.class).set( 20f );
+        if(target != null) Buff.affect(target, Ooze.class).set( 20f );
         super.detach();
     }
 

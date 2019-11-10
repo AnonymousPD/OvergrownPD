@@ -48,6 +48,12 @@ public class HeroAction {
 			this.dst = dst;
 		}
 	}
+
+    public static class SearchBookshelf extends HeroAction {
+        public SearchBookshelf( int dst ) {
+            this.dst = dst;
+        }
+    }
 	
 	public static class Buy extends HeroAction {
 		public Buy( int dst ) {

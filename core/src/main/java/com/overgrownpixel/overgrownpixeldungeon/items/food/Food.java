@@ -29,6 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.Badges;
 import com.overgrownpixel.overgrownpixeldungeon.Statistics;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Coughing;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Recharging;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
@@ -72,6 +73,11 @@ public class Food extends Item {
 		super.execute( hero, action );
 
 		if (action.equals( AC_EAT )) {
+
+            if(hero.buff(Coughing.class) == null){
+                GLog.n(Messages.get(this, "coughing"));
+                return;
+            }
 			
 			detach( hero.belongings.backpack );
 			

@@ -33,6 +33,8 @@ import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;
 
+import java.util.ArrayList;
+
 public class PotionOfDirt extends Potion {
 
 	{
@@ -59,16 +61,12 @@ public class PotionOfDirt extends Potion {
                             Dungeon.level.map[cell+offset] == Terrain.GRASS ||
                             Dungeon.level.map[cell+offset] == Terrain.FURROWED_GRASS ||
                             Dungeon.level.map[cell+offset] == Terrain.HIGH_GRASS)) {
-                switch (Random.Int(0, 3)){
-                    case 0: Level.set(cell+offset, Terrain.SOIL_CORNWHEAT);
-                        break;
-                    case 1: Level.set(cell+offset, Terrain.SOIL_STRAWWHEAT);
-                        break;
-                    case 2: Level.set(cell+offset, Terrain.SOIL_WATERWHEAT);
-                        break;
-                    case 3: Level.set(cell+offset, Terrain.SOIL_GREENWHEAT);
-                        break;
-                }
+                ArrayList<Integer> arrayList = new ArrayList<>();
+                arrayList.add(Terrain.SOIL_CORNWHEAT);
+                arrayList.add(Terrain.SOIL_WATERWHEAT);
+                arrayList.add(Terrain.SOIL_STRAWWHEAT);
+                arrayList.add(Terrain.SOIL_GREENWHEAT);
+                Level.set(cell+offset, Random.element(arrayList));
                 GameScene.updateMap(cell+offset);
                 if(Dungeon.level.plants.get(cell+offset) != null){
                     Dungeon.level.plants.get(cell+offset).trigger();

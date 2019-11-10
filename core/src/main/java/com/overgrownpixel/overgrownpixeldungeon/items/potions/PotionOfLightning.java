@@ -24,7 +24,20 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
+import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
+import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
+import com.overgrownpixel.overgrownpixeldungeon.effects.Lightning;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.SparkParticle;
+import com.overgrownpixel.overgrownpixeldungeon.tiles.DungeonTilemap;
+import com.overgrownpixel.overgrownpixeldungeon.utils.BArray;
+import com.watabou.utils.PathFinder;
+import com.watabou.utils.Random;
+
+import java.util.ArrayList;
 
 public class PotionOfLightning extends Potion {
 
@@ -33,11 +46,73 @@ public class PotionOfLightning extends Potion {
 
 		bones = true;
 	}
-	
-	@Override
-	public void apply( Hero hero ) {
 
-	}
+        private ArrayList<Char> affected = new ArrayList<>();
+
+        ArrayList<Lightning.Arc> arcs = new ArrayList<>();
+
+        private void arc( Char ch ) {
+
+            affected.add( ch );
+
+            int dist;
+            if (Dungeon.level.water[ch.pos] && !ch.flying)
+                dist = 2;
+            else
+                dist = 1;
+
+            PathFinder.buildDistanceMap( ch.pos, BArray.not( Dungeon.level.solid, null ), dist );
+            for (int i = 0; i < PathFinder.distance.length; i++) {
+                if (PathFinder.distance[i] < Integer.MAX_VALUE){
+                    Char n = Actor.findChar( i );
+                    if (n == Dungeon.hero && PathFinder.distance[i] > 1)
+                        //the hero is only zapped if they are adjacent
+                        continue;
+                    else if (n != null && !affected.contains( n )) {
+                        arcs.add(new Lightning.Arc(ch.sprite.center(), n.sprite.center()));
+                        arc(n);
+                    }
+                }
+            }
+        }
+
+        @Override
+        public void apply( Hero hero ) {
+            affected.clear();
+            arcs.clear();
+
+            for(Mob mob : hero.visibleEnemiesList()){
+                if (mob != null) {
+                    arcs.add( new Lightning.Arc(curUser.sprite.center(), mob.sprite.center()));
+                    arc(mob);
+                }
+            }
+
+            ArrayList<Integer> cells = new ArrayList<>();
+            for(int i = 10; i > 0; i--){
+                int c = Random.Int(Dungeon.level.length());
+                if(hero.fieldOfView[c] && !cells.contains(c)){
+                    cells.add(c);
+                }
+            }
+
+            for(int p : cells){
+                arcs.add( new Lightning.Arc(curUser.sprite.center(), DungeonTilemap.raisedTileCenterToWorld(p)));
+                CellEmitter.center( p ).burst( SparkParticle.FACTORY, 3 );
+            }
+
+            //don't want to wait for the effect before processing damage.
+            curUser.sprite.parent.addToFront( new Lightning( arcs, null ) );
+            //lightning deals less damage per-target, the more targets that are hit.
+            float multipler = 0.4f + (0.6f/affected.size());
+
+            for(Char ch : affected){
+                if (Dungeon.level.water[ch.pos]) multipler = 1f;
+                ch.damage(Math.round(ch.damageRoll() * multipler), this);
+            }
+
+            setKnown();
+        }
 	
 	@Override
 	public int price() {

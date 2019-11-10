@@ -25,6 +25,8 @@
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
+import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 
 public class PotionOfMuscle extends Potion {
 
@@ -36,7 +38,10 @@ public class PotionOfMuscle extends Potion {
 	
 	@Override
 	public void apply( Hero hero ) {
-
+	    //more brain is more muscle
+        hero.STR += hero.foundBooks.size()+1;
+        GLog.p(Messages.get(this, "muscle"));
+        setKnown();
 	}
 	
 	@Override

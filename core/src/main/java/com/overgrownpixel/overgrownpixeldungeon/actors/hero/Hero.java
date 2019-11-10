@@ -43,7 +43,9 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Bless;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Blindness;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Combo;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Coughing;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Drowsy;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Eyeing;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FlavourBuff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Foresight;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Fury;
@@ -61,6 +63,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Vertigo;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Weakness;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.npcs.NPC;
+import com.overgrownpixel.overgrownpixeldungeon.books.Book;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CheckedCell;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Flare;
@@ -185,6 +188,8 @@ public class Hero extends Char {
 	
 	private ArrayList<Mob> visibleEnemies;
 
+    public ArrayList<Class> foundBooks;
+
 	//This list is maintained so that some logic checks can be skipped
 	// for enemies we know we aren't seeing normally, resultign in better performance
 	public ArrayList<Mob> mindVisionEnemies = new ArrayList<>();
@@ -197,6 +202,11 @@ public class Hero extends Char {
 		STR = STARTING_STR;
 		
 		belongings = new Belongings( this );
+
+		foundBooks = new ArrayList<Class>();
+		for(Class cl : Book.allBooks){
+		    foundBooks.add(cl);
+        }
 		
 		visibleEnemies = new ArrayList<Mob>();
 	}
@@ -237,6 +247,7 @@ public class Hero extends Char {
 	private static final String LEVEL		= "lvl";
 	private static final String EXPERIENCE	= "exp";
 	private static final String HTBOOST     = "htboost";
+    private static final String BOOKS       = "booksfound";
 	
 	@Override
 	public void storeInBundle( Bundle bundle ) {
@@ -255,6 +266,8 @@ public class Hero extends Char {
 		bundle.put( EXPERIENCE, exp );
 		
 		bundle.put( HTBOOST, HTBoost );
+
+        bundle.put( BOOKS, foundBooks.toArray(new Class[foundBooks.size()]) );
 
 		belongings.storeInBundle( bundle );
 	}
@@ -275,6 +288,9 @@ public class Hero extends Char {
 		exp = bundle.getInt( EXPERIENCE );
 		
 		HTBoost = bundle.getInt(HTBOOST);
+
+        foundBooks.clear();
+        Collections.addAll(foundBooks, bundle.getClassArray(BOOKS));
 		
 		belongings.restoreFromBundle( bundle );
 	}
@@ -423,6 +439,15 @@ public class Hero extends Char {
 		
 		Berserk berserk = buff(Berserk.class);
 		if (berserk != null) dmg = berserk.damageFactor(dmg);
+
+        Eyeing eyeing = buff(Eyeing.class);
+        if (eyeing != null ){
+            Char enemy = this.enemy();
+            if (enemy instanceof Mob && ((Mob) enemy).surprisedBy(this)) {
+                //deals 50% toward max to max on surprise, instead of min to max.
+                dmg *= 2;
+            }
+        }
 		
 		return buff( Fury.class ) != null ? (int)(dmg * 1.5f) : dmg;
 	}
@@ -597,9 +622,12 @@ public class Hero extends Char {
 				actResult = actPickUp( (HeroAction.PickUp)curAction );
 				
 			} else if (curAction instanceof HeroAction.OpenChest) {
-				actResult = actOpenChest( (HeroAction.OpenChest)curAction );
-				
-			} else if (curAction instanceof HeroAction.Unlock) {
+                actResult = actOpenChest( (HeroAction.OpenChest)curAction );
+
+            } else if (curAction instanceof HeroAction.SearchBookshelf) {
+                actResult = actSearchBookshelf( (HeroAction.SearchBookshelf)curAction );
+
+            } else if (curAction instanceof HeroAction.Unlock) {
 				actResult = actUnlock((HeroAction.Unlock) curAction);
 				
 			} else if (curAction instanceof HeroAction.Descend) {
@@ -844,6 +872,24 @@ public class Hero extends Char {
 			return false;
 		}
 	}
+
+    private boolean actSearchBookshelf( HeroAction.SearchBookshelf action ) {
+        int dst = action.dst;
+        if (Dungeon.level.adjacent( pos, dst ) || pos == dst) {
+
+            sprite.operate( dst );
+
+            return false;
+
+        } else if (getCloser( dst )) {
+
+            return true;
+
+        } else {
+            ready();
+            return false;
+        }
+    }
 	
 	private boolean actUnlock( HeroAction.Unlock action ) {
 		int doorCell = action.dst;
@@ -1151,6 +1197,10 @@ public class Hero extends Char {
                 }
             }
         }
+
+        if(buff(Coughing.class) != null && Random.Float() < 0.3f){
+            GLog.n(Messages.get(this, "cough"));
+        }
 		
 		int step = -1;
 		
@@ -1293,7 +1343,11 @@ public class Hero extends Char {
 			
 			curAction = new HeroAction.Unlock( cell );
 			
-		} else if (cell == Dungeon.level.exit && Dungeon.depth < 26) {
+		} else if (Dungeon.level.map[cell] == Terrain.BOOKSHELF) {
+
+            curAction = new HeroAction.SearchBookshelf( cell );
+
+        } else if (cell == Dungeon.level.exit && Dungeon.depth < 26) {
 			
 			curAction = new HeroAction.Descend( cell );
 			
@@ -1628,7 +1682,29 @@ public class Hero extends Char {
 			GameScene.updateKeyDisplay();
 			heap.open( this );
 			spend( Key.TIME_TO_UNLOCK );
-		}
+		} else if (curAction instanceof HeroAction.SearchBookshelf) {
+		    int bookshelfCell = ((HeroAction.SearchBookshelf)curAction).dst;
+		    int bookshelf = Dungeon.level.map[bookshelfCell];
+		    if(bookshelf == Terrain.BOOKSHELF){
+                Level.set(bookshelfCell, Terrain.EMPTY_BOOKSHELF);
+            }
+            GameScene.updateMap(bookshelfCell);
+            spend( TIME_TO_SEARCH );
+            if(Random.Float() < 0.25f && Dungeon.hero.foundBooks.size() != Book.allBooks.size()){
+                try {
+                    Class bookclass = Random.element(Book.allBooks);
+                    while (Dungeon.hero.foundBooks.contains(bookclass)){
+                        bookclass = Random.element(Book.allBooks);
+                    }
+                    Book book = (Book) bookclass.newInstance();
+                    GLog.p(Messages.get(this, "foundbook", book.title));
+                } catch (Exception e){
+                    OvergrownPixelDungeon.reportException(e);
+                }
+            } else {
+                GLog.n(Messages.get(this, "nobookfound"));
+            }
+        }
 		curAction = null;
 
 		super.onOperateComplete();

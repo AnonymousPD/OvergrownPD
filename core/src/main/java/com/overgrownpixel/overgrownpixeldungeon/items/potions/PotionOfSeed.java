@@ -24,7 +24,12 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
+import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.items.Generator;
+import com.watabou.noosa.audio.Sample;
+import com.watabou.utils.PathFinder;
 
 public class PotionOfSeed extends Potion {
 
@@ -36,10 +41,31 @@ public class PotionOfSeed extends Potion {
 	
 	@Override
 	public void apply( Hero hero ) {
-
+        Dungeon.level.drop(Generator.random(Generator.Category.SEED), hero.pos).sprite.drop(hero.pos);
+        setKnown();
 	}
-	
-	@Override
+
+    @Override
+    public void shatter(int cell) {
+
+	    if (Dungeon.level.heroFOV[cell]) {
+            setKnown();
+
+            splash( cell );
+            Sample.INSTANCE.play( Assets.SND_SHATTER );
+        }
+
+        for (int offset : PathFinder.NEIGHBOURS9){
+            if (!Dungeon.level.solid[cell+offset]) {
+
+                Dungeon.level.drop(Generator.random(Generator.Category.SEED), cell).sprite.drop(cell);
+
+            }
+        }
+
+    }
+
+    @Override
 	public int price() {
 		return isKnown() ? 50 * quantity : super.price();
 	}

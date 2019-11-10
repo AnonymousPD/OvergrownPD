@@ -24,7 +24,14 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
-import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.GooPlant;
+import com.overgrownpixel.overgrownpixeldungeon.effects.Pushing;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
+import com.watabou.noosa.audio.Sample;
+import com.watabou.noosa.tweeners.AlphaTweener;
 
 public class PotionOfGoo extends Potion {
 
@@ -33,13 +40,29 @@ public class PotionOfGoo extends Potion {
 
 		bones = true;
 	}
-	
-	@Override
-	public void apply( Hero hero ) {
 
-	}
-	
-	@Override
+    @Override
+    public void shatter(int cell) {
+
+	    if (Dungeon.level.heroFOV[cell]) {
+            setKnown();
+
+            splash( cell );
+            Sample.INSTANCE.play( Assets.SND_SHATTER );
+        }
+
+        GooPlant gooPlant = new GooPlant();
+        gooPlant.pos = cell;
+
+        GameScene.add( gooPlant );
+        Actor.addDelayed( new Pushing( gooPlant, cell, cell ), -1f );
+
+        gooPlant.sprite.alpha( 0 );
+        gooPlant.sprite.parent.add( new AlphaTweener( gooPlant.sprite, 1, 0.15f ) );
+
+    }
+
+    @Override
 	public int price() {
 		return isKnown() ? 50 * quantity : super.price();
 	}

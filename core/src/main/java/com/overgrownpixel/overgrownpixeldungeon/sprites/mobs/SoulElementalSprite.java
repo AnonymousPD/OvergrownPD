@@ -30,7 +30,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.TextureFilm;
 
-public class SoulElementalSprite extends MobSprite {
+public class SoulElementalSprite extends ElementalSprite {
 
 	public SoulElementalSprite() {
 		super();

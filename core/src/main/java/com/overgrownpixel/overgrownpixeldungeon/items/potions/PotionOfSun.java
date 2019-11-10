@@ -24,7 +24,16 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
-import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.R;
+import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
+import com.watabou.noosa.Game;
+import com.watabou.noosa.audio.Sample;
+
+import java.util.ArrayList;
 
 public class PotionOfSun extends Potion {
 
@@ -33,13 +42,24 @@ public class PotionOfSun extends Potion {
 
 		bones = true;
 	}
-	
-	@Override
-	public void apply( Hero hero ) {
 
-	}
-	
-	@Override
+    @Override
+    public void shatter(int cell) {
+        GameScene.flash(Game.instance.getResources().getInteger(R.integer.whiteflashsun));
+        ArrayList<Mob> mobs = new ArrayList<>();
+        for(Mob mob : Dungeon.level.mobs){
+            if(mob.properties().contains(Char.Property.UNDEAD)){
+                mobs.add(mob);
+            }
+        }
+        for(Mob mob : mobs){
+            mob.die(this);
+        }
+        mobs.clear();
+        Sample.INSTANCE.play(Assets.SND_BLAST);
+    }
+
+    @Override
 	public int price() {
 		return isKnown() ? 50 * quantity : super.price();
 	}

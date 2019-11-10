@@ -44,7 +44,7 @@ public class ParasiticSymbiosis extends FlavourBuff {
 
     @Override
     public void detach() {
-        Buff.affect( target, Healing.class ).setHeal(Math.round(target.HT/2), 0.25f, 0);
+        if(target != null) Buff.affect( target, Healing.class ).setHeal(Math.round(target.HT/2), 0.25f, 0);
         super.detach();
     }
 

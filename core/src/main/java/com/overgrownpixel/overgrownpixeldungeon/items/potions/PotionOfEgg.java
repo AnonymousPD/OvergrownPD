@@ -24,7 +24,13 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.levels.Level;
+import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
+import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
+import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 
 public class PotionOfEgg extends Potion {
 
@@ -36,7 +42,18 @@ public class PotionOfEgg extends Potion {
 	
 	@Override
 	public void apply( Hero hero ) {
-
+	    boolean restocked = false;
+        for (int i = 0; i < Dungeon.level.map.length; i++){
+            if(Dungeon.level.map[i] == Terrain.EMPTY_BOOKSHELF){
+                if(Dungeon.level.heroFOV[i]){
+                    Level.set(i, Terrain.BOOKSHELF);
+                    GameScene.updateMap(i);
+                    restocked = true;
+                }
+            }
+        }
+        if(restocked) GLog.p(Messages.get(this, "restocked"));
+        setKnown();
 	}
 	
 	@Override

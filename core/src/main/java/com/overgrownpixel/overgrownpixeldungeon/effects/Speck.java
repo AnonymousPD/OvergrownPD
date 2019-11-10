@@ -83,6 +83,8 @@ public class Speck extends Image {
     public static final int GLOWGAS     = 128;
     public static final int BALLGAS     = 129;
     public static final int FEAGAS      = 130;
+    public static final int HIGHGAS     = 131;
+    public static final int SLOW        = 132;
 	
 	private static final int SIZE = 7;
 	
@@ -145,6 +147,8 @@ public class Speck extends Image {
             case GLOWGAS:
             case BALLGAS:
             case FEAGAS:
+            case HIGHGAS:
+            case SLOW:
 			frame( film.get( STEAM ) );
 			break;
 		case CALM:
@@ -173,8 +177,6 @@ public class Speck extends Image {
 
             case MIASMA:
                 hardlight( Game.instance.getResources().getInteger(R.integer.miasma) );
-                speed.y = +32;
-                acc.y = +32;
                 angularSpeed = -30;
                 angle = Random.Float( 360 );
                 lifespan = Random.Float( 1f, 3f );
@@ -182,8 +184,6 @@ public class Speck extends Image {
 
             case FIREWIND:
                 hardlight( Game.instance.getResources().getInteger(R.integer.firewind) );
-                speed.y = +64;
-                acc.y = +64;
                 angularSpeed = -30;
                 angle = Random.Float( 360 );
                 lifespan = Random.Float( 1f, 3f );
@@ -191,81 +191,77 @@ public class Speck extends Image {
 
             case POPGAS:
                 hardlight( Game.instance.getResources().getInteger(R.integer.poppoplarpoisonparticle) );
-                speed.y = +8;
-                acc.y = +8;
-                angularSpeed = -8;
+                angularSpeed = -30;
                 angle = Random.Float( 360 );
                 lifespan = Random.Float( 1f, 3f );
                 break;
 
             case GLOWGAS:
                 hardlight( Game.instance.getResources().getInteger(R.integer.chandaliertailoisonparticle) );
-                speed.y = +9;
-                acc.y = +7;
-                angularSpeed = -6;
+                angularSpeed = -30;
                 angle = Random.Float( 360 );
                 lifespan = Random.Float( 1f, 3f );
                 break;
 
             case BALLGAS:
                 hardlight( Game.instance.getResources().getInteger(R.integer.ballcroppoisonparticle) );
-                speed.y = +64;
-                acc.y = +64;
-                angularSpeed = -64;
+                angularSpeed = -30;
                 angle = Random.Float( 360 );
                 lifespan = Random.Float( 1f, 3f );
                 break;
 
             case FEAGAS:
                 hardlight( Game.instance.getResources().getInteger(R.integer.flesheatingacidcloud) );
-                speed.y = +8;
-                acc.y = +32;
-                angularSpeed = -64;
+                angularSpeed = -30;
                 angle = Random.Float( 360 );
                 lifespan = Random.Float( 1f, 2f );
                 break;
 
+            case HIGHGAS:
+                hardlight( Game.instance.getResources().getInteger(R.integer.highsmoke) );
+                angularSpeed = 30;
+                angle = Random.Float( 360 );
+                lifespan = Random.Float( 1f, 1.5f );
+                break;
+
+            case SLOW:
+                hardlight( Game.instance.getResources().getInteger(R.integer.slowcloud) );
+                angularSpeed = 30;
+                angle = Random.Float( 360 );
+                lifespan = Random.Float( 1f, 1.5f );
+                break;
+
             case CLOUDOFCORR:
                 hardlight( Game.instance.getResources().getInteger(R.integer.cloudofcorr) );
-                speed.y = +16;
-                acc.y = +64;
-                angularSpeed = -66;
+                angularSpeed = -30;
                 angle = Random.Float( 360 );
                 lifespan = Random.Float( 1f, 2f );
                 break;
 
             case KNOWWIND:
                 hardlight( Game.instance.getResources().getInteger(R.integer.knowwind) );
-                speed.y = +32;
-                acc.y = +16;
-                angularSpeed = -64;
+                angularSpeed = -30;
                 angle = Random.Float( 360 );
                 lifespan = Random.Float( 1f, 4f );
                 break;
 
             case DIRTCLOUD:
                 hardlight( Game.instance.getResources().getInteger(R.integer.dirtcloud) );
-                speed.y = +8;
-                acc.y = +8;
-                angularSpeed = -16;
+                angularSpeed = -30;
                 angle = Random.Float( 360 );
                 lifespan = Random.Float( 3f, 5f );
                 break;
 
             case NECTAR:
                 hardlight( Game.instance.getResources().getInteger(R.integer.nectar) );
-                speed.y = -32;
-                acc.y = -32;
-                angularSpeed = +60;
+                angularSpeed = -30;
                 angle = Random.Float( 360 );
                 lifespan = Random.Float( 0.5f, 1.5f );
                 break;
 
             case DEPRESSANT:
                 hardlight( Game.instance.getResources().getInteger(R.integer.depressant) );
-                speed.y = +15;
-                acc.y = +15;
-                angularSpeed = -15;
+                angularSpeed = -30;
                 angle = Random.Float( 360 );
                 lifespan = Random.Float( 3f, 5f );
                 break;
@@ -591,6 +587,7 @@ public class Speck extends Image {
                 case FIREWIND:
                 case DIRTCLOUD:
                 case DEPRESSANT:
+                case SLOW:
 				am = (float)Math.sqrt( (p < 0.5f ? p : 1 - p) * 0.5f );
 				scale.set( 1 + p );
 				break;
@@ -605,6 +602,7 @@ public class Speck extends Image {
                 case GLOWGAS:
                 case BALLGAS:
                 case FEAGAS:
+                case HIGHGAS:
 				am = (float)Math.sqrt( (p < 0.5f ? p : 1 - p) );
 				scale.set( 1 + p );
 				break;

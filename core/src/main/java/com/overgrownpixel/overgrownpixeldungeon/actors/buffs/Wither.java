@@ -31,7 +31,7 @@ import com.watabou.noosa.Image;
 public class Wither extends FlavourBuff {
 	
 	{
-		type = buffType.POSITIVE;
+		type = buffType.NEGATIVE;
 		announced = true;
 	}
 	

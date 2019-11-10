@@ -24,6 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Secreting;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 
 public class PotionOfSecreting extends Potion {
@@ -36,7 +38,8 @@ public class PotionOfSecreting extends Potion {
 	
 	@Override
 	public void apply( Hero hero ) {
-
+        Buff.affect( hero, Secreting.class ).setHeal(Math.round(hero.HT), 0.25f, 0);
+        setKnown();
 	}
 	
 	@Override

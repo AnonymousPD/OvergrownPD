@@ -32,6 +32,7 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.Butter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CocosHalo;
 import com.overgrownpixel.overgrownpixeldungeon.effects.DarkBlock;
 import com.overgrownpixel.overgrownpixeldungeon.effects.EmoIcon;
+import com.overgrownpixel.overgrownpixeldungeon.effects.EyeHalo;
 import com.overgrownpixel.overgrownpixeldungeon.effects.FloatingText;
 import com.overgrownpixel.overgrownpixeldungeon.effects.IceBlock;
 import com.overgrownpixel.overgrownpixeldungeon.effects.RoseHalo;
@@ -93,7 +94,7 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
         FROZEN, ILLUMINATED, CHILLED, DARKENED,
         MARKED, HEALING, SHIELDED, HALOMETHANEBURNING,
         ROSESHIELDED, SHADOW, COCOSHIELDED, BUTTER,
-        SOULFIRE,
+        SOULFIRE, EYING,
 	}
 	
 	protected Animation idle;
@@ -116,6 +117,7 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
     protected Emitter soulfire;
 	
 	protected IceBlock iceBlock;
+    protected EyeHalo eye;
     protected Shadow shadow;
 	protected DarkBlock darkBlock;
 	protected TorchHalo light;
@@ -342,6 +344,9 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
                     Sample.INSTANCE.play( Assets.SND_BURNING );
                 }
                 break;
+            case EYING:
+                GameScene.effect( eye = new EyeHalo( this ));
+                break;
             case SOULFIRE:
                 soulfire = emitter();
                 soulfire.pour( SoulFlameParticle.FACTORY, 0.06f );
@@ -474,6 +479,11 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
                     iceBlock = null;
                 }
                 paused = false;
+                break;
+            case EYING:
+                if (eye != null){
+                    eye.putOut();
+                }
                 break;
             case BUTTER:
                 if (butter != null) {

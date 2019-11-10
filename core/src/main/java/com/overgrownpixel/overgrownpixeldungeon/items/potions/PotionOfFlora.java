@@ -24,7 +24,14 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
+import com.overgrownpixel.overgrownpixeldungeon.Assets;
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.items.Generator;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
+import com.watabou.noosa.audio.Sample;
+import com.watabou.utils.PathFinder;
 
 public class PotionOfFlora extends Potion {
 
@@ -36,8 +43,41 @@ public class PotionOfFlora extends Potion {
 	
 	@Override
 	public void apply( Hero hero ) {
+        for(int i : PathFinder.NEIGHBOURS8){
+            if(Dungeon.level.passable[hero.pos+i]){
+                try {
+                    Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
+                    seed.couch(hero.pos+i, null, false);
+                } catch (Exception e){
+                    OvergrownPixelDungeon.reportException(e);
+                }
+            }
+        }
 
+        setKnown();
 	}
+
+    @Override
+    public void shatter( int cell ) {
+
+        if (Dungeon.level.heroFOV[cell]) {
+            setKnown();
+
+            splash( cell );
+            Sample.INSTANCE.play( Assets.SND_SHATTER );
+        }
+
+        for (int offset : PathFinder.NEIGHBOURS9){
+            if(Dungeon.level.passable[cell + offset]){
+                try {
+                    Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
+                    seed.couch(cell + offset, null, false);
+                } catch (Exception e){
+                    OvergrownPixelDungeon.reportException(e);
+                }
+            }
+        }
+    }
 	
 	@Override
 	public int price() {

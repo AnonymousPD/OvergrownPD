@@ -286,7 +286,7 @@ public class QuickRecipe extends Component {
 				result.add(new QuickRecipe( new StewedMeat.threeMeat() ));
                 result.add(null);
                 result.add(null);
-                result.add(new QuickRecipe( new Wheat.threeWheat() ));
+                result.add(new QuickRecipe( new Wheat.threeWheat()));
 				result.add(null);
 				result.add(null);
 				result.add(new QuickRecipe( new MeatPie.Recipe(),

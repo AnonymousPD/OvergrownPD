@@ -24,7 +24,15 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.items.potions;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
+import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.TimekeepersHourglass;
+import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfTeleportation;
+import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.InterlevelScene;
+import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
+import com.watabou.noosa.Game;
 
 public class PotionOfTeleporting extends Potion {
 
@@ -36,6 +44,21 @@ public class PotionOfTeleporting extends Potion {
 	
 	@Override
 	public void apply( Hero hero ) {
+
+	    if (Dungeon.bossLevel() || Dungeon.depth <= 1) {
+
+            GLog.w(Messages.get(ScrollOfTeleportation.class, "no_tele"));
+            return;
+
+        }
+
+        Buff buff = hero.buff(TimekeepersHourglass.timeFreeze.class);
+        if (buff != null) buff.detach();
+
+        InterlevelScene.mode = InterlevelScene.Mode.RETURN;
+        InterlevelScene.returnDepth = Dungeon.depth-1;
+        InterlevelScene.returnPos = -1;
+        Game.switchScene( InterlevelScene.class );
 
 	}
 	

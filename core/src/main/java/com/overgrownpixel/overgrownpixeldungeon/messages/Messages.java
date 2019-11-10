@@ -68,6 +68,7 @@ public class Messages {
 	private static String[] prop_files = new String[]{
 			"com.overgrownpixel.overgrownpixeldungeon.messages.actors.actors",
 			"com.overgrownpixel.overgrownpixeldungeon.messages.items.items",
+            "com.overgrownpixel.overgrownpixeldungeon.messages.books.books",
 			"com.overgrownpixel.overgrownpixeldungeon.messages.journal.journal",
 			"com.overgrownpixel.overgrownpixeldungeon.messages.levels.levels",
 			"com.overgrownpixel.overgrownpixeldungeon.messages.plants.plants",

@@ -96,8 +96,10 @@ public class Assets {
 	public static final String IMP		= "mobs/npcs/demon.png";
 	public static final String RATKING	= "mobs/npcs/ratking.png";
 	public static final String BEE      = "mobs/bee.png";
+    public static final String GOOPLANT = "mobs/plantgoo.png";
 	public static final String MIMIC    = "mobs/mimic.png";
 	public static final String ROT_LASH = "mobs/minibosses/rot_lasher.png";
+    public static final String VINELASH = "mobs/vinelasher.png";
 	public static final String ROT_HEART= "mobs/minibosses/rot_heart.png";
 	public static final String GUARD    = "mobs/guard.png";
     public static final String PLANTS	= "mobs/livingplants.png";
