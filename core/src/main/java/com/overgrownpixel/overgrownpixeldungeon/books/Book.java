@@ -2,15 +2,18 @@ package com.overgrownpixel.overgrownpixeldungeon.books;
 
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookAncientAlchemistWar;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookHowToConsumeTheDead;
+import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookHowlingWind;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookImperium;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookJosephsLastThoughts;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookMorningOfTheMagicians;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookMysterieOfTheGrail;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookOfTheCreator;
+import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookOnDarkStars;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookOnTheRogue;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookProAsHeckGuideToSniper;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookSproutingNature;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookTheGoldenArrow;
+import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookTheGreatTree;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookThisTimeTheUniverse;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookYendorianDwarves;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
@@ -48,5 +51,8 @@ public class Book {
         allBooks.add(BookOnTheRogue.class);
         allBooks.add(BookSproutingNature.class);
         allBooks.add(BookJosephsLastThoughts.class);
+        allBooks.add(BookHowlingWind.class);
+        allBooks.add(BookTheGreatTree.class);
+        allBooks.add(BookOnDarkStars.class);
     }
 }
