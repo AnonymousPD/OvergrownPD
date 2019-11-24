@@ -112,5 +112,7 @@ public class FireImbue extends Buff {
 
 	{
 		immunities.add( Burning.class );
+		immunities.add( HellBurning.class );
+		immunities.add( HalomethaneBurning.class );
 	}
 }

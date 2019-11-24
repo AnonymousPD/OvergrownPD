@@ -78,6 +78,12 @@ public class Icecap extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new IceCapPoisonParticle().getColor(), 10);
+        Buff.affect(ch, FrostImbue.class, 2f);
+    }
+
+    @Override
     public void attackProc(Char enemy, int damage) {
         if (enemy instanceof Hero && ((Hero) enemy).subClass == HeroSubClass.WARDEN){
             Buff.affect(enemy, FrostImbue.class, 15f);

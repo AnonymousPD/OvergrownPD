@@ -52,6 +52,12 @@ public class Apricobush extends Plant {
         }
     }
 
+    @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new ApricobushPoisonParticle().getColor(), 10);
+        Buff.affect(ch, Healing.class).setHeal(5, 0, 1);
+    }
+
     protected void starve(Hero hero){
         if(hero.subClass == HeroSubClass.WARDEN){
             (hero.buff( Hunger.class )).reduceHunger(25f);

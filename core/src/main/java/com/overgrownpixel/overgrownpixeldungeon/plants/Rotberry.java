@@ -59,6 +59,12 @@ public class Rotberry extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new RotberryPoisonParticle().getColor(), 10);
+        Dungeon.level.drop( new Seed(), ch.pos ).sprite.drop();
+    }
+
+    @Override
     public void attackProc(Char enemy, int damage) {
         defaultProc(enemy, damage);
     }

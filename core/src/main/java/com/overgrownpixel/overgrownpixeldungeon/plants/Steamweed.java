@@ -54,6 +54,12 @@ public class Steamweed extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new SteamweedPoisonParticle().getColor(), 10);
+        Buff.affect(ch, Steaming.class).set(2f);
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

@@ -55,6 +55,12 @@ public class Gobgrape extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new GobgrapePoisonParticle().getColor(), 10);
+        Dungeon.level.drop(new Grape(), ch.pos).sprite.drop(ch.pos);
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

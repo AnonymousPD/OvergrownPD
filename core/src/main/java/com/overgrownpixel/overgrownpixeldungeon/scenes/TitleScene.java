@@ -37,7 +37,6 @@ import com.overgrownpixel.overgrownpixeldungeon.ui.ExitButton;
 import com.overgrownpixel.overgrownpixeldungeon.ui.LanguageButton;
 import com.overgrownpixel.overgrownpixeldungeon.ui.PrefsButton;
 import com.overgrownpixel.overgrownpixeldungeon.windows.WndStartGame;
-import com.watabou.glwrap.Blending;
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.Game;
@@ -66,7 +65,21 @@ public class TitleScene extends PixelScene {
 		archs.setSize( w, h );
 		add( archs );
 		
-		Image title = BannerSprites.get( BannerSprites.Type.PIXEL_DUNGEON );
+		final Image title = new Image(BannerSprites.get( BannerSprites.Type.PIXEL_DUNGEON )){
+            private float time = 0;
+            @Override
+            public void update() {
+                super.update();
+                int h = Camera.main.height;
+                float topRegion = Math.max(95f, h*0.45f);
+                if (OGPDSettings.landscape())
+                    y = (topRegion - height()) / 2f;
+                else
+                    y = 16 + (topRegion - height() - 16) / 2f;
+                y = y + (3 * Math.max(0f, (float)Math.sin( time += Game.elapsed )));
+                if (time >= 1f*Math.PI) time = 0;
+            }
+        };
 		add( title );
 
 		float topRegion = Math.max(95f, h*0.45f);
@@ -85,13 +98,11 @@ public class TitleScene extends PixelScene {
 			public void update() {
 				super.update();
 				am = Math.max(0f, (float)Math.sin( time += Game.elapsed ));
+				y = title.y;
+				angle = title.angle;
+				scale.y = title.scale.y;
+				scale.x = title.scale.x;
 				if (time >= 1.5f*Math.PI) time = 0;
-			}
-			@Override
-			public void draw() {
-				Blending.setLightMode();
-				super.draw();
-				Blending.setNormalMode();
 			}
 		};
 		signs.x = title.x + (title.width() - signs.width())/2f;

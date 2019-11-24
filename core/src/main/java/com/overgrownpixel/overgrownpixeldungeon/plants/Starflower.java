@@ -65,6 +65,12 @@ public class Starflower extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new StarflowerPoisonParticle().getColor(), 10);
+        Buff.prolong(ch, Recharging.class, 2f);
+    }
+
+    @Override
     public void attackProc(Char enemy, int damage) {
         defaultProc(enemy, damage);
     }

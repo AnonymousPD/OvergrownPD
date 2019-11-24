@@ -66,6 +66,12 @@ public class Shadowbloom extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new ShadowbloomPoisonParticle().getColor(), 10);
+        Buff.prolong(ch, Shadow.class, 2f);
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

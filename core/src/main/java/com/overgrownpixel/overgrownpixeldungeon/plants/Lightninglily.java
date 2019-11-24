@@ -41,6 +41,7 @@ import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
 import com.watabou.utils.Callback;
 import com.watabou.utils.PathFinder;
+import com.watabou.utils.Random;
 
 import java.util.ArrayList;
 
@@ -66,10 +67,25 @@ public class Lightninglily extends Plant {
 
     @Override
     public void activate() {
-        for(Mob mob : Dungeon.level.mobs){
+        for(Mob mob : Dungeon.level.mobs.toArray(new Mob[0])){
             shoot(pos, mob.pos);
         }
         shoot(pos, Dungeon.hero.pos);
+    }
+
+    @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new LightninglillyPoisonParticle().getColor(), 10);
+        int newpos;
+        int trys = 8;
+        do{
+            newpos = ch.pos + PathFinder.NEIGHBOURS8[Random.Int(8)];
+            trys--;
+            if(trys <= 0){
+                return;
+            }
+        } while (!Dungeon.level.passable[newpos]);
+        shoot(ch.pos, newpos);
     }
 
     public void shoot(int pos1, int pos2){

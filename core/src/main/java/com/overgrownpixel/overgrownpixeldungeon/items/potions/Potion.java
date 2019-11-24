@@ -49,9 +49,16 @@ import com.overgrownpixel.overgrownpixeldungeon.items.potions.elixirs.ElixirOfHo
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.ExoticPotion;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfCleansing;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfCorrosiveGas;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfHellstorm;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfMagicFire;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfOrb;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfShroudingFog;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfSleepParalysis;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfSnapFreeze;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfSoil;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfSowing;
 import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfStormClouds;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfTsunami;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfRegrowth;
 import com.overgrownpixel.overgrownpixeldungeon.journal.Catalog;
 import com.overgrownpixel.overgrownpixeldungeon.levels.Terrain;
@@ -314,6 +321,13 @@ public class Potion extends Item {
 		mustThrowPots.add(PotionOfSnapFreeze.class);
 		mustThrowPots.add(PotionOfShroudingFog.class);
 		mustThrowPots.add(PotionOfStormClouds.class);
+        mustThrowPots.add(PotionOfTsunami.class);
+        mustThrowPots.add(PotionOfSowing.class);
+        mustThrowPots.add(PotionOfSoil.class);
+        mustThrowPots.add(PotionOfSleepParalysis.class);
+        mustThrowPots.add(PotionOfOrb.class);
+        mustThrowPots.add(PotionOfMagicFire.class);
+        mustThrowPots.add(PotionOfHellstorm.class);
 		
 		//also all brews, hardcoded
 	}

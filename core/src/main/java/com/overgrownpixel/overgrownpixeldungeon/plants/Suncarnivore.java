@@ -34,6 +34,8 @@ import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
+import com.watabou.utils.PathFinder;
+import com.watabou.utils.Random;
 
 public class Suncarnivore extends Plant {
 
@@ -66,6 +68,21 @@ public class Suncarnivore extends Plant {
     @Override
     public void activate() {
         GameScene.add(Blob.seed(pos, 50, UnfilteredSunlight.class));
+    }
+
+    @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new SuncarnivorePoisonParticle().getColor(), 10);
+        int newpos;
+        int trys = 8;
+        do{
+            newpos = ch.pos + PathFinder.NEIGHBOURS8[Random.Int(8)];
+            trys--;
+            if(trys <= 0){
+                return;
+            }
+        } while (!Dungeon.level.passable[newpos]);
+        GameScene.add(Blob.seed(newpos, 50, UnfilteredSunlight.class));
     }
 
     @Override

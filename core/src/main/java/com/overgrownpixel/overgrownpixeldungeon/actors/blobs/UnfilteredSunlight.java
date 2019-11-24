@@ -53,7 +53,7 @@ public class UnfilteredSunlight extends Blob {
 					        if(ch.alignment != Char.Alignment.ALLY || ch.alignment != Char.Alignment.NEUTRAL){
                                 Buff.prolong( ch, Blindness.class, Random.Int( 2, 5 ) );
                                 if(Random.Boolean()){
-                                    ch.die(this);
+                                    ch.damage(ch.HP, this);
                                 }
                             }
                         }

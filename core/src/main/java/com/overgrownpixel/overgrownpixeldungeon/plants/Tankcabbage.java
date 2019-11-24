@@ -26,6 +26,8 @@ package com.overgrownpixel.overgrownpixeldungeon.plants;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.HalomethaneFire;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HalomethaneBurning;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.TankcabbagePoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
@@ -54,6 +56,12 @@ public class Tankcabbage extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new TankcabbagePoisonParticle().getColor(), 10);
+        Buff.affect(ch, HalomethaneBurning.class).reignite(ch);
+    }
+
+    @Override
     public Blob immunity() {
         return new HalomethaneFire();
     }
@@ -68,7 +76,7 @@ public class Tankcabbage extends Plant {
 
         @Override
         public void procEffect(Char attacker, Char defender, int damage) {
-
+            Buff.affect(defender, HalomethaneBurning.class).reignite(defender);
         }
 
         @Override

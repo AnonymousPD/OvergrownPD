@@ -34,6 +34,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Amok;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Burning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Charm;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HalomethaneBurning;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HellBurning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Terror;
 import com.overgrownpixel.overgrownpixeldungeon.effects.MagicMissile;
 import com.overgrownpixel.overgrownpixeldungeon.items.bombs.Bomb;
@@ -85,6 +86,11 @@ public class FlameB01 extends Mob {
         if(buff(HalomethaneBurning.class) != null){
             new Bomb().explode(this.pos);
             this.die(HalomethaneBurning.class);
+            return true;
+        }
+        if(buff(HellBurning.class) != null) {
+            new Bomb().explode(this.pos);
+            this.die(HellBurning.class);
             return true;
         }
         return super.act();
@@ -157,13 +163,13 @@ public class FlameB01 extends Mob {
             //if the mob is amoked...
             if ( buff(Amok.class) != null) {
                 //try to find an enemy mob to attack first.
-                for (Mob mob : Dungeon.level.mobs)
+                for (Mob mob : Dungeon.level.mobs.toArray(new Mob[0]))
                     if (mob.alignment == Alignment.ENEMY && mob != this && fieldOfView[mob.pos])
                         enemies.add(mob);
 
                 if (enemies.isEmpty()) {
                     //try to find ally mobs to attack second.
-                    for (Mob mob : Dungeon.level.mobs)
+                    for (Mob mob : Dungeon.level.mobs.toArray(new Mob[0]))
                         if (mob.alignment == Alignment.ALLY && mob != this && fieldOfView[mob.pos])
                             enemies.add(mob);
 
@@ -178,7 +184,7 @@ public class FlameB01 extends Mob {
                 //if the mob is an ally...
             } else if ( alignment == Alignment.ALLY ) {
                 //look for hostile mobs that are not passive to attack
-                for (Mob mob : Dungeon.level.mobs)
+                for (Mob mob : Dungeon.level.mobs.toArray(new Mob[0]))
                     if (mob.alignment == Alignment.ENEMY
                             && fieldOfView[mob.pos]
                             && mob.state != mob.PASSIVE)
@@ -187,12 +193,12 @@ public class FlameB01 extends Mob {
                 //if the mob is an enemy...
             } else if (alignment == Alignment.ENEMY) {
                 //look for ally mobs to attack
-                for (Mob mob : Dungeon.level.mobs)
+                for (Mob mob : Dungeon.level.mobs.toArray(new Mob[0]))
                     if (mob.alignment == Alignment.ALLY && fieldOfView[mob.pos])
                         enemies.add(mob);
 
                     //look for bats to kill
-                for (Mob mob : Dungeon.level.mobs)
+                for (Mob mob : Dungeon.level.mobs.toArray(new Mob[0]))
                     if (mob instanceof Bat)
                         enemies.add(mob);
 

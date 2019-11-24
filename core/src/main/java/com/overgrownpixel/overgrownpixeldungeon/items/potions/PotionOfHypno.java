@@ -48,7 +48,7 @@ public class PotionOfHypno extends Potion {
             Sample.INSTANCE.play( Assets.SND_SHATTER );
         }
 
-        for(Mob mob : Dungeon.level.mobs){
+        for(Mob mob : Dungeon.level.mobs.toArray(new Mob[0])){
             if(mob.fieldOfView[cell]){
                 Buff.affect(mob, Corruption.class);
             }

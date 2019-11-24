@@ -49,7 +49,7 @@ public class NaturesLullaby extends Spell {
         new Flare(8, 14).color(Game.instance.getResources().getInteger(R.integer.natureslullaby),true).show(hero.sprite, 0.5f);
         Invisibility.dispel();
         GLog.h(Messages.get(this, "sleep"));
-        for(Mob mob : Dungeon.level.mobs){
+        for(Mob mob : Dungeon.level.mobs.toArray(new Mob[0])){
             if(mob instanceof LivingPlant){
                 if(Dungeon.level.heroFOV[mob.pos]){
                     ((LivingPlant) mob).becomePlant = true;

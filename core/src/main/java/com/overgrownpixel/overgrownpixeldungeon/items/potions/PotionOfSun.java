@@ -47,7 +47,7 @@ public class PotionOfSun extends Potion {
     public void shatter(int cell) {
         GameScene.flash(Game.instance.getResources().getInteger(R.integer.whiteflashsun));
         ArrayList<Mob> mobs = new ArrayList<>();
-        for(Mob mob : Dungeon.level.mobs){
+        for(Mob mob : Dungeon.level.mobs.toArray(new Mob[0])){
             if(mob.properties().contains(Char.Property.UNDEAD)){
                 mobs.add(mob);
             }

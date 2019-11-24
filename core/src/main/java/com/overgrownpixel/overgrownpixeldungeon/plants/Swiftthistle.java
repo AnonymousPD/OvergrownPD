@@ -57,7 +57,7 @@ public class Swiftthistle extends Plant {
 		if (ch == Dungeon.hero) {
 			Buff.affect(ch, TimeBubble.class).reset();
 			if (Dungeon.hero.subClass == HeroSubClass.WARDEN){
-				Buff.affect(ch, Haste.class, 1f);
+				Buff.affect(ch, Haste.class, 3f);
 			}
 		}
 	}
@@ -65,6 +65,12 @@ public class Swiftthistle extends Plant {
     @Override
     public void activate() {
         spawnLasher(pos);
+    }
+
+    @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new SwiftthistlePoisonParticle().getColor(), 10);
+        Buff.affect(ch, Haste.class, 2f);
     }
 
     @Override

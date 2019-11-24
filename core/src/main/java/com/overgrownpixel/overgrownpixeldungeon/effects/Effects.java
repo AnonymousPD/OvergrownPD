@@ -37,8 +37,10 @@ public class Effects {
 		CHAIN,
 		DEATH_RAY,
 		LIGHT_RAY,
-		HEALTH_RAY
-	};
+		HEALTH_RAY,
+        VINE_RAY,
+        WORM_RAY,
+	}
 	
 	public static Image get( Type type ) {
 		Image icon = new Image( Assets.EFFECTS );
@@ -67,6 +69,12 @@ public class Effects {
 			case HEALTH_RAY:
 				icon.frame(icon.texture.uvRect(16, 30, 32, 38));
 				break;
+            case VINE_RAY:
+                icon.frame(icon.texture.uvRect(16, 37, 32, 45));
+                break;
+            case WORM_RAY:
+                icon.frame(icon.texture.uvRect(16, 44, 32, 52));
+                break;
 		}
 		return icon;
 	}

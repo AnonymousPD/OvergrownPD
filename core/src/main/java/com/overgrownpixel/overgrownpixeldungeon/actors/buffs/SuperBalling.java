@@ -47,6 +47,9 @@ public class SuperBalling extends FlavourBuff {
 
     @Override
     public boolean attachTo(Char target) {
+        if(target.isImmune(this.getClass())){
+            return super.attachTo(target);
+        }
         target.sprite.origin.set( target.sprite.width / 2, target.sprite.height - DungeonTilemap.SIZE / 2 );
         target.sprite.angularSpeed = Random.Int( 2 ) == 0 ? -1440 : 1440;
         return super.attachTo(target);

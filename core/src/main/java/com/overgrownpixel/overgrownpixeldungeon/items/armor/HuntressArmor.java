@@ -50,7 +50,7 @@ public class HuntressArmor extends ClassArmor {
 		
 		Item proto = new Shuriken();
 		
-		for (Mob mob : Dungeon.level.mobs) {
+		for (Mob mob : Dungeon.level.mobs.toArray(new Mob[0])) {
 			if (Dungeon.level.distance(curUser.pos, mob.pos) <= 12
 				&& Dungeon.level.heroFOV[mob.pos]) {
 				

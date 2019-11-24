@@ -52,10 +52,10 @@ public class Musclemoss extends Plant {
             int path;
             do{
                 path = PathFinder.NEIGHBOURS8[Random.Int( 8 )];
-                opposite = pos + path;
+                opposite = enemy.pos + path;
             } while ((Dungeon.level.passable[opposite]) && (Dungeon.level.passable[opposite+path]));
             if((enemy instanceof Mob && Dungeon.level.mobs.contains(enemy)) || enemy instanceof Hero){
-                Ballistica trajectory = new Ballistica(pos, opposite, Ballistica.MAGIC_BOLT);
+                Ballistica trajectory = new Ballistica(enemy.pos, opposite, Ballistica.MAGIC_BOLT);
                 WandOfBlastWave.throwChar(enemy, trajectory, damage*10);
             }
         } catch (Exception e){
@@ -70,10 +70,10 @@ public class Musclemoss extends Plant {
             int path;
             do{
                 path = PathFinder.NEIGHBOURS8[Random.Int( 8 )];
-                opposite = pos + path;
+                opposite = ch.pos + path;
             } while ((Dungeon.level.passable[opposite]) && (Dungeon.level.passable[opposite+path]));
             if((ch instanceof Mob && Dungeon.level.mobs.contains(ch)) || ch instanceof Hero){
-                Ballistica trajectory = new Ballistica(pos, opposite, Ballistica.MAGIC_BOLT);
+                Ballistica trajectory = new Ballistica(ch.pos, opposite, Ballistica.MAGIC_BOLT);
                 WandOfBlastWave.throwChar(ch, trajectory, 100);
             }
         } catch (Exception e){
@@ -95,6 +95,25 @@ public class Musclemoss extends Plant {
                     Ballistica trajectory = new Ballistica(pos, opposite, Ballistica.MAGIC_BOLT);
                     WandOfBlastWave.throwChar(Actor.findChar(pos), trajectory, 100);
                 }
+            }
+        } catch (Exception e){
+            OvergrownPixelDungeon.reportException(e);
+        }
+    }
+
+    @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new MusclemossPoisonParticle().getColor(), 10);
+        try{
+            int opposite;
+            int path;
+            do{
+                path = PathFinder.NEIGHBOURS8[Random.Int( 8 )];
+                opposite = ch.pos + path;
+            } while ((Dungeon.level.passable[opposite]) && (Dungeon.level.passable[opposite+path]));
+            if((ch instanceof Mob && Dungeon.level.mobs.contains(ch)) || ch instanceof Hero){
+                Ballistica trajectory = new Ballistica(ch.pos, opposite, Ballistica.MAGIC_BOLT);
+                WandOfBlastWave.throwChar(ch, trajectory, 100);
             }
         } catch (Exception e){
             OvergrownPixelDungeon.reportException(e);

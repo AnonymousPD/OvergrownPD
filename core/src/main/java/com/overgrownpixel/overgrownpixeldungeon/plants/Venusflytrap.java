@@ -71,6 +71,12 @@ public class Venusflytrap extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new VenusflytrapPoisonParticle().getColor(), 10);
+        Buff.affect( ch, Secreting.class ).setHeal(2, 2f, 2);
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

@@ -149,7 +149,7 @@ public class Thief extends Mob {
 			item.updateQuickslot();
 
 			if (item instanceof Honeypot){
-				this.item = ((Honeypot)item).shatter(this, this.pos);
+				this.item = ((Honeypot)item).shatter(this, this.pos, true);
 				item.detach( hero.belongings.backpack );
 			} else {
 				this.item = item.detach( hero.belongings.backpack );

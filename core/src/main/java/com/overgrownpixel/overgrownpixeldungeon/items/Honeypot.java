@@ -74,7 +74,7 @@ public class Honeypot extends Item {
 			
 			detach( hero.belongings.backpack );
 
-			shatter( hero, hero.pos ).collect();
+			shatter( hero, hero.pos, true ).collect();
 
 			hero.next();
 
@@ -86,11 +86,11 @@ public class Honeypot extends Item {
 		if (Dungeon.level.pit[cell]) {
 			super.onThrow( cell );
 		} else {
-			Dungeon.level.drop(shatter( null, cell ), cell);
+			Dungeon.level.drop(shatter( null, cell, true ), cell);
 		}
 	}
 	
-	public Item shatter( Char owner, int pos ) {
+	public Item shatter( Char owner, int pos, boolean shatteredPot ) {
 		
 		if (Dungeon.level.heroFOV[pos]) {
 			Sample.INSTANCE.play( Assets.SND_SHATTER );
@@ -126,9 +126,17 @@ public class Honeypot extends Item {
 			bee.sprite.parent.add( new AlphaTweener( bee.sprite, 1, 0.15f ) );
 			
 			Sample.INSTANCE.play( Assets.SND_BEE );
-			return new ShatteredPot();
+			if(shatteredPot){
+                return new ShatteredPot();
+            } else {
+			    return null;
+            }
 		} else {
-			return this;
+            if(shatteredPot){
+                return this;
+            } else {
+                return null;
+            }
 		}
 	}
 	

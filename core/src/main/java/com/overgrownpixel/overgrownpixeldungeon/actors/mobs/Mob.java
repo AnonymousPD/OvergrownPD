@@ -43,6 +43,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Luck;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Preparation;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Sleep;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.SoulMark;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Starving;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Terror;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Weakness;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
@@ -202,6 +203,10 @@ public abstract class Mob extends Char {
 		
 		boolean enemyInFOV = enemy != null && enemy.isAlive() && fieldOfView[enemy.pos] && enemy.invisible <= 0;
 
+		if(buff(Starving.class) != null && !this.isImmune(Starving.class)){
+		    damage(1, Starving.class);
+        }
+
 		return state.act( enemyInFOV, justAlerted );
 	}
 	
@@ -249,13 +254,13 @@ public abstract class Mob extends Char {
             //if the mob is amoked...
             if ( buff(Amok.class) != null) {
                 //try to find an enemy mob to attack first.
-                for (Mob mob : Dungeon.level.mobs)
+                for (Mob mob : Dungeon.level.mobs.toArray(new Mob[0]))
                     if (mob.alignment == Alignment.ENEMY && mob != this && fieldOfView[mob.pos])
                         enemies.add(mob);
 
                 if (enemies.isEmpty()) {
                     //try to find ally mobs to attack second.
-                    for (Mob mob : Dungeon.level.mobs)
+                    for (Mob mob : Dungeon.level.mobs.toArray(new Mob[0]))
                         if (mob.alignment == Alignment.ALLY && mob != this && fieldOfView[mob.pos])
                             enemies.add(mob);
 
@@ -270,7 +275,7 @@ public abstract class Mob extends Char {
                 //if the mob is an ally...
             } else if ( alignment == Alignment.ALLY ) {
                 //look for hostile mobs to attack
-                for (Mob mob : Dungeon.level.mobs)
+                for (Mob mob : Dungeon.level.mobs.toArray(new Mob[0]))
                     if (mob.alignment == Alignment.ENEMY && fieldOfView[mob.pos])
                         //intelligent allies do not target mobs which are passive, wandering, or asleep
                         if (!intelligentAlly ||
@@ -281,7 +286,7 @@ public abstract class Mob extends Char {
                 //if the mob is an enemy...
             } else if (alignment == Alignment.ENEMY) {
                 //look for ally mobs to attack
-                for (Mob mob : Dungeon.level.mobs)
+                for (Mob mob : Dungeon.level.mobs.toArray(new Mob[0]))
                     if (mob.alignment == Alignment.ALLY && fieldOfView[mob.pos])
                         enemies.add(mob);
 
@@ -758,7 +763,7 @@ public abstract class Mob extends Char {
 				target = enemy.pos;
 
 				if (Dungeon.isChallenged( Challenges.SWARM_INTELLIGENCE )) {
-					for (Mob mob : Dungeon.level.mobs) {
+					for (Mob mob : Dungeon.level.mobs.toArray(new Mob[0])) {
 						if (Dungeon.level.distance(pos, mob.pos) <= 8 && mob.state != mob.HUNTING) {
 							mob.beckon( target );
 						}
@@ -794,7 +799,7 @@ public abstract class Mob extends Char {
 				target = enemy.pos;
 
 				if (Dungeon.isChallenged( Challenges.SWARM_INTELLIGENCE )) {
-					for (Mob mob : Dungeon.level.mobs) {
+					for (Mob mob : Dungeon.level.mobs.toArray(new Mob[0])) {
 						if (Dungeon.level.distance(pos, mob.pos) <= 8 && mob.state != mob.HUNTING) {
 							mob.beckon( target );
 						}

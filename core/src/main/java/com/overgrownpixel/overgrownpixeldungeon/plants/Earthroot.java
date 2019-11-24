@@ -72,6 +72,16 @@ public class Earthroot extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new EarthrootPoisonParticle().getColor(), 10);
+        Buff.affect(ch, Barkskin.class).set(2, 2);
+        if (Dungeon.level.heroFOV[ch.pos]) {
+            CellEmitter.bottom( ch.pos ).start( EarthParticle.FACTORY, 0.05f, 8 );
+            Camera.main.shake( 1, 0.4f );
+        }
+    }
+
+    @Override
     public void attackProc(Char enemy, int damage) {
         if (enemy == Dungeon.hero) {
             if (Dungeon.hero.subClass == HeroSubClass.WARDEN){

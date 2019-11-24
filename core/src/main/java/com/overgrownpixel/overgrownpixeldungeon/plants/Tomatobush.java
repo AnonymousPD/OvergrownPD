@@ -61,6 +61,12 @@ public class Tomatobush extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new TomatobushPoisonParticle().getColor(), 10);
+        explode(ch.pos, ch);
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

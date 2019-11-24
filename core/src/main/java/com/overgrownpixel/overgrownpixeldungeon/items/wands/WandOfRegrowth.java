@@ -344,6 +344,12 @@ public class WandOfRegrowth extends Wand {
         }
 
         @Override
+        public void spiceEffect(Char ch) {
+            ch.sprite.burst(new DewcatcherPoisonParticle().getColor(), 10);
+            activate(ch);
+        }
+
+        @Override
         public void attackProc(Char enemy, int damage) {
 
         }
@@ -424,6 +430,12 @@ public class WandOfRegrowth extends Wand {
                 Dungeon.level.drop(Generator.random(Generator.Category.SEED), c).sprite.drop(pos);
                 candidates.remove(c);
             }
+        }
+
+        @Override
+        public void spiceEffect(Char ch) {
+            ch.sprite.burst(new SeedPodPoisonParticle().getColor(), 10);
+            activate(ch);
         }
 
         @Override

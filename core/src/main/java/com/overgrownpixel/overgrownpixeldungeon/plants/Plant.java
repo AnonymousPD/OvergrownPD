@@ -49,6 +49,7 @@ import com.overgrownpixel.overgrownpixeldungeon.levels.features.Door;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
+import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
@@ -77,6 +78,13 @@ public abstract class Plant implements Bundlable {
 		}
 
         wither();
+
+		if(ch instanceof Hero){
+		    if(((Hero) ch).lastSeedEaten == this.getClass()){
+                GLog.i(Messages.get(this, "seed_eaten", this.plantName));
+                return;
+            }
+        }
 
         if(!(this instanceof Rotberry) && !playerplanted){
             if(ch instanceof LivingPlant){
@@ -205,6 +213,8 @@ public abstract class Plant implements Bundlable {
 	public abstract void activate( Char ch );
 
     public abstract void activate();
+
+    public abstract void spiceEffect(Char ch);
 
     public abstract Blob immunity();
 
@@ -479,6 +489,14 @@ public abstract class Plant implements Bundlable {
 
 		public void eatEffect(Hero hero){
             (hero.buff( Hunger.class )).satisfy( 30f );
+            hero.lastSeedEaten = this.plantClass;
+            Plant plant;
+            try{
+                plant = this.getPlantClass().newInstance();
+                GLog.i(Messages.get(Seed.class, "seed_eaten", plant.plantName));
+            } catch (Exception e){
+                OvergrownPixelDungeon.reportException(e);
+            }
         }
 		
 		public Plant couch( int pos, Level level, boolean playerplanted ) {
@@ -551,6 +569,9 @@ public abstract class Plant implements Bundlable {
 
         @Override
         public void activate() {}
+
+        @Override
+        public void spiceEffect(Char ch) {}
 
         @Override
         public Blob immunity() {

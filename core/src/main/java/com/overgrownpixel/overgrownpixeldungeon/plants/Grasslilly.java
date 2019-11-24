@@ -75,6 +75,19 @@ public class Grasslilly extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new GrasslillyPoisonParticle().getColor(), 10);
+        try {
+            Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
+            Plant plant = seed.plantClass.newInstance();
+            plant.pos = ch.pos;
+            plant.activate(ch);
+        } catch (Exception e){
+            OvergrownPixelDungeon.reportException(e);
+        }
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

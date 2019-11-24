@@ -26,6 +26,7 @@ package com.overgrownpixel.overgrownpixeldungeon.items.food;
 
 import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Badges;
+import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
 import com.overgrownpixel.overgrownpixeldungeon.Statistics;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Buff;
@@ -38,36 +39,67 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.SpellSprite;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfRecharging;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Plant;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
+import com.overgrownpixel.overgrownpixeldungeon.windows.WndBag;
 import com.watabou.noosa.audio.Sample;
+import com.watabou.utils.Bundle;
 
 import java.util.ArrayList;
 
 public class Food extends Item {
 
 	public static final float TIME_TO_EAT	= 3f;
+    public static final float TIME_TO_SPICE	= 2f;
 	
 	public static final String AC_EAT	= "EAT";
+
+    public static final String AC_SPICE	= "SPICE";
 	
 	public float energy = Hunger.HUNGRY;
 	public String message = Messages.get(this, "eat_msg");
-	
-	{
+
+	public Class seed = null;
+    public static final String SEED	= "SPICE";
+
+    protected WndBag.Mode mode = WndBag.Mode.SEED;
+    protected String inventoryTitle = Messages.get(this, "inv_title");
+
+    @Override
+    public void storeInBundle(Bundle bundle) {
+        super.storeInBundle(bundle);
+        bundle.put(SEED, seed);
+    }
+
+    @Override
+    public void restoreFromBundle(Bundle bundle) {
+        super.restoreFromBundle(bundle);
+        seed = bundle.getClass(SEED);
+        if(seed != null){
+            name = Messages.get(this, "name") + " " + Messages.get(this, "spiced_with").toLowerCase() + " " + Messages.get(this.seed, "name");
+        }
+    }
+
+    {
 		stackable = true;
 		image = ItemSpriteSheet.RATION;
 
 		bones = true;
+
+		defaultAction = AC_EAT;
 	}
 	
 	@Override
 	public ArrayList<String> actions( Hero hero ) {
 		ArrayList<String> actions = super.actions( hero );
 		actions.add( AC_EAT );
+        if(seed == null) actions.add( AC_SPICE );
 		return actions;
 	}
-	
-	@Override
+
+    @Override
 	public void execute( Hero hero, String action ) {
 
 		super.execute( hero, action );
@@ -99,9 +131,40 @@ public class Food extends Item {
 			Badges.validateFoodEaten();
 			
 		}
+
+        if (action.equals( AC_SPICE )) {
+            GameScene.selectItem( itemSelector, mode, inventoryTitle );
+        }
 	}
 
-	public void eatEffect(Char hero){}
+    protected static WndBag.Listener itemSelector = new WndBag.Listener() {
+        @Override
+        public void onSelect( Item item ) {
+
+            if (item == null) return;
+
+            Item newItem = curItem.split(1);
+            if(newItem != null){
+                ((Food) newItem).seed = ((Plant.Seed) item).getPlantClass();
+                curUser.spend( TIME_TO_SPICE );
+                item.detach(curUser.belongings.backpack);
+                ((Food) curItem).name = Messages.get(curItem.getClass(), "name") + " " + Messages.get(curItem.getClass(), "spiced_with").toLowerCase() + " " + Messages.get(((Food) curItem).seed, "name");
+            } else {
+                return;
+            }
+        }
+    };
+
+	public void eatEffect(Char hero){
+        if(seed != null){
+            try{
+                Plant plant = (Plant) seed.newInstance();
+                plant.spiceEffect(hero);
+            } catch (Exception e){
+                OvergrownPixelDungeon.reportException(e);
+            }
+        }
+    }
 	
 	protected void satisfy( Hero hero ){
 		Buff.affect(hero, Hunger.class).satisfy( energy );

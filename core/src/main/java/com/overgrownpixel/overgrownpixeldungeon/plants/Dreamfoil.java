@@ -82,6 +82,13 @@ public class Dreamfoil extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new DreamfoilPoisonParticle().getColor(), 10);
+        Buff.affect(ch, BlobImmunity.class, 2f);
+
+    }
+
+    @Override
     public void attackProc(Char enemy, int damage) {
 	    if(enemy instanceof Hero){
             defaultProc(enemy, damage);

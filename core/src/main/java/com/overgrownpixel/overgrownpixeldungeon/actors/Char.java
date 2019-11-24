@@ -28,8 +28,12 @@ import com.overgrownpixel.overgrownpixeldungeon.Assets;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Electricity;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.FiendFire;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Fire;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Miasma;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.PoisonGas;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.ToxicGas;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.UnfilteredSunlight;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Adrenaline;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ArcaneArmor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Balling;
@@ -49,28 +53,34 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Doom;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Drunk;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.EarthImbue;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Feelers;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FiendBurning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FireImbue;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Frost;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.FrostImbue;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HalomethaneBurning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Haste;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HeatAura;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.HellBurning;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.High;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Honeyed;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Hunger;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.IceAura;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.IronSkin;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MagicalShield;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MagicalSleep;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.MarkOfTheNut;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Numb;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Ooze;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Paralysis;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ParasiticInfection;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ParasiticSymbiosis;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.PlagueAura;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Poison;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Preparation;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.RoseBarrier;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Secreting;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Shadow;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Shield;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.ShieldBuff;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Slippery;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Slow;
@@ -90,10 +100,14 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Wither;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Shaman;
 import com.overgrownpixel.overgrownpixeldungeon.items.BrokenSeal;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.AntiMagic;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Brimstone;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.glyphs.Potential;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfFirelightning;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.PotionOfLightning;
+import com.overgrownpixel.overgrownpixeldungeon.items.potions.exotic.PotionOfBallLightning;
 import com.overgrownpixel.overgrownpixeldungeon.items.rings.RingOfElements;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfRetribution;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.exotic.ScrollOfPsionicBlast;
@@ -216,7 +230,7 @@ public abstract class Char extends Actor {
 
 		if (enemy == null) return false;
 
-		if(buff(Shadow.class) != null){
+		if(buff(Shadow.class) != null && !this.isImmune(Shadow.class)){
 		    return false;
         }
 		
@@ -396,12 +410,20 @@ public abstract class Char extends Actor {
 	        return;
         }
 
-        if(buff(RoseBarrier.class) != null){
+        if(buff(RoseBarrier.class) != null && !this.isImmune(RoseBarrier.class)){
             return;
         }
 
-        if(buff(Cocoshield.class) != null){
+        if(buff(Shield.class) != null && !this.isImmune(Shield.class)){
             return;
+        }
+
+        if(buff(Cocoshield.class) != null && !this.isImmune(Cocoshield.class)){
+            return;
+        }
+
+        if(buff(Numb.class) != null && !this.isImmune(Numb.class)){
+            dmg /= 2;
         }
 		
 		if (!isAlive() || dmg < 0) {
@@ -415,16 +437,19 @@ public abstract class Char extends Actor {
 		if (c != null){
 			c.recover();
 		}
+        if (this.buff(IronSkin.class) != null  && !this.isImmune(IronSkin.class)){
+            dmg = 1;
+        }
 		if (this.buff(Frost.class) != null){
 			Buff.detach( this, Frost.class );
 		}
 		if (this.buff(MagicalSleep.class) != null){
 			Buff.detach(this, MagicalSleep.class);
 		}
-		if (this.buff(Doom.class) != null){
+		if (this.buff(Doom.class) != null && !this.isImmune(Doom.class)){
 			dmg *= 2;
 		}
-        if (this.buff(SoulFire.class) != null){
+        if (this.buff(SoulFire.class) != null && !this.isImmune(SoulFire.class)){
             dmg *= 2;
         }
 		
@@ -445,7 +470,7 @@ public abstract class Char extends Actor {
 			buff( Paralysis.class ).processDamage(dmg);
 		}
 
-        if (buff( BeetleInfected.class ) != null) {
+        if (buff( BeetleInfected.class ) != null && !this.isImmune(BeetleInfected.class)) {
             dmg += 2;
         }
 
@@ -603,7 +628,7 @@ public abstract class Char extends Actor {
 			}
 		}
 
-        if(buff(TrailOfFire.class) != null){
+        if(buff(TrailOfFire.class) != null && !this.isImmune(TrailOfFire.class)){
             if(this instanceof Hero){
                 for(Mob mob : Dungeon.hero.visibleEnemiesList()){
                     Buff.prolong(mob, Vertigo.class, Vertigo.DURATION);
@@ -629,11 +654,11 @@ public abstract class Char extends Actor {
             }
         }
 
-        if(buff(TrailOfFire.class) != null){
+        if(buff(TrailOfFire.class) != null && !this.isImmune(TrailOfFire.class)){
             GameScene.add(Blob.seed(pos, 1, Fire.class));
         }
 
-        if(buff(Sprouting.class) != null
+        if(buff(Sprouting.class) != null && !this.isImmune(Sprouting.class)
                 && (Dungeon.level.map[pos] == Terrain.GRASS || Dungeon.level.map[pos] == Terrain.EMPTY) ){
             Level.set( pos, Terrain.HIGH_GRASS );
             GameScene.updateMap( pos );
@@ -657,13 +682,13 @@ public abstract class Char extends Actor {
 			Dungeon.level.press( pos, this );
 		}
 
-        if(buff(Balling.class) != null){
+        if(buff(Balling.class) != null && !this.isImmune(Balling.class)){
             if(this instanceof Hero){
                 for(Mob ch : ((Hero) this).visibleEnemiesList()){
                     Buff.prolong(ch, Balling.class, Balling.DURATION);
                 }
             } else {
-                for(Mob mob : Dungeon.level.mobs){
+                for(Mob mob : Dungeon.level.mobs.toArray(new Mob[0])){
                     if(this.fieldOfView[mob.pos]){
                         Buff.prolong(mob, Balling.class, Balling.DURATION);
                     }
@@ -674,13 +699,13 @@ public abstract class Char extends Actor {
             }
         }
 
-        if(buff(SuperBalling.class) != null){
+        if(buff(SuperBalling.class) != null && !this.isImmune(SuperBalling.class)){
             if(this instanceof Hero){
                 for(Mob ch : ((Hero) this).visibleEnemiesList()){
                     Buff.prolong(ch, Vertigo.class, Vertigo.DURATION);
                 }
             } else {
-                for(Mob mob : Dungeon.level.mobs){
+                for(Mob mob : Dungeon.level.mobs.toArray(new Mob[0])){
                     if(this.fieldOfView[mob.pos]){
                         Buff.prolong(mob, Vertigo.class, Vertigo.DURATION);
                     }
@@ -691,7 +716,7 @@ public abstract class Char extends Actor {
             }
         }
 
-		if(buff(HeatAura.class) != null){
+		if(buff(HeatAura.class) != null && !this.isImmune(HeatAura.class)){
 		    for(int p : PathFinder.NEIGHBOURS9){
 		        if(Dungeon.level.map[pos+p] == Terrain.WATER){
                     Level.set(pos+p, Terrain.EMPTY);
@@ -699,13 +724,13 @@ public abstract class Char extends Actor {
             }
         }
 
-        if(buff(IceAura.class) != null){
+        if(buff(IceAura.class) != null && !this.isImmune(IceAura.class)){
             if(this instanceof Hero){
                 for(Mob mob : ((Hero) this).visibleEnemiesList()){
                     Buff.prolong( mob, Frost.class, Frost.duration( mob ) * Random.Float( 1.0f, 1.5f ) );
                 }
             } else {
-                for(Mob mob : Dungeon.level.mobs){
+                for(Mob mob : Dungeon.level.mobs.toArray(new Mob[0])){
                     if(this.fieldOfView[mob.pos]){
                         if(mob != this){
                             Buff.prolong( mob, Frost.class, Frost.duration( mob ) * Random.Float( 1.0f, 1.5f ) );
@@ -714,6 +739,25 @@ public abstract class Char extends Actor {
                 }
                 if(this.fieldOfView[Dungeon.hero.pos]){
                     Buff.prolong( Dungeon.hero, Frost.class, Frost.duration( Dungeon.hero ) * Random.Float( 1.0f, 1.5f ) );
+                }
+            }
+        }
+
+        if(buff(PlagueAura.class) != null && !this.isImmune(PlagueAura.class)){
+            if(this instanceof Hero){
+                for(Mob mob : ((Hero) this).visibleEnemiesList()){
+                    Buff.affect(mob, Doom.class);
+                }
+            } else {
+                for(Mob mob : Dungeon.level.mobs.toArray(new Mob[0])){
+                    if(this.fieldOfView[mob.pos]){
+                        if(mob != this){
+                            Buff.affect(mob, Doom.class);
+                        }
+                    }
+                }
+                if(this.fieldOfView[Dungeon.hero.pos]){
+                    Buff.affect(Dungeon.hero, Doom.class);
                 }
             }
         }
@@ -786,22 +830,23 @@ public abstract class Char extends Actor {
 
 	public enum Property{
 		BOSS ( new HashSet<Class>( Arrays.asList(Grim.class, GrimTrap.class, ScrollOfRetribution.class, ScrollOfPsionicBlast.class)),
-				new HashSet<Class>( Arrays.asList(Corruption.class, StoneOfAggression.Aggression.class) )),
+				new HashSet<Class>( Arrays.asList(Corruption.class, StoneOfAggression.Aggression.class, Balling.class, SuperBalling.class) )),
 		MINIBOSS ( new HashSet<Class>(),
-				new HashSet<Class>( Arrays.asList(Corruption.class) )),
+				new HashSet<Class>( Arrays.asList(Corruption.class, Doom.class, Balling.class, SuperBalling.class) )),
 		UNDEAD,
-		DEMONIC,
+		DEMONIC ( new HashSet<Class>(),
+                new HashSet<Class>( Arrays.asList(FiendBurning.class))),
 		INORGANIC ( new HashSet<Class>(),
 				new HashSet<Class>( Arrays.asList(Bleeding.class, ToxicGas.class, Poison.class) )),
         PLANT( new HashSet<Class>(),
-                new HashSet<Class>()),
+                new HashSet<Class>(Arrays.asList(UnfilteredSunlight.class, Miasma.class))),
 		BLOB_IMMUNE ( new HashSet<Class>(),
 				new HashSet<Class>( Arrays.asList(Blob.class) )),
 		FIERY ( new HashSet<Class>( Arrays.asList(WandOfFireblast.class)),
-				new HashSet<Class>( Arrays.asList(Burning.class, Blazing.class, HalomethaneBurning.class))),
+				new HashSet<Class>( Arrays.asList(Burning.class, Blazing.class, HalomethaneBurning.class, HellBurning.class, FiendFire.class, PotionOfFirelightning.class))),
 		ACIDIC ( new HashSet<Class>( Arrays.asList(Corrosion.class)),
-				new HashSet<Class>( Arrays.asList(Ooze.class))),
-		ELECTRIC ( new HashSet<Class>( Arrays.asList(WandOfLightning.class, Shocking.class, Potential.class, Electricity.class, ShockingDart.class)),
+				new HashSet<Class>( Arrays.asList(Ooze.class, PoisonGas.class, ToxicGas.class))),
+		ELECTRIC ( new HashSet<Class>( Arrays.asList(WandOfLightning.class, Shocking.class, Potential.class, Electricity.class, ShockingDart.class, Shaman.LightningBolt.class, PotionOfLightning.class, PotionOfBallLightning.class)),
 				new HashSet<Class>()),
 		IMMOVABLE;
 		

@@ -50,6 +50,11 @@ public class BlandfruitBush extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new BlandfruitPoisonParticle().getColor(), 10);
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

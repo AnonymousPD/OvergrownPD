@@ -102,6 +102,12 @@ public class Blueeyedsusan extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new BlueEyedSusanPoisonParticle().getColor(), 10);
+        Dungeon.level.drop(new Dewdrop(), ch.pos).sprite.drop(ch.pos);
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

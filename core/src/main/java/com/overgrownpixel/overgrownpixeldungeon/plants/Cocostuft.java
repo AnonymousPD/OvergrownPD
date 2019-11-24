@@ -78,6 +78,12 @@ public class Cocostuft extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new CocostuftPoisonParticle().getColor(), 10);
+        Buff.prolong( ch, Cocoshield.class, 2f );
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

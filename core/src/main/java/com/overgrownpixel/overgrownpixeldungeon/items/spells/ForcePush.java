@@ -44,7 +44,7 @@ public class ForcePush extends Spell {
 
     @Override
     protected void onCast(Hero hero) {
-	    for(Mob mob : Dungeon.level.mobs){
+	    for(Mob mob : Dungeon.level.mobs.toArray(new Mob[0])){
 	        if(Dungeon.level.heroFOV[mob.pos]){
                 int opposite;
                 do{

@@ -3,9 +3,13 @@ package com.overgrownpixel.overgrownpixeldungeon.books;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookAncientAlchemistWar;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookHowToConsumeTheDead;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookImperium;
+import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookJosephsLastThoughts;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookMorningOfTheMagicians;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookMysterieOfTheGrail;
+import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookOfTheCreator;
+import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookOnTheRogue;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookProAsHeckGuideToSniper;
+import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookSproutingNature;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookTheGoldenArrow;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookThisTimeTheUniverse;
 import com.overgrownpixel.overgrownpixeldungeon.books.lorebooks.BookYendorianDwarves;
@@ -40,5 +44,9 @@ public class Book {
         allBooks.add(BookHowToConsumeTheDead.class);
         allBooks.add(BookProAsHeckGuideToSniper.class);
         allBooks.add(BookYendorianDwarves.class);
+        allBooks.add(BookOfTheCreator.class);
+        allBooks.add(BookOnTheRogue.class);
+        allBooks.add(BookSproutingNature.class);
+        allBooks.add(BookJosephsLastThoughts.class);
     }
 }

@@ -79,6 +79,12 @@ public class Rose extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new RosePoisonParticle().getColor(), 10);
+        Buff.prolong(ch, RoseBarrier.class, 2f);
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

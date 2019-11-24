@@ -69,6 +69,17 @@ public class Flowertree extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new FlowertreePoisonParticle().getColor(), 10);
+        try {
+            Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
+            seed.getPlantClass().newInstance().spiceEffect(ch);
+        } catch (Exception e){
+            OvergrownPixelDungeon.reportException(e);
+        }
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

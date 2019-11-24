@@ -66,6 +66,12 @@ public class Frostcorn extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new FrostcornPoisonParticle().getColor(), 10);
+        Buff.prolong(ch, IceAura.class, 2f);
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

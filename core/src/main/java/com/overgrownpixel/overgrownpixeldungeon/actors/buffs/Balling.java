@@ -48,6 +48,9 @@ public class Balling extends FlavourBuff {
 
     @Override
     public boolean attachTo(Char target) {
+	    if(target.isImmune(this.getClass())){
+            return super.attachTo(target);
+        }
 	    if(Dungeon.level != null){
 	        target.sprite.origin.set( target.sprite.width / 2, target.sprite.height - DungeonTilemap.SIZE / 2 );
             target.sprite.angularSpeed = Random.Int( 2 ) == 0 ? -720 : 720;

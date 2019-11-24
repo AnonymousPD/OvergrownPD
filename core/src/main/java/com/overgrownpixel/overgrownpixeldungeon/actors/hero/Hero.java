@@ -163,8 +163,8 @@ public class Hero extends Char {
 	public HeroClass heroClass = HeroClass.ROGUE;
 	public HeroSubClass subClass = HeroSubClass.NONE;
 	
-	private int attackSkill = 10;
-	private int defenseSkill = 5;
+	public int attackSkill = 10;
+	public int defenseSkill = 5;
 
 	public boolean ready = false;
 	private boolean damageInterrupt = true;
@@ -179,8 +179,6 @@ public class Hero extends Char {
 	
 	public int STR;
 	
-	public float awareness;
-	
 	public int lvl = 1;
 	public int exp = 0;
 	
@@ -189,6 +187,8 @@ public class Hero extends Char {
 	private ArrayList<Mob> visibleEnemies;
 
     public ArrayList<Class> foundBooks;
+
+    public Class lastSeedEaten;
 
 	//This list is maintained so that some logic checks can be skipped
 	// for enemies we know we aren't seeing normally, resultign in better performance
@@ -245,6 +245,7 @@ public class Hero extends Char {
 	private static final String EXPERIENCE	= "exp";
 	private static final String HTBOOST     = "htboost";
     private static final String BOOKS       = "booksfound";
+    private static final String LASTSEED    = "lastseedeaten";
 	
 	@Override
 	public void storeInBundle( Bundle bundle ) {
@@ -263,6 +264,8 @@ public class Hero extends Char {
 		bundle.put( EXPERIENCE, exp );
 		
 		bundle.put( HTBOOST, HTBoost );
+
+        bundle.put( LASTSEED, lastSeedEaten );
 
         bundle.put( BOOKS, foundBooks.toArray(new Class[foundBooks.size()]) );
 
@@ -286,8 +289,9 @@ public class Hero extends Char {
 		
 		HTBoost = bundle.getInt(HTBOOST);
 
-        foundBooks.clear();
-        Collections.addAll(foundBooks, bundle.getClassArray(BOOKS));
+		lastSeedEaten = bundle.getClass(LASTSEED);
+
+		if(bundle.contains(BOOKS)) Collections.addAll(foundBooks, bundle.getClassArray(BOOKS));
 		
 		belongings.restoreFromBundle( bundle );
 	}
@@ -1195,7 +1199,7 @@ public class Hero extends Char {
             }
         }
 
-        if(buff(Coughing.class) != null && Random.Float() < 0.3f){
+        if(buff(Coughing.class) != null && Random.Float() < 0.3f && !this.isImmune(Coughing.class)){
             GLog.n(Messages.get(this, "cough"));
         }
 		
@@ -1692,6 +1696,12 @@ public class Hero extends Char {
                     Class bookclass = Random.element(Book.allBooks);
                     while (Dungeon.hero.foundBooks.contains(bookclass)){
                         bookclass = Random.element(Book.allBooks);
+                        if(Dungeon.hero.foundBooks.size() == Book.allBooks.size()){
+                            curAction = null;
+
+                            super.onOperateComplete();
+                            return;
+                        }
                     }
                     Book book = (Book) bookclass.newInstance();
                     GLog.p(Messages.get(this, "foundbook", book.title));

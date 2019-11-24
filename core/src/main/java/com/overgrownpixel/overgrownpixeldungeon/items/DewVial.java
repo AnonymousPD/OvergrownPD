@@ -39,8 +39,6 @@ import java.util.ArrayList;
 
 public class DewVial extends Item {
 
-	private static final int MAX_VOLUME	= 20;
-
 	private static final String AC_DRINK	= "DRINK";
 
 	private static final float TIME_TO_DRINK = 1f;
@@ -56,19 +54,23 @@ public class DewVial extends Item {
 	}
 
 	private int volume = 0;
+    private int maxVolume = 20;
 
 	private static final String VOLUME	= "volume";
+    private static final String MAXVOLUME	= "maxvolume";
 
 	@Override
 	public void storeInBundle( Bundle bundle ) {
 		super.storeInBundle( bundle );
 		bundle.put( VOLUME, volume );
+		bundle.put( MAXVOLUME, maxVolume);
 	}
 
 	@Override
 	public void restoreFromBundle( Bundle bundle ) {
 		super.restoreFromBundle( bundle );
 		volume	= bundle.getInt( VOLUME );
+        maxVolume = bundle.getInt( MAXVOLUME );
 	}
 
 	@Override
@@ -136,29 +138,30 @@ public class DewVial extends Item {
 	}
 
 	public boolean isFull() {
-		return volume >= MAX_VOLUME;
+		return volume >= maxVolume;
 	}
 
 	public void collectDew( Dewdrop dew ) {
 
 		GLog.i( Messages.get(this, "collected") );
 		volume += dew.quantity;
-		if (volume >= MAX_VOLUME) {
-			volume = MAX_VOLUME;
+		if (volume >= maxVolume) {
+			volume = maxVolume;
 			GLog.p( Messages.get(this, "full") );
 		}
 
 		updateQuickslot();
 	}
 
-	public void fill() {
-		volume = MAX_VOLUME;
+	public void fill(int addToMaxVolume) {
+        maxVolume += addToMaxVolume;
+		volume = maxVolume;
 		updateQuickslot();
 	}
 
 	@Override
 	public String status() {
-		return Messages.format( TXT_STATUS, volume, MAX_VOLUME );
+		return Messages.format( TXT_STATUS, volume, maxVolume );
 	}
 
 }

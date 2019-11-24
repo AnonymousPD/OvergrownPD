@@ -78,7 +78,7 @@ public class Shadow extends FlavourBuff {
         Dungeon.observe();
 	}
 
-    private static final Class<?>[] removableBuffs = new Class<?>[]{
+    public static final Class<?>[] removableBuffs = new Class<?>[]{
             Adrenaline.class, AdrenalineSurge.class, Amok.class, ArcaneArmor.class,
             Awareness.class, Balling.class, Barkskin.class, Barrier.class, BeetleInfected.class,
             Berserk.class, Bleeding.class, Bless.class, Blindness.class, Burning.class, Charm.class,
@@ -94,7 +94,8 @@ public class Shadow extends FlavourBuff {
             Stamina.class, Steaming.class, Stunned.class, SugarRush.class, Terror.class, Thorns.class, ToxicImbue.class,
             TrailOfFire.class, Vertigo.class, Weakness.class, Wither.class, VitaminC.class, VitaminS.class, VitaminW.class,
             VitaminG.class, VitaminSuper.class, SuperBalling.class, SoulFire.class, DewInfusion.class, Feelers.class,
-            FleshEatingAcid.class, Eyeing.class, FiendBurning.class, Drunk.class, High.class,
+            FleshEatingAcid.class, Eyeing.class, FiendBurning.class, Drunk.class, High.class, Shield.class, Numb.class,
+            HellBurning.class, IronSkin.class, PlagueAura.class, Starving.class,
     };
 
     @Override

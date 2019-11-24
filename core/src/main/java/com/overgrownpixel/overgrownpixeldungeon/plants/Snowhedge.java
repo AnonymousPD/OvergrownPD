@@ -56,6 +56,12 @@ public class Snowhedge extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new SnowhedgePoisonParticle().getColor(), 10);
+        Buff.prolong(ch, SnowedIn.class, 2f);
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

@@ -65,13 +65,21 @@ public class Clitbalm extends Plant {
     @Override
     public void activate() {
         if(Random.Boolean()){
-            for(Mob mob : Dungeon.level.mobs){
+            for(Mob mob : Dungeon.level.mobs.toArray(new Mob[0])){
                 Buff.prolong(Dungeon.hero, Charm.class, 10f).object = mob.id();
             }
         } else {
-            for(Mob mob : Dungeon.level.mobs){
+            for(Mob mob : Dungeon.level.mobs.toArray(new Mob[0])){
                 if(mob.getEnemy() != null && mob.buff(Charm.class) != null) Buff.prolong(mob, Charm.class, 10f).object = mob.getEnemy().id();
             }
+        }
+    }
+
+    @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new ClitbalmPoisonParticle().getColor(), 10);
+        if(ch instanceof Hero){
+            if(((Hero) ch).enemy() != null) Buff.prolong(ch, Charm.class, 10f).object = ((Hero) ch).enemy().id();
         }
     }
 

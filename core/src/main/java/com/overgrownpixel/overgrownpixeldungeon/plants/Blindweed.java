@@ -76,6 +76,12 @@ public class Blindweed extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new BlindweedPoisonParticle().getColor(), 10);
+        Buff.affect(ch, Invisibility.class, 2f);
+    }
+
+    @Override
     public void attackProc(Char enemy, int damage) {
         if (enemy != null) {
             if (enemy instanceof Hero && ((Hero) enemy).subClass == HeroSubClass.WARDEN){

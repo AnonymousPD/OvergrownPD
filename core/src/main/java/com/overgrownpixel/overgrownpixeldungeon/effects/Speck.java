@@ -85,6 +85,8 @@ public class Speck extends Image {
     public static final int FEAGAS      = 130;
     public static final int HIGHGAS     = 131;
     public static final int SLOW        = 132;
+    public static final int SOWINGWIND  = 133;
+    public static final int HARVESTWIND = 134;
 	
 	private static final int SIZE = 7;
 	
@@ -149,6 +151,8 @@ public class Speck extends Image {
             case FEAGAS:
             case HIGHGAS:
             case SLOW:
+            case SOWINGWIND:
+            case HARVESTWIND:
 			frame( film.get( STEAM ) );
 			break;
 		case CALM:
@@ -196,6 +200,13 @@ public class Speck extends Image {
                 lifespan = Random.Float( 1f, 3f );
                 break;
 
+            case HARVESTWIND:
+                hardlight( Game.instance.getResources().getInteger(R.integer.harvestwind) );
+                angularSpeed = -30;
+                angle = Random.Float( 360 );
+                lifespan = Random.Float( 1f, 3f );
+                break;
+
             case GLOWGAS:
                 hardlight( Game.instance.getResources().getInteger(R.integer.chandaliertailoisonparticle) );
                 angularSpeed = -30;
@@ -226,6 +237,13 @@ public class Speck extends Image {
 
             case SLOW:
                 hardlight( Game.instance.getResources().getInteger(R.integer.slowcloud) );
+                angularSpeed = 30;
+                angle = Random.Float( 360 );
+                lifespan = Random.Float( 1f, 1.5f );
+                break;
+
+            case SOWINGWIND:
+                hardlight( Game.instance.getResources().getInteger(R.integer.sowingwind) );
                 angularSpeed = 30;
                 angle = Random.Float( 360 );
                 lifespan = Random.Float( 1f, 1.5f );
@@ -588,6 +606,8 @@ public class Speck extends Image {
                 case DIRTCLOUD:
                 case DEPRESSANT:
                 case SLOW:
+                case SOWINGWIND:
+                case HARVESTWIND:
 				am = (float)Math.sqrt( (p < 0.5f ? p : 1 - p) * 0.5f );
 				scale.set( 1 + p );
 				break;

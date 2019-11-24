@@ -58,6 +58,13 @@ public class Grassvine extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new GrassvinePoisonParticle().getColor(), 10);
+        Level.set( ch.pos, Terrain.HIGH_GRASS );
+        GameScene.updateMap( ch.pos );
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

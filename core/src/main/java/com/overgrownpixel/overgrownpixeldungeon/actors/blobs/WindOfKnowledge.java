@@ -32,6 +32,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.effects.BlobEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
+import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 
 public class WindOfKnowledge extends Blob {
 
@@ -48,6 +49,7 @@ public class WindOfKnowledge extends Blob {
 				if (cur[cell] > 0 && (ch = Actor.findChar( cell )) != null) {
 					if (!ch.isImmune(this.getClass())) {
                         if(ch instanceof Hero){
+                            GLog.i(Messages.get(this, "aware"));
                             Buff.affect( ch, Awareness.class, Awareness.DURATION );
                             Dungeon.observe();
                         }

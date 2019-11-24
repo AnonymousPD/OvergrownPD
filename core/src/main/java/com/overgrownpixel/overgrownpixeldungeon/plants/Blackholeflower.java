@@ -42,6 +42,8 @@ import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
+import com.watabou.utils.PathFinder;
+import com.watabou.utils.Random;
 
 public class Blackholeflower extends Plant {
 
@@ -101,6 +103,21 @@ public class Blackholeflower extends Plant {
     @Override
     public void activate() {
         spawnLasher(pos);
+    }
+
+    @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new BlackholeflowerPoisonParticle().getColor(), 10);
+        int newpos;
+        int trys = 8;
+        do{
+            newpos = ch.pos + PathFinder.NEIGHBOURS8[Random.Int(8)];
+            trys--;
+            if(trys <= 0){
+                return;
+            }
+        } while (!Dungeon.level.passable[newpos]);
+        if(ch instanceof Hero) ScrollOfTeleportation.teleportToLocation((Hero) ch, newpos);
     }
 
     @Override

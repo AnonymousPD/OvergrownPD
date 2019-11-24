@@ -68,6 +68,12 @@ public class Sorrowmoss extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new SorrowmossPoisonParticle().getColor(), 10);
+        Buff.affect(ch, ToxicImbue.class).set(2f);
+    }
+
+    @Override
     public void attackProc(Char enemy, int damage) {
         if (enemy instanceof Hero && ((Hero) enemy).subClass == HeroSubClass.WARDEN){
             Buff.affect(enemy, ToxicImbue.class).set(15f);

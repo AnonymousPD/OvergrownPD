@@ -81,6 +81,12 @@ public class Bananabean extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new BananabeanPoisonParticle().getColor(), 10);
+        Buff.prolong(ch, Slippery.class, 2f);
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

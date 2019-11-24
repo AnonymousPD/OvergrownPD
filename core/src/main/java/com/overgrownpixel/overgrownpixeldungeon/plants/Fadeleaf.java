@@ -33,6 +33,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.ApricobushPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.FadeleafPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.TimekeepersHourglass;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfTeleportation;
@@ -109,6 +110,12 @@ public class Fadeleaf extends Plant {
     @Override
     public void activate() {
         spawnLasher(pos);
+    }
+
+    @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new ApricobushPoisonParticle().getColor(), 10);
+        this.activate(ch);
     }
 
     @Override

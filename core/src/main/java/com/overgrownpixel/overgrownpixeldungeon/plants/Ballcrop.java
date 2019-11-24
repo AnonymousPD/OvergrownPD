@@ -63,7 +63,7 @@ public class Ballcrop extends Plant {
 
     @Override
     public void activate() {
-        for(Mob mob : Dungeon.level.mobs){
+        for(Mob mob : Dungeon.level.mobs.toArray(new Mob[0])){
             Buff.prolong(mob, Balling.class, Balling.DURATION/2);
         }
         if(Dungeon.hero != null){
@@ -73,6 +73,12 @@ public class Ballcrop extends Plant {
                 Buff.prolong(Dungeon.hero, Balling.class, Balling.DURATION/2);
             }
         }
+    }
+
+    @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new BallcropPoisonParticle().getColor(), 10);
+        Buff.prolong(ch, SuperBalling.class, 2f);
     }
 
     @Override

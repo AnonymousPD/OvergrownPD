@@ -62,6 +62,12 @@ public class Chandaliertail extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new ChandaliertailPoisonParticle().getColor(), 10);
+        Buff.prolong(ch, Glowing.class, 2f);
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

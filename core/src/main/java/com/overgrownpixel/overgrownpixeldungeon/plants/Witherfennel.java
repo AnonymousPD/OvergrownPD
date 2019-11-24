@@ -65,6 +65,12 @@ public class Witherfennel extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new WitherfennelPoisonParticle().getColor(), 10);
+        Buff.prolong(ch, Wither.class, 2f);
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

@@ -601,7 +601,7 @@ public abstract class RegularPainter extends Painter {
             }
         }
 
-        if(!floraCells.isEmpty()){
+        if(!floraCells.isEmpty() && Dungeon.depth >= 20){
             for(int i = floraFill; i > 0; i--){
                 if(!floraCells.isEmpty()){
                     int p = Random.element(floraCells);

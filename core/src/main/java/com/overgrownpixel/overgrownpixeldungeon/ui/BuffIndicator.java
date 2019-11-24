@@ -136,6 +136,11 @@ public class BuffIndicator extends Component {
     public static final int DRUNK       = 85;
     public static final int HIGH        = 86;
     public static final int COUGHING    = 87;
+    public static final int SHIELD      = 88;
+    public static final int NUMB        = 89;
+    public static final int HELLFIRE    = 90;
+    public static final int IRONSKIN    = 91;
+    public static final int PLAGUEAURA  = 92;
 
 	public static final int SIZE	= 7;
 	

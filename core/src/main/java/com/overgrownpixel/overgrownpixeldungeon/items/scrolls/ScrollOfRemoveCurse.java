@@ -112,6 +112,41 @@ public class ScrollOfRemoveCurse extends InventoryScroll {
 		
 		return procced;
 	}
+
+    public boolean uncurse( Item item ) {
+
+        boolean procced = false;
+        if (item != null) {
+            item.cursedKnown = true;
+            if (item.cursed) {
+                procced = true;
+                item.cursed = false;
+            }
+        }
+        if (item instanceof Weapon){
+            Weapon w = (Weapon) item;
+            if (w.hasCurseEnchant()){
+                w.enchant(null);
+                procced = true;
+            }
+        }
+        if (item instanceof Armor){
+            Armor a = (Armor) item;
+            if (a.hasCurseGlyph()){
+                a.inscribe(null);
+                procced = true;
+            }
+        }
+        if (item instanceof Wand){
+            ((Wand) item).updateLevel();
+        }
+
+        if (procced) {
+            updateQuickslot();
+        }
+
+        return procced;
+    }
 	
 	public static boolean uncursable( Item item ){
 		if ((item instanceof EquipableItem || item instanceof Wand) && (!item.isIdentified() || item.cursed)){

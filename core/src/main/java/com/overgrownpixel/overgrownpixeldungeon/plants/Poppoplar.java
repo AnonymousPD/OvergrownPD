@@ -23,6 +23,7 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.plants;
 
+import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.PopGas;
@@ -31,6 +32,8 @@ import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSpriteSheet;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
+import com.watabou.utils.PathFinder;
+import com.watabou.utils.Random;
 
 public class Poppoplar extends Plant {
 
@@ -51,6 +54,21 @@ public class Poppoplar extends Plant {
     @Override
     public void activate() {
         GameScene.add(Blob.seed(pos, 10, PopGas.class));
+    }
+
+    @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new PoppoplarPoisonParticle().getColor(), 10);
+        int newpos;
+        int trys = 8;
+        do{
+            newpos = ch.pos + PathFinder.NEIGHBOURS8[Random.Int(8)];
+            trys--;
+            if(trys <= 0){
+                return;
+            }
+        } while (!Dungeon.level.passable[newpos]);
+        GameScene.add(Blob.seed(newpos, 10, PopGas.class));
     }
 
     @Override

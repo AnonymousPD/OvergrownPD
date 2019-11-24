@@ -65,6 +65,13 @@ public class Eggbloom extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new EggbloomPoisonParticle().getColor(), 10);
+        Dungeon.level.drop(new Egg(), ch.pos).sprite.drop(ch.pos);
+
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

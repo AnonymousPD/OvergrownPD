@@ -30,6 +30,8 @@
     <integer name="whirlwind">0xDDFBC2</integer><color name="whirlwind">#DDFBC2</color>
     <integer name="chronomorphing">0xE28864</integer><color name="chronomorphing">#E28864</color>
 
+    <integer name="beaconflash">0xFAFF88</integer><color name="beaconflash">#FAFF88</color>
+
     <integer name="affection">0xFF4488</integer><color name="affection">#FF4488</color>
     <integer name="antimagic">0x88EEFF</integer><color name="antimagic">#88EEFF</color>
     <integer name="brimstone">0xFF4400</integer><color name="brimstone">#FF4400</color>
@@ -115,6 +117,7 @@
     <integer name="lavenderlanternpoisonparticle">0x8D56D9</integer><color name="lavenderlanternpoisonparticle">#8D56D9</color>
     <integer name="lightninglillypoisonparticle">0xB2F2FF</integer><color name="lightninglillypoisonparticle">#B2F2FF</color>
     <integer name="poppoplarpoisonparticle">0xAC2121</integer><color name="poppoplarpoisonparticle">#AC2121</color>
+    <integer name="harvestwind">0x84A32D</integer><color name="harvestwind">#84A32D</color>
     <integer name="shadowbloompoisonparticle">0xE3E115</integer><color name="shadowbloompoisonparticle">#E3E115</color>
     <integer name="sourpitcherpoisonparticle">0x91A50F</integer><color name="sourpitcherpoisonparticle">#91A50F</color>
     <integer name="tankcabbagepoisonparticle">0xC6D194</integer><color name="tankcabbagepoisonparticle">#C6D194</color>
@@ -129,6 +132,9 @@
     <integer name="elmoparticle">0x22EE66</integer><color name="elmoparticle">#22EE66</color>
     <integer name="energyparticle">0xFFFFAA</integer><color name="energyparticle">#FFFFAA</color>
     <integer name="flameparticle">0xEE7722</integer><color name="flameparticle">#EE7722</color>
+    <integer name="hellflameparticle">0xEE2222</integer><color name="hellflameparticle">#EE2222</color>
+    <integer name="magicorbblood">0x53EED6</integer><color name="magicorbblood">#53EED6</color>
+    <integer name="magicfireparticle">0x6DF0AC</integer><color name="magicfireparticle">#6DF0AC</color>
     <integer name="soulflameparticle">0x99EE22</integer><color name="soulflameparticle">#99EE22</color>
     <integer name="leafparticle1">0x004400</integer><color name="leafparticle1">#004400</color>
     <integer name="leafparticle2">0x88CC44</integer><color name="leafparticle2">#88CC44</color>
@@ -147,6 +153,7 @@
     <integer name="woolparticle2">0xEEEEE0</integer><color name="woolparticle2">#EEEEE0</color>
     <integer name="halomethaneflameparticle">0x00DFFF</integer><color name="halomethaneflameparticle">#00DFFF</color>
     <integer name="lightparticle">0xFEFFBE</integer><color name="lightparticle">#FEFFBE</color>
+    <integer name="holylightparticle">0xECECC7</integer><color name="holylightparticle">#ECECC7</color>
     <integer name="sunlightparticle">0xFEFF79</integer><color name="sunlightparticle">#FEFF79</color>
 
     <integer name="blandfruitsunfruit">0x2EE62E</integer><color name="blandfruitsunfruit">#2EE62E</color>
@@ -352,6 +359,7 @@
     <integer name="speck10">0x000000</integer><color name="speck10">#000000</color>
     <integer name="highsmoke">0x263F26</integer><color name="highsmoke">#263F26</color>
     <integer name="slowcloud">0x89DFCB</integer><color name="slowcloud">#89DFCB</color>
+    <integer name="sowingwind">0x8CF540</integer><color name="sowingwind">#8CF540</color>
     <integer name="speck11">0xFFFF66</integer><color name="speck11">#FFFF66</color>
     <integer name="miasma">0xEE29DC</integer><color name="miasma">#EE29DC</color>
     <integer name="firewind">0xEE6E29</integer><color name="firewind">#EE6E29</color>
@@ -363,6 +371,7 @@
     <integer name="depressant">0x806FCC</integer><color name="depressant">#806FCC</color>
     <integer name="tomatoexplosionparticles">0xFF0000</integer><color name="tomatoexplosionparticles">#FF0000</color>
     <integer name="shieldhero">0xBBAACC</integer><color name="shieldhero">#BBAACC</color>
+    <integer name="shieldedhero">0x94FFC7</integer><color name="shieldedhero">#94FFC7</color>
     <integer name="cocoshieldhero">0x6D4E00</integer><color name="cocoshieldhero">#6D4E00</color>
     <integer name="eyehalo">0xE05656</integer><color name="eyehalo">#E05656</color>
     <integer name="resumeindicator">0xCDD5C0</integer><color name="resumeindicator">#CDD5C0</color>
@@ -383,6 +392,7 @@
     <integer name="interlevelscene4">0xDD000000</integer><color name="interlevelscene4">#DD000000</color>
     <integer name="interlevelscene5">0xFF000000</integer><color name="interlevelscene5">#FF000000</color>
     <integer name="iceblock">0xFFB2D6FF</integer><color name="iceblock">#FFB2D6FF</color>
+    <integer name="ironskin">0x59616B</integer><color name="ironskin">#59616B</color>
     <integer name="butter">0xF0E691</integer><color name="butter">#F0E691</color>
     <integer name="shadow">0x51545E</integer><color name="shadow">#51545E</color>
     <integer name="highlightedtext1">0xFFFFFF</integer><color name="highlightedtext1">#FFFFFF</color>

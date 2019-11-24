@@ -82,6 +82,12 @@ public class Firefoxglove extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new FirefoxglovePoisonParticle().getColor(), 10);
+        Buff.prolong(ch, TrailOfFire.class, 2f);
+    }
+
+    @Override
     public Blob immunity() {
         return new Fire();
     }

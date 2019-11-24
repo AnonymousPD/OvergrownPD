@@ -154,7 +154,7 @@ public class WndTradeItem extends Window {
 								Dungeon.level.drop( item, heap.pos ).sprite.drop();
 							}
 						} else {
-							for (Mob mob : Dungeon.level.mobs){
+							for (Mob mob : Dungeon.level.mobs.toArray(new Mob[0])){
 								if (mob instanceof Shopkeeper) {
 									mob.yell(Messages.get(mob, "thief"));
 									((Shopkeeper) mob).flee();

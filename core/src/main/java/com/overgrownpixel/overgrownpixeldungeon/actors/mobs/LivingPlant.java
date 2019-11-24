@@ -151,17 +151,17 @@ public class LivingPlant extends Mob {
 
     @Override
 	public int damageRoll() {
-		return Random.NormalIntRange( 1, 4 );
+		return Random.NormalIntRange( Dungeon.depth, Dungeon.depth+3 );
 	}
 	
 	@Override
 	public int attackSkill( Char target ) {
-		return 8;
+		return Dungeon.depth;
 	}
 	
 	@Override
 	public int drRoll() {
-		return Random.NormalIntRange(0, 1);
+		return Random.NormalIntRange(0, Dungeon.depth);
 	}
 
     @Override
@@ -178,7 +178,7 @@ public class LivingPlant extends Mob {
 
             //find all mobs near the living plant
             HashSet<Char> enemies = new HashSet<>();
-            for (Mob mob : Dungeon.level.mobs) {
+            for (Mob mob : Dungeon.level.mobs.toArray(new Mob[0])) {
                 if (!(mob == this)
                         && Dungeon.level.distance(mob.pos, pos) <= 5
                         && mob.alignment != Alignment.NEUTRAL

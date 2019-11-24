@@ -49,7 +49,7 @@ public class DoomCall extends Spell {
     @Override
     protected void onCast(Hero hero) {
         ArrayList<Mob> mobs = new ArrayList<>();
-        for(Mob mob : Dungeon.level.mobs){
+        for(Mob mob : Dungeon.level.mobs.toArray(new Mob[0])){
             mobs.add(mob);
         }
         if(!mobs.isEmpty()){

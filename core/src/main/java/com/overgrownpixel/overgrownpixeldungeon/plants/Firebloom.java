@@ -70,6 +70,12 @@ public class Firebloom extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new FirebloomPoisonParticle().getColor(), 10);
+        Buff.affect(ch, FireImbue.class).set(2f);
+    }
+
+    @Override
     public void attackProc(Char enemy, int damage) {
         if (enemy instanceof Hero && ((Hero) enemy).subClass == HeroSubClass.WARDEN){
             Buff.affect(enemy, FireImbue.class).set(15f);

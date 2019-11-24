@@ -68,6 +68,11 @@ public class Sunbloom extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new SunbloomPoisonParticle().getColor(), 10);
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

@@ -102,6 +102,7 @@ public class Assets {
     public static final String VINELASH = "mobs/vinelasher.png";
 	public static final String ROT_HEART= "mobs/minibosses/rot_heart.png";
 	public static final String GUARD    = "mobs/guard.png";
+    public static final String HELLELEM = "mobs/hell_elemental.png";
     public static final String PLANTS	= "mobs/livingplants.png";
     public static final String FLAMEB01	= "mobs/dwarven_flameboi.png";
     public static final String GUARDIAN	= "mobs/npcs/guardian.png";
@@ -110,6 +111,7 @@ public class Assets {
     public static final String BANSPIDER= "mobs/bananaspider.png";
     public static final String COCOCLAM = "mobs/cococlam.png";
     public static final String BEETLE   = "mobs/beetle.png";
+    public static final String MAGICORB = "mobs/magicorb.png";
 
 	public static final String ITEMS	        = "items.png";
 	public static final String TERRAIN_FEATURES	= "tiles/terrain_features.png";

@@ -78,7 +78,7 @@ public class Noisemaker extends Bomb {
 					Sample.INSTANCE.play( Assets.SND_ALERT, 0.25f );
 				}
 				
-				for (Mob m : Dungeon.level.mobs){
+				for (Mob m : Dungeon.level.mobs.toArray(new Mob[0])){
 					if (m.state != m.HUNTING) {
 						m.beckon(cell);
 					}

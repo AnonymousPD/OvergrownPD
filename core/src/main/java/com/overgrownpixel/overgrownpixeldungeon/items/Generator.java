@@ -139,6 +139,29 @@ import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfTeleportat
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfTerror;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfTransmutation;
 import com.overgrownpixel.overgrownpixeldungeon.items.scrolls.ScrollOfUpgrade;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.Alchemize;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.AquaBlast;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.ArcaneCatalyst;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.BeaconOfReturning;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.CrimsonEpithet;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.CurseInfusion;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.DoomCall;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.EnchantmentInfusion;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.FeatherFall;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.ForcePush;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.Forcefield;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.HolyBlast;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.MagicalInfusion;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.MagicalPorter;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.NaturesLullaby;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.PhaseShift;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.PlantSummon;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.ReclaimTrap;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.Recycle;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.SeasonChange;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.Spell;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.SpontaneosCombustion;
+import com.overgrownpixel.overgrownpixeldungeon.items.spells.WildEnergy;
 import com.overgrownpixel.overgrownpixeldungeon.items.stones.Runestone;
 import com.overgrownpixel.overgrownpixeldungeon.items.stones.StoneOfAffection;
 import com.overgrownpixel.overgrownpixeldungeon.items.stones.StoneOfAggression;
@@ -298,40 +321,41 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.Corr
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.CrownDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.DewDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.DirtDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.DisplacingDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.EarthquakeDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.EggDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.EyeDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.FeelerDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.FirefoxDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.FreezingDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.GooDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.GrapeDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.GrassDart;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.HoneyDart;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.HypnoDart;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.LanternDart;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.LightningDart;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.PopDart;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.SeedChaosDart;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.ShadowDart;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.SnowstormDart;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.DisplacingDart;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.EarthquakeDart;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.FirefoxDart;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.FreezingDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.HealingDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.HealthDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.HeatDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.HolyDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.HoneyDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.HypnoDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.IncendiaryDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.LanternDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.LightningDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.ParalyticDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.ParasiticDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.PeanutMarkDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.PoisonDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.PopDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.PushingDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.RootingDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.RoseDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.RotDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.SeedChaosDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.ShadowDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.ShockingDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.SleepDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.SlownessDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.SmokingDart;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.SnowstormDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.SourDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.SpicyDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.StormDart;
@@ -345,7 +369,6 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.Trac
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.TreeDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.WaterDart;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.WitherDart;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.darts.RoseDart;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Apricobush;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Ballcrop;
 import com.overgrownpixel.overgrownpixeldungeon.plants.Bananabean;
@@ -438,11 +461,13 @@ public class Generator {
 		WAND	( 3,    Wand.class ),
 		RING	( 1,    Ring.class ),
 		ARTIFACT( 1,    Artifact.class),
+        SPELLS  ( 0,    Spell.class),
 		
 		FOOD	( 0,    Food.class ),
 		
 		POTION	( 20,   Potion.class ),
         NEWPOTION	( 0,    Potion.class ),
+        ALLPOTIONS	( 0,    Potion.class ),
 		SEED	    ( 0,    Plant.Seed.class ), //dropped by grass
         BASESEED	( 0,    Plant.Seed.class ),
         ALLSEEDS	( 0,    Plant.Seed.class ),
@@ -546,6 +571,45 @@ public class Generator {
                     5,5,5,5,5,
                     5,5,5,5,5,
                     5,};
+
+            ALLPOTIONS.classes = new Class<?>[]{
+                    PotionOfStrength.class,
+                    PotionOfHealing.class,
+                    PotionOfMindVision.class,
+                    PotionOfFrost.class,
+                    PotionOfLiquidFlame.class,
+                    PotionOfToxicGas.class,
+                    PotionOfHaste.class,
+                    PotionOfInvisibility.class,
+                    PotionOfLevitation.class,
+                    PotionOfParalyticGas.class,
+                    PotionOfPurity.class,
+                    PotionOfExperience.class, PotionOfHunger.class, PotionOfBall.class, PotionOfBanana.class, PotionOfBlessing.class, PotionOfTeleporting.class,
+                    PotionOfButter.class, PotionOfGlowing.class, PotionOfChilli.class, PotionOfLove.class, PotionOfTime.class,
+                    PotionOfProtection.class, PotionOfHoney.class, PotionOfHarvest.class, PotionOfFirelightning.class, PotionOfPepper.class,
+                    PotionOfDirt.class, PotionOfEgg.class, PotionOfEye.class, PotionOfRegrowth.class, PotionOfFirestorm.class,
+                    PotionOfFlora.class, PotionOfIceStorm.class, PotionOfWine.class, PotionOfGoo.class, PotionOfGrass.class,
+                    PotionOfVine.class, PotionOfHypno.class, PotionOfKiwi.class, PotionOfInfection.class, PotionOfLantern.class,
+                    PotionOfLightning.class, PotionOfMuscle.class, PotionOfSmoke.class, PotionOfParasites.class, PotionOfPeanuts.class,
+                    PotionOfSoda.class, PotionOfShield.class, PotionOfShadows.class, PotionOfSnowstorm.class, PotionOfDigesting.class,
+                    PotionOfSteam.class, PotionOfSun.class, PotionOfUltraviolett.class, PotionOfHydrogenFire.class, PotionOfTomatoSoup.class,
+                    PotionOfSecreting.class, PotionOfWater.class, PotionOfSlowness.class, PotionOfWithering.class, PotionOfSeed.class,
+                    PotionOfDew.class};
+            ALLPOTIONS.probs = new float[]{
+                    0,6,4,3,
+                    3,3,2,2,
+                    2,2,2,1,
+                    5,5,5,5,5,
+                    5,5,5,5,5,
+                    5,5,5,5,5,
+                    5,5,5,5,5,
+                    5,5,5,5,5,
+                    5,5,5,5,5,
+                    5,5,5,5,5,
+                    5,5,5,5,5,
+                    5,5,5,5,5,
+                    5,5,5,5,5,
+                    5, };
 			
 			SEED.classes = new Class<?>[]{
 			        Apricobush.Seed.class, Ballcrop.Seed.class, Bananabean.Seed.class, Blackholeflower.Seed.class, Blindweed.Seed.class, Blueeyedsusan.Seed.class, Butterlion.Seed.class, Chandaliertail.Seed.class, Chillisnapper.Seed.class, Clitbalm.Seed.class,
@@ -945,6 +1009,34 @@ public class Generator {
 					EtherealChains.class
 			};
 			ARTIFACT.probs = INITIAL_ARTIFACT_PROBS.clone();
+            SPELLS.classes = new Class<?>[]{
+                    Alchemize.class,
+                    AquaBlast.class,
+                    ArcaneCatalyst.class,
+                    BeaconOfReturning.class,
+                    CrimsonEpithet.class,
+                    CurseInfusion.class,
+                    DoomCall.class,
+                    EnchantmentInfusion.class,
+                    FeatherFall.class,
+                    Forcefield.class,
+                    ForcePush.class,
+                    HolyBlast.class,
+                    MagicalInfusion.class,
+                    MagicalPorter.class,
+                    NaturesLullaby.class,
+                    PhaseShift.class,
+                    PlantSummon.class,
+                    ReclaimTrap.class,
+                    Recycle.class,
+                    SeasonChange.class,
+                    SpontaneosCombustion.class,
+                    WildEnergy.class,
+            };
+            SPELLS.probs = new float[]{
+                    1, 1, 1, 1, 1, 1, 1, 1, 1,
+                    1, 1, 1, 1, 1, 1, 1, 1, 1,
+                    1, 1};
 		}
 	}
 

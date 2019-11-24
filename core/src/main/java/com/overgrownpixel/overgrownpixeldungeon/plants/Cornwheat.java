@@ -75,6 +75,12 @@ public class Cornwheat extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new CornwheatPoisonParticle().getColor(), 10);
+        Dungeon.level.drop(new Cornwheatshaft(), ch.pos).sprite.drop(ch.pos);
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

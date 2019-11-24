@@ -29,6 +29,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.npcs.NPC;
 import com.overgrownpixel.overgrownpixeldungeon.effects.CellEmitter;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Lightning;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.SparkParticle;
@@ -108,7 +109,9 @@ public class PotionOfLightning extends Potion {
 
             for(Char ch : affected){
                 if (Dungeon.level.water[ch.pos]) multipler = 1f;
-                ch.damage(Math.round(ch.damageRoll() * multipler), this);
+                if(!(ch instanceof NPC) && !ch.isImmune(this.getClass())){
+                    ch.damage(Math.round(ch.damageRoll() * multipler), this);
+                }
             }
 
             setKnown();

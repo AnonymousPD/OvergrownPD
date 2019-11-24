@@ -776,7 +776,7 @@ public class Dungeon {
 			}
 		}
 
-		for(Mob mob : Dungeon.level.mobs){
+		for(Mob mob : Dungeon.level.mobs.toArray(new Mob[0])){
             if(mob.buff(Glowing.class) != null){
                 BArray.or( level.visited, level.heroFOV, mob.pos - 1 - level.width(), 3, level.visited );
                 BArray.or( level.visited, level.heroFOV, mob.pos, 3, level.visited );

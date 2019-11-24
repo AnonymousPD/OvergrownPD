@@ -53,7 +53,7 @@ public class Whirlwind extends Weapon.Enchantment {
 		if (Random.Int( level + 5 ) >= 4) {
             attacker.sprite.emitter().burst( Speck.factory( Speck.EVOKE ), 3);
 
-            for(Mob mob : Dungeon.level.mobs){
+            for(Mob mob : Dungeon.level.mobs.toArray(new Mob[0])){
                 if(Dungeon.level.distance(attacker.pos, mob.pos) <= weapon.RCH){
                     mobs.add(mob);
                 }

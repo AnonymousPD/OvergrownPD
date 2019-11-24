@@ -61,6 +61,12 @@ public class Crimsonpepper extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new CrimsonpepperPoisonParticle().getColor(), 10);
+        Buff.prolong(ch, HeatAura.class, 2f);
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

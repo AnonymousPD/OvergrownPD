@@ -64,6 +64,13 @@ public class Clockcypress extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new ClockcypressPoisonParticle().getColor(), 10);
+        TimekeepersHourglass timekeepersHourglass = new TimekeepersHourglass();
+        timekeepersHourglass.getTimeStopEffectStasis(2);
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

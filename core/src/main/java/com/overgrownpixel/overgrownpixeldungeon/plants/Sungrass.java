@@ -73,6 +73,12 @@ public class Sungrass extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new SungrassPoisonParticle().getColor(), 10);
+        Buff.affect(ch, Health.class).boost(2);
+    }
+
+    @Override
     public void attackProc(Char enemy, int damage) {
         Buff.prolong(enemy, Sprouting.class, Sprouting.DURATION);
     }

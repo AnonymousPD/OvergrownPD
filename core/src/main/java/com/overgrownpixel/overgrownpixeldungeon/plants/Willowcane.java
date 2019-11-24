@@ -69,6 +69,12 @@ public class Willowcane extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new WillowcanePoisonParticle().getColor(), 10);
+        Buff.prolong( ch, Slow.class, 2f);
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

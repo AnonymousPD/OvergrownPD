@@ -35,14 +35,17 @@ import com.overgrownpixel.overgrownpixeldungeon.effects.EmoIcon;
 import com.overgrownpixel.overgrownpixeldungeon.effects.EyeHalo;
 import com.overgrownpixel.overgrownpixeldungeon.effects.FloatingText;
 import com.overgrownpixel.overgrownpixeldungeon.effects.IceBlock;
+import com.overgrownpixel.overgrownpixeldungeon.effects.IronSkin;
 import com.overgrownpixel.overgrownpixeldungeon.effects.RoseHalo;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Shadow;
 import com.overgrownpixel.overgrownpixeldungeon.effects.ShieldHalo;
+import com.overgrownpixel.overgrownpixeldungeon.effects.ShieldedHalo;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Speck;
 import com.overgrownpixel.overgrownpixeldungeon.effects.Splash;
 import com.overgrownpixel.overgrownpixeldungeon.effects.TorchHalo;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.FlameParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.HalomethaneFlameParticle;
+import com.overgrownpixel.overgrownpixeldungeon.effects.particles.HellFlameParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.ShadowParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.SnowParticle;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.SoulFlameParticle;
@@ -94,7 +97,7 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
         FROZEN, ILLUMINATED, CHILLED, DARKENED,
         MARKED, HEALING, SHIELDED, HALOMETHANEBURNING,
         ROSESHIELDED, SHADOW, COCOSHIELDED, BUTTER,
-        SOULFIRE, EYING,
+        SOULFIRE, EYING, SHIELD, HELLBURNING, IRONSKIN
 	}
 	
 	protected Animation idle;
@@ -115,14 +118,17 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 	protected Emitter levitation;
 	protected Emitter healing;
     protected Emitter soulfire;
+    protected Emitter hellburning;
 	
 	protected IceBlock iceBlock;
+    protected IronSkin ironSkin;
     protected EyeHalo eye;
     protected Shadow shadow;
 	protected DarkBlock darkBlock;
 	protected TorchHalo light;
 	protected ShieldHalo shield;
     protected CocosHalo cocosshield;
+    protected ShieldedHalo shieldHalo;
     protected RoseHalo roseshield;
 	protected AlphaTweener invisible;
     protected Butter butter;
@@ -344,6 +350,13 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
                     Sample.INSTANCE.play( Assets.SND_BURNING );
                 }
                 break;
+            case HELLBURNING:
+                burning = emitter();
+                burning.pour( HellFlameParticle.FACTORY, 0.06f );
+                if (visible) {
+                    Sample.INSTANCE.play( Assets.SND_BURNING );
+                }
+                break;
             case EYING:
                 GameScene.effect( eye = new EyeHalo( this ));
                 break;
@@ -393,6 +406,9 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 				iceBlock = IceBlock.freeze( this );
 				paused = true;
 				break;
+            case IRONSKIN:
+                ironSkin = IronSkin.ironUp( this );
+                break;
             case BUTTER:
                 butter = Butter.butter( this );
                 break;
@@ -419,6 +435,8 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 				break;
             case COCOSHIELDED:
                 GameScene.effect( cocosshield = new CocosHalo( this ));
+            case SHIELD:
+                GameScene.effect( shieldHalo = new ShieldedHalo( this ));
                 break;
             case ROSESHIELDED:
                 GameScene.effect( roseshield = new RoseHalo( this ));
@@ -434,6 +452,12 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 					burning = null;
 				}
 				break;
+            case HELLBURNING:
+                if (hellburning != null) {
+                    hellburning.on = false;
+                    hellburning = null;
+                }
+                break;
             case SOULFIRE:
             if (soulfire != null) {
                 soulfire.on = false;
@@ -480,6 +504,12 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
                 }
                 paused = false;
                 break;
+            case IRONSKIN:
+            if (ironSkin != null) {
+                ironSkin.ironDown();
+                ironSkin = null;
+            }
+            break;
             case EYING:
                 if (eye != null){
                     eye.putOut();
@@ -528,6 +558,11 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
             case COCOSHIELDED:
                 if (cocosshield != null){
                     cocosshield.putOut();
+                }
+                break;
+            case SHIELD:
+                if (shieldHalo != null){
+                    shieldHalo.putOut();
                 }
                 break;
             case ROSESHIELDED:

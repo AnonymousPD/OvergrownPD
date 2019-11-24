@@ -51,6 +51,10 @@ public class HighGrass {
 	private static boolean freezeTrample = false;
 
 	public static void trample( Level level, int pos, Char ch ) {
+
+	    if(ch == null){
+	        return;
+        }
 		
 		if (freezeTrample) return;
 		

@@ -56,6 +56,12 @@ public class Feelerfern extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new FeelerfernPoisonParticle().getColor(), 10);
+        Buff.prolong(ch, Feelers.class, 2f);
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }

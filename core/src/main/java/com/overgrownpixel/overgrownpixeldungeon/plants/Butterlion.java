@@ -47,13 +47,28 @@ import com.watabou.utils.PathFinder;
 
 public class Butterlion extends Plant {
 
-	{
+    {
 		image = 17;
 	}
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new ButterlionPoisonParticle().getColor(), 10);
+        if (Dungeon.level.heroFOV[ch.pos]) {
+            CellEmitter.get( ch.pos ).start( Speck.factory( Speck.ROCK ), 0.07f, 10 );
+            Camera.main.shake( 1, 0.7f );
+            Sample.INSTANCE.play( Assets.SND_ROCKS );
+        }
+        ch.damage(1, this);
+        if(ch == Dungeon.hero && !ch.isAlive()){
+            Dungeon.fail(getClass());
+            GLog.n( Messages.get(this, "ondeath") );
+        }
+    }
+
+    @Override
     public void attackProc(Char enemy, int damage) {
-        if (Dungeon.level.heroFOV[pos]) {
+        if (Dungeon.level.heroFOV[enemy.pos]) {
             CellEmitter.get( enemy.pos ).start( Speck.factory( Speck.ROCK ), 0.07f, 10 );
             Camera.main.shake( 3, 0.7f );
             Sample.INSTANCE.play( Assets.SND_ROCKS );
@@ -76,7 +91,7 @@ public class Butterlion extends Plant {
         if (ch instanceof Hero && ((Hero) ch).subClass == HeroSubClass.WARDEN){
             Buff.prolong( ch, Heavy.class, Heavy.DURATION );
         }
-        if (Dungeon.level.heroFOV[pos]) {
+        if (Dungeon.level.heroFOV[ch.pos]) {
             CellEmitter.get( ch.pos ).start( Speck.factory( Speck.ROCK ), 0.07f, 10 );
             Camera.main.shake( 3, 0.7f );
             Sample.INSTANCE.play( Assets.SND_ROCKS );

@@ -43,7 +43,7 @@ public class PotionOfLove extends Potion {
 	
 	@Override
 	public void apply( Hero hero ) {
-	    for(Mob mob : Dungeon.level.mobs){
+	    for(Mob mob : Dungeon.level.mobs.toArray(new Mob[0])){
 	        if(hero.visibleEnemiesList().contains(mob)){
                 Buff.affect( mob, Charm.class, 10f).object = hero.id();
                 mob.sprite.centerEmitter().start( Speck.factory( Speck.HEART ), 0.2f, 5 );
@@ -60,7 +60,7 @@ public class PotionOfLove extends Potion {
             Sample.INSTANCE.play( Assets.SND_SHATTER );
         }
 
-        for(Mob mob : Dungeon.level.mobs){
+        for(Mob mob : Dungeon.level.mobs.toArray(new Mob[0])){
             if(mob.fieldOfView[cell] && Dungeon.hero.fieldOfView[cell]){
                 Buff.affect( mob, Charm.class, 10f).object = Dungeon.hero.id();
                 mob.sprite.centerEmitter().start( Speck.factory( Speck.HEART ), 0.2f, 5 );

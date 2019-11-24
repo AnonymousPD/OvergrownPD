@@ -30,6 +30,7 @@ import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
 import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Fire;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.Hero;
 import com.overgrownpixel.overgrownpixeldungeon.actors.hero.HeroSubClass;
+import com.overgrownpixel.overgrownpixeldungeon.actors.mobs.Mob;
 import com.overgrownpixel.overgrownpixeldungeon.effects.MagicMissile;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.poisonparticles.ChillisnapperPoisonParticle;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
@@ -40,6 +41,7 @@ import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.PixelParticle;
 import com.watabou.utils.Callback;
 import com.watabou.utils.PathFinder;
+import com.watabou.utils.Random;
 
 import java.util.HashSet;
 
@@ -70,7 +72,7 @@ public class Chillisnapper extends Plant {
         affectedCells = new HashSet<>();
         visualCells = new HashSet<>();
 
-        int maxDist = 2 + 2*2;
+        int maxDist = 2 + 2 * 2;
         int dist = Math.min(bolt.dist, maxDist);
 
         for (int i = 0; i < PathFinder.CIRCLE8.length; i++){
@@ -164,7 +166,7 @@ public class Chillisnapper extends Plant {
     @Override
     public void activate(Char ch) {
         if(ch instanceof Hero) {
-            for (Char cha : Dungeon.level.mobs) {
+            for (Char cha : Dungeon.level.mobs.toArray(new Mob[0])) {
                 if (ch.fieldOfView[cha.pos]) {
                     if(cha != null){
                         shoot(ch, cha.pos);
@@ -179,7 +181,7 @@ public class Chillisnapper extends Plant {
                 shoot(ch, Dungeon.hero.pos);
                 return;
             } else {
-                for (Char cha : Dungeon.level.mobs) {
+                for (Char cha : Dungeon.level.mobs.toArray(new Mob[0])) {
                     if(cha != null){
                         if(ch != cha){
                             shoot(ch, cha.pos);
@@ -195,6 +197,21 @@ public class Chillisnapper extends Plant {
     @Override
     public void activate() {
         GameScene.add(Blob.seed(pos, 1+2, Fire.class));
+    }
+
+    @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new ChillisnapperPoisonParticle().getColor(), 10);
+        int newpos;
+        int trys = 8;
+        do{
+            newpos = ch.pos + PathFinder.NEIGHBOURS8[Random.Int(8)];
+            trys--;
+            if(trys <= 0){
+                return;
+            }
+        } while (!Dungeon.level.passable[newpos]);
+        shoot(ch, newpos);
     }
 
     @Override

@@ -99,6 +99,24 @@ public class Waterweed extends Plant {
     }
 
     @Override
+    public void spiceEffect(Char ch) {
+        ch.sprite.burst(new WaterweedPoisonParticle().getColor(), 10);
+        for(int p : PathFinder.NEIGHBOURS8){
+            if(Dungeon.level.map[ch.pos+p] == Terrain.EMPTY || Dungeon.level.map[ch.pos+p] == Terrain.GRASS){
+                Level.set(ch.pos+p, Terrain.WATER);
+                GameScene.updateMap(ch.pos+p);
+            }
+            if(Dungeon.level.map[ch.pos+p] == Terrain.EMPTY_WELL){
+                @SuppressWarnings("unchecked")
+                Class<? extends WellWater> waterClass = (Class<? extends WellWater>) Random.element( WATERS );
+                WellWater.seed(ch.pos+p, 1, waterClass, Dungeon.level);
+                Level.set(ch.pos+p, Terrain.WELL);
+                GameScene.updateMap(ch.pos+p);
+            }
+        }
+    }
+
+    @Override
     public Blob immunity() {
         return null;
     }
