@@ -91,7 +91,7 @@ public class Clitbalm extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_CLITBALM;
+			image = ItemSpriteSheet.NEWSEEDS_CLITBALM;
 
 			plantClass = Clitbalm.class;
 		}

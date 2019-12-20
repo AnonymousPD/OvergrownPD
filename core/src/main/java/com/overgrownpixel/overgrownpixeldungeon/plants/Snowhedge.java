@@ -69,7 +69,7 @@ public class Snowhedge extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_SNOWHEDGE;
+			image = ItemSpriteSheet.NEWSEEDS_SNOWHEDGE;
 
 			plantClass = Snowhedge.class;
 		}

@@ -30,8 +30,10 @@ import com.overgrownpixel.overgrownpixeldungeon.R;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.items.ItemSprite;
+import com.overgrownpixel.overgrownpixeldungeon.tiles.TerrainFeaturesTilemap;
 import com.overgrownpixel.overgrownpixeldungeon.ui.Archs;
 import com.overgrownpixel.overgrownpixeldungeon.ui.ExitButton;
+import com.overgrownpixel.overgrownpixeldungeon.ui.Icons;
 import com.overgrownpixel.overgrownpixeldungeon.ui.RenderedTextMultiline;
 import com.overgrownpixel.overgrownpixeldungeon.ui.ScrollPane;
 import com.overgrownpixel.overgrownpixeldungeon.ui.Window;
@@ -45,6 +47,7 @@ import com.watabou.noosa.NinePatch;
 import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.TouchArea;
 import com.watabou.noosa.ui.Component;
+import com.watabou.utils.Random;
 
 import java.util.ArrayList;
 
@@ -100,6 +103,16 @@ public class ChangesScene extends PixelScene {
         //**********************
         ChangeInfo changes = new ChangeInfo("v0.0.3", true, "This Update is a complete rework.");
         changes.hardlight( Window.TITLE_COLOR );
+        infos.add(changes);
+
+        changes.addButton( new ChangeButton( Icons.get(Icons.PREFS), "Bug fixes",
+                "_-_ Most bug fixed I hope."));
+        infos.add(changes);
+
+        changes.addButton( new ChangeButton( new Image(TerrainFeaturesTilemap.getFaunaSprite(Random.Int(0, 63))), "Fauna",
+                "_-_ Vines added.\n" +
+                        "_-_ Purely cosmetic.\n" +
+                        "_-_ Burn when set aflame."));
         infos.add(changes);
 
         //**********************

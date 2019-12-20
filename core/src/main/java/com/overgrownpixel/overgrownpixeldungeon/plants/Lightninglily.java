@@ -166,7 +166,7 @@ public class Lightninglily extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_LIGHTNINGLILY;
+			image = ItemSpriteSheet.NEWSEEDS_LIGHTNINGLILY;
 
 			plantClass = Lightninglily.class;
 		}

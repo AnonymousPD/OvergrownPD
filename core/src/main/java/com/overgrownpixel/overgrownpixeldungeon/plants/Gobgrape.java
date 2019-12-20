@@ -68,7 +68,7 @@ public class Gobgrape extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_GOBGRAPE;
+			image = ItemSpriteSheet.NEWSEEDS_GOBGRAPE;
 
 			plantClass = Gobgrape.class;
 		}

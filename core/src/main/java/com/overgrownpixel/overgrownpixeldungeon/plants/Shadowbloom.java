@@ -79,7 +79,7 @@ public class Shadowbloom extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_SHADOWBLOOM;
+			image = ItemSpriteSheet.NEWSEEDS_SHADOWBLOOM;
 
 			plantClass = Shadowbloom.class;
 		}

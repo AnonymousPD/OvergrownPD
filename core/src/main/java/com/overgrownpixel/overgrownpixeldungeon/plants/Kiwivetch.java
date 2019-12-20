@@ -79,7 +79,7 @@ public class Kiwivetch extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_KIWIVETCH;
+			image = ItemSpriteSheet.NEWSEEDS_KIWIVETCH;
 
 			plantClass = Kiwivetch.class;
 		}

@@ -26,10 +26,13 @@ package com.overgrownpixel.overgrownpixeldungeon.actors.mobs;
 
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Blob;
+import com.overgrownpixel.overgrownpixeldungeon.actors.blobs.Fire;
 import com.overgrownpixel.overgrownpixeldungeon.effects.particles.SparkParticle;
 import com.overgrownpixel.overgrownpixeldungeon.items.Generator;
 import com.overgrownpixel.overgrownpixeldungeon.mechanics.Ballistica;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
+import com.overgrownpixel.overgrownpixeldungeon.scenes.GameScene;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.CharSprite;
 import com.overgrownpixel.overgrownpixeldungeon.sprites.mobs.ShamanSprite;
 import com.overgrownpixel.overgrownpixeldungeon.utils.GLog;
@@ -54,9 +57,16 @@ public class Shaman extends Mob implements Callback {
 		lootChance = 0.33f;
 		
 		properties.add(Property.ELECTRIC);
+		properties.add(Property.FIERY);
 	}
-	
-	@Override
+
+    @Override
+    public void move(int step) {
+        GameScene.add(Blob.seed(pos, 1, Fire.class));
+        super.move(step);
+    }
+
+    @Override
 	public int damageRoll() {
 		return Random.NormalIntRange( 2, 8 );
 	}

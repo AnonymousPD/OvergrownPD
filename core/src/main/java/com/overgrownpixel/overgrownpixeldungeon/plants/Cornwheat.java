@@ -88,7 +88,7 @@ public class Cornwheat extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_CORNWHEAT;
+			image = ItemSpriteSheet.NEWSEEDS_CORNWHEAT;
 
 			plantClass = Cornwheat.class;
 		}

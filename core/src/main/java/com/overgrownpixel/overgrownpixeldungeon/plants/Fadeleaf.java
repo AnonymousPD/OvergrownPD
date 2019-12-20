@@ -180,7 +180,7 @@ public class Fadeleaf extends Plant {
 	
 	public static class Seed extends Plant.Seed {
 		{
-			image = ItemSpriteSheet.SEED_FADELEAF;
+			image = ItemSpriteSheet.NEWSEEDS_FADELEAF;
 
 			plantClass = Fadeleaf.class;
 		}

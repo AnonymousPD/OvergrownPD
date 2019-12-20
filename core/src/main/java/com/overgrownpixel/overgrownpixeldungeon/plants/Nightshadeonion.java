@@ -81,7 +81,7 @@ public class Nightshadeonion extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_NIGHTSHADEONION;
+			image = ItemSpriteSheet.NEWSEEDS_NIGHTSHADEONION;
 
 			plantClass = Nightshadeonion.class;
 		}

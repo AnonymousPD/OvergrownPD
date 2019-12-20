@@ -47,11 +47,11 @@ public class Bestiary {
 			case 1: default:
 				//10x rat
 				return new ArrayList<Class<? extends Mob>>(Arrays.asList(
-						Rat.class, Rat.class, Rat.class, Rat.class, Rat.class,
-						Rat.class, Rat.class, Rat.class, Rat.class, Rat.class));
+						Rat.class, OldRat.class, YoungRat.class, BrownRat.class, Rat.class,
+						Rat.class, OldRat.class, YoungRat.class, BrownRat.class, Rat.class));
 			case 2:
 				//3x rat, 3x gnoll
-				return new ArrayList<>(Arrays.asList(Rat.class, Rat.class, Rat.class,
+				return new ArrayList<>(Arrays.asList(YoungRat.class, Rat.class, OldRat.class,
 						Gnoll.class, Gnoll.class, Gnoll.class));
 			case 3:
 				//2x rat, 4x gnoll, 1x crab, 1x swarm
@@ -81,13 +81,13 @@ public class Bestiary {
 				//3x skeleton, 1x thief, 2x shaman, 2x guard
 				return new ArrayList<>(Arrays.asList(Skeleton.class, Skeleton.class, Skeleton.class,
 						Thief.class,
-						Shaman.class, Shaman.class,
+						Shaman.class, GrassShaman.class,
 						Guard.class, Guard.class));
 			case 9: case 10:
 				//3x skeleton, 1x thief, 2x shaman, 3x guard
 				return new ArrayList<>(Arrays.asList(Skeleton.class, Skeleton.class, Skeleton.class,
 						Thief.class,
-						Shaman.class, Shaman.class,
+						Shaman.class, GrassShaman.class,
 						Guard.class, Guard.class, Guard.class));
 				
 			// Caves
@@ -184,7 +184,9 @@ public class Bestiary {
 				
 			// Prison
 			case 6:
-				if (Random.Float() < 0.2f)  rotation.add(Shaman.class);
+				if (Random.Float() < 0.1f)  rotation.add(Shaman.class);
+                if (Random.Float() < 0.2f)  rotation.add(GrassShaman.class);
+                if (Random.Float() < 0.15f)  rotation.add(WaterShaman.class);
 				return;
 			case 8:
 				if (Random.Float() < 0.02f) rotation.add(Bat.class);
@@ -217,7 +219,13 @@ public class Bestiary {
 				Class<? extends Mob> cl = rotation.get(i);
 				if (cl == Rat.class) {
 					cl = Albino.class;
-				} else if (cl == Thief.class) {
+				} else if (cl == YoungRat.class) {
+                    cl = Albino.class;
+                } else if (cl == BrownRat.class) {
+                    cl = Albino.class;
+                } else if (cl == OldRat.class) {
+                    cl = Albino.class;
+                } else if (cl == Thief.class) {
 					cl = Bandit.class;
 				} else if (cl == Brute.class) {
 					cl = Shielded.class;
@@ -225,7 +233,11 @@ public class Bestiary {
 					cl = Senior.class;
 				} else if (cl == Scorpio.class) {
 					cl = Acidic.class;
-				}
+				} else if (cl == Shaman.class) {
+                    cl = WaterShaman.class;
+                } else if (cl == GrassShaman.class) {
+                    cl = WaterShaman.class;
+                }
 				rotation.set(i, cl);
 			}
 		}

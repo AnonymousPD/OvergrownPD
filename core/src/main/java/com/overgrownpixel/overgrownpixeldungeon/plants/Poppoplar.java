@@ -79,7 +79,7 @@ public class Poppoplar extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_POPPOPLAR;
+			image = ItemSpriteSheet.NEWSEEDS_POPPOLAR;
 
 			plantClass = Poppoplar.class;
 		}

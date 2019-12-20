@@ -128,7 +128,7 @@ public class Musclemoss extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_MUSCLEMOSS;
+			image = ItemSpriteSheet.NEWSEEDS_MUSCLEMOSS;
 
 			plantClass = Musclemoss.class;
 		}

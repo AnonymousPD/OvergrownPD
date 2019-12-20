@@ -74,7 +74,7 @@ public class Crimsonpepper extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_CRIMSONPEPPER;
+			image = ItemSpriteSheet.NEWSEEDS_CRIMSONPEPPER;
 
 			plantClass = Crimsonpepper.class;
 		}

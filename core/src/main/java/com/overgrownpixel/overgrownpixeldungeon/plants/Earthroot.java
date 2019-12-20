@@ -104,7 +104,7 @@ public class Earthroot extends Plant {
 	
 	public static class Seed extends Plant.Seed {
 		{
-			image = ItemSpriteSheet.SEED_EARTHROOT;
+			image = ItemSpriteSheet.NEWSEEDS_EARTHROOT;
 
 			plantClass = Earthroot.class;
 

@@ -123,7 +123,7 @@ public class Tomatobush extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_TOMATOBUSH;
+			image = ItemSpriteSheet.NEWSEEDS_TOMATOBUSH;
 
 			plantClass = Tomatobush.class;
 

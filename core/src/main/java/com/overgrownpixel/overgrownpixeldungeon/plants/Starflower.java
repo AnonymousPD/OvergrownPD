@@ -83,7 +83,7 @@ public class Starflower extends Plant {
 	public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_STARFLOWER;
+			image = ItemSpriteSheet.NEWSEEDS_STARFLOWER;
 
 			plantClass = Starflower.class;
 		}

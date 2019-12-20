@@ -104,7 +104,7 @@ public class Beam extends Image {
 
     public static class WormRay extends Beam{
         public WormRay(PointF s, PointF e){
-            super(s, e, Effects.Type.VINE_RAY, 3f, true);
+            super(s, e, Effects.Type.WORM_RAY, 3f, true);
         }
     }
 	

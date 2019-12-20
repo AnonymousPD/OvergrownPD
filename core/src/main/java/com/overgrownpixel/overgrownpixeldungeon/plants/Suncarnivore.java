@@ -93,7 +93,7 @@ public class Suncarnivore extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-		    image = ItemSpriteSheet.SEED_SUNCARNIVORE;
+		    image = ItemSpriteSheet.NEWSEEDS_SUNCARNIVORE;
 
 			plantClass = Suncarnivore.class;
 		}

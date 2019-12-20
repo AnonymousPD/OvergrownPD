@@ -75,7 +75,7 @@ public class Chandaliertail extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_CHANDALIERTAIL;
+			image = ItemSpriteSheet.NEWSEEDS_CHANDALIERTAIL;
 
 			plantClass = Chandaliertail.class;
 		}

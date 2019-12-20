@@ -69,7 +69,7 @@ public class Tankcabbage extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_TANKCABBAGE;
+			image = ItemSpriteSheet.NEWSEEDS_TANKCABBAGE;
 
 			plantClass = Tankcabbage.class;
 		}

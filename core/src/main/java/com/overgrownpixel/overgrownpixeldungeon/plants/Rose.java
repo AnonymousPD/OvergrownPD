@@ -92,7 +92,7 @@ public class Rose extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-		    image = ItemSpriteSheet.SEED_ROSE;
+		    image = ItemSpriteSheet.NEWSEEDS_ROSE;
 
 			plantClass = Rose.class;
 		}

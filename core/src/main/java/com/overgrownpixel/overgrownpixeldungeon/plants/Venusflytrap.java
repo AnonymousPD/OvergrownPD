@@ -84,7 +84,7 @@ public class Venusflytrap extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_VENUSFLYTRAP;
+			image = ItemSpriteSheet.NEWSEEDS_VENUSFLYTRAP;
 
 			plantClass = Venusflytrap.class;
 		}

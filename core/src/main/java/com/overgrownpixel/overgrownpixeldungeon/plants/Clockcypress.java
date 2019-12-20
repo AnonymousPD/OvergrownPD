@@ -78,7 +78,7 @@ public class Clockcypress extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_CLOCKCYPRESS;
+			image = ItemSpriteSheet.NEWSEEDS_CLOCKCYPRESS;
 
 			plantClass = Clockcypress.class;
 		}

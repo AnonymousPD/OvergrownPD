@@ -124,7 +124,7 @@ public class Waterweed extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_WATERWEED;
+			image = ItemSpriteSheet.NEWSEEDS_WATERWEED;
 
 			plantClass = Waterweed.class;
 		}

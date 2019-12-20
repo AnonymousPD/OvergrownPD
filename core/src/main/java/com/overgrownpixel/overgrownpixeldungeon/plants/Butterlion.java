@@ -132,7 +132,7 @@ public class Butterlion extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_BUTTERLION;
+			image = ItemSpriteSheet.NEWSEEDS_BUTTERLION;
 
 			plantClass = Butterlion.class;
 		}

@@ -100,7 +100,7 @@ public class Apricobush extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_APRICOBUSH;
+			image = ItemSpriteSheet.NEWSEEDS_APRICOBUSH;
 
 			plantClass = Apricobush.class;
 		}

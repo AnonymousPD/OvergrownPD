@@ -95,7 +95,7 @@ public class Firefoxglove extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_FIREFOXGLOVE;
+			image = ItemSpriteSheet.NEWSEEDS_FIREFOXGLOVE;
 
 			plantClass = Firefoxglove.class;
 		}

@@ -95,7 +95,7 @@ public class Firebloom extends Plant {
 	
 	public static class Seed extends Plant.Seed {
 		{
-			image = ItemSpriteSheet.SEED_FIREBLOOM;
+			image = ItemSpriteSheet.NEWSEEDS_FIREBLOOM;
 
 			plantClass = Firebloom.class;
 		}

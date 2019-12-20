@@ -89,7 +89,7 @@ public class Ballcrop extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_BALLCROP;
+			image = ItemSpriteSheet.NEWSEEDS_BALLCROP;
 
 			plantClass = Ballcrop.class;
 		}

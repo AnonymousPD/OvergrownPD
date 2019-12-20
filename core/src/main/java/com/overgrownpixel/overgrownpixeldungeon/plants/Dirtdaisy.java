@@ -79,7 +79,7 @@ public class Dirtdaisy extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_DIRTDAISY;
+			image = ItemSpriteSheet.NEWSEEDS_DIRTDAISY;
 
 			plantClass = Dirtdaisy.class;
 		}

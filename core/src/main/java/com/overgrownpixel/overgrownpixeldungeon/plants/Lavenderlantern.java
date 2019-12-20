@@ -87,7 +87,7 @@ public class Lavenderlantern extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_LAVENDERLANTERN;
+			image = ItemSpriteSheet.NEWSEEDS_LAVENDERLANTERN;
 
 			plantClass = Lavenderlantern.class;
 		}

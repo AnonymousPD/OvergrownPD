@@ -95,7 +95,7 @@ public class Sorrowmoss extends Plant {
 	
 	public static class Seed extends Plant.Seed {
 		{
-			image = ItemSpriteSheet.SEED_SORROWMOSS;
+			image = ItemSpriteSheet.NEWSEEDS_SORROWMOSS;
 
 			plantClass = Sorrowmoss.class;
 		}

@@ -67,7 +67,7 @@ public class BlandfruitBush extends Plant {
 	//This seed no longer drops, but has a sprite as it did drop prior to 0.7.0
 	public static class Seed extends Plant.Seed {
 		{
-			image = ItemSpriteSheet.SEED_FADELEAF;
+			image = ItemSpriteSheet.NEWSEEDS_FADELEAF;
 
 			plantClass = BlandfruitBush.class;
 		}

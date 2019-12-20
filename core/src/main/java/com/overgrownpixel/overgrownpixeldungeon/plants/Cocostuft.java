@@ -91,7 +91,7 @@ public class Cocostuft extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_COCOSTUFT;
+			image = ItemSpriteSheet.NEWSEEDS_COCOSTUFT;
 
 			plantClass = Cocostuft.class;
 		}

@@ -1305,6 +1305,93 @@ public class ItemSpriteSheet {
             assignItemRect(i, 13, 16);;
     }
 
+    private static final int NEWSEEDS        =                               xy(1, 55);  //16 slots
+    public static final int NEWSEEDS_ROTBERRY        = NEWSEEDS+0;
+    public static final int NEWSEEDS_FIREBLOOM       = NEWSEEDS+1;
+    public static final int NEWSEEDS_SWIFTHISTLE     = NEWSEEDS+2;
+    public static final int NEWSEEDS_SUNGRASS        = NEWSEEDS+3;
+    public static final int NEWSEEDS_ICECAP          = NEWSEEDS+4;
+    public static final int NEWSEEDS_STORMVINE       = NEWSEEDS+5;
+    public static final int NEWSEEDS_SORROWMOSS      = NEWSEEDS+6;
+    public static final int NEWSEEDS_DREAMFOIL       = NEWSEEDS+7;
+    public static final int NEWSEEDS_EARTHROOT       = NEWSEEDS+8;
+    public static final int NEWSEEDS_STARFLOWER      = NEWSEEDS+9;
+    public static final int NEWSEEDS_FADELEAF        = NEWSEEDS+10;
+    public static final int NEWSEEDS_BLINDWEED       = NEWSEEDS+11;
+    public static final int NEWSEEDS_BLANDFRUIT      = NEWSEEDS+12;
+    public static final int NEWSEEDS_DEWCATCHER      = NEWSEEDS+13;
+    public static final int NEWSEEDS_SEEDPOD         = NEWSEEDS+14;
+    public static final int NEWSEEDS_APRICOBUSH      = NEWSEEDS+15;
+    static {
+        for (int i = NEWSEEDS; i < NEWSEEDS+16; i++)
+            assignItemRect(i, 13, 16);;
+    }
+
+    private static final int NEWSEEDS2        =                               xy(1, 56);  //16 slots
+    public static final int NEWSEEDS_FIREFOXGLOVE    = NEWSEEDS2+0;
+    public static final int NEWSEEDS_BUTTERLION      = NEWSEEDS2+1;
+    public static final int NEWSEEDS_MUSCLEMOSS      = NEWSEEDS2+2;
+    public static final int NEWSEEDS_SNOWHEDGE       = NEWSEEDS2+3;
+    public static final int NEWSEEDS_SUNBLOOM        = NEWSEEDS2+4;
+    public static final int NEWSEEDS_STEAMWEED       = NEWSEEDS2+5;
+    public static final int NEWSEEDS_TOMATOBUSH      = NEWSEEDS2+6;
+    public static final int NEWSEEDS_CHANDALIERTAIL  = NEWSEEDS2+7;
+    public static final int NEWSEEDS_NIGHTSHADEONION = NEWSEEDS2+8;
+    public static final int NEWSEEDS_BLACKHOLEFLOWER = NEWSEEDS2+9;
+    public static final int NEWSEEDS_FROSTCORN       = NEWSEEDS2+10;
+    public static final int NEWSEEDS_WILLOWCANE      = NEWSEEDS2+11;
+    public static final int NEWSEEDS_PARASITESHRUB   = NEWSEEDS2+12;
+    public static final int NEWSEEDS_CRIMSONPEPPER   = NEWSEEDS2+13;
+    public static final int NEWSEEDS_WITHERFENEL     = NEWSEEDS2+14;
+    public static final int NEWSEEDS_CHILLISNAPPER   = NEWSEEDS2+15;
+    static {
+        for (int i = NEWSEEDS; i < NEWSEEDS+16; i++)
+            assignItemRect(i, 13, 16);;
+    }
+
+    private static final int NEWSEEDS3        =                               xy(1, 57);  //16 slots
+    public static final int NEWSEEDS_WATERWEED       = NEWSEEDS3+0;
+    public static final int NEWSEEDS_GRASSLILLY      = NEWSEEDS3+1;
+    public static final int NEWSEEDS_PEANUTPETAL     = NEWSEEDS3+2;
+    public static final int NEWSEEDS_KIWIVETCH       = NEWSEEDS3+3;
+    public static final int NEWSEEDS_ROSE            = NEWSEEDS3+4;
+    public static final int NEWSEEDS_VENUSFLYTRAP    = NEWSEEDS3+5;
+    public static final int NEWSEEDS_SUNCARNIVORE    = NEWSEEDS3+6;
+    public static final int NEWSEEDS_COMBFLOWER      = NEWSEEDS3+7;
+    public static final int NEWSEEDS_BALLCROP        = NEWSEEDS3+8;
+    public static final int NEWSEEDS_BLUEYEDSUSAN    = NEWSEEDS3+9;
+    public static final int NEWSEEDS_CORNWHEAT       = NEWSEEDS3+10;
+    public static final int NEWSEEDS_COCOSTUFT       = NEWSEEDS3+11;
+    public static final int NEWSEEDS_EGGBLOOM        = NEWSEEDS3+12;
+    public static final int NEWSEEDS_FEELERFERN      = NEWSEEDS3+13;
+    public static final int NEWSEEDS_LARVALEAF       = NEWSEEDS3+14;
+    public static final int NEWSEEDS_TANKCABBAGE     = NEWSEEDS3+15;
+    static {
+        for (int i = NEWSEEDS; i < NEWSEEDS+16; i++)
+            assignItemRect(i, 13, 16);;
+    }
+
+    private static final int NEWSEEDS4        =                               xy(1, 58);  //16 slots
+    public static final int NEWSEEDS_LIGHTNINGLILY   = NEWSEEDS4+0;
+    public static final int NEWSEEDS_GOOGRASS        = NEWSEEDS4+1;
+    public static final int NEWSEEDS_POPPOLAR        = NEWSEEDS4+2;
+    public static final int NEWSEEDS_SOURPITCHER     = NEWSEEDS4+3;
+    public static final int NEWSEEDS_CLITBALM        = NEWSEEDS4+4;
+    public static final int NEWSEEDS_HYPNOHEMP       = NEWSEEDS4+5;
+    public static final int NEWSEEDS_CLOCKCYPRESS    = NEWSEEDS4+6;
+    public static final int NEWSEEDS_EYEEUONYMUS     = NEWSEEDS4+7;
+    public static final int NEWSEEDS_GOBGRAPE        = NEWSEEDS4+8;
+    public static final int NEWSEEDS_BANANABEAN      = NEWSEEDS4+9;
+    public static final int NEWSEEDS_DIRTDAISY       = NEWSEEDS4+10;
+    public static final int NEWSEEDS_GRASSVINE       = NEWSEEDS4+11;
+    public static final int NEWSEEDS_LAVENDERLANTERN = NEWSEEDS4+12;
+    public static final int NEWSEEDS_FLOWERTREE      = NEWSEEDS4+13;
+    public static final int NEWSEEDS_CRIMSONCROWN    = NEWSEEDS4+14;
+    public static final int NEWSEEDS_SHADOWBLOOM     = NEWSEEDS4+15;
+    static {
+        for (int i = NEWSEEDS; i < NEWSEEDS+16; i++)
+            assignItemRect(i, 13, 16);;
+    }
 	                                                                                    //16 free slots
 
 

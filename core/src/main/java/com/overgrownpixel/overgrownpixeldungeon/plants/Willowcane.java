@@ -82,7 +82,7 @@ public class Willowcane extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_WILLOWCANE;
+			image = ItemSpriteSheet.NEWSEEDS_WILLOWCANE;
 
 			plantClass = Willowcane.class;
 		}

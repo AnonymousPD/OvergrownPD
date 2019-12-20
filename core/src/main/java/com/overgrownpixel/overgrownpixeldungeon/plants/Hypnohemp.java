@@ -81,7 +81,7 @@ public class Hypnohemp extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_HYPNOHEMP;
+			image = ItemSpriteSheet.NEWSEEDS_HYPNOHEMP;
 
 			plantClass = Hypnohemp.class;
 		}

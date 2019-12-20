@@ -128,7 +128,7 @@ public class Blackholeflower extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_BLACKHOLEFLOWER;
+			image = ItemSpriteSheet.NEWSEEDS_BLACKHOLEFLOWER;
 
 			plantClass = Blackholeflower.class;
 		}

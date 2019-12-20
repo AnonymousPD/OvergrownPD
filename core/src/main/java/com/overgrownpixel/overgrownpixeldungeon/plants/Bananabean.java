@@ -94,7 +94,7 @@ public class Bananabean extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_BANANABEAN;
+			image = ItemSpriteSheet.NEWSEEDS_BANANABEAN;
 
 			plantClass = Bananabean.class;
 		}

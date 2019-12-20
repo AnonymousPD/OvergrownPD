@@ -222,7 +222,7 @@ public class Chillisnapper extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_CHILLISNAPPER;
+			image = ItemSpriteSheet.NEWSEEDS_CHILLISNAPPER;
 
 			plantClass = Chillisnapper.class;
 		}

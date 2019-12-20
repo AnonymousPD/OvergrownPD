@@ -94,7 +94,7 @@ public class Combflower extends Plant {
     public static class Seed extends Plant.Seed{
 
 		{
-			image = ItemSpriteSheet.SEED_COMBFLOWER;
+			image = ItemSpriteSheet.NEWSEEDS_COMBFLOWER;
 
 			plantClass = Combflower.class;
 		}
