@@ -59,6 +59,7 @@ public class Assets {
 	public static final String EFFECTS	= "gui/effects.png";
 	
 	public static final String RAT		= "mobs/rat.png";
+    public static final String STANDS   = "mobs/stands.png";
 	public static final String GNOLL	= "mobs/gnoll.png";
 	public static final String CRAB		= "mobs/crab.png";
 	public static final String GOO		= "mobs/bosses/goo.png";

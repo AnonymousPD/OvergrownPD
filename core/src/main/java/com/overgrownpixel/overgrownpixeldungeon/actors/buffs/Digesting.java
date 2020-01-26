@@ -43,7 +43,7 @@ public class Digesting extends FlavourBuff implements Hero.Doom {
     @Override
     public void detach() {
         super.detach();
-        target.damage(Math.round(Dungeon.depth/2), this);
+        if(target.isAlive()) target.damage(Math.max(1, Math.round((Dungeon.depth/10f)*(target.HP/10f))), this);
     }
 
     @Override

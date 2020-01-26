@@ -55,7 +55,7 @@ public class Grasslilly extends Plant {
         try {
             Plant.Seed seed = (Plant.Seed) Generator.random(Generator.Category.SEED);
             Plant plant = seed.plantClass.newInstance();
-            plant.pos = ch.pos;
+            plant.pos = pos;
             plant.activate(ch);
         } catch (Exception e){
             OvergrownPixelDungeon.reportException(e);

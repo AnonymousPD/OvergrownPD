@@ -24,6 +24,8 @@
 
 package com.overgrownpixel.overgrownpixeldungeon.actors.buffs;
 
+import com.overgrownpixel.overgrownpixeldungeon.actors.Actor;
+import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
 import com.overgrownpixel.overgrownpixeldungeon.ui.BuffIndicator;
 import com.watabou.noosa.Image;
@@ -44,7 +46,9 @@ public class ParasiticInfection extends FlavourBuff {
 
     @Override
     public void detach() {
-        if(target != null) Buff.affect(target, Ooze.class).set( 20f );
+        if(target.isAlive()){
+            Buff.affect((Char) Actor.findById(target.id()), Ooze.class).set( 20f );
+        }
         super.detach();
     }
 

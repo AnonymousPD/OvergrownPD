@@ -32,6 +32,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.BrokenSeal;
 import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.ClothArmor;
 import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.CloakOfShadows;
+import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.TarotCards;
 import com.overgrownpixel.overgrownpixeldungeon.items.bags.PotionBandolier;
 import com.overgrownpixel.overgrownpixeldungeon.items.bags.ScrollHolder;
 import com.overgrownpixel.overgrownpixeldungeon.items.bags.VelvetPouch;
@@ -55,6 +56,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.staffs.MagesS
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.ThrowingKnife;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.ThrowingStone;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
+import com.overgrownpixel.overgrownpixeldungeon.plants.Parasiteshrub;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.DeviceCompat;
 
@@ -111,6 +113,8 @@ public enum HeroClass {
 		}
 		
 		new ScrollOfIdentify().identify();
+		new TarotCards().identify().collect();
+		new Parasiteshrub.Seed().collect();
 	}
 
 	public Badges.Badge masteryBadge() {

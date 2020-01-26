@@ -61,7 +61,7 @@ public class Food extends Item {
 	public float energy = Hunger.HUNGRY;
 	public String message = Messages.get(this, "eat_msg");
 
-	public Class seed = null;
+	public Plant.Seed seed = null;
     public static final String SEED	= "SPICE";
 
     protected WndBag.Mode mode = WndBag.Mode.SEED;
@@ -76,7 +76,11 @@ public class Food extends Item {
     @Override
     public void restoreFromBundle(Bundle bundle) {
         super.restoreFromBundle(bundle);
-        seed = bundle.getClass(SEED);
+        try {
+            seed = (Plant.Seed) bundle.getClass(SEED).newInstance();
+        } catch (Exception e){
+            OvergrownPixelDungeon.reportException(e);
+        }
         if(seed != null){
             name = Messages.get(this, "name") + " " + Messages.get(this, "spiced_with").toLowerCase() + " " + Messages.get(this.seed, "name");
         }
@@ -143,12 +147,11 @@ public class Food extends Item {
 
             if (item == null) return;
 
-            Item newItem = curItem.split(1);
-            if(newItem != null){
-                ((Food) newItem).seed = ((Plant.Seed) item).getPlantClass();
+            if(curItem != null){
+                ((Food) curItem).seed = ((Plant.Seed) item);
                 curUser.spend( TIME_TO_SPICE );
                 item.detach(curUser.belongings.backpack);
-                ((Food) curItem).name = Messages.get(curItem.getClass(), "name") + " " + Messages.get(curItem.getClass(), "spiced_with").toLowerCase() + " " + Messages.get(((Food) curItem).seed, "name");
+                ((Food) curItem).name = Messages.get(curItem.getClass(), "name") + " " + Messages.get(curItem.getClass(), "spiced_with").toLowerCase() + " " + Messages.get(((Food) curItem).seed.getClass(), "name");
             } else {
                 return;
             }
@@ -158,7 +161,7 @@ public class Food extends Item {
 	public void eatEffect(Char hero){
         if(seed != null){
             try{
-                Plant plant = (Plant) seed.newInstance();
+                Plant plant = seed.getPlantClass().newInstance();
                 plant.spiceEffect(hero);
             } catch (Exception e){
                 OvergrownPixelDungeon.reportException(e);

@@ -35,6 +35,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.Item;
 import com.overgrownpixel.overgrownpixeldungeon.items.KindOfWeapon;
 import com.overgrownpixel.overgrownpixeldungeon.items.KindofMisc;
 import com.overgrownpixel.overgrownpixeldungeon.items.armor.Armor;
+import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.CursedCards;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.Weapon;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.overgrownpixel.overgrownpixeldungeon.messages.Messages;
@@ -96,12 +97,20 @@ public class CursingTrap extends Trap {
 
 		KindofMisc misc1 = hero.belongings.misc1;
 		if (misc1 != null){
-			canCurse.add(misc1);
+		    if(misc1 instanceof CursedCards){
+		        priorityCurse.add(misc1);
+            } else {
+                canCurse.add(misc1);
+            }
 		}
 
 		KindofMisc misc2 = hero.belongings.misc2;
 		if (misc2 != null){
-			canCurse.add(misc2);
+            if(misc2 instanceof CursedCards){
+                priorityCurse.add(misc2);
+            } else {
+                canCurse.add(misc2);
+            }
 		}
 
 		Collections.shuffle(priorityCurse);

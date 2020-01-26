@@ -57,10 +57,10 @@ public class SuperBalling extends FlavourBuff {
 
     @Override
     public void detach() {
-        super.detach();
         target.sprite.origin.set(target.sprite.x, target.sprite.y);
         target.sprite.angularSpeed = 0f;
         target.sprite.angle = 0f;
+        super.detach();
     }
 
     @Override

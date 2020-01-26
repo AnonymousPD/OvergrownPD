@@ -69,7 +69,7 @@ public class BlandfruitBush extends Plant {
 		{
 			image = ItemSpriteSheet.NEWSEEDS_FADELEAF;
 
-			plantClass = BlandfruitBush.class;
+			plantClass = Fadeleaf.class;
 		}
 
         @Override

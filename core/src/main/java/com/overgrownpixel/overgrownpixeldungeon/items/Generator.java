@@ -37,6 +37,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.Artifact;
 import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.CapeOfThorns;
 import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.ChaliceOfBlood;
 import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.CloakOfShadows;
+import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.CursedCards;
 import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.DriedRose;
 import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.EtherealChains;
 import com.overgrownpixel.overgrownpixeldungeon.items.artifacts.HornOfPlenty;
@@ -181,10 +182,12 @@ import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfCorrosion;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfCorruption;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfDisintegration;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfFireblast;
+import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfFlock;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfFrost;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfLightning;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfLivingEarth;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfMagicMissile;
+import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfPoison;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfPrismaticLight;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfRegrowth;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfTransfusion;
@@ -221,11 +224,6 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.Mace;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.Quarterstaff;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.SpikedClub;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.clubs.SpikedStoneClub;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.Crossbow;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.GoldenCrossbow;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.IronCrossbow;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.SmallCrossbow;
-import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.crossbows.WoodenCrossbow;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.curvedblades.Khopesh;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.curvedblades.PirateSabre;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.curvedblades.Sabre;
@@ -491,7 +489,7 @@ public class Generator {
 		public float prob;
 		public Class<? extends Item> superClass;
 		
-		private Category( float prob, Class<? extends Item> superClass ) {
+		Category( float prob, Class<? extends Item> superClass ) {
 			this.prob = prob;
 			this.superClass = superClass;
 		}
@@ -506,7 +504,7 @@ public class Generator {
 			return item instanceof Bag ? Integer.MAX_VALUE : Integer.MAX_VALUE - 1;
 		}
 		
-		private static final float[] INITIAL_ARTIFACT_PROBS = new float[]{ 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1};
+		private static final float[] INITIAL_ARTIFACT_PROBS = new float[]{ 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1};
 		
 		static {
 			GOLD.classes = new Class<?>[]{
@@ -799,8 +797,10 @@ public class Generator {
 					WandOfWarding.class,
 					WandOfTransfusion.class,
 					WandOfCorruption.class,
-					WandOfRegrowth.class };
-			WAND.probs = new float[]{ 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3 };
+					WandOfRegrowth.class,
+                    WandOfFlock.class,
+                    WandOfPoison.class};
+			WAND.probs = new float[]{ 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
 			
 			//see generator.randomWeapon
 			WEAPON.classes = new Class<?>[]{};
@@ -839,7 +839,6 @@ public class Generator {
                     DualFencingBlades.class,
                     Scythe.class,
                     ClawGlove.class,
-                    WoodenCrossbow.class,
                     Khopesh.class,
                     HookedWaraxe.class,
                     Jutte.class,
@@ -864,7 +863,6 @@ public class Generator {
                     ManjiSai.class,
                     TekkoKagi.class,
                     Harpoon.class,
-                    SmallCrossbow.class,
                     Sabre.class,
                     TwoSidedWaraxe.class,
                     BarbedStaff.class,
@@ -875,7 +873,7 @@ public class Generator {
                     DoubleBlade.class,
                     Hackblade.class,
 			};
-			WEP_T3.probs = new float[]{ 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 3, 3, 3, 3 };
+			WEP_T3.probs = new float[]{ 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 3, 3, 3, 3 };
 			
 			WEP_T4.classes = new Class<?>[]{
 					Longsword.class,
@@ -883,7 +881,6 @@ public class Generator {
 					Flail.class,
 					RunicBlade.class,
 					AssassinsBlade.class,
-					Crossbow.class,
                     Kusarigama.class,
                     TridentSpear.class,
                     Katana.class,
@@ -891,7 +888,6 @@ public class Generator {
                     CrusaderKiteshield.class,
                     SteelWarhammer.class,
                     ScytheWheel.class,
-                    IronCrossbow.class,
                     AdornedLongsword.class,
                     DoubleLongsword.class,
                     PirateSabre.class,
@@ -902,7 +898,7 @@ public class Generator {
                     BroadBlade.class,
                     SteelBlade.class,
 			};
-			WEP_T4.probs = new float[]{ 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
+			WEP_T4.probs = new float[]{ 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
 			
 			WEP_T5.classes = new Class<?>[]{
 					Greatsword.class,
@@ -918,13 +914,12 @@ public class Generator {
                     TripleHookedHalberd.class,
                     SpikedScythe.class,
                     GoldenBow.class,
-                    GoldenCrossbow.class,
                     SteelLongsword.class,
                     Waraxe.class,
                     BroadSpear.class,
                     RoundedSpear.class,
 			};
-			WEP_T5.probs = new float[]{ 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
+			WEP_T5.probs = new float[]{ 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
 			
 			//see Generator.randomArmor
 			ARMOR.classes = new Class<?>[]{
@@ -1006,7 +1001,8 @@ public class Generator {
 					AlchemistsToolkit.class,
 					DriedRose.class,
 					LloydsBeacon.class,
-					EtherealChains.class
+					EtherealChains.class,
+                    CursedCards.class,
 			};
 			ARTIFACT.probs = INITIAL_ARTIFACT_PROBS.clone();
             SPELLS.classes = new Class<?>[]{

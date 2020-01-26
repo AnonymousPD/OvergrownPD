@@ -729,6 +729,8 @@ public class ItemSpriteSheet {
 	public static final int WAND_WARDING        = WANDS+10;
 	public static final int WAND_REGROWTH       = WANDS+11;
 	public static final int WAND_TRANSFUSION    = WANDS+12;
+    public static final int WAND_FLOCK          = WANDS+13;
+    public static final int WAND_POISON         = WANDS+14;
 	static {
 		for (int i = WANDS; i < WANDS+16; i++)
 			assignItemRect(i, 14, 14);
@@ -776,6 +778,32 @@ public class ItemSpriteSheet {
 	public static final int ARTIFACT_ROSE1      = ARTIFACTS+20;
 	public static final int ARTIFACT_ROSE2      = ARTIFACTS+21;
 	public static final int ARTIFACT_ROSE3      = ARTIFACTS+22;
+    public static final int ARTIFACT_CARD1      = ARTIFACTS+23;
+    public static final int ARTIFACT_CARD2      = ARTIFACTS+24;
+    public static final int ARTIFACT_CARD3      = ARTIFACTS+25;
+    public static final int ARTIFACT_CARD4      = ARTIFACTS+26;
+
+    public static final int TAROTCARD_FOOL      = ARTIFACTS+27;
+    public static final int TAROTCARD_MAGICIAN  = ARTIFACTS+28;
+    public static final int TAROTCARD_PRIESTESS = ARTIFACTS+29;
+    public static final int TAROTCARD_EMPRESS   = ARTIFACTS+30;
+    public static final int TAROTCARD_EMPEROR   = ARTIFACTS+31;
+    public static final int TAROTCARD_HIEROPHANT= ARTIFACTS+32;
+    public static final int TAROTCARD_LOVERS    = ARTIFACTS+33;
+    public static final int TAROTCARD_CHARIOT   = ARTIFACTS+34;
+    public static final int TAROTCARD_LUST      = ARTIFACTS+35;
+    public static final int TAROTCARD_HERMIT    = ARTIFACTS+36;
+    public static final int TAROTCARD_FORTUNE   = ARTIFACTS+37;
+    public static final int TAROTCARD_ADJUSTMENT= ARTIFACTS+38;
+    public static final int TAROTCARD_HANGEDMAN = ARTIFACTS+39;
+    public static final int TAROTCARD_DEATH     = ARTIFACTS+40;
+    public static final int TAROTCARD_ART       = ARTIFACTS+41;
+    public static final int TAROTCARD_DEVIL     = ARTIFACTS+42;
+    public static final int TAROTCARD_TOWER     = ARTIFACTS+43;
+    public static final int TAROTCARD_STAR      = ARTIFACTS+44;
+    public static final int TAROTCARD_MOON      = ARTIFACTS+45;
+    public static final int TAROTCARD_SUN       = ARTIFACTS+46;
+    public static final int TAROTCARD_AEON      = ARTIFACTS+47;
 	static{
 		assignItemRect(ARTIFACT_CLOAK,      9,  15);
 		assignItemRect(ARTIFACT_ARMBAND,    16, 13);
@@ -800,6 +828,32 @@ public class ItemSpriteSheet {
 		assignItemRect(ARTIFACT_ROSE1,      14, 14);
 		assignItemRect(ARTIFACT_ROSE2,      14, 14);
 		assignItemRect(ARTIFACT_ROSE3,      14, 14);
+        assignItemRect(ARTIFACT_CARD1,      13, 16);
+        assignItemRect(ARTIFACT_CARD2,      13, 16);
+        assignItemRect(ARTIFACT_CARD3,      13, 16);
+        assignItemRect(ARTIFACT_CARD4,      13, 16);
+
+        assignItemRect(TAROTCARD_FOOL,      13, 16);
+        assignItemRect(TAROTCARD_MAGICIAN,  13, 16);
+        assignItemRect(TAROTCARD_PRIESTESS, 13, 16);
+        assignItemRect(TAROTCARD_EMPRESS,   13, 16);
+        assignItemRect(TAROTCARD_EMPEROR,   13, 16);
+        assignItemRect(TAROTCARD_HIEROPHANT,13, 16);
+        assignItemRect(TAROTCARD_LOVERS,    13, 16);
+        assignItemRect(TAROTCARD_CHARIOT,   13, 16);
+        assignItemRect(TAROTCARD_LUST,      13, 16);
+        assignItemRect(TAROTCARD_HERMIT,    13, 16);
+        assignItemRect(TAROTCARD_FORTUNE,   13, 16);
+        assignItemRect(TAROTCARD_ADJUSTMENT,13, 16);
+        assignItemRect(TAROTCARD_HANGEDMAN, 13, 16);
+        assignItemRect(TAROTCARD_DEATH,     13, 16);
+        assignItemRect(TAROTCARD_ART,       13, 16);
+        assignItemRect(TAROTCARD_DEVIL,     13, 16);
+        assignItemRect(TAROTCARD_TOWER,     13, 16);
+        assignItemRect(TAROTCARD_STAR,      13, 16);
+        assignItemRect(TAROTCARD_MOON,      13, 16);
+        assignItemRect(TAROTCARD_SUN,       13, 16);
+        assignItemRect(TAROTCARD_AEON,      13, 16);
 	}
 
 	                                                                                    //16 free slots
@@ -817,12 +871,14 @@ public class ItemSpriteSheet {
 	public static final int SCROLL_BERKANAN = SCROLLS+9;
 	public static final int SCROLL_ODAL     = SCROLLS+10;
 	public static final int SCROLL_TIWAZ    = SCROLLS+11;
+    public static final int TAROTCARD_UNIVERSE= SCROLLS+12;
 	
 	public static final int SCROLL_CATALYST = SCROLLS+13;
 	static {
 		for (int i = SCROLLS; i < SCROLLS+16; i++)
 			assignItemRect(i, 15, 14);
 		assignItemRect(SCROLL_CATALYST, 12, 11);
+        assignItemRect(TAROTCARD_UNIVERSE, 13, 16);
 	}
 	
 	private static final int EXOTIC_SCROLLS =                               xy(1, 30);  //16 slots

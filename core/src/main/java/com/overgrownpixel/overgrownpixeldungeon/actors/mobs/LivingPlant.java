@@ -27,6 +27,7 @@ package com.overgrownpixel.overgrownpixeldungeon.actors.mobs;
 import com.overgrownpixel.overgrownpixeldungeon.Dungeon;
 import com.overgrownpixel.overgrownpixeldungeon.OvergrownPixelDungeon;
 import com.overgrownpixel.overgrownpixeldungeon.actors.Char;
+import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Corruption;
 import com.overgrownpixel.overgrownpixeldungeon.actors.buffs.Roots;
 import com.overgrownpixel.overgrownpixeldungeon.items.food.Blandfruit;
 import com.overgrownpixel.overgrownpixeldungeon.plants.BlandfruitBush;
@@ -53,6 +54,7 @@ public class LivingPlant extends Mob {
         properties.add(Property.PLANT);
 
         becomePlant = false;
+        immunities.add(Corruption.class);
 	}
 
 	public LivingPlant(){

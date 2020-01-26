@@ -137,10 +137,12 @@ import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfCorrosion;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfCorruption;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfDisintegration;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfFireblast;
+import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfFlock;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfFrost;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfLightning;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfLivingEarth;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfMagicMissile;
+import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfPoison;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfPrismaticLight;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfRegrowth;
 import com.overgrownpixel.overgrownpixeldungeon.items.wands.WandOfTransfusion;
@@ -153,6 +155,7 @@ import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.TwoSided
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.axes.Waraxe;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.AssassinsBlade;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.BroadBlade;
+import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.ButcherBlade;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.DoubleBlade;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.Hackblade;
 import com.overgrownpixel.overgrownpixeldungeon.items.weapon.melee.blades.RunicBlade;
@@ -341,6 +344,7 @@ public enum Catalog {
         WEAPONS.seen.put( PendulumSpear.class,              false);
         WEAPONS.seen.put( DoubleBlade.class,                false);
         WEAPONS.seen.put( Hackblade.class,                  false);
+        WEAPONS.seen.put( ButcherBlade.class,               false);
 
         //TIER 4
         WEAPONS.seen.put( Longsword.class,                  false);
@@ -401,6 +405,8 @@ public enum Catalog {
 		WANDS.seen.put( WandOfLightning.class,              false);
 		WANDS.seen.put( WandOfDisintegration.class,         false);
 		WANDS.seen.put( WandOfFireblast.class,              false);
+        WANDS.seen.put( WandOfFlock.class,                  false);
+        WANDS.seen.put( WandOfPoison.class,                 false);
 		WANDS.seen.put( WandOfCorrosion.class,              false);
 		WANDS.seen.put( WandOfBlastWave.class,              false);
 		WANDS.seen.put( WandOfLivingEarth.class,            false);

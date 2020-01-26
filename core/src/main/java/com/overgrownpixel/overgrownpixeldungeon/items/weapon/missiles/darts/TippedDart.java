@@ -264,7 +264,7 @@ public abstract class TippedDart extends Dart {
 			return (TippedDart) types.get(s.getClass()).newInstance().quantity(quantity);
 		} catch (Exception e){
 			OvergrownPixelDungeon.reportException(e);
-			return null;
+			return randomTipped(quantity);
 		}
 	}
 	

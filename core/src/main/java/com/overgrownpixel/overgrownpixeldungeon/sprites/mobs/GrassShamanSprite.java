@@ -35,22 +35,24 @@ public class GrassShamanSprite extends MobSprite {
 		super();
 		
 		texture( Assets.SHAMAN );
+
+        int linenumber = 12;
 		
 		TextureFilm frames = new TextureFilm( texture, 12, 15 );
 		
 		idle = new Animation( 2, true );
-		idle.frames( frames, 0+16+16, 0+16+16, 0+16+16, 1+16+16, 0+16+16, 0+16+16, 1+16+16, 1+16+16 );
+		idle.frames( frames, 0+linenumber+linenumber, 0+linenumber+linenumber, 0+linenumber+linenumber, 1+linenumber+linenumber, 0+linenumber+linenumber, 0+linenumber+linenumber, 1+linenumber+linenumber, 1+linenumber+linenumber );
 		
 		run = new Animation( 12, true );
-		run.frames( frames, 4+16+16, 5+16+16, 6+16+16, 7+16+16 );
+		run.frames( frames, 4+linenumber+linenumber, 5+linenumber+linenumber, 6+linenumber+linenumber, 7+linenumber+linenumber );
 		
 		attack = new Animation( 12, false );
-		attack.frames( frames, 2+16+16, 3+16+16, 0+16+16 );
+		attack.frames( frames, 2+linenumber+linenumber, 3+linenumber+linenumber, 0+linenumber+linenumber );
 		
 		zap = attack.clone();
 		
 		die = new Animation( 12, false );
-		die.frames( frames, 8+16+16, 9+16+16, 10+16+16 );
+		die.frames( frames, 8+linenumber+linenumber, 9+linenumber+linenumber, 10+linenumber+linenumber );
 		
 		play( idle );
 	}
